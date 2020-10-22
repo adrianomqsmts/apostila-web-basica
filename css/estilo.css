@@ -1,0 +1,111 @@
+body {
+    font-size: 100%;
+    background-color: #333;
+}
+
+#nav-horizontal {
+    background-color: #ccc;
+    position: fixed;
+    overflow-y: scroll;
+    height: 3.5em;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0 0.05em 0.25em black;
+}
+
+#nav-horizontal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-horizontal li {
+    text-align: center;
+    display: inline-block;
+}
+
+#nav-horizontal li a {
+    display: block;
+    padding: 1.2em;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+#nav-horizontal li a:link, #nav-horizontal li a:visited {
+    color: black;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+}
+
+#nav-horizontal li a:hover, #nav-horizontal li a:active {
+    background-color: #aaa;
+}
+
+#nav-vertical {
+    background-color: #999;
+    top: 3.5em;
+    left: 0;
+    position: fixed;
+    overflow: scroll;
+    width: 15%;
+    height: 100%;
+}
+
+#nav-vertical ul {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#nav-vertical li {
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+#nav-vertical li a {
+    display: block;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0.3em;
+    width: 100%;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+#nav-vertical li a:link, #nav-vertical li a:visited {
+    color: black;
+    font-weight: bold;
+}
+
+#nav-vertical li a:hover, #nav-vertical li a:active {
+    background-color: #ddd;
+}
+
+section {
+    padding-top: 3.5em;
+}
+
+section, footer {
+    padding-left: 17%;
+}
+footer{
+    display: block;
+    position: absolute;
+    padding-bottom: 1em;
+    bottom: 0;
+    left: 0;
+    background-color: chartreuse;
+    width: 100%;
+    z-index: -1;
+    text-align: center;
+
+}
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.1em;
+    color: chartreuse;
+}
