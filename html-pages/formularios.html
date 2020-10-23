@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Formulário em HTML5</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object class="objhorizontal" data="menu-horizontal.html"></object>
+        <object class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h2 id="TFormularios"> FORMULÁRIOS</h2>
+
+        <P> O elemento <code>&lt;form></code> especifica um formulário em HTML que permite a entrada de dados
+            por parte do
+            usuário. Funciona como um contêiner para diversos outros elementos de entrada, como campo de texto,
+            caixas de
+            seleção, botões, etc. </P>
+        <code>&lt;form></code> campos de entrada <code>&lt;/form></code>
+
+
+
+        <h3 id="TMethod">Atributo method</h3>
+
+        <p> O atributo method define o método de envio dos dados, podendo ser por GET (dados através da URL) ou
+            POST (é
+            enviado no corpo da solicitação). O método de envio padrão é o GET. </p>
+
+
+
+
+        <h4 id="TGET">Método de Envio GET</h4>
+
+        <p> Quando usamos o método de envio GET, todos os dados do formulário são enviados atráves de uma string
+            dentro da
+            própria URL do site. Onde os dados são adicionados usando-se um par chave=valor.
+            <strong>DEVE SER USADO APENAS PARA DADOS NÃO CONFIDÊNCIAIS </strong>
+            <br> <br> http://www.servidor.com.br/userform.php?username=Pedro </p>
+        <p> Assim, essa solicitação executaria o script script.php em php no diretório raiz do servidor e
+            passaria o valor
+            Pedro para a variável username. </p>
+        <ul>
+            <li>
+                ? : Separa a localização do dado
+            </li>
+            <li>
+                & : separa os pares valor=chave
+            </li>
+            <li>
+                + : Substitui o caracter espaço.
+            </li>
+        </ul>
+        <p> Vantagens: É simples e fácil de trabalhar. <br> <br> Desvantagens: Os dados ficam visíveis e há uma
+            limitação de
+            2048 caracteres na URL.</p>
+
+
+
+        <h4 id="TPOST">Método de Envio POST</h4>
+
+        <p> Quando usamos o método de envio POST, todos os dados do formulário são enviados por transação HTTP,
+            basicamente,
+            as solicitações que usam post enviam os dados do formulário como um pacote no corpo da solicitação.
+        </p>
+        <p> Vantagens: Não Possui limitação de tamanho de dados enviados e os dados não ficam visíveis <br> <br>
+            Desvantagens: Os envios não podem ser marcados. </p>
+
+
+
+
+        <h3 id="TAction">Atributo action</h3>
+
+        <p> O atributo action define a ação que deve ser feita após o envio de um formulário, onde normalmente,
+            os dados são
+            enviados para um arquivo no servidor, após a interação com o usuário. Caso o valor de action seja
+            omitido, os
+            dados são enviados para
+            a página atual. </p>
+
+
+
+        <h3 id="Ttarget">Atributo target</h3>
+
+        <p> O atriburo target especifica para onde exibir a resposta recebida após o envio do formulário. Ou
+            seja, se quer
+            que seja aberta uma nova aba, recarrega a página atual, abra uma nova página sobre a atual, dentre
+            outras
+            formas. </p>
+        <ul>
+            <li>_black: A resposta é exibida em uma nova janela ou aba.</li>
+            <li>_self (padrão): A resposta é exibida na janela atual.</li>
+            <li>_parent: A resposta é exibida no quadro pai.</li>
+            <li>_top: A resposta é exibida em todo o corpo da janela./li>
+            <li>framename (nome de um iframe): A reposta é exibida no iframe citado.</li>
+        </ul>
+
+
+
+
+        <h3 id="TAutocomplete">Atributo autocomplete</h3>
+
+        <p> O atributo autocomplete especifica se o formulário deve ter preenchimento automático ativado,
+            através do valor
+            on. Após a sua ativação, o navegador irá completar os valores automaticamente com base no histórico
+            dos dados
+            peenchidos. </p>
+
+
+
+
+        <h3 id="TNovalidate">Atributo novalidate</h3>
+
+        <p> O novalidate é um atributo booleano. Quando presente, especifica que os dados de entrada do
+            formulário não devem
+            ser validados ao serem enviados </p>
+        <p> Assim, podemos ver a sintaxe com todos os atributos importantes do elemento
+            <code>&lt;form></code> </p>
+        <code>&lt;form action="/action_page.php" target="_blank" method="post" autocomplete="on" novalidate></code>
+        Dados de
+        entrada
+        <code>&lt;/form></code>
+        <p> Resaltando, que os atributos, caso omitidos, serão aplicados os valores padrões. </p>
+
+        <hr>
+
+
+
+        <h2 id="TElementosFormularios">ELEMENTOS DE FORMULÁRIOS</h2>
+
+        <h3 id="TLabel">Elemento label</h3>
+
+        <p> O elemento <code>&lt;label></code> define um rótulo para diversos elementos de um formulário, como
+            uma descrição
+            do valor que queve ser inserido: Como nome, idade, sexo, dentre outras possibilidades. </p>
+        <code>&lt;label for="id"></code>nome<code>&lt;/label></code>
+        <p> Labels são úteis pois facilitam tanto na interação com o usuário, pois fazem parte dos elementos
+            clicláveis,
+            quanto para leitores de telas enfatizarem os elementos de entrada. </p>
+        <p> Para fazer essa ligação entre o label e o elemento de entrada, deve usar um id único para o elemento
+            de entrada.
+            Esse id deve ser usado como valor do atributo for dentro da tag inicial do elemento
+            <code>&lt;label for="id"></code>. </p>
+
+
+
+        <h3 id="TInput">Elemento input</h3>
+
+        <p> É o elemento mais utilizado, que pode assumir diversas funcionalidades, dependendo do valor do
+            atributo type
+            especificado na tag inicial. Os elementos <code>&lt;input type=""></code> são elementos vazios, que
+            não precisam
+            de uma tag de fechamento.
+        </p>
+
+
+
+
+        <h4 id="TInputatributos">input atributos</h4>
+
+        <ul>
+            <li>
+                <b>value:</b> O atributo value especifica um valor inicial para um campo de entrada.
+            </li>
+            <li>
+                <b>readonly:</b> Especifica que um campo de entrada é somente de leitura, ou seja, não pode ser
+                mais
+                modificado, mas é enviado ao enviar o formulário.
+            </li>
+            <li>
+                <b>disabled:</b> Especifica que um campo de entrada deve ser desativado, se tornando
+                inutilizável e não
+                podendo sem clicável, além disso, o dado não é enviado junto com o formulário.
+            </li>
+            <li>
+                <b>size:</b> Especifica a largura visível, em caracteres, de um campo de entrada, sendo por
+                padrão o valor
+                20. Funciona em (input text, search, tel, url, email e password).
+            </li>
+            <li>
+                <b>maxlength:</b> especifica o número máximo de caracteres permitidos em um campo de entrada.
+                Entretanto, o
+                mesmo não alerta ao usuário sobre o limite, ficando a cargo do programador.
+            </li>
+            <li>
+                <b>min e max:</b> Especificam os valores mínimos e máximos para um campo de entrada. Funciona em
+                (input
+                numbers e dates)
+            </li>
+            <li>
+                <b>multiple:</b> Especifica que o usuário tem a permissão para inserir mais de um valor em um
+                campo de
+                entrada. Funcona em (input email e file)
+            </li>
+            <li>
+                <b>pattern:</b> Especifica uma
+                <a href="https://www.w3schools.com/js/js_regexp.asp"></a>espressão regular
+                </a>
+                que verifica o formato do campo de entrada quando ele é enviado. Funciona em ( input text, date,
+                search,
+                url, tel, emal e password). Use o atributo global title para dizer ao usuário qual formato está
+                esperando.
+            </li>
+            <li>
+                <b>placeholder:</b> Especifica uma breve dica do valor esperado de um campo de entrada, onde a
+                dica é
+                exibida dentro do prórprio campo de entrada, antes do usuário inserir um valor.
+            </li>
+            <li>
+                <b>required:</b> Especifica que um campo de enterada é obrigatório e deve ser preenchido.
+            </li>
+            <li>
+                <b>step:</b> Especifica o intervalo de múltiplos aceitos de um número. Ex. step=2, então serão
+                aceitos
+                somente os valores, ..., -4, -2, 0, -2, -4, -6, etc. Funciona em (input number, range e todas as
+                datas)
+            </li>
+            <li>
+                <b>autofocus:</b> Diz que o campo de entrada deve ter foco assim que a pagina é carregada.
+            </li>
+            <li>
+                <b>list:</b> Se refere a um atributo do elemento <code>&lt;datalist></code>, que carrega opções
+                pré-definidas (recomendadas) para um elemento <code>&lt;imput></code>.
+            </li>
+            <li>
+                <b></b>autocomplete:</b> Especifica que um formulário ou campo de entrada deve ter preenchimento
+                automático
+                ativado para que os navegadores, com base no histórico de preenchimento, recomende opções para o
+                usuário.
+            </li>
+            <li>
+                <b>checked:</b> Especifica qual campo de entrada, do tipo radio ou checkbox, deve ter um valor
+                pré-selecionado ao carregar a pagina.
+            </li>
+        </ul>
+
+
+
+
+
+        <h4 id="TInputtext">input text</h4>
+
+        <p> O elemento <code>&lt;input type="text"></code> define um campo de entrada de texto de linha única.
+        </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> 
+                    <code class="e">&lt;label for="nome"></code>nome<code>&lt;/label>
+                    </code><code>&lt;br></code><br>
+                    <code class="e">&lt;input id="nome" type="text"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="nome">nome</label><br>
+                    <input id="nome" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">PLACEHOLDER</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="nome"></code>nome<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="nome" placeholder="nome" type="text"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="nome">nome</label><br>
+                    <input id="nome" placeholder="nome" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">VALUE (tente encontrar a diferença com o placeholder</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="nome"></code>nome<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="nome" value="nome" type="text"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="nome">nome</label><br>
+                    <input id="nome" value="nome" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">DISABLE</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="nome"></code>nome<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="nome" disabled type="text"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="nome">nome</label><br>
+                    <input id="nome" disabled type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">SIZE</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="nome"></code>nome<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="nome" size="30" type="text"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="nome">nome</label><br>
+                    <input id="nome" size="30" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">MAXLENGTH (tende digitar mais que 3)</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="nome"></code>nome<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="nome" maxlength="3" type="text"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="nome">nome</label><br>
+                    <input id="nome" maxlength="3" type="text">
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <h4 id="TInputpassword">input password</h4>
+
+        <p> O elemento <code>&lt;input type="password"></code> define um campo de entrada do tipo senha, onde os
+            caracteres
+            são mascarados com bolinhas. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="senha"></code>senha<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="senha" type="password"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <label for="senha">senha</label><br>
+                    <input id="senha" type="password">
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputsubmit">input submit</h4>
+        <p> O elemento <code>&lt;input type="submit"></code> define um botão para enviar os dados do formulário
+            para um
+            manipulador de formulários, que normalmente é um script em php dentro do servidor, que é
+            especificado no
+            atributo action do <code>&lt;form></code>.
+            O atributo value, especifica o valor a ser escrito no botão. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form action="/action_page.php"></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="botao" type="submit"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <input id="botao" value="botao enviar" type="submit">
+            </tr>
+            <tr>
+                <td colspan="2">REQUIRED (tente enviar o formulário com o campo vazio) </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="senha"></code>senha<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="senha" required type="password"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="senha">senha</label><br>
+                        <input id="senha" required type="password"> <br>
+                        <input id="botao" value="botao enviar" type="submit">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <h4 id="TInputreset">input reset</h4>
+
+        <p> O elemento <code>&lt;input type="reset"></code> define um botão reset que irá redefinir todos os
+            valores do
+            fomulário para seus valores padrão. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="nome"></code>nome<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="nome" type="text"></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="reset" type="reset"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="nome">nome</label><br>
+                        <input id="nome" type="text">
+                        <input id="reset" value="Limpas Campos" type="reset">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputradio">input radio</h4>
+        <p> O elemento <code>&lt;input type="reset"></code> define um botão de opções, que permite que o usuário
+            selecione
+            uma única opção limitada. O atributo name é usado para agrupar as opções, enquanto o value,
+            especifica o valor
+            que o campo envia como dados.
+            OBSERVE, que o label é clicável. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="radio" id="masculino" name="sexo" value="masculino"></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="masculino"></code>Masculino<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="radio" id="feminino" name="sexo" value="feminino"></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="feminino"></code>Feminino<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="radio" id="outro" name="sexo" value="outro"></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="outro"></code>Outro<code>&lt;/label></code><code>&lt;br></code>
+                    <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form>
+                        <input type="radio" id="masculino" name="sexo" value="masculino">
+                        <label for="masculino">Masculino</label><br>
+                        <input type="radio" id="feminino" name="sexo" value="feminino">
+                        <label for="feminino">Feminino</label><br>
+                        <input type="radio" id="outro" name="sexo" value="outro">
+                        <label for="outro">outro</label>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <h4 id="TInputcheckbox">input checkbox</h4>
+
+        <p> O elemento <code>&lt;input type="reset"></code> define uma caixa de seleção, que permite que o
+            usuário selecione
+            multiplas opção simultâneas dentre uma quantidade limitada. O atributo name é usado para verificar
+            quais valores
+            estão presentes ou ausentes,
+            enquanto o value, especifica o valor que o campo envia como dado. OBSERVE que o label é clicável.
+        </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="checkbox" id="bicicleta" name="veiculos1" value="bicicleta"></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="bicicleta"></code>Eu tenho bicicleta
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="checkbox" id="carro" name="veiculos2" value="carro"></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="carro"></code>Eu tenho carro
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="checkbox" id="barco" name="veiculos3" value="barco"></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="barco"></code>Eu tenho barco
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form>
+                        <input type="checkbox" id="bicicleta" name="veiculos1" value="bicicleta">
+                        <label for="bicicleta">Eu tenho bicicleta</label><br>
+                        <input type="checkbox" id="carro" name="veiculos2" value="carro">
+                        <label for="carro">Eu tenho carro</label><br>
+                        <input type="checkbox" id="barco" name="veiculos3" value="barco">
+                        <label for="barco">Eu tenho barco</label>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInpubutton">input button</h4>
+
+        <p> O elemento <code>&lt;input type="button"></code> define um botão clicável que chama e executa uma ou
+            mais
+            funções em javascript, especificado no atributo onclick. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="botao"  value="Exibir alerta"  onclick="alert('Hello World!')" type="button"></code>
+                    <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <input id="botao" onclick="alert('Hello World!')" value="Exibir alerta" type="button">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputcolor">input color</h4>
+
+        <p> O elemento <code>&lt;input type="color"></code> é usado para criar um campo de seleção com uma
+            paleta de cores
+            que diferem visualmente entre os navegadores. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="cor"></code> Escolha uma cor
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="cor" type="color" name="cor"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="cor">Escolha uma cor </label> <br>
+                        <input id="cor" type="color" name="cor">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputdatas">input de datas</h4>
+
+        <p> Existem muitos elementos que trabalham com diferentes formatos de data e horários. </p>
+        <ul>
+            <li>
+                <code>&lt;input type="date"></code>: É usado para campos de entrada que devem conter uma data
+            </li>
+            <li>
+                <code>&lt;input type="datetime-local"></code>: É usado para para campos de entrada que devem
+                conter data e
+                hora, sem fuso horário.
+            </li>
+            <li>
+                <code>&lt;input type="month"></code>: É usado para que o usuário escolha um mês e um ano.
+            </li>
+            <li>
+                <code>&lt;input type="time"></code>: É usado para que o usuário escolha um horário sem fuso
+                horário.
+            </li>
+            <li>
+                <code>&lt;input type="week"></code>: É usado para que o usuário escolha uma semana e um ano.
+            </li>
+        </ul>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="data"></code>aniversário<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="data" type="date" name="data"></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="datahora"></code>Data e hora do nascimento
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="datahora" type="datetime-local" name="datahora"></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="mesano"></code>Mes e ano do nascimento
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="mesano" type="month" name="mesano"></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="hora"></code>Horário<code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="hora" type="time" name="hora"></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="semanaano"></code> A semana e ano do nascimento
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="semanaano" type="month" name="semanaano"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="data">aniversário</label> <br>
+                        <input id="data" type="date" name="data"><br>
+                        <label for="datahora">Data e hora do nascimento</label><br>
+                        <input id="datahora" type="datetime-local" name="datahora"> <br>
+                        <label for="mesano">Mes e ano do nascimento</label> <br>
+                        <input id="mesano" type="month" name="mesano"></code> <br>
+                        <label for="hora">Horário</label> <br>
+                        <input id="hora" type="time" name="hora"></code> <br>
+                        <label for="semanaano">Semana e ano do nascimento</label> <br>
+                        <input id="semanaano" type="week" name="semanaano"></code> <br>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">MIN E MAX</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="data"></code>Entre com uma data antes do ano de 1980:
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="data" type="date" name="data" max="1979-12-31"></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="data2"></code>Entre com uma data após o ano 2000:
+                    <code>&lt;/label></code><code>&lt;br></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="data2" type="date" name="data2" min="2000-01-02"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="data">Entre com uma data antes do ano de 1980:</label> <br>
+                        <input id="data" type="date" name="data" max="1979-12-31"><br>
+                        <label for="data2">Entre com uma data após o ano 2000:</label> <br>
+                        <input id="data2" type="date" name="data2" min="2000-01-02"><br>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputemail">input email</h4>
+        <p> O elemento <code>&lt;input type="email"></code> é usado para criar campos de entrada que devem
+            conter um
+            endereço de email, além disso os navegadores verificam o formato do email e os celulares reconhecem
+            o campo, de
+            tal forma que, os teclados são
+            abertos com a tela .com. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="email"></code> Insira o email
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="email" type="email" name="email"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="email">Insira o email </label>
+                        <input id="email" type="email" name="email">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputfile">input file</h4>
+
+        <p> O elemento <code>&lt;input type="file"></code> é usado para criar um campo de seleção de arquivos e
+            um botão de
+            pesquisa que permite encontrar o arquivo e fazer o seu upload. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="file"></code>Buscar arquivo
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="file" type="file" name="file"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="file">Buscar arquivo</label>
+                        <input id="file" type="file" name="file">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">MULTIPLE : Tente selecionar vários arquivos antes e agora</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="file"></code>Buscar arquivo
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="file" multiple type="file" name="file"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="file">Buscar arquivo</label>
+                        <input id="file" multiple type="file" name="file">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputnumber">input number</h4>
+
+        <p> O elemento <code>&lt;input type="number"></code> é usado para criar um campo de entrada numérico.
+        </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="numero"></code> Digite um número
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="numero" type="number" name="numero"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="numero">Digite um número </label>
+                        <input id="numero" type="number" name="numero">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    MIN e MAX: Digite o valor 80 e aperte enter.
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="numero"></code> Digite um número entre 5 e 10
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="numero" min="5" max="10" type="number" name="numero"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="numero">Digite um número entre 5 e 10</label>
+                        <input id="numero" min="5" max="10" type="number" name="numero">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    STEP: Digite o valor 40 e aperte enter.
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="numero"></code> Digite um número múltiplo de 3
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="numero" step="3" type="number" name="numero"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="numero">Digite um número múltiplo de 3</label>
+                        <input id="numero" step="3" type="number" name="numero">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputrange">input range</h4>
+
+        <p> O elemento <code>&lt;input type="range"></code> define uma barra lateral para selecionar um valor
+            numérico,
+            funcionando da mesma forma que o campo numérico, mudando apenas visualmente. Para vizualização do
+            valor
+            selecionado, somente com uma linguagem
+            de programação. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="range"></code> Escolha um
+                    número<code>&lt;/label></code><code>&lt;br></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="range" type="number" name="range"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="range">Escolha um número </label>
+                        <input id="range" type="range" name="range">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <h4 id="TInputsearch">input search</h4>
+
+        <p> O elemento <code>&lt;input type="search"></code> é usado para criar um campo de de pesquisa que se
+            comporta
+            exatamente como um campo de texto, mudando apenas o seu sentido semântico. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="pesquisa"></code> buscar
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="pesquisa" type="search" name="pesquisa"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="buscar"> buscar </label> <br>
+                        <input id="buscar" type="search" name="buscar">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h4 id="TInputtel">input tel</h4>
+
+        <p> O elemento <code>&lt;input type="tel"></code> é usado para criar um campo de de entrada que deve
+            conter um
+            número de telefone. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="telefone"></code> Telefone
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="telefone" type="tel" name="telefone"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="telefone"> Telefone </label> <br>
+                        <input id="telefone" type="tel" name="telefone">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">PLACEHOLDER e PATTERN: Digite um formato inválido e aperte enter</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="telefone"></code> Telefone
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="telefone" placeholder="00000-0000" pattern="[0-9]{5}-[0-9]{4} type="tel" name="telefone"></code>
+                    <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="telefone"> Telefone </label> <br>
+                        <input id="telefone" placeholder="00000-0000" type="tel" name="telefone"
+                            pattern="[0-9]{5}-[0-9]{4}">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <h4 id="TInputurl">input url</h4>
+
+        <p> O elemento <code>&lt;input type="url"></code> é usado para criar um campo de de entrada, que deve
+            conter um
+            email, que pode ser validado automaticamente, além de celulares poderem reconhecer e habilitar a
+            tecla .com nos
+            teclados. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="url"></code> url
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="url" type="url" name="url"></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="url"> url </label> <br>
+                        <input id="url" type="url" name="url">
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+
+
+
+        <h3 id="TElementoselect">Elemento select</h3>
+
+        <p> O elemento <code>&lt;select></code> define uma lista de opções para selecionar uma única. O elemento
+            agrupa os
+            elementos <code>&lt;option></code> que define cada uma das opções de forma individual. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="comida"></code> Comida Favorita
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;select id="comida" name="comida"> </code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Pizza"></code>Pizza <code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Macarrão"></code>Macarrão <code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Frango Assado"></code>Frango Assado<code>&lt;/options></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Arroz"></code>Arroz<code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;/select> <br>
+                        <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="comida">Comida Favorita</label> <br>
+                        <select id="comida" name="comida">
+                            <option value="Pizza">Pizza</option>
+                            <option value="Macarrão">Macarrão</option>
+                            <option value="Frango Assado">Frango Assado</option>
+                            <option value="Arroz">Arroz</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Usando SIZE para mostrar mais elementos</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="comida"></code> Comida Favorita
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;select size="3" id="comida" name="comida"> </code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Pizza"></code>Pizza <code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Macarrão"></code>Macarrão <code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Frango Assado"></code>Frango Assado<code>&lt;/options></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Arroz"></code>Arroz<code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;/select> <br>
+                        <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="comida">Comida Favorita</label> <br>
+                        <select id="comida" size="3" name="comida">
+                            <option value="Pizza">Pizza</option>
+                            <option value="Macarrão">Macarrão</option>
+                            <option value="Frango Assado">Frango Assado</option>
+                            <option value="Arroz">Arroz</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">SELECTED: Veja que pré-selecionamos uma opção</td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="comida"></code> Comida Favorita
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;select size="3" id="comida" name="comida"> </code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Pizza"></code>Pizza <code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Macarrão" selected></code>Macarrão <code>&lt;/options></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Frango Assado"></code>Frango Assado<code>&lt;/options></code>
+                    <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Arroz"></code>Arroz<code>&lt;/options></code> <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;/select> <br>
+                        <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="comida">Comida Favorita</label> <br>
+                        <select id="comida" name="comida">
+                            <option value="Pizza">Pizza</option>
+                            <option value="Macarrão" selected>Macarrão</option>
+                            <option value="Frango Assado">Frango Assado</option>
+                            <option value="Arroz">Arroz</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="TInputtextarea">Textarea</h3>
+
+        <p> O elemento <code>&lt;textarea></code> é usado para criar um campo de entrada de texto de múltiplas
+            linhas. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="areadetexto"></code> Área de Texto
+                    <code>&lt;/label></code><code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;textarea name="areadetexto"></code> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Texto
+                    inicial.
+                    <code>&lt;br></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;/textarea></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="areadetexto"> Área de Texto </label> <br>
+                        <textarea name="areadetexto">Texto inicial.</textarea>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <h3 id="TButton">Button</h3>
+
+        <p> O elemento <code>&lt;button type="button">&lt;/button></code> efine um botão clicável, que chama e
+            executa uma
+            ou mais funções em javascript, especificadas no atributo onclick. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;button id="botao" onclick="alert('Hello World!')"  type="button"></code>
+                    <br> Exibir alerta! <code>&lt;/button></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <button id="botao" onclick="alert('Hello World!')" type="button">
+                            Exibir alerta!
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="TFildset">fieldset e Legeng</h3>
+
+        <p> O elemento <code>&lt;fildset></code> é usado para agrupar campos de entradas que possuem dados
+            relacionados em
+            um formulário, como dados de contatos, dados bancários, dados pessoais, etc. Enquanto o elemento
+            <code>&lt;legend></code> descreve esse agrupamento de dados. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;fieldset></code> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;legend></code>Dados Pesoais:<code>&lt;/legend></code><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="pnome"></code>Primeiro nome:<code>&lt;/label></code><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="text" id="pnome" name="pnome" value="Fulano"></code><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="snome"></code>Segundo nome:<code>&lt;/label></code><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;input type="text" id="snome" name="snome" value="De Tal"></code><br>
+                    &nbsp;&nbsp;&nbsp;
+                    <code>&lt;/fieldset></code> <br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form>
+                        <fieldset>
+                            <legend>Dados Pesoais:</legend>
+                            <label for="pnome">Primeiro nome:</label><br>
+                            <input type="text" id="pnome" name="pnome" value="Fulano"><br>
+                            <label for="snome">Segundo nome:</label><br>
+                            <input type="text" id="snome" name="snome" value="De Tal"><br><br>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="TDatalist">Datalist</h3>
+
+        <p> O elemento <code>&lt;datalist></code> especifica uma lista de opções predefinidas para um
+            <code>&lt;input></code>, onde os usuários verão uma lista suspensa das opções prédefinidas
+            (recomendações/
+            <code>&lt;option></code>) à medida em que inserem os dados. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;form></code> <br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;label for="navegadores"></code>Qual navegador você usa?
+                    <code>&lt;/label></code><br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;input id="navegadores" list="nav"></code><br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;datalist id="nav"></code><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Internet Explorer"></code><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Firefox"></code><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Chrome"></code><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Opera"></code><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <code>&lt;option value="Safari"></code><br> &nbsp;&nbsp;&nbsp;
+                    <code>&lt;/datalist></code><br>
+                    <code>&lt;/form></code>
+                </td>
+                <td>
+                    <form action="">
+                        <label for="navegadores">Qual navegador você usa?</label>
+                        <input id="navegadores" list="nav">
+                        <datalist id="nav">
+                            <option value="Internet Explorer">
+                            <option value="Firefox">
+                            <option value="Chrome">
+                            <option value="Opera">
+                            <option value="Safari">
+                        </datalist>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <hr>
+    </section>
+
+    <div class="btn">
+        <a class="btn-anterior" href="boas-praticas.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="lista-tags-html.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+        <object class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

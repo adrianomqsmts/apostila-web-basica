@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>elementos-block-inline em HTML5</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object class="objhorizontal" data="menu-horizontal.html"></object>
+        <object class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h2 id="TBloInl">Elementos Block and Inline</h2>
+
+        <p> Um elemento de nível de bloco sempre começa em uma nova linha e ocupa toda a largura disponível (se estende
+            para
+            a esquerda e para a direita, tanto quanto pode). O mais utilizado para definir blocos, é o elemento
+            <code>&lt;div></code> que funciona como um contêiner de elementos. Entretanto, outras tags também são de
+            blocos
+            em nível, como:
+            <code>&lt;address></code>
+            <code>&lt;article</code>
+            <code>&lt;aside></code>
+            <code>&lt;blockquote></code>
+            <code>&lt;canvas></code>
+            <code>&lt;dd></code>
+            <code>&lt;div></code>
+            <code>&lt;dl></code>
+            <code>&lt;dt></code>
+            <code>&lt;fieldset></code>
+            <code>&lt;figcaption></code>
+            <code>&lt;figure></code>
+            <code>&lt;footer></code>
+            <code>&lt;form></code>
+            <code>&lt;h1>-&lt;h6></code>
+            <code>&lt;header></code>
+            <code>&lt;hr></code>
+            <code>&lt;li></code>
+            <code>&lt;main></code>
+            <code>&lt;nav></code>
+            <code>&lt;noscript></code>
+            <code>&lt;ol></code>
+            <code>&lt;p></code>
+            <code>&lt;pre></code>
+            <code>&lt;section></code>
+            <code>&lt;table></code>
+            <code>&lt;tfoot></code>
+            <code>&lt;ul></code>
+            <code>&lt;video></code>.
+        </p>
+        <p> Um elemento embutido (inline) não começa em uma nova linha e só ocupa a largura necessária e não podem
+            conter um
+            bloco de nível. O mais útilizado para blocos embutidos, é o elemento <code>&lt;span></code> que funciona
+            como um
+            contêiner de elementos.
+            Entretanto, outras tags também são de blocos embutidos, como:
+            <code>&lt;a></code>
+            <code>&ltabbr></code>
+            <code>&lt;b></code>
+            <code>&lt;bdo></code>
+            <code>&lt;br></code>
+            <code>&lt;button></code>
+            <code>&lt;cite></code>
+            <code>&lt;code></code>
+            <code>&lt;dfn></code>
+            <code>&lt;em></code>
+            <code>&lt;i></code>
+            <code>&lt;img></code>
+            <code>&lt;input></code>
+            <code>&lt;kbd></code>
+            <code>&lt;label></code>
+            <code>&lt;map></code>
+            <code>&lt;object></code>
+            <code>&lt;output></code>
+            <code>&lt;q></code>
+            <code>&lt;samp></code>
+            <code>&lt; script></code>
+            <code>&lt;select></code>
+            <code>&lt;small></code>
+            <code>&lt;span></code>
+            <code>&lt;strong></code>
+            <code>&lt;sub></code>
+            <code>&lt;sup></code>
+            <code>&lt;textarea></code>
+            <code>&lt;tt></code>
+            <code>&lt;var></code>
+        </p>
+        <p> Abaixo podemos ver um elemento em nível e embutido, e o quanto eles preenchem a tela. Para visualizar esse
+            preenchimento, vamos usar CSS através do atributo style para criar um borda demilitadno todo o espaçamento
+            ocupado pelo elemento. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;div style="border: 2px solid greenyellow;"></code> <br> BLOCO DE NÍVEL <br>
+                    <code>&lt;/div></code> <br>
+                    <code>&lt;div style="border: 2px solid greenyellow;"></code> <br> BLOCO DE NÍVEL <br>
+                    <code>&lt;/div></code>
+                </td>
+                <td>
+                    <div style="border: 2px solid greenyellow;">BLOCO DE NÍVEL</div>
+                    <div style="border: 2px solid greenyellow">BLOCO DE NÍVEL</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;span style="border: 2px solid greenyellow;"></code> <br> BLOCO EMBUTIDO<br>
+                    <code>&lt;/span></code> <br>
+                    <code>&lt;span style="border: 2px solid greenyellow;"></code> <br> BLOCO EMBUTIDO<br>
+                    <code>&lt;/span></code>
+                </td>
+                <td width="60%">
+                    <span style="border: 2px solid greenyellow;">BLOCO EMBUTIDO</span>
+                    <span style="border: 2px solid greenyellow;">BLOCO EMBUTIDO</span>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+    </section>
+    <div class="btn">
+        <a class="btn-anterior" href="css-basico.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="classes.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+        <object class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>HTML em HTML em HTML5</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object class="objhorizontal" data="menu-horizontal.html"></object>
+        <object class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h2 id="titulo">HTML em HTML</h2>
+
+        <h3>Iframes</h3>
+
+        <p> Um iframe é um elemento do HTML utilizado para incorporar outra página da web na página atual. Ou seja, com
+            ele
+            você pode incluir conteúdos de outras páginas na sua própria página como vídeos, imagens, corpo de outras
+            páginas e publicidades.</p>
+        <code>&lt;iframe src="url" title="descrição do conteúdo"></code>
+        <p> Por exemplos, podemos abrir o youtube, clicar sobre um vídeo com o botão direito, procurar a opção
+            "incorporar
+            códido de incorporação", que a própria plataforma irá disponibilizar o código HTML, e ent'ao basta
+            introduzir o
+            vídeo em sua página. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;iframe  width="50%" height="410" title="Video da música wonder do Shawn Mendes" src="https://www.youtube.com/embed/fHeQemJJQII" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> &lt;/iframe></code>
+
+                </td>
+                <td>
+                    <iframe width="100%" height="410" title="Video da música wonder do Shawn Mendes"
+                        src="https://www.youtube.com/embed/fHeQemJJQII" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code>&lt;iframe src="iframe-fixed.html" style="width:100%; border:4px solid #e5e5e5"
+                class="w3-padding"> &lt;/iframe> </code>
+                </td>
+                <td>
+                    <iframe src="identificadores.html" style="width:100%; border:4px solid #e5e5e5"
+                        class="w3-padding"></iframe>
+                </td>
+            </tr>
+        </table>
+        <hr>
+
+        <h3>Object</h3>
+
+        <p>O elemento <code>&lt;object></code> foi projetado para incorporar plug-ins
+            (como applets Java, leitores de PDF e Flash Players)
+            em páginas da web, mas também pode ser usado para incluir HTML em HTML: </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;object width="100%" height="100%" data="menu-horizontal.html">&lt;/object></code>
+                </td>
+                <td>
+                    <object width="100%" height="100%" data="menu-horizontal.html"></object>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+        <h2>embed</h2>
+
+        <p>O elemento <code>&lt;embed></code> também define um objeto incorporado em um documento HTML.
+            Mas não contém a tag de fechamento. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;embed width="100%" height="100%" src="menu-horizontal.html"></code>
+                </td>
+                <td>
+                    <embed width="100%" height="100%" src="menu-horizontal.html">
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+    </section>
+    <div class="btn">
+        <a class="btn-anterior" href="identificadores.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="media.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+        <object class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

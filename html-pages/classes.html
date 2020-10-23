@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Classes em HTML5</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object class="objhorizontal" data="menu-horizontal.html"></object>
+        <object class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h2>Classes (.)</h2>
+
+        <p> O atributo class é usado para especificar uma classe para um elemento HTML, sendo útil para quem deseja
+            aplicar
+            estilos CSS (ou funções javascript) a um determinado grupo de elementos diferentes ( que podem ser p, h1-h6,
+            div, span, etc ao mesmo tempo).
+        </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;div class="azul"></code> <br>
+                    BLOCO AZUL <br>
+                    <code>&lt;/div></code> <br>
+                    <code>&lt;div class="verde"></code> <br>
+                    BLOCO VERDE <br>
+                    <code>&lt;/div></code> <br>
+                    <code>&lt;div class="azul"></code> <br>
+                    BLOCO AZUL<br>
+                    <code>&lt;/div></code> <br> <br>
+                    <code>&lt;style></code> <br>
+                    <code class="code-css">
+                        <span class="s">.azul</span> { <br>
+                        <span class="p">border</span>: <span class="v">5px solid blue</span>; <br>
+                        } <br>
+                        <span class="s">.verde</span> { <br>
+                            <span class="p">border</span>: <span class="v"> 5px solid green</span>; <br>
+                        } <br>
+                    </code>
+                    <code>&lt;/style></code><br>
+                </td>
+                <td>
+                    <div class="azul" style="border: 5px solid blue;">BLOCO AZUL</div>
+                    <div class="verde" style="border: 5px solid green;">BLOCO VERDE</div>
+                    <div class="azul" style="border: 5px solid blue;">BLOCO AZUL</div>
+                </td>
+            </tr>
+        </table>
+
+        <p> Um elemento pode ter mais de um classe separada por
+            espaços e o nome de uma classe
+            não pode começar com um número. </p>
+        <code>&lt;div class="primeira segunda terceira">&lt;/div></code>
+
+
+
+
+        <hr>
+    </section>
+
+
+    <div class="btn">
+        <a class="btn-anterior" href="elementos-block-inline.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="identificadores.html">Próximo ></a>
+    </div>
+
+
+    <br>
+    <footer>
+        <object class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>
