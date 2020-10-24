@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Seletores de pseudo-classes em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+    <section>
+
+
+
+
+        <h2 id="seletores-pseudo-classes">Seletores Pseudo-classes</h2>
+
+        <p>Uma pseudo classe é usada para definir um estado
+            especial de um elemento. Pode se usada para definir
+            um estilo quando o usuário passa o mouse ou mudar
+            o estilo para links visitados e não visitados.</p>
+
+        <span class="code">seletor:pseudo-class {propriedade1:valor1;..;}</span>
+        <br> <br>
+
+        <table class="tabela3">
+            <tr>
+                <th>Seletor</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td>seletor:active</td>
+                <td>Seleciona um elemento especificado ativo. (ex: links)</td>
+            </tr>
+            <tr>
+                <td>seletor:checked</td>
+                <td>Seleciona todos os elementos especificados com o
+                    atributo checked. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:disabled</td>
+                <td>Seleciona todos os elementos especificados com o
+                    atributo disabled. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:empty</td>
+                <td>Seleciona todos os elementos especificados
+                    que não possuem filhos. </td>
+            </tr>
+            <tr>
+                <td>seletor:enabled</td>
+                <td>Seleciona todos os elementos especificados
+                    que possuem o atributo enabled. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:first-child</td>
+                <td>Seleciona o primeiro filho do elemento especificado.</td>
+            </tr>
+            <tr>
+                <td>seletor:first-of-type</td>
+                <td>Seleciona a primeira ocorrência do elemento especificado. </td>
+            </tr>
+            <tr>
+                <td>seletor:focus</td>
+                <td>Seleciona todos os elementos que estão em foco. (ex. formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:hover</td>
+                <td>Seleciona todos os elementos especificados
+                    que estão com o mouse em cima.</td>
+            </tr>
+            <tr>
+                <td>seletor:in-range</td>
+                <td>Seleciona todos os elementos especificados que estão dentro dos
+                    valores permitidos. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:invalid</td>
+                <td>Seleciona todos os elementos que estão com
+                    valores inválidos (ex: formulátios)</td>
+            </tr>
+            <tr>
+                <td>seletor:lang(<i>language</i>)</td>
+                <td>Seleciona todos os elementos especificados
+                    que possuem o atriburo lang
+                    com a linguagem especificada.
+                </td>
+            </tr>
+            <tr>
+                <td>seletor:last-child</td>
+                <td>Seleciona todos últimos filhos dos elementos especificados.</td>
+            </tr>
+            <tr>
+                <td>seletor:last-of-type</td>
+                <td>Seleciona a última ocorrência do elementos especificado.</td>
+            </tr>
+            <tr>
+                <td>seletor:link</td>
+                <td>Seleciona todos os elementos do tipo link que
+                    não foram visitados.</td>
+            </tr>
+            <tr>
+                <td>:not(selector2)</td>
+                <td>Seleciona todos elementos que não estão especificados.</td>
+            </tr>
+            <tr>
+                <td>seletor:nth-child(n)</td>
+                <td>Seleciona o n-éssimo filho do elemento especificado</td>
+            </tr>
+            <tr>
+                <td>seletor:nth-last-child(n)</td>
+                <td>Seleciona o último n-éssimo filho do elemento especificado</td>
+            </tr>
+            <tr>
+                <td>seletor:nth-last-of-type(n)</td>
+                <td>Seleciona o último n-éssimo tipo do elemento especificado. </td>
+            </tr>
+            <tr>
+                <td>seletor:nth-of-type(n)</td>
+                <td>Seleciona o n-éssimo tipo do elemento especificado.</td>
+            </tr>
+            <tr>
+                <td>seletor:only-of-type</td>
+                <td>Seleciona todos os elementos do tipo especificados que são filhos únicos</td>
+            </tr>
+            <tr>
+                <td>seletor:only-child</td>
+                <td>Seleciona todos os elementos especificados que são filhos únicos</td>
+            </tr>
+            <tr>
+                <td>seletor:optional</td>
+                <td>Seleciona todos os elementos especificados
+                    com o atributo opcional. (ex formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:out-of-range</td>
+                <td>Seleciona todos os elementos especificados
+                    que estão fora dos valores válidos. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:read-only</td>
+                <td>Seleciona todos os elementos especificados
+                    que são de apenas leitura. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:read-write</td>
+                <td>Seleciona todos os elementos especificados
+                    que estão que não apenas de leitura. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>seletor:required</td>
+                <td>Seleciona todos os elementos especificados
+                    que são obrigatórios. (ex: formulários)</td>
+            </tr>
+            <tr>
+                <td>:target</td>
+                <td>Seleciona o elemento ativo atual. Normalmente espeficado na URL
+                    através de um ID. (ex: menus e sumários).
+                </td>
+            </tr>
+            <tr>
+                <td>seletor:valid</td>
+                <td>Seleciona todos os elementos especificados que possuem
+                    valores válidos. (ex formulários)
+                </td>
+            </tr>
+            <tr>
+                <td>seletor:visited</td>
+                <td>Seleciona todos os elementos especificados que
+                    foram visitados. (ex: link) </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="icones.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="links.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

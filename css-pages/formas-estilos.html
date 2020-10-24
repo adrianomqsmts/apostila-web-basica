@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Formas de Estilos em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+    <section>
+
+
+        <h2 id="Formasdeestilos">Formas de Estilos</h2>
+
+        <p>Existem 3 formas de aplicar estilos
+            dentro de um documento HTML.</p>
+
+
+        <hr>
+
+        <h3 id="Estiloinline">Estilo Inline</h3>
+
+        <p> O estilo inline (em linha) é uma forma embutida que pode ser
+            usada para aplicar um estilo único a um único elemento HTML.</p>
+        <p>Para usarmos a forma de estilo em linha, basta
+            adicionarmos o atributo global style dentro da
+            tag inicial de um elemento, seguida pelas propriedades
+            CSS que desejamos aplicar. </p>
+        <p>OBS: No estilo em linha, caso o valor possua mais de uma palavra,
+            deve-se usar aspas simples (exemplo 'Times New Roman').
+        </p>
+        <code>
+            &lt;tagname <span class="code">style="propriedade1:valor1; ...;"</span> >
+        </code>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;p style="<span class="p">text-align</span>:<span class="v">left</span>;<span class="p">color</span>:<span class="v">yellow</span>;"></code>
+                    <br>
+                    Oi! Eu sou um parágrafo com o estilo em linha. <br>
+                    <code>&lt;/p></code> <br>
+                </td>
+                <td>
+                    <P style="text-align: left; color: yellow;">
+                        Oi! Eu sou um parágrafo com o estilo em linha.
+                    </P>
+                </td>
+            </tr>
+        </table>
+
+        <p>Entretanto, ao aplicarmos o estilo inline, estamos perdendo
+            as vantagem que as folha de estilo nos proporciona. Pois,
+            ao misturar o conteúdo com a apresentação, estamos ainda assim,
+            misturando conteúdo e apresentação.
+            Então use o método inline com moderação. </p>
+
+
+        <hr>
+
+        <h3 id="Estilointerno">Estilo Interno</h3>
+
+        <p> Uma folha de estilo interna pode ser usada se uma única
+            página HTML tiver um estilo exclusivo. </p>
+        <p> O estilo interno é definido dentro do elemento
+            <code>&lt;style></code> dentro da cabeçalho da seção
+            <code>&lt;head></code>. </p>
+
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;style></code> <br>
+                    <code class="code-csss"> <br>
+                        <span class="s">p </span> { <br>
+                            <span class="p">text-align</span>: <span class="v">left</span>; <br>
+                            <span class="p">color </span>: <span class="v">yellow</span>; <br>
+                        } <br>
+                    </code>
+                    <code class="e">&lt;/style></code> <br>
+                    <code>&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p></code> Oi! Eu sou um parágrafo com estilo interno.<code>&lt;/p></code> <br>
+                    <code>&lt;/body></code> <br>
+                </td>
+                <td>
+                    <P style="text-align: left; color: yellow;">
+                        Oi! Eu sou um parágrafo com estilo interno.
+                    </P>
+                </td>
+            </tr>
+        </table>
+
+
+        <hr>
+        <h3 id="Estiloexterno">Estilo Externo</h3>
+
+        <p>Com uma folha de estilos externa, podemos alterar o estilo
+            de várias páginas ao mesmo tempo, alterando apenas um
+            único arquivo externo com a extensão .css. </p>
+        <p>Cada página HTML deve incluir uma referência ao
+            arquivo da folha de estilo externo dentro do elemento
+            <code>&lt;link></code>, dentro da seção de cabeçalho
+            <code>&lt;head></code>
+        </p>
+
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;link rel="stylesheet" href="arquivo.css"></code> <br>
+                    <code>&lt;/head></code> <br>
+                </td>
+            </tr>
+        </table>
+
+        <p>Um arquivo CSS deve ter a extensão .css, não pode conter
+            nenhuma tag HTML e deve ter a seguinte aparência:</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s">p </span> { <br>
+                            <span class="p">text-align</span>: <span class="v">left</span>; <br>
+                            <span class="p">color </span>: <span class="v">yellow</span>; <br>
+                        } <br> <br>
+                        <span class="s">h1 </span> { <br>
+                            <span class="p">text-align</span>: <span class="v">center</span>; <br>
+                            <span class="p">color </span>: <span class="v">blue</span>; <br>
+                        } 
+                    </code>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <hr>
+        <h3 id="">Múltiplas Fromas de Estilos</h3>
+
+        <p>Caso ocorra de utilizarmos vários arquivos externos e
+            mais de um alterar o mesmo elemento HTML, então, o último arquivo lido
+            terá preferência sobre os demais para alterar esse elemento.</p>
+        <p> Por exemplo: Dois arquivos alteram a cor de um parágrafo,
+            então, o último
+            arquivo inserido irá definir a cor que será
+            aplicada no parágrafo. </p>
+        <p>Caso utilizarmos múltiplas formas de estilos ao mesmo tempo como inline,
+            interna e externa, então os estilos serão "cascateados"
+            de tal forma que o estilo inline tem preferência/prioridade
+            sobre o estilo interno, que tem preferência/prioridade sobre
+            o estilo externo.</p>
+        <span style="color: greenyellow;">INLINE > INTERNO > EXTERNO</span>
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="seletores-simples.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="cores.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

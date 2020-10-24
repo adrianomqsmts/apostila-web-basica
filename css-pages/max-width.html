@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>max-width em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h2 id="largura-maxima">Layout - max-width: Largura máxima</h3>
+
+            <p>É sempre recomendado o uso da propriedade max-width
+                pois ela define uma largura máxima que um elemento deve ter.
+                Assim, ele pode assumir valores menores caso necessários,
+                como em telas pequenas. </p>
+            <p>Outro detalhe importante. Para centralizar elementos
+                é recomendado usar margin:auto. Assim,
+                automaticamente o espaçamento de todos os lados serão
+                ajustados para que o elemento fique centralizado. </p>
+
+            <table class="tabela">
+                <tr>
+                    <td>
+                        <div class="code-css">
+                            <span class="s">div</span> { <br>
+                            <span class="p">boder</span>: <span class="v">solid</span>; <br>
+                            <span class="p">width</span>: <span class="v">700px</span>; <br>
+                            <span class="p">margin</span>: <span class="v">auto</span>; <br>
+                            }
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="code-css">
+                            <span class="s">div</span> { <br>
+                            <span class="p">boder</span>: <span class="v">solid</span>; <br>
+                            <span class="p">max-width</span>: <span class="v">700px</span>; <br>
+                            <span class="p">margin</span>: <span class="v">auto</span>; <br>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br> <br>
+            <div style="border: solid; width: 700px; margin: auto;">
+                Oi! Eu sou um div com border: solid; width: 700px; margin: auto;
+                Experimente reduzir a tela.
+            </div>
+            <br> <br> <br>
+            <div style="border: solid; max-width: 700px; margin: auto;">
+                Oi! Eu sou um div com border: solid; max-width: 700px; margin: auto;
+                Experimente reduzir a tela.
+            </div>
+<br>
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="display.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="position.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

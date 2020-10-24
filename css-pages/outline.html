@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Outline em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+        <h2 id="Contornos">outline: contornos</h2>
+
+        <p>Além do conteúdo, do espaçamento interno, da borda e do espaçamento
+            externo, temos ainda o cortono do elemento HTML. </p>
+        <p>Mas você pode ter notado, que no modelo de caixa não haviam
+            contornos, e é extamentes isso. O contorno de um elemento não
+            ocupa um espaço ou redefine o tamanho de um elemento.</p>
+        <p>Basicamente, o contorne é uma linha desenhada do
+            lado de fora de uma borba, fazendo o elemento ter
+            um estilo ainda mais único.</p>
+        <p>Um contorno se assemelha a todas as possibilidades de uma borda,
+            sendo as principais diferenças, que a borda não acrescenta
+            tamanho ao elemento e que os contornos podem
+            sobrepor outros elementos. </p>
+        <ul>
+            <li>outline-style
+                <ul>
+                    <li>dotted, dashed, solid, double, groove, ridge,
+                        inset, outset, none, hidden. </li>
+                </ul>
+            </li>
+            <li>outline-width
+                <ul>
+                    <li>thin, medium, thick ou unidades de medida</li>
+                </ul>
+            </li>
+            <li>outline-color
+                <ul>
+                    <li>nome, HEX, RGB, HSL e invert</li>
+                </ul>
+            </li>
+            <li>outline-offset: Espaçamento entre a borda e o contorno.</li>
+            <li>outline
+                <ul>
+                    <li>outline-width</li>
+                    <li>outline-style (obrigatório)</li>
+                    <li>outline-color</li>
+                </ul>
+            </li>
+        </ul>
+    
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+    <span class="s"> div </span> {
+        <span class="p">border</span>: <span class="v">3px solid orange</span>;
+        <span class="p">outline</span>: <span class="v">3px solid blue</span>;
+    }</pre>
+                </td>
+                <td style="height: 200px;">
+                    <div style="border: 3px solid orange; outline: 3px solid blue;">
+                        Sou uma div com borda laranja e contorno azul.
+                        OPS! Observe o azul sobreponto as linhas da tabela :)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s"> div </span> {
+        <span class="p">border</span>: <span class="v">3px solid orange</span>;
+        <span class="p">outline</span>: <span class="v">3px solid blue</span>;
+        <span class="p">outline-offset</span>: <span class="v">10px</span>;
+    }</pre>
+                </td>
+                <td style="height: 200px;">
+                    <div style="border: 3px solid orange; outline: 3px solid blue; outline-offset: 10px;">
+                        Sou uma div com borda laranja e contorno azul.
+                        OPS! Observe o azul sobreponto as linhas da tabela :)
+                    </div>
+                </td>
+            </tr>
+        </table>
+    
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="height-width.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="box-sizing.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

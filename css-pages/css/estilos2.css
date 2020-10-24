@@ -1,0 +1,162 @@
+h1, h2, h3, h4 {
+    color: springgreen;
+}
+
+body {
+    padding: 0 60px 60px 60px;
+    text-align: justify;
+    background-color: #272727;
+    color: whitesmoke;
+}
+
+code {
+    color: orange;
+}
+
+.code-html {
+    letter-spacing: 0.15em;
+}
+
+.t {
+    color: orange;
+}
+
+.e {
+    padding-left: 1em;
+}
+
+.e2 {
+    padding-left: 2em;
+}
+
+.e3 {
+    padding-left: 3em;
+}
+
+.code-css {
+    font-size: 1.1em;
+    letter-spacing: 0.15em;
+}
+
+.s {
+    color: yellow;
+}
+
+.p {
+    color: chartreuse;
+    padding-left: 20px;
+}
+
+.v {
+    color: cyan;
+}
+
+.tabela {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    display: relative;
+}
+
+.tabela td {
+    width: 50%;
+}
+
+.tabela, .tabela tr, .tabela tr td, .tabela tr th {
+    border: 2px solid black;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu2 li a {
+    text-decoration: none;
+}
+
+.menu3 li {
+    display: inline;
+}
+
+.menu4 {
+    background-color: green;
+}
+
+.menu5 li a {
+    display: inline-block;
+    padding: 1em;
+}
+
+.menu6 li a:hover {
+    background-color: darkgreen;
+}
+
+.trans {
+    background-color: darkgreen;
+    width: 50px;
+    height: 200px;
+    transition: width 3s;
+}
+
+.trans:hover {
+    width: 100%;
+}
+
+.trans1 {
+    background-color: darkgreen;
+    width: 50px;
+    height: 200px;
+    transition: width 3s;
+    transition-timing-function: linear;
+}
+
+.trans1:hover {
+    width: 100%;
+}
+
+.trans2 {
+    background-color: darkgreen;
+    width: 50px;
+    height: 200px;
+    transition: width 3s;
+    transition-timing-function: ease-in-out;
+}
+
+.trans2:hover {
+    width: 100%;
+}
+
+.trans3 {
+    background-color: darkgreen;
+    width: 50px;
+    height: 200px;
+    transition: width 3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
+}
+
+.trans3:hover {
+    width: 100%;
+}
+
+.trans4 {
+    background-color: darkgreen;
+    width: 50px;
+    height: 50px;
+    transition: width 3s ease-out 1s, height 3s linear 0s;
+}
+
+.trans4:hover {
+    width: 100%;
+    height: 200px;
+    background-color: green;
+    color: black;
+}
+
+.code{
+    color: yellowgreen;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+}

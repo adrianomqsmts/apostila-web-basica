@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Box-sizing em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+        <h2> box-sizing - tamanho da caixa</h2>
+
+        <p>Você pode ver até aqui, que os elementos aumentam
+            de tamanho na medidada em que aplicamos diveros tipos
+            de espaçamentos deixando o elemento maior do que
+            gostaríamos que ficasse. Para impedir esse crescimento
+            podemos usar a propriedade box-sizing. </p>
+    
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+    <span class="s"> div </span> {
+        <span class="p">border</span>: <span class="v">1px solid orange</span>;
+        <span class="p">width</span>: <span class="v">150px</span>;
+        <span class="p">height</span>: <span class="v">150px</span>;
+        <span class="p">margin</span>: <span class="v">auto</span>;
+    }</pre>
+                </td>
+                <td>
+                    <div style="border: 1px solid orange; width: 150px; height: 150px; margin: auto;">
+                        Conteúdo
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Caixa SEM box-sizing e com espaçamento interno </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s"> div </span> {
+        <span class="p">border</span>: <span class="v">1px solid orange</span>;
+        <span class="p">width</span>: <span class="v">150px</span>;
+        <span class="p">height</span>: <span class="v">150px</span>;
+        <span class="p">margin</span>: <span class="v">auto</span>;
+        <span class="p">padding</span>: <span class="v">10px</span>;
+    }</pre>
+                </td>
+                <td>
+                    <div
+                        style="border: 1px solid orange; width: 150px; height: 150px; margin: auto; padding: 50px; box-sizing: initial;">
+                        Conteúdo
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Caixa COM box-sizing e com espaçamento interno </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s"> div </span> {
+        <span class="p">border</span>: <span class="v">1px solid orange</span>;
+        <span class="p">width</span>: <span class="v">150px</span>;
+        <span class="p">height</span>: <span class="v">150px</span>;
+        <span class="p">margin</span>: <span class="v">auto</span>;
+        <span class="p">padding</span>: <span class="v">10px</span>;
+        <span class="p">box-sizing</span>: <span class="v">border-box</span>;
+    }</pre>
+                </td>
+                <td>
+                    <div
+                        style="border: 1px solid orange; width: 150px; height: 150px; margin: auto; padding: 50px; box-sizing: border-box;">
+                        Conteúdo
+                    </div>
+                </td>
+            </tr>
+        </table>
+    
+    
+    
+    
+    
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="outline.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="textos.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

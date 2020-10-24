@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Media Queries em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <style>
+        .screen {
+            background-color: green;
+        }
+
+        .screen2 {
+            background-color: green;
+        }
+
+        @media screen and (max-width: 992px) {
+            .screen {
+                background-color: blue;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .screen {
+                background-color: yellow;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .screen2 {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h1>Media Queries</h1>
+
+        <p>Com a regra @media, podemos definir diferentes regras css para um
+            mesmo elemento HTML para diferentes tipos de mídias (telas) diferentes. </p>
+        <p>Assim, podemos definir um estilo personalizado para desktops, laptops,
+            tablets e celulares. </p>
+
+        @media not|only mediatype and (expressions) {
+        CSS-Code;
+        }
+
+        <p>O resultado da consulta é verdadeiro se o tipo de midia especificado
+            corresponde ao tipo de dispositivo que está visualizando o documento,
+            se a consulta for verdadeira, então o código CSS é aplicado no documento.
+        </p>
+
+        <p>O tipo de consulta mais comum é o tipo de telas de computadores (screen).
+            No exemplo abaixo, estamos testando as telas dos dispositivos,
+            se a tela tiver até 992px o background-color será azul, se a tela tiver
+            no máximo 600px então a tela será amarela. Se a tela for maior que 992px
+            então a div será verde. Experimente reduzindo o tamanho da tela. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s">div</span>{ <br>
+                            <span class="p">background-color</span>: <span class="v">green</span>; <br>
+                      } <br>
+                        @media screen and (max-width: 992px) { <br>
+                            <span class="s">div</span>{ <br>
+                                <span class="p">background-color</span>: <span class="v">blue</span>; <br>
+                          } <br>
+                        } <br>
+                          @media screen and (max-width: 600px) { <br>
+                            <span class="s">div</span>{ <br>
+                                <span class="p">background-color</span>: <span class="v">yellow</span>; <br>
+                          } <br>
+                        }
+                    </code>
+                </td>
+                <td>
+                    <div class="screen">
+                        OIE
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <p>
+            Podemos esconder elementos em telas menores
+        </p>
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code class="code-css">
+                          @media screen and (max-width: 600px) { <br>
+                            <span class="s">div</span>{ <br>
+                                <span class="p">display</span>: <span class="v">none</span>; <br>
+                          } <br>
+                         }
+                    </code>
+                </td>
+                <td>
+                    <div class="screen2">
+                        OIE Tudo bem? PF! não diminua a tela, tenho medo.
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <p>Para ver a referência e todas os tipos de mídias possível acesse:</p>
+        <ul>
+            <li>
+                <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">CSS @media Rule</a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp">Media Queries - Examples</a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/css/css3_mediaqueries_ex.asp">Media Queries</a>
+            </li>
+        </ul>
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="transicoes.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="colunas.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

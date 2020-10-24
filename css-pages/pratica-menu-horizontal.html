@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Menu horizontal em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <style>
+        .menu {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .menu2 li a {
+            text-decoration: none;
+        }
+
+        .menu3 li {
+            display: inline;
+        }
+
+        .menu4 {
+            background-color: green;
+        }
+
+        .menu5 li a {
+            display: inline-block;
+            padding: 1em;
+        }
+
+        .menu6 li a:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+        <h2 id="barras-navegacao">Menus - Barras de navegação</h2>
+
+        <p>Uma barra de navegação é puramente links em uma lista
+            com diferentes
+            propriedades CSS aplicadas. Então vamos criar,
+            passo a passo uma barra de navegações (Navigation Bar)</p>
+
+        <p>1º Passo: Criar uma lista com links.</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-html">
+                        <span class="t e">&lt;ul></span> <br>
+                        <span class="t e2">&lt;li></span> <br>
+                        <span class="t e3">&lt;a href="#"></span>Home<span class="t">&lt;/a></span> <br>
+                        <span class="t e3">&lt;a href="#"></span>Conteúdo<span class="t">&lt;/a></span> <br>
+                        <span class="t e3">&lt;a href="#"></span>Sobre<span class="t">&lt;/a></span> <br>
+                        <span class="t e3">&lt;a href="#"></span>Contatos<span class="t">&lt;/a></span> <br>
+                        <span class="t e2">&lt;/li></span> <br>
+                        <span class="t e">&lt;/ul></span> <br>
+                    </div>
+                </td>
+                <td>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p>2º passo: Remover todos os detalhes visuais da lista, como
+            os marcadores e os espaçamentos.</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul</span> { <br>
+                        <span class="p">list-style-type</span>: <span class="v">none</span>; <br>
+                        <span class="p">margin</span>: <span class="v">0</span>; <br>
+                        <span class="p">padding</span>: <span class="v">0</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul style="padding: 0; margin: 0; list-style-type: none;">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p>3º Passo: Remover a decoração de textos dos links</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul li a</span> { <br>
+                        <span class="p">text-decoration</span>: <span class="v">none</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul class="menu menu2">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p> 4º Passo: Fazer com que os item da lista fiquem lado a lados
+            através do display:inline (ou fluar um ao lado do outro com o float:left).</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul li</span> { <br>
+                        <span class="p">display</span>: <span class="v">inline</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul class="menu menu2 menu3">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p>5º Passo: Colocar um fundo colorido para a lista</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul</span> { <br>
+                        <span class="p">list-style-type</span>: <span class="v">none</span>; <br>
+                        <span class="p">margin</span>: <span class="v">0</span>; <br>
+                        <span class="p">padding</span>: <span class="v">0</span>; <br>
+                        <span class="p">background-color</span>: <span class="v">green</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul class="menu menu2 menu3 menu4">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p>6º Transformar o link em um elemento de bloco de linha
+            para poder auterar a sua altura e largura
+        </p>
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul li a</span> { <br>
+                        <span class="p">text-decoration</span>: <span class="v">none</span>; <br>
+                        <span class="p">display</span>: <span class="v">inline-block</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul class="menu menu2 menu3 menu4">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+
+        <p>7º Passo: Colocar um espaçamento internos nos links para aumentar
+            a área clicável do menu. </p>
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul li a</span> { <br>
+                        <span class="p">text-decoration</span>: <span class="v">none</span>; <br>
+                        <span class="p">display</span>: <span class="v">inline-block</span>; <br>
+                        <span class="p">padding</span>: <span class="v">2em</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul class="menu menu2 menu3 menu4 menu5">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p>8º Passo: Aplicar estilos :hover</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">ul li a:hover</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <ul class="menu menu2 menu3 menu4 menu5 menu6">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Conteúdo</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="float.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="transicoes.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Especificidade em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+        <h2 id="especificidade ">Especificidade</h2>
+
+        <p>Quando temos duas regras CSS tentando aplicar um estilo em um mesmo
+            elemento, normalmente a regra mais específica vence. </p>
+        <p>Um exemplo seria, seletores #id vencem seletores .classe, que
+            por sua vem vencem seletores comuns.</p>
+
+        <p>Abaixo temos uma lista de especificidade, onde o item mais alto na
+            lista vence os demais para aplicar o mesmo estilo.</p>
+        <ol>
+            <li>Estilo Embutido (style="")</li>
+            <li>Identificadores (#id)</li>
+            <li>Classes (.class), atributos ([atributos]) e pseudo-classes (:hover)</li>
+            <li>Elementos (h1,p,div..) e pseudo-elementos(::before)</li>
+        </ol>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <span class="s"> #titulo </span> { <br>
+                    <span class="p">color</span>: <span class="v">blue</span>; <br>
+                    } <br>
+                    <span class="s"> h1</span> { <br>
+                    <span class="p">color</span>: <span class="v">red</span>; <br>
+                    }
+                </td>
+                <td>
+                    <h1 style="color: blue;">Eu sou um título com ID titulo</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s"> #titulo </span> { <br>
+                    <span class="p">color</span>: <span class="v">blue</span>; <br>
+                    } <br>
+                    <span class="s"> .titlo2 </span> { <br>
+                    <span class="p">color</span>: <span class="v">red</span>; <br>
+                    }
+                </td>
+                <td>
+                    <h1 style="color: blue;">Eu sou um título com ID titulo e classe titulo2</h1>
+                </td>
+            </tr>
+        </table>
+
+        <p>Para saber como calcular corretamente a especificidade acesse:
+            <a href="https://www.w3schools.com/css/css_specificity.asp">Referência sobre especificidade</a>
+        </p>
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="formularios.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="display.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

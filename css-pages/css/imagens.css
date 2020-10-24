@@ -1,0 +1,57 @@
+
+.divimg {
+    height: 200px;
+    background-image: url(../../imagens/img4.jpg);
+    border: 2px solid green;
+}
+
+.divimg2 {
+    height: 200px;
+    background-image: url(../../imagens/img4.jpg);
+    border: 2px solid green;
+    background-repeat: no-repeat;
+}
+
+#repetirX {
+    background-repeat: repeat-x;
+}
+
+#repetirY {
+    background-repeat: repeat-y;
+}
+
+#nao-repetir {
+    background-repeat: no-repeat;
+}
+
+#img-esquerda {
+    background-position: left;
+}
+
+#img-direita {
+    background-position: right;
+}
+
+#img-centro {
+    background-position: center;
+}
+
+#img-direita-em-cima {
+    background-position: right top;
+}
+
+#img-esquerda-em-baixo {
+    background-position: left bottom;
+}
+
+#img-centro-em-baixo {
+    background-position: bottom center;
+}
+
+.divimg3 {
+    height: 300px;
+    background-image: url(../../imagens/img4.jpg);
+    background-repeat: no-repeat;
+    border: 2px solid green;
+    background-attachment: scroll;
+}

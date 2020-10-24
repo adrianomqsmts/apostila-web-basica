@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Tabelas em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <style>
+        .ex1 {
+            border: 1px solid green;
+        }
+
+        .ex1 tr th,
+        .ex1 tr td,
+        .ex1 tr {
+            border: none;
+        }
+
+        .ex2,
+        .ex2 tr th,
+        .ex2 tr td,
+        .ex2 tr {
+            border: 1px solid green;
+        }
+
+        .ex3 {
+            border-collapse: collapse;
+        }
+
+        .ex3,
+        .ex3 tr th,
+        .ex3 tr td,
+        .ex3 tr {
+            border: 1px solid green;
+        }
+
+        .ex4 {
+            border-collapse: collapse;
+            height: 1.5em;
+            width: 100%;
+        }
+
+        .ex4 th {
+            text-align: center;
+        }
+
+        .ex4,
+        .ex4 tr th,
+        .ex4 tr td,
+        .ex4 tr {
+            border: 1px solid green;
+        }
+
+        .ex5 {
+            border-collapse: collapse;
+            height: 1.5em;
+            width: 100%;
+        }
+
+        .ex5 th {
+            text-align: center;
+        }
+
+        .ex5 td,
+        .ex5 th {
+            padding: 1.3em;
+        }
+
+        .ex5,
+        .ex5 tr th,
+        .ex5 tr td,
+        .ex5 tr {
+            border: 1px solid green;
+        }
+
+        .ex6 {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .ex6 th {
+            text-align: center;
+        }
+
+        .ex6 tr:hover {
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        .ex6 td,
+        .ex6 th {
+            height: 3em;
+            padding: 1.3em;
+            vertical-align: top;
+        }
+
+        .ex6,
+        .ex6 tr th,
+        .ex6 tr td,
+        .ex6 tr {
+            border: 1px solid green;
+        }
+
+        .ex7 {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .ex7 th {
+            text-align: center;
+        }
+
+        .ex7 td,
+        .ex7 th {
+            height: 3em;
+            padding: 1.3em;
+            vertical-align: top;
+        }
+
+        .ex7 tr:nth-child(even) {
+            background-color: gray;
+        }
+
+        .ex7,
+        .ex7 tr th,
+        .ex7 tr td,
+        .ex7 tr {
+            border: 1px solid green;
+        }
+
+        .ex7 tr:hover {
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+
+        <h2 id="tabelas">Tabelas</h2>
+
+        <p>Com todas as propriedades que vimos até aqui é totalmente
+            possível editar uma tabela por completo. </p>
+
+        <table class="tabela">
+            <tr>
+                <td colspan="2">
+                    Definindo Bordas para uma tabela.
+                    "ex" é o nome da classe do elemento table.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table</span> {
+        <span class="p">border</span>: <span class="v">green</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex1">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Definindo Bordas para todos os elementos de uma tabela.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table, table tr th, table tr td, table tr</span> {
+        <span class="p">border</span>: <span class="v">green</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex2">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Definindo Bordas para todos os elementos de uma tabela.
+                    E as agrupando em uma única borda com a propriedade
+                    border-collapse: collapse;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table</span> {
+        <span class="p">border-collapse:</span>: <span class="v">collapse</span>;
+    }                
+    <span class="s">table, table tr th, table tr td, table tr</span> {
+        <span class="p">border</span>: <span class="v">green</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex3">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Definindo a altura e largura da tabela
+                    para preencher todo o o elemento.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table</span> {
+        <span class="p">border-collapse</span> <span class="v">collapse</span>;
+        <span class="p">height</span>: <span class="v">1.5em</span>;
+        <span class="p">wight</span>: <span class="v">100%</span>;
+    }                
+    <span class="s">table, table tr th, table tr td, table tr</span> {
+        <span class="p">border</span>: <span class="v">green</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex4">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Defindo um espaçamento interno dos elementos
+                    com o atributo padding.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table</span> {
+        <span class="p">border-collapse</span> <span class="v">collapse</span>;
+        <span class="p">height</span>: <span class="v">1.5em</span>;
+        <span class="p">wight</span>: <span class="v">100%</span>;
+    }    
+    <span class="s">table td, table th</span> {
+        <span class="p">padding</span>: <span class="v">1.3em</span>;
+    }
+    <span class="s">table, table tr th, table tr td, table tr</span> {
+    <span class="p">border</span>: <span class="v">green</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex5">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Podemos usar o o seletor :hover
+                    para destacar a linha ao passar o mouse.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table</span> {
+        <span class="p">border-collapse</span> <span class="v">collapse</span>;
+        <span class="p">height</span>: <span class="v">100%</span>;
+        <span class="p">wight</span>: <span class="v">100%</span>;
+    }    
+    <span class="s">table td, table th</span> {
+        <span class="p">padding</span>: <span class="v">1.3em</span>;
+    }
+    <span class="s">table tr:hover</span> {
+        <span class="p">background-color</span>: <span class="v">black</span>;
+    }
+    <span class="s">table, table tr th, table tr td, table tr</span> {
+    <span class="p">border</span>: <span class="v">green</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex6">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Para fazer uma tabala listada, usamos o seletor
+                    :nth-child(even) especificando a cor do background.
+                    (even - linhas impar)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">table</span> {
+        <span class="p">border-collapse</span> <span class="v">collapse</span>;
+        <span class="p">height</span>: <span class="v">100%</span>;
+        <span class="p">wight</span>: <span class="v">100%</span>;
+    }    
+    <span class="s">table td, .ex7 th</span> {
+        <span class="p">padding</span>: <span class="v">1.3em</span>;
+    }
+    <span class="s">table:nth-child(even)</span> {
+        <span class="p">background-color</span>: <span class="v">gray</span>;
+    }
+    <span class="s">table, table tr th, table tr td, table tr</span> {
+        <span class="p">border</span>: <span class="v">green</span>;
+    }
+    <span class="s">table tr:hover</span> {
+        <span class="p">background-color</span>: <span class="v">black</span>;
+    }</pre>
+                </td>
+                <td>
+                    <table class="ex7">
+                        <tr>
+                            <th>TH1</th>
+                            <th>TH2</th>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                        <tr>
+                            <td>TD1</td>
+                            <td>TD2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="listas.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="seletores-pseudo-elementos.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

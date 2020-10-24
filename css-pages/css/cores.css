@@ -1,0 +1,102 @@
+#div1 {
+    background-color: rgb(0, 0, 0);
+}
+
+#div2 {
+    background-color: rgb(0, 0, 255);
+}
+
+#div3 {
+    background-color: rgb(0, 255, 0);
+}
+
+#div4 {
+    background-color: rgb(255, 0, 0);
+}
+
+#div5 {
+    background-color: rgb(255, 165, 0);
+}
+
+#div6 {
+    background-color: rgb(83, 190, 30);
+}
+
+#div7 {
+    background-color: rgb(50, 50, 50);
+}
+
+#div8 {
+    background-color: rgb(100, 100, 100);
+}
+
+#div9 {
+    background-color: rgb(200, 200, 200);
+}
+
+#div10 {
+    background-color: rgb(106, 0, 128);
+    color: rgb(0f, 0, 0);
+}
+
+#div11 {
+    background-color: rgba(106, 0, 128, 0.0);
+}
+
+#div12 {
+    background-color: rgba(106, 0, 128, 0.2);
+}
+
+#div13 {
+    background-color: rgba(106, 0, 128, 0.5);
+}
+
+#div14 {
+    background-color: rgba(106, 0, 128, 0.7);
+}
+
+#div15 {
+    background-color: rgba(106, 0, 128, 1.0);
+}
+
+#div16 {
+    background-color: #000000;
+}
+
+#div17 {
+    background-color: #0000ff;
+}
+
+#div18 {
+    background-color: #00ff00;
+}
+
+#div19 {
+    background-color: #ff0000;
+}
+
+#div20 {
+    background-color: #a040bc;
+}
+
+#div21 {
+    background-color: #abc012;
+}
+
+#div22 {
+    background-color: #222222;
+}
+
+#div23 {
+    background-color: #777777;
+}
+
+#div24 {
+    background-color: #cccccc;
+    color: #000000;
+}
+
+#div25 {
+    background-color: #ffffff;
+    color: #000000;
+}

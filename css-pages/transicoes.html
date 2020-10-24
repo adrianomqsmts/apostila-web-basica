@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Transições em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <style>
+        .trans {
+            background-color: darkgreen;
+            width: 50px;
+            height: 200px;
+            transition: width 3s;
+        }
+
+        .trans:hover {
+            width: 100%;
+        }
+
+        .trans1 {
+            background-color: darkgreen;
+            width: 50px;
+            height: 200px;
+            transition: width 3s;
+            transition-timing-function: linear;
+        }
+
+        .trans1:hover {
+            width: 100%;
+        }
+
+        .trans2 {
+            background-color: darkgreen;
+            width: 50px;
+            height: 200px;
+            transition: width 3s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .trans2:hover {
+            width: 100%;
+        }
+
+        .trans3 {
+            background-color: darkgreen;
+            width: 50px;
+            height: 200px;
+            transition: width 3s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s;
+        }
+
+        .trans3:hover {
+            width: 100%;
+        }
+
+        .trans4 {
+            background-color: darkgreen;
+            width: 50px;
+            height: 50px;
+            transition: width 3s ease-out 1s, height 3s linear 0s;
+        }
+
+        .trans4:hover {
+            width: 100%;
+            height: 200px;
+            background-color: green;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+
+
+        <h2 id="transição">Transições</h2>
+
+        <p>As transições são usada para que se altere o
+            estilo de um elemento de forma suave durante um
+            determinado tempo especificado.</p>
+        <p>A propriedade transition precisa de dois valores,
+            a primeira é qual outra propriedade você deseja aplicar
+            no elemento, seguido pelo tempo que essa propriedade
+            especificada deve transitar. </p>
+        <p>O próximo passo é utilizar o seletor :hover com
+            a propriedade especificada na propriedade transition </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">transition</span>: <span class="v">width 3s</span>; <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        } <br>
+                    </div>
+                </td>
+                <td>
+                    <div class="trans">Passe o Mouse</div>
+                </td>
+            </tr>
+        </table>
+
+        <p>Podemos especificar a qual tipo de aceleração queremos
+            para transição com o atributo transition-timing-function que
+            possuí os seguintes valores : </p>
+        <ul>
+            <li>
+                <b>ease</b>: Especifica um efeito de transição com início lento, depois rápido e, a seguir, fim lento (é
+                o
+                padrão).
+            </li>
+            <li>
+                <b>linear</b>: Especifica um efeito de transição com a mesma velocidade do início ao fim.
+            </li>
+            <li>
+                <b>ease-in</b>: Especifica um efeito de transição com um início lento.
+            </li>
+            <li>
+                <b> ease-out</b>: Especifica um efeito de transição com um final lento.
+            </li>
+            <li>
+                <b>ease-in-out</b>: Especifica um efeito de transição com início e final lento.
+            </li>
+        </ul>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">transition</span>: <span class="v">width 3s</span>; <br>
+                        <span class="p">transition-timing-function</span>: <span class="v">linear</span>; <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="trans1">Passe o Mouse</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">transition</span>: <span class="v">width 3s</span>; <br>
+                        <span class="p">transition-timing-function</span>: <span class="v">ease-in-out</span>; <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="trans2">Passe o Mouse</div>
+                </td>
+            </tr>
+        </table>
+
+        <p>Podemos especificar o tempo de demora em que vai iniciar a transição
+            com a propriedade transition-delay. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">transition</span>: <span class="v">width 3s</span>; <br>
+                        <span class="p">transition-timing-function</span>: <span class="v">ease-in</span>; <br>
+                        <span class="p"> transition-delay</span>: <span class="v">1s</span>; <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="trans3">Passe o mouse, demora 1 s.</div>
+                </td>
+            </tr>
+        </table>
+
+        <p>Podemos usar transition-property e transition-duration no lugar
+            de transition, assim como também podemos usar
+            as demias propriedadas de transições em transition.
+        </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">transition-property</span>: <span class="v">width</span>; <br>
+                        <span class="p">transition-duration</span>: <span class="v">3s</span>; <br>
+                        <span class="p">transition-timing-function</span>: <span class="v">ease-out</span>; <br>
+                        <span class="p"> transition-delay</span>: <span class="v">1s</span>; <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="trans3">Passe o mouse, demora 1 s.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">transition</span>: <span class="v">width 3s ease-out 1s</span>; <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="trans3">Passe o mouse, demora 1 s.</div>
+                </td>
+            </tr>
+        </table>
+
+        <p>Se quisermos usar a transição em mais de uma propriedade, podemos
+            usar outra declaração transition ou separar por vírgulas cada
+            propriedade. </p>
+
+        <span class="code">transition: propriedade duração efeito demora, propriedade duração efeito demora...;</span>
+        <br> <br>
+
+
+        <table class="tabela">
+            <tr style="height: 200px;">
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">background-color</span>: <span class="v">darkgreen</span>; <br>
+                        <span class="p">width</span>: <span class="v">50px</span>; <br>
+                        <span class="p">height</span>: <span class="v">50px</span>; <br>
+                        <span class="p">transition</span>: <span class="v">width 3s ease-out 1s, height 3s linear
+                            0s</span>;
+                        <br>
+                        } <br>
+                        <span class="s">div:hover</span> { <br>
+                        <span class="p">width</span>: <span class="v">100%</span>; <br>
+                        <span class="p">height</span>: <span class="v">200px</span>; <br>
+                        <span class="p">background-color</span>: <span class="v">green</span>; <br>
+                        <span class="p">color</span>: <span class="v">black</span>;
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="trans4">Passe o mouse, demora 1 s.</div>
+                </td>
+            </tr>
+        </table>
+
+        <p>Para ver mais sobre transções acesse: <a href="https://www.w3schools.com/css/css3_images.asp">Transição com
+                imagens</a></p>
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="pratica-menu-horizontal.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="cursores.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

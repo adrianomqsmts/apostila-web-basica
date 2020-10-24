@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Textos CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+
+
+        <h3 id="Cortextos">color: cores dos textos</h3>
+
+        <p>A propriedade color é usada para definir a cor do texto, podendo
+            assumir valores como o nome de uma cor, HEX ou RGB. Entretanto,
+            de acordo com as normas, sempre que definir uma cor, deve-se usar a
+            propriedade background-color. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+<span class="s"> p </span> {
+    <span class="p">color</span>: <span class="v">orange</span>;
+    <span class="p">background-color<span>: <span class="v">none</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="color: orange; background-color: none;">
+                        Oi! Voltei. Eu sou um parágrafo com letras laranjas
+                        e fundo vazio.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s"> p </span> {
+    <span class="p">color</span>: <span class="v">green</span>;
+    <span class="p">background-color<span>: <span class="v">black</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="color: green; background-color: black;">
+                        Oi! Voltei. Eu sou um parágrafo com letras verdes
+                        e fundo preto.
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+
+        <hr>
+
+        <h3 id="Alinhamento-textos">text-align: alinhamento de textos</h3>
+
+        <p>A propriedade text-align e vertical-align são usadas
+            para definir a o alinhamento horizontal e o alinhamento
+            vertial, respectivamente, de um texto.</p>
+        <p>O text-align pode assumir valores como left (esquerda),
+            right (direita), center (centralizado) e justify (justificado). </p>
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-align</span>: <span class="v">right</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-align: right;">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        dicta tempore alias vel expedita voluptatibus molestias
+                        quasi maxime enim animi, totam officiis quod voluptatum
+                        ipsa architecto illum eos? Accusamus, aliquam culpa.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-align</span>: <span class="v">justify</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-align: justify;">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        dicta tempore alias vel expedita voluptatibus molestias
+                        quasi maxime enim animi, totam officiis quod voluptatum
+                        ipsa architecto illum eos? Accusamus, aliquam culpa.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-align</span>: <span class="v">center</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-align: center;">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        dicta tempore alias vel expedita voluptatibus molestias
+                        quasi maxime enim animi, totam officiis quod voluptatum
+                        ipsa architecto illum eos? Accusamus, aliquam culpa.
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <p>Para ver alinhamento vertical acesse: <a
+                href="https://www.w3schools.com/css/tryit.asp?filename=trycss_vertical-align">Alinhamento Vertial</a>
+
+
+            <hr>
+
+
+        <h3 id="decoracao-texto">text-decoration: underline, sobrelinha e tachado.</h3>
+
+        <p>A propriedade text-decoration é usada para
+            escrever linhas em textos ou remover, através do valor none,
+            essas linhas, como nos casos dos links. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-decoration</span>: <span class="v">overline</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-decoration: overline;">
+                        Olhe, estou com overline (sobrelinha).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-decoration</span>: <span class="v">line-through</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-decoration: line-through;">
+                        Olhe, estou com line-through (tachado).
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-decoration</span>: <span class="v">underline</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-decoration: underline;">
+                        Olhe, estou com underline (sublinhado).
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+
+        <hr>
+
+        <h3 id="text-transform">text-transform: minúsculo, maiúsculo e capitalizado</h3>
+
+        <p>A propriedade text-transform é usada para transformar todas
+            as letras do texto em maiúsculas (uppercase), minúsculas (lowercase),
+            ou as primeiras letras de cada palavra em maiúscula (capitalize).</p>
+
+        <table class="tabela">
+            <tr>
+                <td colspan="2">
+                    <p>
+                        Olhe! Eu sou apenas um parágrafo.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-transform</span>: <span class="v">lowercase</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-transform: lowercase;">
+                        Olhe! Eu sou apenas um parágrafo.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-transform</span>: <span class="v">uppercase</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-transform: uppercase;">
+                        Olhe! Eu sou apenas um parágrafo.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-transform</span>: <span class="v">capitalize</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-transform: capitalize;">
+                        Olhe! Eu sou apenas um parágrafo.
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <hr>
+
+        <h3 id="espcamento-textos">Espaçamento de textos</h3>
+
+        <ul>
+            <li><b>text-indent</b>: Define o recuo da primeira linha de um texto</li>
+            <li><b>letter-spacing</b>: Define o espaçamento entre as letras</li>
+            <li><b>line-height</b>: Define o espaçamento entre as linhas de um texto</li>
+            <li><b>word-spacing</b>: Define o espaçamento entre as palavras</li>
+        </ul>
+
+        <table class="tabela">
+            <tr>
+                <td colspan="2">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Non aperiam labore voluptate nostrum, unde perspiciatis
+                        cum repellendus nihil earum quas repudiandae, eum hic
+                        deleniti! Veritatis, adipisci itaque! Veniam, expedita
+                        natus!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-ident</span>: <span class="v">50px</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-indent: 50px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Non aperiam labore voluptate nostrum, unde perspiciatis
+                        cum repellendus nihil earum quas repudiandae, eum hic
+                        deleniti! Veritatis, adipisci itaque! Veniam, expedita
+                        natus!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">letter-spacing</span>: <span class="v">3px</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="letter-spacing: 3px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Non aperiam labore voluptate nostrum, unde perspiciatis
+                        cum repellendus nihil earum quas repudiandae, eum hic
+                        deleniti! Veritatis, adipisci itaque! Veniam, expedita
+                        natus!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">line-height</span>: <span class="v">2</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="line-height: 2;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Non aperiam labore voluptate nostrum, unde perspiciatis
+                        cum repellendus nihil earum quas repudiandae, eum hic
+                        deleniti! Veritatis, adipisci itaque! Veniam, expedita
+                        natus!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">word-spacing</span>: <span class="v">20px</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="word-spacing: 20px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Non aperiam labore voluptate nostrum, unde perspiciatis
+                        cum repellendus nihil earum quas repudiandae, eum hic
+                        deleniti! Veritatis, adipisci itaque! Veniam, expedita
+                        natus!
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+
+        <h3 id="text-shadow">text-shadow: sombreamento de textos</h3>
+
+        <p>A propriedade text-shadow é usada para aplicar
+            o efeito de sombreamento em um texto, especificando
+            os seguintes valores: </p>
+        <span class="code">text-shadow: sombra horizontal sombra vertical desfoque cor</span>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-shadow</span>: <span class="v">3px 2px 5px gray</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-shadow: 3px 2px 5px gray;">
+                        EFEITO DE SOMBRA
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+<span class="s">p </span> {
+    <span class="p">text-shadow</span>: <span class="v"> 10px 6px 2px blue</span>;
+}</pre>
+                </td>
+                <td>
+                    <p style="text-shadow: 10px 6px 2px blue;">
+                        EFEITO DE SOMBRA
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="box-sizing.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="fontes.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

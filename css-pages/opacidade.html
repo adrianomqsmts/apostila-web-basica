@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Opacidade em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <style>
+        .imgopa:hover {
+            opacity: 0.3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+        <h2 id="opacidade">Opacidade</h2>
+
+        <p>A propriedade ocacity especifica a opacidade ou transparência
+            de um determiando elemento HTML tanto imagens quanto blocos.
+            Como vimos em cores, isso
+            também pode ser feito em alguns casos usando RGBA. O seu
+            valor varia de 0.0 até 1.0</p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <span class="s">img</span> { <br>
+                    <span class="p">opacity</span>: <span class="v">0.2</span>; <br>
+                    }
+                </td>
+                <td>
+                    <img style="width: 100%; height: 150px; opacity: 0.2;" src="../imagens/img2.png" width="50px"
+                        height="50px" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s">img</span> { <br>
+                    <span class="p">opacity</span>: <span class="v">0.5</span>; <br>
+                    }
+                </td>
+                <td>
+                    <img style="width: 100%; height: 150px; opacity: 0.5;" src="../imagens/img2.png" width="50px"
+                        height="50px" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s">img</span> { <br>
+                    <span class="p">opacity</span>: <span class="v">0.7</span>; <br>
+                    }
+                </td>
+                <td>
+                    <img style="width: 100%; height: 150px; opacity: 0.7;" src="../imagens/img2.png" width="50px"
+                        height="50px" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s">img</span> { <br>
+                    <span class="p">opacity</span>: <span class="v">1.0</span>; <br>
+                    }
+                </td>
+                <td>
+                    <img style="width: 100%; height: 150px; opacity: 1.0;" src="../imagens/img2.png" width="50px"
+                        height="50px" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s">img:hover</span> { <br>
+                    <span class="p">opacity</span>: <span class="v">0.3</span>; <br>
+                    }
+                </td>
+                <td>
+                    <img style="width: 100%; height: 150px;" class="imgopa" src="../imagens/img2.png" width="50px"
+                        height="50px" alt="">
+                </td>
+            </tr>
+        </table>
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="seletores-pseudo-elementos.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="gradiente.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

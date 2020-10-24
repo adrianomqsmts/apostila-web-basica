@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Colunas em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+        <h2 id="multiplas-colunas">Múltiplas colunas</h2>
+
+        <ul>
+            <li>
+                <b>column-count</b>: propriedade que especifica quantos números de colunas um elemento
+                HTML deve ter.
+            </li>
+            <li>
+                <b>column-gap</b>: Especifica a largura do espaçamento entre as colunas.
+            </li>
+            <li>
+                <b>column-rule-style</b>: Especifica o tipo de divisória ustilizada entre as colunas.
+            </li>
+            <li>
+                <b>column-rule-width</b>: Especifica a largura da divisória entre as colunas.
+            </li>
+            <li>
+                <b>column-rule-color</b>: Especifica a cor da divisória entre as colunas.F
+            </li>
+            <li>
+                <b>column-rule</b>: Abreviação
+                <ul>
+                    <li>column-rule: width style color</li>
+                </ul>
+            </li>
+            <li>
+                <b>column-span</b>: Especifica quantas colunas um elemento
+                deve abranger. (imagem ou título por exemplo).
+            </li>
+            <li>
+                <b> column-width</b>: Especifica a largura idela para cada coluna.
+            </li>
+            <li><b>columns</b>: Abreviação
+                <ul>
+                    <li>columns: width count</li>
+                </ul>
+            </li>
+        </ul>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <div class="code-css">
+                        <span class="s">div</span> { <br>
+                        <span class="p">columns</span>: <span class="v">3</span>; <br>
+                        <span class="p">column-rule</span>: <span class="v">0.2em double greenyellow</span>; <br>
+                        <span class="p">column-gap</span>: <span class="v"> 2em</span>; <br>
+                        <br>
+                        } <br>
+                        <span class="s">div h1</span> { <br>
+                        <span class="p">column-span</span>: <span class="v">all</span>; <br>
+                        }
+                    </div>
+                </td>
+                <td>
+
+                    <div style="columns: 3; column-rule: 0.2em double greenyellow; column-gap: 2em;">
+                        <h1 style="column-span: all;">titulo dentro a div</h1>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint laborum perspiciatis eligendi
+                        voluptatibus optio maxime doloremque voluptatem voluptate architecto! Vero possimus quos nemo
+                        vel
+                        dignissimos blanditiis optio numquam pariatur repellat? <br>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut distinctio vel officia eaque,
+                        corrupti
+                        saepe nesciunt quaerat commodi inventore consectetur officiis illum consequatur minima.
+                        Laudantium
+                        error quisquam dignissimos ex sapiente? <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quam perspiciatis harum,
+                        adipisci eum, nemo in nulla corporis totam, quo ullam a quaerat saepe consequuntur provident
+                        explicabo ut quisquam aliquam!
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="cursores.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="media-queries.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

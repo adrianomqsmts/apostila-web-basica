@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Gradiente em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+        
+
+        <h2 id="gradientes">Gradientes</h2>
+
+        <p>Podemos aplicar gradientes de cores em diferentes
+            elementos HTML através da função linear-gradient
+            ou radial-gradient. </p>
+        <p>Os parâmetros da função são: </p>
+    
+        <span class="code">background-image: linear-gradient(direção, cor1, cor2, ...); </span>
+        <br>
+        <span class="code">background-image: radial-gradient(formato, cor1, cor2, ...); </span>
+        <br> <br>
+        <table class="tabela">
+            <tr>
+                <td>
+                    <span class="s">div </span> { <br>
+                    <span class="p">background-image</span>: <span class="v">linear-gradient(to bottom,
+                        red, yellow)</span>; <br>
+                    }
+                </td>
+                <td>
+                    <div style="height: 100px; width: 100%; background-image: linear-gradient(red, yellow);"></div>
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <span class="s">div </span> { <br>
+                    <span class="p">background-image</span>: <span class="v">linear-gradient(to right,
+                        red, yellow, green)</span>; <br>
+                    }
+                </td>
+                <td>
+                    <div
+                        style="height: 100px; width: 100%; background-image: linear-gradient(to right, red, yellow, green);">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s">div </span> { <br>
+                    <span class="p">background-image</span>: <span class="v">linear-gradient(to right,
+                        rgba(255,0,0,0),rgba(0,2555,0,0.5), rgba(0,0,255,1))</span>; <br>
+                    }
+                </td>
+                <td>
+                    <div
+                        style="height: 100px; width: 100%; background-image: linear-gradient(to right,rgba(255,0,0,0),rgba(0,2555,0,0.5), rgba(0,0,255,1));">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="s">div </span> { <br>
+                    <span class="p">background-image</span>: <span class="v">lradial-gradient(circle, red,
+                        yellow, green);</span>; <br>
+                    }
+                </td>
+                <td>
+                    <div style="height: 200px; width: 100%; background-image: radial-gradient(circle, red, yellow, green);">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    
+        <p>Para aprender mais sobre gradientes e outros possíveis parâmetros acesse: </p>
+        <ul>
+            <li>
+                <a href="https://www.w3schools.com/css/css3_gradients.asp">Gradiente linear</a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/css/css3_gradients_radial.asp">Gradiente circular</a>
+            </li>
+        </ul>
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="opacidade.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="seletores-atributos.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

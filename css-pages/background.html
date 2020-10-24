@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>background em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="css/imagens.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+    <section>
+
+
+
+        <h2 id="Background">Background: fundo da tela</h2>
+
+        <p>A propriedade de fundo (Background) é usada para definir
+            os efeitos de fundo de um elemento HTML. </p>
+
+
+
+        <h3 id="background-image">background-image: imagem do fundo</h3>
+
+        <p>A propriedade background-image especifica uma
+            imagem para ser usada como plano de fundo
+            de um elemento HTML. </p>
+        <p>Por padrão, caso a imagem tenha um tamanho menor que o elemento
+            HTML, então a imagem ficara se repetindo, até que preencha todo
+            o elemento html. </p>
+        <span class="code"> elemento { background-image: url(caminho/img); ...; }</span>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> div </span> { <br>
+                            <span class="p">background-image</span>: <span class="v"> url(imagens/img2.png)</span>; <br>
+                        } <br>
+                        
+                        <span class="s"> span </span> { <br>
+                            <span class="p">background-color</span>: <span class="v">url(imagens/img3.gif)</span>; <br>
+                        } <br>
+                    </code>
+                </td>
+                <td>
+                    <div style="background-image: url(../imagens/img2.png);">
+                        Oi! Eu sou uma div.
+                    </div>
+                    <span style="background-image: url(../imagens/img3.gif)">
+                        Oi! Eu sou um span.
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="Background-repeat">background-repeat: repetição do fundo</h3>
+
+        <p>Caso a queiramos que a imagem não se repita ao longo
+            na horizontal ou vertial, podemos usar a propriedade
+            Background-repeat para especificar em qual sentido,
+            queremos que a imagem se repita ou que ela não se repita
+            para preenher o elemento HTML. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> div </span> { <br>
+                            <span class="p">height</span>: <span class="v">200px</span>; <br>
+                            <span class="p">background-image</span>: <span class="v">url(../imagens/img4.jpg)</span>; <br>
+                            <span class="p">border</span>: <span class="v">1px solid green</span>; <br>
+                        } 
+                    </code>
+
+                </td>
+                <td>
+                    <div class="divimg">
+                        Oi! Eu sou uma div.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #repetirX</span> { <br>
+                            <span class="p">background-repeat</span>: <span class="v">repeat-x</span>; <br>
+                            }
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg" id="repetirX">
+                        Oi! Eu sou uma div com o ID #repetirX
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #repetirY</span> { <br>
+                            <span class="p">background-repeat</span>: <span class="v">repeat-y</span>; <br>
+                            } 
+                    </code>
+                </td>
+                <td>
+
+                    <div class="divimg" id="repetirY">
+                        Oi! Eu sou uma div com o ID #repetirY
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #nao-repetir</span> { <br>
+                            <span class="p">background-repeat</span>: <span class="v">no-repeat</span>; <br>
+                            }
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg" id="nao-repetir">
+                        Oi! Eu sou uma div com o ID #nao-reptir
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="Background-position">background-position: posicionamento do fundo</h3>
+
+        <p>Ainda podemos definir o posicionamento da imagem em relação ao
+            elemento HTML usando a propriedade background-position. </p>
+
+        <table class="tabela">
+            <tr>
+                <td colspan="2">
+                    <code class="code-css">
+                        <span class="s"> div </span> { <br>
+                            <span class="p">height</span>: <span class="v">200px</span>; <br>
+                            <span class="p">background-image</span>: <span class="v">url(imagens/img4.jpg)</span>; <br>
+                            <span class="p">border</span>: <span class="v">1px solid green</span>; <br>
+                            <span class="p">background-repeat</span>: <span class="v">no-repeat</span>; <br>
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-esquerda</span> { <br>
+                            <span class="p">background-position</span>: <span class="v">left</span>; <br>
+                        } 
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg2" id="img-esquerda">
+                        Oi! Eu sou uma div com
+                        ID #img-esquerda
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-direita</span> { <br>
+                            <span class="p">background-position</span>: <span class="v">right</span>; <br>
+                        }
+                    </code>
+                </td>
+                <td>
+
+                    <div class="divimg2" id="img-direita">
+                        Oi! Eu sou uma div com
+                        ID #img-direita
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-centro</span> { <br>
+                            <span class="p">background-position</span>: <span class="v">center</span>; <br>
+                        } 
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg2" id="img-centro">
+                        Oi! Eu sou uma div com
+                        ID #img-centro
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-direita-em-cima</span> { <br>
+                            <span class="p">background-position</span>: <span class="v">right top</span>; <br>
+                        }
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg2" id="img-direita-em-cima">
+                        Oi! Eu sou uma div com
+                        ID #img-direita-em-cima
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-esquerda-em-baixo</span> { <br>
+                            <span class="p">background-position</span>: <span class="v">left bottom</span>; <br>
+                        }
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg2" id="img-esquerda-em-baixo">
+                        Oi! Eu sou uma div com
+                        ID #img-esquerda-em-baixo
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-centro-em-baixo</span> { <br>
+                            <span class="p">background-position</span>: <span class="v">bottom center</span>; <br>
+                        } 
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg2" id="img-centro-em-baixo">
+                        Oi! Eu sou uma div com
+                        ID #img-centro-em-baixo
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="Background-attach">background-attach</h3>
+
+        <p>A propriedade background-attach especifica se a imagem de fundo
+            deve acompanhar ou não a barra de rolagem. Ou seja, a imagem quando
+            rolamos a barra para baixo, deve subir ou ela deve continuar fixa na tela
+            e continuar descendo? </p>
+
+        <table class="tabela">
+            <tr>
+                <td colspan="2">
+                    <code class="code-css">
+                        <span class="s"> div </span> { <br>
+                            <span class="p">height</span>: <span class="v">250px</span>; <br>
+                            <span class="p">background-image</span>: <span class="v">url(imagens/img4.jpg)</span>; <br>
+                            <span class="p">border</span>: <span class="v">1px solid green</span>; <br>
+                            <span class="p">background-repeat</span>: <span class="v">no-repeat</span>; <br>
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-scroll</span> { <br>
+                            <span class="p">background-attachment</span>: <span class="v">scroll</span>; <br>
+                        }
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg3" id="img-fixa">
+                        Oi! Eu sou uma div com uma imagem que acompanha o scroll!
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> #img-fixed</span> { <br>
+                            <span class="p">background-attachment</span>: <span class="v">fixed</span>; <br>
+                        }      
+                    </code>
+                </td>
+                <td>
+                    <div class="divimg3" id="img-livre"
+                        style="background-attachment: fixed; background-position: 75% 75%;">
+                        Oi! Eu sou uma div com uma imagem fixada na tela, role a página.
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="Background2">Tudo de uma vez! Background</h3>
+
+        <p>Agora que aprendemos todos as possibilidades de estilos possiveis usando
+            a propriedade background, podemos aplicar todas essas propriedades em
+            uma única linha usando a propriedade background. </p>
+        <p> É importante definir uma cor para o background, mesmo com uma
+            imagem, pois, caso ocorra algum erro ou a imagem demore a ser carregada,
+            ainda assim, a cor de fundo pode ser visualizada. A ordem dos valores que
+            devem ser especificados são
+            (alguns valores do background podem ser omitidos, assumindo valores padrões): </p>
+
+        <span class="code">elemento {background:
+            background-color
+            background-image
+            background-repeat
+            background-attachment
+            background-position; }</span>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> div </span> { <br>
+                            <span class="p">height</span>: <span class="v">250px</span>; <br>
+                            <span class="p">background</span>: <span class="v"> #777777 url(imagens/img2.png) no-repeat fixed center center</span>; <br>
+                            <span class="p">color</span>: <span class="v">#000000</span>; <br>  
+                        } 
+                    </code>
+                </td>
+                <td>
+                    <div
+                        style="color: black; background: #777777 url(../imagens/img2.png) no-repeat fixed center center; height: 250px;">
+                        Oi! Eu sou uma div com um background completo!
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <code class="code-css">
+                        <span class="s"> div-2 </span> { <br>
+                            <span class="p">height</span>: <span class="v">250px</span>; <br>
+                            <span class="p">background</span>: <span class="v"> #777777 url(imagens/img2.png) no-repeat</span>; <br>
+                            <span class="p">color</span>: <span class="v">#000000</span>; <br> 
+                        }
+                    </code>
+                </td>
+                <td>
+                    <div style="color: black; background: #777777 url(../imagens/img2.png) no-repeat; height: 250px;">
+                        Oi! Eu sou uma div com a classe div-2 e com um background sem background-attachment e
+                        background-position!
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <ul>
+            <li>
+                A propriedade <a href="https://www.w3schools.com/cssref/css3_pr_background-clip.asp">background-clip</a>
+                define a que
+                distância o plano de fundo (cor ou imagem)
+                deve se estender dentro de um elemento.
+            </li>
+            <li>
+                A propriedade <a
+                    href="https://www.w3schools.com/cssref/css3_pr_background-origin.asp">background-origin</a>
+                especifica a posição
+                de origem (o fundo área de posicionamento) de uma imagem de fundo.
+            </li>
+            <li>
+                A propriedade <a href="https://www.w3schools.com/cssref/css3_pr_background-size.asp">background-size</a>
+                especifica o tamanho das imagens de fundo.
+            </li>
+        </ul>
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="cores.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="modelo-caixa.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

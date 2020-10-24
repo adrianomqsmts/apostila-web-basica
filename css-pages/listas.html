@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Listas em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+
+
+    <section>
+
+
+        <h2 id="Listas">list-style: Estilo de Listas</h2>
+
+        <p>A propriedade list-style é usad para aplicar
+            várias propriedades de estilos em uma lista. </p>
+        <ul>
+            <li>
+                <b>list-style-type</b>: Escolhe o simbolo que irá
+                ser usado para identificar cada item de uma lista.
+                <ul style="list-style-type: u">
+                    <li><b>Listas Não-Ordenenadas</b>: circle (circulo),
+                        square (quadrado), disc (disco) e
+                        none (sem).</li>
+                    <li><b>Listas Ordenadas</b>: upper-roman
+                        (algarismos romanos maiúsculos), lower-roman
+                        (algarismos romanos minúsculos), upper-alpha
+                        (letras maiúsculas), lower-alpha
+                        (letras maiúsculas), none (sem), e
+                        <a
+                            href="https://www.w3schools.com/css/tryit.asp?filename=trycss_list-style-type_all">OUTROS.</a>
+                    </li>
+                </ul>
+            </li>
+            <li><b>list-style-image</b>: Especifica uma imagem
+                como simbolo que irá ser usado para identificar
+                cada item de uma lista. </li>
+            <li><b>list-style-position</b>: Especifica se os
+                simbolos fazem parte do conteúdo (inside) ou
+                não (outside padrão)</li>
+        </ul>
+
+        <span class="code">list-style: type position image </span>
+        <br> <br>
+
+        <p>Se um dos valores de propriedade acima estiver faltando, o valor padrão para
+            o propriedade ausente será inserida, se houver. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">ul</span> {
+        <span class="p">list-style-type</span>: <span class="v">upper-roman</span>;
+    }</pre>
+                </td>
+                <td>
+                    <p>Lista ul</p>
+                    <ul style="list-style-type: upper-roman;">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>item3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">ol</span> {
+        <span class="p">list-style-type</span>: <span class="v">square</span>;
+    }</pre>
+                </td>
+                <td>
+                    <p>Lista ol</p>
+                    <ol style="list-style-type: square;">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>item3</li>
+                        </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">ol</span> {
+        <span class="p">list-style-type</span>: <span class="v">square</span>;
+        <span class="p">list-style-position</span>: <span class="v">inside</span>;
+    }
+    
+    <span class="s">li</span> {
+        <span class="p">border</span>: <span class="v">1px solid</span>;
+    }</pre>
+                </td>
+                <td>
+                    <p>Lista ol</p>
+                    <ol style="list-style-type: square;list-style-position: inside;">
+                        <li style="border: 1px solid">Item1</li>
+                        <li style="border: 1px solid">Item2</li>
+                        <li style="border: 1px solid">item3</li>
+                        </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">ol</span> {
+        <span class="p">list-style-type</span>: <span class="v">square</span>;
+        <span class="p">list-style-position</span>: <span class="v">outside</span>;
+    }
+    
+    <span class="s">li</span> {
+        <span class="p">border</span>: <span class="v">1px solid</span>;
+    }</pre>
+                </td>
+                <td>
+                    <p>Lista ol</p>
+                    <ol style="list-style-type: square;list-style-position: outside;">
+                        <li style="border: 1px solid">Item1</li>
+                        <li style="border: 1px solid">Item2</li>
+                        <li style="border: 1px solid">item3</li>
+                        </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p>Note que, mesmo usando o valor inside para a
+            propriedade list-style-position, ainda há um
+            espaçamento lateral para o objeto que pode ser removido. </p>
+        <p>Abaixo vamos usar a propriedade list-style, remover os
+            espaçamentos e inserir uma cor de fundo. Lembrando que sempre
+            que usar uma imagem é recomendável usar a propriedade
+            list-style-type, pois assim, caso ocorra algum erro com a
+            imagem, ainda assim, a lista pode estar bem formatada. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <pre>
+    <span class="s">ol</span> {
+        <span class="p">list</span>: <span class="v">lower-alpha inside url("imagens/listicon.png")</span>;
+        <span class="p">padding</span>: <span class="v">0</span>;
+        <span class="p">background-color</span>: <span class="v">black</span>;
+    }</pre>
+                </td>
+                <td>
+                    <p>Lista ol</p>
+                    <ol
+                        style="list-style: lower-alpha inside url('imagens/listicon.png');padding: 0; background-color: black;">
+                        <li>Item1</li>
+                        <li>Item2</li>
+                        <li>item3</li>
+                        </ul>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="seletores-combinados.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="tabelas.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>

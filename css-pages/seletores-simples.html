@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Seletores Simples em CSS3</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <nav>
+        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
+        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
+    </nav>
+    <section>
+
+
+
+        <h2 id="SeletoresSimples">Seletores Simples - Nome, identificadores e classes</h2>
+
+        <p>Os seletores são usados para selecionar elementos HTML que você
+            deseja aplicar algum estilo. Os seleteores são agrupados em 5
+            categorias: </p>
+        <ul>
+            <li>Seletores Simples: Elementos com base no nome, no id e class</li>
+            <li>
+                Seletores de combinação: Elementos baseados em uma relação
+                específica entre eles.
+            </li>
+            <li>
+                Seletores de pseudoclase: Elementos baseados em um determinado
+                estado.
+            </li>
+            <li>
+                Seletores de peseudo-elementos: Seleciona uma parte do elemento
+                para aplicar algum estilo.
+            </li>
+            <li>
+                Seletores de atributos: Seleciona os elementos com base no atributo
+                ou valor do atributo.
+            </li>
+        </ul>
+
+
+
+
+
+        <h3 id="SeletordeelementosCSS">Seletores de Elementos CSS</h3>
+
+        <p> O seletor seleciona elementos HTML com base no nome do elemento.
+            No exemplo abaixo, podemos ver um seletor para o elemento
+            <code>&lt;p></code>. Assim, todos os elementos <code>&lt;p></code>
+            da página serão alinhados ao centro e terão um texto
+            na cor vermelha. </p>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;style></code> <br>
+                    <code class="code-css">
+                        <span class="s e2">p</span> { <br>
+                        <span class="p">text-align</span>: <span class="v">center</span>; <br>
+                        <span class="p">color: </span> <span class="v">red</span>; <br>
+                        } <br>
+                    </code>
+                    <code class="e">&lt;/style></code> <br>
+                    <code>&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p></code> OI! Eu sou um parágrafo. <code>&lt;/p></code> <br>
+                    <code class="e">&lt;p></code> OI! Eu sou outro parágrafo. <code>&lt;/p></code> <br>
+                    <code>&lt;/body></code> <br>
+
+                </td>
+                <td>
+                    <P style="text-align: center; color: red;">
+                        OI! Eu sou um parágrafo.
+                    </P>
+                    <P style="text-align: center; color: red;">
+                        OI! Eu sou outro parágrafo.
+                    </P>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="SeletordeidentificadoresCSS">Seletores de Identificadores CSS</h3>
+
+        <p> O seletor de id usa o atributo id de um elemento HTML para
+            selecionar um elemento em específico. Um identificador
+            de um elemento tem que ser único na página! </p>
+        <p>
+            Para selecionar um elemento pelo seu identificador, usamos o
+            caractere hash # (jogo da velha, cerquilha, hastag), seguido
+            pelo valor/nome do indentificador:
+        </p>
+        <span class="code">#ID {propriedade1:valor; propriedade2:valor2;...;}</span>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e1">&lt;style></code> <br>
+                    <code class="code-css">
+                        <span class="s">#paragrafo</span> { <br>
+                        <span class="p">text-align</span>: <span class="v">center</span>; <br>
+                        <span class="p">color: </span> <span class="v">red</span>; <br>
+                        } <br>
+                    </code>
+                    <code>&lt;/style></code> <br>
+                    <code>&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p id="paragrafo"></code> OI! Eu sou um parágrafo com id paragrafo.
+                    <code>&lt;/p></code> <br>
+                    <code class="e">&lt;p></code> OI! Eu sou outro parágrafo. <code>&lt;/p></code> <br>
+                    <code>&lt;/body></code> <br>
+                </td>
+                <td>
+                    <P style="text-align: center; color: red;">
+                        OI! Eu sou um parágrafo com id paragrafo.
+                    </P>
+                    <P>
+                        OI! Eu sou outro parágrafo.
+                    </P>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+        <h3 id="SeletordeidentificadoresCSS">Seletores de Classes CSS</h3>
+
+        <p> O seletor de classes seleciona um conjunto de elementos HTML com um
+            atributo de class específico. </p>
+        <p>
+            Para selecionar um elemento pela sua classe, usamos o
+            caractere ponto . , seguido
+            pelo valor/nome da classe:
+        </p>
+        <span class="code">.class {propriedade1:valor; propriedade2:valor2;...;}</span>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;style></code> <br>
+                    <code class="code-css">
+                    <span class="s">.paragrafos</span> { <br>
+                        <span class="p">text-align</span>: <span class="v">right</span>; <br>
+                        <span class="p">color</span>: <span class="v">green</span>; <br>
+                    } <br>
+                    </code>
+                    <code class="e">&lt;/style></code> <br>
+                    <code>&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p class="paragrafos"></code> OI! Eu sou um parágrafo com class paragrafos.
+                    <code>&lt;/p></code> <br>
+                    <code class="e">&lt;p></code> Oi! Eu sou somente um parágrafo.<code>&lt;/p></code> <br>
+                    <code class="e">&lt;p class="paragrafos"> </code> OI! Eu sou outro parágrafo com class
+                    paragrafos.<code>&lt;/p></code> <br>
+                    <code>&lt;/body></code> <br>
+                </td>
+                <td>
+                    <P style="color: green; text-align: right;">
+                        OI! Eu sou um parágrafo com class paragrafos.
+                    </P>
+                    <p>
+                        Oi! Eu sou somente um parágrafo.
+                    </p>
+                    <P style="color: green; text-align: right;">
+                        OI! Eu sou outro parágrafo com class paragrafos.
+                    </P>
+                </td>
+            </tr>
+        </table>
+
+        <p> Também é possível aplicar um estilo a uma parte específica
+            de um grupo de classes e não em todos os elementos dessa classe.
+            Digamos que tenhamos
+            dois elementos diferentes usando a mesma classe,
+            mas queremos aplicar o estilo em somente um
+            desses elementos em específico, sem necessáriamente criar uma
+            nova classe. </p>
+        <p>No exemplo abaixo, queremos que a div tenha letras
+            maiores que as dos parágrafos, então vamos especificar o
+            elemento da classe que queremos aplicar esse estilo. </p>
+
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;style></code> <br>
+                    <code class="code-css">
+                    <span class="s">.paragrafos</span> { <br>
+                        <span class="p">text-align</span>: <span class="v">right</span>; <br>
+                        <span class="p">color </span>: <span class="v">green</span>; <br>
+                    } <br> <br>
+                    <span class="s">div.paragrafos</span> { <br>
+                        <span class="p">font-size</span>: <span class="v">20px</span>; <br>
+                    } <br>
+                    </code>
+                    <code class="e">&lt;/style></code> <br>
+                    <code>&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p class="paragrafos"></code> OI! Eu sou um parágrafo com class
+                    paragrafos.
+                    <code>&lt;/p></code> <br>
+                    <code class="e">&lt;div class="paragrafos"></code> Oi! Eu sou uma div com a class
+                    paragrafos. <code>&lt;/div></code> <br>
+                    <code class="e">&lt;div></code> Oi! Eu sou apenas uma div.
+                    <code>&lt;/div></code> <br>
+                    <code class="e">&lt;p class="paragrafos"> </code> OI! Eu sou outro parágrafo com class
+                    paragrafos. <code>&lt;/p></code> <br>
+                    <code>&lt;/body></code> <br>
+                </td>
+                <td>
+                    <P style="text-align: right; color: green;">
+                        OI! Eu sou um parágrafo com class paragrafos.
+                    </P>
+                    <div style="text-align: right; color: green; font-size: 20px;" class="paragrafos">
+                        Oi! Eu sou uma div com a class paragrafos.
+                    </div>
+                    <div>
+                        Oi! Eu sou apenas uma div.
+                    </div>
+                    <P style="text-align: right; color: green;" class="paragrafos">
+                        OI! Eu sou outro parágrafo com class paragrafos.
+                    </P>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+        <h3 id="SeletoruniversalCSS">Seletore Universal CSS</h3>
+
+        <p> O seletor universal seleciona todos os elementos HTML
+            de uma página e aplica o estilo a todos eles.</p>
+
+        <span class="code"> * {propriedade1:valor; propriedade2:valor2;...;}</span>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;style></code> <br>
+                    <code class="code-css">
+                    <span class="s">*</span> { <br>
+                        <span class="p">text-align</span>: <span class="v">left</span>; <br>
+                        <span class="p">color </span>: <span class="v">yellow</span>; <br>
+                        } <br>
+                    </code>
+                    <code class="e">&lt;/style></code> <br>
+                    <code class="e">&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p></code> Oi! Eu sou um parágrafo.<code>&lt;/p></code> <br>
+                    <code class="e">&lt;div></code> Oi! Eu sou uma div.<code>&lt;/div></code> <br>
+                    <code class="e">&lt;h1></code> Oi! Eu sou um cabeçalho H1.<code>&lt;/h1></code> <br>
+                    <code>&lt;/body></code> <br>
+                </td>
+                <td>
+                    <P style="text-align: left; color: yellow;">
+                        Oi! Eu sou um parágrafo.
+                    </P>
+                    <div style="text-align: left; color: yellow;">
+                        Oi! Eu sou uma div.
+                    </div>
+                    <h1 style="text-align: left; color: yellow;">
+                        Oi! Eu sou um cabeçalho H1.
+                    </h1>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <h3 id="SeletordeagrupamentoCSS">Seletore de Agrupamento CSS</h3>
+
+        <p> O seletor de agrupamento seleciona mais de um elemento HTML
+            ao mesmo tempo
+            e aplica o estilo em todos eles. Essa seleção minimiza o código
+            de ter que fazer a mesma coisa para diferentes elementos. </p>
+
+        <span class="code"> elemento1, elemento2, ... {propriedade1:valor; ...;}</span>
+        <br> <br>
+
+        <table class="tabela">
+            <tr>
+                <td>
+                    <code>&lt;head></code> <br>
+                    <code class="e">&lt;style></code> <br>
+                    <code class="code-css">
+                        <span class="s">p, div, h1</span> { <br>
+                            <span class="p">text-align</span>: <span class="v">left</span>; <br>
+                            <span class="p">color: </span> <span class="v">yellow</span>; <br>
+                        } <br>
+                    </code>
+                    <code class="e">&lt;/style></code> <br>
+                    <code>&lt;/head></code> <br>
+                    <code>&lt;body></code> <br>
+                    <code class="e">&lt;p></code> Oi! Eu sou um parágrafo. <code>&lt;/p></code> <br>
+                    <code class="e">&lt;div></code> Oi! Eu sou uma div. <code>&lt;/div></code> <br>
+                    <code class="e">&lt;h1> </code> Oi! Eu sou um cabeçalho H1. <code>&lt;/h1></code> <br>
+                    <code>&lt;/body></code> <br>
+                </td>
+                <td>
+                    <P style="text-align: left; color: yellow;">
+                        Oi! Eu sou um parágrafo.
+                    </P>
+                    <div style="text-align: left; color: yellow;">
+                        Oi! Eu sou uma div.
+                    </div>
+                    <h1 style="text-align: left; color: yellow;">
+                        Oi! Eu sou um cabeçalho H1.
+                    </h1>
+                </td>
+            </tr>
+        </table>
+
+
+
+    </section>
+
+    <hr />
+    <div class="btn">
+        <a class="btn-anterior" href="unidades-medidas.html">&lt; Anterior</a>
+        <a class="btn-proximo2" href="formas-estilos.html">Próximo ></a>
+    </div>
+    <br>
+    <footer>
+
+        <object type="text/html" class="rodape" data="rodape.html"></object>
+    </footer>
+
+</body>
+
+</html>
