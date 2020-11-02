@@ -360,7 +360,7 @@ function criarMenuBT() {
     idMenu.innerHTML = navbar;
 }
 function criarMenuPrincipal() {
-    var navbar = ` <nav class="navbar navbar-expand-lg navbar-dark text-white bg-darkviolet">
+    var navbar = ` <nav class="navbar fixed-top navbar-expand-lg navbar-dark text-white bg-darkviolet">
             <a class="navbar-brand" href="index.html">PumP</a>
             <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

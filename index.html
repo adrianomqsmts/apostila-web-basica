@@ -9,11 +9,29 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-
         <link rel="stylesheet" href="css/main.css">
         <script src="main.js"></script>
 
+        <style>
+            .afe {
+                height: 100vh;
+                background-image: url(imagens/code00.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 130vh;
+            }
+
+
+            /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+                .afe {
+                    background-size: 120vh 150vh;
+                }
+                .display-2{
+                    font-size: 400%;
+                }
+            }
+
+        </style>
 
     </head>
 
@@ -25,57 +43,49 @@
             criarMenuPrincipal();
         </script>
 
-        <section class="mt-5 p-0">
-            <div class="bg-transparent mb-5 d-block img-fluid d-flex d-block text-center text-break align-items-center" style="height: 100vh; background-image: url(imagens/code00.jpg);
-        background-repeat: no-repeat">
-                <h1 class="display-2 pt-4 pb-5 bg-darkviolet transparence d-block col-md-12 page-item">Apostila de Programação WEB</h1>
+        <section class="container-md">
+            <div class="pt-5 afe d-flex align-items-center text-center flex-wrap text-break">
+                <h1 class="display-2 pt-3 pb-5 mt-5 w-100 bg-darkviolet transparency">Apostila de Programação WEB</h1>
+                <small class="transparency"><span>Photo by <a href="https://unsplash.com/@otenteko?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anas Alshanti</a> on <a href="https://unsplash.com/s/photos/code?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></small>
             </div>
 
-            <div class="card-columns m-md-2 bg-transparent">
+
+            <div class="card-deck mt-3 m-md-2 bg-transparent">
                 <div class="card bg-transparent m-md-0  border-white">
                     <img class="card-img-top" src="imagens/code01.jpg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">HTML5</h4>
-                        <p class="card-text">Apsotila de HTML5 com passa a passo
-                            dos principais elementos usados na contrução
-                            de uma página HTML. </p>
-                        <a href="#" class="card-link btn btn-block btn-success bg-darkviolet m-auto">Acessar</a>
+                        <p class="card-text">Apostila de HTML5 com passa a passo dos principais elementos usados na construção de uma página HTML. </p>
+                        <a href="html-pages/introducao.html" class="card-link btn btn-block btn-success bg-darkviolet m-auto">Acessar</a>
 
                     </div>
                     <div class="card-footer text-muted small">
-                        <span>Photo by <a href="https://unsplash.com/@casparrubin?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Caspar
-                                Camille Rubin</a> on <a href="https://unsplash.com/s/photos/code-html?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                        <span>Photo by <a href="https://unsplash.com/@casparrubin?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Caspar Camille Rubin</a> on <a href="https://unsplash.com/s/photos/code-html?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
                     </div>
                 </div>
                 <div class="card bg-transparent border-white">
                     <img class="card-img-top" src="imagens/code02.jpg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">CSS3</h4>
-                        <p class="card-text">Apsotila de CSS3 demonstrando
-                            todas as principais propriedades para potencializar
-                            o layout de uma página HTML. </p>
-                        <a href="#" class="card-link btn btn-success btn-block bg-darkviolet m-auto">Acessar</a>
+                        <p class="card-text">Apostila de CSS3 demonstrando todas as principais propriedades para potencializar o layout de uma página HTML. </p>
+                        <a href="css-pages/introducao.html" class="card-link btn btn-success btn-block bg-darkviolet m-auto">Acessar</a>
 
                     </div>
                     <div class="card-footer text-muted small">
-                        <span>Photo by <a href="https://unsplash.com/@casparrubin?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Caspar
-                                Camille Rubin</a> on <a href="https://unsplash.com/s/photos/code-html?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                        <span>Photo by <a href="https://unsplash.com/@casparrubin?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Caspar Camille Rubin</a> on <a href="https://unsplash.com/s/photos/code-html?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
                     </div>
                 </div>
                 <div class="card bg-transparent border-white">
                     <img class="card-img-top" src="imagens/code03.jpg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Bootstrap 4</h4>
-                        <p class="card-text">Apsotila de bootstrap 4
-                            com as principais classes usada na criação de páginas HTML
-                            responsivas para celulares, tablets e PCs.
+                        <p class="card-text">Apostila de bootstrap 4 com as principais classes usada na criação de páginas HTML responsivas para celulares, tablets e PCs.
                         </p>
-                        <a href="#" class="card-link btn btn-success btn-block bg-darkviolet m-auto">Acessar</a>
+                        <a href="bootstrap-pages/index-bootstrap.html" class="card-link btn btn-success btn-block bg-darkviolet m-auto">Acessar</a>
 
                     </div>
                     <div class="card-footer text-muted small">
-                        <span>Photo by <a href="https://unsplash.com/@campaign_creators?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Campaign
-                                Creators</a> on <a href="https://unsplash.com/s/photos/web?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                        <span>Photo by <a href="https://unsplash.com/@campaign_creators?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Campaign Creators</a> on <a href="https://unsplash.com/s/photos/web?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
                     </div>
                 </div>
 
