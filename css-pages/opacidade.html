@@ -1,116 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Opacidade em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <head>
+        <title>Opacidade em CSS3</title>
+        <meta charset="utf-8">
 
-    <style>
-        .imgopa:hover {
-            opacity: 0.3;
-        }
-    </style>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
 
-    <section>
+        <style>
+            .imgopa:hover {
+                opacity: 0.3;
+            }
 
+        </style>
 
-        <h2 id="opacidade">Opacidade</h2>
+        <script src="../main.js"></script>
 
-        <p>A propriedade ocacity especifica a opacidade ou transparência
-            de um determiando elemento HTML tanto imagens quanto blocos.
-            Como vimos em cores, isso
-            também pode ser feito em alguns casos usando RGBA. O seu
-            valor varia de 0.0 até 1.0</p>
+        <link rel="stylesheet" href="../css/main.css">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">img</span> { <br>
-                    <span class="p">opacity</span>: <span class="v">0.2</span>; <br>
-                    }
-                </td>
-                <td>
-                    <img style="width: 100%; height: 150px; opacity: 0.2;" src="../imagens/img2.png" width="50px"
-                        height="50px" alt="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">img</span> { <br>
-                    <span class="p">opacity</span>: <span class="v">0.5</span>; <br>
-                    }
-                </td>
-                <td>
-                    <img style="width: 100%; height: 150px; opacity: 0.5;" src="../imagens/img2.png" width="50px"
-                        height="50px" alt="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">img</span> { <br>
-                    <span class="p">opacity</span>: <span class="v">0.7</span>; <br>
-                    }
-                </td>
-                <td>
-                    <img style="width: 100%; height: 150px; opacity: 0.7;" src="../imagens/img2.png" width="50px"
-                        height="50px" alt="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">img</span> { <br>
-                    <span class="p">opacity</span>: <span class="v">1.0</span>; <br>
-                    }
-                </td>
-                <td>
-                    <img style="width: 100%; height: 150px; opacity: 1.0;" src="../imagens/img2.png" width="50px"
-                        height="50px" alt="">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">img:hover</span> { <br>
-                    <span class="p">opacity</span>: <span class="v">0.3</span>; <br>
-                    }
-                </td>
-                <td>
-                    <img style="width: 100%; height: 150px;" class="imgopa" src="../imagens/img2.png" width="50px"
-                        height="50px" alt="">
-                </td>
-            </tr>
-        </table>
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
-    </section>
+        <section class="pt-5 mt-5">
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="seletores-pseudo-elementos.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="gradiente.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+            <div class="container">
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
 
-</body>
+                <h1 id="opacidade">Opacidade</h1>
+
+                <p class="lead">A propriedade opacity especifica a opacidade ou transparência de um determinado elemento HTML tanto imagens quanto blocos. Como vimos em cores, isso também pode ser feito em alguns casos usando RGBA. O seu valor varia de 0.0 até 1.0</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">img</span> { <br>
+                                <span class="e p">opacity</span>: <span class="v">0.2</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <img style="width: 100%; height: 150px; opacity: 0.2;" src="../imagens/img-4.png" width="50px" height="50px" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">img</span> { <br>
+                                <span class="e p">opacity</span>: <span class="v">0.5</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <img style="width: 100%; height: 150px; opacity: 0.5;" src="../imagens/img-4.png" width="50px" height="50px" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">img</span> { <br>
+                                <span class="e p">opacity</span>: <span class="v">0.7</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <img style="width: 100%; height: 150px; opacity: 0.7;" src="../imagens/img-4.png" width="50px" height="50px" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">img</span> { <br>
+                                <span class="e p">opacity</span>: <span class="v">1.0</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <img style="width: 100%; height: 150px; opacity: 1.0;" src="../imagens/img-4.png" width="50px" height="50px" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">img:hover</span> { <br>
+                                <span class="e p">opacity</span>: <span class="v">0.3</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <img style="width: 100%; height: 150px;" class="imgopa" src="../imagens/img-4.png" width="50px" height="50px" alt="">
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+        </section>
+
+
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

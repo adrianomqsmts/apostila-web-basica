@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+        <title>Barras de Progresso com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+
+                <h1>Barras de Progresso com Bootstrap 4</h1>
+
+                <p class="lead">Para criar uma barra de progresso padrão usamos um elemento pai com a classe <code>.progress</code> e um elemento filho com a classe <code>.progress-bar</code>. Para especificar a quantidade preenchida de uma barra, devemos usar CSS e através do atributo style definir a largura (width) em porcentagem.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div1" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div1">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar" style="width:70%">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width:70%"></div>
+                </div>
+                <br>
+                <br>
+
+
+                <div class="collapse" id="div1">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar" style="width:50%"></code>50%<code>&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width:50%">50%</div>
+                </div>
+                <br>
+                <br>
+
+
+                <div class="collapse" id="div1">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar" style="width:30%"></code>Barra de 30%<code>&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width:30%">Barra de 30%</div>
+                </div>
+                <br>
+                <br>
+
+
+                <p class="lead">Para definir a altura (height) da barra devemos especificá-la usando CSS. OBS: DEVE-SE definir tanto para o filho, quanto para o pai.</p>
+
+                <code>&lt;div class="progress" style="height: 30px;"></code><br>
+                <code class="e">&lt;div class="progress-bar" style="width:30%;height:30px"></code>Barra Alta
+                30%<code>&lt;/div></code>
+                <br>
+                <code>&lt;/div></code>
+                <br>
+                <br>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar" style="width:30%;height:30px">Barra Alta 30%</div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink">
+                <br>
+
+                <h2>Barras de progresso coloridas com Bootstrap 4</h2>
+
+                <p class="lead">Para colorir as barras podemos usar as classes <code>.bg-*</code> definindo as cores pré-definidas do fundo do filho e também do pai. Os valores são </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div2" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress bg-danger"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-success" style="width:20%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress bg-danger">
+                    <div class="progress-bar bg-success" style="width:20%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-info" style="width:30%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-info" style="width:30%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2"> <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-warning" style="width:40%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-warning" style="width:40%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-danger" style="width:50%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-danger" style="width:50%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress bg-dark"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-white" style="width:60%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress bg-dark">
+                    <div class="progress-bar bg-white" style="width:60%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-secondary" style="width:70%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-secondary" style="width:70%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress bg-success"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-light" style="width:80%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress bg-success">
+                    <div class="progress-bar bg-light" style="width:80%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-dark" style="width:90%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-dark" style="width:90%"></div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.progress-bar-striped</h2>
+
+                <p class="lead">A classe <code>.progress-bar-striped</code> adiciona listras na barra de progresso.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div3" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div3">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar  progress-bar-striped" style="width:30%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" style="width:30%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div3">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-warning  progress-bar-striped" style="width:40%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-warning  progress-bar-striped" style="width:40%"></div>
+                </div> <br>
+
+                <div class="collapse" id="div3">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-danger progress-bar-striped" style="width:50%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-danger  progress-bar-striped" style="width:50%"></div>
+                </div> <br>
+
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.progress-bar-animated</h2>
+
+                <p class="lead">A classe <code>.progress-bar-animated</code> adiciona uma animação sobre as listras de um barra de progresso.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div4" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div4">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:50%">&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-danger  progress-bar-striped progress-bar-animated" style="width:50%"></div>
+                </div> <br>
+
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Múltiplas barras de progresso</h2>
+
+                <p class="lead">Podemos definir em um única linha de progresso várias partes coloridas. Segue o código abaixo.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div5" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div5">
+                    <code>&lt;div class="progress"></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-danger" style="width:20%"></code>Barra 1<code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-success" style="width:20%"></code>Barra 2<code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="progress-bar bg-warning" style="width:40%"></code>Barra 3<code>&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-danger" style="width:20%">Barra 1</div>
+                    <div class="progress-bar bg-success" style="width:20%">Barra 2</div>
+                    <div class="progress-bar bg-warning" style="width:40%">Barra 3</div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

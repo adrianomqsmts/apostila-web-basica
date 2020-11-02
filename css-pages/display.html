@@ -1,198 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Display em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Display em CSS3</title>
+        <meta charset="utf-8">
 
-<body>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
 
-    <section>
-
-        <h2 id="display">Layout - Display</h2>
-
-        <p>A propriedade display é considerada uma das mais importantes
-            para se controlar o layout das páginas. </p>
-        <p>Basicamente a propriedade display especifica como um
-            elemento é exibido. Normalmente um elemento tem por
-            padrão a exibição block ou inline. </p>
-
-<hr>
-
-        <h3 id="elementos-inline">Layout inline - Elementos de linha</h3>
-
-        <p>Os elementos inline não começam em uma nova linha e só
-            ocupam a largura necessária para o conteúdo. Alguns
-            exemplos são os elementos <code>&lt;span></code>,
-            <code>&lt;a></code> e <code>&lt;img></code></p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">span</span> { <br>
-                        <span class="p">boder</span>: <span class="v">solid green</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <p> Este é um <span style="border: solid green;">elemento <code>&lt;span></code> inline</span>
-                        dentro de um parágrafo. </p>
-                </td>
-            </tr>
-        </table>
-
-<hr>
 
 
-        <h3 id="elementos-niveis-blocos">Layout block - Elementos de Níveis de Bloco</h3>
+        <script src="../main.js"></script>
 
-        <p>Um elemento de nível de bloco sempre começa em uma nova linha
-            e ocupa toda a largura disponível. Os principais
-            elementos de bloco são <code>&lt;div></code>,
-            <code>&lt;p></code>,<code>&lt;h1></code>-<code>&lt;h6></code>. </p>
+        <link rel="stylesheet" href="../css/main.css">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">p</span> { <br>
-                        <span class="p">boder</span>: <span class="v">solid green</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <p style="border: solid green;"> O parágrafo <code>&lt;p></code> é um elemento de nível de bloco
-                    </p>
-                    <p style="border: solid green;"> O parágrafo <code>&lt;p></code> é um elemento de nível de bloco
-                    </p>
-                </td>
-            </tr>
-        </table>
+    </head>
 
-        <p>Ao usarmos então a propriedade display:block
-            podemos transformar um elemento inline em um elemento block,
-            e se usarmos display:inline podemos transformar um
-            elemento block em inline.</p>
-        <p>Importante observar, que elementos de bloco não
-            podem ter outros elementos de bloco dentro deles. </p>
-        <p>Ao usarmos display:none o elemento é ocultado,
-            removendo todo o espaço que antes o elemento ocupava. </p>
-        <p>Isso difere se usarmos outra propriedade, a
-            visibility: hidden; pois ela apenas oculta o objeto,
-            entretanto o espaço ocupado pelo elemento continua. </p>
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
-        <hr>
 
-        <h3>Layout inline-block - Elementos blocos de linha</h3>
+        <section class="pt-5 mt-5">
 
-        <p>A propriedade display:inline-block basicamente
-            mistura as qualidade de ambas. Um elemento bloco de linha
-            permite que as bordas e margens sejam respeitadas
-            não sobrepondo outros elementos (acontece com o inline),
-            permite que o elemento tenha altura e largura definida
-            (não acontece com o inline) e não gera
-            uma quebra de linha entre os elementos.</p>
+            <div class="container">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">span</span> { <br>
-                        <span class="p">display</span>: <span class="v">inline</span>; <br>
-                        <span class="p">boder</span>: <span class="v">solid green</span>; <br>
-                        <span class="p">padding</span>: <span class="v">2px</span>; <br>
-                        <span class="p">width</span>: <span class="v">100px</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <p> Este é um <span
-                            style="border: solid green; padding: 10px; display: inline; width: 100px;">elemento
-                            <code>&lt;span></code> inline</span>
-                        dentro de um parágrafo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, odio!
-                        Laboriosam
-                        molestias porro incidunt,
-                        autem deleniti natus quia illo sint qui accusantium, aperiam impedit officiis ipsam fuga quasi,
-                        laborum
-                        delectus? </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">span</span> { <br>
-                        <span class="p">display</span>: <span class="v">block</span>; <br>
-                        <span class="p">boder</span>: <span class="v">solid green</span>; <br>
-                        <span class="p">padding</span>: <span class="v">2px</span>; <br>
-                        <span class="p">width</span>: <span class="v">100px</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <p> Este é um <span style="border: solid green; padding: 3px;display: block; width: 100px;">elemento
-                            <code>&lt;span></code>
-                            block</span>
-                        dentro de um parágrafo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, odio!
-                        Laboriosam
-                        molestias porro incidunt,
-                        autem deleniti natus quia illo sint qui accusantium, aperiam impedit officiis ipsam fuga quasi,
-                        laborum
-                        delectus? </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">span</span> { <br>
-                        <span class="p">display</span>: <span class="v">inline-block</span>; <br>
-                        <span class="p">boder</span>: <span class="v">solid green</span>; <br>
-                        <span class="p">padding</span>: <span class="v">2px</span>; <br>
-                        <span class="p">width</span>: <span class="v">100px</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <p> Este é um <span
-                            style="border: solid green; padding: 3px; display: inline-block; width: 109px;">elemento
-                            <code>&lt;span></code> inline-block</span>
-                        dentro de um parágrafo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, odio!
-                        Laboriosam
-                        molestias porro incidunt,
-                        autem deleniti natus quia illo sint qui accusantium, aperiam impedit officiis ipsam fuga quasi,
-                        laborum
-                        delectus? </p>
-                </td>
-            </tr>
-        </table>
 
-    </section>
+                <h1 id="display">Layout - Display</h1>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="especificidade.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="max-width.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+                <p class="lead">A propriedade display é considerada uma das mais importantes para se controlar o layout das páginas. Basicamente a propriedade display especifica como um elemento é exibido. Normalmente um elemento tem por padrão a exibição block ou inline. </p>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-</body>
+                <h2 id="elementos-inline">Layout inline - Elementos de linha</h2>
+
+                <p class="lead">Os elementos inline não começam em uma nova linha e só ocupam a largura necessária para o conteúdo. Alguns exemplos são os elementos <code>&lt;span></code>, <code>&lt;a></code> e <code>&lt;img></code></p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">span</span> { <br>
+                                <span class="e p">border</span>: <span class="v">solid green</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead"> Este é um <span style="border: solid green;">elemento <code>&lt;span></code> inline</span> e outro <span style="border: solid green;">elemento <code>&lt;span></code> inline</span>
+                                dentro de um parágrafo. </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="elementos-niveis-blocos">Layout block - Elementos de Níveis de Bloco</h2>
+
+                <p class="lead">Um elemento de nível de bloco sempre começa em uma nova linha e ocupa toda a largura disponível. Os principais elementos de bloco são <code>&lt;div></code>, <code>&lt;p></code>,<code>&lt;h1></code>-<code>&lt;h6></code>. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p</span> { <br>
+                                <span class="e p">border</span>: <span class="v">solid green</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="border: solid green;"> O parágrafo <code>&lt;p></code> é um elemento de nível de bloco
+                            </p>
+                            <p style="border: solid green;"> O parágrafo <code>&lt;p></code> é um elemento de nível de bloco
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead">Ao usarmos então a propriedade display:block podemos transformar um elemento inline em um elemento block, e se usarmos display:inline podemos transformar um elemento block em inline. Ao usarmos display:none o elemento é ocultado, removendo todo o espaço que antes o elemento ocupava. Isso difere se usarmos a outra propriedade, a visibility: hidden; pois ela apenas oculta o objeto, entretanto o espaço ocupado pelo elemento continua. </p>
+
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Layout inline-block - Elementos blocos de linha</h2>
+
+                <p class="lead">A propriedade display:inline-block basicamente mistura as qualidade de ambas. Um elemento bloco de linha permite que as bordas e margens sejam respeitadas não sobrepondo outros elementos (acontece com o inline), permite que o elemento tenha altura e largura definida (não acontece com o inline) e não gera uma quebra de linha entre os elementos.</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">span</span> { <br>
+                                <span class="e p">display</span>: <span class="v">inline</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid green</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">2px</span>; <br>
+                                <span class="e p">width</span>: <span class="v">100px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead"> Este é um <span style="border: solid green; padding: 10px; display: inline; width: 100px;">elemento <code>&lt;span></code> inline</span> dentro de um parágrafo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, odio! Laboriosam molestias porro incidunt, autem deleniti natus quia illo sint qui accusantium, aperiam impedit officiis ipsam fuga quasi, laborum delectus? </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">span</span> { <br>
+                                <span class="e p">display</span>: <span class="v">block</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid green</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">2px</span>; <br>
+                                <span class="e p">width</span>: <span class="v">100px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead"> Este é um <span style="border: solid green; padding: 3px;display: block; width: 100px;">elemento <code>&lt;span></code> block</span> dentro de um parágrafo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, odio! Laboriosam molestias porro incidunt, autem deleniti natus quia illo sint qui accusantium, aperiam impedit officiis ipsam fuga quasi, laborum delectus? </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">span</span> { <br>
+                                <span class="e p">display</span>: <span class="v">inline-block</span>; <br>
+                                <span class="e p">boder</span>: <span class="v">solid green</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">2px</span>; <br>
+                                <span class="e p">width</span>: <span class="v">100px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead"> Este é um <span style="border: solid green; padding: 3px; display: inline-block; width: 109px;">elemento <code>&lt;span></code> inline-block</span> dentro de um parágrafo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, odio! Laboriosam molestias porro incidunt, autem deleniti natus quia illo sint qui accusantium, aperiam impedit officiis ipsam fuga quasi, laborum delectus? </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

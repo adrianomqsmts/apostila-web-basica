@@ -1,124 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Elemento Head em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Elemento Head em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
+        <script src="../main.js"></script>
 
-    <section>
-        <h2 id="THead">HEAD</h2>
+            <link rel="stylesheet" href="../css/main.css">
 
-        <p> Como vimos, o <code>&lt;head></code> é um elemento de meta dados, servindo de contêiner para outros
-            elementos,
-            como o <code>&lt;title></code>, <code>&lt;style></code>,
-            <code>&lt;meta></code>, <code>&lt;link></code>, <code>&lt;script></code> e <code>&lt;base></code>. Esses
-            elementos são uma descrição sobre o documento HTML e não é visível para os usuários. </p>
+    </head>
 
+    <body class="bg-darkblue text-white">
 
+        <header>
+            <div id="menu">
 
+            </div>
 
-        <h3 id="TTiltle">title</h3>
+            <script>
+                criarMenu();
+            </script>
 
-        <p> O elemento <code>&lt;title></code> define o título do documento, devendo ser somente texto, e é
-            mostrado na
-            barra de título do navegador. Importante ressaltar que o título deve ser significativo para a
-            página, pois o
-            mesmo é usado por mecanismos de
-            buscas para encontrar a sua página e exibíla nos resultados de busca.</p>
+        </header>
 
 
+        <section class="pt-5 mt-5">
 
-        <h3 id="TStyle">style</h3>
+            <div class="container">
 
-        <p> O elemento <code>&lt;style></code> como vimos, é usado para definir informações sobre o estilo da
-            página,
-            através de sintaxe CSS ou JavaScript. </p>
+            </div>
+            <h1 id="THead">HEAD</h1>
 
+            <p class="lead"> Como vimos, o <code>&lt;head></code> é um elemento de meta dados, servindo de contêiner para outros elementos, como o <code>&lt;title></code>, <code>&lt;style></code>, <code>&lt;meta></code>, <code>&lt;link></code>, <code>&lt;script></code> e <code>&lt;base></code>. Esses elementos são uma descrição sobre o documento HTML e não é visível para os usuários. </p>
 
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
 
-        <h3 id="TLink">link</h3>
+            <h2 id="TTiltle">title</h2>
 
-        <p> O elemento <code>&lt;link></code> é usado para definir uma relaçao entre o documento atual e um
-            documento
-            externo, como, por exemplo, um arquivo CSS. </p>
-        <code>&lt;link rel="stylesheet" href="estilo.css"> </code>
+            <p class="lead"> O elemento <code>&lt;title></code> define o título do documento, devendo ser somente texto, e é mostrado na barra de título do navegador. Importante ressaltar que o título deve ser significativo para a página, pois o mesmo é usado por mecanismos de buscas para encontrar a sua página e exibíla nos resultados de busca.</p>
 
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
 
+            <h2 id="TStyle">style</h2>
 
+            <p class="lead"> O elemento <code>&lt;style></code> como vimos, é usado para definir informações sobre o estilo da página, através de sintaxe CSS ou JavaScript. </p>
 
-        <h3 id="TMeta">meta</h3>
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
 
-        <p> O elemento <code>&lt;meta></code> é normalmente usado para especificar o conjunto de caracteres,
-            palavras-chaves, autor do documento, descrição da página, além de poder configurar a janela de
-            visualização.
-            Essas informações são usadas pelo navegador,
-            mecanismos de pesquisas e outros serviços web. </p>
-        <code>&lt;meta charset="UTF-8"></code> <br> <br>
-        <code>&lt;meta name="description" content="HTML Básico e Grátis Totalmente Pago"></code> <br> <br>
-        <code>&lt;meta name="keywords" content="HTML, CSS, JavaScript"></code> <br> <br>
-        <code>&lt;meta name="author" content="Meu Nome"></code> <br> <br> (atualiza a página de 30 em 30
-        segundo) <br>
-        <code>&lt;meta http-equiv="refresh" content="30"></code>
+            <h2 id="TLink">link</h2>
 
+            <p class="lead"> O elemento <code>&lt;link></code> é usado para definir uma relaçao entre o documento atual e um documento externo, como, por exemplo, um arquivo CSS. </p>
 
+            <code>&lt;link rel="stylesheet" href="estilo.css"> </code>
 
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
+            <h2 id="TMeta">meta</h2>
 
-        <h4 id="TCharset">charset</h4>
+            <p class="lead"> O elemento <code>&lt;meta></code> é normalmente usado para especificar o conjunto de caracteres, palavras-chaves, autor do documento, descrição da página, além de poder configurar a janela de visualização. Essas informações são usadas pelo navegador, mecanismos de pesquisas e outros serviços web. </p>
 
-        <p> É o atributo do elemento <code>&lt;meta></code> e é usado para definir qual devem ser os conjuntos
-            de
-            caracteres, exibidos corretamente por um navegador. Sendo o mais comum, o UTF-8.
-            <a href="https://www.w3schools.com/html/html_charset.asp">Mais sobre charset</a> </p>
-
-
-
-
-        <h3 id="TScript">script</h3>
-
-        <p> O elemento <code>&lt;script></code> é usado para definir o JavaScript 
-                do lado do cliente, assim como
-            o style
-            define o estilo com o CSS. </p>
+            <code>&lt;meta charset="UTF-8"></code> <br> <br>
+            <code>&lt;meta name="description" content="HTML Básico e Grátis Totalmente Pago"></code> <br> <br>
+            <code>&lt;meta name="keywords" content="HTML, CSS, JavaScript"></code> <br> <br>
+            <code>&lt;meta name="author" content="Meu Nome"></code> <br> <br> (atualiza a página de 30 em 30
+            segundo) <br>
+            <code>&lt;meta http-equiv="refresh" content="30"></code>
 
 
+            <h3 id="TCharset">charset</h3>
+
+            <p class="lead"> É o atributo do elemento <code>&lt;meta></code> e é usado para definir qual devem ser os conjuntos de caracteres, exibidos corretamente por um navegador. Sendo o mais comum, o UTF-8. <a href="https://www.w3schools.com/html/html_charset.asp">Mais sobre charset</a> </p>
+
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
 
 
-        <h3 id="TBase">base</h3>
+            <h2 id="TScript">script</h2>
 
-        <p> O elemento <code>&lt;base></code> é usado para especificar o URL e/ou destino de todos os URLs
-            relativos em uma
-            página, evitando assim, digitar todo o endereço da pagina atual para nevegar entre os documentos.
-        </p>
-        <code>&lt;base href="https://paginaweb.com" target="_blank"> </code>
-        <br>
-        <br>
+            <p class="lead"> O elemento <code>&lt;script></code> é usado para definir o JavaScript
+                do lado do cliente, assim como o style define o estilo com o CSS. </p>
+
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
+            
+            <h2 id="TBase">base</h2>
+
+            <p class="lead"> O elemento <code>&lt;base></code> é usado para especificar o URL e/ou destino de todos os URLs relativos em uma página, evitando assim, digitar todo o endereço da pagina atual para nevegar entre os documentos. </p>
+
+            <code>&lt;base href="https://paginaweb.com" target="_blank"> </code>
 
 
-        <hr>
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="html-em-html.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="caracteres-especiais.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+        </section>
 
-</body>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

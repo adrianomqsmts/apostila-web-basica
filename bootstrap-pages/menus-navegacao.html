@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Menus de Navegação (navs) com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"></div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+
+    <section class="mt-5 mb-0 pt-5">
+
+      <div class="container">
+
+        <h1>Menus de Navegação (navs e navbar) com Bootstrap 4</h1>
+
+        <p class="lead">Para criar um simples menu de navegação precisamos primeiro definir uma lista <code>&lt;ul></code> com a classe <code>.nav</code>, seguida pelos itens <code>&lt;li></code>, cada um deles, com uma classe <code>.nav-item</code>, e por fim cada link <code>&lt;a></code> definido com uma classe <code>.nav-link</code>. </p>
+
+        <p class="lead">Podemos usar os links <code>&lt;a></code> em conjunto com as classes <code>.active</code> para definir o link atual ou a classe <code>.disabled</code> para desabilitar algum link.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div1">
+          <code>&lt;ul class="nav"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.justify-content-center .justify-content-end : Alinhando os Menus</h2>
+
+        <p class="lead">Para alinhas o menu no centro, ou na direita, precisamos usar, respectivamente, as classes <code>.justify-content-center</code> ou <code>.justify-content-end</code> dentro do elemento <code>&lt;ul></code> para podermos alinhar o menu.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div2">
+          <code>&lt;ul class="nav justify-content-center"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul>
+        <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div3">
+          <code>&lt;ul class="nav justify-content-end"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul>
+        <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.flex-column : Menu Vertical</h2>
+
+        <p class="lead">Podemos também criar um menu vertical, inserindo a classe <code>.flex-column</code> dentro do elemento <code>&lt;ul</code>.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div4">
+          <code>&lt;ul class="nav flex-column"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.nav-tabs: Estilo de Abas</h2>
+
+        <p class="lead">A classe <code>.nav-tabs</code> define um menu de navegação com um estilo de abas envolta dos links. Podemos, por exemplo, adicionar a classe <code>.active</code> em um link <code>&lt;a></code> para definir ele como a página atual.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div5">
+          <code>&lt;ul class="nav nav-tabs"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link active" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.nav-pills: Estilo de Botões Arredondados</h2>
+
+        <p class="lead">A classe <code>.nav-pills</code> define um menu de navegação, onde os links, possuem detalhes arredondados no seus estilos.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div6">
+          <code>&lt;ul class="nav nav-pills"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link active" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.nav-justified: Menus de mesma largura</h2>
+
+        <p class="lead">A classe <code>.nav-justified</code> nos permite definir uma barra de navegação, onde cada item <code>&lt;li></code> tenha a mesma largura.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div7">
+          <code>&lt;ul class="nav nav-tabs nav-justified"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link active" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br> <br>
+        </div>
+
+        <ul class="nav nav-tabs nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div8">
+          <code>&lt;ul class="nav nav-pills nav-justified"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link active" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Menus com Dropdown</h2>
+
+        <p class="lead">Podemos usar os conhecimentos anteriores e juntá-los em um menu ainda mais único. Para isso, basta seguir a criação padrão de menu de navegação e em seguida, no item, introduza um link/botão dropdown que já conhecemos nos capítulos anteriores. Lembrando de especificar no elemento <code>&lt;li></code> a classe <code>.dropdown</code>.</p>
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div9">
+          <code>&lt;ul class="nav nav-tabs nav-justified"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item dropdown"></code><br>
+          <code class="e2">&lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;div class="dropdown-menu"></code> <br>
+          <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link2.1<code>&lt;/a></code><br>
+          <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link2.2<code>&lt;/a></code><br>
+          <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link2.3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+        </div>
+
+        <ul class="nav nav-tabs nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+            <div class="dropdown-menu"> <a class="dropdown-item" href="#">Link2.1</a>
+              <a class="dropdown-item" href="#">Link2.2</a>
+              <a class="dropdown-item" href="#">Link2.3</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul><br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div10">
+          <code>&lt;ul class="nav nav-pills nav-justified"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item dropdown"></code><br>
+          <code class="e2">&lt;a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;div class="dropdown-menu"></code> <br>
+          <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link2.1<code>&lt;/a></code><br>
+          <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link2.2<code>&lt;/a></code><br>
+          <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link2.3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+          </code>
+        </div>
+
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+            <div class="dropdown-menu"> <a class="dropdown-item" href="#">Link2.1</a>
+              <a class="dropdown-item" href="#">Link2.2</a>
+              <a class="dropdown-item" href="#">Link2.3</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link3</a>
+          </li>
+        </ul>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Menus Dinâmicos</h2>
+
+        <p class="lead">Podemos criar um menu de navegação dinâmico, que ao clicar em um link, ao invés de abrir uma nova página, o elemento com o <code>#id</code> especificado é desocultado e os demais ocultados, dando a impressão que uma nova página carregou. Para isso precisamos apenas declarar o atributo <code> data-toggle="tab ou pills"</code> dentro dos links, especificando no atributo <code>href="#id"</code> o identificados da seção que deseja que o contúdo seja mostrado.
+          <br> <br>
+          Também precisamos especificar inicialmente o elemento ativo, que inicialmente está visível através da classe <code>.active</code> e devemos também especificar os elementos que estarão inicialmente ocultos através da classe <code>.fade</code>.</p> <br> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div11">
+          <code>&lt;ul class="nav nav-pills nav-justified"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link data-toggle="pill" active" href="#menu1"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" data-toggle="pill" href="#menu2"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" data-toggle="pill" href="#menu3"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br> <br>
+          <code>&lt;div class="tab-content"></code> <br>
+          <code class="e">&lt;div class="tab-pane container active" id="menu1"></code>MENU 01<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="tab-pane container fade" id="menu2"></code>MENU 02<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="tab-pane container fade" id="menu3"></code>MENU 03<code>&lt;/div></code> <br>
+          <code>&lt;/div></code> <br>
+        </div>
+
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#menu1">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu2">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu3">Link3</a>
+          </li>
+        </ul> <br>
+        <br>
+        <br>
+
+        <div class="tab-content">
+          <div class="tab-pane container active" id="menu1">MENU 01</div>
+          <div class="tab-pane container fade" id="menu2">MENU 02</div>
+          <div class="tab-pane container fade" id="menu3">MENU 03</div>
+        </div>
+        <br>
+        <br>
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div21">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div21">
+          <code>&lt;ul class="nav nav-tab nav-justified"></code> <br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link data-toggle="tab" active" href="#menu1"></code>Link1<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" data-toggle="tab" href="#menu2"></code>Link2<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code class="e">&lt;li class="nav-item"></code><br>
+          <code class="e2">&lt;a class="nav-link" data-toggle="tab" href="#menu3"></code>Link3<code>&lt;/a></code><br>
+          <code class="e">&lt;/li></code><br>
+          <code>&lt;/ul></code><br>
+
+          <code>&lt;div class="tab-content"></code> <br>
+          <code class="e">&lt;div class="tab-pane container active" id="menu1"></code>MENU 01<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="tab-pane container fade" id="menu2"></code>MENU 02<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="tab-pane container fade" id="menu3"></code>MENU 03<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <ul class="nav nav-tabs nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#menu11">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu22">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu33">Link3</a>
+          </li>
+        </ul> <br>
+        <br>
+        <br>
+
+        <div class="tab-content">
+          <div class="tab-pane container active" id="menu11">MENU 01</div>
+          <div class="tab-pane container fade" id="menu22">MENU 02</div>
+          <div class="tab-pane container fade" id="menu33">MENU 03</div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

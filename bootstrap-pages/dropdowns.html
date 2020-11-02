@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+        <title>Dropdown (lista suspensa) com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+                <h1>Dropdown (lista suspensa) com Bootstrap 4</h1>
+
+                <p class="lead">Para criar uma lista suspensa, precismos de um conjunto de classes B4. </p>
+
+                <ul class="lead">
+                    <li><code>.dropdown</code>: Usado em um elemento para indicar uma lista suspensa. </li>
+                    <li><code>.dropdown-toggle</code>: Usado para indicar o botão será o elemento que esconde e abre a lista suspensa. Deve ser usado em conjunto com o atributo data-toggle="dropdown" dentro do elemento para indicar onde abrir a lista suspensa. </li>
+                    <li><code>.dropdown-menu</code>: Classe usada para indicar que a lista comum irá ser uma lista suspensa. </li>
+                    <li><code>.dropdown-item</code>: Indica cada um dos itens da lista que ficará dentro da lista suspensa. </li>
+                </ul>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#contentId" aria-expanded="false" aria-controls="contentId">
+                        Mostrar Código.
+                    </a>
+                </p>
+                <div class="collapse" id="contentId">
+                    <code>&lt;div class="dropdown"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.dropdown-divider</h2>
+
+                <p class="lead">
+                    A classe <code>.dropdown-divider</code> é usada em uma div entre os itens de uma lista para criar um linha de separação. Veja no exemplo abaixo. </p>
+
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-2" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-2">
+                    <code>&lt;div class="dropdown"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e2">&lt;div class="dropdown-divider">&lt;/div></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Another link<code>&lt;/a></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Outro link</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.dropdown-header</h2>
+
+                <p class="lead">A classe <code>.dropdown-header</code> é usada em uma div para criar um título para a lista suspensa dentro da lista suspensa.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-3" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-3">
+                    <code>&lt;div class="dropdown"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e2">&lt;div class=".dropdown-header">Título&lt;/div></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Título</div>
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.active e .disabled</h2>
+
+                <p class="lead">Podemos permitir que um link dentro de uma lista suspensa seja ativo ou desabilitado respectivamente com as classes <code>.active</code> e <code>.disabled</code>. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-4" >
+                        Mostrar Código
+                    </a>
+                </p>
+
+                <div class="collapse" id="div-4">
+                    <code>&lt;div class="dropdown"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item active" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item disabled" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item active" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item active" href="#">Link 1</a>
+                        <a class="dropdown-item disabled" href="#">Link 2</a>
+                        <a class="dropdown-item disabled" href="#">Link 3</a>
+                    </div>
+                </div>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.dropright .dropleft e .dropup</h2>
+
+                <p class="lead">A classe <code>.dropright</code> define uma lista suspensa para o lado direito, e não para baixo como padrão. Também temos a classe <code>.dropleft</code> que define uma lista para o lado esquerdo e a classe <code>.dropup</code> que abre a lista suspensa para cima</p>
+
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-5" >
+                        Mostrar Código
+                    </a>
+                </p>
+
+                <div class="collapse" id="div-5">
+                    <code>&lt;div class="dropdown dropright"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown Right</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="dropdown dropright">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                        Dropdown Right
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-6" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-6">
+                    <code>&lt;div class="dropdown dropleft"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown Left</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="dropdown dropleft float-right">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                        Dropdown Left
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <br class="clearfix">
+                <br>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-7" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-7">
+                    <code>&lt;div class="dropdown dropup"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown Up</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 3<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="dropdown dropup">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown Up
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.dropdown-item-text</h2>
+
+                <p class="lead">A classe <code>.dropdown-item-text</code> é usada para inserir textos ou links em sua formatação padrão dentro de uma lista suspensa.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-8" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-8">
+                    <code>&lt;div class="dropdown"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"></code>
+                    <br>
+                    <p class="e2 mb-0">Dropdown</p>
+                    <code class="e">&lt;/button></code> <br>
+                    <code class="e">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e2">&lt;a class="dropdown-item-text" href="#"></code>texto link<code>&lt;/a></code><br>
+                    <code class="e2">&lt;span class="dropdown-item-text"></code>Apenas Texto<code>&lt;/span></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="dropdown">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item-text" href="#">texto link</a>
+                        <span class="dropdown-item-text">Apenas Texto</span>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Botões agrupados com uma lista suspensa</h2>
+
+                <p class="lead">Podemos agrupar um grupo de botões e uma lista suspensa. Veja abaixo a estrutura básica. Lembando de alterar .dropdown por .btn-group</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-9" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-9">
+                    <code>&lt;div class="btn-group"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary"></code>Botao 1 <code>&lt;/button></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary"></code>Botao 2<code>&lt;/button></code> <br>
+                    <code class="e">&lt;div class="btn-group"></code> <br>
+                    <code class="e2">&lt;button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"></code> <br>
+                    <p class="e3 mb-0">Dropdown</p>
+                    <code class="e2">&lt;/button></code> <br>
+                    <code class="e2">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e3">&lt;a class="dropdown-item" href="#"></code>link 3<code>&lt;/a></code><br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Botao 1</button>
+                    <button type="button" class="btn btn-primary">Botao 2</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">link 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.dropdown-toggle-split</h2>
+
+                <p class="lead">A classe <code>dropdown-toggle-split</code> define uma lista suspensa mais compacta.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div-10" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div-10">
+                    <code>&lt;div class="btn-group"></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary"></code>Botao 1
+                    <code>&lt;/button></code> <br>
+                    <code class="e">&lt;button type="button" class="btn btn-primary"></code>Botao
+                    2<code>&lt;/button></code>
+                    <br>
+                    <code class="e2">&lt;button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></code>
+                    <br>
+                    <code class="e2">&lt;/button></code> <br>
+                    <code class="e2">&lt;div class="dropdown-menu"></code> <br>
+                    <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link 1<code>&lt;/a></code><br>
+                    <code class="e3">&lt;a class="dropdown-item" href="#"></code>Link 2<code>&lt;/a></code><br>
+                    <code class="e3">&lt;a class="dropdown-item" href="#"></code>link 3<code>&lt;/a></code><br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Botao 1 </button>
+                    <button type="button" class="btn btn-primary">Botao 2</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">link 3</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

@@ -1,91 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Links em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Links em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-        <h2>LINKS</h2>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-        <p> Os links são usados para que os usários possam atráves de uma interação (normalmente um clique, ir de uma página
-            para outra. Geralmente um link é destacado, de tal forma que quando um mouse é posto sobre ele, o ícone é
-            transformado em uma pequena
-            mão. Um link pode ter seu conteúdo ligado a um texto, uma imagem ou qualquer outro elemento HTML. </p>
-        <p> Um link é defindo pela tag <code>&lt;a></code>, onde o atributo href especifica a URL ou caminho do
-            arquivo/página. </p>
-    
-        <table class="tabela">
-            <tr>
-                <td width="60%">
-                    <code>&lt;a href="https://google.com"></code><br> &nbsp;&nbsp;&nbsp;Texto do link <br>
-                    <code>&lt;/a>
-    
-                    </code>
-                </td>
-                <td>
-                    <a href="https://google.com">Texto do link</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <code>
-                        &lt;a href="https://wwww.google.com"> <br>
-                        &nbsp;&nbsp;&nbsp;&lt;img src="imagens/img.png" style="width:100%; height:200" alt="PUMP"> <br>
-                        &lt;/a>
-                </code>
-                </td>
-                <td>
-                    <a href="https://wwww.google.com">
-                        <img src="../imagens/img.png" style="width:100%; height:200" alt="PUMP">
-                    </a>
-                </td>
-            </tr>
-        </table>
-    
-        <p> O atributo title de um link adciona informações extras sobre um elemento, onde as informações geralmente são
-            mostradas ao o mouse sobre o link. </p>
-    
-        <table class="tabela">
-            <tr>
-                <td width="60%">
-                    <code>&lt;a href="https://google.com" title="Site do Google"></code><br> &nbsp;&nbsp;&nbsp;Texto do
-                    link, passe o mouse!<br>
-                    <code>&lt;/a>
-                    </code>
-                </td>
-                <td>
-                    <a href="https://google.com" title="Site do Google">Texto do link, passe o mouse!</a>
-                </td>
-            </tr>
-        </table>
-        <hr>
-    
-    
-    
+        <script src="../main.js"></script>
 
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="imagens.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="tabelas.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+            <link rel="stylesheet" href="../css/main.css">
 
-</body>
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+            <div id="menu">
+
+            </div>
+
+            <script>
+                criarMenu();
+            </script>
+
+        </header>
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+
+                <h1>LINKS</h1>
+
+                <p class="lead"> Os links são usados para que os usários possam atráves de uma interação (normalmente um clique, ir de uma página para outra. Geralmente um link é destacado, de tal forma que quando um mouse é posto sobre ele, o ícone é transformado em uma pequena mão. Um link pode ter seu conteúdo ligado a um texto, uma imagem ou qualquer outro elemento HTML. </p>
+
+                <p class="lead"> Um link é defindo pela tag <code>&lt;a></code>, onde o atributo href especifica a URL ou caminho do arquivo/página. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td class="w-50">
+                            <code>&lt;a href="https://google.com"></code><br>
+                            <span class="e">Texto do link</span> <br>
+                            <code>&lt;/a> </code>
+                        </td>
+                        <td>
+                            <a href="https://google.com">Texto do link</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code> &lt;a href="https://wwww.google.com"> <br>
+                            <span class="e">&lt;img src="imagens/img.png" style="width:100%; height:200" alt="PUMP"></span> <br>
+                            &lt;/a></code>
+                        </td>
+                        <td>
+                            <a href="https://wwww.google.com">
+                                <img src="../imagens/img.png" style="width:100%; height:200" alt="PUMP">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead"> O atributo title de um link adciona informações extras sobre um elemento, onde as informações geralmente são
+                    mostradas ao o mouse sobre o link. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td width="60%">
+                            <code>&lt;a href="https://google.com" title="Site do Google"></code><br>
+                            <span class="e">Texto do link, passe o mouse!</span><br>
+                            <code>&lt;/a></code>
+                        </td>
+                        <td>
+                            <a href="https://google.com" title="Site do Google">Texto do link, passe o mouse!</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

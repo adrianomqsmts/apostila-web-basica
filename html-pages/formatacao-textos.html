@@ -1,192 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Formatação de Textos em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Formatação de Textos em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-        <h2 id="TFor">FORMATAÇÃO DE TEXTO</h2>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-        <p> Podemos destacar trechos de textos, usandos tags que permitem deixar um trecho de texto em negrito, itálico,
-            com
-            underline, tachado, entre outros, onde permitam que o texto tenha um significado especial. </p>
+        <script src="../main.js"></script>
 
-        <ul>
-            <li>
-                <code>&lt;b></code>: Define o texto em negrito, sem qualquer importância extra, apenas estético.
-            </li>
-            <li>
-                <code>&lt;strong></code>: Define o texto como grande importância, onde o conteúdo normalmente é exibido
-                em
-                negrito.
-            </li>
-            <li>
-                <code>&lt;i></code>: Define uma parte de texto em uma voz ou humor alternativo, onde o conteúdo
-                normalmente
-                é exibido em itálico. normalmente é usada para indicar um termo técnico, frase em outro idioma
-                (problemas
-                com japones, pesquise!!!),
-                um pensamento, um nome de navio, etc.
-            </li>
-            <li>
-                <code>&lt;em></code>: Define texto enfatizado. O conteúdo interno é normalmente exibido em itálico. Um
-                leitor de tela pronunciará as palavras em
-                <code>&lt;em></code> com ênfase, usando ênfase verbal.
-            </li>
-            <li>
-                <code>&lt;small></code>: Define um texto de forma menor.
-            </li>
-            <li>
-                <code>&lt;mark></code>: Define um texto que deve ser marcado ou destacado.
-            </li>
-            <li>
-                <code>&lt;del></code>: Define um texto excluído, onde normalmente é representado com uma linha no meio
-                do
-                texto excluído.
-            </li>
-            <li>
-                <code>&lt;ins></code>: Define um texto que foi inserido, onde normalmente o texto inserido é sublinhado.
-            </li>
-            <li>
-                <code>&lt;sub></code>: Define um texto subscritro, de tal forma que, o texto subscrito, é menor e ficam
-                abaixo da linha normal em que o texto é escrito. Como em fórmulas químicas.
-            </li>
-            <li>
-                <code>&lt;sup></code>: Define um texto sobrescrito, de tal forma que, o texto sobrescrito, é menor e
-                fica
-                acima da linha nomrla em que o texto é escrito. Como em fórmulas matemática.
-            </li>
-        </ul>
+            <link rel="stylesheet" href="../css/main.css">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;b></code> texto! <code>&lt;/b></code>
-                </td>
-                <td>
-                    Oi, eu sou um <b style="color: white; letter-spacing: normal; font-size: 1em;">texto!</b>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;strong></code> texto! <code>&lt;/strong></code>
-                </td>
-                <td>
-                    Oi, eu sou um <strong>texto!</strong>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;i></code> texto! <code>&lt;/i></code>
-                </td>
-                <td>
-                    Oi, eu sou um <i>texto!</i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;em></code> texto! <code>&lt;/em></code>
-                </td>
-                <td>
-                    Oi, eu sou um <em>texto!</em>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;small></code> texto! <code>&lt;/small></code>
-                </td>
-                <td>
-                    Oi, eu sou um <small>texto!</small>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;mark></code> texto! <code>&lt;/mark></code>
-                </td>
-                <td>
-                    Oi, eu sou um <mark>texto!</mark>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;del></code> texto! <code>&lt;/del></code>
-                </td>
-                <td>
-                    Oi, eu sou um <del>texto!</del>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;ins></code> texto! <code>&lt;/ins></code>
-                </td>
-                <td>
-                    Oi, eu sou um <ins>texto!</ins>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;sub></code> texto! <code>&lt;/sub></code>
-                </td>
-                <td>
-                    Oi, eu sou um <sub>texto!</sub>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Oi, eu sou um <code>&lt;sup></code> texto! <code>&lt;/sup></code>
-                </td>
-                <td>
-                    Oi, eu sou um <sup>texto!</sup>
-                </td>
-            </tr>
-        </table>
+    </head>
 
+    <body class="bg-darkblue text-white">
 
+        <header>
+            <div id="menu">
 
+            </div>
 
-        <h3 id="TBei">B e I vs STRONG e EM</h3>
+            <script>
+                criarMenu();
+            </script>
 
-        <p> Diferenciação entre tags de estilos e semânticos: <br> <br>
-            <code>&lt;strong></code> e <code>&lt;em></code> adicionam um significado semântico extra ao texto, ou seja,
-            uma
-            palavra forte ou enfátioca. Acontece que também dão um estilo negrito e itálico que pode ser alterado usando
-            CSS. <br> <br>
-            <code>&lt;b></code> e <code>&lt;i></code> por outro lado, aplica apenas o estilo da fonte e não deve mais
-            ser
-            usado. (Porque você deve formatar com CSS, e se o texto fosse realmente importante, você provavelmente o
-            tornaria "forte" ou "enfatizado"
-            de qualquer maneira!) </p>
-        <hr>
+        </header>
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h1 id="TFor">FORMATAÇÃO DE TEXTO</h1>
+
+                <p class="lead"> Podemos destacar trechos de textos, usandos tags que permitem deixar um trecho de texto em negrito, itálico, com underline, tachado, entre outros, onde permitam que o texto tenha um significado especial. </p>
+
+                <ul>
+                    <li>
+                        <code>&lt;b></code>: Define o texto em negrito, sem qualquer importância extra, apenas estético.
+                    </li>
+                    <li>
+                        <code>&lt;strong></code>: Define o texto como grande importância, onde o conteúdo normalmente é exibido em negrito.
+                    </li>
+                    <li>
+                        <code>&lt;i></code>: Define uma parte de texto em uma voz ou humor alternativo, onde o conteúdo
+                        normalmente é exibido em itálico. normalmente é usada para indicar um termo técnico, frase em outro idioma (problemas com japones, pesquise!!!), um pensamento, um nome de navio, etc. </li>
+                    <li>
+                        <code>&lt;em></code>: Define texto enfatizado. O conteúdo interno é normalmente exibido em itálico. Um leitor de tela pronunciará as palavras em <code>&lt;em></code> com ênfase, usando ênfase verbal.
+                    </li>
+                    <li>
+                        <code>&lt;small></code>: Define um texto de forma menor.
+                    </li>
+                    <li>
+                        <code>&lt;mark></code>: Define um texto que deve ser marcado ou destacado.
+                    </li>
+                    <li>
+                        <code>&lt;del></code>: Define um texto excluído, onde normalmente é representado com uma linha no meio do texto excluído.
+                    </li>
+                    <li>
+                        <code>&lt;ins></code>: Define um texto que foi inserido, onde normalmente o texto inserido é sublinhado.
+                    </li>
+                    <li>
+                        <code>&lt;sub></code>: Define um texto subscritro, de tal forma que, o texto subscrito, é menor e ficam abaixo da linha normal em que o texto é escrito. Como em fórmulas químicas.
+                    </li>
+                    <li>
+                        <code>&lt;sup></code>: Define um texto sobrescrito, de tal forma que, o texto sobrescrito, é menor e fica acima da linha nomrla em que o texto é escrito. Como em fórmulas matemática.
+                    </li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;b></code> texto! <code>&lt;/b></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <b style="color: white; letter-spacing: normal; font-size: 1em;">texto!</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;strong></code> texto! <code>&lt;/strong></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <strong>texto!</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;i></code> texto! <code>&lt;/i></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <i>texto!</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;em></code> texto! <code>&lt;/em></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <em>texto!</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;small></code> texto! <code>&lt;/small></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <small>texto!</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;mark></code> texto! <code>&lt;/mark></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <mark>texto!</mark>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;del></code> texto! <code>&lt;/del></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <del>texto!</del>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;ins></code> texto! <code>&lt;/ins></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <ins>texto!</ins>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;sub></code> texto! <code>&lt;/sub></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <sub>texto!</sub>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Oi, eu sou um <code>&lt;sup></code> texto! <code>&lt;/sup></code>
+                        </td>
+                        <td>
+                            Oi, eu sou um <sup>texto!</sup>
+                        </td>
+                    </tr>
+                </table>
 
 
+                <h2 id="TBei">B e I vs STRONG e EM</h2>
+
+                <p class="lead"> Diferenciação entre tags de estilos e semânticos: <br> <br>
+                    <code>&lt;strong></code> e <code>&lt;em></code> adicionam um significado semântico extra ao texto, ou seja, uma palavra forte ou enfátioca. Acontece que também dão um estilo negrito e itálico que pode ser alterado usando CSS. <br> <br>
+                    <code>&lt;b></code> e <code>&lt;i></code> por outro lado, aplica apenas o estilo da fonte e não deve mais ser usado. (Porque você deve formatar com CSS, e se o texto fosse realmente importante, você provavelmente o tornaria "forte" ou "enfatizado" de qualquer maneira!) </p>
+
+            </div>
 
 
-        <hr />
 
+        </section>
 
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="paragrafos.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="listas.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-</body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

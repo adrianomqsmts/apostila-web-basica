@@ -1,172 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Formulários em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <head>
+        <title>Formulários em CSS3</title>
+        <meta charset="utf-8">
 
-    <style>
-        .senha1[type="password"]:hover {
-            border: none;
-            border-bottom: 0.2em solid black;
-            padding: 0.5em;
-            width: 100%;
-        }
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-        .texto1[type="text"] {
-            border: none;
-            border-bottom: 0.2em solid black;
-            padding: 0.5em;
-            width: 100%;
-        }
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        .texto1[type="text"]:focus {
-            background-color: blue;
-        }
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        .pesquisa[type="search"] {
-            border: none;
-            border-bottom: 0.2em solid black;
-            padding: 0.5em;
-            width: 100%;
-            background-image: url(imagens/iconsearch.png);
-            background-repeat: no-repeat;
-            background-size: 2.5em;
-            padding-left: 2.5em;
-        }
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-        .areadetexto {
-            border: none;
-            border-bottom: 0.2em solid black;
-            height: 300px;
-            width: 100%;
-            text-align: justify;
-            resize: none;
+        <style>
+            .senha1[type="password"]:hover {
+                border: none;
+                border-bottom: 0.2em solid black;
+                padding: 0.5em;
+                width: 100%;
+            }
 
-        }
-    </style>
-</head>
+            .texto1[type="text"] {
+                border: none;
+                border-bottom: 0.2em solid black;
+                padding: 0.5em;
+                width: 100%;
+            }
 
-<body>
+            .texto1[type="text"]:focus {
+                background-color: blue;
+            }
 
-    <header>
+            .pesquisa[type="search"] {
+                border: none;
+                border-bottom: 0.2em solid black;
+                padding: 0.5em;
+                width: 100%;
+                background-image: url(../imagens/iconsearch.png);
+                background-repeat: no-repeat;
+                background-size: 2.5em;
+                padding-left: 2.5em;
+            }
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+            .areadetexto {
+                border: none;
+                border-bottom: 0.2em solid black;
+                height: 300px;
+                width: 100%;
+                text-align: justify;
+                resize: none;
+
+            }
+
+        </style>
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
-    <section>
 
-        <h2 id="formularios">Formulários</h2>
+        <section class="pt-5 mt-5">
 
-        <p>Aqui usaremos diferentes tipos de seletores para aplicar
-            diversos estilos aos diferentes campos de um formulário. </p>
+            <div class="container">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">input[type="text"] </span> { <br>
-                    <span class="p">border</span>: <span class="v">none</span>; <br>
-                    <span class="p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
-                    <span class="p">padding</span>: <span class="v">0.5em</span>; <br>
-                    <span class="p">width</span>: <span class="v">100%</span>; <br>
-                    }<br>
-                </td>
-                <td>
-                    <input style="border: none; border-bottom: 0.2em solid black; padding: 0.5em; width: 100%;"
-                        id="nome" value="nome" type="text">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">input[type="password"]:hover </span> { <br>
-                    <span class="p">border</span>: <span class="v">none</span>; <br>
-                    <span class="p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
-                    <span class="p">padding</span>: <span class="v">0.5em</span>; <br>
-                    <span class="p">width</span>: <span class="v">100%</span>; <br>
-                    }<br>
-                </td>
-                <td>
-                    <input class="senha1" id="senha" value="senha" type="password">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">input[type="text"] </span> { <br>
-                    <span class="p">border</span>: <span class="v">none</span>; <br>
-                    <span class="p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
-                    <span class="p">padding</span>: <span class="v">0.5em</span>; <br>
-                    <span class="p">width</span>: <span class="v">100%</span>; <br>
-                    }<br>
-                    <span class="s">input[type="text"]:focus </span> { <br>
-                    <span class="p">background-color</span>: <span class="v">blue</span>;<br>
+                <h1 id="formularios">Formulários</h1>
 
-                    }
-                </td>
-                <td>
-                    <input class="texto1" id="Pnome" value="Primeiro nome" type="text">
-                    <input class="texto1" id="Snome" value="Segundo nome" type="text">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">input[type="search"] </span> { <br>
-                    <span class="p">border</span>: <span class="v">none</span>; <br>
-                    <span class="p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
-                    <span class="p">padding</span>: <span class="v">0.5em</span>; <br>
-                    <span class="p">width</span>: <span class="v">100%</span>; <br>
-                    <span class="p">background-image</span>: <span class="v">url(imagens/iconsearch.png)</span>; <br>
-                    <span class="p">background-repeat</span>: <span class="v">no-repeat</span>; <br>
-                    <span class="p">background-size</span>: <span class="v">2.5em</span>; <br>
-                    <span class="p">padding-left</span>: <span class="v">2.5em</span>; <br>
-                    }
-                </td>
-                <td>
-                    <input class="pesquisa" id="search" placeholder="Pesquisar..." type="search">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">textarea</span> { <br>
-                    <span class="p">border</span>: <span class="v">none</span>; <br>
-                    <span class="p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
-                    <span class="p">width</span>: <span class="v">100%</span>; <br>
-                    <span class="p">height</span>: <span class="v">300px</span>; <br>
-                    <span class="p">text-align</span>: <span class="v">justify</span>; <br>
-                    <span class="p">resize</span>: <span class="v">none</span>; <br>
-                    }
-                </td>
-                <td>
-                    <textarea class="areadetexto" id="area" placeholder="Pesquisar...">
-    Agora você não pode mais aumentar e diminuir o tamanho da área de texto (Sim, antes você podia.).
-    Outros valores para o atributo risize permitem redimensionar o campo de entrada somente na horizontal, vertical ou em ambos (padrão.)                     
+                <p class="lead">Aqui usaremos diferentes tipos de seletores para aplicar diversos estilos aos diferentes campos de um formulário. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">input[type="text"] </span> { <br>
+                            <span class="e p">border</span>: <span class="v">none</span>; <br>
+                            <span class="e p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
+                            <span class="e p">padding</span>: <span class="v">0.5em</span>; <br>
+                            <span class="e p">width</span>: <span class="v">100%</span>; <br>
+                            }<br>
+                        </td>
+                        <td>
+                            <input style="border: none; border-bottom: 0.2em solid black; padding: 0.5em; width: 100%;" id="nome" value="nome" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">input[type="password"]:hover </span> { <br>
+                            <span class="e p">border</span>: <span class="v">none</span>; <br>
+                            <span class="e p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
+                            <span class="e p">padding</span>: <span class="v">0.5em</span>; <br>
+                            <span class="e p">width</span>: <span class="v">100%</span>; <br>
+                            }<br>
+                        </td>
+                        <td>
+                            <input class="senha1" id="senha" value="senha" type="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">input[type="text"] </span> { <br>
+                            <span class="e p">border</span>: <span class="v">none</span>; <br>
+                            <span class="e p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
+                            <span class="e p">padding</span>: <span class="v">0.5em</span>; <br>
+                            <span class="e p">width</span>: <span class="v">100%</span>; <br>
+                            }<br>
+                            <span class="s">input[type="text"]:focus </span> { <br>
+                            <span class="e p">background-color</span>: <span class="v">blue</span>;<br>
+
+                            }
+                        </td>
+                        <td>
+                            <input class="texto1" id="Pnome" value="Primeiro nome" type="text">
+                            <input class="texto1" id="Snome" value="Segundo nome" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">input[type="search"] </span> { <br>
+                            <span class="e p">border</span>: <span class="v">none</span>; <br>
+                            <span class="e p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
+                            <span class="e p">padding</span>: <span class="v">0.5em</span>; <br>
+                            <span class="e p">width</span>: <span class="v">100%</span>; <br>
+                            <span class="e p">background-image</span>: <span class="v">url(../imagens/iconsearch.png)</span>; <br>
+                            <span class="e p">background-repeat</span>: <span class="v">no-repeat</span>; <br>
+                            <span class="e p">background-size</span>: <span class="v">2.5em</span>; <br>
+                            <span class="e p">padding-left</span>: <span class="v">2.5em</span>; <br>
+                            }
+                        </td>
+                        <td>
+                            <input class="pesquisa" id="search" placeholder="Pesquisar..." type="search">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">textarea</span> { <br>
+                            <span class="e p">border</span>: <span class="v">none</span>; <br>
+                            <span class="e p">border-bottom</span>: <span class="v">0.2em solid black</span>; <br>
+                            <span class="e p">width</span>: <span class="v">100%</span>; <br>
+                            <span class="e p">height</span>: <span class="v">300px</span>; <br>
+                            <span class="e p">text-align</span>: <span class="v">justify</span>; <br>
+                            <span class="e p">resize</span>: <span class="v">none</span>; <br>
+                            }
+                        </td>
+                        <td>
+                            <textarea class="areadetexto" id="area" placeholder="Pesquisar...">
+    Agora você não pode mais aumentar e diminuir o tamanho da área de texto (Sim, antes você podia.).    Outros valores para o atributo risize permitem redimensionar o campo de entrada somente na horizontal, vertical ou em ambos (padrão.)                     
                 </textarea>
-                </td>
-            </tr>
-        </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
 
 
 
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
 
-    </section>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="seletores-atributos.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="especificidade.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

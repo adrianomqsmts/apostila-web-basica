@@ -1,151 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Citações em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Citações em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
+        <script src="../main.js"></script>
 
-    <section>
-        <h2>Elementos de Citação</h2>
+            <link rel="stylesheet" href="../css/main.css">
 
-        <p> Elementos de citação são úteis, pois adicionam semântica aos textos, permitindo uma maior eficiência, por
-            exemplo, dos motores de buscas ou sistemas de tradução. </p>
+    </head>
 
-        <ul>
-            <li>
-                <code>&lt;blockquote cite="fonte"></code>: Define um seção que é citada de outra fonte. normalmente o
-                trecho
-                de texto tem um recuo na sua exibição.
-            </li>
-            <li>
-                <code>&lt;q></code>: Define uma pequena citação. Os navegares normalmente inserem o trecho de texto
-                entre
-                aspas.
-            </li>
-            <li>
-                <code>&lt;abbr></code>: Define um abreviatura ou acrônomo como Dr. ou HTML. Pode ser combinado com o
-                atributo title, que pode fornecer um descrição da abreviação.
-            </li>
-            <li>
-                <code>&lt;address></code>: Define as informações de contatos do proprietário do site.
-            </li>
-            <li>
-                <code>&lt;cite></code>: Define o título de um trabalho, como livros, filmes, canções, dentre outros.
-            </li>
-            <li>
-                <code>&lt;bdo></code>: Inverte a direção em que o texto é exibido junto com o atributo dir que pode ser
-                esquerda para a direita (ltr) ou direita para a esquerda (rtl).
-            </li>
+    <body class="bg-darkblue text-white">
 
-        </ul>
+        <header>
+            <div id="menu">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;blockquote cite="http://www.google.com"></code> <br> O SITE DO GOOGLE<br>
-                    <code>&lt;/blockquote></code>
-                </td>
-                <td>
-                    <blockquote cite="http://www.google.com">O SITE DO GOOGLE
-                    </blockquote>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <code>&lt;p></code> <br> O SITE DO <code>&lt;q></code>GOOGLE><code>&lt;/q></code><br>
-                    <code>&lt;/p>
-                </td>
-                <td>
-                    <p>
-                    O SITE DO <q>GOOGLE</q></code>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <code>&lt;p></code> <br> O SITE DO <code>&lt;abbr title="GOOGLE"></code>G<code>&lt;/abbr></code><br>
-                    <code>&lt;/p>
-                </td>
-                <td>
-                    <p>
-                    O SITE DO <abbr title="Google">G</abbr></code>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <code>&lt;address></code> <br> Nome de alguém.<code>&lt;br></code> <br> endereço:
-                    <code>&lt;br></code><br> site.com
-                    <code>&lt;br></code><br> casa 1111, estado<code>&lt;br></code><br> BR <br>
-                    <code>&lt;/adress>
-                </td>
-                <td>
-                    <address>
-                    Nome de alguém.<br>
-                    endereço:<br>
-                    site.com<br>
-                    casa 1111, estado<br>
-                    BR <br>
-                    </adress>
-                </td>
-            </tr>
-    
-            <tr>
-                <td>
-                    <code>&lt;p></code> <br> Eu li uma serie de livros da saga
-                    <code>&lt;cite></code> Harry Potter
-                    <code>&lt;/cite></code> escrita pela autora britânica J. K. Rowling.
-                    <code>&lt;/p>
-                </td>
-                <td>
-                    <p></code> Eu li uma serie de livros da saga
-                    <cite></code>
-                        Harry Potter
-                    </cite></code>
-                    escrita pela autora britânica J. K. Rowling.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <code>&lt;bdo dir="rtl"></code> <br> 1,2,3,4,5
-                    <code>&lt;/bdo></code>
-                </td>
-                <td>
-                    <bdo dir="rtl">
-                        1,2,3,4,5
-                    </bdo>
-                </td>
-            </tr>
-        </table>
+            </div>
 
+            <script>
+                criarMenu();
+            </script>
 
+        </header>
+        <section class="pt-5 mt-5">
 
-        <hr>
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="tabelas.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="css-basico.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+            <div class="container">
 
-</body>
+                <h2>Elementos de Citação</h2>
+
+                <p class="lead"> Elementos de citação são úteis, pois adicionam semântica aos textos, permitindo uma maior eficiência, por
+                    exemplo, dos motores de buscas ou sistemas de tradução. </p>
+
+                <ul>
+                    <li>
+                        <code>&lt;blockquote cite="fonte"></code>: Define um seção que é citada de outra fonte. normalmente o
+                        trecho
+                        de texto tem um recuo na sua exibição.
+                    </li>
+                    <li>
+                        <code>&lt;q></code>: Define uma pequena citação. Os navegares normalmente inserem o trecho de texto
+                        entre
+                        aspas.
+                    </li>
+                    <li>
+                        <code>&lt;abbr></code>: Define um abreviatura ou acrônomo como Dr. ou HTML. Pode ser combinado com o
+                        atributo title, que pode fornecer um descrição da abreviação.
+                    </li>
+                    <li>
+                        <code>&lt;address></code>: Define as informações de contatos do proprietário do site.
+                    </li>
+                    <li>
+                        <code>&lt;cite></code>: Define o título de um trabalho, como livros, filmes, canções, dentre outros.
+                    </li>
+                    <li>
+                        <code>&lt;bdo></code>: Inverte a direção em que o texto é exibido junto com o atributo dir que pode ser
+                        esquerda para a direita (ltr) ou direita para a esquerda (rtl).
+                    </li>
+
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;blockquote cite="http://www.google.com"></code> <br>
+                            <span class="e">O SITE DO GOOGLE</span><br>
+                            <code>&lt;/blockquote></code>
+                        </td>
+                        <td>
+                            <blockquote cite="http://www.google.com">
+                                <span class="e">O SITE DO GOOGLE</span>
+                            </blockquote>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;p></code>
+                            O SITE DO <code>&lt;q></code>GOOGLE<code>&lt;/q></code>
+                            <code>&lt;/p></code>
+                        </td>
+                        <td>
+                            <p> O SITE DO <q>GOOGLE</q> </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;p></code>
+                            O SITE DO <code>&lt;abbr title="GOOGLE"></code>G<code>&lt;/abbr></code>
+                            <code>&lt;/p></code>
+                        </td>
+                        <td>
+                            <p>
+                                O SITE DO <abbr title="Google">G</abbr></code>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;address></code> <br>
+                            <span class="e">Nome de alguém.<code>&lt;br></code> <br></span>
+                            <span class="e">endereço: <code>&lt;br></code><br></span>
+                            <span class="e">site.com <code>&lt;br></code><br></span>
+                            <span class="e">casa 1111, estado<code>&lt;br></code><br></span>
+                            <span class="e"> BR <br></span>
+                            <code>&lt;/adress></code>
+                        </td>
+                        <td>
+                            <address>
+                                Nome de alguém.<br>
+                                endereço:<br>
+                                site.com<br>
+                                casa 1111, estado<br>
+                                BR <br>
+                                </adress>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;p></code> Eu li uma serie de livros da saga
+                            <code>&lt;cite></code> Harry Potter
+                            <code>&lt;/cite></code> escrita pela autora britânica J. K. Rowling.
+                            <code>&lt;/p></code>
+                        </td>
+                        <td>
+                            <p></code> Eu li uma serie de livros da saga
+                                <cite></code>
+                                    Harry Potter
+                                </cite></code>
+                                escrita pela autora britânica J. K. Rowling.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;bdo dir="rtl"></code> <br>
+                            <span class="e">1,2,3,4,5</span> <br>
+                            <code>&lt;/bdo></code>
+                        </td>
+                        <td>
+                            <bdo dir="rtl">
+                                1,2,3,4,5
+                            </bdo>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

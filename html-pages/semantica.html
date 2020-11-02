@@ -1,115 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Semântica em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Semântica em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
+        <script src="../main.js"></script>
 
-    <section>
+            <link rel="stylesheet" href="../css/main.css">
 
+    </head>
 
-        <h2 id="TSemantica">Elementos Semânticos</h2>
+    <body class="bg-darkblue text-white">
 
-        <p>Elementos semânticos dizem algo sobre o seu conteúdo, e isso diferem dos elementos div e span, que
-            não
-            especificam nada sobre o conteúdo.
-            <br>
-        <p style="text-align: center;"><img src="../imagens/layout.png"
-                style="width: 20%; height: 20%; text-align: center;" alt="
-            imagem que demontra um layout padrão
-            de uma página web, bem como os elementos
-            semânticos que representam cada parte.">
-        </p>
+        <header>
+            <div id="menu">
 
+            </div>
 
+            <script>
+                criarMenu();
+            </script>
 
+        </header>
 
 
-        <h3 id="TSection">section</h3>
+        <section class="pt-5 mt-5">
 
-        <p> O elemento <code>&lt;section></code> define uma seção do documento, que é descrita pela documentação
-            da W3C como
-            um agrupamento temático de conteúdo, normalmente com um título. Como por exeplo, uma seção para
-            introdução,
-            conteúdo e contatos. </p>
+            <div class="container">
+
+                <h1 id="TSemantica">Elementos Semânticos</h1>
+
+                <p class="lead">Elementos semânticos dizem algo sobre o seu conteúdo, e isso diferem dos elementos div e span, que não especificam nada sobre o conteúdo. <br> </p>
+
+                <p style="text-align: center;">
+                    <img src="../imagens/layout.png" style="width: 20%; height: 20%; text-align: center;" alt="            imagem que demontra um layout padrão de uma página web, bem como os elementos semânticos que representam cada parte.">
+                </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="TSection">section</h2>
+
+                <p class="lead"> O elemento <code>&lt;section></code> define uma seção do documento, que é descrita pela documentação da W3C como um agrupamento temático de conteúdo, normalmente com um título. Como por exeplo, uma seção para introdução, conteúdo e contatos. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="TArticle">article</h2>
+
+                <p class="lead"> O elemento <code>&lt;article></code> especifica um conteúdo independente e completo, como postagens ou artigos de jornais. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="THeader">header</h2>
+
+                <p class="lead"> O elemento <code>&lt;header></code> funciona como um contêiner para o conteúdo introdutório ou um conjunto de links de navegação, podendo conter, um título, logotipo e informações de autoria. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="TFooter">footer</h2>
+
+                <p class="lead"> O elemento <code>&lt;footer></code> define um rodapé para uma seção ou para um documento, e contém, normalmente, o mapa do site, os links principais, direitos utorais, as informações de contatos e os documentos relacionados. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="TNave">nav</h2>
+
+                <p class="lead"> O elemento <code>&lt;nav></code> define um conjunto de links de navegação, geralmente são os menus. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="TAside">aside</h2>
+
+                <p class="lead"> O elemento <code>&lt;aside></code> define um conteúdo relacionado ao conteúdo próximo de
+                    forma complementar eF geralmente fica na lateral do conteúdo principal. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="TAside">main</h2>
+
+                <p class="lead"> O elemento <code>&lt;main></code> especifica o conteúdo principal de maior relevância dentro da página. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Estrutura final de uma página semântica</h2>
+
+                <code>&lt;!DOCTYPE html></code> <br>
+                <code>&lt;html></code> <br>
+                <code class="e">&lt;head></code> <br>
+                <code class="e2">&lt;title></code>Título da página<code>&lt;/title></code> <br>
+                <code class="e">&lt;/head></code> <br>
+                <code class="e">&lt;body></code> <br>
+                <code class="e2">&lt;header></code> <br>
+                <code class="e3">&lt;nav></code><code>&lt;/nav></code> <br>
+                <code class="e2">&lt;/header></code> <br>
+                <code class="e2">&lt;main></code> <br>
+                <code class="e3">&lt;section></code> <br>
+                <code class="e4">&lt;article></code> <br>
+                <code class="e5">&lt;h1></code> Titulo <code>&lt;/h1></code> <br>
+                <code class="e5">&lt;p></code> Lorem ipsum dolor sit amet consectetur.<code>&lt;p></code> <br>
+                <code class="e4">&lt;/article></code> <br>
+                <code class="e3">&lt;/section></code> <br>
+                <code class="e2">&lt;/main></code> <br>
+                <code class="e">&lt;/body></code> <br>
+                <code>&lt;/html></code> <br>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Outros elementos semânticos</h2>
+                <ul>
+                    <li>time: O elemento <code>&lt;time></code> é utilizado para representar datas. Assim, caso seja necessário informar a data em que um conteúdo foi escrito, podemos declarar a tag <code>&lt;timeF></code> e acrescentar a ela o atributo datetime para escrever a data de forma padronizada.</li>
+                </ul>
+
+            </div>
 
 
 
+        </section>
 
-        <h3 id="TArticle">article</h3>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-        <p> O elemento <code>&lt;article></code> especifica um conteúdo independente e completo, como postagens
-            ou artigos
-            de jornais. </p>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
-
-
-
-        <h3 id="THeader">headre</h3>
-
-        <p> O elemento <code>&lt;header></code> funciona como um contêiner para o conteúdo introdutório ou um
-            conjunto de
-            links de navegação, podendo conter, um título, logotipo e informações de autoria. </p>
-
-
-
-
-
-        <h3 id="TFooter">footer</h3>
-
-        <p> O elemento <code>&lt;footer></code> define um rodapé para uma seção ou para um documento, e contém,
-            normalmente,
-            o mapa do site, os links principais, direitos autorais, as informações de contatos e os documentos
-            relacionados.
-        </p>
-
-
-
-
-
-        <h3 id="TNave">nave</h3>
-
-        <p> O elemento <code>&lt;nave></code> define um conjunto de links de navegação, geralmente são os
-            menus.
-        </p>
-
-
-
-
-        <h3 id="TAside">aside</h3>
-
-        <p> O elemento <code>&lt;aside></code> define um conteúdo relacionado ao conteúdo próximo de
-            forma
-            complementar e
-            geralmente fica na lateral do conteúdo principal. </p>
-
-
-        <hr>
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="caracteres-especiais.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="boas-praticas.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

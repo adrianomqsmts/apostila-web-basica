@@ -1,98 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Seletores de Atributos</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <head>
+        <title>Seletores de Atributos</title>
+        <meta charset="utf-8">
 
-    <style>
-        ul li{
-            padding-bottom: 2.5em;
-        }
-    </style>
-</head>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-
-
-    <section>
-
-
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         
-        <h2 id="seletores-atributos">Seletores de Atributos</h2>
+        
+        
+        <script src="../main.js"></script>
 
-    <p>Seletores de atributos são usados para selecionarem
-        elementos de acordo com o tipo ou valor de um determinado
-        atributo.</p>
-    <ul>
-        <li>
-            <b>seletor[atributo]{...}</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado. Ex.
-        </li>
-        <li>
-            <b>seletor[atributo="valor"]</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado exatamente com o valor espeficado.
-        </li>
-        <li>
-            <b>seletor[atributo~="valor"]</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado que contém em um dos n valores um que seja
-            idêntico ao valor especificado.
-        </li>
-        <li>
-            <b>seletor[atributo|="valor"]</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado e contém como primeiro valor o valor espeficado.
-            O valor deve ser uma palavra inteira, sozinha. Se contiver duas palavras com hífen (-),
-            ainda assim o valor poder ser considerado como em "valor-texto" e "valor".
-        </li>
-        <li>
-            <b>seletor[atributo^="valor"]</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado que contém um valor que começa com o valor
-            espeficado. O valor não precisa ser uma palavra inteira, ou seja, considera
-            valores como "valortexto", "valor-texto", "valor" e "valor texto".
-        </li>
-        <li>
-            <b>[attribute$="value"]</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado que contém um valor que termina com o valor
-            espeficado. O valor não precisa ser uma palavra interira, ou seja, considera
-            valores como "valortexto", "valor-texto", "valor" e "texto valor".
-        </li>
-        <li>
-            <b>[attribute*="value"]</b> : Seleciona todos os elementos especificados
-            que possuem o atributo especificado que contém um valor que contém o valor
-            espeficado. O valor não precisa ser uma palavra interira, ou seja, considera
-            valores como "valortexto", "textovalor", "valor", "textovalortexto" e "texto-valor"
-            "valor-texto".
-        </li>
-    </ul>
+        <link rel="stylesheet" href="../css/main.css">
+
+        <style>
+            ul li {
+                padding-bottom: 0.5em;
+            }
+        </style>
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
 
 
-    </section>
+                <h1 id="seletores-atributos">Seletores de Atributos</h1>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="gradiente.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="formularios.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+                <p class="lead">Seletores de atributos são usados para selecionarem elementos de acordo com o tipo ou valor de um determinado atributo.</p>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <ul class="lead">
+                    <li>
+                        <b>seletor[atributo]{...}</b> : Seleciona todos os elementos especificados que possuem o atributo especificado. Ex.
+                    </li>
+                    <li>
+                        <b>seletor[atributo="valor"]</b> : Seleciona todos os elementos especificados que possuem o atributo especificado exatamente com o valor especificado.
+                    </li>
+                    <li>
+                        <b>seletor[atributo~="valor"]</b> : Seleciona todos os elementos especificados que possuem o atributo especificado que contém em um dos n valores um que seja idêntico ao valor especificado.
+                    </li>
+                    <li>
+                        <b>seletor[atributo|="valor"]</b> : Seleciona todos os elementos especificados que possuem o atributo especificado e contém como primeiro valor o valor especificado. O valor deve ser uma palavra inteira, sozinha. Se contiver duas palavras com hífen (-), ainda assim o valor poder ser considerado como em "valor-texto" e "valor".
+                    </li>
+                    <li>
+                        <b>seletor[atributo^="valor"]</b> : Seleciona todos os elementos especificados que possuem o atributo especificado que contém um valor que começa com o valor especificado. O valor não precisa ser uma palavra inteira, ou seja, considera valores como "valortexto", "valor-texto", "valor" e "valor texto".
+                    </li>
+                    <li>
+                        <b>[attribute$="value"]</b> : Seleciona todos os elementos especificados que possuem o atributo especificado que contém um valor que termina com o valor especificado. O valor não precisa ser uma palavra inteira, ou seja, considera valores como "valortexto", "valor-texto", "valor" e "texto valor".
+                    </li>
+                    <li>
+                        <b>[attribute*="value"]</b> : Seleciona todos os elementos especificados que possuem o atributo especificado que contém um valor que contém o valor especificado. O valor não precisa ser uma palavra inteira, ou seja, considera valores como "valortexto", "textovalor", "valor", "textovalortexto" e "texto-valor"
+                        "valor-texto".
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-</body>
+
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

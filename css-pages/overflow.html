@@ -1,232 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Overvlow em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <head>
+        <title>Overvlow em CSS3</title>
+        <meta charset="utf-8">
 
-</head>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<body>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <section>
+        <script src="../main.js"></script>
 
+        <link rel="stylesheet" href="../css/main.css">
 
-        <h2 id="overflow">Layout - Overflow</h2>
+    </head>
 
-        <p>A propriedade overflow especifica se o conteúdo que ficar
-            extra no documento deve ser cortado ou então
-            adicionada um barra de rolagem para o elemento. </p>
-        <p>O estouro/transbordamento (overflow) funciona apenas se o elemento tiver
-            alguma altura especificada, caso contrário, o elemento
-            por padrão, se ajusta ao tamanho do conteúdo, não
-            havendo estouro/transpordamento. </p>
+    <body class="bg-darkblue text-white">
 
-            <hr>
+        <header>
 
-        <h3 id="transbordamento-visivel">overflow:visible - transbordamento visível</h3>
+        </header>
+        <div id="menu">
 
-        <p>O valor padrão para o atributo overflow
-            é o visible. Ou seja, todo o conteúdo
-            que ficar fora do elemento, ainda
-            é renderizado ficando visível.
-        </p>
+        </div>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">width</span>: <span class="v">55%</span>; <br>
-                        <span class="p">height</span>: <span class="v">77px</span>; <br>
-                        <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                        <span class="p">overflow</span>: <span class="v">visible</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div style="width: 55%;height: 77px; background-color: black; overflow: visible;">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Blanditiis quasi sunt mollitia.
-                        Animi doloremque reprehenderit iusto eum ipsum ea
-                        aliquam corrupti ipsam, quidem perspiciatis atque
-                        possimus ex repellendus temporibus commodi.
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <br>
-
-
-        <p>OBS: O conteúdo transbordado pode sobrepor outros elementos
-            pois não ocupa espaçao.</p>
-
-
-<hr>
-        <h3 id="esconder-transbordamento">overflow:hidden - esconder transbordamento</h3>
-
-        <p>A propriedade overflow:hidden é usada
-            para cortar todo o conteúdo transbordado. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">width</span>: <span class="v">55%</span>; <br>
-                        <span class="p">height</span>: <span class="v">77px</span>; <br>
-                        <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                        <span class="p">overflow</span>: <span class="v">hidden</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div style="width: 55%;height: 77px; background-color: black; overflow: hidden;">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Blanditiis quasi sunt mollitia.
-                        Animi doloremque reprehenderit iusto eum ipsum ea
-                        aliquam corrupti ipsam, quidem perspiciatis atque
-                        possimus ex repellendus temporibus commodi.
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
-<hr>
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+
+                <h1 id="overflow">Layout - Overflow</h1>
+
+                <p class="lead">A propriedade overflow especifica se o conteúdo que ficar extra no documento deve ser cortado ou então adicionada um barra de rolagem para o elemento. O estouro/transbordamento (overflow) funciona apenas se o elemento tiver alguma altura especificada, caso contrário, o elemento por padrão, se ajusta ao tamanho do conteúdo, não havendo estouro/transbordamento. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="transbordamento-visivel">overflow:visible - transbordamento visível</h2>
+
+                <p class="lead">O valor padrão para o atributo overflow é o visible. Ou seja, todo o conteúdo que ficar fora do elemento, ainda é renderizado ficando visível. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">width</span>: <span class="v">55%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">77px</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">overflow</span>: <span class="v">visible</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="width: 55%;height: 77px; background-color: black; overflow: visible;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi sunt mollitia. Animi doloremque reprehenderit iusto eum ipsum ea aliquam corrupti ipsam, quidem perspiciatis atque possimus ex repellendus temporibus commodi.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p class="lead">OBS: O conteúdo transbordado pode sobrepor outros elementos pois não ocupa espaçao.</p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="esconder-transbordamento">overflow:hidden - esconder transbordamento</h2>
+
+                <p class="lead">A propriedade overflow:hidden é usada para cortar todo o conteúdo transbordado. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">width</span>: <span class="v">55%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">77px</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">overflow</span>: <span class="v">hidden</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="width: 55%;height: 77px; background-color: black; overflow: hidden;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi sunt mollitia. Animi doloremque reprehenderit iusto eum ipsum ea aliquam corrupti ipsam, quidem perspiciatis atque possimus ex repellendus temporibus commodi.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="transbordamento-rolagem">overflow:scroll - transbordamento com rolagem</h2>
+
+                <p class="lead">A propriedade overflow:scroll é usada para esconder o conteúdo transbordado e acrescentar uma barra de rolagem no elemento, de tal forma que, seja possível ver todo o conteúdo dentro do espaço especificado. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">width</span>: <span class="v">55%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">77px</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">overflow</span>: <span class="v">scroll</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="width: 55%;height: 77px; background-color: black; overflow: scroll;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi sunt mollitia. Animi doloremque reprehenderit iusto eum ipsum ea aliquam corrupti ipsam, quidem perspiciatis atque possimus ex repellendus temporibus commodi.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="transbordamento-automatico">overflow:auto - transbordamento automático</h2>
+
+                <p class="lead">A propriedade overflow:auto é semelhante ao overflow:scroll, entretanto, ele adiciona a barra de rolagem apenas quando for necessário. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">width</span>: <span class="v">55%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">77px</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">overflow</span>: <span class="v">auto</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="width: 55%;height: 77px; background-color: black; overflow: auto;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi sunt mollitia. Animi doloremque reprehenderit iusto eum ipsum ea aliquam corrupti ipsam, quidem perspiciatis atque possimus ex repellendus temporibus commodi.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
 
-        <h3 id="transbordamento-rolagem">overflow:scroll - transbordamento com rolagem</h3>
-
-        <p>A propriedade overflow:scroll é usada para esconder
-            o conteúdo transbordado e acrescentar uma barra de rolagem
-            no elemento, de tal forma que, seja possível
-            ver todo o conteúdo dentro do espaço especificado. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">width</span>: <span class="v">55%</span>; <br>
-                        <span class="p">height</span>: <span class="v">77px</span>; <br>
-                        <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                        <span class="p">overflow</span>: <span class="v">scroll</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div style="width: 55%;height: 77px; background-color: black; overflow: scroll;">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Blanditiis quasi sunt mollitia.
-                        Animi doloremque reprehenderit iusto eum ipsum ea
-                        aliquam corrupti ipsam, quidem perspiciatis atque
-                        possimus ex repellendus temporibus commodi.
-                    </div>
-                </td>
-            </tr>
-        </table>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
 
+                <h2 id="transbordamento-vertical-horizontal ">overflow-x overflow-y - transbordamento vertical e horizontal</h2>
 
+                <p class="lead">Também é possível especificar se deseja aplicar as opções anteriores na horizontal(overflow-x) ou na vertical (overflow-y).</p>
 
-<hr>
-        <h3 id="transbordamento-automatico">overflow:auto - transbordamento automático</h3>
-
-        <p>A propriedade overflow:auto é semelhante ao
-            overflow:scroll, entretanto, ele adiciona a barra
-            de rolagem apenas quando for necessário. </p>
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">width</span>: <span class="v">55%</span>; <br>
-                        <span class="p">height</span>: <span class="v">77px</span>; <br>
-                        <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                        <span class="p">overflow</span>: <span class="v">auto</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div style="width: 55%;height: 77px; background-color: black; overflow: auto;">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Blanditiis quasi sunt mollitia.
-                        Animi doloremque reprehenderit iusto eum ipsum ea
-                        aliquam corrupti ipsam, quidem perspiciatis atque
-                        possimus ex repellendus temporibus commodi.
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-<hr>
-
-
-        <h3 id="transbordamento-vertical-horizontal ">overflow-x overflow-y - transbordamento vertical e horizontal</h3>
-
-        <p>Também é possível especificar se deseja aplicar as opções
-            anteriores
-            na horizontal(overflow-x) ou na vertical (overflow-y).</p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">width</span>: <span class="v">55%</span>; <br>
-                        <span class="p">height</span>: <span class="v">77px</span>; <br>
-                        <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                        <span class="p">overflow-x</span>: <span class="v">hidden</span>; <br>
-                        <span class="p">overflow-y</span>: <span class="v">scroll</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div
-                        style="width: 55%;height: 77px; background-color: black; overflow-x: hidden; overflow-y: scroll;">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Blanditiis quasi sunt mollitia.
-                        Animi doloremque reprehenderit iusto eum ipsum ea
-                        aliquam corrupti ipsam, quidem perspiciatis atque
-                        possimus ex repellendus temporibus commodi.
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <hr>
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">width</span>: <span class="v">55%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">77px</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">overflow-x</span>: <span class="v">hidden</span>; <br>
+                                <span class="e p">overflow-y</span>: <span class="v">scroll</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="width: 55%;height: 77px; background-color: black; overflow-x: hidden; overflow-y: scroll;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi sunt mollitia. Animi doloremque reprehenderit iusto eum ipsum ea aliquam corrupti ipsam, quidem perspiciatis atque possimus ex repellendus temporibus commodi.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
 
 
 
-    </section>
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="position.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="float.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

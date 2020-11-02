@@ -1,122 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Introdução sobre CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-        <h2 id="Introdução">INTRODUÇÃO</h2>
-
-        <p> CSS (Cascading Style Sheets/ Folha de Estilos em Cascata)
-            padronizada pela W3C,
-            descreve como os elementos HTML devem ser exibidos na
-            tela, paper ou em outra mídia. Com o objetivo
-            de tratatar das características de design da maneira
-            mais efeitiva e melhorar o gerenciamento das
-            páginas de um site, foi criada uma extensão do HTML. </p>
-        <p> A principal vantagem de se usar CSS é a praticidade de
-            economizar muito trabalho, podendo controlar o estilo
-            (layout) de várias páginas web de uma única vez. </p>
-        <ul>
-            <li>
-                Espaçamento entre linhas;
-            </li>
-            <li>
-                Posicionamento de imagens e textos;
-            </li>
-            <li>
-                Cores e imagens de fundo;
-            </li>
-            <li>
-                Tratamento de fontes;
-            </li>
-            <li>
-                Margem e endentação;
-            </li>
-            <li>
-                Tratamento de características dos links;f
-            </li>
-            <li>
-                Dentre outras características de design.
-            </li>
-        </ul>
-        <p> Assim, o HTML fica livre apenas para descrever o conteúdo
-            dos sites ficando mais limpo e objetivo, enquanto o
-            CSS fica com o trabalho exclusivo de definir estilos
-            para suas páginas web, como o design, layout,
-            portabilidade, etc. </p>
-        <p>As principais vantagem de se usar CSS são:</p>
-        <ul>
-            <li>
-                Separar a definição do layout das páginas do conteúdo a ser exibido;
-            </li>
-            <li>
-                Padronização das páginas de um site;
-            </li>
-            <li>
-                Código HTML mais simples e fácil de ser manipulado;
-            </li>
-            <li>
-                Otimização para qualquer resolução de monitor de vídeo e
-            </li>
-            <li>
-                Controle mais preciso e previsível do formato da apresentação.
-            </li>
-        </ul>
+    <head>
+        <title>Introdução sobre CSS3</title>
+        <meta charset="utf-8">
 
 
-<hr>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
+
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+
+                <h1 id="Introdução">INTRODUÇÃO</h1>
+
+                <p class="lead"> CSS (Cascading Style Sheets/ Folha de Estilos em Cascata) padronizada pela W3C, descreve como os elementos HTML devem ser exibidos na tela, paper ou em outra mídia. Com o objetivo de tratar das características de design da maneira mais efetiva e melhorar o gerenciamento das páginas de um site, foi criada uma extensão do HTML. </p>
+
+                <p class="lead"> A principal vantagem de se usar CSS é a praticidade de economizar muito trabalho, podendo controlar o estilo (layout) de várias páginas web de uma única vez. </p>
+
+                <ul>
+                    <li>
+                        Espaçamento entre linhas;
+                    </li>
+                    <li>
+                        Posicionamento de imagens e textos;
+                    </li>
+                    <li>
+                        Cores e imagens de fundo;
+                    </li>
+                    <li>
+                        Tratamento de fontes;
+                    </li>
+                    <li>
+                        Margem e endentação;
+                    </li>
+                    <li>
+                        Tratamento de características dos links;f
+                    </li>
+                    <li>
+                        Dentre outras características de design.
+                    </li>
+                </ul>
+
+                <p class="lead"> Assim, o HTML fica livre apenas para descrever o conteúdo dos sites ficando mais limpo e objetivo, enquanto o CSS fica com o trabalho exclusivo de definir estilos para suas páginas web, como o design, layout, portabilidade, etc. </p>
+
+                <p class="lead">As principais vantagem de se usar CSS são:</p>
+
+                <ul>
+                    <li>
+                        Separar a definição do layout das páginas do conteúdo a ser exibido;
+                    </li>
+                    <li>
+                        Padronização das páginas de um site;
+                    </li>
+                    <li>
+                        Código HTML mais simples e fácil de ser manipulado;
+                    </li>
+                    <li>
+                        Otimização para qualquer resolução de monitor de vídeo e
+                    </li>
+                    <li>
+                        Controle mais preciso e previsível do formato da apresentação.
+                    </li>
+                </ul>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="CSS-Sintaxe">CSS Sintaxe</h2>
+
+                <figure class="figure">
+                    <img src="../imagens/sintaxecss.png" class="figure-img img-fluid rounded" alt="Imagem que mostra a sintaxe CSS">
+                    <figcaption class="figure-caption text-xs-right">Sintaxe CSS3 e suas principais características</figcaption>
+                </figure>
 
 
+                <p class="lead"> O seletor aponta para o elemento HTML que você deseja aplicar algum estilo (h1 no exemplo), enquanto o bloco de declaração contém uma ou mais declarações separadas por ponto e virgula. </p>
 
-        <h3 id="CSS-Sintaxe">CSS Sintaxe</h3>
+                <span class="code">seletor{bloco de declarações}</span> <br>
+                <span class="code">seletor{declaração1;declaração2;...;}</span> <br> <br>
 
-        <img src="../imagens/sintaxecss.png" alt="sintaxe css" style="width: 100%; height: auto;">
-        <p> O seletor aponta para o elemento HTML que você deseja
-            aplicar algum estilo (h1 no exemplo), enquanto
-            o bloco de declaração contém
-            uma ou mais declarações separadas por ponto e virgula.</p>
-        <span class="code">seletor{bloco de declarações}</span> <br>
-        <span class="code">seletor{declaração1;declaração2;...;}</span>
-        <p> Cada declaração inclui um nome de propriedade CSS e um
-            valor separados por dois pontos (color:red e
-            font-size:12px no exemplo). </p>
-        <span class="code">seletor{propriedade:valor}</span>
-        <p>Assim, todas as declarações são separadas por ponto-e-virgula
-            e as declarações são cercadas por chaves. (todo o exemplo)</p>
-        <span class="code">seletor{propriedade1:valor; propriedade2:valor2;...;}</span>
-        <p>Uma propriedade pode ter mais de um valor, nesse caso, deve-se
-            seperar cada valor por um único espaço. </p>
-        <span class="code">seletor{propriedade1:valor1.1 valor1.2 valor1.3;}</span>
-        <p>Caso algum valor tenha mais de uma palavra, deve-se usar
-            aspas duplas (por exemplo "Times New Roman").
-        </p>
+                <p class="lead"> Cada declaração inclui um nome de propriedade CSS e um valor separados por dois pontos (color:red e font-size:12px no exemplo). </p>
+
+                <span class="code">seletor{propriedade:valor}</span> <br> <br>
+
+                <p class="lead">Assim, todas as declarações são separadas por ponto-e-virgula e as declarações são cercadas por chaves. (todo o exemplo)</p>
+
+                <span class="code">seletor{propriedade1:valor; propriedade2:valor2;...;}</span><br> <br>
+
+                <p class="lead">Uma propriedade pode ter mais de um valor, nesse caso, deve-se separar cada valor por um único espaço. </p>
+
+                <span class="code">seletor{propriedade1:valor1.1 valor1.2 valor1.3;}</span><br> <br>
+
+                <p class="lead">Caso algum valor tenha mais de uma palavra, deve-se usar aspas duplas (por exemplo "Times New Roman"). </p>
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-
-    </section>
-    <hr />
-    <div class="btn">
-        <a class="btn-proximo" href="comentarios.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

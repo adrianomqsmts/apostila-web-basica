@@ -1,264 +1,264 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Fontes em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+    <head>
+        <title>Fontes em CSS3</title>
+        <meta charset="utf-8">
 
 
-    <section>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <h2 id="fontes">Fontes</h2>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <p>As propriedades da fonte definem a família da fonte,
-            negrito, tamanho e estilo de um texto. </p>
-    
-    
-    
-    <hr>
-    
-    
-        <h3 id="font-family">font-family: tipos de fontes</h3>
-    
-        <p>Família de fontes genéricas podem ser serif, Sans-serif e monospace,
-            e são um grupo de fontes de aparência bem semelhente. Em telas
-            de computadores, as fontes genéricas sans-serif são mais fáceis
-            de ler. </p>
-    
-       <p style="text-align: center;"> <img src="../imagens/fontes.png" alt="Diferenças entre sans-serif e serif"></p>
-    
-        <p>Enquanto as demais, como Arial, Times New Roman ou Courier New,
-            são famílias de fontes especificas.</p>
-        <p>A propriedade font-family deve conter vários nomes de fontes e
-            por fim, o nome de uma fonte genérica. Isso é recomendado, pois, caso
-            algum navegador não tenha suporte para a fonte especificada, ele pode
-            tentar a segunda fonte, e assim sucessivamente, até a fonte genérica,
-            onde o navegador irá encontrar uma fonte semelhente a genérica para
-            aplicar sobre o texto. </p>
-    
-        <p>Para ver as melhores combinações de fontes acesse:
-            <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">Fontes</a>
-        </p>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font-family</span>: <span class="v"> "Times New Roman", Times, serif</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font-family: 'Times New Roman', Times, serif;">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font-family</span>: <span class="v">Arial, Helvetica, sans-serif</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style=" font-family: Arial, Helvetica, sans-serif;">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font-family</span>: <span class="v">"Lucida Console", Courier, monospace</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font-family: 'Lucida Console', Courier, monospace;">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-        </table>
-    
-    
-    
-    
-    <hr>
-    
-        <h3 id="font-style">font-style: itálico</h3>
-    
-        <p>A porpriedade font-style é usada para deixar um
-            texto em itálico ou remover o itálico de um texto.
-        </p>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font-style</span>: <span class="v">italic</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font-style: italic">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-        </table>
-    
-    
-    <hr>
-    
-        <h3 id="font-size">font-size: tamanho da fonte</h3>
-    
-        <p>A unidade recomendada para se udar em fontes é a unidade
-            em. Assim, ela pode ser redimensidada de acordo com o
-            valor padrão da fonte, podendo crescer ou diminuir.
-            Geralmente 1em equivalerá a 16px.</p>
-        <p>Uma forma de fazer o texto, crescer ou diminuir de acordo com o
-            tamanho da tela do navegador, é recomendado o uso da unidade vm.</p>
-        <p>A principal alternativa para que em todos os navegadores exibam o
-            mesmo tamanho de fonte, é combinar % e em. Bastando definir o body
-            com o valor 100% e em seguida, usar normalmente a unidade em nos textos.</p>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font-size</span>: <span class="v">1.2em</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font-size: 1.2em;">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font-size</span>: <span class="v">1.5vw</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font-size: 1.5vw">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                        (EXPERIMENTE AUMENTAR E DIMINUIR A TELA!!!)
-                    </p>
-                </td>
-            </tr>
-        </table>
-    
-    
-        <hr>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-        <h3 id="font">font: fontes</h3>
-    
-        <p>Podemos aplicar todas essas propriedades em uma
-            única linha usando a propriedade font.
-            Alguns valores de fonte podem ser omitidos</p>
-    
-        <span class="code">font: style weight size/line-height family</span>
-        <br><br>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font</span>: <span class="v">italic bold 12px/20px Georgia, serif</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font: italic bold 12px/20px Georgia, serif">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">p </span> {
-        <span class="p">font</span>: <span class="v">font-size: 1.3em Arial</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p style="font-size: 1.3em Arial">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Quas cum nihil voluptatum similique.
-                        Laborum molestias voluptas error, consectetur
-                        aspernatur deserunt qui tempore velit fugit beatae
-                        cupiditate ipsa alias suscipit saepe?
-                    </p>
-                </td>
-            </tr>
-        </table>
-    
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h1 id="fontes">Fontes</h1>
+
+                <p class="lead">As propriedades da fonte definem a família da fonte, negrito, tamanho e estilo de um texto. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="font-family">font-family: tipos de fontes</h2>
+
+                <p class="lead">Família de fontes genéricas podem ser serif, Sans-serif e monospace, e são um grupo de fontes de aparência bem semelhantes. Em telas de computadores, as fontes genéricas sans-serif são mais fáceis de ler. </p>
+
+                <div class="text-center">
+                    <img src="../imagens/fontes.png" alt="Diferenças entre sans-serif e serif">
+                </div> <br>
+
+                <p class="lead">Enquanto as demais, como Arial, Times New Roman ou Courier New, são famílias de fontes especificas.</p>
+
+                <p class="lead">A propriedade font-family deve conter vários nomes de fontes e por fim, o nome de uma fonte genérica. Isso é recomendado, pois, caso algum navegador não tenha suporte para a fonte especificada, ele pode tentar a segunda fonte, e assim sucessivamente, até a fonte genérica, onde o navegador irá encontrar uma fonte semelhante a genérica para aplicar sobre o texto. </p>
+
+                <p class="lead">Para ver as melhores combinações de fontes acesse:
+                    <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">Fontes</a>
+                </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font-family</span>: <span class="v"> "Times New Roman", Times, serif</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-family: 'Times New Roman', Times, serif;">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cum nihil voluptatum similique. Laborum molestias voluptas error, consectetur aspernatur deserunt qui tempore velit fugit beatae cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font-family</span>: <span class="v">Arial, Helvetica, sans-serif</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style=" font-family: Arial, Helvetica, sans-serif;">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cum nihil voluptatum similique. Laborum molestias voluptas error, consectetur aspernatur deserunt qui tempore velit fugit beatae cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font-family</span>: <span class="v">"Lucida Console", Courier, monospace</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-family: 'Lucida Console', Courier, monospace;">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cum nihil voluptatum similique. Laborum molestias voluptas error, consectetur aspernatur deserunt qui tempore velit fugit beatae cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="font-style">font-style: itálico</h2>
+
+                <p class="lead">A propriedade font-style é usada para deixar um texto em itálico ou remover o itálico de um texto. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font-style</span>: <span class="v">italic</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-style: italic">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cum nihil voluptatum similique. Laborum molestias voluptas error, consectetur aspernatur deserunt qui tempore velit fugit beatae cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="font-size">font-size: tamanho da fonte</h2>
+
+                <p class="lead">A unidade recomendada para se usar em fontes é a unidade em. Assim, ela pode ser redimensionada de acordo com o valor padrão da fonte, podendo crescer ou diminuir. Geralmente 1em equivalerá a 16px.</p>
+
+                <p class="lead">Uma forma de fazer o texto, crescer ou diminuir de acordo com o tamanho da tela do navegador, é recomendado o uso da unidade vm. A principal alternativa para que em todos os navegadores exibam o mesmo tamanho de fonte, é combinar % e em. Bastando definir o body com o valor 100% e em seguida, usar normalmente a unidade em nos textos.</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font-size</span>: <span class="v">1.2em</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-size: 1.2em;">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cum nihil voluptatum similique. Laborum molestias voluptas error, consectetur aspernatur deserunt qui tempore velit fugit beatae cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font-size</span>: <span class="v">1.5vw</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-size: 1.5vw">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas cum nihil voluptatum similique. Laborum molestias voluptas error, consectetur aspernatur deserunt qui tempore velit fugit beatae cupiditate ipsa alias suscipit saepe?
+                                <br> <br> (EXPERIMENTE AUMENTAR E DIMINUIR A TELA!!!)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
 
 
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-    </section>
+                <h2 id="font">font: fontes</h2>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="textos">&lt; Anterior</a>
-        <a class="btn-proximo2" href="icones.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+                <p class="lead">Podemos aplicar todas essas propriedades em uma única linha usando a propriedade font. Alguns valores de fonte podem ser omitidos</p>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <div class="text-center">
+                    <span class="code">font: style weight size/line-height family</span>
+                </div>
 
-</body>
+                <br><br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font</span>: <span class="v">italic bold 12px/20px Georgia, serif</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font: italic bold 12px/20px Georgia, serif">
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Quas cum nihil voluptatum similique.
+                                Laborum molestias voluptas error, consectetur
+                                aspernatur deserunt qui tempore velit fugit beatae
+                                cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">p </span> { <br>
+                                <span class="e p">font</span>: <span class="v">font-size: 1.3em Arial</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p style="font-size: 1.3em Arial">
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Quas cum nihil voluptatum similique.
+                                Laborum molestias voluptas error, consectetur
+                                aspernatur deserunt qui tempore velit fugit beatae
+                                cupiditate ipsa alias suscipit saepe?
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

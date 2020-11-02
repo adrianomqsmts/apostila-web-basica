@@ -1,188 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Listas em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Listas em CSS3</title>
+        <meta charset="utf-8">
 
-<body>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
-    <section>
 
+        <section class="pt-5 mt-5">
 
-        <h2 id="Listas">list-style: Estilo de Listas</h2>
+            <div class="container">
+                <h1 id="Listas">list-style: Estilo de Listas</h1>
 
-        <p>A propriedade list-style é usad para aplicar
-            várias propriedades de estilos em uma lista. </p>
-        <ul>
-            <li>
-                <b>list-style-type</b>: Escolhe o simbolo que irá
-                ser usado para identificar cada item de uma lista.
-                <ul style="list-style-type: u">
-                    <li><b>Listas Não-Ordenenadas</b>: circle (circulo),
-                        square (quadrado), disc (disco) e
-                        none (sem).</li>
-                    <li><b>Listas Ordenadas</b>: upper-roman
-                        (algarismos romanos maiúsculos), lower-roman
-                        (algarismos romanos minúsculos), upper-alpha
-                        (letras maiúsculas), lower-alpha
-                        (letras maiúsculas), none (sem), e
-                        <a
-                            href="https://www.w3schools.com/css/tryit.asp?filename=trycss_list-style-type_all">OUTROS.</a>
+                <p class="lead">A propriedade list-style é usada para aplicar várias propriedades de estilos em uma lista. </p>
+                <ul>
+                    <li>
+                        <b>list-style-type</b>: Escolhe o simbolo que irá ser usado para identificar cada item de uma lista.
+                        <ul style="list-style-type: u">
+                            <li><b>Listas Não-Ordenadas</b>: circle (circulo), square (quadrado), disc (disco) e none (sem).</li>
+                            <li><b>Listas Ordenadas</b>: upper-roman
+                                (algarismos romanos maiúsculos), lower-roman (algarismos romanos minúsculos), upper-alpha (letras maiúsculas), lower-alpha (letras maiúsculas), none (sem), e <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_list-style-type_all">OUTROS.</a>
+                            </li>
+                        </ul>
                     </li>
+                    <li><b>list-style-image</b>: Especifica uma imagem como simbolo que irá ser usado para identificar cada item de uma lista. </li>
+                    <li><b>list-style-position</b>: Especifica se os símbolos fazem parte do conteúdo (inside) ou não (outside padrão)</li>
                 </ul>
-            </li>
-            <li><b>list-style-image</b>: Especifica uma imagem
-                como simbolo que irá ser usado para identificar
-                cada item de uma lista. </li>
-            <li><b>list-style-position</b>: Especifica se os
-                simbolos fazem parte do conteúdo (inside) ou
-                não (outside padrão)</li>
-        </ul>
 
-        <span class="code">list-style: type position image </span>
-        <br> <br>
+                <div class="text-center">
+                    <span class="code">list-style: type position image </span>
+                </div>
 
-        <p>Se um dos valores de propriedade acima estiver faltando, o valor padrão para
-            o propriedade ausente será inserida, se houver. </p>
+                <br>
+                <p class="lead">Se um dos valores de propriedade acima estiver faltando, o valor padrão para
+                    o propriedade ausente será inserida, se houver. </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">ul</span> {
-        <span class="p">list-style-type</span>: <span class="v">upper-roman</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p>Lista ul</p>
-                    <ul style="list-style-type: upper-roman;">
-                        <li>Item1</li>
-                        <li>Item2</li>
-                        <li>item3</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">ol</span> {
-        <span class="p">list-style-type</span>: <span class="v">square</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p>Lista ol</p>
-                    <ol style="list-style-type: square;">
-                        <li>Item1</li>
-                        <li>Item2</li>
-                        <li>item3</li>
-                        </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">ol</span> {
-        <span class="p">list-style-type</span>: <span class="v">square</span>;
-        <span class="p">list-style-position</span>: <span class="v">inside</span>;
-    }
-    
-    <span class="s">li</span> {
-        <span class="p">border</span>: <span class="v">1px solid</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p>Lista ol</p>
-                    <ol style="list-style-type: square;list-style-position: inside;">
-                        <li style="border: 1px solid">Item1</li>
-                        <li style="border: 1px solid">Item2</li>
-                        <li style="border: 1px solid">item3</li>
-                        </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">ol</span> {
-        <span class="p">list-style-type</span>: <span class="v">square</span>;
-        <span class="p">list-style-position</span>: <span class="v">outside</span>;
-    }
-    
-    <span class="s">li</span> {
-        <span class="p">border</span>: <span class="v">1px solid</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p>Lista ol</p>
-                    <ol style="list-style-type: square;list-style-position: outside;">
-                        <li style="border: 1px solid">Item1</li>
-                        <li style="border: 1px solid">Item2</li>
-                        <li style="border: 1px solid">item3</li>
-                        </ul>
-                </td>
-            </tr>
-        </table>
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">ul</span> { <br>
+                                <span class="e p">list-style-type</span>: <span class="v">upper-roman</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead">Lista ul</p>
+                            <ul style="list-style-type: square;">
+                                <li>Item1</li>
+                                <li>Item2</li>
+                                <li>item3</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">ol</span> { <br>
+                                <span class="e p">list-style-type</span>: <span class="v">square</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead">Lista ol</p>
+                            <ol style="list-style-type: upper-roman;">
+                                <li>Item1</li>
+                                <li>Item2</li>
+                                <li>item3</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">ul</span> { <br>
+                                <span class="e p">list-style-type</span>: <span class="v">square</span>; <br>
+                                <span class="e p">list-style-position</span>: <span class="v">inside</span>; <br>
+                                } <br>
+                                <span class="s">li</span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead">Lista ul</p>
+                            <ul style="list-style-type: square;list-style-position: inside;">
+                                <li style="border: 1px solid">Item1</li>
+                                <li style="border: 1px solid">Item2</li>
+                                <li style="border: 1px solid">item3</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">ul</span> { <br>
+                                <span class="e p">list-style-type</span>: <span class="v">square</span>; <br>
+                                <span class="e p">list-style-position</span>: <span class="v">outside</span>; <br>
+                                } <br>
+                                <span class="s">li</span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead">Lista ul</p>
+                            <ul style="list-style-type: square;list-style-position: outside;">
+                                <li style="border: 1px solid">Item1</li>
+                                <li style="border: 1px solid">Item2</li>
+                                <li style="border: 1px solid">item3</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
 
-        <p>Note que, mesmo usando o valor inside para a
-            propriedade list-style-position, ainda há um
-            espaçamento lateral para o objeto que pode ser removido. </p>
-        <p>Abaixo vamos usar a propriedade list-style, remover os
-            espaçamentos e inserir uma cor de fundo. Lembrando que sempre
-            que usar uma imagem é recomendável usar a propriedade
-            list-style-type, pois assim, caso ocorra algum erro com a
-            imagem, ainda assim, a lista pode estar bem formatada. </p>
+                <p class="lead">Note que, mesmo usando o valor inside para a propriedade list-style-position, ainda há um espaçamento lateral para o objeto que pode ser removido. </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">ol</span> {
-        <span class="p">list</span>: <span class="v">lower-alpha inside url("imagens/listicon.png")</span>;
-        <span class="p">padding</span>: <span class="v">0</span>;
-        <span class="p">background-color</span>: <span class="v">black</span>;
-    }</pre>
-                </td>
-                <td>
-                    <p>Lista ol</p>
-                    <ol
-                        style="list-style: lower-alpha inside url('imagens/listicon.png');padding: 0; background-color: black;">
-                        <li>Item1</li>
-                        <li>Item2</li>
-                        <li>item3</li>
-                        </ul>
-                </td>
-            </tr>
-        </table>
+                <p class="lead">Abaixo vamos usar a propriedade list-style, remover os espaçamentos e inserir uma cor de fundo. Lembrando que sempre que usar uma imagem é recomendável usar a propriedade list-style-type, pois assim, caso ocorra algum erro com a imagem, ainda assim, a lista pode estar bem formatada. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">ol</span> { <br>
+                                <span class="e p">list</span>: <span class="v">lower-alpha inside url("imagens/listicon.png")</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">0</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <p class="lead">Lista ol</p>
+                            <ol style="list-style: lower-alpha inside url('../imagens/listicon.png');padding: 0; background-color: black;">
+                                <li>Item1</li>
+                                <li>Item2</li>
+                                <li>item3</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
 
 
 
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-    </section>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="seletores-combinados.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="tabelas.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

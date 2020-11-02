@@ -1,175 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Boas Práticas em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Boas Práticas em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+
+        <script src="../main.js"></script>
+
+            <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenu();
+        </script>
 
 
-    <section>
+        <section class="pt-5 mt-5">
 
+            <div class="container">
 
-        <h2 id="TPadrao">Padrão de codificação</h2>
+                <h1 id="TPadrao">Padrão de codificação</h1>
 
-        <p> Sempre que for codificar uma página em HTML sigam esses padrões. </p>
-        <ul>
-            <li>Sempre declare o tipo do documento. No caso do HTML5, declare:
+                <p class="lead"> Sempre que for codificar uma página em HTML sigam esses padrões. </p>
                 <ul>
-                    <li><code>&lt;!DOCTYPE html></code></li>
-                </ul>
-            </li>
-            <li>
-                Usem nome de elementos sempre em minúsculas como <code>&lt;a></code> e <code>&lt;p></code>
-                evitando
-                <code>&lt;A></code> ou <code>&lt;P></code>.
-                <ul>
-                    <li>
-                        <code>&lt;a></code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Feche todos os elementos.
-                <ul>
-                    <li>
-                        <code>&lt;p></code><code>&lt;/p></code>
-                    </li>
-                    <li>
-                        <code>&lt;br/></code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Use sempre os nomes dos atributos em minúsculas como <code>&lt;a href="url">&lt;/a></code> ao
-                invés de
-                <code>&lt;a HREF="url">&lt;/a></code>.
-                <ul>
-                    <li>
-                        <code>&lt;a href="url">&lt;/a></code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Sempre declares os valores dos atributos e entre aspas duplas.
-                <ul>
-                    <li>
-                        <code>&lt;a href="url">&lt;/a></code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Sempre especifique, através de CSS, a altura, largura e o atributo alt das imagens, para evitar
-                má
-                formatação das imagens.
-                <ul>
-                    <li><code>&lt;img href="url" style="width:128px;height:128px" alt="img"></code></li>
-                </ul>
-            </li>
-            <li>
-                Exite colocar espaçamentos entre os atributos e seus valores (atributo="valor").
-                <ul>
-                    <li>
-                        <code>&lt;a href="url">&lt;/a></code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Evite linhas longas de código, sempre identando corretamente o códifo fonte. Não é comveniente
-                que tenha
-                barra de rolagem lateral no documento.
-            </li>
-            <li>
-                Evite linhas em branco e recuos sem motivos. Use-os apenas para separar blocos de códigos
-                grandes ou blocos
-                lógicos. Evitadando o uso da tecla TAB, preferindo dois espaços para identar os elementos.
-            </li>
-            <li>
-                Nunca ignore o elemento <code>&lt;title></code>, pois é muito importante para buscadores de
-                pesquisas.
-            </li>
-            <li>
-                Fechar elementos vazios é opcional, mas necessário caso algum software xml ou xhtml use a sua
-                página.
-            </li>
-            <li>
-                Inclua o atributo lang dentro da tag <code>&lt;html lang="pt-br"></code>.
-            </li>
-            <li>
-                Sempre declare os metadados o mais cedo possível, impedindo erros de interpretação.
-                <ul>
-                    <li><code>&lt;meta charset="utf-8"></code>.</li>
-                </ul>
-            </li>
-            <li>
-                Configure sempre a janela de vizualização através do elemento <code>&lt;meta></code>.
-                <ul>
-                    <li>
-                        <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"></code>.
+                    <li>Sempre declare o tipo do documento. No caso do HTML5, declare:
                         <ul>
-                            <li>A width=device-width define a largura da página para seguir a largura da tela do
-                                dispositivo
-                                (que irá variar dependendo do dispositivo).</li>
-                            <li>A initial-scale=1.0 define o nível de zoom inicial quando a página é carregada
-                                pela primeira
-                                vez pelo navegador.</li>
+                            <li><code>&lt;!DOCTYPE html></code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Usem nome de elementos sempre em minúsculas como <code>&lt;a></code> e <code>&lt;p></code> evitando <code>&lt;A></code> ou <code>&lt;P></code>.
+                        <ul>
+                            <li>
+                                <code>&lt;a></code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Feche todos os elementos.
+                        <ul>
+                            <li>
+                                <code>&lt;p></code><code>&lt;/p></code>
+                            </li>
+                            <li>
+                                <code>&lt;br/></code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Use sempre os nomes dos atributos em minúsculas como <code>&lt;a href="url">&lt;/a></code> ao invés de <code>&lt;a HREF="url">&lt;/a></code>.
+                        <ul>
+                            <li>
+                                <code>&lt;a href="url">&lt;/a></code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Sempre declares os valores dos atributos e entre aspas duplas.
+                        <ul>
+                            <li>
+                                <code>&lt;a href="url">&lt;/a></code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Sempre especifique, através de CSS, a altura, largura e o atributo alt das imagens, para evitar má formatação das imagens. <ul>
+                            <li><code>&lt;img href="url" style="width:128px;height:128px" alt="img"></code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Evite colocar espaçamentos entre os atributos e seus valores (atributo="valor").
+                        <ul>
+                            <li>
+                                <code>&lt;a href="url">&lt;/a></code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Evite linhas longas de código, sempre identando corretamente o códifo fonte. Não é comveniente que tenha barra de rolagem lateral no documento.
+                        <ul>
+                            <li>Existem IDEs que permitem o recurso de wrap, busque usá-lo.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Evite linhas em branco e recuos sem motivos. Use-os apenas para separar blocos de códigos grandes ou blocos lógicos. Evitadando o uso da tecla TAB, preferindo dois espaços para identar os elementos.
+                    </li>
+                    <li>
+                        Nunca ignore o elemento <code>&lt;title></code>, pois é muito importante para buscadores de pesquisas.
+                    </li>
+                    <li>
+                        Fechar elementos vazios é opcional, mas necessário caso algum software xml ou xhtml use a sua página.
+                    </li>
+                    <li>
+                        Inclua o atributo lang dentro da tag <code>&lt;html lang="pt-br"></code>.
+                    </li>
+                    <li>
+                        Sempre declare os metadados o mais cedo possível, impedindo erros de interpretação.
+                        <ul>
+                            <li><code>&lt;meta charset="utf-8"></code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Configure sempre a janela de vizualização através do elemento <code>&lt;meta></code>.
+                        <ul>
+                            <li>
+                                <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"></code>.
+                                <ul>
+                                    <li>A width=device-width define a largura da página para seguir a largura da tela do dispositivo (que irá variar dependendo do dispositivo).</li>
+                                    <li>A initial-scale=1.0 define o nível de zoom inicial quando a página é carregada
+                                        pela primeira vez pelo navegador.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        SEMPRE COMENTE O CÓDIGO FONTE HTML
+                        <ul>
+                            <li>
+                                <code>&lt;!-- COMENTE!!! --></code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Use sempre nomes de arquivos em letras minúsculas, sempre declarando suas devidas extensões.
+                        <ul>
+                            <li>
+                                <code>arquivo.extensao</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        A pagina web principal deve se chamar index.
+                        <ul>
+                            <li>
+                                <code>index.html</code>
+                            </li>
+                            <li>
+                                <code>index.htm</code>
+                            </li>
                         </ul>
                     </li>
                 </ul>
-            </li>
-            <li>
-                SEMPRE COMENTE O CÓDIGO FONTE HTML
-                <ul>
-                    <li>
-                        <code>&lt;!-- COMENTE!!! --></code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Use sempre nomes de arquivos em letras minúsculas, sempre declarando suas devidas extensões.
-                <ul>
-                    <li>
-                        <code>arquivo.extensao</code>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                A pagina web principal deve se chamar index.
-                <ul>
-                    <li>
-                        <code>index.html</code>
-                    </li>
-                    <li>
-                        <code>index.htm</code>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+        </section>
 
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-        <hr>
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="semantica.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="formularios.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-</body>
+    </body>
 
 </html>

@@ -1,219 +1,216 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Imagens em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Imagens em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
 
-    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <section>
-        <h2 id="TImg">IMAGENS</h2>
 
-        <p> Para inserir uma imagem usamos a tag <code>&lt;img></code> junto com o atributo src="caminho ou link". Além
-            disso, é um elemento vazio, que não precisa de um tag final. </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;img src="imagens/img.png" width="100%"></code>
-                </td>
-                <td>
-                    <img src="../imagens/img.png" width="100%">
-                </td>
-            </tr>
-        </table>
 
-        <p> Os principais atributos relacionados a tag &lt;img> são: </p>
-        <ul>
-            <li>
-                <b>alt:</b> Este atributo define um texto alternativo que descreve a imagem. Os Usuários irão ver o
-                texto se
-                a URL da imagem estiver errado, a imagem não está em um dos formatos suportados ou até a imagem ser
-                baixada.
-                <br> Além disso, é um recurso importante para que, através de plugins, a descrição da imagem seja
-                narrada,
-                permitindo uma maior acessecibilidade.
-            </li>
-            <li>
-                <b>height:</b> Este atributo define a altura da imagem em HTML5 pixels ou porcentagem.
-            </li>
-            <li>
-                <b>width:</b> Este atributo define a largura da imagem em pixels ou porcentagem.
-            </li>
-            <li>
-                <b>srcset:</b> Este atributo define, em uma lista de uma ou mais strings, sepradas por vírgulas, um
-                conjunto
-                de imagens possíveis, onde o navegador escolhe a imagem mais adequada para exibir em um determiando
-                momento.
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+            <div id="menu">
+
+            </div>
+
+            <script>
+                criarMenu();
+            </script>
+
+        </header>
+
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h1 id="TImg">IMAGENS</h1>
+
+                <p class="lead"> Para inserir uma imagem usamos a tag <code>&lt;img></code> junto com o atributo src="caminho ou link". Além disso, é um elemento vazio, que não precisa de um tag final. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;img src="imagens/img.png" width="100%"></code>
+                        </td>
+                        <td>
+                            <img src="../imagens/img.png" width="100%">
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead"> Os principais atributos relacionados a tag &lt;img> são: </p>
+                <ul>
+                    <li>
+                        <b>alt:</b> Este atributo define um texto alternativo que descreve a imagem. Os Usuários irão ver o texto se a URL da imagem estiver errado, a imagem não está em um dos formatos suportados ou até a imagem ser baixada. Além disso, é um recurso importante para que, através de plugins, a descrição da imagem seja narrada, permitindo uma maior acessibilidade.
+                    </li>
+                    <li>
+                        <b>height:</b> Este atributo define a altura da imagem em HTML5 pixels ou porcentagem.
+                    </li>
+                    <li>
+                        <b>width:</b> Este atributo define a largura da imagem em pixels ou porcentagem.
+                    </li>
+                    <li>
+                        <b>srcset:</b> Este atributo define, em uma lista de uma ou mais strings, separadas por vírgulas, um
+                        conjunto de imagens possíveis, onde o navegador escolhe a imagem mais adequada para exibir em um determinado momento.
+                        <br>
+                    </li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;img src="imagens/img.png" style="width:100%; height:200"                    alt="logo projetando um projeto."></code>
+                        </td>
+                        <td>
+                            <img src="../imagens/img.png" style="width:100%; height:200">
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead"> Lembrando que o HTML deve ser apenas estrutural, sendo assim, é recomendado que o estilo das imagens, bem como a altura e a largura, sejam aplicadas usando o CSS através so atributo style. Como veremos em CSS. </p>
+
                 <br>
-            </li>
-        </ul>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;img src="imagens/img.png" style="width:100%; height:200"
-                    alt="logo projetantando um projeto."></code>
-                </td>
-                <td>
-                    <img src="../imagens/img.png" style="width:100%; height:200">
-                </td>
-            </tr>
-        </table>
+                <h2 id="TFigure">figure e figcaption</h2>
 
-        <p> Lembrando que o HTML deve ser apenas estrutural, sendo assim, é recomendado que o estilo das imagens, bem
-            como a
-            altura e a largura, sejam aplicadas usando o CSS através so atributo style. Como veremos em CSS. </p>
+                <p class="lead"> O elemento <code>&lt;figure></code> especifica um conteúdo independente, como fotos, ilustrações, diagramas, códigos, etc. Enquanto o elemento <code>&lt;figcaption></code> define uma legenda para o elemento <code>&lt;figure></code>. </p>
 
+                <p class="lead"> O seu uso está mais relacionado com a semântica dos elementos dentro dela, dando um significo maior que apenas uma imagem, por exemplo. </p>
 
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;figure></code> <br>
+                            <code>&lt;img src="imagens/img.png" alt="Logo" style="width:100%; height:200"></code> <br>
+                            <code>&lt;figcaption>Fig1. Logotipo da Empresa&lt;/figcaption></code> <br>
+                            <code>&lt;/figure></code> <br>
+                        </td>
+                        <td>
+                            <figure>
+                                <img src="../imagens/img.png" alt="Logo" style="width:100%; height:200">
+                                <figcaption>Fig1. Logotipo da Empresa</figcaption>
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
 
-        <h4 id="TFigure">figure e figcaption</h4>
-        <p> O elemento <code>&lt;figure></code> especifica um conteúdo independente, como fotos, ilustrações, diagramas,
-            códigos, etc. Enquanto o elemento <code>&lt;figcaption></code> define uma legenda para o elemento
-            <code>&lt;figure></code>. </p>
-        <p> O seu uso está mais relacionado com a semântica dos elementos dentro dela, dando um significo maior que
-            apenas
-            uma imagem, por exemplo. </p>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;figure></code> <br>
-                    <code>&lt;img src="imagens/img.png" alt="Logo" style="width:100%; height:200"></code> <br>
-                    <code>&lt;figcaption>Fig1. Logotipo da Empresa&lt;/figcaption></code> <br>
-                    <code>&lt;/figure></code> <br>
-                </td>
-                <td>
-                    <figure>
-                        <img src="../imagens/img.png" alt="Logo" style="width:100%; height:200">
-                        <figcaption>Fig1. Logotipo da Empresa</figcaption>
-                    </figure>
-                </td>
-            </tr>
-        </table>
+                <h2 id="TMap">Mapa de imagens</h2>
 
+                <p class="lead"> Um mapa de imagens, é basicamente, uma imagem com áreas clicáveis, que executam uma ação. A tag <code>&lt;map></code> define um mapa de imagem, em conjunto com a tag <code>&lt;area></code>. </p>
 
+                <p class="lead"> Primeiro passo, precisamos definir uma imagem, adicionando um atributo chamado usemap, especificando o valor com #nomedomapa. <br><br>
+                    <code>&lt;img src="imagens/bing-google-yahoo.jpg" alt="sites" usemap="#workmap"></code></p>
 
+                <p class="lead"> Após definIda a imagem, precismos criar o mapa com mesmo nome do valor especificado. <br><br>
+                    <code>&lt;map name="workmap"> &lt;/map></code> </p>
 
+                <p class="lead"> Como último e mais complexo passo, precisamos definir as áreas de uma imagem que permite interações. O primeiro atributo define a forma (shape) da aréa, podendo ser retangular, circular, poligonal ou default. O segundo atributo são as coordenadas (coords). Esse atributo tem como valor, pontos da imagens imagem original e/ou largura de um ponto. Além disso, temos o terceiro atributo href que define qual página queremos abrir caso haja interação com aquela área. </p>
 
-        <h3 id="TMap">Mapa de imagens</h3>
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr>
+                        <td>
+                            <code>&lt;img src="imagens/bing-google-yahoo.jpg" alt="sites" usemap="#workmap"></code><br>
+                            <code>&lt;map name="workmap"> </code><br>
+                            <code class="e">&lt;area shape="rect" coords="34,44,270,350" alt="Google" href="https://www.google.com"> </code><br>
+                            <code class="e">&lt;area shape="rect" coords="290,172,333,250" alt="Bing" href="https://www.bing.com"> </code><br>
+                            <code class="e">&lt;area shape="circle" coords="337,300,44" alt="Yahoo" href="https://www.yahoo.com"></code><br>
+                            <code>&lt;/map></code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../imagens/bing-google-yahoo.jpg" alt="sites" usemap="#workmap"><br>
+                            <map name="workmap"> <br>
+                                <area shape="rect" coords="0,0,203,91" alt="Bing" href="https://www.bing.com"> <br>
+                                <area shape="rect" coords="110,150,370,240" alt="Google" href="https://www.google.com"> <br>
+                                <area shape="circle" coords="330,310,60" alt="Yahoo" href="https://www.yahoo.com"><br>
+                            </map>
+                        </td>
+                    </tr>
+                </table>
 
-        <p> Um mapa de imagens, é basicamente, uma imagem com áreas clicáveis, que executam uma ação. A tag
-            <code>&lt;map></code> define um mapa de imagem, em conjunto com a tag <code>&lt;area></code>. </p>
-        <p> Primeiro passo, precisamos definir uma imagem, adicionando um atributo chamado usemap, especificando o valor
-            com
-            #nomedomapa. <br><br>
-            <code>&lt;img src="imagens/bing-google-yahoo.jpg" alt="sites" usemap="#workmap"></code></p>
-        <p> Após definda a imagem, precismos criar o mapa com mesmo nome do valor especificado. <br><br>
-            <code>&lt;map name="workmap"> &lt;/map></code> </p>
-        <p> Como último e mais complexo passo, precisamos definir as áreas de uma imagem que permite insterações. O
-            primeiro
-            atributo define a forma (shape) da aréa, podendo ser retangular, circular, poligonal ou default.
-            <br> <br> O segundo atributo são as coordenadas (coords). Esse atributo tem como valor, pontos da imagens
-            imagem
-            orignal e/ou largura de um ponto.
-            <br><br> Além disso, temos o terceiro atributo href que define qual página queremos abrir caso haja
-            interação
-            com aquela área. </p>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;img src="imagens/bing-google-yahoo.jpg" alt="sites" usemap="#workmap"></code><br>
-                    <code>&lt;map name="workmap"> </code><br>
-                    <code
-                        class="e">&lt;area shape="rect" coords="34,44,270,350" alt="Google" href="https://www.google.com"> </code><br>
-                    <code
-                        class="e">&lt;area shape="rect" coords="290,172,333,250" alt="Bing" href="https://www.bing.com"> </code><br>
-                    <code
-                        class="e">&lt;area shape="circle" coords="337,300,44" alt="Yahoo" href="https://www.yahoo.com"></code><br>
-                    <code>&lt;/map></code>
+                <h2 id="TEleImg">Elementos da Imagens</h2>
 
-                </td>
-            </tr>
-            <td>
-                <img src="../imagens/bing-google-yahoo.jpg" alt="sites" usemap="#workmap"><br>
-                <map name="workmap"> <br>
-                    <area shape="rect" coords="0,0,203,91" alt="Bing" href="https://www.bing.com"> <br>
-                    <area shape="rect" coords="110,150,370,240" alt="Google" href="https://www.google.com"> <br>
-                    <area shape="circle" coords="330,310,60" alt="Yahoo" href="https://www.yahoo.com"><br>
-                </map>
-            </td>
-        </table>
+                <p class="lead"> Elementos de imagens são usados para especificar um conjunto de imagens, que de acordo com o tamanho da tela, serão carregadas. As tags envolvidas são o <code>&lt;picture></code>, que contém uma ou mais tags <code>&lt;source></code> que especificam través de atributos o tamanho da tela e o arquivo a ser carregado, além da tag <code>&lt;img></code> que exibirá a imagem caso o navegador não suporte os elementos. </p>
 
+                <p class="lead">Experimente diminuir e aumentar a tela:</p>
 
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr>
+                        <td>
+                            <code> &lt;picture></code> <br>
+                            <code class="e">&lt;source media="(min-width: 650px)" srcset="img.jpg"></code> <br>
+                            <code class="e">&lt;source media="(min-width: 465px)" srcset="img2.png"></code> <br>
+                            <code class="e">&lt;img  style="width: 100%; height: 200px;" src="img.jpg"></code> <br>
+                            <code>&lt;/picture> </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <picture>
+                                <source media="(min-width: 650px)" srcset="../imagens/img2.png">
+                                <source media="(min-width: 465px)" srcset="../imagens/img-2.png">
+                                <img style="width: 100%; height: 200px;" src="../imagens/img.png">
+                            </picture>
+                        </td>
+                    </tr>
+                </table>
 
+                <p class="lead"> O atributo media especifica através do valor min-width, o tamanho mínimo que a tela deve ter para exibir a imagem. </p>
 
-        <h3 id="TEleImg">Elementos da Imagens</h3>
+                <p class="lead"> Além de aplicar suporte para imagens de diversos tamanhos de telas, evitando que imagens muito grande sejam carregadas para dispositivos limitados, também é possível apenas especificar imagens de diferentes formatos, caso o dispositivo não suporte determinado formato. </p>
 
-        <p> Elementos de imagens são usados para especificar um conjunto de imagens, que de acordo com o tamanho da
-            tela,
-            serão carregadas. As tags envolvidas são o
-            <code>&lt;picture></code>, que contém uma ou mais tags <code>&lt;source></code> que especificam através de
-            atributos o tamanho da tela e o arquivo a ser carregado, além da tag <code>&lt;img></code> que exibirá a
-            imagem
-            caso o navegador não suporte
-            os elementos. </p>
+            </div>
 
-        <p>Experiemente diminuir e aumentar a tela:</p>
+        </section>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code> &lt;picture></code> <br>
-                    <code class="e">&lt;source media="(min-width: 650px)" srcset="img.jpg"></code> <br>
-                    <code class="e">&lt;source media="(min-width: 465px)" srcset="img2.png"></code> <br>
-                    <code class="e">&lt;img  style="width: 100%; height: 200px;" src="img.jpg"></code> <br>
-                    <code>&lt;/picture> </code>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <picture>
-                        <source media="(min-width: 650px)" srcset="../imagens/img2.png">
-                        <source media="(min-width: 465px)" srcset="../imagens/img3.gif">
-                        <img style="width: 100%; height: 200px;" src="../imagens/img.png">
-                    </picture>
-                </td>
-            </tr>
-        </table>
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
-
-        <p> O atributo media especifica através do valor min-width, o tamanho mínimo que a tela deve ter para exibir a
-            imagem. </p>
-        <p> Além de aplicar suporte para imagens de diversos tamanhos de telas, evitando que imagens muito grande sejam
-            carregadas para dispositivos limitados, também é possível apenas especificar imagens de diferentes formatos,
-            caso o dispositivo não suporte
-            determinado formato. </p>
-        <hr>
-
-    </section>
-
-    <div class="btn">
-        <a class="btn-anterior" href="caminhas-arquivos.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="links.html">Próximo ></a>
-    </div>
-
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

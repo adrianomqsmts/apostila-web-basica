@@ -1,85 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Caminhos em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Caminhos em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-        <h2 id="TCam">CAMINHOS</h2>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-        <p> Um caminho de arquivo descreve a localização de um arquivo na estrutura de pastas de um projeto do site.
-            Sendo
-            usado para veincular arquivos externos ao documento. </p>
+        <script src="../main.js"></script>
 
-        <table class="tabela">
-            <tr>
-                <th>Caminho</th>
-                <th>descrição</th>
-            </tr>
-            <tr>
-                <td>
-                    picture.jpg
-                </td>
-                <td>
-                    picture.jpg está localizado na mesma pasta como a página atual
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    images/picture.jpg
-                </td>
-                <td>
-                    picture.jpg está localizado na pasta de imagens dentro da pasta atual
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    /images/picture.jpg
-                </td>
-                <td>
-                    picture.jpg está localizado na pasta de imagens na raiz da web atual.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    ../picture.jpg
-                </td>
-                <td>
-                    picture.jpg está localizado na pasta um nível acima (pasta anterior) da pasta atual
-                </td>
-            </tr>
+            <link rel="stylesheet" href="../css/main.css">
 
-        </table>
+    </head>
 
-        <p> É uma prática recomendada o uso de caminhos relativos, pois caminhos absolutos, como URL de sites públicos,
-            podem ter o arquivo removido por diversos motivos, comprometendo assim o conteúdo do site. </p>
-        <hr>
+    <body class="bg-darkblue text-white">
 
+        <header>
+            <div id="menu">
 
+            </div>
 
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="listas.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="imagens.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+            <script>
+                criarMenu();
+            </script>
 
-</body>
+        </header>
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+
+                <h1 id="TCam">CAMINHOS</h1>
+
+                <p class="lead"> Um caminho de arquivo descreve a localização de um arquivo na estrutura de pastas de um projeto do site. Sendo usado para veincular arquivos externos ao documento. </p>
+
+                <table class="table table-sm table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Caminho</th>
+                        <th>descrição</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            picture.jpg
+                        </td>
+                        <td>
+                            picture.jpg está localizado na mesma pasta como a página atual
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            images/picture.jpg
+                        </td>
+                        <td>
+                            picture.jpg está localizado na pasta de imagens dentro da pasta atual
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            /images/picture.jpg
+                        </td>
+                        <td>
+                            picture.jpg está localizado na pasta de imagens na raiz da web atual.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ../picture.jpg
+                        </td>
+                        <td>
+                            picture.jpg está localizado na pasta um nível acima (pasta anterior) da pasta atual
+                        </td>
+                    </tr>
+
+                </table>
+
+                <p class="lead"> É uma prática recomendada o uso de caminhos relativos, pois caminhos absolutos, como URL de sites públicos, podem ter o arquivo removido por diversos motivos, comprometendo assim o conteúdo do site. </p>
+
+            </div>
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

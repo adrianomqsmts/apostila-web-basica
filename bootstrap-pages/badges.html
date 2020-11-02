@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+        <title>Badges com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+
+                <h1>Badges com Bootstrap 4</h1>
+
+                <p class="lead">Badges são usados para trazes uma informação ou complemento adicional para um elemento. Normalmente um badge corresponde ao tamanho do elemento pai.</p>
+
+                <p class="lead">Para criar uma badge usamos normalmente a classe <code>.badge</code> em um elemento <code>&lt;span></code>, em conjunto com outras classes como <code class="lead">badge-*</code> para dar cores aos elementos. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div1" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div1">
+                    <code>&lt;h1></code> Novo carro <code>&lt;span class="badge badge-danger"></code> NOVO <code>&lt;/span> &lt;/h1></code>
+                </div>
+
+                <p class="h1"> Novo carro <span class="badge badge-danger"> NOVO </span> </p>
+                <br>
+                <br>
+
+                <p class="lead">Podemos usar todas as cores pré-definidas no B4 para criar o badges. As cores podem ser: <code>.badge-primary .badge-secondary .badge-success .badge-danger .badge-warning .badge-info .badge-light .badge-dark</code></p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div2" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div2">
+                    <code>&lt;span class="badge badge-primary"></code>Primary<code>&lt;/span></code> <br>
+                    <code>&lt;span class="badge badge-Secondary"></code>Secondary<code>&lt;/span></code> <br>
+                    <code>&lt;span class="badge badge-Secondary"></code>Secondary<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-Danger"></code>Danger<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-Warning"></code>>Warning<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-Info"></code>Info<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-Light"></code>Light<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-Dark"></code>Dark<code>&lt;/span></code><br> <br>
+                </div>
+
+                <span class="badge badge-primary">Primary</span>
+                <span class="badge badge-secondary">Secondary</span>
+                <span class="badge badge-success">Success</span>
+                <span class="badge badge-danger">Danger</span>
+                <span class="badge badge-warning">Warning</span>
+                <span class="badge badge-info">Info</span>
+                <span class="badge badge-light">Light</span>
+                <span class="badge badge-dark">Dark</span>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.badge-pill</h2>
+
+                <p class="lead">A classe <code>.badge-pill</code> é usada para definir um arredondamento nos badges.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div3" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div3">
+                    <code>&lt;span class="badge badge-pill badge-primary"></code>Primary<code>&lt;/span></code> <br>
+                    <code>&lt;span class="badge badge-pill badge-Secondary"></code>Secondary<code>&lt;/span></code> <br>
+                    <code>&lt;span class="badge badge-pill badge-Secondary"></code>Secondary<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-pill badge-Danger"></code>Danger<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-pill badge-Warning"></code>>Warning<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-pill badge-Info"></code>Info<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-pill badge-Light"></code>Light<code>&lt;/span></code><br>
+                    <code>&lt;span class="badge badge-pill badge-Dark"></code>Dark<code>&lt;/span></code><br> <br>
+                </div>
+
+                <span class="badge badge-pill badge-primary">Primary</span>
+                <span class="badge badge-pill badge-secondary">Secondary</span>
+                <span class="badge badge-pill badge-success">Success</span>
+                <span class="badge badge-pill badge-danger">Danger</span>
+                <span class="badge badge-pill badge-warning">Warning</span>
+                <span class="badge badge-pill badge-info">Info</span>
+                <span class="badge badge-pill badge-light">Light</span>
+                <span class="badge badge-pill badge-dark">Dark</span>
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

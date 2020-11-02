@@ -1,112 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>HTML em HTML em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>HTML em HTML em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+
+        <script src="../main.js"></script>
+
+            <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+            <div id="menu">
+
+            </div>
+
+            <script>
+                criarMenu();
+            </script>
+
+        </header>
 
 
-    <section>
+        <section class="pt-5 mt-5">
 
-        <h2 id="titulo">HTML em HTML</h2>
+            <div class="container">
 
-        <h3>Iframes</h3>
+            </div>
 
-        <p> Um iframe é um elemento do HTML utilizado para incorporar outra página da web na página atual. Ou seja, com
-            ele
-            você pode incluir conteúdos de outras páginas na sua própria página como vídeos, imagens, corpo de outras
-            páginas e publicidades.</p>
-        <code>&lt;iframe src="url" title="descrição do conteúdo"></code>
-        <p> Por exemplos, podemos abrir o youtube, clicar sobre um vídeo com o botão direito, procurar a opção
-            "incorporar
-            códido de incorporação", que a própria plataforma irá disponibilizar o código HTML, e ent'ao basta
-            introduzir o
-            vídeo em sua página. </p>
+            <h1 id="titulo">HTML em HTML</h1>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;iframe  width="50%" height="410" title="Video da música wonder do Shawn Mendes" src="https://www.youtube.com/embed/fHeQemJJQII" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> &lt;/iframe></code>
+            <h2>Iframes</h2>
 
-                </td>
-                <td>
-                    <iframe width="100%" height="410" title="Video da música wonder do Shawn Mendes"
-                        src="https://www.youtube.com/embed/fHeQemJJQII" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <code>&lt;iframe src="iframe-fixed.html" style="width:100%; border:4px solid #e5e5e5"
-                class="w3-padding"> &lt;/iframe> </code>
-                </td>
-                <td>
-                    <iframe src="identificadores.html" style="width:100%; border:4px solid #e5e5e5"
-                        class="w3-padding"></iframe>
-                </td>
-            </tr>
-        </table>
-        <hr>
+            <p class="lead"> Um iframe é um elemento do HTML utilizado para incorporar outra página da web na página atual. Ou seja, com ele você pode incluir conteúdos de outras páginas na sua própria página como vídeos, imagens, corpo de outras páginas e publicidades.</p>
 
-        <h3>Object</h3>
+            <code>&lt;iframe src="url" title="descrição do conteúdo"></code>
 
-        <p>O elemento <code>&lt;object></code> foi projetado para incorporar plug-ins
-            (como applets Java, leitores de PDF e Flash Players)
-            em páginas da web, mas também pode ser usado para incluir HTML em HTML: </p>
+            <p class="lead"> Por exemplos, podemos abrir o youtube, clicar sobre um vídeo com o botão direito, procurar a opção "incorporar códido de incorporação", que a própria plataforma irá disponibilizar o código HTML, e ent'ao basta introduzir o vídeo em sua página. </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;object width="100%" height="100%" data="menu-horizontal.html">&lt;/object></code>
-                </td>
-                <td>
-                    <object width="100%" height="100%" data="menu-horizontal.html"></object>
-                </td>
-            </tr>
-        </table>
+            <table class="table table-responsive-sm table-striped text-light">
+                <tr class="text-center">
+                    <th>Código</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td class="w-50">
+                        <code>&lt;iframe  width="50%" height="410" title="Video da música wonder do Shawn Mendes" src="https://www.youtube.com/embed/fHeQemJJQII" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> &lt;/iframe></code>
 
-        <hr>
-        <h2>embed</h2>
+                    </td>
+                    <td>
+                        <iframe width="100%" height="410" title="Video da música wonder do Shawn Mendes" src="https://www.youtube.com/embed/fHeQemJJQII" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>&lt;iframe src="iframe-fixed.html" style="width:100%; border:4px solid #e5e5e5"> &lt;/iframe> </code>
+                    </td>
+                    <td>
+                        <iframe src="../css-pages/iframe-fixed.html" style="width:100%; border:4px solid #e5e5e5"></iframe>
+                    </td>
+                </tr>
+            </table>
 
-        <p>O elemento <code>&lt;embed></code> também define um objeto incorporado em um documento HTML.
-            Mas não contém a tag de fechamento. </p>
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;embed width="100%" height="100%" src="menu-horizontal.html"></code>
-                </td>
-                <td>
-                    <embed width="100%" height="100%" src="menu-horizontal.html">
-                </td>
-            </tr>
-        </table>
+            <h2>Object</h2>
 
-        <hr>
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="identificadores.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="media.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+            <p class="lead">O elemento <code>&lt;object></code> foi projetado para incorporar plug-ins (como applets Java, leitores de PDF e Flash Players) em páginas da web, mas também pode ser usado para incluir HTML em HTML: </p>
 
-</body>
+            <table class="table table-responsive-sm table-striped text-light">
+                <tr class="text-center">
+                    <th>Código</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <code>&lt;object style="width: 100%; height: 200px;"  data="introducao.html">&lt;/object></code>
+                    </td>
+                    <td>
+                        <object style="width: 100%; height: 200px;"  data="introducao.html"></object>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
+
+            <h2>embed</h2>
+
+            <p class="lead">O elemento <code>&lt;embed></code> também define um objeto incorporado em um documento HTML. Mas não contém a tag de fechamento. </p>
+
+            <table class="table table-responsive-sm table-striped text-light">
+                <tr class="text-center">
+                    <th>Código</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td class="w-25">
+                        <code>&lt;embed style="width: 100%; height: 200px;"  src="listas.html"></code>
+                    </td>
+                    <td>
+                        <embed style="width: 100%; height: 200px;" src="listas.html">
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <hr style="border: 1px solid pink;">
+            <br>
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

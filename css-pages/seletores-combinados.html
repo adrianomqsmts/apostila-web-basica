@@ -1,294 +1,321 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Seletores de Combinação em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Seletores de Combinação em CSS3</title>
+        <meta charset="utf-8">
 
-<body>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+        <style>
+            .divisor p {
+                background-color: green;
+            }
+
+            .divisor2>p {
+                background-color: green;
+            }
+
+            .divisor3+p {
+                background-color: green;
+            }
+
+            .divisor4~p {
+                background-color: green;
+            }
+
+        </style>
+
+    </head>
+
+    <body class="bg-darkblue text-white">
 
 
-    <section>
+        <div id="menu">
 
+        </div>
 
-
-
-        <h2 id="Seletores-combinados">Seletores II - Combinadores descentendes, filhos e irmãos</h2>
-
-        <p>
-            Um cominador é algo que explica a relação entre os
-            seletores e seus elementos. Basicamente é um
-            caractere inserido entre dois seletores simples
-            que estabela a relação entre eles.
-        </p>
-        <ul>
-            <li>seletor descendente (espaço) </li>
-            <li>seletor filho (>) </li>
-            <li>seletor irmão adjacente (+) </li>
-            <li>seletor irmão geral (~) </li>
-        </ul>
-
-        <h3 id="seletor-descentende">Seletor descendente</h3>
-
-        <p>O seletor descendente é quando queremos dada uma sequência
-            especifica de seletores simples (elementos HTML) aplique o
-            estilo especificado. </p>
-        <p>Por exemplo: Caso queiramos aplicar uma borda
-            em todos os elementos <code>&lt;p></code> que estão dentro
-            de uma classe chamada divisor, então podemos usar
-            o seletor descendente. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.divisor p</span> {
-        <span class="p">background-color</span>: <span class="v">green</span>;
-    }
-    <code>&lt;div class="divisor">
-        &lt;span> </code>
-            <code>&lt;p></code>P filho do span e neto do divisor<code>&lt;/p></code>
-        <code> &lt;/span></code>
-    <code>&lt;/div></code>
-    <code>&lt;div class="divisor"></code>
-        <code>&lt;p></code>P filho de divisor<code>&lt;/p></code>
-    <code>&lt;/div></code>  
-    </pre>
-                </td>
-                <td>
-                    <div class="divisor" style="background-color: green;">
-                        <span>
-                            <p>P que descende do avô divisor</p>
-                        </span>
-                    </div>
-                    <div class="divisor" style="background-color: green;">
-                        <p>P filho de span e neto de div</p>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">table th</span> {
-        <span class="p">border</span>: <span class="v">1px solid green</span>;
-    }
-    <code>&lt;table></code>
-    <code>  &lt;tr></code>
-    <code>      &lt;th></code>TH1<code>&lt;/th></code>
-    <code>      &lt;th></code>TH2<code>&lt;/th></code>
-    <code>  &lt;/tr></code>
-    <code>  &lt;tr></code>
-    <code>      &lt;td></code>TD1<code>&lt;/td></code>
-    <code>      &lt;td></code>TD2<code>&lt;/td></code>
-    <code>  &lt;/tr></code>
-    <code>  &lt;tr></code>
-    <code>      &lt;td></code>TD3<code>&lt;/td></code>
-    <code>      &lt;td></code>TD4<code>&lt;/td></code>
-    <code>  &lt;/tr></code>
-    <code>&lt;/table></code>
-                    </pre>
-                </td>
-                <td>
-                    <table>
-                        <tr>
-                            <th style="border: 1px solid green">TH1</th>
-                            <th style="border: 1px solid green">TH2</th>
-                        </tr>
-                        <tr>
-                            <td style="border: none">TD1</td>
-                            <td style="border: none">TD2</td>
-                        </tr>
-                        <tr>
-                            <td style="border: none">TD3</td>
-                            <td style="border: none">TD4</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-        <p>OBS: No exemplo da tabela, se tentássemos usar (table tr th) e
-            não (table th), a borda seria inserida da mesma forma,
-            pois o elemento th descende de table e também de tr. </p>
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+
+                <h1 id="Seletores-combinados">Seletores II - Combinadores descendentes, filhos e irmãos</h1>
+
+                <p class="lead">
+                    Um cominador é algo que explica a relação entre os seletores e seus elementos. Basicamente é um caractere inserido entre dois seletores simples que estabelece a relação entre eles. </p>
+
+                <ul>
+                    <li>seletor descendente (espaço) </li>
+                    <li>seletor filho (>) </li>
+                    <li>seletor irmão adjacente (+) </li>
+                    <li>seletor irmão geral (~) </li>
+                </ul>
+
+                <h2 id="seletor-descentende">Seletor descendente</h2>
+
+                <p class="lead">O seletor descendente é quando queremos dada uma sequência especifica de seletores simples (elementos HTML) aplique o estilo especificado. Por exemplo: Caso queiramos aplicar uma borda em todos os elementos <code>&lt;p></code> que estão dentro de uma classe chamada divisor, então podemos usar o seletor descendente. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.divisor p</span> { <br>
+                                <span class="e p">background-color</span>: <span class="v">green</span>; <br>
+                                } <br>
+                                <code>&lt;div class="divisor"></code> <br>
+                                <code class="e">&lt;span> </code> <br>
+                                <code class="e2">&lt;p></code> P filho do span e neto do divisor <code>&lt;/p></code> <br>
+                                <code class="e"> &lt;/span></code> <br>
+                                <code>&lt;/div></code> <br>
+                                <code>&lt;div class="divisor"></code> <br>
+                                <code class="e2">&lt;p></code>P filho de divisor<code>&lt;/p></code> <br>
+                                <code>&lt;/div></code> <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="divisor">
+                                <span>
+                                    <p>P que descende do avô divisor</p>
+                                </span>
+                            </div>
+                            <div class="divisor">
+                                <p>P filho de span e neto de div</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">table th</span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid green</span>; <br>
+                                } <br>
+                                <code>&lt;table></code> <br>
+                                <code class="e">&lt;tr></code> <br>
+                                <code class="e2">&lt;th></code>TH1<code>&lt;/th></code> <br>
+                                <code class="e2">&lt;th></code>TH2<code>&lt;/th></code> <br>
+                                <code class="e">&lt;/tr></code> <br>
+                                <code class="e">&lt;tr></code> <br>
+                                <code class="e2">&lt;td></code>TD1<code>&lt;/td></code> <br>
+                                <code class="e2">&lt;td></code>TD2<code>&lt;/td></code> <br>
+                                <code class="e">&lt;/tr></code> <br>
+                                <code class="e">&lt;tr></code> <br>
+                                <code class="e2">&lt;td></code>TD3<code>&lt;/td></code> <br>
+                                <code class="e2">&lt;td></code>TD4<code>&lt;/td></code> <br>
+                                <code class="e">&lt;/tr></code> <br>
+                                <code>&lt;/table></code> <br>
+                            </div>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th style="border: 1px solid green">TH1</th>
+                                    <th style="border: 1px solid green">TH2</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: none">TD1</td>
+                                    <td style="border: none">TD2</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: none">TD3</td>
+                                    <td style="border: none">TD4</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead">OBS: No exemplo da tabela, se tentássemos usar (table tr th) e não (table th), a borda seria inserida da mesma forma, pois o elemento th descende de table e também de tr. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="seletor-filho">Seletor Filho</h2>
+
+                <p class="lead">O seletor filho seleciona apenas o filho de um elemento, e não mais a cadeia de descendentes. O filho é o elemento imediatamente dentro de outro elemento. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.divisor>p</span> { <br>
+                                <span class="e p">background-color</span>: <span class="v">green</span>; <br>
+                                } <br>
+                                <code>&lt;div class="divisor"></code> <br>
+                                <code class="e">&lt;span> </code> <br>
+                                <code class="e2">&lt;p></code> P filho do span e neto do divisor <code>&lt;/p></code> <br>
+                                <code class="e">&lt;/span></code> <br>
+                                <code>&lt;/div></code> <br>
+                                <code>&lt;div class="divisor"></code> <br>
+                                <code class="e">&lt;p></code> P filho de divisor <code>&lt;/p></code> <br>
+                                <code>&lt;/div></code>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="divisor2">
+                                <span>
+                                    <p class="lead">P filho do span e neto do divisor</p>
+                                </span>
+                            </div>
+                            <div class="divisor2" style="background-color: green;">
+                                <p class="lead">P filho do divisor</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">tr>th</span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid green</span>; <br>
+                                } <br>
+                                <code>&lt;table></code> <br>
+                                <code class="e">&lt;tr></code> <br>
+                                <code class="e2">&lt;th></code>TH1<code>&lt;/th></code> <br>
+                                <code class="e2">&lt;th></code>TH2<code>&lt;/th></code> <br>
+                                <code class="e">&lt;/tr></code> <br>
+                                <code class="e">&lt;tr></code> <br>
+                                <code class="e2">&lt;td></code>TD1<code>&lt;/td></code> <br>
+                                <code class="e2">&lt;td></code>TD2<code>&lt;/td></code> <br>
+                                <code class="e">&lt;/tr></code> <br>
+                                <code class="e">&lt;tr></code> <br>
+                                <code class="e2">&lt;td></code>TD3<code>&lt;/td></code> <br>
+                                <code class="e2">&lt;td></code>TD4<code>&lt;/td></code> <br>
+                                <code class="e">&lt;/tr></code> <br>
+                                <code>&lt;/table></code>
+                            </div>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th style="border: 1px solid green;">TH1</th>
+                                    <th style="border: 1px solid green;">TH2</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: none">TD1</td>
+                                    <td style="border: none">TD2</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: none">TD3</td>
+                                    <td style="border: none">TD4</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead">OBS: No exemplo da tabela, se tentássemos usar (table > th) e não (tr > th), a borda não seria inserida, pois o elemento th é filho de tr e não de table. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="seletor-irmaos">Seletor de Irmãos</h2>
+
+                <p class="lead"> O seletor de irmão adjacente (+) selecionar o elemento logo a seguir do elemento especificado, enquanto o seletor de irmãos seleciona todos os elementos especificados logo a seguir. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div+p</span> { <br>
+                                <span class="e p">background-color</span>: <span class="v">green</span>; <br>
+                                } <br>
+                                <code>&lt;div> </code> <br>
+                                <code class="e">&lt;p></code>P filho da div<code>&lt;/p></code><br>
+                                <code>&lt;/div></code><br>
+                                <code>&lt;p></code>P irmão1 da div<code>&lt;/p></code><br>
+                                <code>&lt;p></code>P irmão2 da div<code>&lt;/p></code><br>
+                                <code>&lt;p></code>P irmão3 da div<code>&lt;/p></code><br>
+                                <code>&lt;p></code>P irmão4 da div<code>&lt;/p></code>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="divisor3">
+                                <p>P filho da div</p>
+                            </div>
+                            <p>P irmão1 da div</p>
+                            <p>P irmão2 da div</p>
+                            <p>P irmão3 da div</p>
+                            <p>P irmão4 da div</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div~p</span> { <br>
+                                <span class="e p">background-color</span>: <span class="v">green</span>; <br>
+                                } <br>
+                                <code>&lt;div> </code> <br>
+                                <code class="e">&lt;p></code>P filho da div<code>&lt;/p></code><br>
+                                <code>&lt;/div></code><br>
+                                <code>&lt;p></code>P irmão1 da div<code>&lt;/p></code><br>
+                                <code>&lt;p></code>P irmão2 da div<code>&lt;/p></code><br>
+                                <code>&lt;p></code>P irmão3 da div<code>&lt;/p></code><br>
+                                <code>&lt;p></code>P irmão4 da div<code>&lt;/p></code><br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="divisor4">
+                                <p>P filho da div</p>
+                            </div>
+                            <p>P irmão1 da div</p>
+                            <p>P irmão2 da div</p>
+                            <p>P irmão3 da div</p>
+                            <p>P irmão4 da div</p>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+        </section>
 
 
 
-        <h2 id="seletor-filho">Seletor Filho</h2>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-        <p>O seletor filho seleciona apenas o filho de um elemento,
-            e não mais a cadeia de descendentes. O filho é o elemento
-            imediamente dentro de outro elemento. </p>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.divisor > p</span> {
-        <span class="p">background-color</span>: <span class="v">green</span>;
-    }
-    <code>&lt;div class="divisor">
-        &lt;span> </code>
-            <code>&lt;p></code>P filho do span e neto do divisor<code>&lt;/p></code>
-        <code> &lt;/span></code>
-    <code>&lt;/div></code>
-    <code>&lt;div class="divisor"></code>
-        <code>&lt;p></code>P filho de divisor<code>&lt;/p></code>
-    <code>&lt;/div></code>  
-    </pre>
-                </td>
-                <td>
-                    <div class="divisor">
-                        <span>
-                            <p>P filho do span e neto do divisor</p>
-                        </span>
-                    </div>
-                    <div class="divisor" style="background-color: green;">
-                        <p>P filho do divisor</p>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">tr > th</span> {
-        <span class="p">border</span>: <span class="v">1px solid green</span>;
-    }
-    <code>&lt;table></code>
-    <code>  &lt;tr></code>
-    <code>      &lt;th></code>TH1<code>&lt;/th></code>
-    <code>      &lt;th></code>TH2<code>&lt;/th></code>
-    <code>  &lt;/tr></code>
-    <code>  &lt;tr></code>
-    <code>      &lt;td></code>TD1<code>&lt;/td></code>
-    <code>      &lt;td></code>TD2<code>&lt;/td></code>
-    <code>  &lt;/tr></code>
-    <code>  &lt;tr></code>
-    <code>      &lt;td></code>TD3<code>&lt;/td></code>
-    <code>      &lt;td></code>TD4<code>&lt;/td></code>
-    <code>  &lt;/tr></code>
-    <code>&lt;/table></code>
-                </pre>
-                </td>
-                <td>
-                    <table>
-                        <tr>
-                            <th style="border: 1px solid green;">TH1</th>
-                            <th style="border: 1px solid green;">TH2</th>
-                        </tr>
-                        <tr>
-                            <td style="border: none">TD1</td>
-                            <td style="border: none">TD2</td>
-                        </tr>
-                        <tr>
-                            <td style="border: none">TD3</td>
-                            <td style="border: none">TD4</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-
-        <p>OBS: No exemplo da tabela, se tentássemos usar (table > th) e
-            não (tr > th), a borda não seria inserida,
-            pois o elemento th é filho de tr e não de table. </p>
-
-
-
-
-        <h3 id="seletor-irmaos">Seletor de Irmãos</h3>
-
-        <p> O seletor de irmão adjacente (+) selecionar o
-            elemento logo a seguir do elemento especificado,
-            enquanto o seletor de irmãos seleciona todos
-            os elementos esquecificados logo a seguir. </p>
-
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.div + p</span> {
-        <span class="p">background-color</span>: <span class="v">green</span>;
-    }
-    <code>&lt;div> </code>
-            <code>&lt;p></code>P filho da div<code>&lt;/p></code>
-    <code>&lt;/div></code>
-    <code>&lt;p></code>P irmão1 da div<code>&lt;/p></code>
-    <code>&lt;p></code>P irmão2 da div<code>&lt;/p></code>
-    <code>&lt;p></code>P irmão3 da div<code>&lt;/p></code>
-    <code>&lt;p></code>P irmão4 da div<code>&lt;/p></code>
-    </pre>
-                </td>
-                <td>
-                    <div>
-                        <p>P filho da div</p>
-                    </div>
-                    <p style="background-color: green;">P irmão1 da div</p>
-                    <p>P irmão2 da div</p>
-                    <p>P irmão3 da div</p>
-                    <p>P irmão4 da div</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.div ~ p</span> {
-        <span class="p">background-color</span>: <span class="v">green</span>;
-    }
-    <code>&lt;div> </code>
-            <code>&lt;p></code>P filho da div<code>&lt;/p></code>
-    <code>&lt;/div></code>
-    <code>&lt;p></code>P irmão1 da div<code>&lt;/p></code>
-    <code>&lt;p></code>P irmão2 da div<code>&lt;/p></code>
-    <code>&lt;p></code>P irmão3 da div<code>&lt;/p></code>
-    <code>&lt;p></code>P irmão4 da div<code>&lt;/p></code>
-    </pre>
-                </td>
-                <td>
-                    <div>
-                        <p>P filho da div</p>
-                    </div>
-                    <p style="background-color: green;">P irmão1 da div</p>
-                    <p style="background-color: green;">P irmão2 da div</p>
-                    <p style="background-color: green;">P irmão3 da div</p>
-                    <p style="background-color: green;">P irmão4 da div</p>
-                </td>
-            </tr>
-        </table>
-
-
-
-
-    </section>
-
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="links.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="listas.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

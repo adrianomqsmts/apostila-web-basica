@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Imagens com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+
+                <h1>Imagens com Bootstrap 4</h1>
+
+                <p class="lead">Podemos aplicar três diferentes estilos padrões para um imagem. A primeira é a classe <code>.rounded</code> que adiciona cantos arredondados na imagem.</p>
+
+                <div class="text-center">
+                    <img src="../imagens/img2.png" alt="imagem" class="rounded img-fluid">
+                    <br>
+                    <br>
+                </div>
+
+
+                <p class="lead"> A segunda classe <code>.rounded-circle</code> deixa a imagem arredondada. </p>
+
+                <div class="text-center">
+                    <img src="../imagens/img2.png" alt="imagem" class="rounded-circle img-fluid">
+                </div>
+
+                <br>
+                <br>
+
+                <p class="lead"> A terceira classe <code>.img-thumbnail</code> transforma a imagem em uma miniatura com bordas.</p>
+
+                <div class="text-center">
+                    <img src="../imagens/img2.png" alt="imagem" class="img-thumbnail">
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Flutuar imagem com Bootstrap 4 (.float-*)</h2>
+
+                <p class="lead"> Podemos flutuar uma imagem em para à esquerda basta adicionar a classe <code>.float-left</code>, enquanto para flutuar uma imagem à direita usamos a classe <code>.float-right</code> </p>
+
+                <img src="../imagens/img2.png" alt="imagem" class="img-fluid float-left">
+
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente sed numquam praesentium? Architecto repellat eligendi, tempore quo veniam dolor illo? Nostrum praesentium libero nihil dolorum doloremque, numquam repellendus vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, praesentium voluptate accusamus nobis vitae labore aliquam consequatur, rem ipsam sint autem! Architecto illo hic dolores tempore culpa optio, beatae dignissimos! </p>
+
+                <img src="../imagens/img2.png" alt="imagem" class="img-fluid float-right clearfix">
+
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente sed umquam praesentium? Architecto repellat eligendi, tempore quo veniam dolor illo? Nostrum praesentium libero nihil dolorum doloremque, numquam repellendus vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, praesentium voluptate accusamus nobis vitae labore aliquam consequatur, rem ipsam sint autem! Architecto illo hic dolores tempore culpa optio, beatae dignissimos! </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Clear Fix em bootstrap 4</h2>
+                <p class="lead"> Para quebrar a flutuação com o hacker, usamos a classe
+                    <code>.clearfix</code> </p> <br>
+
+                <img src="../imagens/img2.png" alt="imagem" class="img-fluid float-left">
+
+                <p class="clearfix lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente sed numquam praesentium? Architecto repellat eligendi, tempore quo veniam dolor illo? Nostrum praesentium libero nihil dolorum doloremque, numquam repellendus vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, praesentium voluptate accusamus nobis vitae labore aliquam consequatur, rem ipsam sint autem! Architecto illo hic dolores tempore culpa optio, beatae dignissimos! </p>
+
+                <img src="../imagens/img2.png" alt="imagem" class="img-fluid float-right">
+
+                <p class="clearfix lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente sed numquam praesentium? Architecto repellat eligendi, tempore quo veniam dolor illo? Nostrum praesentium libero nihil dolorum doloremque, numquam repellendus vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, praesentium voluptate accusamus nobis vitae labore aliquam consequatur, rem ipsam sint autem! Architecto illo hic dolores tempore culpa optio, beatae dignissimos! </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Centralizar a Imagem com Bootstrap 4</h2>
+
+                <p class="lead">Para centralizar uma imagem usamos as classes <code> .mx-auto (margin:auto) .d-block (display:block)</code> dentro de um contâiner.</p>
+
+                <img src="../imagens/img2.png" alt="imagem" class="mx-auto d-block">
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Imagem Responsiva com Bootstrap 4</h2>
+
+                <p class="lead">Para permitir que a imagem se ajuste ao tamanho da janela de visualização basta adcionar a classe <code>.img-fluid</code> no elemento <code>&lt;img></code> para que a imagem se redimensione de forma adequada. A classe <code>.img-fluid</code> usa os valores max-width: 100%; e height: auto; para a imagem. Experimente reduzir o tamanho da janela. </p>
+
+                <img src="../imagens/img.png" alt="imagem" class="img-fluid">
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

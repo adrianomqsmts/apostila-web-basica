@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>Barras de Navegação (navbar) com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"></div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+    <section class="mt-5 mb-0 pt-5">
+
+      <div class="container">
+
+        <h1>Barras de Navegação (navbar) com Bootstrap 4</h1>
+
+        <p class="lead">Para criamos uma barra de navegação padrão B4 precismos primeiro definir definir um elemento semântico <code>&lt;nav></code> com as classes <code>.navbar</code> e <code>.navbar-expand</code> que contém uma lista <code>&lt;ul></code> com a classe <code>.navbar-nav</code>, seguida pelos itens <code>&lt;li></code>, cada um deles, com uma classe <code>.nav-item</code>, e por fim cada link <code>&lt;a></code> definido com uma classe <code>.nav-link</code>. </p>
+
+        <p class="lead">Podemos usar os links <code>&lt;a></code> em conjunto com as classes <code>.active</code> para definir o link atual ou a classe <code>.disabled</code> para desabilitar algum link.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div1">
+          <code>&lt;nav class="navbar navbar-expand"></code> <br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+        </nav>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.navbar-text</h2>
+        <p class="lead">A classe <code>.navbar-text</code> nos permite inserir um texto com a formatação padrão da barra em uma barra de navegação, normalmente usado na tag inicial do elemento <code>&lt;span></code> fora do elemento da lista <code>&lt;ul</code>.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div2">
+          <code>&lt;nav class="navbar"></code> <br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code class="e">&lt;span class="navbar-text"></code>TEXTO<code>&lt;/span></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+          <span class="navbar-text">TEXTO</span>
+        </nav>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.navbar-expand-xl|lg|md|sm : Barras Verticais</h2>
+
+        <p class="lead">Podemos especificar através da classe <code>.navbar-expand-xl|lg|md|sm</code> quando a barra de navegação ficará na vertical em diferentes tamanhos de telas. Experimente reduzir a janela de navegação.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div3">
+          <code>&lt;nav class="navbar navbar-expand-md"></code> <br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+        <nav class="navbar navbar-expand-md">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+        </nav>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.justify-content-center|end</h2>
+
+        <p class="lead">Podemos centralizar o conteúdo da barra de navegação com a classe <code>.justify-content-center</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div4">
+          <code>&lt;nav class="navbar navbar-expand justify-content-center"></code> <br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+        </nav>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.navbar-brand : Logo na Barra de Navegação</h2>
+
+        <p class="lead">Para inserir um logo na barra de navegação, ou um texto, podemos usar a classe <code>.navbar-brand</code> no link <code>&lt;a></code> ou link com imagem, fora da lista e dentro do elemento <code>&lt;nav></code> </p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div5">
+          <code>&lt;nav class="navbar navbar-expand></code> <br>
+          <code class="e">&lt;a class="navbar-brand" href="#"></code>LOGO<code>&lt;/a></code><br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand-sm">
+          <a class="navbar-brand" href="#">LOGO</a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div6">
+          <code>&lt;nav class="navbar navbar-expand></code> <br>
+          <code class="e">&lt;a class="navbar-brand" href="#"></code> <br>
+          <code class="e2">&lt;img src="../imagens/img.png" alt="" style="width:40px;"></code> <br>
+          <code class="e">&lt;/a></code><br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand-sm">
+          <a class="navbar-brand" href="#">
+            <img src="../imagens/img.png" alt="" style="width:40px;">
+          </a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+        </nav>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>collapse: Barra de navegação com menu hambúrguer</h2>
+
+        <p class="lead">Vamos seguir alguns passos para a criação de um menu contraído com o ícone conhecido como hambúrguer.</p>
+
+        <ul class="lead">
+          <li>0 º - Antes deve definir no elemento <code>&lt;nav></code> a classe <code>.navbar-expand-xl|lg|md|sm</code> que irá definir em qual tamanho de tela (xl-lg-md-sm) a barra de navegação deve ser recolhida.</li>
+          <li>1º - Definir um elemento link <code>&lt;a></code> ou botão <code>&lt;button></code> fora do elemento da lista <code>&lt;ul></code> e dentro do elemento <code>&lt;nav></code>.</li>
+          <li>2º - Dentro da tag inicial do elemento <code>&lt;a></code> ou <code>&lt;button></code>.
+            <ul>
+              <li>Colocar a classe <code>.navbar-toggler</code>.</li>
+              <li>Colocar o atributo <code>data-toggle="collapse"</code>.</li>
+              <li>Colocar o atributo <code>data-target="#id-div"</code> no caso de um elemento <code>&lt;button></code> ou o um atributo <code>href="#id-div"</code> no caso de um elemento <code>&lt;a></code> especificando o identificador únido da div que irá circundar o elemento <code>&lt;ul></code></li>
+            </ul>
+          </li>
+          <li>3º - Entre as tags do elemento <code>&lt;a>&lt;/a></code> ou <code>&lt;button>&lt;/button></code> inserir um elemento <code>&lt;span></code> com a classe <code>.navbar-toggler-icon</code></li>
+          <li>4º - Circundar a lista <code>&lt;ul></code> com o elemento <code>&lt;div></code>.</li>
+          <li>5º - Dentro da tag inicial do elemento <code>&lt;div></code> inserir:
+            <ul>
+              <li>As classes <code>.collapse</code> e <code>.navbar-collapse</code></li>
+              <li>Inserir o atributo identificador <code>id="id-div"</code> com um valor único que deve ser IGUAL ao especificado no atributo <code>data-target=""</code> ou <code>href=""</code> nos passos anteriores.</li>
+            </ul>
+          </li>
+          <li>6º - Aplicar um background de fundo para personalizar um pouco mais a barra de navegação com as classes <code>bg-*</code>.</li>
+          <li>7º - Aplicar uma cor para personalizar um pouco mais a barra de navegação com a classe <code>.navbar-dark</code> para letras claras ou <code>.navbar-light</code> para letras escuras.</li>
+        </ul>
+
+        <p class="lead">Experimente reduzir o tamanho da tela.</p> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div7">
+          <code>&lt;nav class="navbar navbar-expand-md bg-dark navbar-dark></code> <br>
+          <code class="e">&lt;a class="navbar-brand" href="#"></code>LOGO<code>&lt;/a></code><br>
+          <code class="e">&lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#id-ul"></code><br>
+          <code class="e2">&lt;span class="navbar-toggler-icon">&lt;/span></code> <br>
+          <code class="e">&lt;button></code> <br>
+          <code class="e">&lt;div class="collapse navbar-collapse" id="id-div"></code> <br>
+          <code class="e2">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e3">&lt;li class="nav-item"></code><br>
+          <code class="e4">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e3">&lt;/li></code><br>
+          <code class="e3">&lt;li class="nav-item"></code><br>
+          <code class="e4">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e3">&lt;/li></code><br>
+          <code class="e3">&lt;li class="nav-item"></code><br>
+          <code class="e4">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e3">&lt;/li></code><br>
+          <code class="e2">&lt;/ul></code><br>
+          <code class="e">&lt;/div></code> <br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+          <!-- Brand -->
+          <a class="navbar-brand" href="#">Navbar</a>
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#id-div">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="id-div">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link3</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Formulário em barras de navegação</h2>
+
+        <p class="lead">Para inserir um formulário em uma barra de navegação precisamos apenas criar um elemento <code>&lt;form></code> dentro do elemento <code>&lt;nav></code>. O elemento <code>&lt;form></code> precisa ter a classe <code>.form-inline</code> para os elementos do formulário ficarem em linha.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div8">
+          <code>&lt;nav class="navbar navbar-expand btn-danger"></code> <br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code class="e">&lt;form class="form-inline" action="/action_page.php"></code><br>
+          <code class="e2">&lt;input class="form-control mr-sm-2" type="text" placeholder="Search"</code> <br>
+          <code class="e2">&lt;button class="btn btn-success" type="submit"></code>Pesquisar...<code>&lt;/button></code> <br>
+          <code class="e">&lt;/form></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <nav class="navbar navbar-expand btn-danger">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+          <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar...">
+            <button class="btn btn-success" type="submit">Pesquisar</button>
+          </form>
+        </nav>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.fixed-top .fixed-bottom e .sticky-top: Fixando barras de navegação</h2>
+
+        <p class="lead">Podemos fixar a barra de navegação no topo e mesmo que a página seja rolada a barra de navegação irá sempre ficar no topo da página. Para isso precismos apenas inserir a classe <code>.fixed-top</code> na tag inicial do elemento <code>&lt;nav></code>. Experimente rolar o iframe.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div9">
+          <code>&lt;nav class="navbar navbar-expand-sm bg-darkviolet navbar-dark fixed-top"></code> <br>
+          <code class="e">&lt;a class="navbar-brand" href="#"></code>LOGO<code>&lt;/a></code><br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <iframe src="iframe-top.html" style="width: 100%; max-height: 400px;"></iframe> <br>
+
+        <br>
+
+        <p class="lead">Podemos fixar a barra de navegação na parte inferior da página e mesmo que a página seja rolada a barra de navegação irá sempre ficar na parte inferior. Para isso precismos apenas inserir a classe <code>.fixed-bottom</code> na tag inicial do elemento <code>&lt;nav></code>. Experimente rolar o iframe.</p>
+
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div10">
+
+          <code>&lt;nav class="navbar navbar-expand-sm bg-darkviolet navbar-dark fixed-bottom"></code> <br>
+          <code class="e">&lt;a class="navbar-brand" href="#"></code>LOGO<code>&lt;/a></code><br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code>
+          <br>
+        </div>
+
+        <iframe src="iframe-bottom.html" style="width: 100%; max-height: 400px;"></iframe> <br> <br>
+
+        <p class="lead">Podemos fixar a barra de navegação na parte superior NO MOMENTO em que a barra encostar no topo, então o elemento grudara na parte superior e ficara fixa. Para isso precismos apenas inserir a classe <code>.sticky-top</code> na tag inicial do elemento <code>&lt;nav></code>. Experimente rolar o iframe.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div11">
+          <code>&lt;nav class="navbar navbar-expand-sm bg-darkviolet navbar-dark sticky-top"></code> <br>
+          <code class="e">&lt;a class="navbar-brand" href="#"></code>LOGO<code>&lt;/a></code><br>
+          <code class="e">&lt;ul class="navbar-nav"></code> <br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link1<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link2<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e2">&lt;li class="nav-item"></code><br>
+          <code class="e3">&lt;a class="nav-link" href="#"></code>Link3<code>&lt;/a></code><br>
+          <code class="e2">&lt;/li></code><br>
+          <code class="e">&lt;/ul></code><br>
+          <code>&lt;/nav></code><br>
+        </div>
+
+        <iframe src="iframe-sticky.html" style="width: 100%; max-height: 400px;"></iframe> <br>
+
+
+
+
+
+      </div>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

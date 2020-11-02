@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Botões com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+                <h1>Botões com Bootstrap 4</h1>
+
+                <p class="lead">Para aplicar o estilo padrão de um botão B4 devemos usar a classes <code>.btn</code>, e podemos usar as classes <code>.btn-*</code>, em conjunto, para aplicar as cores padrões do B4 nos botões.</p>
+
+                <table class="table table-sm table-striped table-inverse bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th class="w-50">Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;button type="button" class="btn"</code>Botão<code>&lt;/button></code></td>
+                            <td><button type="button" class="btn">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-primary</td>
+                            <td><button type="button" class="btn btn-primary">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-secondary</td>
+                            <td><button type="button" class="btn btn-secondary">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-success</td>
+                            <td><button type="button" class="btn btn-success">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-info</td>
+                            <td><button type="button" class="btn btn-info">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-warning</td>
+                            <td><button type="button" class="btn btn-warning">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-danger</td>
+                            <td><button type="button" class="btn btn-danger">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-dark</td>
+                            <td><button type="button" class="btn btn-dark">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-light</td>
+                            <td><button type="button" class="btn btn-light">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-link</td>
+                            <td><button type="button" class="btn btn-link">Botão</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>btn-outline-*</h2>
+
+                <p class="lead">Também exitem as classes de botões sem preenchimento com bordas coloridas (.btn-outline-*).</p>
+
+                <table class="table table-sm table-striped table-inverse bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th class="w-50">Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>.btn .btn-outline-primary</td>
+                            <td><button type="button" class="btn btn-outline-primary">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-secondary</td>
+                            <td><button type="button" class="btn btn-outline-secondary">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-success</td>
+                            <td><button type="button" class="btn btn-outline-success">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-info</td>
+                            <td><button type="button" class="btn btn-outline-info">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-warning</td>
+                            <td><button type="button" class="btn btn-outline-warning">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-danger</td>
+                            <td><button type="button" class="btn btn-outline-danger">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-light .text-dark</td>
+                            <td><button type="button" class="btn btn-outline-light text-dark">Botão</button></td>
+                        </tr>
+                        <tr>
+                            <td>.btn .btn-outline-dark</td>
+                            <td><button type="button" class="btn btn-outline-dark">Botão</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Transformando Links e inputs</h2>
+
+                <p class="lead">Podemos aplicar esse mesmo efeito nos elementos <code>&lt;input type="*"></code> e nos links <code>&lt;a href="*"></code>. </p>
+
+                <table class="table table-sm table-striped table-inverse bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;a href="" class="btn btn-outline-success"></code>Botão<code>&lt;/a></code></td>
+                            <td><a href="" class="btn btn-outline-success">Botão</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;input type="text" class="btn btn-warning"></code></td>
+                            <td><input type="text" class="btn btn-warning"></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;button type="button" class="btn btn-danger"</code>Botão<code>&lt;/button</code>
+                            </td>
+                            <td><button type="button" class="btn btn-danger">Botão</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Tamanho dos Botões em Bootstrap 4</h2>
+
+                <p class="lead">Podemos aumentar ou diminuir o tamanho dos botões com classes B4.</p>
+
+                <table class="table table-sm table-striped table-inverse bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>.btn-lg </td>
+                            <td><a href="" class="btn btn-success btn-lg ">Botão Grande</a></td>
+                        </tr>
+                        <tr>
+                            <td>.btn-sm </td>
+                            <td><a href="" class="btn btn-success btn-sm">Botão Pequeno</a></td>
+                        </tr>
+                        <tr>
+                            <td>.btn-block </td>
+                            <td><a href="" class="btn btn-success btn-block">Botão 100% de largura</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

@@ -1,77 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Parágrafos em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Parágrafos em HTML5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <header>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+        
+        <script src="../main.js"></script>
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-        <h2>PARÁGRAFOS</h2>
+            <link rel="stylesheet" href="../css/main.css">
 
-        <p> Um parágrafo sempre começa em uma nova linha e geralmente, seu conteúdo, é um bloco de texto. Os navegadores
-            adicionam automaticamente algum espaço em branco (uma margem) antes e depois de um parágrafo. </p>
-        <p> Para demilitar um parágrafo em HTML usamos a tag <code> &lt;p></code>(paragraph). </p>
+    </head>
 
-        <table class="tabela">
-            <tr>
-                <td> <code>&lt;p></code> <br> Aqui <br> tem um <br><br><br> parágrafo... <br>
-                    <code>&lt;p></code>
-                </td>
-                <td>
-                    <p>Aqui tem um parágrafo...</p>
-                </td>
-            </tr>
-        </table>
+    <body class="bg-darkblue text-white">
 
-        <p> Com o HTML, todos os espaçoes e quebras de linhas usando o ENTER são ignorados dentro da tag
-            <code> &lt;p></code>. E para contornar isso, temos algunas possibilidades. </p>
-        <p> A primeira dela é usando a tag <code> &lt;br></code> (break), que gera uma quebra de linha simples, sem
-            espaçamento entre os elementos. A tag <code>&lt;br></code> é uma tag vazia (Selfclosing), o que significa
-            que
-            não é necessário escrever a tag final.
-        </p>
+        <header>
+            <div id="menu">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;p></code> <code>&lt;br></code> <br> Aqui <code>&lt;br></code> <br> tem um
-                    <code>&lt;br></code><code>&lt;br></code><code>&lt;br></code> parágrafo... <br>
-                    <code>&lt;/p></code>
-                </td>
-                <td>
-                    <p>
-                        Aqui <br> tem <br> <br> <br> um parágrafo...
-                    </p>
-                </td>
-            </tr>
-        </table>
+            </div>
 
-        <p> A segunda forma é usar a tag <code>&lt;pre></code> que define um texto preformatado, exibindo todo o texto
-            delimitado pelas tags de forma que os espaçamentos sejam respeitados. Mas cuidado com a identação, porque
-            isso
-            pode gerar mais espaços que o
-            necessário. </p>
+            <script>
+                criarMenu();
+            </script>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;pre></code> <br> Aqui <br> tem um <br> <br> <br> parágrafo... <br>
-                    <code>&lt;/pre></code>
-                </td>
-                <td>
-                    <pre>
+        </header>
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h1>PARÁGRAFOS</h1>
+
+                <p class="lead"> Um parágrafo sempre começa em uma nova linha e geralmente, seu conteúdo, é um bloco de texto. Os navegadores adicionam automaticamente algum espaço em branco (uma margem) antes e depois de um parágrafo. </p>
+
+                <p class="lead"> Para demilitar um parágrafo em HTML usamos a tag <code> &lt;p></code>(paragraph). </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td> <code>&lt;p></code> <br> Aqui <br> tem um <br><br><br> parágrafo... <br>
+                            <code>&lt;p></code>
+                        </td>
+                        <td>
+                            <p class="lead">Aqui tem um parágrafo...</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead"> Com o HTML, todos os espaçoes e quebras de linhas usando o ENTER são ignorados dentro da tag <code> &lt;p></code>. E para contornar isso, temos algunas possibilidades. </p>
+
+                <p class="lead"> A primeira dela é usando a tag <code> &lt;br></code> (break), que gera uma quebra de linha simples, sem espaçamento entre os elementos. A tag <code>&lt;br></code> é uma tag vazia (Selfclosing), o que significa que não é necessário escrever a tag final.
+                </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;p></code> <code>&lt;br></code> <br> Aqui <code>&lt;br></code> <br> tem um
+                            <code>&lt;br></code><code>&lt;br></code><code>&lt;br></code> parágrafo... <br>
+                            <code>&lt;/p></code>
+                        </td>
+                        <td>
+                            <p>
+                                Aqui <br> tem <br> <br> <br> um parágrafo...
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead"> A segunda forma é usar a tag <code>&lt;pre></code> que define um texto preformatado, exibindo todo o texto delimitado pelas tags de forma que os espaçamentos sejam respeitados. Mas cuidado com a identação, porque isso pode gerar mais espaços que o necessário. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;pre></code> <br> Aqui <br> tem um <br> <br> <br> parágrafo... <br>
+                            <code>&lt;/pre></code>
+                        </td>
+                        <td>
+                            <pre class="text-light">
 Aqui
 tem um
 
@@ -79,39 +102,42 @@ tem um
 
 parágrafo...
                     </pre>
-                </td>
-            </tr>
-        </table>
+                        </td>
+                    </tr>
+                </table>
 
-        <p> Podemos usar a tag <code>&lt;hr></code> (horizontal rules) para criar uma linha horizontal que separar
-            conteúdos
-            em uma página HTML. A tag <code>&lt;hr></code> é uma tag vazia (Selfclosing), o que significa que não é
-            necessário escrever a tag final.
-        </p>
+                <p class="lead"> Podemos usar a tag <code>&lt;hr></code> (horizontal rules) para criar uma linha horizontal que separar conteúdos em uma página HTML. A tag <code>&lt;hr></code> é uma tag vazia (Selfclosing), o que significa que não é necessário escrever a tag final. </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;hr></code>
-                </td>
-                <td>
-                    <hr>
-                </td>
-            </tr>
-        </table>
-        <hr />
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;hr></code>
+                        </td>
+                        <td>
+                            <hr class="border">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            
 
 
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="cabecalhos.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="formatacao-textos.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+        </section>
 
-</body>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Collapse com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+
+        <div id="menu"></div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+
+                <h1>Collapse com Bootstrap 4</h1>
+
+                <p class="lead">A classe <code>.collapse</code> são úteis para ocultar ou mostrar conteúdos.</p>
+
+                <p class="lead">Inicialmente, para abrir ou ocultar um conteúdo ou elemento HTML, precisamos definir um elemento clicável como um link ou botão. </p>
+
+                <p class="lead">Assim a classe <code>.collapse</code> dentro do elemento <code>&lt;div></code> indica que o elemento é um elemento expansível, ou seja, será o elemento que será ocultado ou mostrado ao se clicar no elemento clicável. Então, temos o elemento que pode ser tanto <code>&lt;a></code> quando <code>&lt;button></code> com o atributo <code>data-toggle="collapse"</code> indicando que este elemento será o responsável pela ação de ocultar ou desocultar um elemento, elemento este, que deve ter o seu identificador <code>#id</code>, único, especificado no atributo <code>data-target="#id"</code> de um botão ou no atributo <code>href="#id"</code> de um link.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div1">
+                    <code>&lt;a href="#id" data-toggle="collapse"></code>Link<code>&lt;/a></code> <br>
+                    <code>&lt;div id="id" class="collapse"></code> <br>
+                    Lorem ipsum dolor sit amet... <br>
+                    <code>&lt;/div></code>
+                </div>
+                <a href="#id" data-toggle="collapse">Clique aqui</a>
+                <div id="id" class="collapse">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae laboriosam accusantium ea impedit, tempora rerum commodi quam modi quibusdam recusandae ab quod soluta expedita blanditiis? Quia laudantium aliquid veritatis sunt.
+                </div>
+
+
+                <br> <br> <br>
+
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div2">
+                    <code>&lt;button data-toggle="collapse" data-target="#id2"></code>Botao<code>&lt;/button></code> <br>
+                    <code>&lt;div id="id2" class="collapse"></code> <br>
+                    Lorem ipsum dolor sit amet... <br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <button data-toggle="collapse" data-target="#id2">Clique aqui</button>
+                <div id="id2" class="collapse">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, nulla enim dolore aspernatur repudiandae qui, nesciunt consectetur dolor maiores cumque porro. Optio corporis nobis deserunt ullam natus placeat id labore!
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

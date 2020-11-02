@@ -1,151 +1,174 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Padding em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+    <head>
+        <title>Padding em CSS3</title>
+        <meta charset="utf-8">
 
 
-    <section>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         
-    <h2 id="Padding">padding: espaçamento interno</h2>
+        
+        
 
-    <p>A propriedade padding é usada para criar um espaçamento interno
-        no elemento HTML. Assim como o margin, o padding também, pode gerar um
-        espaçamento interno em cada lado do elemento. </p>
-    <ul>
-        <li> padding </li>
-        <li>padding-top</li>
-        <li>padding-right</li>
-        <li>padding-bottom</li>
-        <li>padding-left</li>
-    </ul>
-    <table class="tabela">
-        <tr>
-            <td>
-                <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">1px solid turquoise</span>;
-    <span class="p">text-align</span>: <span class="v">center</span>;
-}</pre>
-            </td>
-            <td style="height: 100px">
-                <div style="border: 1px solid turquoise; text-align: center;">
-                    Div
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">1px solid turquoise</span>;
-    <span class="p">text-align</span>: <span class="v">center</span>;
-    <span class="p">padding</span>: <span class="v">20px</span>;
-}</pre>
-            </td>
-            <td style="height: 100px">
-                <div style="border: 1px solid turquoise; padding: 20px; text-align: center;">
-                    Div com 20px de pedding.
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">1px solid turquoise</span>;
-    <span class="p">text-align</span>: <span class="v">center</span>;
-    <span class="p">padding</span>: <span class="v">100px</span>;
-}</pre>
-            </td>
-            <td style="height: 100px">
-                <div style="border: 1px solid turquoise; padding: 100px;text-align: center;">
-                    Div com 100px de pedding.
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">1px solid turquoise</span>;
-    <span class="p">text-align</span>: <span class="v">center</span>;
-    <span class="p">padding</span>: <span class="v">3em 4em 5em 6em</span>;
-}</pre>
-            </td>
-            <td style="height: 100px">
-                <div style="border: 1px solid turquoise; padding: 3em 4em 5em 6em;text-align: center;">
-                    Div com 3em 4em 5em 6em de pedding.
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">1px solid turquoise</span>;
-    <span class="p">text-align</span>: <span class="v">center</span>;
-    <span class="p">padding-top</span>: <span class="v">10%</span>;
-}</pre>
-            </td>
-            <td style="height: 100px">
-                <div style="border: 1px solid turquoise; padding-top: 10%;text-align: center;">
-                    Div com pedding-top: 10%.
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">1px solid turquoise</span>;
-    <span class="p">text-align</span>: <span class="v">center</span>;
-    <span class="p">padding-left</span>: <span class="v">10cm</span>;
-}</pre>
-            </td>
-            <td style="height: 100px">
-                <div style="border: 1px solid turquoise; padding-left: 10cm;text-align: center;">
-                    Div com pedding-left: 10cm.
-                </div>
-            </td>
-        </tr>
-    </table>
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h1 id="Padding">padding: espaçamento interno</h1>
+
+                <p class="lead">A propriedade padding é usada para criar um espaçamento interno no elemento HTML. Assim como o margin, o padding também, pode gerar um espaçamento interno em cada lado do elemento. </p>
+
+                <ul>
+                    <li> padding </li>
+                    <li>padding-top</li>
+                    <li>padding-right</li>
+                    <li>padding-bottom</li>
+                    <li>padding-left</li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid turquoise</span>; <br>
+                                <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid turquoise; text-align: center;">
+                                Div
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid turquoise</span>; <br>
+                                <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">20px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid turquoise; padding: 20px; text-align: center;">
+                                Div com 20px de padding.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid turquoise</span>; <br>
+                                <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">100px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid turquoise; padding: 100px;text-align: center;">
+                                Div com 100px de padding.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid turquoise</span>; <br>
+                                <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                                <span class="e p">padding</span>: <span class="v">3em 4em 5em 6em</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid turquoise; padding: 3em 4em 5em 6em;text-align: center;">
+                                Div com 3em 4em 5em 6em de padding.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid turquoise</span>; <br>
+                                <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                                <span class="e p">padding-top</span>: <span class="v">10%</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid turquoise; padding-top: 10%;text-align: center;">
+                                Div com padding-top: 10%.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid turquoise</span>; <br>
+                                <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                                <span class="e p">padding-left</span>: <span class="v">10cm</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid turquoise; padding-left: 10cm;text-align: center;">
+                                Div com padding-left: 10cm.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
 
 
-    </section>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="margins.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="height-width.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-</body>
+    </body>
 
 </html>

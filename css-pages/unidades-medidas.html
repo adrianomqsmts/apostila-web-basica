@@ -1,159 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Unidades de medida</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
+    <head>
+        <title>Unidades de medida</title>
+        <meta charset="utf-8">
 
 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <h2 id="Unidade-medida">Unidades de medida</h2>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <p>Em CSS temos várias unidades de medidas
-            que são usada para expressar principalmente
-            a largura e altura dos elementos HTML. </p>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-        <p>A medida sempre é um valor seguido por uma unidade de
-            comprimento que podem ser relativa (ao elemento anterior)
-            ou absoluta. </p>
+        <script src="../main.js"></script>
 
+        <link rel="stylesheet" href="../css/main.css">
 
-        <hr>
+    </head>
 
-        <h3 id="Unidade-relativa">Unidade absoluta</h3>
+    <body class="bg-darkblue text-white">
 
-        <p>As unidades absolutas são sempre fixas, ou seja,
-            o valor especificado sempre aparecerá com o mesmo
-            tamanho independente da situação. </p>
-        <p>O uso das unidades absolutas não são recomendadas, pois muitas
-            telas possuem tamanos diferentes, o que pode gerar
-            erros visuais. Seu uso é recomendado apenas
-            em casos em que se conheça o formato das telas que
-            usuarão o site.</p>
+        <header>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Unidade</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>cm</td>
-                    <td>centímetros</td>
-                </tr>
-                <tr>
-                    <td>mm</td>
-                    <td>milímetros</td>
-                </tr>
-                <tr>
-                    <td>in</td>
-                    <td>polegadas (1in = 96px = 2,54cm)</td>
-                </tr>
-                <tr>
-                    <td>px</td>
-                    <td>píxeis</td>
-                </tr>
-                <tr>
-                    <td>pt</td>
-                    <td>pontos (um pouco menor que 1px)</td>
-                </tr>
-                <tr>
-                    <td>pc</td>
-                    <td>picos (1pc = 12pt)</td>
-                </tr>
-            </tbody>
-        </table>
+        </header>
+        <div id="menu">
 
+        </div>
 
-        <hr>
+        <script>
+           criarMenuCSS();
+        </script>
 
-        <h3 id="Unidades-relativas">Unidade Relativa</h3>
+        <section class="pt-5 mt-5">
 
-        <p>As unidades relativas especificam
-            um valor relativo a outro valor de tamanho.
-            As unidades de tamanho relativo são melhores,
-            pois se adpatam a diferentes tipos de telas. </p>
+            <div class="container">
+                <h1 id="Unidade-medida">Unidades de medida</h1>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Unidade</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>em</td>
-                    <td>Relativo ao tamanho atual da fonte.</td>
-                </tr>
-                <tr>
-                    <td>ex</td>
-                    <td>Relativo a altura da fonte</td>
-                </tr>
-                <tr>
-                    <td>ch</td>
-                    <td>Relativo a largura do "0"</td>
-                </tr>
-                <tr>
-                    <td>rem</td>
-                    <td>Relativo ao tamanho da fonte do elemento raiz</td>
-                </tr>
-                <tr>
-                    <td>vm</td>
-                    <td>Relativo a 1% do largura da janela do navegador</td>
-                </tr>
-                <tr>
-                    <td>vh</td>
-                    <td>Relativo a 1% da altura da janela do navegador</td>
-                </tr>
-                <tr>
-                    <td>vmin</td>
-                    <td>Relativo a 1% da largura mínimo da janela do navegador</td>
-                </tr>
-                <tr>
-                    <td>vmax</td>
-                    <td>Relativo a 1% da altura mínima da janela do navegador</td>
-                </tr>
-                <tr>
-                    <td>%</td>
-                    <td>Relativo ao tamanho do elemento pai</td>
-                </tr>
-            </tbody>
-        </table>
+                <p class="lead">Em CSS temos várias unidades de medidas que são usada para expressar principalmente a largura e altura dos elementos HTML. </p>
 
-        <p>Geralmente o tamanho da fonte padrão é 16px. Assim, 2em equivalerá
-            a 32 pixel, assim como 200% equivalerá, também, 32 pixels. </p>
+                <p class="lead">A medida sempre é um valor seguido por uma unidade de comprimento que podem ser relativa (ao elemento anterior) ou absoluta. </p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="Unidade-relativa">Unidade absoluta</h2>
+
+                <p class="lead">As unidades absolutas são sempre fixas, ou seja, o valor especificado sempre aparecerá com o mesmo tamanho independente da situação. </p>
+
+                <p class="lead">O uso das unidades absolutas não são recomendadas, pois muitas telas possuem tamanhos diferentes, o que pode gerar erros visuais. Seu uso é recomendado apenas em casos em que se conheça o formato das telas que usarão o site.</p>
+
+                <table class="table table-sm table-striped text-white">
+                    <thead>
+                        <tr class=" text-center">
+                            <th class="w-50">Unidade</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>cm</td>
+                            <td>centímetros</td>
+                        </tr>
+                        <tr>
+                            <td>mm</td>
+                            <td>milímetros</td>
+                        </tr>
+                        <tr>
+                            <td>in</td>
+                            <td>polegadas (1in = 96px = 2,54cm)</td>
+                        </tr>
+                        <tr>
+                            <td>px</td>
+                            <td>píxeis</td>
+                        </tr>
+                        <tr>
+                            <td>pt</td>
+                            <td>pontos (um pouco menor que 1px)</td>
+                        </tr>
+                        <tr>
+                            <td>pc</td>
+                            <td>picos (1pc = 12pt)</td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
-    </section>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="comentarios.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="seletores-simples.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+                <h2 id="Unidades-relativas">Unidade Relativa</h2>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <p class="lead">As unidades relativas especificam um valor relativo a outro valor de tamanho. As unidades de tamanho relativo são melhores, pois se adaptam a diferentes tipos de telas. </p>
 
-</body>
+                <table class="table table-sm table-striped text-white">
+                    <thead>
+                        <tr class=" text-center">
+                            <th class="w-50">Unidade</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>em</td>
+                            <td>Relativo ao tamanho atual da fonte.</td>
+                        </tr>
+                        <tr>
+                            <td>ex</td>
+                            <td>Relativo a altura da fonte</td>
+                        </tr>
+                        <tr>
+                            <td>ch</td>
+                            <td>Relativo a largura do "0"</td>
+                        </tr>
+                        <tr>
+                            <td>rem</td>
+                            <td>Relativo ao tamanho da fonte do elemento raiz</td>
+                        </tr>
+                        <tr>
+                            <td>vm</td>
+                            <td>Relativo a 1% do largura da janela do navegador</td>
+                        </tr>
+                        <tr>
+                            <td>vh</td>
+                            <td>Relativo a 1% da altura da janela do navegador</td>
+                        </tr>
+                        <tr>
+                            <td>vmin</td>
+                            <td>Relativo a 1% da largura mínimo da janela do navegador</td>
+                        </tr>
+                        <tr>
+                            <td>vmax</td>
+                            <td>Relativo a 1% da altura mínima da janela do navegador</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Relativo ao tamanho do elemento pai</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="lead">Geralmente o tamanho da fonte padrão é 16px. Assim, 2em equivalerá a 32 pixel, assim como 200% equivalerá, também, 32 pixels. </p>
+            </div>
+
+        </section>
+
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

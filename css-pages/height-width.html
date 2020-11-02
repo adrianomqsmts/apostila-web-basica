@@ -1,134 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Height e Width em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+    <head>
+        <title>Height e Width em CSS3</title>
+        <meta charset="utf-8">
 
 
-    <section>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-        <h2 id="height-width">height and width: altura e largura</h2>
+        <script src="../main.js"></script>
 
-        <p>As propriedades width e height são usada para definir
-            a largura e altura, respectivamente, dos elementos HTML.</p>
-        <p>A altura e largura são para o conteúdo, não incluindo, bordas,
-            espaçamentos internos ou externos. </p>
-        <p>Para definir o valor dessas propriedades podem ser usados
-            valores de unidades ou nomenais como initial que redefine
-            o tamanho padrão ou inherit que herdará o tamanho
-            do elemento pai.</p>
+        <link rel="stylesheet" href="../css/main.css">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s"> div </span> {
-        <span class="p">border</span>: <span class="v">1px solid orange</span>;
-        <span class="p">width</span>: <span class="v">30px</span>;
-        <span class="p">height</span>: <span class="v">30px</span>;
-    }</pre>
-                </td>
-                <td style="height: 100px">
-                    <div style="border: 1px solid orange; height: 50px; width: 50px;">
-                        Div 50x50px
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s"> div </span> {
-        <span class="p">border</span>: <span class="v">1px solid orange</span>;
-        <span class="p">width</span>: <span class="v">10cm</span>;
-        <span class="p">height</span>: <span class="v">5cm</span>;
-    }</pre>
-                </td>
-                <td style="height: 100px">
-                    <div style="border: 1px solid orange; height: 5cm; width: 10cm;">
-                        Div 5x10 cm
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-    <span class="s"> div </span> {
-        <span class="p">border</span>: <span class="v">1px solid orange</span>;
-        <span class="p">width</span>: <span class="v">50%</span>;
-        <span class="p">height</span>: <span class="v">50%</span>;
-    }</pre>
-                </td>
-                <td style="height: 100px">
-                    <div style="border: 1px solid orange; height: 50%; width: 50%;">
-                        Div 50x50%
-                    </div>
-                </td>
-            </tr>
-        </table>
+    </head>
 
-        <p>Você pode ter notado que ao longo dos exemplos, que ao
-            diminuir a tela, alguns elementos não acompanham,
-            pois possuem valores absolutos e não relativos.
-            Para que isso não ocorra em seus projetos, usem sempre
-            valores relativos. </p>
-        <p>Também podemos usar as propriedades max-width, max-height,
-            min-height e min-width que especificam o tamanho máximo
-            e mínimo que um elemento deve ter dependendo do tamanho
-            de uma janela.</p>
+    <body class="bg-darkblue text-white">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s"> div </span> {
-        <span class="p">border</span>: <span class="v">1px solid orange</span>;
-        <span class="p">max-width</span>: <span class="v">400px</span>;
-        <span class="p">max-height</span>: <span class="v">400px</span>;
-    }</pre>
-                </td>
-                <td style="height: 200px;">
-                    <div style="border: 1px solid orange; max-height: 400px; max-width: 400px;">
-                        Div 400x400px. Experimente diminuiro tamanho d
-                        a janela do navegador.
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h1 id="height-width">height and width: altura e largura</h1>
+
+                <p class="lead">As propriedades width e height são usada para definir a largura e altura, respectivamente, dos elementos HTML. A altura e largura são para o conteúdo, não incluindo, bordas, espaçamentos internos ou externos. Para definir o valor dessas propriedades podem ser usados valores de unidades ou nominais como initial que redefine o tamanho padrão ou inherit que herdará o tamanho do elemento pai.</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid orange</span>; <br>
+                                <span class="e p">width</span>: <span class="v">30px</span>; <br>
+                                <span class="e p">height</span>: <span class="v">30px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid orange; height: 50px; width: 50px;">
+                                Div 50x50px
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid orange</span>; <br>
+                                <span class="e p">width</span>: <span class="v">10cm</span>; <br>
+                                <span class="e p">height</span>: <span class="v">5cm</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid orange; height: 5cm; width: 10cm;">
+                                Div 5x10 cm
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid orange</span>; <br>
+                                <span class="e p">width</span>: <span class="v">50%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">50%</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 100px">
+                            <div style="border: 1px solid orange; height: 50%; width: 50%;">
+                                Div 50x50%
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead">Você pode ter notado que ao longo dos exemplos, que ao diminuir a tela, alguns elementos não acompanham, pois possuem valores absolutos e não relativos. Para que isso não ocorra em seus projetos, usem sempre valores relativos. Também podemos usar as propriedades max-width, max-height, min-height e min-width que especificam o tamanho máximo e mínimo que um elemento deve ter dependendo do tamanho de uma janela.</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">1px solid orange</span>; <br>
+                                <span class="e p">max-width</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">max-height</span>: <span class="v">400px</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td style="height: 200px;">
+                            <div style="border: 1px solid orange; max-height: 400px; max-width: 400px;">
+                                Div 400x400px. Experimente diminuir tamanho da janela do navegador.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
 
 
 
-    </section>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="padding.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="outline.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

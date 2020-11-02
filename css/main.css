@@ -1,0 +1,124 @@
+body {
+    text-align: justify;
+}
+
+.bg-darkblue {
+    background-color: #060024;
+}
+
+.bg-darkviolet {
+    background-color: #370043;
+}
+
+.bg-pink {
+    background-color: #e671ad;
+}
+
+
+.bg-babyblue {
+    background-color: #4ac2ed;
+}
+
+.transparence {
+    opacity: 0.7;
+}
+
+.transparence-none {
+    opacity: 1.0;
+}
+
+.e {
+    padding-left: 1em;
+}
+
+.e2 {
+    padding-left: 2em;
+}
+
+.e3 {
+    padding-left: 3em;
+}
+
+.e4 {
+    padding-left: 4em;
+}
+
+.e5 {
+    padding-left: 5em;
+}
+
+code {
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    word-spacing: 0.1em;
+}
+
+.verde {
+    color: chartreuse;
+}
+
+.lead {
+    text-align: justify;
+}
+ul.lead::first-letter{
+     padding-left: 0;
+}
+ol.lead::first-letter{
+     padding-left: 0;
+}
+
+.lead::first-letter {
+    padding-left: 2em;
+}
+
+.table-none, .table-none tbody tr td, .table-none thead tr th, .table-none tfoot tr td {
+    border: none;
+    text-decoration: none;
+}
+
+.table-none caption {
+    position: initial;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: yellow;
+}
+
+.titulo {
+    color: white;
+}
+
+ul li b {
+    color: lawngreen;
+}
+
+.code {
+    font-size: large;
+    color: lawngreen;
+}
+
+#rodape {
+    margin-top: 5em;
+}
+
+.code-css {
+    color: white;
+    font-size: 1.2em;
+}
+
+.s {
+    color: gold;
+}
+
+.p{
+    color: springgreen;
+}
+
+.v{
+    color: red ;
+}
+
+.c{
+    color: cyan;
+}

@@ -1,567 +1,600 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Border em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
-
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+    <head>
+        <title>Border em CSS3</title>
+        <meta charset="utf-8">
 
 
-    <section>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
+        <script src="../main.js"></script>
 
-        <h2 id="Border">border: bordas</h2>
+        <link rel="stylesheet" href="../css/main.css">
 
-        <p>A propriedade border permite especificar o estilo, a largura e a
-            cor da borda de um elemento. </p>
+    </head>
 
+    <body class="bg-darkblue text-white">
 
+        <header>
 
+        </header>
+        <div id="menu">
 
-        <h3 id="Border-style">border-style: estilo das bordas</h3>
+        </div>
 
-        <p>A propriedade border-style especifica o tipo de borda exibir, podendo ter
-            até quatro valores que difinem o tipo de parte da borda
-            no sentido horário. </p>
-        <span class="code">border-style: borda superior borda direita
-            borda inferior borda esquerda </span>
-        <br>
-        <ul>
-            <li>dotted: Define uma borda pontilhada</li>
-            <li>dashed: Define uma borda tracejada</li>
-            <li>solid: Define uma borda sólida</li>
-            <li>double: Define uma borda dupla</li>
-            <li>groove: Define uma borda com sulcos 3D. </li>
-            <li>ridge: Define uma borda 3D estriada.</li>
-            <li>inset: Define uma borda de inserção 3D.</li>
-            <li>outset: Define uma borda de início 3D.</li>
-            <li>none: Não define nenhuma fronteira</li>
-            <li>hidden: Define uma borda oculta</li>
-        </ul>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">dotted</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: dotted;">
-                        Oi! Eu sou uma div com border-style: dotted
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">dashed</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: dashed;">
-                        Oi! Eu sou uma div com border-style: dashed
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">solid</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: solid;">
-                        Oi! Eu sou uma div com border-style: solid
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">double</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: double;">
-                        Oi! Eu sou uma div com border-style: double
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">groove</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: groove;">
-                        Oi! Eu sou uma div com border-style: groove
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">ridge</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: ridge;">
-                        Oi! Eu sou uma div com border-style: ridge
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">inset</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: inset;">
-                        Oi! Eu sou uma div com border-style: inset
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">none</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: none;">
-                        Oi! Eu sou uma div com border-style: none
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">hidden</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: hidden;">
-                        Oi! Eu sou uma div com border-style: hidden
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">dotted solid double inset</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: dotted solid double inset;">
-                        Oi! Eu sou uma div com border-style: dotted solid double inset
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">double none</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: double none;">
-                        Oi! Eu sou uma div com border-style: double none
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
-        <h3 id="Border-width">border-width: espessura das bordas</h3>
+        <section class="pt-5 mt-5">
+            <div class="container">
 
-        <p>A propriedade border-width define a largura de todas as quatro
-            bordas, usando valores específicos ou predefinidos como thin
-            (fino), medium (médio) ou hick (espesso) </p>
-        <p> Também podemos especificar o a espessura de cada borda
-            no sentido horário </p>
+                <h1 id="Border">border: bordas</h1>
 
-        <span class="code">border-width: borda superior borda direita
-            borda inferior borda esquerda </span>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">solid</span>;
-    <span class="p">border-width</span>: <span class="v">10px</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: solid; border-width: 10px;">
-                        Oi! Eu sou uma div com border-style: solid e border-width: 10px
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">double</span>;
-    <span class="p">border-width</span>: <span class="v">medium</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: double; border-width: medium;">
-                        Oi! Eu sou uma div com border-style: double e border-width: medium
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">solid</span>;
-    <span class="p">border-width</span>: <span class="v">1px thick</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: solid; border-width:  1px thick;">
-                        Oi! Eu sou uma div com border-style: solid e border-width: 1px thick.
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">solid</span>;
-    <span class="p">border-width</span>: <span class="v">5px 10px 1px 30px</span>;
-}
-</pre>
-                </td>
-                <td>
-                    <div style="border-style: solid; border-width: 10px 20px 1px 30px;">
-                        Oi! Eu sou uma div com border-style: solid e border-width: 10px 20px 1px 30px.
-                    </div>
-                </td>
-            </tr>
-
-        </table>
+                <p class="lead">A propriedade border permite especificar o estilo, a largura e a cor da borda de um elemento. </p>
 
 
+                <h2 id="Border-style">border-style: estilo das bordas</h2>
+
+                <p class="lead">A propriedade border-style especifica o tipo de borda exibir, podendo ter até quatro valores que definem o tipo de parte da borda no sentido horário. </p>
+
+                <div class="text-center">
+                    <span class="code">border-style: borda-superior borda-direita borda-inferior borda-esquerda </span>
+                </div>
+
+                <ul class="pl-5">
+                    <li>dotted: Define uma borda pontilhada</li>
+                    <li>dashed: Define uma borda tracejada</li>
+                    <li>solid: Define uma borda sólida</li>
+                    <li>double: Define uma borda dupla</li>
+                    <li>groove: Define uma borda com sulcos 3D. </li>
+                    <li>ridge: Define uma borda 3D estriada.</li>
+                    <li>inset: Define uma borda de inserção 3D.</li>
+                    <li>outset: Define uma borda de início 3D.</li>
+                    <li>none: Não define nenhuma fronteira</li>
+                    <li>hidden: Define uma borda oculta</li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">dotted</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: dotted;">
+                                Oi! Eu sou uma div com border-style: dotted
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">dashed</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: dashed;">
+                                Oi! Eu sou uma div com border-style: dashed
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">solid</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: solid;">
+                                Oi! Eu sou uma div com border-style: solid
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">double</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: double;">
+                                Oi! Eu sou uma div com border-style: double
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">groove</span>; <br>
+                                } <br>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: groove;">
+                                Oi! Eu sou uma div com border-style: groove
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">ridge</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: ridge;">
+                                Oi! Eu sou uma div com border-style: ridge
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">inset</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: inset;">
+                                Oi! Eu sou uma div com border-style: inset
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">none</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: none;">
+                                Oi! Eu sou uma div com border-style: none
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">hidden</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: hidden;">
+                                Oi! Eu sou uma div com border-style: hidden
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">dotted solid double inset</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: dotted solid double inset;">
+                                Oi! Eu sou uma div com border-style: dotted solid double inset
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">double none</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: double none;">
+                                Oi! Eu sou uma div com border-style: double none
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="Border-width">border-width: espessura das bordas</h2>
+
+                <p class="lead">A propriedade border-width define a largura de todas as quatro bordas, usando valores específicos ou predefinidos como thin (fino), medium (médio) ou hick (espesso). Também podemos especificar a espessura de cada borda no sentido horário. </p>
+
+                <div class="text-center">
+                    <span class="code">border-width: borda-superior borda-direita borda-inferior borda-esquerda </span>
+                </div>
+                <br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">solid</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">10px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: solid; border-width: 10px;">
+                                Oi! Eu sou uma div com border-style: solid e border-width: 10px
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">double</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">medium</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: double; border-width: medium;">
+                                Oi! Eu sou uma div com border-style: double e border-width: medium
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">solid</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">1px thick</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: solid; border-width:  1px thick;">
+                                Oi! Eu sou uma div com border-style: solid e border-width: 1px thick.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">solid</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">5px 10px 1px 30px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: solid; border-width: 10px 20px 1px 30px;">
+                                Oi! Eu sou uma div com border-style: solid e border-width: 10px 20px 1px 30px.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
 
-        <h3 id="Border-color">border-color: Cores das bordas</h3>
+                <h2 id="Border-color">border-color: Cores das bordas</h2>
 
-        <p>A propriedade border-color é usada para definir
-            a cor das quatro bordas de um elementos HTML. </p>
-        <span class="code">border-color: borda superior borda direita
-            borda inferior borda esquerda</span>
-        <br> <br>
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">solid</span>;
-    <span class="p">border-width</span>: <span class="v">5px</span>;
-    <span class="p">border-color</span>: <span class="v">red</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border-style: solid; border-width: 5px; border-color: red;">
-                        Oi! Eu sou uma div com border-style: solid , border-width: 5px
-                        e border-color: red.
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">double</span>;
-    <span class="p">border-width</span>: <span class="v">20%</span>;
-    <span class="p">border-color</span>: <span class="v">hsl (50%, 100%, 50%)</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border-style: double; border-width: 20%; border-color: hsl(50, 70%, 30%);">
-                        Oi! Eu sou uma div com border-style: solid , border-width: 5px
-                        e border-color: hsl(50, 70%, 30%).
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">groove</span>;
-    <span class="p">border-width</span>: <span class="v">1em</span>;
-    <span class="p">border-color</span>: <span class="v">rgb(50,50,200)</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border-style: groove; border-width: 1em; border-color: rgb(50,50,200)">
-                        Oi! Eu sou uma div com border-style: groove , border-width: 1em
-                        e border-color: rgb(50,50,200)
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">groove double</span>;
-    <span class="p">border-width</span>: <span class="v">1em 15px</span>;
-    <span class="p">border-color</span>: <span class="v">rgb(50,50,200) #ababab</span>;
-}</pre>
-                </td>
-                <td>
-                    <div
-                        style="border-style: groove double; border-width: 1em 15px; border-color: rgb(50,50,200) #ababab">
-                        Oi! Eu sou uma div com border-style: groove double, border-width: 1em 15px
-                        e border-color: rgb(50,50,200) #ababab
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-style</span>: <span class="v">solid</span>;
-    <span class="p">border-width</span>: <span class="v">5px</span>;
-    <span class="p">border-color</span>: <span class="v">blue green red yellow</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border-style: solid; border-width: 5px; border-color: blue green red yellow">
-                        Oi! Eu sou uma div com border-style: solid , border-width: 5px
-                        e border-color: blue green red yellow
-                    </div>
-                </td>
-            </tr>
-        </table>
+                <p class="lead">A propriedade border-color é usada para definir a cor das quatro bordas de um elementos HTML. </p>
+
+                <div class="text-center">
+                    <span class="code">border-color: borda-superior borda-direita borda-inferior borda-esquerda</span> <br> <br>
+                </div>
+                <br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">solid</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">5px</span>; <br>
+                                <span class="e p">border-color</span>: <span class="v">red</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: solid; border-width: 5px; border-color: red;">
+                                Oi! Eu sou uma div com border-style: solid , border-width: 5px e border-color: red.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">double</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">20%</span>; <br>
+                                <span class="e p">border-color</span>: <span class="v">hsl (50%, 100%, 50%)</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: double; border-width: 20%; border-color: hsl(50, 70%, 30%);">
+                                Oi! Eu sou uma div com border-style: solid , border-width: 5px e border-color: hsl(50, 70%, 30%).
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">groove</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">1em</span>; <br>
+                                <span class="e p">border-color</span>: <span class="v">rgb(50,50,200)</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: groove; border-width: 1em; border-color: rgb(50,50,200)">
+                                Oi! Eu sou uma div com border-style: groove , border-width: 1em e border-color: rgb(50,50,200)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">groove double</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">1em 15px</span>; <br>
+                                <span class="e p">border-color</span>: <span class="v">rgb(50,50,200) #ababab</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: groove double; border-width: 1em 15px; border-color: rgb(50,50,200) #ababab">
+                                Oi! Eu sou uma div com border-style: groove double, border-width: 1em 15px e border-color: rgb(50,50,200) #ababab
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-style</span>: <span class="v">solid</span>; <br>
+                                <span class="e p">border-width</span>: <span class="v">5px</span>; <br>
+                                <span class="e p">border-color</span>: <span class="v">blue green red yellow</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-style: solid; border-width: 5px; border-color: blue green red yellow">
+                                Oi! Eu sou uma div com border-style: solid , border-width: 5px e border-color: blue green red yellow
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="Border2">Tudo de uma vez! Border</h2>
+
+                <p class="lead">Agora que aprendemos todos as possibilidades de estilos possíveis usando a propriedade border, podemos aplicar todas essas propriedades em uma única linha. A propriedade border é uma forma abreviada para as seguintes propriedades individuais de borda. O único valor que não pode ficar ausente é o valor do border-style!</p>
+
+                <div class="text-center">
+                    <span class="code">border: border-width border-style border-color</span>
+                </div>
+                <br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">5px solid blue</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 5px solid blue; background-color: black;">
+                                Oi! Eu sou uma div com border: 5px solid blue
+                                e background-color: black.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="Border3">border-top border-left border-right border-bottom</h2>
+
+                <p class="lead">Também é possível trabalhar apenas de um lado das bordas de forma totalmente independente usando as propriedades border-top, border-left, border-right e/ou border-bottom. Elas funcionam da mesma forma que uma propriedade border e possuem também, suas variações em cor, espessura e estilo. </p>
+
+                <ul>
+                    <li>border-bottom, border-bottom-color, border-bottom-style, border-bottom-width</li>
+                    <li>border-left, border-left-color, border-left-style, border-left-width</li>
+                    <li>border-right-color, border-right-style, border-right-width,</li>
+                    <li>border-top, border-top-color, border-top-style, border-top-width</li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-top</span>: <span class="v">5px solid blue</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-top: 5px solid blue;">
+                                Oi! Eu sou uma div com border-top: 5px solid blue
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border-top-style</span>: <span class="v">double</span>; <br>
+                                <span class="e p">border-bottom-style</span>: <span class="v">inset</span>; <br>
+                                <span class="e p">border-bottom-color</span>: <span class="v">red</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border-top-style: double; border-bottom-style:inset; border-bottom-color: red;">
+                                Oi! Eu sou uma div com border-top-style: double ,border-bottom-style: inset e border-bottom-color: red
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="Border-radius">border-radius: arredondamento de bordas</h2>
+
+                <p class="lead">A propriedade border-radius é usada para especificar o arredondamento de todas as bordas de um elemento HTML. Também é possível aplicar o arredondamento em cada borda de forma individual. </p>
+
+                <ul>
+                    <li>border-top-left-radius, border-top-right-radius</li>
+                    <li>border-bottom-left-radius, border-bottom-right-radius</li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">5px solid blue</span>; <br>
+                                <span class="e p">border-radius</span>: <span class="v">5px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 5px solid blue; border-radius: 5px;">
+                                Oi! Eu sou uma div com border: 5px solid blue
+                                e border-radius: 5px.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">6px double lawngreen</span>; <br>
+                                <span class="e p">border-radius</span>: <span class="v">5px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 6px double lawngreen; border-radius: 15px;">
+                                Oi! Eu sou uma div com border: 6px double lawngreen
+                                e border-radius: 15px.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">6px double mediumspringgreen</span>; <br>
+                                <span class="e p">border-bottom-left-radius</span>: <span class="v">5px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 6px double mediumspringgreen; border-bottom-left-radius: 15px;">
+                                Oi! Eu sou uma div com border: 6px double mediumspringgreen
+                                e border-bottom-left-radius: 15px.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s"> div </span> { <br>
+                                <span class="e p">border</span>: <span class="v">6px double turquoise</span>; <br>
+                                <span class="e p">border-top-right-radius</span>: <span class="v">5px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 6px double turquoise; border-top-right-radius: 15px;">
+                                Oi! Eu sou uma div com border: 6px double turquoise
+                                e border-top-right-radius: 15px.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
 
 
 
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-        <h3 id="Border2">Tudo de uma vez! Border</h3>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-        <p>Agora que aprendemos todos as possibilidades de estilos possiveis usando
-            a propriedade border, podemos aplicar todas essas propriedades em
-            uma única linha. </p>
-        <p>A propriedade border é uma forma abreviada para as seguintes
-            propriedades individuais de borda.</p>
-
-        <span class="code">elemento {
-            width
-            style
-            color
-            }</span>
-        <br> <br>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">5px solid blue</span>;
-    <span class="p">background-color</span>: <span class="v">black</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border: 5px solid blue; background-color: black;">
-                        Oi! Eu sou uma div com border: 5px solid blue
-                        e background-color: black.
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-
-
-        <h3 id="Border3">border-top border-left border-right border-bottom</h3>
-
-        <p>Também é possível trablhar apenas de um lado das bordas de forma
-            totalmente independente usando as propriedades border-top,
-            border-left, border-right e/ou border-bottom. Elas funcionam
-            da mesma forma que uma propriedade border e possuem também, suas
-            variações em cor, espessura e estilo. </p>
-
-        <ul>
-            <li>border-bottom, border-bottom-color, border-bottom-style, border-bottom-width</li>
-            <li>border-left, border-left-color, border-left-style, border-left-width</li>
-            <li>border-right-color, border-right-style, border-right-width,</li>
-            <li>border-top, border-top-color, border-top-style, border-top-width</li>
-        </ul>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-top</span>: <span class="v">5px solid blue</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border-top: 5px solid blue;">
-                        Oi! Eu sou uma div com border-top: 5px solid blue
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border-top-style</span>: <span class="v">double</span>;
-    <span class="p">border-bottom-style</span>: <span class="v">inset</span>;
-    <span class="p">border-bottom-color</span>: <span class="v">red</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border-top-style: double; border-bottom-style:inset; border-bottom-color: red;">
-                        Oi! Eu sou uma div com border-top-style: double
-                        ,border-bottom-style: inset e border-bottom-color: red
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-
-
-        <h3 id="Border-radius">border-radius: arredondamento de bordas</h3>
-
-        <p>A propriedade border-radius é usada para especificar o arredondamento
-            de todas as bordas de um elemento HTML. Também é possivel aplicar o
-            arredondamento em cada borda de forma individual. </p>
-
-        <ul>
-            <li>border-top-left-radius, border-top-right-radius</li>
-            <li>border-bottom-left-radius, border-bottom-right-radius</li>
-        </ul>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">5px solid blue</span>;
-    <span class="p">border-radius</span>: <span class="v">5px</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border: 5px solid blue; border-radius: 5px;">
-                        Oi! Eu sou uma div com border: 5px solid blue
-                        e border-radius: 5px.
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">6px double lawngreen</span>;
-    <span class="p">border-radius</span>: <span class="v">5px</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border: 6px double lawngreen; border-radius: 15px;">
-                        Oi! Eu sou uma div com border: 6px double lawngreen
-                        e border-radius: 15px.
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">6px double mediumspringgreen</span>;
-    <span class="p">border-bottom-left-radius</span>: <span class="v">5px</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border: 6px double mediumspringgreen; border-bottom-left-radius: 15px;">
-                        Oi! Eu sou uma div com border: 6px double mediumspringgreen
-                        e border-bottom-left-radius: 15px.
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre>
-<span class="s"> div </span> {
-    <span class="p">border</span>: <span class="v">6px double turquoise</span>;
-    <span class="p">border-top-right-radius</span>: <span class="v">5px</span>;
-}</pre>
-                </td>
-                <td>
-                    <div style="border: 6px double turquoise; border-top-right-radius: 15px;">
-                        Oi! Eu sou uma div com border: 6px double turquoise
-                        e border-top-right-radius: 15px.
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-
-
-
-
-    </section>
-
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="modelo-caixa.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="margins.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
-
-</body>
+    </body>
 
 </html>

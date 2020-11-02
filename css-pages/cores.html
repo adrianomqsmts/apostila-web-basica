@@ -1,317 +1,457 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Cores em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="stylesheet" href="css/cores.css">
-</head>
+    <head>
+        <title>Cores em CSS3</title>
+        <meta charset="utf-8">
 
-<body>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
 
-        <h2 id="Cores">CORES</h2>
+        <link rel="stylesheet" href="css/cores.css">
+        <script src="../main.js"></script>
 
-        <P>Para aplicarmos uma cor em elementos ou atributos em CSS podemos
-            usar valores predefinidos em inglês como blue (azul), red (vermelho),
-            green (verde), dentre outros 140 suportadas. Ou então
-            usar valores RGB, HEX, HSL, RGBA ou HSLA. </P>
-    
-    
-    
-    
-    
-        <h3 id="Valoresdecores">Valores de Cores</h3>
-    
-        <p>Podemos definir a cor especificando o
-            o valor numérico. Ao optar dessa forma, podemos
-            tornar a cor mais personalizada para o estilo de uma página. </p>
-    
-    
-    
-        <h4 id="RGB">Cores RGB e RGBA</h4>
-    
-        <p>Em CSS uma cor pode ser específicada como valor RGB.</p>
-        <span style="font-size: 20px;">rgb (
-            <span style="color: red;">vermelho</span>,
-            <span style="color: green;">verde</span>,
-            <span style="color: blue;">azul</span>
-            )</span>
-        <br>
-    
-        <p>Basicamente, cada parâmetro define a intensidade da cor,
-            com valores que variam entre 0 e 255, formando uma cor resultante
-            da mistura das três cores. </p>
-        <p>Por exemplo: Se usarmos rgb(255,0,0) a cor resultante é vermelha pura,
-            pois não há mistura com as demais cores. O pretro é a ausência
-            de cor, enquanto o branco é a mistura de todas as cores. Os tons de cinza
-            ocorrem quando os três valores são iguais.</p>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.div1 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(0,0,0)</span>;
-    }
-    
-    <span class="s">.div2 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(0,0,255)</span>;
-    }
-    
-    <span class="s">.div3 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(0,255,0)</span>;
-    }
-    
-    <span class="s">.div4 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(255,0,0)</span>;
-    }
-    
-    <span class="s">.div5 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(255,165,0)</span>;
-    }
-    
-    <span class="s">.div6 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(83,190,30)</span>;
-    } 
-    
-    <span class="s">.div7 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(50,50,50)</span>;
-    }
-    
-    <span class="s">.div8 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(100,100,100)</span>;
-    }
-    
-    <span class="s">.div9 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(200,200,200)</span>;
-    <span class="p">color</span>: <span class="v">rgb(0,0,0)</span>;
-    
-    }
-    
-    <span class="s">.div10 </span> {
-    <span class="p">background-color</span>: <span class="v">rgb(106, 0, 128);</span>;
-    
-    }</pre>
-                </td>
-                <td style="text-align: center;">
-                    <div id="div1">
-                        rgb(0, 0, 0)
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
+
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+
+                <h1 id="Cores">Cores com CSS3</h1>
+
+                <p class="lead">Para aplicarmos uma cor em elementos ou atributos em CSS podemos usar valores predefinidos em inglês como blue (azul), red (vermelho), green (verde), dentre outros 140 suportadas. Ou então usar valores RGB, HEX, HSL, RGBA ou HSLA. </P>
+
+                <h2 id="Valoresdecores">Valores de Cores</h2>
+
+                <p class="lead">Podemos definir a cor especificando o o valor numérico. Ao optar dessa forma, podemos tornar a cor mais personalizada para o estilo de uma página. </p>
+
+                <h3 id="RGB">Cores RGB e RGBA</h3>
+
+                <p class="lead">Em CSS uma cor pode ser específicada como valor RGB.</p> <br>
+                <div class="text-center">
+                    <span style="font-size: 20px;">rgb (
+                        <span style="color: red;">vermelho</span>,
+                        <span style="color: green;">verde</span>,
+                        <span style="color: blue;">azul</span>
+                        )</span>
+                </div>
+
+                <br> <br>
+
+                <p class="lead">Basicamente, cada parâmetro define a intensidade da cor com valores que variam entre 0 e 255, formando uma cor resultante da mistura das três cores. Por exemplo: Se usarmos rgb(255,0,0) a cor resultante é vermelha pura, pois não há mistura com as demais cores. O preto é a ausência de cor, enquanto o branco é a mistura de todas as cores. Os tons de cinza ocorrem quando os três valores são iguais.</p>
+
+                <a href="#div-1" data-toggle="collapse" class="text-white">
+                    <div id="div1" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(0, 0, 0)
                     </div>
-                    <div id="div2">
-                        rgb(0, 0, 255)
+                </a>
+
+                <div id="div-1" class="collapse">
+                    <span class="s">.div1 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(0,0,0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-2" data-toggle="collapse" class="text-white">
+                    <div id="div2" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(0,0,255)
                     </div>
-                    <div id="div3">
-                        rgb(0, 255, 0)
+                </a>
+
+                <div id="div-2" class="collapse">
+                    <span class="s">.div2 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(0,0,255)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-3" data-toggle="collapse" class="text-white">
+                    <div id="div3" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(0,255,0)
                     </div>
-                    <div id="div4">
-                        rgb(255, 0, 0)
+                </a>
+
+                <div id="div-3" class="collapse">
+                    <span class="s">.div3 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(0,255,0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-4" data-toggle="collapse" class="text-white">
+                    <div id="div4" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(255,0,0)
                     </div>
-                    <div id="div5">
-                        rgb(255, 165, 0)
+                </a>
+
+                <div id="div-4" class="collapse">
+                    <span class="s">.div4 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(255,0,0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-5" data-toggle="collapse" class="text-white">
+                    <div id="div5" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(255,165,0)
                     </div>
-                    <div id="div6">
-                        rgb(83, 190, 30)
+                </a>
+
+                <div id="div-5" class="collapse">
+                    <span class="s">.div5 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(255,165,0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-6" data-toggle="collapse" class="text-white">
+                    <div id="div6" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(83,190,30)
                     </div>
-    
-                    <div id="div7">
-                        rgb(50, 50, 50)
+                </a>
+
+                <div id="div-6" class="collapse">
+                    <span class="s">.div6 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(83,190,30)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-7" data-toggle="collapse" class="text-white">
+                    <div id="div7" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(50,50,50)
                     </div>
-                    <div id="div8">
-                        rgb(100, 100, 100)
+                </a>
+
+                <div id="div-7" class="collapse">
+                    <span class="s">.div7 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(50,50,50)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-8" data-toggle="collapse" class="text-white">
+                    <div id="div8" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(100,100,100)
                     </div>
-                    <div id="div9">
-                        rgb(200, 200, 200)
+                </a>
+
+                <div id="div-8" class="collapse">
+                    <span class="s">.div8 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(100,100,100)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-9" data-toggle="collapse" class="text-white">
+                    <div id="div9" class="lead text-center text-dark">
+                        Clique aqui para ver o código para a cor : rgb(200,200,200)
                     </div>
-                    <div id="div10">
-                        rgb(106, 0, 128)
+                </a>
+
+                <div id="div-9" class="collapse">
+                    <span class="s">.div9 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(200,200,200)</span>; <br>
+                    <span class="e p">color</span>: <span class="v">rgb(0,0,0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-10" data-toggle="collapse" class="text-white">
+                    <div id="div10" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgb(0, 0, 0)
                     </div>
-    
-                </td>
-            </tr>
-        </table>
-    
-        <p>Temos também o RGBA que tem um quarto parâmetro que define
-            a transparência da cor do elemento. O valor varia entre
-            0.0 (totamente transparente) até 1.0 (que é nada transparente). </p>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.div11 </span> {
-        <span class="p">background-color</span>: <span class="v">rgb(0,0,255,0)</span>;
-    }
-    
-    <span class="s">.div12 </span> {
-        <span class="p">background-color</span>: <span class="v">rgb(0,0,255,0.2)</span>;
-    }
-    
-    <span class="s">.div13 </span> {
-        <span class="p">background-color</span>: <span class="v">rgb(0,0,255,0.5)</span>;
-    }
-    
-    <span class="s">.div14 </span> {
-        <span class="p">background-color</span>: <span class="v">rgb(0,0,255,0.7)</span>;
-    }
-    
-    <span class="s">.div15 </span> {
-        <span class="p">background-color</span>: <span class="v">rgb(0,0,255,1.0)</span>;
-    }
-           </pre>
-                </td>
-                <td style="text-align: center;">
-                    <div id="div11">
-                        rgba(0, 0, 255, 0.0)
+                </a>
+
+                <div id="div-10" class="collapse">
+                    <span class="s">.div10 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgb(106, 0, 128);</span>;
+                    } <br>
+                </div>
+
+                <br>
+
+                <p class="lead">Temos também o RGBA que tem um quarto parâmetro que define a transparência da cor do elemento. O valor varia entre 0.0 (totalmente transparente) até 1.0 (que é nada transparente). </p>
+
+                <a href="#div-11" data-toggle="collapse" class="text-white">
+                    <div id="div11" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgba(0,0,255,0)
                     </div>
-                    <div id="div12">
-                        rgba(0, 0, 255, 0.2)
+                </a>
+
+                <div id="div-11" class="collapse">
+                    <span class="s">.div11 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgba(0,0,255,0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-12" data-toggle="collapse" class="text-white">
+                    <div id="div12" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgba(0,0,255,0.2)
                     </div>
-                    <div id="div13">
-                        rgba(0, 0, 255, 0.5)
+                </a>
+
+                <div id="div-12" class="collapse">
+                    <span class="s">.div12 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgba(0,0,255,0.2)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-13" data-toggle="collapse" class="text-white">
+                    <div id="div13" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgba(0,0,255,0.5)
                     </div>
-                    <div id="div14">
-                        rgba(0, 0, 255, 0.7)
+                </a>
+
+                <div id="div-13" class="collapse">
+                    <span class="s">.div13 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgba(0,0,255,0.5)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-14" data-toggle="collapse" class="text-white">
+                    <div id="div14" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgba(0,0,255,0.7)
                     </div>
-                    <div id="div15">
-                        rgba(0, 0, 255, 1.0)
+                </a>
+
+                <div id="div-14" class="collapse">
+                    <span class="s">.div14 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgba(0,0,255,0.7)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-15" data-toggle="collapse" class="text-white">
+                    <div id="div15" class="lead text-center">
+                        Clique aqui para ver o código para a cor : rgba(0,0,255,1.0)
                     </div>
-                </td>
-            </tr>
-        </table>
-    
-    
-    
-    
-    
-        <h4 id="CoresHEX">Cores Hexadecimais</h4>
-    
-        <p>Funciona da mesma fomra que o RGB, entretanto, em um formato
-            hexadecimal. </p>
-        <span style="font-size: 20px;">#<span style="color: red;">rr</span><span style="color: green;">gg</span><span
-                style="color: blue;">bb</span></span>
-        <br>
-    
-        <p>Onde rr (vermelho), gg(verde) e bb (azul) são valores hexadecimal
-            entre 00 e ff (igual ao intervalo 0-255 em decimal).
-            Por exemplo: O valor #ff0000 define uma
-            cor vermelha, pois ff é o valor mais alto. </p>
-    
-        <table class="tabela">
-            <tr>
-                <td>
-                    <pre>
-    <span class="s">.div16 </span> {
-        <span class="p">background-color</span>: <span class="v">#000000</span>;
-    }
-    
-    <span class="s">.div17 </span> {
-        <span class="p">background-color</span>: <span class="v">#0000ff</span>;
-    }
-    
-    <span class="s">.div18 </span> {
-        <span class="p">background-color</span>: <span class="v">#00ff00</span>;
-    }
-    
-    <span class="s">.div19 </span> {
-        <span class="p">background-color</span>: <span class="v">#ff0000</span>;
-    }
-    
-    <span class="s">.div20 </span> {
-        <span class="p">background-color</span>: <span class="v">#a040bc</span>;
-    }
-    
-    <span class="s">.div21 </span> {
-        <span class="p">background-color</span>: <span class="v">#abc012</span>;
-    } 
-    
-    <span class="s">.div22 </span> {
-        <span class="p">background-color</span>: <span class="v">#222222</span>;
-    }
-    
-    <span class="s">.div23 </span> {
-        <span class="p">background-color</span>: <span class="v">#777777</span>;
-    }
-    
-    <span class="s">.div24 </span> {
-        <span class="p">background-color</span>: <span class="v">#cccccc</span>;
-        <span class="p">color</span>: <span class="v">#000000</span>;
-    }
-    
-    <span class="s">.div25 </span> {
-        <span class="p">background-color</span>: <span class="v">#ffffff</span>;
-        <span class="p">color</span>: <span class="v">#000000</span>;
-    
-    }</pre>
-                </td>
-                <td style="text-align: center;">
-                    <div id="div16">
-                        #000000
+                </a>
+
+                <div id="div-15" class="collapse">
+                    <span class="s">.div15 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">rgba(0,0,255,1.0)</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h3 id="CoresHEX">Cores Hexadecimais</h3>
+
+                <p class="lead">Funciona da mesma forma que o RGB, entretanto, em um formato hexadecimal. </p>
+
+                <div class="text-center">
+                    <span style="font-size: 20px;">#<span style="color: red;">rr</span><span style="color: green;">gg</span><span style="color: blue;">bb</span></span></div>
+                <br>
+
+                <p class="lead">Onde rr (vermelho), gg(verde) e bb (azul) são valores hexadecimal entre 00 e ff (igual ao intervalo 0-255 em decimal). Por exemplo: O valor #ff0000 define uma cor vermelha, pois ff é o valor mais alto. </p>
+
+                <a href="#div-16" data-toggle="collapse" class="text-white">
+                    <div id="div16" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #000000
                     </div>
-                    <div id="div17">
-                        #0000ff
+                </a>
+
+                <div id="div-16" class="collapse">
+                    <span class="s">.div16 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#000000</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-17" data-toggle="collapse" class="text-white">
+                    <div id="div17" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #0000ff
                     </div>
-                    <div id="div18">
-                        #00ff00
+                </a>
+
+                <div id="div-17" class="collapse">
+                    <span class="s">.div17 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#0000ff</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-18" data-toggle="collapse" class="text-white">
+                    <div id="div18" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #00ff00
                     </div>
-                    <div id="div19">
-                        #ff0000
+                </a>
+
+                <div id="div-18" class="collapse">
+                    <span class="s">.div18 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#00ff00</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-19" data-toggle="collapse" class="text-white">
+                    <div id="div19" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #ff0000
                     </div>
-                    <div id="div20">
-                        #a040bc
+                </a>
+
+                <div id="div-19" class="collapse">
+                    <span class="s">.div19 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#ff0000</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-20" data-toggle="collapse" class="text-white">
+                    <div id="div20" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #a040bc
                     </div>
-                    <div id="div21">
-                        #abc012
+                </a>
+
+                <div id="div-20" class="collapse">
+                    <span class="s">.div20 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#a040bc</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-21" data-toggle="collapse" class="text-white">
+                    <div id="div21" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #abc012
                     </div>
-                    <div id="div22">
-                        #222222
+                </a>
+
+                <div id="div-21" class="collapse">
+                    <span class="s">.div21 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#abc012</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-22" data-toggle="collapse" class="text-white">
+                    <div id="div22" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #222222
                     </div>
-                    <div id="div23">
-                        #777777
+                </a>
+
+                <div id="div-22" class="collapse">
+                    <span class="s">.div22 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#222222</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-23" data-toggle="collapse" class="text-white">
+                    <div id="div23" class="lead text-center">
+                        Clique aqui para ver o código para a cor : #777777
                     </div>
-                    <div id="div24">
-                        #cccccc
+                </a>
+
+                <div id="div-23" class="collapse">
+                    <span class="s">.div23 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#777777</span>; <br>
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-24" data-toggle="collapse" class="text-white">
+                    <div id="div24" class="lead text-center text-dark">
+                        Clique aqui para ver o código para a cor : #cccccc
                     </div>
-                    <div id="div25">
-                        #ffffff
+                </a>
+
+                <div id="div-24" class="collapse">
+                    <span class="s">.div24 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#cccccc</span>; <br>
+                    <span class="e p">color</span>: <span class="v">#000000</span>;
+                    } <br>
+                </div>
+
+                <br>
+
+                <a href="#div-25" data-toggle="collapse" class="text-white">
+                    <div id="div25" class="lead text-center text-dark">
+                        Clique aqui para ver o código para a cor : #ffffff
                     </div>
-                </td>
-            </tr>
-        </table>
-    
-        <p>PARA APRENDER SOBRE HLS E HSLA ACESSE :
-            <a href="https://www.w3schools.com/css/css_colors_hsl.asp">HLS E HLSA</a>
-        </p>
-    
-    
+                </a>
+
+                <div id="div-25" class="collapse">
+                    <span class="s">.div25 </span> { <br>
+                    <span class="e p">background-color</span>: <span class="v">#ffffff</span>; <br>
+                    <span class="e p">color</span>: <span class="v">#000000</span>;
+                    } <br>
+                </div>
+
+                <br>
+
+                <br> <br>
+
+                <p class="lead">
+                    PARA APRENDER SOBRE HLS E HSLA ACESSE :
+                    <a href="https://www.w3schools.com/css/css_colors_hsl.asp">HLS E HLSA</a>
+                </p>
 
 
 
+            </div>
+        </section>
 
-    </section>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="formas-estilos.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="background.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
 
-</body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

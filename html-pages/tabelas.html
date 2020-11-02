@@ -1,269 +1,292 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Tabelas em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Tabelas em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    </header>
-    <nav>
-        <object class="objhorizontal" data="menu-horizontal.html"></object>
-        <object class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
+        <script src="../main.js"></script>
 
-    <section>
-        <h2>TABELAS</h2>
+            <link rel="stylesheet" href="../css/main.css">
 
-        <p>
-            As tabelas permitem que os dados sejam organizados em linhas e colunas. O corpo de uma tabela é definido com
-            a
-            tag <code>&lt;table></code>.
+    </head>
 
-        </p>
+    <body class="bg-darkblue text-white">
 
-        <ul>
-            <li>
-                <code>&lt;tr></code>: Demarca as linhas de uma tabela.
-            </li>
-            <li>
-                <code>&lt;td></code>: Demarca as colunas de uma tabela em uma linha.
-            </li>
-            <li>
-                <code>&lt;th></code>: Demarca os títulos das colunas em um linha.
-            </li>
-            <li>
-                <code>&lt;caption></code>: Especifica a legenda de uma tabala.
-            </li>
-        </ul>
+        <header>
+            <div id="menu">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;table></code> <br>
-                    <code class="e">&lt;caption></code> Tabela de Nomes <code>&lt;/caption></code><br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;th></code>Nome<code>&lt;/th></code> <br>
-                    <code class="e2">&lt;th></code>Idade<code>&lt;/th></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td></code>Fulano da Silva<code>&lt;/td></code> <br>
-                    <code class="e2">&lt;td></code>70<code>&lt;/td></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td></code>Ciclano de Sousa<code>&lt;/td></code> <br>
-                    <code class="e2">&lt;td></code>27<code>&lt;/td></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td></code>Beltrano Das Neves&lt;/td></code><br>
-                    <code class="e2">&lt;td></code>9<code>&lt;/td></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code>&lt;/table></code>
-                </td>
-                <td>
-                    <table class="tableoriginal">
-                        <caption>Tabelas de nomes</caption>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Idade</th>
-                        </tr>
-                        <tr>
-                            <td>Fulano da Silva</td>
-                            <td>70</td>
-                        </tr>
-                        <tr>
-                            <td>Ciclano de Sousa</td>
-                            <td>27</td>
-                        </tr>
-                        <tr>
-                            <td>Beltrano Das Neves</td>
-                            <td>9</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+            </div>
 
-        <p> Para formatar um tabela, deve-se usar o CSS. Assim, para colocarmos linhas, vamos usar o atributo
-            style="border:
-            1px solid black" para melhor visualizar a mesclagem de células. </p>
+            <script>
+                criarMenu();
+            </script>
+
+        </header>
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
 
 
-        <h3>Mesclar Células</h3>
+                <h1>TABELAS</h1>
 
-        <p> Para fazer com que uma célula ocupe mais de uma coluna, é usado o atributo colspan seguido pela quantidade
-            de
-            colunas mescladas. Observe o último elemento
-            <code>&lt;/td colspan="2"></code>
-        </p>
+                <p class="lead"> As tabelas permitem que os dados sejam organizados em linhas e colunas. O corpo de uma tabela é definido com a tag <code>&lt;table></code>. </p>
+                <ul>
+                    <li>
+                        <code>&lt;tr></code>: Demarca as linhas de uma tabela.
+                    </li>
+                    <li>
+                        <code>&lt;td></code>: Demarca as colunas de uma tabela em uma linha.
+                    </li>
+                    <li>
+                        <code>&lt;th></code>: Demarca os títulos das colunas em um linha.
+                    </li>
+                    <li>
+                        <code>&lt;caption></code>: Especifica a legenda de uma tabala.
+                    </li>
+                </ul>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;table></code> <br>
-                    <code class="e">&lt;caption></code> Tabela de Nomes <code>&lt;/caption></code><br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;th></code>Nome<code>&lt;/th></code><br>
-                    <code class="e2">&lt;th></code>Idade<code>&lt;/th></code><br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td></code>Fulano da Silva <code>&lt;/td></code>
-                    <br>
-                    <code class="e2">&lt;td></code>70<code>&lt;/td></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td colspan="2" style="border: 1px solid black"></code>Ciclano de
-                    Sousa<code>&lt;/td></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code>&lt;/table></code>
-                </td>
-                <td>
-                    <table class="tableoriginal">
-                        <caption>Tabelas de nomes</caption>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Idade</th>
-                        </tr>
-                        <tr>
-                            <td>Fulano da Silva</td>
-                            <td>70</td>
-                        </tr>
-                        <tr">
-                            <td colspan="2" style="border: 1px solid black">Ciclano de Sousa</td>
-            </tr>
-        </table>
-        </td>
-        </tr>
-        </table>
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;table></code> <br>
+                            <code class="e">&lt;caption></code> Tabela de Nomes <code>&lt;/caption></code><br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;th></code>Nome<code>&lt;/th></code> <br>
+                            <code class="e2">&lt;th></code>Idade<code>&lt;/th></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td></code>Fulano da Silva<code>&lt;/td></code> <br>
+                            <code class="e2">&lt;td></code>70<code>&lt;/td></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td></code>Ciclano de Sousa<code>&lt;/td></code> <br>
+                            <code class="e2">&lt;td></code>27<code>&lt;/td></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td></code>Beltrano Das Neves<code>&lt;/td></code><br>
+                            <code class="e2">&lt;td></code>9<code>&lt;/td></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code>&lt;/table></code>
+                        </td>
+                        <td>
+                            <table class="table-none">
+                                <caption>Tabelas de nomes</caption>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                </tr>
+                                <tr>
+                                    <td>Fulano da Silva</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Ciclano de Sousa</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>Beltrano Das Neves</td>
+                                    <td>9</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 
-        <p> Para fazer com que uma célula ocupe mais de uma linha, é usado o atributo rowspan seguido pela quantidade de
-            colunas mescladas. Observe que usamos
-            <code>&lt;td rowspan="2"></code> na idade 70</p>
+                <p class="lead"> Para formatar um tabela, deve-se usar o CSS. Assim, para colocarmos linhas, vamos usar o atributo style="border: 1px solid black" para melhor visualizar a mesclagem de células. </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;table></code> <br>
-                    <code class="e">&lt;caption></code> Tabela de Nomes <code>&lt;/caption></code><br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;th></code>Nome<code>&lt;/th></code><br>
-                    <code class="e2">&lt;th></code>Idade<code>&lt;/th></code><br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td></code>Fulano da Silva <code>&lt;/td></code>
-                    <br>
-                    <code class="e2">&lt;td rowspan="2" style="border: 1px solid black"></code>70<code>&lt;/td></code>
-                    <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code class="e">&lt;tr></code> <br>
-                    <code class="e2">&lt;td></code>Ciclano de
-                    Sousa<code>&lt;/td></code> <br>
-                    <code class="e">&lt;/tr></code> <br>
-                    <code>&lt;/table></code>
-                </td>
-                <td>
-                    <table class="tableoriginal">
-                        <caption>Tabelas de nomes</caption>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Idade</th>
-                        </tr>
-                        <tr>
-                            <td>Fulano da Silva</td>
-                            <td rowspan="2" style="border: 1px solid black">70</td>
-                        </tr>
-                        <tr>
-                            <td>Ciclano de Sousa</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-        <h3>Tabelas Semânticas</h3>
+                <h2>Mesclar Células</h2>
 
-        <p> Os elementos <code>&lt;thead></code>, <code>&lt;tbody></code> e
-            <code>&lt;tfoot></code> podem ser usados para especificar cada parte de uma tabela, cabeçalho, corpo e
-            rodapé
-            respectivamente. </p>
-        <p> Os navegadores podem usar esses elementos para permitir a rolagem do corpo da tabela independentemente do
-            cabeçalho e rodapé, além de facilitar o trabalhos de leitores de telas, e a formatação na hora da montagem
-            da
-            impressão. </p>
+                <p class="lead"> Para fazer com que uma célula ocupe mais de uma coluna, é usado o atributo colspan seguido pela quantidade de colunas mescladas. Observe o último elemento <code>&lt;/td colspan="2"></code> </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;table></code> <br>
-                    <code class="e">&lt;caption></code>Tabela<code>&lt;/caption></code><br>
-                    <code class="e">&lt;thead></code> <br>
-                    <code class="e2">&lt;tr></code> <br>
-                    <code class="e3">&lt;th></code>Coluna 1<code>&lt;/th></code><br>
-                    <code class="e3">&lt;th></code>Coluna2<code>&lt;/th></code><br>
-                    <code class="e2">&lt;/tr></code> <br>
-                    <code class="e">&lt;/thead></code> <br>
-                    <code class="e">&lt;tbody></code> <br>
-                    <code class="e2">&lt;tr></code> <br>
-                    <code class="e3">&lt;td></code>Dado 1<code>&lt;/td></code> <br>
-                    <code class="e3">&lt;td></code>Dado 2<code>&lt;/td></code> <br>
-                    <code class="e2">&lt;/tr></code> <br>
-                    <code class="e">&lt;/tbody></code> <br>
-                    <code class="e">&lt;tfoot></code> <br>
-                    <code class="e2">&lt;tr></code> <br>
-                    <code class="e3">&lt;td></code>Resultado 1<code>&lt;/td></code> <br>
-                    <code class="e3">&lt;td></code>Resultado 2<code>&lt;/td></code> <br>
-                    <code class="e2">&lt;/tr></code> <br>
-                    <code class="e">&lt;/tfoot></code> <br>
-                    <code>&lt;/table></code>
-                </td>
-                <td>
-                    <table class="tableoriginal">
-                        <caption>Tabela</caption>
-                        <thead>
-                            <tr>
-                                <th> Coluna 1 </th>
-                                <th> Coluna 2 </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> Dado 1</td>
-                                <td> Dado 2</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td> Resultado 1 </td>
-                                <td> Resultado 2 </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;table></code> <br>
+                            <code class="e">&lt;caption></code> Tabela de Nomes <code>&lt;/caption></code><br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;th></code>Nome<code>&lt;/th></code><br>
+                            <code class="e2">&lt;th></code>Idade<code>&lt;/th></code><br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td style="border: 2px solid"></code>Fulano da Silva <code>&lt;/td></code><br>
+                            <code class="e2">&lt;td></code>70<code>&lt;/td></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td colspan="2" style="border: 1px solid black"></code>Ciclano de
+                            Sousa<code>&lt;/td></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code>&lt;/table></code>
+                        </td>
+                        <td>
+                            <table class="table-none">
+                                <caption>Tabelas de nomes</caption>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid">Fulano da Silva</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="border: 2px solid">Ciclano de Sousa</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 
-                </td>
-            </tr>
-        </table>
+                <p class="lead"> Para fazer com que uma célula ocupe mais de uma linha, é usado o atributo rowspan seguido pela quantidade de colunas mescladas. Observe que usamos <code>&lt;td rowspan="2"></code> na idade 70</p>
 
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;table></code> <br>
+                            <code class="e">&lt;caption></code> Tabela de Nomes <code>&lt;/caption></code><br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;th></code>Nome<code>&lt;/th></code><br>
+                            <code class="e2">&lt;th></code>Idade<code>&lt;/th></code><br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td></code>Fulano da Silva <code>&lt;/td></code><br>
+                            <code class="e2">&lt;td rowspan="2" style="border: 2px solid white"></code>70<code>&lt;/td></code><br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code class="e">&lt;tr></code> <br>
+                            <code class="e2">&lt;td></code>Ciclano de
+                            Sousa<code>&lt;/td></code> <br>
+                            <code class="e">&lt;/tr></code> <br>
+                            <code>&lt;/table></code>
+                        </td>
+                        <td>
+                            <table class="table-none">
+                                <caption>Tabelas de nomes</caption>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                </tr>
+                                <tr>
+                                    <td>Fulano da Silva</td>
+                                    <td rowspan="2" style="border: 2px solid white">70</td>
+                                </tr>
+                                <tr>
+                                    <td>Ciclano de Sousa</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
 
-        <hr>
-    </section>
-    <div class="btn">
-        <a class="btn-anterior" href="links.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="citacoes.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object class="rodape" data="rodape.html"></object>
-    </footer>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-</body>
+                <h2>Tabelas Semânticas</h2>
+
+                <p class="lead"> Os elementos <code>&lt;thead></code>, <code>&lt;tbody></code> e <code>&lt;tfoot></code> podem ser usados para especificar cada parte de uma tabela, cabeçalho, corpo e rodapé respectivamente. </p>
+
+                <p class="lead"> Os navegadores podem usar esses elementos para permitir a rolagem do corpo da tabela independentemente do
+                    cabeçalho e rodapé, além de facilitar o trabalhos de leitores de telas, e a formatação na hora da montagem da impressão. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;table></code> <br>
+                            <code class="e">&lt;caption></code>Tabela<code>&lt;/caption></code><br>
+                            <code class="e">&lt;thead></code> <br>
+                            <code class="e2">&lt;tr></code> <br>
+                            <code class="e3">&lt;th></code>Coluna 1<code>&lt;/th></code><br>
+                            <code class="e3">&lt;th></code>Coluna2<code>&lt;/th></code><br>
+                            <code class="e2">&lt;/tr></code> <br>
+                            <code class="e">&lt;/thead></code> <br>
+                            <code class="e">&lt;tbody></code> <br>
+                            <code class="e2">&lt;tr></code> <br>
+                            <code class="e3">&lt;td></code>Dado 1<code>&lt;/td></code> <br>
+                            <code class="e3">&lt;td></code>Dado 2<code>&lt;/td></code> <br>
+                            <code class="e2">&lt;/tr></code> <br>
+                            <code class="e">&lt;/tbody></code> <br>
+                            <code class="e">&lt;tfoot></code> <br>
+                            <code class="e2">&lt;tr></code> <br>
+                            <code class="e3">&lt;td></code>Resultado 1<code>&lt;/td></code> <br>
+                            <code class="e3">&lt;td></code>Resultado 2<code>&lt;/td></code> <br>
+                            <code class="e2">&lt;/tr></code> <br>
+                            <code class="e">&lt;/tfoot></code> <br>
+                            <code>&lt;/table></code>
+                        </td>
+                        <td>
+                            <table class="table-none">
+                                <caption>Tabela</caption>
+                                <thead>
+                                    <tr>
+                                        <th> Coluna 1 </th>
+                                        <th> Coluna 2 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Dado 1</td>
+                                        <td> Dado 2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td> Resultado 1 </td>
+                                        <td> Resultado 2 </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

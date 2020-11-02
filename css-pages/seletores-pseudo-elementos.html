@@ -1,147 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Seletores de pseudo-elementos</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
-    <style>
-        .p1::first-letter {
-            color: red;
-        }
+    <head>
+        <title>Seletores de pseudo-elementos</title>
+        <meta charset="utf-8">
 
-        .p2::first-line {
-            color: red;
-        }
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        .p3::selection {
-            color: red;
-            background-color: black;
-        }
-    </style>
-</head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-    <header>
+        <style>
+            .p1::first-letter {
+                color: red;
+            }
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+            .p2::first-line {
+                color: red;
+            }
 
+            .p3::selection {
+                color: red;
+                background-color: black;
+            }
 
-    <section>
+        </style>
+        <script src="../main.js"></script>
 
+        <link rel="stylesheet" href="../css/main.css">
 
+    </head>
 
+    <body class="bg-darkblue text-white">
+        <div id="menu">
 
-        <h2 id="seletores-pseudo-elemento">Seletores de pseudo-elementos</h2>
+        </div>
 
-        <p>Os seletores de pseudo-elementos são usados para selecionarem
-            parte de um elemento.</p>
-
-        <table class="tabela3">
-            <tr>
-                <th>Seletor</th>
-                <th>Descrição</th>
-            </tr>
-            <tr>
-                <td>seletor::after</td>
-                <td>
-                    Usado para inserir algum conteúdo após o conteúdo
-                    do elemento
-                </td>
-            </tr>
-            <tr>
-                <td>seletor::before</td>
-                <td>
-                    Usado apra inserir algum conteúdo antes do conteúdo.
-                </td>
-            </tr>
-            <tr>
-                <td>seletor::first-letter</td>
-                <td>
-                    Seleciona a primeira letra de um elemento HTML
-                </td>
-            </tr>
-            <tr>
-                <td>seletor::first-line</td>
-                <td>
-                    Seleciona a primeira linha de um elemento HTML
-                </td>
-            </tr>
-            <tr>
-                <td>seletor::selection</td>
-                <td>
-                    Usado para selecionar tudo o que o usuário seleciona.
-                </td>
-            </tr>
-        </table>
-
-        <br>
-        <br>
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">p::first-letter</span> { <br>
-                    <span class="p">color</span> <span class="v">red</span>; <br>
-                    }
-                </td>
-                <td>
-                    <p class="p1">
-                        Oie! eu sou um parágrafo
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">p::first-line</span> { <br>
-                    <span class="p">color</span> <span class="v">red</span>; <br>
-                    }
-                </td>
-                <td>
-                    <p class="p2">
-                        Oie! eu sou um parágrafo <br>
-                        eu sou a segunda linha ?
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">p::selection</span> { <br>
-                    <span class="p">color</span> <span class="v">red</span>; <br>
-                    <span class="p">background-color</span> <span class="v">white</span>; <br>
-                    }
-                </td>
-                <td>
-                    <p class="p3">
-                        Oie! eu sou um parágrafo, selecionem o meu texto!!
-                    </p>
-                </td>
-            </tr>
-        </table>
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
+        <section class="pt-5 mt-5">
+
+            <div class="container">
 
 
-    </section>
+                <h1 id="seletores-pseudo-elemento">Seletores de pseudo-elementos</h1>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="tabelas.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="opacidade.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+                <p class="lead">Os seletores de pseudo-elementos são usados para selecionarem parte de um elemento.</p>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <table class="table table-responsive-sm table-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Seletor</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <tr>
+                        <td>seletor::after</td>
+                        <td>
+                            Usado para inserir algum conteúdo após o conteúdo do elemento
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>seletor::before</td>
+                        <td>
+                            Usado para inserir algum conteúdo antes do conteúdo.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>seletor::first-letter</td>
+                        <td>
+                            Seleciona a primeira letra de um elemento HTML
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>seletor::first-line</td>
+                        <td>
+                            Seleciona a primeira linha de um elemento HTML
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>seletor::selection</td>
+                        <td>
+                            Usado para selecionar tudo o que o usuário seleciona.
+                        </td>
+                    </tr>
+                </table>
 
-</body>
+                <br>
+                <br>
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">p::first-letter</span> { <br>
+                            <span class="e p">color</span> <span class="v">red</span>; <br>
+                            }
+                        </td>
+                        <td>
+                            <p class="p1">
+                                Oie! eu sou um parágrafo
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">p::first-line</span> { <br>
+                            <span class="e p">color</span> <span class="v">red</span>; <br>
+                            }
+                        </td>
+                        <td>
+                            <p class="p2">
+                                Oie! eu sou um parágrafo <br>
+                                eu sou a segunda linha ?
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="s">p::selection</span> { <br>
+                            <span class="e p">color</span> <span class="v">red</span>; <br>
+                            <span class="e p">background-color</span> <span class="v">black</span>; <br>
+                            }
+                        </td>
+                        <td>
+                            <p class="p3">
+                                Oie! eu sou um parágrafo, selecionem o meu texto!!
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

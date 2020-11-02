@@ -1,957 +1,1014 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Flexbox em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <head>
+        <title>Flexbox em CSS3</title>
+        <meta charset="utf-8">
 
-    <style>
-        .flex-container {
-            display: flex;
-            background-color: green;
-        }
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-        .flex-container>div {
-            background-color: white;
-            width: 100px;
-            margin: 10px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 30px;
-            color: black;
-        }
-    </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<body>
 
-    <header>
+        <style>
+            .flex-container {
+                display: flex;
+                background-color: green;
+            }
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+            .flex-container>div {
+                background-color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+                color: black;
+            }
 
+        </style>
 
-    <section>
+        <script src="../main.js"></script>
 
-        <h1>Flexbox</h1>
+        <link rel="stylesheet" href="../css/main.css">
 
-        <p>Flexbox é um novo modelo de layout além dos conhecidos anteriormente
-            e mais moderno. Iremos aprender passo a passo como trabalhar com
-            esse tipo de layout propriedade por propriedade. </p>
-        <p>Basicamente um flexbox trabalha com uma classe que normalmente é
-            chamada de flex-container e que contém diversas divs denominadas
-            de itens.</p>
+    </head>
 
-        <code class="code-css">
-                  <span class="s">.flex-container</span>{ <br>
-                      <span class="p">display</span>: <span class="v">flex</span>; <br>
-                      <span class="p">backgound-color</span>: <span class="v">green</span>; <br>
-                } <br>
-                <span class="s">.flex-container > div</span>{ <br>
-                    <span class="p">backgound-color</span>: <span class="v">white</span>; <br>
-                    <span class="p">width</span>: <span class="v">50px</span>; <br>
-                    <span class="p">margin</span>: <span class="v">10px</span>; <br>
-                    <span class="p">text-align</span>: <span class="v">center</span>; <br>
-                    <span class="p">line-height</span>: <span class="v">3em</span>; <br>
-                    <span class="p">font-size</span>: <span class="v">1.5em</span>; <br>
-                    <span class="p">color</span>: <span class="v">black</span>; <br>
-                    
-              } 
-          </code>
+    <body class="bg-darkblue text-white">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container"></code> <br>
-                    <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
-                </td>
-                <td>
-                    <div class="flex-container">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div id="menu">
 
-        <hr>
-
-        <h2> flex-direction : </h2>
-
-        <p> A propriedade flex-direction define em qual direção o
-            contêiner deve empilhar os cada um dos itens flexíveis. Podendo ser: </p>
-        <ul>
-            <li>
-                <b>bolumn</b>: É o valor em que os itens flexíveis são
-                empilhados verticalmente de cima para baixo.
-            </li>
-            <li>
-                <b>column-reverse</b>: O reverso da coluna. O valor empilha
-                os itens flexíveis verticalmente, mas de baixo para cima.
-            </li>
-            <li>
-                <b>row</b>: O valorempilha os itens flexíveis
-                horizontalmente da esquerda para a direita (padrão).
-            </li>
-            <li>
-                <b>row-reverse</b>: O reverso de linha valor empilha os
-                itens flexíveis horizontalmente, mas da direita para a esquerda.
-            </li>
-        </ul>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">flex-direction</span>: <span class="v">column</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-direction: column;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">flex-direction</span>: <span class="v">column-reverse</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-direction: column-reverse;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">flex-direction</span>: <span class="v">row</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-direction: row;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">flex-direction</span>: <span class="v">row-reverse</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-direction: row-reverse;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-
-
-
-
-        <hr>
-        <h2> flex-wrap </h2>
-
-        <p>A propriedade flex-wrap define se os itens devem "quebrar", ou seja,
-            sair de suas posições originais para se
-            ajustarem quando o tamanho da janela de visualização diminuir, especificando
-            se os itens devem ficar abaixo dos outros quando o espaço for acabando. </p>
-
-        <ul>
-            <li>
-                <b>wrap</b>: O valor especifica que os flex items serão quebrados caso necessário.
-            </li>
-            <li>
-                <b>nowrap</b>: O valor especifica que os itens flex não irão quebrar (padrão).
-            </li>
-            <li>
-                <b>wrap-reverse</b>: O valor especifica que os itens flexíveis vão quebrar se necessário, mas na ordem
-                inversa,
-                ou seja, o primeiro item irá ser jogado para baixo, em seguida o segundo...
-            </li>
-        </ul>
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p"> flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p"> flex-wrap</span>: <span class="v">wrap-reverse</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap-reverse;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <hr>
-
-
-
-
-
-        <h2>flex-flow</h2>
-
-        <p>A propriedade flex-flow é uma forma abrevidada para definir as propriedades flex-direction e flex-wrap
-            respectivamente. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">flex-flow</span>: <span class="v">row wrap</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-flow: row wrap;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-        <hr>
-
-
-
-
-
-
-
-
-        <h2>justify-content</h2>
-
-        <p>A propriedade justify-content é usada para alinhar os itens flexíveis, de acordo com cada linha,
-            ou seja, na horizontal, das seguintes maneiras: </p>
-        <ul>
-            <li>
-                <b>center</b>: O valor alinha os itens flexíveis no centro do contêiner.
-            </li>
-            <li>
-                <b>flex-start</b>: O valor alinha os items flexíveis no início do contêiner (padrão).
-            </li>
-            <li>
-                <b>flex-end</b> O valor alinha os items flexíveis no final do contêiner.
-            </li>
-            <li>
-                <b>space-around</b>: O valor alinha os itens flexíveis com espaço antes, entre, e depois das linhas.
-            </li>
-            <li>
-                <b>space-between</b>: O valor alinha os itens flexíveis com espaço entre os linhas.
-            </li>
-        </ul>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">justify-content</span>: <span class="v">center</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="justify-content: center;height: 200px">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">justify-content</span>: <span class="v">flex-end</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="justify-content: flex-end;height: 200px">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">justify-content</span>: <span class="v">flex-start</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="justify-content: flex-start;height: 200px">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">justify-content</span>: <span class="v">space-around</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="justify-content: space-around;height: 200px">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">justify-content</span>: <span class="v">space-between</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="justify-content: space-between;height: 200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <hr>
-
-
-
-
-        <h2>align-items</h2>
-
-        <p>A propriedade align-items é usada para alinhar os itens flexíveis, de acordo com o tamanho do contêiner,
-            da seguintes maneiras.</p>
-
-        <ul>
-            <li>
-                <b>center</b>: O valor alinha os itens flexíveis no centro do contêiner.
-            </li>
-            <li>
-                <b>flex-start</b>: O valor alinha os items flexíveis na parte superior do contêiner (padrão).
-            </li>
-            <li>
-                <b>flex-end</b> O valor alinha os items flexíveis na parte inferior do contêiner.
-            </li>
-            <li>
-                <b>stretch</b>: O valor estica os itens flexíveis para preencher o contêiner (padrão)
-            </li>
-            <li>
-                <b>baseline</b>: O valor alinha os itens flexíveis de acordo uma linha
-                imaginária na base de todos os conteúdo dos itens. Ou seja, independetemente do
-                conteúdo, nenhum conteúdo ficará abaixo da linha base, mesmo que os contêiners
-                tenham tamanhos distintos.
-            </li>
-        </ul>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="height: 200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">align-items</span>: <span class="v">center</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="align-items: center; height: 200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">align-items</span>: <span class="v">flex-start</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="align-items: flex-start; height: 200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">align-items</span>: <span class="v">flex-end</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="align-items: flex-end; height: 200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">align-items</span>: <span class="v">stretch</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="align-items: stretch; height: 200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">200px</span>; <br>
-                    <span class="p">align-items</span>: <span class="v"> baseline</span>; <br>
-                    } <br>
-                    <span class="s">.div1</span>{ <br>
-                    <span class="p">font-size</span>: <span class="v">5em</span>; <br>
-                    } <br>
-                    <span class="s">.div2</span>{ <br>
-                    <span class="p">font-size</span>: <span class="v">0.5em</span>; <br>
-                    } <br>
-                </td>
-                <td>
-                    <div class="flex-container" style="align-items:  baseline; height: 200px;">
-                        <div style="font-size: 5em;">1</div>
-                        <div style="font-size: 1em;">2</div>
-                        <div style="font-size: 3em;">3</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-        <hr>
-
-
-
-        <h2>align-content</h2>
-
-
-        <p>A propriedade align-content é usada para alinhar as linhas flexíveis, de acordo com as colunas, ou seja,
-            na vertical, das seguintes maneiras: </p>
-
-        <ul>
-            <ul>
-                <li>
-                    <b>center</b>: O valor alinha os itens flexíveis no centro do contêiner.
-                </li>
-                <li>
-                    <b>flex-start</b>: O valor alinha os items flexíveis no início do contêiner (padrão).
-                </li>
-                <li>
-                    <b>flex-end</b> O valor alinha os items flexíveis no final do contêiner.
-                </li>
-                <li>
-                    <b>space-around</b>: O valor alinha os itens flexíveis com espaço antes, entre, e depois das linhas.
-                </li>
-                <li>
-                    <b>space-between</b>: O valor alinha os itens flexíveis com espaço entre os linhas.
-                </li>
-            </ul>
-        </ul>
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">space-between</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content: space-between;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">space-around</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content: space-around;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">stretch</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content: stretch;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">center</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:center;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">flex-start</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:flex-start;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">flex-end</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:flex-end;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-        <p>Para alinhar perfeitamente no centro, usamos: </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <span class="s">.flex-container</span>{ <br>
-                    <span class="p">display</span>: <span class="v">flex</span>; <br>
-                    <span class="p">height</span>: <span class="v">400px</span>; <br>
-                    <span class="p">flex-wrap</span>: <span class="v">wrap</span>; <br>
-                    <span class="p">align-content</span>: <span class="v">center</span>; <br>
-                    <span class="p">justify-content</span>: <span class="v">center</span>; <br>
-                    } <br>
-
-                </td>
-                <td>
-                    <div class="flex-container"
-                        style="flex-wrap: wrap; height: 400px; align-content:center;justify-content: center;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-        <hr>
-
-
-
-        <h2>order</h2>
-
-        <p>A propriedade order especifica a ordem em que aparecem os itens flexíveis.
-            Assim, podemos alterar a ordem em que os itens aprececem no código e no
-            layout (Podendo evitar ter que reescrever ou reordenar os trechos de códigos).
-            O valor especificado dever ser um número, sendo 0 o valor padrão. </p>
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container"></code> <br>
-                    <code class="e">&lt;div style="order: 3"></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="order: 4"></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="order: 1"></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="order: 2"></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
-
-                </td>
-                <td>
-                    <div class="flex-container">
-                        <div style="order: 3">1</div>
-                        <div style="order: 4">2</div>
-                        <div style="order: 1">3</div>
-                        <div style="order: 2">4</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <hr>
-
-
-
-
-        <h2>flex-grow</h2>
-
-        <p>A propriedade flex-grow especifica o quanto um item flexível deve crescer em relação aos
-            demais itens flexíveis. O valor especificado deve ser um número, sendo 0 o valor padrão. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container"></code> <br>
-                    <code class="e">&lt;div style="flex-grow: 0"></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="flex-grow: 0"></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="flex-grow: 0"></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="flex-grow: 8"></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
-
-                </td>
-                <td>
-                    <div class="flex-container">
-                        <div style="flex-grow: 0">1</div>
-                        <div style="flex-grow: 0">2</div>
-                        <div style="flex-grow: 0">3</div>
-                        <div style="flex-grow: 8">4</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <hr>
-
-
-
-
-
-        <h2>flex-shrink</h2>
-
-        <p>A propriedade flex-shrink especifica o quanto um item flexível encolherá em relação
-            aos demais items flexíveis.
-            O valor especificado deve ser um número, sendo 0 o valor padrão.
-            (Experimente reduzir o tamanho da tela)</p>
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container"></code> <br>
-                    <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div  style="flex-shrink: 0;"></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
-
-                </td>
-            </tr>
-        </table>
-        <div class="flex-container" style="align-items: stretch; ">
-            <div>1</div>
-            <div>2</div>
-            <div style="flex-shrink: 0">3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>10</div>
         </div>
 
-        <br>
-        <hr>
-
-        <br>
-
-
-
-        <h2>flex-basis</h2>
-
-        <p>A propriedade flex-basis especifica a largura inicial de um item flexível. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container"></code> <br>
-                    <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div  style="flex-basis: 200px;"></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
-
-                </td>
-                <td>
-                    <div class="flex-container">
-                        <div>1</div>
-                        <div>2</div>
-                        <div style="flex-basis: 200px;">3</div>
-                        <div>4</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-        <hr>
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
-        <h2>flex</h2>
+        <section class="pt-5 mt-5">
 
-        <p>A propriedade flex é uma forma abrevidada para definir as propriedades flex-grow, flex-shrink
-            e flex-basis respectivamente.
-        </p>
+            <div class="container">
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container"></code> <br>
-                    <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div  style="flex: 0 0 200px"></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
+                <h1>Flexbox</h1>
 
-                </td>
-                <td>
-                    <div class="flex-container">
-                        <div>1</div>
-                        <div>2</div>
-                        <div style="flex: 0 0 200px">3</div>
-                        <div>4</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                <p class="lead">Flexbox é um novo modelo de layout além dos conhecidos anteriormente e mais moderno. Iremos aprender passo a passo como trabalhar com esse tipo de layout propriedade por propriedade.Basicamente um flexbox trabalha com uma classe que normalmente é chamada de flex-container e que contém diversas divs denominadas de itens.</p>
 
-        <hr>
+                <code class="code-css">
+                <span class="s">.flex-container</span>{ <br>
+                    <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                    <span class="e p">background-color</span>: <span class="v">green</span>; <br>
+                } <br>
+                <span class="s">.flex-container > div</span>{ <br>
+                    <span class="e p">background-color</span>: <span class="v">white</span>; <br>
+                    <span class="e p">width</span>: <span class="v">50px</span>; <br>
+                    <span class="e p">margin</span>: <span class="v">10px</span>; <br>
+                    <span class="e p">text-align</span>: <span class="v">center</span>; <br>
+                    <span class="e p">line-height</span>: <span class="v">3em</span>; <br>
+                    <span class="e p">font-size</span>: <span class="v">1.5em</span>; <br>
+                    <span class="e p">color</span>: <span class="v">black</span>; <br>
+                }   
+            </code>
+                <br> <br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;div class="flex-container"></code> <br>
+                            <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>3<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
+                            <code>&lt;/div></code>
+                        </td>
+                        <td>
+                            <div class="flex-container">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2> flex-direction : </h2>
+
+                <p class="lead"> A propriedade flex-direction define em qual direção o contêiner deve empilhar os cada um dos itens flexíveis. Podendo ser: </p>
+
+                <ul class="lead">
+                    <li>
+                        <b>column</b>: É o valor em que os itens flexíveis são empilhados verticalmente de cima para baixo.
+                    </li>
+                    <li>
+                        <b>column-reverse</b>: O reverso da coluna. O valor empilha os itens flexíveis verticalmente, mas de baixo para cima.
+                    </li>
+                    <li>
+                        <b>row</b>: O valor empilha os itens flexíveis horizontalmente da esquerda para a direita (padrão).
+                    </li>
+                    <li>
+                        <b>row-reverse</b>: O reverso de linha valor empilha os itens flexíveis horizontalmente, mas da direita para a esquerda.
+                    </li>
+                </ul>
+
+                <br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">flex-direction</span>: <span class="v">column</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-direction: column;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">flex-direction</span>: <span class="v">column-reverse</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-direction: column-reverse;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">flex-direction</span>: <span class="v">row</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-direction: row;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">flex-direction</span>: <span class="v">row-reverse</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-direction: row-reverse;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2> flex-wrap </h2>
+
+                <p class="lead">A propriedade flex-wrap define se os itens devem "quebrar", ou seja, sair de suas posições originais para se ajustarem quando o tamanho da janela de visualização diminuir, especificando se os itens devem ficar abaixo dos outros quando o espaço for acabando. </p>
+
+                <ul class="lead">
+                    <li>
+                        <b>wrap</b>: O valor especifica que os flex items serão quebrados caso necessário.
+                    </li>
+                    <li>
+                        <b>nowrap</b>: O valor especifica que os itens flex não irão quebrar (padrão).
+                    </li>
+                    <li>
+                        <b>wrap-reverse</b>: O valor especifica que os itens flexíveis vão quebrar se necessário, mas na ordem inversa, ou seja, o primeiro item irá ser jogado para baixo, em seguida o segundo...
+                    </li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p"> flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p"> flex-wrap</span>: <span class="v">wrap-reverse</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap-reverse;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>flex-flow</h2>
+
+                <p class="lead">A propriedade flex-flow é uma forma abreviada para definir as propriedades flex-direction e flex-wrap respectivamente. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">flex-flow</span>: <span class="v">row wrap</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-flow: row wrap;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>justify-content</h2>
+
+                <p class="lead">A propriedade justify-content é usada para alinhar os itens flexíveis, de acordo com cada linha, ou seja, na horizontal, das seguintes maneiras: </p>
+
+                <ul class="lead">
+                    <li>
+                        <b>center</b>: O valor alinha os itens flexíveis no centro do contêiner.
+                    </li>
+                    <li>
+                        <b>flex-start</b>: O valor alinha os items flexíveis no início do contêiner (padrão).
+                    </li>
+                    <li>
+                        <b>flex-end</b> O valor alinha os items flexíveis no final do contêiner.
+                    </li>
+                    <li>
+                        <b>space-around</b>: O valor alinha os itens flexíveis com espaço antes, entre, e depois das linhas.
+                    </li>
+                    <li>
+                        <b>space-between</b>: O valor alinha os itens flexíveis com espaço entre os linhas.
+                    </li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">justify-content</span>: <span class="v">center</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="justify-content: center;height: 200px">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">justify-content</span>: <span class="v">flex-end</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="justify-content: flex-end;height: 200px">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">justify-content</span>: <span class="v">flex-start</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="justify-content: flex-start;height: 200px">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">justify-content</span>: <span class="v">space-around</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="justify-content: space-around;height: 200px">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">justify-content</span>: <span class="v">space-between</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="justify-content: space-between;height: 200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>align-items</h2>
+
+                <p class="lead">A propriedade align-items é usada para alinhar os itens flexíveis, de acordo com o tamanho do contêiner, da seguintes maneiras.</p>
+
+                <ul class="lead">
+                    <li>
+                        <b>center</b>: O valor alinha os itens flexíveis no centro do contêiner.
+                    </li>
+                    <li>
+                        <b>flex-start</b>: O valor alinha os items flexíveis na parte superior do contêiner (padrão).
+                    </li>
+                    <li>
+                        <b>flex-end</b> O valor alinha os items flexíveis na parte inferior do contêiner.
+                    </li>
+                    <li>
+                        <b>stretch</b>: O valor estica os itens flexíveis para preencher o contêiner (padrão)
+                    </li>
+                    <li>
+                        <b>baseline</b>: O valor alinha os itens flexíveis de acordo uma linha imaginária na base de todos os conteúdo dos itens. Ou seja, independentemente do conteúdo, nenhum conteúdo ficará abaixo da linha base, mesmo que os contêineres tenham tamanhos distintos.
+                    </li>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="height: 200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">align-items</span>: <span class="v">center</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="align-items: center; height: 200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">align-items</span>: <span class="v">flex-start</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="align-items: flex-start; height: 200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">align-items</span>: <span class="v">flex-end</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="align-items: flex-end; height: 200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">align-items</span>: <span class="v">stretch</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="align-items: stretch; height: 200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">200px</span>; <br>
+                                <span class="e p">align-items</span>: <span class="v"> baseline</span>; <br>
+                                } <br>
+                                <span class="s">.div1</span>{ <br>
+                                <span class="e p">font-size</span>: <span class="v">5em</span>; <br>
+                                } <br>
+                                <span class="s">.div2</span>{ <br>
+                                <span class="e p">font-size</span>: <span class="v">0.5em</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="align-items:  baseline; height: 200px;">
+                                <div style="font-size: 5em;">1</div>
+                                <div style="font-size: 1em;">2</div>
+                                <div style="font-size: 3em;">3</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>align-content</h2>
 
 
+                <p class="lead">A propriedade align-content é usada para alinhar as linhas flexíveis, de acordo com as colunas, ou seja, na vertical, das seguintes maneiras: </p>
+
+                <ul class="lead">
+                    <ul>
+                        <li>
+                            <b>center</b>: O valor alinha os itens flexíveis no centro do contêiner.
+                        </li>
+                        <li>
+                            <b>flex-start</b>: O valor alinha os items flexíveis no início do contêiner (padrão).
+                        </li>
+                        <li>
+                            <b>flex-end</b> O valor alinha os items flexíveis no final do contêiner.
+                        </li>
+                        <li>
+                            <b>space-around</b>: O valor alinha os itens flexíveis com espaço antes, entre, e depois das linhas.
+                        </li>
+                        <li>
+                            <b>space-between</b>: O valor alinha os itens flexíveis com espaço entre os linhas.
+                        </li>
+                    </ul>
+                </ul>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">space-between</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content: space-between;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">space-around</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content: space-around;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">stretch</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content: stretch;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">center</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:center;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">flex-start</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:flex-start;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">flex-end</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:flex-end;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Alinhamento central</h2>
+
+                <p class="lead">Para alinhar perfeitamente no centro, usamos: </p>
+                <br>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.flex-container</span>{ <br>
+                                <span class="e p">display</span>: <span class="v">flex</span>; <br>
+                                <span class="e p">height</span>: <span class="v">400px</span>; <br>
+                                <span class="e p">flex-wrap</span>: <span class="v">wrap</span>; <br>
+                                <span class="e p">align-content</span>: <span class="v">center</span>; <br>
+                                <span class="e p">justify-content</span>: <span class="v">center</span>; <br>
+                                } <br>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="flex-wrap: wrap; height: 400px; align-content:center;justify-content: center;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>order</h2>
+
+                <p class="lead">A propriedade order especifica a ordem em que aparecem os itens flexíveis. Assim, podemos alterar a ordem em que os itens aparecem no código e no layout (Podendo evitar ter que reescrever ou reordenar os trechos de códigos). O valor especificado dever ser um número, sendo 0 o valor padrão. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;div class="flex-container"></code> <br>
+                            <code class="e">&lt;div style="order: 3"></code>1<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div style="order: 4"></code>2<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div style="order: 1"></code>3<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div style="order: 2"></code>4<code>&lt;/div></code> <br>
+                            <code>&lt;/div></code>
+                        </td>
+                        <td>
+                            <div class="flex-container">
+                                <div style="order: 3">1</div>
+                                <div style="order: 4">2</div>
+                                <div style="order: 1">3</div>
+                                <div style="order: 2">4</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>flex-grow</h2>
+
+                <p class="lead">A propriedade flex-grow especifica o quanto um item flexível deve crescer em relação aos demais itens flexíveis. O valor especificado deve ser um número, sendo 0 o valor padrão. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;div class="flex-container"></code> <br>
+                            <code class="e">&lt;div style="flex-grow: 0"></code>1<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div style="flex-grow: 0"></code>2<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div style="flex-grow: 0"></code>3<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div style="flex-grow: 8"></code>4<code>&lt;/div></code> <br>
+                            <code>&lt;/div></code>
+                        </td>
+                        <td>
+                            <div class="flex-container">
+                                <div style="flex-grow: 0">1</div>
+                                <div style="flex-grow: 0">2</div>
+                                <div style="flex-grow: 0">3</div>
+                                <div style="flex-grow: 8">4</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>flex-shrink</h2>
+
+                <p class="lead">A propriedade flex-shrink especifica o quanto um item flexível encolherá em relação aos demais items flexíveis. O valor especificado deve ser um número, sendo 0 o valor padrão. (Experimente reduzir o tamanho da tela)</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;div class="flex-container"></code> <br>
+                            <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div  style="flex-shrink: 0;"></code>3<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
+                            <code>&lt;/div></code>
+                        </td>
+                    </tr>
+                </table>
 
 
+                <div class="flex-container" style="align-items: stretch; ">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-shrink: 0">3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                </div>
 
-        <h2>align-self</h2>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
+                <h2>flex-basis</h2>
 
-        <p>A propriedade align-self especifica o alinhamento para o item selecionado dentro do contêiner.
-            Basicamente, a propriedade align-self substitui o alinhamento pela propriedade align-items,
-            mas aplicada a um único item.  </p>
+                <p class="lead">A propriedade flex-basis especifica a largura inicial de um item flexível. </p>
 
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;div class="flex-container"></code> <br>
+                            <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div  style="flex-basis: 200px;"></code>3<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
+                            <code>&lt;/div></code>
+                        </td>
+                        <td>
+                            <div class="flex-container">
+                                <div>1</div>
+                                <div>2</div>
+                                <div style="flex-basis: 200px;">3</div>
+                                <div>4</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;div class="flex-container" style="height:200px;"></code> <br>
-                    <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="align-self: center"></code>3<code>&lt;/div></code> <br>
-                    <code class="e">&lt;div style="align-self: flex-start"></code>4<code>&lt;/div></code> <br>
-                    <code>&lt;/div></code>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-                </td>
-                <td>
-                    <div class="flex-container" style="height:200px;">
-                        <div>1</div>
-                        <div>2</div>
-                        <div style="align-self: center">3</div>
-                        <div style="align-self: flex-start">4</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                <h2>flex</h2>
 
+                <p class="lead">A propriedade flex é uma forma abreviada para definir as propriedades flex-grow, flex-shrink e flex-basis respectivamente. </p>
 
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;div class="flex-container"></code> <br>
+                            <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div  style="flex: 0 0 200px"></code>3<code>&lt;/div></code> <br>
+                            <code class="e">&lt;div></code>4<code>&lt;/div></code> <br>
+                            <code>&lt;/div></code>
+                        </td>
+                        <td>
+                            <div class="flex-container">
+                                <div>1</div>
+                                <div>2</div>
+                                <div style="flex: 0 0 200px">3</div>
+                                <div>4</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-    </section>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="media-queries.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <h2>align-self</h2>
 
-</body>
+                <p class="lead">A propriedade align-self especifica o alinhamento para o item selecionado dentro do contêiner. Basicamente, a propriedade align-self substitui o alinhamento pela propriedade align-items, mas aplicada a um único item. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <code>&lt;div class="flex-container" style="height:200px;"></code> <br>
+                                <code class="e">&lt;div></code>1<code>&lt;/div></code> <br>
+                                <code class="e">&lt;div></code>2<code>&lt;/div></code> <br>
+                                <code class="e">&lt;div style="align-self: center"></code>3<code>&lt;/div></code> <br>
+                                <code class="e">&lt;div style="align-self: flex-start"></code>4<code>&lt;/div></code> <br>
+                                <code>&lt;/div></code>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex-container" style="height:200px;">
+                                <div>1</div>
+                                <div>2</div>
+                                <div style="align-self: center">3</div>
+                                <div style="align-self: flex-start">4</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

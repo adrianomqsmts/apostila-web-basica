@@ -1,90 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Cabeçalhos em HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Cabeçalhos em HTML5</title>
+        <meta charset="utf-8">
 
-<body>
-
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-
-        <h2 id="TCab"> TAGS de CABEÇALHOS </h2>
-
-        <p> Os títulos/cabeçalhos são definidos com as tag de <code>&lt;h1></code> (header) até a tag
-            <code>&lt;h6></code>,
-            onde elemento h1 é o título mais importante e o h6 é o título menos importante em nível. </p>
-
-        <table class="tabela">
-            <tr>
-                <td> <code>&lt;h1></code>Título 1<code>&lt;/h1></code> </td>
-                <td>
-                    <h1 class="titulo">Título 1</h1>
-                </td>
-            </tr>
-            <tr>
-                <td> <code>&lt;h2></code>Título 2<code>&lt;/h2></code></td>
-                <td>
-                    <h2 class="titulo">Título 2</h2>
-                </td>
-            </tr>
-            <tr>
-                <td><code>&lt;h3></code>Título 3<code>&lt;/h3></code></td>
-                <td>
-                    <h3 class="titulo">Título 3</h3>
-                </td>
-            </tr>
-            <tr>
-                <td> <code>&lt;h4></code>Título 4<code>&lt;/h4></code></td>
-                <td>
-                    <h4 class="titulo">Título 4</h4>
-                </td>
-            </tr>
-            <tr>
-                <td> <code>&lt;h5></code>Título 5<code>&lt;/h5></code></td>
-                <td>
-                    <h5 class="titulo">Título 5</h5>
-                </td>
-            </tr>
-            <tr>
-                <td> <code>&lt;h6></code>ítulo 6<code>&lt;/h6></code></td>
-                <td>
-                    <h6 class="titulo">Título 6</h6>
-                </td>
-            </tr>
-        </table>
-
-        <p> Títulos possuem um significado semântico muito importante. Por exemplo, os mecanismos de buscas
-            (pesquisas)
-            usam
-            os títulos das páginas para indexar as páginas da web, delimitando estruturas e o conteúdo, através dos
-            elementos de cabeçalhos. </p>
-        <p> OBS: Os navegadores adicionam automaticamente algum espaço em branco (uma margem) antes e depois de um
-            título.
-        </p>
-    </section>
-
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="comentarios.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="paragrafos.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
         
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</body>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
+
+        <script src="../main.js"></script>
+
+            <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenu();
+        </script>
+
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h2 id="TCab"> TAGS de CABEÇALHOS </h2>
+
+                <p class="lead"> Os títulos/cabeçalhos são definidos com as tag de <code>&lt;h1></code> (header) até a tag <code>&lt;h6></code>, onde o elemento h1 é o título mais importante e o h6 é o título menos importante em nível. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td> <code>&lt;h1></code>Título 1<code>&lt;/h1></code> </td>
+                        <td>
+                            <h1 class="titulo">Título 1</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <code>&lt;h2></code>Título 2<code>&lt;/h2></code></td>
+                        <td>
+                            <h2 class="titulo">Título 2</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;h3></code>Título 3<code>&lt;/h3></code></td>
+                        <td>
+                            <h3 class="titulo">Título 3</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <code>&lt;h4></code>Título 4<code>&lt;/h4></code></td>
+                        <td>
+                            <h4 class="titulo">Título 4</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <code>&lt;h5></code>Título 5<code>&lt;/h5></code></td>
+                        <td>
+                            <h5 class="titulo">Título 5</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <code>&lt;h6></code>ítulo 6<code>&lt;/h6></code></td>
+                        <td>
+                            <h6 class="titulo">Título 6</h6>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead"> Títulos possuem um significado semântico muito importante. Por exemplo, os mecanismos de buscas (pesquisas) usam os títulos das páginas para indexar as páginas da web, delimitando estruturas e o conteúdo através dos elementos de cabeçalhos. </p>
+
+                <p class="lead"> OBS: Os navegadores adicionam automaticamente algum espaço em branco (uma margem) antes e depois de um título. </p>
+
+            </div>
+        </section>
+
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

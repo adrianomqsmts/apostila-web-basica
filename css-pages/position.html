@@ -1,292 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Position em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Position em CSS3</title>
+        <meta charset="utf-8">
 
-<body>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-    <section>
-
-
-
-        <h2 id="posicionamento">Layout - Posicionamento</h2>
-
-        <p>A propriedade position especifica o método de posicionamento
-            de um elemento HTML podendo ser estático,
-            relativo, fixo, absoluto ou pegajoso. Em seguida é usada as propriedades
-            de posicionamento como em esquerda (left:valor),
-            direita (right:valor), topo (top:valor)
-            e fundo (bottom:valor). </p>
-
-
-<hr>
-
-        <h3 id="posicao-estatica">position:static - Posição estática</h3>
-
-        <p>Por padrão todos os elementos HTML possuem
-            posicionamento estático. Basicamente,
-            eles não podem ser afetados pelas propriedades
-            de posicionamento como centralizado, por exemplo.</p>
-        <p>Assim, todos os elementos com position: static
-            seguem o fluxo normal de uma página. </p>
-
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">position</span>: <span class="v">static</span>; <br>
-                        <span class="p">border</span>: <span class="v">solid cornflowerblue;</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div style="position: static; border: solid cornflowerblue;">
-                        Este elemento div é position: static;
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-
-
-<hr>
-
-        <h3 id="posicao-relativa">position:relative - Posição Relativa</h3>
-
-        <p>Um elemento com position:relative será posicionado em relação
-            a sua posição original. </p>
-        <p>Basicamente, funciona como um elemento estático, mas
-            podemos aplicar as propriedades de posicionamento e
-            posicionar o elemento. </p>
-        <p>Como observação, nennhum outro elemento
-            será ajustado para caber na lacuna deixada pelo elemento relativo. </p>
-
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">div</span> { <br>
-                        <span class="p">position</span>: <span class="v">relative</span>; <br>
-                        <span class="p">border</span>: <span class="v">solid cornflowerblue;</span>; <br>
-                        <span class="p">top</span>: <span class="v">2em</span>; <br>
-                        <span class="p">left</span>: <span class="v">2em</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <div style="position: relative; border: solid cornflowerblue;top: 2em; left: 2em;">
-                        Este elemento div é position: relative; com posicionamento
-                        top: 2em; left: 2em; </div>
-                </td>
-            </tr>
-        </table>
-
-
-        <h3 id="posicao-fixa">position:fixed - Posição fixa
-            </h2>
-
-            <p>Um elemento com position:fixed está posicionado
-                em relação à janela de visualização, o que significa que
-                sempre permanece no mesmo lugar, mesmo se a página for rolada.</p>
-            <p>Um elemento fixo não deixa lacunas na posição original, ou seja,
-                o espaço acaba sendo preenchido pelos demais elementos. </p>
-
-            <table class="tabela">
-                <tr>
-                    <td style="width: 25%;">
-                        <div class="code-css">
-                            <span class="s">div</span> { <br>
-                            <span class="p">position</span>: <span class="v">fixed</span>; <br>
-                            <span class="p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
-                            <span class="p">top</span>: <span class="v">0</span>; <br>
-                            <span class="p">left</span>: <span class="v">0</span>; <br>
-                            <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                            <span class="p">color</span>: <span class="v">white</span>; <br>
-                            }
-                        </div>
-                    </td>
-                    <td>
-                        <iframe src="iframe-fixed.html" style="width:100%; border:4px solid #e5e5e5"
-                            class="w3-padding"></iframe>
-                    </td>
-                </tr>
-            </table>
-
-
-<hr>
-
-            <h3 id="posicao-absoluta">position:absolute - Posição absoluta</h3>
-
-            <p>Um elemento com position:absolute está posicionado
-                em relação um dos seus ancestarais, cujo o mais próximo
-                esteja posicionado (não estático) </p>
-            <p>Basicamente, se um elemento absoluto não
-                tiver ancestrais mais próximos, ele então
-                usará o corpo do documento e se moverá
-                junto com a rolagem da página. </p>
-
-            <table class="tabela">
-                <tr>
-                    <td style="width: 25%;">
-                        <div class="code-css">
-                            <span class="s">div</span> { <br>
-                            <span class="p">position</span>: <span class="v">relative</span>; <br>
-                            <span class="p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
-                            <span class="p">height</span>: <span class="v">100px</span>; <br>
-                            <span class="p">width</span>: <span class="v">50%</span>; <br>
-                            } <br>
-                        </div>
-                        <div class="code-css">
-                            <span class="s">div div</span> { <br>
-                            <span class="p">position</span>: <span class="v">absolute</span>; <br>
-                            <span class="p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
-                            <span class="p">top</span>: <span class="v">0</span>; <br>
-                            <span class="p">left</span>: <span class="v">0</span>; <br>
-                            <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                            <span class="p">color</span>: <span class="v">white</span>; <br>
-                            } <br>
-                        </div>
-                        <div class="code-css">
-                            <span class="s">.div2</span> { <br>
-                            <span class="p">position</span>: <span class="v">absolute</span>; <br>
-                            <span class="p">border</span>: <span class="v">solid red</span>; <br>
-                            <span class="p">top</span>: <span class="v">0</span>; <br>
-                            <span class="p">left</span>: <span class="v">50%</span>; <br>
-                            <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                            <span class="p">color</span>: <span class="v">white</span>; <br>
-                            }
-                        </div>
-                        </div>
-                    </td>
-                    <td>
-                        <iframe src="iframe-absolute.html" style="width:100%; border:4px solid #e5e5e5"
-                            class="w3-padding"></iframe>
-                    </td>
-                </tr>
-            </table>
-
-
-            <hr>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
 
 
 
-            <h3 id="posicao-pegajosa">position:sticky - Posição pegajosa</h3>
+        <script src="../main.js"></script>
 
-            <p>Um elemento position:sticky se torna fixo quando o usuário
-                rola a página até ele. Basicamente, o elemento
-                alterna entre relativo e fixo. </p>
-            <p>No exemplo abaixo, a div fixa na tela, quando o
-                o topo da página (top:0) enconsta sobre ela. </p>
+        <link rel="stylesheet" href="../css/main.css">
 
-            <table class="tabela">
-                <tr>
-                    <td style="width: 25%;">
-                        <div class="code-css">
-                            <span class="s">.div</span> { <br>
-                            <span class="p">position</span>: <span class="v">sticky</span>; <br>
-                            <span class="p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
-                            <span class="p">top</span>: <span class="v">0</span>; <br>
-                            <span class="p">background-color</span>: <span class="v">black</span>; <br>
-                            <span class="p">color</span>: <span class="v">white</span>; <br>
-                            }
-                        </div>
-                    </td>
-                    <td>
-                        <iframe src="iframe-sticky.html" style="width:100%; border:4px solid #e5e5e5"
-                            class="w3-padding"></iframe>
-                    </td>
-                </tr>
-            </table>
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
 
-            <hr>
+        <section class="pt-5 mt-5">
 
-            <h2 id="posicao-sobreposta">z-index - Posição sobreposta</h2>
+            <div class="container">
 
-            <p>Acontece de alguns elementos ficarem um sobre os outros,
-                e as vezes de forma itencional. Quando isso acontece,
-                podemos usar a propriedade z-index para dizer quais elementos
-                devem ficar na parte da frente e quais devem
-                ficar na parte de trás. </p>
-            <p>No exemplo abaixo, colocamos o texto sobre uma img.</p>
+                <h1 id="posicionamento">Layout - Posicionamento</h1>
 
-            <table class="tabela">
-                <tr>
-                    <td>
-                        <div class="code-css">
-                            <span class="s">div</span> { <br>
-                            <span class="p">position</span>: <span class="v">relative</span>; <br>
-                            <span class="p">width</span>: <span class="v">30%</span>; <br>
-                            <span class="p">height</span>: <span class="v">7em</span>; <br>
-                            }
-                        </div> <br>
-                        <div class="code-css">
-                            <span class="s">p</span> { <br>
-                            <span class="p">position</span>: <span class="v">relative</span>; <br>
-                            <span class="p">left</span>: <span class="v">7em</span>; <br>
-                            <span class="p">top</span>: <span class="v">3em</span>; <br>
-                            <span class="p">background-color</span>: <span class="v">darkblue</span>; <br>
-                            <span class="p">color</span>: <span class="v">crimson</span>; <br>
-                            }
-                        </div> <br>
-                        <div class="code-css">
-                            <span class="s">img</span> { <br>
-                            <span class="p">position</span>: <span class="v">absolute</span>; <br>
-                            <span class="p">left</span>: <span class="v">0</span>; <br>
-                            <span class="p">top</span>: <span class="v">0</span>; <br>
-                            <span class="p">z-index</span>: <span class="v">-1</span>; <br>
-                            }
-                        </div>
-                    </td>
-                    <td>
-                        <div style="position: relative; width: 30%; height: 7em;">
-                            <p
-                                style="color: crimson; position: relative; left: 7em; top: 3em; background-color: darkblue; ">
-                                Projetando
-                                um Projeto</p>
-                            <img style="z-index: -1; position: absolute; top: 0; left: 0;" src="../imagens/sob.png" alt="">
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                <p class="lead">A propriedade position especifica o método de posicionamento de um elemento HTML podendo ser estático, relativo, fixo, absoluto ou pegajoso. Em seguida é usada as propriedades de posicionamento como em esquerda (left:valor), direita (right:valor), topo (top:valor) e fundo (bottom:valor). </p>
 
 
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="posicao-estatica">position:static - Posição estática</h2>
+
+                <p class="lead">Por padrão todos os elementos HTML possuem posicionamento estático. Basicamente, eles não podem ser afetados pelas propriedades de posicionamento como centralizado, por exemplo. Assim, todos os elementos com position: static seguem o fluxo normal de uma página. </p>
+
+                <table class="table table-responsive-sm table-striped table-bordered     text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">static</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid cornflowerblue;</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="position: static; border: solid cornflowerblue;">
+                                Este elemento div é position: static;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="posicao-relativa">position:relative - Posição Relativa</h2>
+
+                <p class="lead">Um elemento com position:relative será posicionado em relação a sua posição original. Basicamente, funciona como um elemento estático, mas podemos aplicar as propriedades de posicionamento e posicionar o elemento. </p>
+                <p class="lead">Como observação, nenhum outro elemento será ajustado para caber na lacuna deixada pelo elemento relativo. </p>
+
+                <table class="table table-responsive-sm table-striped table-bordered text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">relative</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid cornflowerblue;</span>; <br>
+                                <span class="e p">top</span>: <span class="v">2em</span>; <br>
+                                <span class="e p">left</span>: <span class="v">2em</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="position: relative; border: solid cornflowerblue;top: 2em; left: 2em;">
+                                Este elemento div é position: relative; com posicionamento top: 2em; left: 2em;
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="posicao-fixa">position:fixed - Posição fixa </h2>
+
+                <p class="lead">Um elemento com position:fixed está posicionado em relação à janela de visualização, o que significa que sempre permanece no mesmo lugar, mesmo se a página for rolada.</p>
+
+                <p class="lead">Um elemento fixo não deixa lacunas na posição original, ou seja, o espaço acaba sendo preenchido pelos demais elementos. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">fixed</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
+                                <span class="e p">bottom</span>: <span class="v">0</span>; <br>
+                                <span class="e p">left</span>: <span class="v">0</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">color</span>: <span class="v">white</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <iframe src="iframe-fixed.html" style="width:100%; border:4px solid #e5e5e5" class="w3-padding"></iframe>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="posicao-absoluta">position:absolute - Posição absoluta</h2>
+
+                <p class="lead">Um elemento com position:absolute está posicionado em relação um dos seus ancestrais, cujo o mais próximo esteja posicionado (não estático). Basicamente, se um elemento absoluto não tiver ancestrais mais próximos, ele então usará o corpo do documento e se moverá junto com a rolagem da página. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">relative</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
+                                <span class="e p">height</span>: <span class="v">100px</span>; <br>
+                                <span class="e p">width</span>: <span class="v">50%</span>; <br>
+                                } <br>
+                            </div>
+                            <div class="code-css">
+                                <span class="s">div div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">absolute</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
+                                <span class="e p">bottom</span>: <span class="v">0</span>; <br>
+                                <span class="e p">left</span>: <span class="v">0</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">color</span>: <span class="v">white</span>; <br>
+                                } <br>
+                            </div>
+                            <div class="code-css">
+                                <span class="s">.div2</span> { <br>
+                                <span class="e p">position</span>: <span class="v">absolute</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid red</span>; <br>
+                                <span class="e p">bottom</span>: <span class="v">0</span>; <br>
+                                <span class="e p">left</span>: <span class="v">50%</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">color</span>: <span class="v">white</span>; <br>
+                                }
+                            </div>
+
+                        </td>
+                        <td>
+                            <iframe src="iframe-absolute.html" style="width:100%; height: 400px; border:4px solid #e5e5e5" class="w3-padding"></iframe>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2 id="posicao-pegajosa">position:sticky - Posição pegajosa</h2>
+
+                <p class="lead">Um elemento position:sticky se torna fixo quando o usuário rola a página até ele. Basicamente, o elemento alterna entre relativo e fixo. No exemplo abaixo, a div fixa na tela, quando o o topo da página (top: 0) encosta sobre ela. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">.div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">sticky</span>; <br>
+                                <span class="e p">border</span>: <span class="v">solid cornflowerblue</span>; <br>
+                                <span class="e p">top</span>: <span class="v">0</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">black</span>; <br>
+                                <span class="e p">color</span>: <span class="v">white</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <iframe src="iframe-sticky.html" style="width:100%; border:4px solid #e5e5e5" class="w3-padding"></iframe>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h1 id="posicao-sobreposta">z-index - Posição sobreposta</h1>
+
+                <p class="lead">Acontece de alguns elementos ficarem um sobre os outros,
+                    e as vezes de forma intencional. Quando isso acontece,
+                    podemos usar a propriedade z-index para dizer quais elementos
+                    devem ficar na parte da frente e quais devem
+                    ficar na parte de trás. </p>
+                <p class="lead">No exemplo abaixo, colocamos o texto sobre uma img.</p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th class="w-50">Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">div</span> { <br>
+                                <span class="e p">position</span>: <span class="v">relative</span>; <br>
+                                <span class="e p">width</span>: <span class="v">30%</span>; <br>
+                                <span class="e p">height</span>: <span class="v">7em</span>; <br>
+                                }
+                            </div> <br>
+                            <div class="code-css">
+                                <span class="s">p</span> { <br>
+                                <span class="e p">position</span>: <span class="v">relative</span>; <br>
+                                <span class="e p">left</span>: <span class="v">7em</span>; <br>
+                                <span class="e p">top</span>: <span class="v">3em</span>; <br>
+                                <span class="e p">background-color</span>: <span class="v">darkblue</span>; <br>
+                                <span class="e p">color</span>: <span class="v">crimson</span>; <br>
+                                }
+                            </div> <br>
+                            <div class="code-css">
+                                <span class="s">img</span> { <br>
+                                <span class="e p">position</span>: <span class="v">absolute</span>; <br>
+                                <span class="e p">left</span>: <span class="v">0</span>; <br>
+                                <span class="e p">top</span>: <span class="v">0</span>; <br>
+                                <span class="e p">z-index</span>: <span class="v">-1</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <div style="position: relative; width: 30%; height: 7em;">
+                                <p style="color: crimson; position: relative; left: 7em; top: 3em; background-color: darkblue; ">
+                                    Projetando um Projeto
+                                </p>
+                                <img style="z-index: -1; position: absolute; top: 0; left: 0;" src="../imagens/sob.png" alt="">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
 
 
 
-    </section>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="max-width.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="overflow.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
 
-</body>
+
+
+        </section>
+
+
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

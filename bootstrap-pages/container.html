@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Containers com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 pt-5">
+            <div class="container">
+
+                <h1>contêiner</h1>
+
+                <p class="lead">A classe .container é usada para preencher os conteúdos dentro delas,
+                    podendo ser de duas formas práticas:</p>
+                <ul>
+                    <li>
+                        A classe .container fornece um contêiner responsivo de largura fixa, enquanto
+                    </li>
+                    <li>
+                        A classe .container-fluid fornece um contêiner de largura total,
+                        que abrange toda a largura da janela de visualização
+                    </li>
+                </ul>
+
+                <p class="lead">Abaixo demonstra como a largura (max-width) do elemento que contiver a
+                    classe .container se comportará. </p>
+
+                <table class="table text-light ">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                Extra small<br>
+                                &lt;576px
+                            </th>
+                            <th>
+                                Small<br>
+                                ≥576px
+                            </th>
+                            <th>
+                                Medium<br>
+                                ≥768px
+                            </th>
+                            <th>
+                                Large<br>
+                                ≥992px
+                            </th>
+                            <th>
+                                Extra large<br>
+                                ≥1200px
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>max-width</td>
+                            <td>100%</td>
+                            <td>540px</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="lead">Por padrão, os contêineres têm 15px de preenchimento esquerdo e direito, sem preenchimento superior ou
+                    inferior.</p>
+                <p class="lead">Abaixo podemos ver como a largura (max-width) de um elemento responsivo se comporta
+                    de acordo com os valores de sm, md, lg e xl. </p>
+
+                <table class="table text-light">
+                    <thead>
+                        <tr>
+                            <th>Classe </th>
+                            <th>Muito pequeno <br>
+                                &lt;576px
+                            </th>
+                            <th>Pequeno <br>
+                                ≥576px
+                            </th>
+                            <th>Médio <br>
+                                ≥768 px
+                            </th>
+                            <th>ampla <br>
+                                ≥992 px
+                            </th>
+                            <th>Extra grande <br>
+                                ≥1200px
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>container-sm</td>
+                            <td>100%</td>
+                            <td>540px</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td>.container-md</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td>.container-lg</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td>.container-xl</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>1140px </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>

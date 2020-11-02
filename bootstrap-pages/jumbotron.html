@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Jumbotron em Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+
+                <h1>Jumbotron</h1>
+
+                <p class="lead">Um jumbotron é um caixa usada para chamar a atenção com algum conteúdo ou informação extra. Para inicIar um jumbotron basta criar uma div com a classe <code>.jumbotron</code>.</p>
+
+                <code>&lt;div class="jumbotron"></code> <br>
+                <code class="e">&lt;h1></code> Título <code>&lt;/h1></code><br>
+                <code class="e">&lt;p></code> Conteúdo <code>&lt;/p></code><br>
+                <code>&lt;/div></code>
+
+                <br> <br>
+
+                <div class="jumbotron text-dark">
+                    <h1>Título</h1>
+                    <p class="lead">Conteúdo</p>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Jumbotron de Largura Total</h2>
+
+                <p class="lead">Podemos criar um jumbotron que preencha toda a largura da tela precisamos adicionar um div com a classe <code>.container</code> ou <code>.container-fluid</code> que conterá o conteúdo e devemos adicionar ao lado da classe <code>.jumbotron</code> a classe <code>.jumbotron-fluid</code> </p>
+                <br>
+
+                <code>&lt;div class="jumbotron jumbotron-fluid"></code> <br>
+                <code class="e">&lt;div class="container"></code><br>
+                <code class="e2">&lt;h1></code> Título <code>&lt;/h1></code><br>
+                <code class="e2">&lt;p></code> Conteúdo <code>&lt;/p></code><br>
+                <code class="e">&lt;/div></code><br>
+                <code>&lt;/div></code>
+
+                <br> <br>
+                <div class="jumbotron jumbotron-fluid text-dark">
+                    <div class="container">
+                        <h1>Título</h1>
+                        <p class="lead">Conteúdo</p>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Jumbotron I</h2>
+
+                <p class="lead">Podemos adicionar outros elementos dentro de um jumbotron para deixá-lo ainda mais personalizado.</p>
+
+                <code>&lt;div class="jumbotron"></code> <br>
+                <code class="e">&lt;h1 class="display-3"></code>Título<code>&lt;/h1></code> <br>
+                <code class="e">&lt;p class="lead"></code>Texto<code>&lt;/p></code> <br>
+                <code class="e">&lt;hr></code> <br>
+                <code class="e">&lt;p></code>Texto secundário<code>&lt;/p></code> <br>
+                <code class="e">&lt;p class="lead"></code> <br>
+                <code class="e3">&lt;a class="btn btn-primary btn-lg" #" role="button"></code>Uma ação<code>&lt;/a></code> <br>
+                <code class="e">&lt;/p></code> <br>
+                <code>&lt;/div></code> <br>
+                <br>
+                <br>
+
+                <div class="jumbotron text-dark">
+                    <h1 class="display-3">Título</h1>
+                    <p class="lead">Texto</p>
+                    <hr class="my-2">
+                    <p class="lead">Texto secundário</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Uma ação</a>
+                    </p>
+                </div>
+
+                <p class="lead">Podemos colocar uma simples cor para o texto e para o background, adicionar um texto, e temos um jumbotron um pouco menos cinzento. </p>
+
+                <div class="jumbotron text-white bg-darkviolet">
+                    <h1 class="display-3">Título</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eius sunt iusto ex eum corporis rem maxime eos itaque ducimus eveniet excepturi ullam, architecto vero quasi vitae nemo, velit repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum veritatis nihil dolores provident modi quod perferendis rerum quis qui. Quod suscipit corrupti blanditiis qui sint enim commodi pariatur, sit iure!</p>
+
+                    <br>
+                    <hr style="border: 1px solid pink;">
+                    <br>
+                    <p class="lead">Acesse:</p>
+                    <p class="lead">
+                        <a href="#div-1" data-toggle="collapse" class="btn btn-outline-danger" href="#" role="button">VER CÓDIGO</a>
+                    </p>
+                </div>
+
+                <div id="div-1" class="collapse">
+                    <code>&lt;div class="jumbotron  text-white bg-darkviolet"></code> <br>
+                    <code class="e">&lt;h1 class="display-3"></code>Título<code>&lt;/h1></code> <br>
+                    <code class="e">&lt;p class="lead"></code>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eius sunt iusto ex eum corporis rem maxime eos itaque ducimus eveniet excepturi ullam, architecto vero quasi vitae nemo, velit repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum veritatis nihil dolores provident modi quod perferendis rerum quis qui. Quod suscipit corrupti blanditiis qui sint enim commodi pariatur, sit iure!<code>&lt;/p></code> <br>
+                    <code class="e">&lt;hr style="border: 1px solid pink;"></code> <br>
+                    <code class="e">&lt;p></code>Texto secundário<code>&lt;/p></code> <br>
+                    <code class="e">&lt;p class="lead"></code> <br>
+                    <code class="e3">&lt;a class="btn btn-primary btn-lg" #" role="button"></code>VER CÓDIGO<code>&lt;/a></code> <br>
+                    <code class="e">&lt;/p></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

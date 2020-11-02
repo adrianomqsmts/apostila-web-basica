@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Cursores em CSS3</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <head>
+        <title>Cursores em CSS3</title>
+        <meta charset="utf-8">
 
-</head>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<body>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <header>
-
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <section>
+        <script src="../main.js"></script>
 
-        <h2 id="cursores">Cursores</h2>
+        <link rel="stylesheet" href="../css/main.css">
 
-        <p>Podemos mudar o cursos do mouse assim que o mesmo
-            passar sobre algum elemento . </p>
-        <p>Para ver a lista completa de todos os tipos de cursores
-            e seus significados acesse <a href="https://www.w3schools.com/css/css3_images.asp">Lista de Cursores</a></p>
+    </head>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <div class="code-css">
-                        <span class="s">input[disabled]</span> { <br>
-                        <span class="p">cursor</span>: <span class="v">not-allowed</span>; <br>
-                        <br>
-                        } <br>
-                        <span class="s">input</span> { <br>
-                        <span class="p">cursor</span>: <span class="v">wait</span>; <br>
-                        }
-                    </div>
-                </td>
-                <td>
-                    <input type="text" disabled style="cursor: not-allowed;"> <br> <br>
-                    <input type="text" style="cursor: wait;">
-                </td>
-            </tr>
-        </table>
+    <body class="bg-darkblue text-white">
+
+        <header>
+
+        </header>
+        <div id="menu">
+
+        </div>
+
+        <script>
+            criarMenuCSS();
+        </script>
 
 
-    </section>
 
-    <hr />
-    <div class="btn">
-        <a class="btn-anterior" href="transicoes.html">&lt; Anterior</a>
-        <a class="btn-proximo2" href="colunas.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
+        <section class="pt-5 mt-5">
 
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+            <div class="container">
 
-</body>
+                <h1 id="cursores">Cursores</h1>
+
+                <p class="lead">Para ver a lista completa de todos os tipos de cursores e seus significados acesse <a href="https://www.w3schools.com/css/css3_images.asp">Lista de Cursores</a></p> <br>   
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="code-css">
+                                <span class="s">input[disabled]</span> { <br>
+                                <span class="e p">cursor</span>: <span class="v">not-allowed</span>; <br>
+                                <br>
+                                } <br>
+                                <span class="s">input</span> { <br>
+                                <span class="e p">cursor</span>: <span class="v">wait</span>; <br>
+                                }
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" disabled style="cursor: not-allowed;"> <br> <br>
+                            <input type="text" style="cursor: wait;">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

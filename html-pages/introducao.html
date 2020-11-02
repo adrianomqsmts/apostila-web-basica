@@ -1,135 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Introdução sobre HTML5</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/estilo.css">
-</head>
+    <head>
+        <title>Introdução sobre HTML5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <header>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        
+        
 
-    </header>
-    <nav>
-        <object type="text/html" class="objhorizontal" data="menu-horizontal.html"></object>
-        <object type="text/html" class="objvertical" data="menu-vertical.html"></object>
-    </nav>
-    <section>
-        <h2>INTRODUÇÃO</h2>
+        
+        <script src="../main.js"></script>
 
-        <p> HTML (Hyper Text Markup Language) é uma linguagem de marcação de hipertexto,padrão para a criação de páginas
-            da
-            Web, que descreve a estrutura das páginas da Web usando marcações (elementos/tags). </p>
-        <p> O HTML surge apenas para estruturar de forma semântica a página, se limitando apenas a estruturar páginas,
-            onde
-            toda a forma de aplicação de estilos usando HTML deve ser evitada, deixando para o CSS cuidar de todo o
-            estilo
-            da página.</p>
+            <link rel="stylesheet" href="../css/main.css">
 
-        <hr>
+    </head>
 
+    <body class="bg-darkblue text-white">
 
-        <h3>Elementos</h3>
+        <header>
+            <div id="menu">
 
-        <p> O elemento HTML é tudo, desde a tag inicial (marcador de inicio) até a tag final (marcador de finalização),
-            podendo ter elementos aninhados, ou seja, elementos que contém outros elementos dentro de suas marcações.
-        </p>
-        <p>Um elemento tem a seguinte sintaxe: </p>
-        <p><code>&lt;tagname></code> CONTEÚDO <code>&lt;/tagname></code></p>
+            </div>
 
-        <p><strong>Importante!!!</strong> Nunca se esqueça de colocar uma tag final aos elementos, mesmo que eles sejam
-            exibidos corretamente. Pois, resultados inesperados e erros podem ocorrer se você esquecer de finalizar uma
-            marcação.
-        </p>
-        <p>Entretanto, existem tags chamadas de elementos vazios (ou selfclosing). Esses elementos vazios não possuem
-            conteúdo e normalmente não precisam ser fechadas, pois a maioria dos navegadores a reconhecem dessa forma
-            (em
-            XTHML é fechada assim
-            <code>&lt;tagname/></code>).Um exemplo simples, é uma quebra de linha
-            <code>&lt;br></code>.</p>
-        <p> Como último detalhe, o HTML não diferencia letras maiúsculas e minúsculas (no case sensitive), ou seja, uma
-            tag
-            pode ser escrita tanto como &lt;TAG> quanto &lt;tag>, que serão aceitas. Entretando é importante manter um
-            padrão de uso, e é fortemente
-            recomendado que usem tag em minúsculas.</p>
-        <hr>
+            <script>
+                criarMenu();
+            </script>
+
+        </header>
+        <section class="pt-5 mt-5">
+
+            <div class="container">
+                <h2>INTRODUÇÃO</h2>
+
+                <p class="lead"> HTML (Hyper Text Markup Language) é uma linguagem de marcação de hipertexto,padrão para a criação de páginas daWeb, que descreve a estrutura das páginas da Web usando marcações (elementos/tags). </p>
+                <p class="lead"> O HTML surge apenas para estruturar de forma semântica a página, se limitando apenas a estruturar páginas, onde toda a forma de aplicação de estilos usando HTML deve ser evitada, deixando para o CSS cuidar de todo o estilo da página.</p>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
 
+                <h3>Elementos</h3>
 
-        <h3>Atributos</h3>
+                <p class="lead"> O elemento HTML é tudo, desde a tag inicial (marcador de inicio) até a tag final (marcador de finalização), podendo ter elementos aninhados, ou seja, elementos que contém outros elementos dentro de suas marcações. </p>
 
-        <p> Os atributos HTML tem a função de fornecer informações adicionais sobre os elementos HTML. Eles são
-            especificados dentro da tag inicial comO um par nome/valor, com a sintaxe: <br>
-            <br> nome = "valor" </p>
-        <p>Atributos são informações que passamos para um elemento para que ele se comporte de uma maneira que seja
-            esperada. Existem dois tipos de atributos, os atributos globais que funcionam em todas os elementos e os
-            atributos específicos que são direcionados
-            para cada elemento.</p>
-        <p> Como exemplo, vamos usar um atributo para na tag <code>&lt;p></code>. O atributo <strong>title</strong>
-            define
-            uma informação extra sobre o elemento, exibindo ao passar o mouse sobre o elemento, o texto especificado.
-        </p>
+                <p class="lead">Um elemento tem a seguinte sintaxe: </p>
 
-        <table class="tabela">
-            <tr>
-                <td>
-                    <code>&lt;p title="isso é um parágrafo"></code><br>
-                    Conteúdo do parágrafo. Passe o mouse aqui. <br>
-                    <code>&lt;/p></code>
-                </td>
-                <td>
-                    <p title="isso é um parágrafo">
-                        Conteúdo do parágrafo. Passe o mouse aqui.
-                    </p>
-                </td>
-            </tr>
-        </table>
+                <p class="lead"><code>&lt;tagname></code> CONTEÚDO <code>&lt;/tagname></code></p>
 
+                <p class="lead"><strong>Importante!!!</strong> Nunca se esqueça de colocar uma tag final aos elementos, mesmo que eles sejam exibidos corretamente. Pois, resultados inesperados e erros podem ocorrer se você esquecer de finalizar uma marcação.
+                </p>
 
-        <hr>
+                <p class="lead">Entretanto, existem tags chamadas de elementos vazios (ou selfclosing). Esses elementos vazios não possuem conteúdo e normalmente não precisam ser fechadas, pois a maioria dos navegadores a reconhecem dessa forma (em XTHML é fechada assim <code>&lt;tagname/></code>).Um exemplo simples, é uma quebra de linha <code>&lt;br></code>.</p>
 
-        <h3>Estrutura básica de um site HTML</h3>
+                <p class="lead"> Como último detalhe, o HTML não diferencia letras maiúsculas e minúsculas (no case sensitive), ou seja, uma tag pode ser escrita tanto como &lt;TAG> quanto &lt;tag>, que serão aceitas. Entretando é importante manter um padrão de uso, e é fortemente recomendado que usem tag em minúsculas.</p>
 
-        <p> Para começar a escrever um arquivo do tipo HTML5, antes, ele deve seguir a seguinte estrutura base, que será
-            o
-            pilar de toda a esturua da página: </p>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
 
-        <code>&lt;!DOCTYPE html></code> <br>
-        <code>&lt;html></code> <br>
-        <code class="e">&lt;head></code> <br>
-        <code class="e2">&lt;title></code>Título da página<code>&lt;/title></code> <br>
-        <code class="e">&lt;/head></code> <br> <br>
-        <code class="e">&lt;body></code> <br>
-        <code class="e">&lt;/body></code> <br>
-        <code>&lt;/html></code> <br>
+                <h3>Atributos</h3>
+
+                <p class="lead"> Os atributos HTML tem a função de fornecer informações adicionais sobre os elementos HTML. Eles são especificados dentro da tag inicial comO um par nome/valor, com a sintaxe: <br> <br> nome = "valor" </p>
+
+                <p class="lead">Atributos são informações que passamos para um elemento para que ele se comporte de uma maneira que seja esperada. Existem dois tipos de atributos, os atributos globais que funcionam em todas os elementos e os atributos específicos que são direcionados para cada elemento.</p>
+
+                <p class="lead"> Como exemplo, vamos usar um atributo para na tag <code>&lt;p></code>. O atributo <strong>title</strong> define uma informação extra sobre o elemento, exibindo ao passar o mouse sobre o elemento, o texto especificado. </p>
+
+                <table class="table table-responsive-sm table-striped text-light">
+                    <tr class="text-center">
+                        <th>Código</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>&lt;p title="isso é um parágrafo"></code><br>
+                            Conteúdo do parágrafo. Passe o mouse aqui. <br>
+                            <code>&lt;/p></code>
+                        </td>
+                        <td>
+                            <p title="isso é um parágrafo">
+                                Conteúdo do parágrafo. Passe o mouse aqui.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
 
 
-        <ul>
-            <li> O elemento <code>&lt;!DOCTYPE html&gt;</code> define que este documento é um documento HTML5</li>
-            <li> O elemento <code>&lt;html&gt;</code> é a raiz de uma página HTML</li>
-            <li> O elemento <code>&lt;head&gt;</code> é quem contém as metainformações sobre a página HTML </li>
-            <li> O elemento <code>&lt;title&gt;</code> especifica um título para a página HTML (que é mostrado na barra
-                de
-                título do navegador ou na guia da página) </li>
-            <li> O elemento <code>&lt;body&gt;</code> define o corpo do documento, sendo um contêiner (estrutura) para
-                todo
-                o conteúdo visível, como títulos, parágrafos, imagens, hiperlinks, tabelas, listas, etc.</li>
-        </ul>
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h3>Estrutura básica de um site HTML</h3>
+
+                <p class="lead"> Para começar a escrever um arquivo do tipo HTML5, antes, ele deve seguir a seguinte estrutura base, que será o pilar de toda a esturua da página: </p>
+
+                <code>&lt;!DOCTYPE html></code> <br>
+                <code>&lt;html></code> <br>
+                <code class="e">&lt;head></code> <br>
+                <code class="e2">&lt;title></code>Título da página<code>&lt;/title></code> <br>
+                <code class="e">&lt;/head></code> <br> <br>
+                <code class="e">&lt;body></code> <br>
+                <code class="e">&lt;/body></code> <br>
+                <code>&lt;/html></code> <br>
+
+                <ul>
+                    <li> O elemento <code>&lt;!DOCTYPE html&gt;</code> define que este documento é um documento HTML5</li>
+                    <li> O elemento <code>&lt;html&gt;</code> é a raiz de uma página HTML</li>
+                    <li> O elemento <code>&lt;head&gt;</code> é quem contém as metainformações sobre a página HTML </li>
+                    <li> O elemento <code>&lt;title&gt;</code> especifica um título para a página HTML (que é mostrado na barra de título do navegador ou na guia da página) </li>
+                    <li> O elemento <code>&lt;body&gt;</code> define o corpo do documento, sendo um contêiner (estrutura) para todo o conteúdo visível, como títulos, parágrafos, imagens, hiperlinks, tabelas, listas, etc.</li>
+                </ul>
+            </div>
 
 
-    </section>
-    <hr />
-    <div class="btn">
-        <a class="btn-proximo" href="comentarios.html">Próximo ></a>
-    </div>
-    <br>
-    <footer>
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+        </section>
 
-</body>
+        <div id="rodape"></div>       
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

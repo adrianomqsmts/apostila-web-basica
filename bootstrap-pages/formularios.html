@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Formulários com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+    <section class="mt-5 mb-0 pt-5">
+      <div class="container">
+
+        <h1>Formulários com Bootstrap 4</h1>
+
+        <p class="lead">Formulários com bootstrap 4 possuem uma formatação global que aplicam pequenos estilos em cima do padrão dos navegadores permitindo uma maior compatibilidade com os estilos. Abaixo poderemos ver a estrutura básica de um formulário, de onde iremos partir para as demais classes B4. Como pode ver no código, cada par <code>&lt;label></code> e <code>&lt;input></code> deve ser envolvido com a classe <code>.form-group</code>.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div1" aria-expanded="false" aria-controls="div1">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div1">
+          <code>&lt;form action=""></code> <br>
+          <code class="e">&lt;div class="form-group"></code> <br>
+          <code class="e2">&lt;label for="email"></code>E-mail<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="email" class="form-control" id="email"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="form-group"></code> <br>
+          <code class="e2">&lt;label for="password"></code>Senha<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="password" class="form-control" id="password"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="checkbox"></code> <br>
+          <code class="e2">&lt;label>&lt;input type="checkbox"></code> Lembrar-me<code>&lt;/label></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e2">&lt;button type="submit" class="btn btn-success"></code> Submit<code>&lt;/button></code> <br>
+          <code class="e">&lt;/form></code> <br>
+        </div>
+
+        <form action="">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Senha:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox">Lembre-me</label>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>form-inline: Formulários em linha. </h2>
+
+        <p class="lead">Podemos especificar que o formulário seja contido em uma linha, sem espaçamento entre os elementos, através da classe <code>.form-inline</code> que deve ser especificada dentro do elemento <code>&lt;form></code> </p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2" aria-expanded="false" aria-controls="div2">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div2">
+          <code>&lt;form action="" class="form-inline"></code> <br>
+          <code class="e">&lt;div class="form-group"></code> <br>
+          <code class="e2">&lt;label for="email"></code>E-mail<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="email" class="form-control" id="email"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="form-group"></code> <br>
+          <code class="e2">&lt;label for="password"></code>Senha<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="password" class="form-control" id="password"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="checkbox"></code> <br>
+          <code class="e2">&lt;label>&lt;input type="checkbox"></code> Lembrar-me<code>&lt;/label></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e2">&lt;button type="submit" class="btn btn-success"></code> Submit<code>&lt;/button></code> <br>
+          <code class="e">&lt;/form></code> <br>
+        </div>
+
+        <form action="" class="form-inline">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Senha:</label>
+            <input type="password" class="form-control" id="pwd">
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox"> Lembre-me</label>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Tamanhos</h2>
+
+        <p class="lead">Podemos definir a altura dos campos de entrada dos formulários usando as classes <code>.form-control-lg</code> para campos grande e <code>.form-control-sm</code> para campos menores.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3" aria-expanded="false" aria-controls="div3">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div3">
+          <code class="e">&lt;div class="form-group"></code> <br>
+          <code class="e2">&lt;label for="email"></code>E-mail<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="email" class="form-control form-control-lg" id="email"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control form-control-sm" id="email">
+        </div>
+
+        <div class="collapse" id="div3">
+          <code class="e">&lt;div class="form-group"></code> <br>
+          <code class="e2">&lt;label for="email"></code>E-mail<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="email" class="form-control form-control-lg" id="email"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control form-control-lg" id="email">
+        </div>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Formulários na horizontal (Usando Grids)</h2>
+
+        <p class="lead">Podemos especificar um formulário horizontal, onde cada rótulo e seus respectivo campo de entrada ficam alinhados na mesma linha, e em caso de janela pequenas, os elementos irão se portar verticalmente. Para definir formulários assim, precisamos usar colunas e alinhar os rótulo e os campos em cada linha do grid.</p>
+
+        <p class="lead">O primeiro passo é criar uma linha, no caso dos formulários, com a classe <code>.form-row</code> e para cada elemento com a classe <code>.form-group</code> especificar a quantidade de colunas que este elemento irá ocupar através das classes <code>.col-*</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div4" aria-expanded="false" aria-controls="div4">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div4">
+          <code>&lt;form action=""></code> <br>
+          <code class="e">&lt;div class="form-row"></code> <br>
+          <code class="e2">&lt;div class="form-group col-md-6"></code> <br>
+          <code class="e3">&lt;label for="email"></code>E-mail<code>&lt;/label></code> <br>
+          <code class="e3">&lt;input type="email" class="form-control" id="email"></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e2">&lt;div class="form-group col-md-6"></code> <br>
+          <code class="e3">&lt;label for="password"></code>Senha<code>&lt;/label></code> <br>
+          <code class="e3">&lt;input type="password" class="form-control" id="password"></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+
+          <code class="e">&lt;div class="form-row"></code> <br>
+          <code class="e2">&lt;div class="checkbox"></code> <br>
+          <code class="e3">&lt;label>&lt;input type="checkbox"></code> Lembrar-me<code>&lt;/label></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e2">&lt;div class="form-group col-md-6"></code> <br>
+          <code class="e3">&lt;label for="nome"></code>nome<code>&lt;/label></code> <br>
+          <code class="e3">&lt;input type="nome" class="form-control" id="nome"></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e2">&lt;button type="submit" class="btn btn-success"></code> Submit<code>&lt;/button></code> <br>
+          <code>&lt;/form></code> <br>
+        </div>
+
+        <form action="">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="pwd">Senha:</label>
+              <input type="password" class="form-control" id="pwd">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nome">nome:</label>
+              <input type="nome" class="form-control" id="nome">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <br>
+
+        <p>Outra forma de alinhas os elementos do formulário em linha é definindo a classe <code>.row</code> em cada grupo <code>.form-group</code>, além de especificar a quantidade de colunas que cada elemento irá ocupar através da classe <code>.col-*</code>. Também precisamos especificar em cada label a classe <code>.col-form-label-*</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div5" aria-expanded="false" aria-controls="div5">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div5">
+          <code>&lt;form action=""></code> <br>
+          <code class="e">&lt;div class="form-group row"></code> <br>
+          <code class="e2">&lt;label for="email" class="col-sm-2 col-form-label"></code>E-mail<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="email" class="form-control  col-sm-10" id="email"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="form-group row"></code> <br>
+          <code class="e2">&lt;label for="password" class="col-sm-2 col-form-label"></code>Senha<code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="password" class="form-control  col-sm-10" id="password"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="form-group row"></code> <br>
+          <code class="e2">&lt;label for="nome" class="col-sm-2 col-form-label"></code>Nome: <code>&lt;/label></code> <br>
+          <code class="e2">&lt;input type="nome" class="form-control  col-sm-10" id="nome"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e2">&lt;button type="submit" class="btn btn-success"></code> Submit<code>&lt;/button></code> <br>
+          <code class="e">&lt;/form></code> <br>
+        </div>
+
+        <form action="">
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+            <input type="email" class="form-control col-sm-10" id="email">
+          </div>
+          <div class="form-group row">
+            <label for="pwd" class="col-sm-2 col-form-label">Senha:</label>
+            <input type="password" class="form-control col-sm-10" id="pwd">
+          </div>
+
+          <div class="form-group row">
+            <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
+            <input type="nome" class="form-control col-sm-10" id="nome">
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.form-check: checkbox e radio em Bootstrap 4</h2>
+
+        <p class="lead">Assim como a classe <code>.form-group</code> agrupa os rótulos e os campos de entradas temos a classe <code>.form-check</code> para agrupar elementos de rótulo com os seus respectivos campos de seleção. Para deixar cada um dos parres lado a lada, diferente do padrão que é um par abaixo do outro, precisamos especificar a classe <code>.form-check-inline</code>. Também é necessário que especifiquemos em cada <code>&lt;label></code> a classe <code>.form-check-label</code> e em cada elemento <code>&lt;input></code> a classe <code>.form-check-input</code></p>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Radio padrão
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
+          <label class="form-check-label" for="exampleRadios2">
+            Segundo radio padrão
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+          <label class="form-check-label" for="exampleRadios3">
+            Radio desativado
+          </label>
+        </div>
+
+        <br>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Checkbox padrão
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+          <label class="form-check-label" for="defaultCheck2">
+            Checkbox desativado
+          </label>
+        </div>
+        <br> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2> Input Groups</h2>
+        <p class="lead">A classe <code>.input-group</code> cria um container para inserir algum conteúdo, como ícone ou texto, dentro do campo de entrada. O primeiro passo, depois de criar o container com a classe <code>.input-group</code> é criar um um elemento <code>&lt;span></code> com a classe <code>.input-group-text</code> para inserir o texto na parte da frontal do campo de entrada ou <code>.input-group-append</code> para inserir o conteúdo na direita do campo de entrada.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div6">
+          <code>&lt;form></code> <br>
+          <code class="e">&lt;div class="input-group mb-3"></code> <br>
+          <code class="e2">&lt;div class="input-group-prepend"></code> <br>
+          <code class="e3">&lt;span class="input-group-text"></code>@ <code>&lt;/span></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e2">&lt;input type="text" class="form-control" placeholder="Username"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="input-group mb-3"></code> <br>
+          <code class="e2">&lt;input type="text" class="form-control" placeholder="Your Email"></code> <br>
+          <code class="e2">&lt;div class="input-group-append"></code> <br>
+          <code class="e3">&lt;span class="input-group-text"></code>@example.com <code>&lt;/span></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code>&lt;/form></code> <br>
+        </div>
+
+        <form>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control">
+            <div class="input-group-append">
+              <span class="input-group-text">@example.com</span>
+            </div>
+          </div>
+        </form>
+        <br>
+
+        <p class="lead">Podemos também inserir qualquer elemento na esquerda de um campo de entrada com a classe <code>.input-group-prepend</code> e na parte da direita com o elemento <code>.input-group-append</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div7">
+          <code>&lt;form></code> <br>
+          <code class="e">&lt;div class="input-group mb-3"></code> <br>
+          <code class="e2">&lt;div class="input-group-append"></code> <br>
+          <code class="e3">&lt;button class="btn btn-success" type="button"></code>OK<code>&lt;/button></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e2">&lt;input type="text" class="form-control"></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="input-group mb-3"></code> <br>
+          <code class="e2">&lt;input type="text" class="form-control"></code> <br>
+          <code class="e2">&lt;div class="input-group-prepend"></code> <br>
+          <code class="e3">&lt;button class="btn btn-success" type="button"></code>OK<code>&lt;/button></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code>&lt;/form></code> <br>
+        </div>
+        <form>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <button class="btn btn-success" type="button">OK</button>
+            </div>
+            <input type="text" class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control">
+            <div class="input-group-prepend">
+              <button class="btn btn-success" type="button">OK</button>
+            </div>
+          </div>
+        </form>
+
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+        
+        <p class="lead">Para ver sobre formulários em Bootstrap 4 e mais detalhes sobre as classes acesse: <br> <a href="https://getbootstrap.com.br/docs/4.1/components/forms/">Formulários em Bootstrap Oficial</a></p>
+
+        <p class="lead">Para ver todos os grupos de formulários em Bootstrap 4 e mais detalhes sobre as classes acesse: <br> <a href="https://www.w3schools.com/bootstrap4/bootstrap_forms_input_group.asp">Grupo de formulários</a></p>
+
+
+      </div>
+
+    </section>
+
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Cards com Bootstrap 4</title>
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"></div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 pt-5">
+
+            <div class="container">
+
+                <h1>Cards com Bootstrap 4</h1>
+
+                <p class="lead">Cards são usados para agregar uma informação e normalmente pode conter cabeçalhos, rodapés, cores, botões, etc.
+                </p>
+
+                <h2>.card e .card-body</h2>
+
+                <p class="lead">
+                    Para criar um card básico devemos usar uma div com a classe <code>.card</code> e uma div filho com a classe <code>.card-body</code> </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div1" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div1">
+                    <code>&lt;div class="card"></code><br>
+                    <code class="e">&lt;div class="card-body"></code>Cartão básico<code>&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+
+                <div class="card text-dark">
+                    <div class="card-body">Cartão básico</div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.card-header e .card-footer</h2>
+
+                <p class="lead">
+                    As classes <code>.card-header</code> e <code>.card-footer</code> adicionam, respectivamente, um cabeçalho e um rodapé em um cartão. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div2" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="card"></code><br>
+                    <code class="e">&lt;div class="card-header"></code>Cabeçalho<code>&lt;/div></code> <br>
+                    <code class="e">&lt;div class="card-body"></code>Conteúdo<code>&lt;/div></code> <br>
+                    <code class="e">&lt;div class="card-footer"></code>Rodapé<code>&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+
+                <div class="card text-dark">
+                    <div class="card-header">Cabeçalho</div>
+                    <div class="card-body">Cartão básico</div>
+                    <div class="card-footer">Rodapé</div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.card-title .card-text e card-link</h2>
+
+                <p class="lead"> Podemos adicionar links dentro de um cartão usando a classe <code>card-link</code>, textos usando a classe <code>.card-text</code> e um título com a classe <code>.card-title</code> dentro de um elemento com a classe <code>.card-body</code>. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div3" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div3">
+                    <code>&lt;div class="card"></code><br>
+                    <code class="e">&lt;div class="card-body"></code> <br>
+                    <code  class="e2">&lt;h1 class="card-title"></code>Título<code>&lt;/h1></code> <br>
+                    <code  class="e2">&lt;p class="card-text"></code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!<code>&lt;/p></code> <br>
+                    <code  class="e2">&lt;a href="" class="card-link"></code>LINK!<code>&lt;/a></code> <br>
+                    <code  class="e2">&lt;a href="" class="card-link"></code>LINK2!<code>&lt;/a></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+
+                <div class="card text-dark">
+                    <div class="card-body">
+                        <h1 class="card-title">Título</h1>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!</p>
+                        <a href="" class="card-link">LINK!</a>
+                        <a href="" class="card-link">LINK2!</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.card-img-top .card-img-bottom</h2>
+
+                <p class="lead">Podemos inserir uma imagem dentro do cartão no topo usando a classe <code>.card-img-top</code>. Para inserir a imagem na parte inferior usamos a classe <code>.card-img-bottom</code>. Note, que a classe fica dentro de um elemento <code>&lt;img></code> e fora do elemento com a classe <code>.card-body</code> </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div4" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div4">
+                    <code>&lt;div class="card"></code><br>
+                    <code  class="e">&lt;img src="../imagens/img.png" alt="" class="card-img-top"></code> <br>
+                    <code class="e">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;h1 class="card-header"></code>Título<code>&lt;/h1></code> <br>
+                    <code class="e2">&lt;p class="card-text"></code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;a href="" class="card-link"></code>LINK!<code>&lt;/a></code> <br>
+                    <code class="e2">&lt;a href="" class="card-link"></code>LINK2!<code>&lt;/a></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+                <div class="card text-dark w-50">
+                    <img src="../imagens/img.png" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="card-title">Título</h1>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos
+                            animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et
+                            ratione explicabo doloribus in, esse, debitis iure laboriosam!</p>
+                        <a href="" class="card-link">LINK!</a>
+                        <a href="" class="card-link">LINK2!</a>
+                    </div>
+                </div>
+                <br> <br> <br>
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div5" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div5">
+                    <code>&lt;div class="card"></code><br>
+                    <code class="e">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;h1 class="card-header"></code>Título<code>&lt;/h1></code> <br>
+                    <code class="e2">&lt;p class="card-text"></code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;a href="" class="card-link"></code>LINK!<code>&lt;/a></code> <br>
+                    <code class="e2">&lt;a href="" class="card-link"></code>LINK2!<code>&lt;/a></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code  class="e">&lt;img src="../imagens/img.png" alt="" class="card-img-bottom"></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+
+                <div class="card text-dark w-50">
+                    <div class="card-body">
+                        <h1 class="card-title">Título</h1>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!</p>
+                        <a href="" class="card-link">LINK!</a>
+                        <a href="" class="card-link">LINK2!</a>
+                    </div>
+                    <img src="../imagens/img.png" alt="" class="card-img-bottom">
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+
+                <h2>.card-img-overlay</h2>
+
+                <p class="lead">Para que o corpo de um cartão fique sobre a imagem precisamos adicionar a classe <code>.card-img-overlay</code> no elemento com a classe <code>.card-body</code>. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div6" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div6">
+                    <code>&lt;div class="card"></code><br>
+                    <code class="e">&lt;img src="../imagens/img.png" alt="" class="card-img-top"></code> <br>
+                    <code  class="e">&lt;div class="card-body card-img-overlay"></code><br>
+                    <code class="e2">&lt;h1 class="card-header"></code>Título<code>&lt;/h1></code> <br>
+                    <code class="e2">&lt;p class="card-text"></code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;a href="" class="card-link"></code>LINK!<code>&lt;/a></code> <br>
+                    <code class="e2">&lt;a href="" class="card-link"></code>LINK2!<code>&lt;/a></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+                <div class="card text-dark w-50">
+                    <img src="../imagens/img.png" alt="" class="card-img-top">
+                    <div class="card-body card-img-overlay">
+                        <h1 class="card-title">Título</h1>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos
+                            animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et
+                            ratione explicabo doloribus in, esse, debitis iure laboriosam!</p>
+                        <a href="" class="card-link">LINK!</a>
+                        <a href="" class="card-link">LINK2!</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+
+                <h2>.stretched-link</h2>
+
+
+                <p class="lead">Para transformar o cartão inteiro em clicável como se fosse um link, devemos adicionar a classe <code>.stretched-link</code> dentro do link, e então o cartão se comportará como um link. Para que o corpo de um cartão fique sobre a imagem precisamos adicionar a classe <code>.card-img-overlay</code> no elemento com a classe <code>.card-body</code>. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div7" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div7">
+                    <code>&lt;div class="card"></code><br>
+                    <code class="e">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;h1 class="card-header"></code>Título<code>&lt;/h1></code> <br>
+                    <code class="e2">&lt;p class="card-text"></code>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et ratione explicabo doloribus in, esse, debitis iure laboriosam!<code>&lt;/p></code> <br>
+                    <code  class="e2">&lt;a href="" class="card-link stretched-link"></code>LINK!<code>&lt;/a></code><br>
+                    <code class="e">&lt;/div></code> <br>
+                    <code>&lt;/div></code> <br>
+                </div>
+
+                <div class="card text-dark">
+                    <div class="card-body">
+                        <h1 class="card-title">Título</h1>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quos
+                            animi inventore dolore, eligendi ipsam commodi minima iste illum maxime minus et
+                            ratione explicabo doloribus in, esse, debitis iure laboriosam!</p>
+                        <a href="" class="card-link stretched-link">LINK!</a>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.card-columns</h2>
+
+                <p class="lead">A classe <code>.card-columns</code> nos permite criar uma organização que agrupa diversos cartões, onde o layout se ajusta automaticamente quando são inseridos novos cartões. Importante observar, que em janelas de visualizações menores, os cartões são exibidos verticalmente.</p>
+
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div8" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div8">
+                    <code >&lt;div class="card-columns"></code><br>
+                    <code class="e">&lt;div class="card bg-danger"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 1<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-info"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 2<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-success"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 3<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card badge-primary"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 4<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-secondary"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 5<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-warning"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 6 &lt;br> Cartão 6 &lt;br> Cartão 6<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code>&lt;/div></code> <br> <br>
+                </div>
+
+                <div class="card-columns">
+                    <div class="card bg-danger">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 1</p>
+                        </div>
+                    </div>
+                    <div class="card bg-info">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 2</p>
+                        </div>
+                    </div>
+                    <div class="card bg-success">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 3</p>
+                        </div>
+                    </div>
+                    <div class="card badge-primary">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 4</p>
+                        </div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 5</p>
+                        </div>
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 6 <br> Cartão 6 <br> Cartão 6</p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.card-deck</h2>
+
+                <p class="lead">A classe <code>.card-deck</code> se comporta igualmente a classe <code>.card-columns</code>, entretanto, a classe faz com que todos os cartões tenham o mesmo tamanho.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div9" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div9">
+
+                    <code >&lt;div class="card-deck"></code><br>
+
+                    <code class="e">&lt;div class="card bg-danger"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 1<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-info"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 2<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-success"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 3<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card badge-primary"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 4<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-secondary"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 5<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-warning"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 6 &lt;br> Cartão 6 &lt;br> Cartão 6<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code>&lt;/div></code> <br>
+                </div>
+
+                <div class="card-deck">
+                    <div class="card bg-danger">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 1</p>
+                        </div>
+                    </div>
+                    <div class="card bg-info">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 2</p>
+                        </div>
+                    </div>
+                    <div class="card bg-success">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 3</p>
+                        </div>
+                    </div>
+                    <div class="card badge-primary">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 4</p>
+                        </div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 5</p>
+                        </div>
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 6 <br> Cartão 6 <br> Cartão 6</p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>.card-group</h2>
+
+                <p class="lead">A classe <code>.card-group</code> se comporta igualmente
+                    a classe <code>.card-deck</code>, entretanto, a classe faz com que
+                    todos os cartões não tenham nenhum espaçamento entre eles.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div10" >
+                        Mostrar Código
+                    </a>
+                </p>
+                <div class="collapse" id="div10">
+                    <code >&lt;div class="card-group"></code><br>
+
+                    <code class="e">&lt;div class="card bg-danger"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 1<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-info"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 2<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-success"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 3<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card badge-primary"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 4<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-secondary"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 5<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code class="e">&lt;div class="card bg-warning"></code><br>
+                    <code class="e2">&lt;div class="card-body"></code> <br>
+                    <code class="e2">&lt;p class="card-text text-center"></code>Cartão 6 &lt;br> Cartão 6 &lt;br> Cartão 6<code>&lt;/p></code> <br>
+                    <code class="e2">&lt;/div></code> <br>
+                    <code class="e">&lt;/div></code> <br>
+
+                    <code>&lt;/div></code> <br> <br>
+
+                </div>
+
+                <div class="card-group">
+                    <div class="card bg-danger">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 1</p>
+                        </div>
+                    </div>
+                    <div class="card bg-info">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 2</p>
+                        </div>
+                    </div>
+                    <div class="card bg-success">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 3</p>
+                        </div>
+                    </div>
+                    <div class="card badge-primary">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 4</p>
+                        </div>
+                    </div>
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 5</p>
+                        </div>
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cartão 6 <br> Cartão 6 <br> Cartão 6</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

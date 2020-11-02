@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pt-br">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="../main.js"></script>
+
+        <link rel="stylesheet" href="../css/main.css">
+
+        <style>
+            div {
+                position: relative;
+            }
+
+        </style>
+
+        <title>Formatação de Textos</title>
+
+    </head>
+
+    <body class="bg-darkblue text-white">
+
+        <div id="menu"> </div>
+
+        <script>
+            criarMenuBT();
+        </script>
+
+        <section class="mt-5 mb-0 p-0">
+
+             <div id="section0" class="container-fluid bg-success border-bottom border-light" style="padding-top:70px;padding-bottom:70px">
+                <h1>>Configuração Padrão</h1>
+                <p class="lead">
+                    O Bootstrap usa por padrão um tamanho de fonte (font-size) igual a 16px com
+                    um espaçamento entre as linhas (line-height) de 1.5.
+
+                    <br> <br>
+                    A família de fontes
+                    usada são "Helvetica Neue", Helvetica, Arial, sans-serif.
+
+                    <br> <br>
+
+                    Existe um espaçamento
+                    menor para os parágrafos, onde a margem superior é 0, enquanto a margem inferir
+                    é equivalente a 16px.
+                </p>
+            </div>
+            <div id="section1" class="container-fluid bg-secondary border-bottom border-light" style="padding-top:70px;padding-bottom:70px">
+                <h1>>Cabeçalhos</h1>
+                <p class="lead">
+                    A formatação dos cabeçalho do padrão de um HTML muda em questão de tamanho, mas nenhum alteração
+                    que resalva alguma comparação. Entretanto, existem classes que normalmente são muito úteis para
+                    se aplicar em cabeçalhos os permitindo um maior variedade.
+                </p>
+                <p class="lead">
+                    A classe .display-1 - .display-4 são usada para destacar ainda mais
+                    um título aumentado suas fontes (font-size) e um espessura menos
+                    destaca (font-weight).
+                </p>
+
+
+                <table class="table table-active table-responsive-md table-striped bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>CFlasse</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-items-center">
+                        <tr>
+                            <td scope="row">normal H1</td>
+                            <td>
+                                <p class="h1">Header h1</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.display-1</td>
+                            <td>
+                                <p class="h1 display-1">Header h1</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.display-2</td>
+                            <td>
+                                <p class="h1 display-2">Header h1</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.display-3</td>
+                            <td>
+                                <p class="h1 display-3">Header h1</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.display-4</td>
+                            <td>
+                                <p class="h1 display-4">Header h1</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="lead">
+                    Assim como temos a classe .display para destacar um
+                    elemento, temos o elemento <code>&lt;small></code> que é usado
+                    para deixar o conteúdo um pouco menor que o padrão. </p>
+                <table class="table table-responsive-md table-striped bg-light text-dark">
+                    <thead class=" thead-inverse">
+                        <tr class="text-center">
+                            <th>Elemento HTML</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">normal h1</td>
+                            <td>
+                                <p class="h1">Header h1</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"> <code>&lt;h1></code>Header
+                                <code>&lt;small></code>h1<code>&lt;/small>&lt;/h1></code></td>
+                            <td>
+                                <p class="h1">Header <small>h1</small></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div id="section2" class="container-fluid bg-danger border-bottom border-light" style="padding-top:70px;padding-bottom:70px">
+                <h1>>Elementos HTML</h1>
+                <table class="table table-responsive-md table-striped bg-light text-dark">
+                    <thead class=" thead-inverse">
+                        <tr class="text-center">
+                            <th>Elemento HTML</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"><code>&lt;mark></code></td>
+                            <td>
+                                <p class="lead">Elemento <mark>marcado</mark> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><code>&lt;abbr></code></td>
+                            <td>
+                                <p class="lead">Elemento <abbr title="Linguagem de Marcação de HiperTexto">HTML</abbr></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <code>&lt;blockquote></code> <br>
+                                <code>&lt;p></code>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Harum dolores modi ad obcaecati cupiditate architecto similique sequi sit
+                                nam magni, atque officiis autem, facere, corporis id et! Possimus,
+                                excepturi rerum? <code>&lt;p></code> <br>
+                                <code>&lt;footer class="blockquote-footer"></code> Por Adriano M. Martins
+                                <code>&lt;/footer></code> <br>
+                                <code>&lt;/blockquote></code>
+                            </td>
+                            <td>
+                                <blockquote class="blockquote">
+                                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Harum dolores modi ad obcaecati cupiditate architecto similique sequi sit
+                                        nam magni, atque officiis autem, facere, corporis id et! Possimus,
+                                        excepturi rerum? </p>
+                                    <footer class="blockquote-footer"> Por Adriano M. Martins</footer>
+                                </blockquote>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><code>&lt;code></code></td>
+                            <td>
+                                <p class="lead">Elemento <code>código</code></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><code>&lt;kbd></code></td>
+                            <td>
+                                <p class="lead">Elemento <kbd>ctrl + c</kbd></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><code>&lt;pre></code></td>
+                            <td>
+                                <p class="lead">Elemento
+                                <pre>pre formatado</pre>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div id="section3" class="container-fluid bg-primary border-bottom border-light" style="padding-top:70px;padding-bottom:70px">
+                <h1>>Fontes</h1>
+
+                <table class="table table-striped table-inverse table-responsive-md  bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"><code>&lt;p></code></td>
+                            <td>
+                                <p class="lead">Oi! Eu sou um parágrafo normal... Eu acho.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.font-weight-bold</td>
+                            <td>
+                                <p class="font-weight-bold">Oi! Eu sou um parágrafo com a class="font-weight-bold"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.font-weight-bolder</td>
+                            <td>
+                                <p class="font-weight-bolder">Oi! Eu sou um parágrafo com a class="font-weight-bolder"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.font-italic</td>
+                            <td>
+                                <p class="font-italic">Oi! Eu sou um parágrafo com a class="font-italic"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.font-weight-light</td>
+                            <td>
+                                <p class="font-weight-light">Oi! Eu sou um parágrafo com a class="font-weight-light"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.font-weight-lighter</td>
+                            <td>
+                                <p class="font-weight-lighter">Oi! Eu sou um parágrafo com a class="font-weight-lighter"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.font-weight-normal</td>
+                            <td>
+                                <p class="font-weight-normal">Oi! Eu sou um parágrafo com a class="font-weight-normal"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.lead</td>
+                            <td>
+                                <p class="lead">Oi! Eu sou um parágrafo com a class="lead"</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="section4" class="container-fluid bg-babyblue border-bottom border-light" style="padding-top:70px;padding-bottom:70px">
+                <h1>>Textos</h1>
+                <table class="table table-striped table-inverse table-responsive-md bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>Classe</th>
+                            <th>Resiltado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"><code>&lt;p></code></td>
+                            <td>
+                                <p class="lead">Oi! Eu sou um parágrafo normal... Eu acho.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-left</td>
+                            <td>
+                                <p class="text-left">Oi! Eu sou um parágrafo com a class="text-left"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-right</td>
+                            <td>
+                                <p class="text-right">Oi! Eu sou um parágrafo com a class="text-right"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-center</td>
+                            <td>
+                                <p class="text-center">Oi! Eu sou um parágrafo com a class="text-center"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-justify</td>
+                            <td>
+                                <p class="text-justify">Oi! Eu sou um parágrafo com a class="text-justify". </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-break</td>
+                            <td>
+                                <p class="text-break">Oi! Eu sou um parágrafo com a class="text-break". (Eu quebro as
+                                    palavras para caberem)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-decoration-none</td>
+                            <td>
+                                <p class="text-decoration-none">Oi! Eu sou um parágrafo com a class="text-decoration-none".
+                                    (Eu removo todos
+                                    os estilos aplicados no parágrafo.)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-monospace</td>
+                            <td>
+                                <p class="text-monospace">Oi! Eu sou um parágrafo com a class="text-monospace"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-reset</td>
+                            <td>
+                                <p class="text-reset">Oi! Eu sou um parágrafo com a class="text-reset". (Eu volto para a cor
+                                    original)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-uppercase</td>
+                            <td>
+                                <p class="text-uppercase">Oi! Eu sou um parágrafo com a class="text-uppercase"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-lowercase</td>
+                            <td>
+                                <p class="text-lowercase">Oi! Eu sou um parágrafo com a class="text-lowercase"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-capitalize</td>
+                            <td>
+                                <p class="text-capitalize">Oi! Eu sou um parágrafo com a class="text-capitalize"</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="lead">Podemos aplicar as classes de alinhamento de textos em diferentes tamanhos de telas,
+                    como alinhamento à direita (text-*-right), à esquerda (text-*-left), centralizado
+                    (text-*-center) e justificado (text-*-justify)
+                    . Experimente reduzir o tamanho da tela. </p>
+                <table class="table table-striped table-inverse table-responsive-sm bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">.text-sm-center</td>
+                            <td>
+                                <p class="text-sm-center">Oi! Eu sou um parágrafo com a class="text-sm-center"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-md-center</td>
+                            <td>
+                                <p class="text-md-center">Oi! Eu sou um parágrafo com a class="text-md-center"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-lg-center</td>
+                            <td>
+                                <p class="text-lg-center">Oi! Eu sou um parágrafo com a class="text-lg-center"</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.text-xl-center</td>
+                            <td>
+                                <p class="text-xl-center">Oi! Eu sou um parágrafo com a class="text-xl-center"</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div id="section5" class="container-fluid bg-pink border-bottom m-0 border-light" style="padding-top:70px;padding-bottom:70px">
+                <h1>Decoração de Listas</h1>
+
+                <table class="table table-striped table-inverse table-responsive-sm bg-light text-dark">
+                    <thead class="thead-inverse">
+                        <tr class="text-center">
+                            <th>Classe</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">lista normal</td>
+                            <td>
+                                <ul>
+                                    <li>item 1</li>
+                                    <li>item 2</li>
+                                    <li>item 3
+                                        <ul>
+                                            <li>item 3.1</li>
+                                            <li>item 3.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.list-unstyled</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    <li>item 1</li>
+                                    <li>item 2</li>
+                                    <li>item 3
+                                        <ul>
+                                            <li>item 3.1</li>
+                                            <li>item 3.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">.list-inline e .list-inline-item em cada <code>&lt;li></code></td>
+                            <td>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">item 1</li>
+                                    <li class="list-inline-item">item 2</li>
+                                    <li class="list-inline-item">item 3
+                                        <ul>
+                                            <li class="list-inline-item">item 3.1</li>
+                                            <li class="list-inline-item">item 3.2</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
