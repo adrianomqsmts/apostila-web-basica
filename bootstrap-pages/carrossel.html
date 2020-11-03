@@ -35,19 +35,92 @@
         <h1>Carrossel com Bootstrap 4</h1>
 
         <p class="lead">Um Carrossel permiti criar um conteúdo como slideshow, onde os elementos dicam em transição entre eles.</p>
-        <ul class="lead">
-          <li>1º Passo: Precisamos definir o container para o carrossel através da classe <code>.carousel</code> e um identificador. Em seguida, precisamos especificar o atributo <code>data-ride="carousel"</code> para especificar que o carrousel irá se mover.
+
+        <ol class="lead">
+          <li>Precisamos definir o container para o carrossel através da classe <code>.carousel</code> e um identificador. Em seguida, precisamos especificar o atributo <code>data-ride="carousel"</code> para especificar que o carrousel irá se mover.
             <ul>
               <li><code>&lt;div id="slide" class="carousel" data-ride="carousel">&lt;/div></code></li>
             </ul>
           </li>
-          <li>2º Passo: Criar um container para os indicadores que irão mostrar a quantidade e a posição atual do slide.Para definir um indicadores precisamos criar um lista, onde o elemento <code>&lt</code> 
+          <li>Criar um container para os indicadores que irão mostrar a quantidade e a posição atual do slide. Para definir um indicadores precisamos criar um lista, onde o elemento <code>&lt;ul></code> terá cada a classe <code>.carousel-indicators</code>.
             <ul>
-              <li></li>
+              <li><code>&lt;ul class="carousel-indicators">&lt;ul></code></li>
+              <li>Cada item da lista deve ter o atributo <code>data-target="#slide"</code> apontando para o identificador <code>slide</code> do container antes declarado. Além do atributo <code>data-slide-to="0"</code> que aponta para o número de qual slide queremos nos mover ao clicar no indicador. Por fim, devemos marcar o indicador inicial com a classe <code>active</code> mostrando que é o primeiro indicador ativo.</li>
+              <ul>
+                <li>
+                  <code>&lt;ul class="carousel-indicators"></code> <br>
+                  <code class="e">&lt;li data-target="#slide" data-slide-to="0" class="active">&lt;/li></code> <br>
+                  <code class="e">&lt;li data-target="#slide" data-slide-to="1">&lt;/li></code> <br>
+                  <code class="e">&lt;li data-target="#slide" data-slide-to="2">&lt;/li></code> <br>
+                  <code>&lt;/ul></code>
+                </li>
+              </ul>
             </ul>
           </li>
-
-        </ul>
+          <li>
+            Criar os itens dos slides. Precisamos primeiro criar um container com a classe <code>.carousel-inner</code> que irá conter cada item que conterá uma imagem. Cada item é um container com a classe <code>.carousel-item</code> que conterá, cada um deles, uma única imagem <code>&lt;img></code>. Devemos usar a classe <code>active</code> para especificar a imagem inicial.
+            <ul>
+              <li>
+                <code>&lt;div class="carousel-inner"></code> <br>
+                <code class="e">&lt;div class="carousel-item active"></code> <br>
+                <code class="e2">&lt;img src="../imagens/code01.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+                <code class="e">&lt;/div></code> <br>
+                <code class="e">&lt;div class="carousel-item"></code> <br>
+                <code class="e2">&lt;img src="../imagens/code02.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+                <code class="e">&lt;/div></code> <br>
+                <code class="e">&lt;div class="carousel-item"></code> <br>
+                <code class="e2">&lt;img src="../imagens/code03.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+                <code class="e">&lt;/div></code> <br>
+                <code>&lt;/div></code>
+              </li>
+            </ul>
+          </li>
+          <li> Criar os ícones de anterior e próximo. Para isso precisamos criar dois links, um com a classe <code>.carousel-control-prev</code> e outro com a classe <code>.carousel-control-next</code>, e ambos com os atributos <code>href="#slide"</code> apontando para o identificador do slide criado no passo 1.
+            <ul>
+              <li> Devemos ainda criar o ícone de próximo e anterior, para isso precisamos criar um elemento <code>&lt;span></code> dentro de cada link, e cada elemento <code>&lt;span></code> deverá ter a classe <code>.carousel-control-prev-icon</code> ou <code>.carousel-control-next-icon</code> referente ao seu link.
+                <ul>
+                  <li>
+                    <code>&lt;a class="carousel-control-prev" href="#slide" data-slide="prev"></code> <br>
+                    <code class="e">&lt;span class="carousel-control-prev-icon">&lt;/span></code> <br>
+                    <code>&lt;/a></code> <br>
+                    <code>&lt;a class="carousel-control-next" href="#slide" data-slide="next"></code> <br>
+                    <code class="e">&lt;span class="carousel-control-next-icon">&lt;/span></code> <br>
+                    <code>&lt;/a></code>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>(Opcional) Dar títulos e uma descrição para cada slide. Precisaremos definir dentro de cada item do slide, abaixo das imagens, um novo container com a classe <code>.carousel-caption</code> e dentro dele declarar um título como um header e um descrição como parágráfo.
+            <ul>
+              <li>
+                <code>&lt;div class="carousel-inner"></code> <br>
+                <code class="e">&lt;div class="carousel-item active"></code> <br>
+                <code class="e2">&lt;img src="../imagens/code01.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+                <code class="e2">&lt;div class="carousel-caption"></code><br>
+                <code class="e3">&lt;h1></code>HTML5<code>&lt;/h1></code> <br>
+                <code class="e3">&lt;p></code>Venha Ver a nossa apostila de HTML5<code>&lt;/p></code> <br>
+                <code class="e2">&lt;/div></code> <br>
+                <code class="e">&lt;/div></code> <br>
+                <code class="e">&lt;div class="carousel-item"></code> <br>
+                <code class="e2">&lt;img src="../imagens/code02.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+                <code class="e2">&lt;div class="carousel-caption"></code><br>
+                <code class="e3">&lt;h1></code>CSS3<code>&lt;/h1></code> <br>
+                <code class="e3">&lt;p></code>Venha Ver a nossa apostila de CSS3<code>&lt;/p></code> <br>
+                <code class="e2">&lt;/div></code> <br>
+                <code class="e">&lt;/div></code> <br>
+                <code class="e">&lt;div class="carousel-item"></code> <br>
+                <code class="e2">&lt;img src="../imagens/code03.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+                <code class="e2">&lt;div class="carousel-caption"></code><br>
+                <code class="e3">&lt;h1></code>Bootstrap 4<code>&lt;/h1></code> <br>
+                <code class="e3">&lt;p></code>Venha Ver a nossa apostila de Bootstrap 4<code>&lt;/p></code> <br>
+                <code class="e2">&lt;/div></code> <br>
+                <code class="e">&lt;/div></code> <br>
+                <code>&lt;/div></code>
+              </li>
+            </ul>
+          </li>
+        </ol>
 
         <p class="text-center">
           <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
@@ -55,73 +128,86 @@
           </a>
         </p>
         <div class="collapse" id="div1">
-          <code>&lt;h1></code> Novo carro <code>&lt;span class="badge badge-danger"></code> NOVO <code>&lt;/span> &lt;/h1></code>
+
+          <code>&lt;div id="slide" class="carousel" data-ride="carousel"></code> <br>
+          <code class="e">&lt;ul class="carousel-indicators"></code> <br>
+
+          <code class="e2">&lt;li data-target="#slide" data-slide-to="0" class="active">&lt;/li></code> <br>
+          <code class="e2">&lt;li data-target="#slide" data-slide-to="1">&lt;/li></code> <br>
+          <code class="e2">&lt;li data-target="#slide" data-slide-to="2">&lt;/li></code> <br>
+          <code class="e">&lt;/ul></code> <br>
+
+          <code>&lt;div class="carousel-inner"></code> <br>
+          <code class="e">&lt;div class="carousel-item active"></code> <br>
+          <code class="e2">&lt;img src="../imagens/code01.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+          <code class="e2">&lt;div class="carousel-caption"></code><br>
+          <code class="e3">&lt;h1></code>HTML5<code>&lt;/h1></code> <br>
+          <code class="e3">&lt;p></code>Venha Ver a nossa apostila de HTML5<code>&lt;/p></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="carousel-item"></code> <br>
+          <code class="e2">&lt;img src="../imagens/code02.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+          <code class="e2">&lt;div class="carousel-caption"></code><br>
+          <code class="e3">&lt;h1></code>CSS3<code>&lt;/h1></code> <br>
+          <code class="e3">&lt;p></code>Venha Ver a nossa apostila de CSS3<code>&lt;/p></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code class="e">&lt;div class="carousel-item"></code> <br>
+          <code class="e2">&lt;img src="../imagens/code03.jpg" alt="" style="width: 100%; height: 500px;"></code> <br>
+          <code class="e2">&lt;div class="carousel-caption"></code><br>
+          <code class="e3">&lt;h1></code>Bootstrap 4<code>&lt;/h1></code> <br>
+          <code class="e3">&lt;p></code>Venha Ver a nossa apostila de Bootstrap 4<code>&lt;/p></code> <br>
+          <code class="e2">&lt;/div></code> <br>
+          <code class="e">&lt;/div></code> <br>
+          <code>&lt;/div></code>
+          <code class="e">&lt;a class="carousel-control-prev" href="#slide" data-slide="prev"></code> <br>
+          <code class="e2">&lt;span class="carousel-control-prev-icon">&lt;/span></code> <br>
+          <code class="e">&lt;/a></code> <br>
+          <code class="e">&lt;a class="carousel-control-next" href="#slide" data-slide="next"></code> <br>
+          <code class="e2">&lt;span class="carousel-control-next-icon">&lt;/span></code> <br>
+          <code class="e">&lt;/a></code> <br>
+
+          <code>&lt;/div></code>
         </div>
 
-        <p class="h1"> Novo carro <span class="badge badge-danger"> NOVO </span> </p>
-        <br>
-        <br>
-
-        <p class="lead">Podemos usar todas as cores pré-definidas no B4 para criar o badges. As cores podem ser: <code>.badge-primary .badge-secondary .badge-success .badge-danger .badge-warning .badge-info .badge-light .badge-dark</code></p>
-
-        <p class="text-center">
-          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
-            Mostrar Código
+        <div id="slide" class="carousel" data-ride="carousel">
+          <ul class="carousel-indicators">
+            <li data-target="#slide" data-slide-to="0" class="active"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+            <li data-target="#slide" data-slide-to="2"></li>
+          </ul>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../imagens/code01.jpg" alt="" style="width: 100%; height: 500px;">
+              <div class="carousel-caption">
+                <h1>HTML5</h1>
+                <p>Venha Ver a nossa apostila de HTML5</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../imagens/code02.jpg" alt="" style="width: 100%; height: 500px;">
+              <div class="carousel-caption">
+                <h1>CSS3</h1>
+                <p>Venha Ver a nossa apostila de CSS3</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../imagens/code03.jpg" alt="" style="width: 100%; height: 500px;">
+              <div class="carousel-caption">
+                <h1>Bootstrap 4</h1>
+                <p>Venha Ver a nossa apostila de Bootstrap 4</p>
+              </div>
+            </div>
+          </div> <a class="carousel-control-prev" href="#slide" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
           </a>
-        </p>
-        <div class="collapse" id="div2">
-          <code>&lt;span class="badge badge-primary"></code>Primary<code>&lt;/span></code> <br>
-          <code>&lt;span class="badge badge-Secondary"></code>Secondary<code>&lt;/span></code> <br>
-          <code>&lt;span class="badge badge-Secondary"></code>Secondary<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-Danger"></code>Danger<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-Warning"></code>>Warning<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-Info"></code>Info<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-Light"></code>Light<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-Dark"></code>Dark<code>&lt;/span></code><br> <br>
-        </div>
-
-        <span class="badge badge-primary">Primary</span>
-        <span class="badge badge-secondary">Secondary</span>
-        <span class="badge badge-success">Success</span>
-        <span class="badge badge-danger">Danger</span>
-        <span class="badge badge-warning">Warning</span>
-        <span class="badge badge-info">Info</span>
-        <span class="badge badge-light">Light</span>
-        <span class="badge badge-dark">Dark</span>
-
-        <br>
-        <hr style="border: 1px solid pink;">
-        <br>
-
-        <h2>.badge-pill</h2>
-
-        <p class="lead">A classe <code>.badge-pill</code> é usada para definir um arredondamento nos badges.</p>
-
-        <p class="text-center">
-          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
-            Mostrar Código
+          <a class="carousel-control-next" href="#slide" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
           </a>
-        </p>
-        <div class="collapse" id="div3">
-          <code>&lt;span class="badge badge-pill badge-primary"></code>Primary<code>&lt;/span></code> <br>
-          <code>&lt;span class="badge badge-pill badge-Secondary"></code>Secondary<code>&lt;/span></code> <br>
-          <code>&lt;span class="badge badge-pill badge-Secondary"></code>Secondary<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-pill badge-Danger"></code>Danger<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-pill badge-Warning"></code>>Warning<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-pill badge-Info"></code>Info<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-pill badge-Light"></code>Light<code>&lt;/span></code><br>
-          <code>&lt;span class="badge badge-pill badge-Dark"></code>Dark<code>&lt;/span></code><br> <br>
         </div>
 
-        <span class="badge badge-pill badge-primary">Primary</span>
-        <span class="badge badge-pill badge-secondary">Secondary</span>
-        <span class="badge badge-pill badge-success">Success</span>
-        <span class="badge badge-pill badge-danger">Danger</span>
-        <span class="badge badge-pill badge-warning">Warning</span>
-        <span class="badge badge-pill badge-info">Info</span>
-        <span class="badge badge-pill badge-light">Light</span>
-        <span class="badge badge-pill badge-dark">Dark</span>
-      </div>
+        <br> <br> <br>
+        <p class="lead">Para ver a referência completa sobre carrosséis, como intervalo entre as transições acesse: <a href="https://www.w3schools.com/bootstrap4/bootstrap_ref_js_carousel.asp">Carousel</a></p>
 
     </section>
 
