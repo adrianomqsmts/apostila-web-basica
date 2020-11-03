@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+    <title>Flex box com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+
+    <section class="mt-5 mb-0 pt-5">
+
+      <div class="container">
+
+        <h1>Flex box com Bootstrap 4</h1>
+
+        <p class="lead">Para criar uma caixa flexível precisamos criar um container com a classe <code>.d-flex</code>. Lembrando que todas as classes aqui descritas em todas as sessões possuem as suas variações responsivas como SM LG XL e MD</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div1">
+          <code>&lt;div class="d-flex bg-white text-white" style="height:100px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white " style="height:100px;">
+          <div class="p-2 bg-dark">item 1</div>
+          <div class="p-2 bg-success">item 2</div>
+          <div class="p-2 bg-warning">item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.flex-row : Horizontal</h2>
+
+        <p class="lead">Podemos especificar os itens na horizontal usando a classe <code>.flex-row</code> e organizá-los da forma inversa, ou seja, o último item na frente, usando a classe <code>.flex-row-reverse</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div2">
+          <code>&lt;div class="d-flex flex-row bg-white text-white"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-row bg-white text-white">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div>
+        <br>
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div3">
+          <code>&lt;div class="d-flex flex-row-reverse bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-row-reverse bg-white text-white">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.flex-column : Vertical</h2>
+
+        <p class="lead">Podemos especificar os itens na vertical usando a classe <code>.flex-column</code> e organizá-los da forma inversa, ou seja, o último item na frente, usando a classe <code>.flex-column-reverse</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div4">
+          <code>&lt;div class="d-flex flex-column bg-white text-white"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-column bg-white text-white">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div>
+        <br>
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div5">
+          <code>&lt;div class="d-flex flex-column-reverse bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-column-reverse bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.justify-content-start | end | center | between | around : Alinhamento dos itens</h2>
+
+        <h2>justify-content</h2>
+
+        <p class="lead">A classe justify-content é usada para alinhar os itens flexíveis, de acordo com cada linha, ou seja, na horizontal, das seguintes maneiras: </p>
+
+        <ul class="lead">
+          <li>
+            <b>center</b>: A classe alinha os itens flexíveis no centro do contêiner.
+          </li>
+          <li>
+            <b>flex-start</b>: A classe alinha os items flexíveis no início do contêiner (padrão).
+          </li>
+          <li>
+            <b>flex-end</b> A classe alinha os items flexíveis no final do contêiner.
+          </li>
+          <li>
+            <b>space-around</b>: A classe alinha os itens flexíveis com espaço antes, entre, e depois das linhas.
+          </li>
+          <li>
+            <b>space-between</b>: A classe alinha os itens flexíveis com espaço entre os linhas.
+          </li>
+        </ul>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div6">
+          <code>&lt;div class="d-flex justify-content-start bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex justify-content-start bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div7">
+          <code>&lt;div class="d-flex justify-content-end bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex justify-content-end bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div8">
+          <code>&lt;div class="d-flex justify-content-center bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex justify-content-center bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div9">
+          <code>&lt;div class="d-flex justify-content-between bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex justify-content-between bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div10">
+          <code>&lt;div class="d-flex justify-content-around bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex justify-content-around bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.flex-fill : Itens de preenchimento total e mesmo tamanho</h2>
+
+        <p class="">Caso queiramos que os itens preencham toda a largura do container flexível e possuam o mesmo tamanho, precisamos especificar a classe <code>.flex-fill</code> em cada um dos itens que queremos que preencha a largura restante.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div11">
+          <code>&lt;div class="d-flex bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 flex-fill bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 flex-fill bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 flex-fill bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 flex-fill bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 flex-fill bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white ">
+          <div class="p-2 flex-fill bg-dark"> item 1</div>
+          <div class="p-2 flex-fill bg-success"> item 2</div>
+          <div class="p-2 flex-fill bg-warning"> item 3</div>
+          <div class="p-2 flex-fill bg-info">item 4</div>
+          <div class="p-2 flex-fill bg-primary">item 5</div>
+        </div> <br>
+
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.flex-grow-1 : Item de preenchimento total e mesmo tamanho</h2>
+
+        <p class="lead">A classe <code>.flex-grow-1</code> faz com que o item especificado preencha toda a largura restante da caixa flexível.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div12">
+          <code>&lt;div class="d-flex bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning flex-lg-grow-1"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white ">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning flex-lg-grow-1"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <h2>.flex-wrap : Quebra de linhas</h2>
+
+        <p class="lead">A classe <code>.flex-wrap</code> faz com que os itens caiam para a linha de baixo na medida em que o espaço chega ao seu limite. Podemos usar a classe <code>.flex-wrap-reverse</code> para que os itens da esquerda dessam primeiro para a linha de baixo. Experimente reduzir o tamanho da dela.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div13">
+          <code>&lt;div class="d-flex flex-wrap bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 6<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 7<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 8<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 9<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 10<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 11<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 12<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 13<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 14<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 15<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 16<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 17<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 18<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 19<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 20<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-wrap bg-white text-white">
+          <div class="p-2 bg-dark">item 1</div>
+          <div class="p-2 bg-success">item 2</div>
+          <div class="p-2 bg-warning "> item 3</div>
+          <div class="p-2 bg-info"> item 4</div>
+          <div class="p-2 bg-primary"> item 5</div>
+          <div class="p-2 bg-dark">item 6</div>
+          <div class="p-2 bg-success">item 7</div>
+          <div class="p-2 bg-warning "> item 8</div>
+          <div class="p-2 bg-info"> item 9</div>
+          <div class="p-2 bg-primary"> item 10</div>
+          <div class="p-2 bg-dark">item 11</div>
+          <div class="p-2 bg-success">item 12</div>
+          <div class="p-2 bg-warning "> item 13</div>
+          <div class="p-2 bg-info"> item 14</div>
+          <div class="p-2 bg-primary"> item 15</div>
+          <div class="p-2 bg-dark">item 16</div>
+          <div class="p-2 bg-success">item 17</div>
+          <div class="p-2 bg-warning "> item 18</div>
+          <div class="p-2 bg-info"> item 19</div>
+          <div class="p-2 bg-primary"> item 20</div>
+        </div> <br>
+
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div14">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div14">
+          <code>&lt;div class="d-flex flex-wrap-reverse bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 6<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 7<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 8<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 9<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 10<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 11<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 12<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 13<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 14<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 15<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 16<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 17<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 18<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 19<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 20<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-wrap-reverse bg-white text-white">
+          <div class="p-2 bg-dark">item 1</div>
+          <div class="p-2 bg-success">item 2</div>
+          <div class="p-2 bg-warning "> item 3</div>
+          <div class="p-2 bg-info"> item 4</div>
+          <div class="p-2 bg-primary"> item 5</div>
+          <div class="p-2 bg-dark">item 6</div>
+          <div class="p-2 bg-success">item 7</div>
+          <div class="p-2 bg-warning "> item 8</div>
+          <div class="p-2 bg-info"> item 9</div>
+          <div class="p-2 bg-primary"> item 10</div>
+          <div class="p-2 bg-dark">item 11</div>
+          <div class="p-2 bg-success">item 12</div>
+          <div class="p-2 bg-warning "> item 13</div>
+          <div class="p-2 bg-info"> item 14</div>
+          <div class="p-2 bg-primary"> item 15</div>
+          <div class="p-2 bg-dark">item 16</div>
+          <div class="p-2 bg-success">item 17</div>
+          <div class="p-2 bg-warning "> item 18</div>
+          <div class="p-2 bg-info"> item 19</div>
+          <div class="p-2 bg-primary"> item 20</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div15">
+            Mostrar Código
+          </a>
+        </p>
+        <div class="collapse" id="div15">
+          <code>&lt;div class="d-flex flex-nowrap bg-white text-white" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 6<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 7<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 8<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 9<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 10<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 11<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 12<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 13<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 14<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 15<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 16<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 17<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning "></code> item 18<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 19<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 20<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex flex-nowrap bg-white text-white">
+          <div class="p-2 bg-dark">item 1</div>
+          <div class="p-2 bg-success">item 2</div>
+          <div class="p-2 bg-warning "> item 3</div>
+          <div class="p-2 bg-info"> item 4</div>
+          <div class="p-2 bg-primary"> item 5</div>
+          <div class="p-2 bg-dark">item 6</div>
+          <div class="p-2 bg-success">item 7</div>
+          <div class="p-2 bg-warning "> item 8</div>
+          <div class="p-2 bg-info"> item 9</div>
+          <div class="p-2 bg-primary"> item 10</div>
+          <div class="p-2 bg-dark">item 11</div>
+          <div class="p-2 bg-success">item 12</div>
+          <div class="p-2 bg-warning "> item 13</div>
+          <div class="p-2 bg-info"> item 14</div>
+          <div class="p-2 bg-primary"> item 15</div>
+          <div class="p-2 bg-dark">item 16</div>
+          <div class="p-2 bg-success">item 17</div>
+          <div class="p-2 bg-warning "> item 18</div>
+          <div class="p-2 bg-info"> item 19</div>
+          <div class="p-2 bg-primary"> item 20</div>
+        </div> <br>
+
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.align-content-start | end | center | between | around : Alinhamento dos itens</h2>
+
+        <p class="lead">A classe align-content é usada para alinhar as linhas flexíveis, de acordo com as colunas, ou seja, na vertical, das seguintes maneiras: </p>
+
+        <ul class="lead">
+          <li>
+            <b>center</b>: A classe alinha os itens flexíveis no centro do contêiner.
+          </li>
+          <li>
+            <b>start</b>: A classe alinha os items flexíveis no início do contêiner (padrão).
+          </li>
+          <li>
+            <b>end</b> A classe alinha os items flexíveis no final do contêiner.
+          </li>
+          <li>
+            <b>around</b>: A classe alinha os itens flexíveis com espaço antes, entre, e depois das linhas.
+          </li>
+          <li>
+            <b>between</b>: A classe alinha os itens flexíveis com espaço entre os linhas.
+          </li>
+        </ul>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div16">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div16">
+          <code>&lt;div class="d-flex align-content-start flex-wrap bg-white text-white" style="height:150px; width:300px" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-content-start flex-wrap bg-white text-white" style="height:150px; width:300px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div17">
+          <code>&lt;div class="d-flex align-content-end flex-wrap bg-white text-white" style="height:150px; width:300px" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-content-end flex-wrap bg-white text-white" style="height:150px; width:300px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div18">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div18">
+          <code>&lt;div class="d-flex align-content-center flex-wrap bg-white text-white" style="height:150px; width:300px" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-content-center flex-wrap bg-white text-white" style="height:150px; width:300px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div19">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div19">
+          <code>&lt;div class="d-flex align-content-stretch flex-wrap bg-white text-white" style="height:150px; width:300px"  ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-content-stretch flex-wrap bg-white text-white" style="height:150px; width:300px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div20">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div20">
+          <code>&lt;div class="d-flex align-content-around flex-wrap bg-white text-white" style="height:150px; width:300px" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-content-around flex-wrap bg-white text-white" style="height:150px; width:300px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>align-items-start | end | center | stretch | baseline : Alinhamento dos itens</h2>
+
+        <p class="lead">A propriedade align-items é usada para alinhar os itens flexíveis, de acordo com o tamanho do contêiner, da seguintes maneiras.</p>
+
+        <ul class="lead">
+          <li>
+            <b>center</b>: A classe alinha os itens flexíveis no centro do contêiner.
+          </li>
+          <li>
+            <b>flex-start</b>: A classe alinha os items flexíveis na parte superior do contêiner (padrão).
+          </li>
+          <li>
+            <b>flex-end</b> A classe alinha os items flexíveis na parte inferior do contêiner.
+          </li>
+          <li>
+            <b>stretch</b>: A classe estica os itens flexíveis para preencher o contêiner (padrão)
+          </li>
+          <li>
+            <b>baseline</b>: A classe alinha os itens flexíveis de acordo uma linha imaginária na base de todos os conteúdo dos itens. Ou seja, independentemente do conteúdo, nenhum conteúdo ficará abaixo da linha base, mesmo que os contêineres tenham tamanhos distintos.
+          </li>
+        </ul>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div21">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div21">
+          <code>&lt;div class="d-flex align-items-start flex-wrap bg-white text-white" style="height:150px;" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-items-start flex-wrap bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div22">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div22">
+          <code>&lt;div class="d-flex align-items-end flex-wrap bg-white text-white" style="height:150px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-items-end flex-wrap bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div23">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div23">
+          <code>&lt;div class="d-flex align-items-center flex-wrap bg-white text-white" style="height:150px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-items-center flex-wrap bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div24">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div24">
+          <code>&lt;div class="d-flex align-items-stretch flex-wrap bg-white text-white" style="height:150px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-items-stretch flex-wrap bg-white text-white" style="height:150px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div25">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div25">
+          <code>&lt;div class="d-flex align-items-baseline flex-wrap bg-white text-white" style="height:150px;" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark" style="font-size: 5px;"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info" style="font-size: 32px;"></code> item 4 item 4 item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex align-items-baseline flex-wrap bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark" style="font-size: 5px;"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning"> item 3</div>
+          <div class="p-2 bg-info" style="font-size: 32px;">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>.align-self-start | end | center | stretch | baseline : Alinhamento dos itens </h2>
+
+        <p class="lead">A classe é usada para alinhar um único item.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div26">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div26">
+          <code>&lt;div class="d-flex bg-white text-white" style="height:150px;" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning align-self-start"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning align-self-start"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div27">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div27">
+          <code>&lt;div class="d-flex bg-white text-white" style="height:150px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning align-self-end"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning align-self-end"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div28">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div28">
+          <code>&lt;div class="d-flex bg-white text-white" style="height:150px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning align-self-center"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning align-self-center"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div29">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div29">
+          <code>&lt;div class="d-flex  bg-white text-white" style="height:150px;"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning align-self-stretch"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info"></code> item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white" style="height:150px">
+          <div class="p-2 bg-dark"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning align-self-stretch"> item 3</div>
+          <div class="p-2 bg-info">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div30">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div30">
+          <code>&lt;div class="d-flex bg-white text-white" style="height:150px;" ></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark" style="font-size: 5px;"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning align-self-baseline"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info" style="font-size: 32px;"></code> item 4 item 4 item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white" style="height:150px;">
+          <div class="p-2 bg-dark" style="font-size: 5px;"> item 1</div>
+          <div class="p-2 bg-success"> item 2</div>
+          <div class="p-2 bg-warning align-self-baseline"> item 3</div>
+          <div class="p-2 bg-info" style="font-size: 32px;">item 4</div>
+          <div class="p-2 bg-primary">item 5</div>
+        </div> <br>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Order</h2>
+
+        <p class="lead">Podemos alterar a ordem em que os itens são exibidos, sem ter que alterar o código. bastando usar a classe <code>.order-*</code> onde o seu valor varia de 0 a 11.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div31">
+            Mostrar Código
+          </a>
+        </p>
+
+        <div class="collapse" id="div31">
+          <code>&lt;div class="d-flex bg-white text-white"></code> <br>
+          <code class="e">&lt;div class="p-2 bg-dark order-4"></code>item 1<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-success order-5"></code>item 2<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-warning order-1"></code> item 3<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-info order-3"></code> item 4 item 4 item 4<code>&lt;/div></code> <br>
+          <code class="e">&lt;div class="p-2 bg-primary order-2"></code> item 5<code>&lt;/div></code> <br>
+          <code>&lt;/div></code>
+        </div>
+
+        <div class="d-flex bg-white text-white">
+          <div class="p-2 bg-dark order-4"> item 1</div>
+          <div class="p-2 bg-success order-5"> item 2</div>
+          <div class="p-2 bg-warning order-1"> item 3</div>
+          <div class="p-2 bg-info order-3">item 4</div>
+          <div class="p-2 bg-primary order-2">item 5</div>
+        </div> <br>
+
+<br> <br> <br>
+
+        <p class="lead">Para ter acesso a mais detalhes sobre flex box acesse: <a href="https://www.w3schools.com/bootstrap4/bootstrap_flex.asp">FLEXBOX</a></p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

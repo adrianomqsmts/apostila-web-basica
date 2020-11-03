@@ -91,6 +91,10 @@ function criarMenu() {
                                 <a target="_parent" href="../bootstrap-pages/grids.html" class="dropdown-item">Basic Grids</a>
                                 <a target="_parent" href="../bootstrap-pages/formatacao-textos.html" class="dropdown-item">Formatação de Texto</a>
                                 <a target="_parent" href="../bootstrap-pages/cores.html" class="dropdown-item">Cores</a>
+                                <a target="_parent" href="../bootstrap-pages/bordas.html" class="dropdown-item">Bordas</a>
+                                <a target="_parent" href="../bootstrap-pages/espacamento.html" class="dropdown-item">Espacamento</a>
+                                <a target="_parent" href="../bootstrap-pages/display.html" class="dropdown-item">Display</a>
+                                <a target="_parent" href="../bootstrap-pages/sombras.html" class="dropdown-item">Sombras</a>
                                 <a target="_parent" href="../bootstrap-pages/tabelas.html" class="dropdown-item">Tabelas</a>
                                 <a target="_parent" href="../bootstrap-pages/imagens.html" class="dropdown-item">Imagens</a>
                                 <a target="_parent" href="../bootstrap-pages/jumbotron.html" class="dropdown-item">Jumbotron</a>
@@ -107,6 +111,7 @@ function criarMenu() {
                                 <a target="_parent" href="../bootstrap-pages/menus-navegacao.html" class="dropdown-item">Menus de Navegação</a>
                                 <a target="_parent" href="../bootstrap-pages/barras-navegacao.html" class="dropdown-item">Barras de Navegação</a>
                                 <a target="_parent" href="../bootstrap-pages/carrossel.html" class="dropdown-item">Carrossel</a>
+                                <a target="_parent" href="../bootstrap-pages/flex.html" class="dropdown-item">Flex Box</a>
                             </ul>
                         </div>
                     </li>
@@ -211,6 +216,10 @@ function criarMenuCSS() {
                                 <a target="_parent" href="../bootstrap-pages/grids.html" class="dropdown-item">Basic Grids</a>
                                 <a target="_parent" href="../bootstrap-pages/formatacao-textos.html" class="dropdown-item">Formatação de Texto</a>
                                 <a target="_parent" href="../bootstrap-pages/cores.html" class="dropdown-item">Cores</a>
+                                <a target="_parent" href="../bootstrap-pages/bordas.html" class="dropdown-item">Bordas</a>
+                                <a target="_parent" href="../bootstrap-pages/espacamento.html" class="dropdown-item">Espacamento</a>
+                                <a target="_parent" href="../bootstrap-pages/display.html" class="dropdown-item">Display</a>
+                                <a target="_parent" href="../bootstrap-pages/sombras.html" class="dropdown-item">Sombras</a>
                                 <a target="_parent" href="../bootstrap-pages/tabelas.html" class="dropdown-item">Tabelas</a>
                                 <a target="_parent" href="../bootstrap-pages/imagens.html" class="dropdown-item">Imagens</a>
                                 <a target="_parent" href="../bootstrap-pages/jumbotron.html" class="dropdown-item">Jumbotron</a>
@@ -227,6 +236,7 @@ function criarMenuCSS() {
                                 <a target="_parent" href="../bootstrap-pages/menus-navegacao.html" class="dropdown-item">Menus de Navegação</a>
                                 <a target="_parent" href="../bootstrap-pages/barras-navegacao.html" class="dropdown-item">Barras de Navegação</a>
                                 <a target="_parent" href="../bootstrap-pages/carrossel.html" class="dropdown-item">Carrossel</a>
+                                <a target="_parent" href="../bootstrap-pages/flex.html" class="dropdown-item">Flex Box</a>
                             </ul>
                         </div>
                     </li>
@@ -333,6 +343,10 @@ function criarMenuBT() {
                                 <a target="_parent" href="grids.html" class="dropdown-item">Basic Grids</a>
                                 <a target="_parent" href="formatacao-textos.html" class="dropdown-item">Formatação de Texto</a>
                                 <a target="_parent" href="cores.html" class="dropdown-item">Cores</a>
+                                <a target="_parent" href="bordas.html" class="dropdown-item">Bordas</a>
+                                <a target="_parent" href="espacamento.html" class="dropdown-item">Espacamento</a>
+                                <a target="_parent" href="display.html" class="dropdown-item">Display</a>
+                                <a target="_parent" href="sombras.html" class="dropdown-item">Sombras</a>
                                 <a target="_parent" href="tabelas.html" class="dropdown-item">Tabelas</a>
                                 <a target="_parent" href="imagens.html" class="dropdown-item">Imagens</a>
                                 <a target="_parent" href="jumbotron.html" class="dropdown-item">Jumbotron</a>
@@ -349,6 +363,7 @@ function criarMenuBT() {
                                 <a target="_parent" href="menus-navegacao.html" class="dropdown-item">Menus de Navegação</a>
                                 <a target="_parent" href="barras-navegacao.html" class="dropdown-item">Barras de Navegação</a>
                                 <a target="_parent" href="carrossel.html" class="dropdown-item">Carrossel</a>
+                                <a target="_parent" href="flex.html" class="dropdown-item">Flex Box</a>
                             </ul>
                         </div>
                     </li>
@@ -448,10 +463,14 @@ function criarMenuPrincipal() {
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
                             <ul class="overflow-auto m-0 p-0" style="height: 300px">
                                 <a target="_parent" href="bootstrap-pages/index-bootstrap.html" class="dropdown-item">Introdução</a>
-                                <a target="_parent" href="bootstrap-pages/container.html" class="dropdown-item">Containers</a>
+                                <a target="_parent" href="bootstrap-pages/container.html" class="dropdown-item">Containers</a>                                
                                 <a target="_parent" href="bootstrap-pages/grids.html" class="dropdown-item">Basic Grids</a>
                                 <a target="_parent" href="bootstrap-pages/formatacao-textos.html" class="dropdown-item">Formatação de Texto</a>
                                 <a target="_parent" href="bootstrap-pages/cores.html" class="dropdown-item">Cores</a>
+                                <a target="_parent" href="bootstrap-pages/bordas.html" class="dropdown-item">Bordas</a>
+                                <a target="_parent" href="bootstrap-pages/espacamento.html" class="dropdown-item">Espacamento</a>
+                                <a target="_parent" href="bootstrap-pages/display.html" class="dropdown-item">Display</a>
+                                <a target="_parent" href="bootstrap-pages/sombras.html" class="dropdown-item">Sombras</a>
                                 <a target="_parent" href="bootstrap-pages/tabelas.html" class="dropdown-item">Tabelas</a>
                                 <a target="_parent" href="bootstrap-pages/imagens.html" class="dropdown-item">Imagens</a>
                                 <a target="_parent" href="bootstrap-pages/jumbotron.html" class="dropdown-item">Jumbotron</a>
@@ -468,6 +487,7 @@ function criarMenuPrincipal() {
                                 <a target="_parent" href="bootstrap-pages/menus-navegacao.html" class="dropdown-item">Menus de Navegação</a>
                                 <a target="_parent" href="bootstrap-pages/barras-navegacao.html" class="dropdown-item">Barras de Navegação</a>
                                 <a target="_parent" href="bootstrap-pages/carrossel.html" class="dropdown-item">Carrossel</a>
+                                <a target="_parent" href="bootstrap-pages/flex.html" class="dropdown-item">Flex Box</a>                                
                             </ul>
                         </div>
                     </li>

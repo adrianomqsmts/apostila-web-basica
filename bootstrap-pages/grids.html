@@ -1,157 +1,247 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <title>Grid com Bootstrap 4</title>
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../main.js"></script>
 
-    
-    
-
-    <title>Bootstrap Apostila</title>
-<script src="../main.js"></script>
-
-         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/main.css">
 
     </head>
 
-<body class="bg-darkblue text-white">
 
-    <h1>contêiner</h1>
+    <body class="bg-darkblue text-white">
 
-    <p class="lead">A classe .container é usada para preencher os conteúdos dentro delas,
-        podendo ser de duas formas práticas:</p>
-    <ul>
-        <li>
-            A classe .container fornece um contêiner responsivo de largura fixa, enquanto
-        </li>
-        <li>
-            A classe .container-fluid fornece um contêiner de largura total,
-            que abrange toda a largura da janela de visualização
-        </li>
-    </ul>
+        <div id="menu"> </div>
 
-    <p class="lead">Abaixo demonstra como a largura (max-width) do elemento que contiver a
-        classe .container se comportará. </p>
+        <script>
+            criarMenuBT();
+        </script>
 
-    <table class="table text-light ">
-        <thead>
-            <tr>
-                <th></th>
-                <th>
-                    Extra small<br>
-                    &lt;576px
-                </th>
-                <th>
-                    Small<br>
-                    ≥576px
-                </th>
-                <th>
-                    Medium<br>
-                    ≥768px
-                </th>
-                <th>
-                    Large<br>
-                    ≥992px
-                </th>
-                <th>
-                    Extra large<br>
-                    ≥1200px
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>max-width</td>
-                <td>100%</td>
-                <td>540px</td>
-                <td>720px</td>
-                <td>960px</td>
-                <td>1140px</td>
-            </tr>
-        </tbody>
-    </table>
+        <section class="mt-5 mb-0 pt-5">
+            <div class="container">
 
-    <p class="lead">Por padrão, os contêineres têm 15px de preenchimento esquerdo e direito, sem preenchimento superior ou
-        inferior.</p>
-    <p class="lead">Abaixo podemos ver como a largura (max-width) de um elemento responsivo se comporta
-        de acordo com os valores de sm, md, lg e xl. </p>
+                <h1>Grid com Bootstrap 4</h1>
 
-    <table class="table text-light">
-        <thead>
-            <tr>
-                <th>Classe </th>
-                <th>Muito pequeno <br>
-                    &lt;576px
-                </th>
-                <th>Pequeno <br>
-                    ≥576px
-                </th>
-                <th>Médio <br>
-                    ≥768 px
-                </th>
-                <th>ampla <br>
-                    ≥992 px
-                </th>
-                <th>Extra grande <br>
-                    ≥1200px
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>container-sm</td>
-                <td>100%</td>
-                <td>540px</td>
-                <td>720px</td>
-                <td>960px</td>
-                <td>1140px</td>
-            </tr>
-            <tr>
-                <td>.container-md</td>
-                <td>100%</td>
-                <td>100%</td>
-                <td>720px</td>
-                <td>960px</td>
-                <td>1140px</td>
-            </tr>
-            <tr>
-                <td>.container-lg</td>
-                <td>100%</td>
-                <td>100%</td>
-                <td>100%</td>
-                <td>960px</td>
-                <td>1140px</td>
-            </tr>
-            <tr>
-                <td>.container-xl</td>
-                <td>100%</td>
-                <td>100%</td>
-                <td>100%</td>
-                <td>100%</td>
-                <td>1140px </td>
-            </tr>
-        </tbody>
-    </table>
-    </section>
+                <p class="lead">Gris é uma forma de estruturar a sua página em colunas que são construídas internamente com a definição de caixas flexíveis. Basicamente, uma página contém por definição 12 colunas que podem ser preenchidas com algum elemento.</p>
 
-    <footer>
-        <object type="text/html" class="rodape" data="rodape.html"></object>
-    </footer>
+                <p class="lead">Toda a estrutura de gride começa com um container com a classe <code>.row</code>, onde cada elemento dentro de uma linha deve especificar a classe <code>.col</code> e suas variações: </p>
+
+                <ul class="lead">
+                    <li><code>.col</code>: Para telas menores que 576 px</li>
+                    <li><code>.col-sm</code>: Para telas maiores que 576 px</li>
+                    <li><code>.col-md</code>: Para telas maiores que 768 px</li>
+                    <li><code>.col-lg</code>: Para telas maiores que 992 px</li>
+                    <li><code>.col-xl</code>: Para telas maiores que 1200 px</li>
+                </ul>
+
+                <p class="lead">Abaixo podemos ver o código básico de uma estrutura com colunas. Por padrão os elementos são ajustados para preencher as 12 colunas. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+                        Ver código
+                    </a>
+                </p>
+                <div class="collapse" id="div1">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 2 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 3 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 4 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 5 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 6 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 7 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 8 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 9 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 10 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 11 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 12 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div>
+
+                <div class="row">
+                    <div class="col border">Coluna 1</div>
+                    <div class="col border">Coluna 2</div>
+                    <div class="col border">Coluna 3</div>
+                    <div class="col border">Coluna 4</div>
+                    <div class="col border">Coluna 5</div>
+                    <div class="col border">Coluna 6</div>
+                    <div class="col border">Coluna 7</div>
+                    <div class="col border">Coluna 8</div>
+                    <div class="col border">Coluna 9</div>
+                    <div class="col border">Coluna 10</div>
+                    <div class="col border">Coluna 11</div>
+                    <div class="col border">Coluna 12</div>
+                </div> <br>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+                        Ver código
+                    </a>
+                </p>
+                <div class="collapse" id="div2">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 2 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 3 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 4 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 5 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 6 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div> <br>
+
+                <div class="row">
+                    <div class="col border">Coluna 1</div>
+                    <div class="col border">Coluna 2</div>
+                    <div class="col border">Coluna 3</div>
+                    <div class="col border">Coluna 4</div>
+                    <div class="col border">Coluna 5</div>
+                    <div class="col border">Coluna 6</div>
+                </div> <br>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+                        Ver código
+                    </a>
+                </p>
+                <div class="collapse" id="div3">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 2 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div>
+
+                <div class="row">
+                    <div class="col border">Coluna 1</div>
+                    <div class="col border">Coluna 2</div>
+                </div> <br>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+                        Ver código
+                    </a>
+                </p>
+                <div class="collapse" id="div4">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div>
+
+                <div class="row">
+                    <div class="col border">Coluna 1</div>
+                </div>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Colunas Responsivas</h2>
+
+                <p class="lead">Como fora usado a classe <code>.col</code> nos exemplos acima, então em todas as telas as colunas aparecerão. Caso queiramos que as colunas quebrem e fiquem na vertical precisamos especificar em qual tamanho da janela de visualização queremos que isso ocorra. Experimente reduzir o tamanho da janela de navegação.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+                        Ver código
+                    </a>
+                </p>
+                <div class="collapse" id="div5">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col-md border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md border"></code>Coluna 2 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md border"></code>Coluna 3 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md border"></code>Coluna 4 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md border"></code>Coluna 5 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md border"></code>Coluna 6 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div> <br>
+
+                <div class="row">
+                    <div class="col-md border">Coluna 1</div>
+                    <div class="col-md border">Coluna 2</div>
+                    <div class="col-md border">Coluna 3</div>
+                    <div class="col-md border">Coluna 4</div>
+                    <div class="col-md border">Coluna 5</div>
+                    <div class="col-md border">Coluna 6</div>
+                </div> <br>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Definindo o tamanho de cada coluna</h2>
+
+                <p class="lead">Podemos ainda definir quantas colunas um elemento pode preencher individualmente, através das classes <code>.col-*-1</code> até <code>.col-*-12</code>, onde podemos especificar quando ocorre ou não a verticalização das colunas. Veja no exemplo abaixo e experimente reduzir o tamanho da janela.</p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+                        Ver código
+                    </a>
+                </p>
+
+                <div class="collapse" id="div6">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col-md-4 border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md-2 border"></code>Coluna 2 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md-3 border"></code>Coluna 3 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col-md-3 border"></code>Coluna 4 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div> <br>
+
+                <div class="row">
+                    <div class="col-md-4 border">Coluna 1</div>
+                    <div class="col-md-2 border">Coluna 2</div>
+                    <div class="col-md-3 border">Coluna 3</div>
+                    <div class="col-md-3 border">Coluna 4</div>
+                </div> <br>
+
+                <p class="lead">Podemos definir de forma mais precisa o nosso layout, como definindo o tamanho para cada tela individualmente permitindo um maior controle do layout ao usar várias classes <code>.col-*-*</code> simultâneamente. Experimente reduzir o tamanho da tela. </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+                        Ver código
+                    </a>
+                </p>
+
+                <div class="collapse" id="div7">
+                    <code>&lt;div class="row"></code><br>
+                    <code class="e">&lt;div class="col col-sm-4 col-md-6 col-lg-8 col-xl-10 border"></code>Coluna 1 <code>&lt;/div></code><br>
+                    <code class="e">&lt;div class="col col-sm-8 col-md-6 col-lg-4 col-xl-2 border"></code>Coluna 2 <code>&lt;/div></code><br>
+                    <code class="e">&lt;/div></code>
+                </div> <br>
+
+                <div class="row">
+                    <div class="col col-sm-4 col-md-6 col-lg-8 col-xl-10 border">Coluna 1</div>
+                    <div class="col col-sm-8 col-md-6 col-lg-4 col-xl-2 border">Coluna 2</div>
+                </div> <br>
+
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <p class="lead">Para ver mais detalhes sobre Grids e mais possibilidades de layout acesse : <a href="https://www.w3schools.com/bootstrap4/bootstrap_grid_examples.asp">Exemplos de Grids</a> </p>
 
 
-</body>
+
+
+            </div>
+        </section>
+
+        <div id="rodape"></div>
+        <script>
+            rodape();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 
 </html>

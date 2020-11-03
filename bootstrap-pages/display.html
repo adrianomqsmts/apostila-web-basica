@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Display com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+    <section class="mt-5 mb-0 pt-5">
+      <div class="container">
+
+        <h1>Display com Bootstrap 4</h1>
+
+        <p>Para transformar um elemento em um elemento de bloco precisamos especificar a classe <code>d-block</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse pb-5" id="div1">
+          <code>&lt;div class="bg-info text-dark"> </code> <br>
+          <code class="e">&lt;span class="d-block border p-2 m-1"></code>.d-block<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-block border p-2 m-1"></code>.d-block<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-block border p-2 m-1"></code>.d-block<code>&lt;/span> </code> <br>
+          <code>&lt;/div></code> <br>
+        </div>
+
+        <div class="bg-info text-dark">
+          <span class="d-block border p-2 m-1">.d-block </span>
+          <span class="d-block border p-2 m-1">.d-block </span>
+          <span class="d-block border p-2 m-1">.d-block</span>
+        </div> <br>
+
+        <p>Para transformar um elemento em um elemento de linha precisamos especificar a classe <code>d-inline</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+            Ver código
+          </a>
+        </p>
+        <div class="collapse pb-5" id="div2">
+          <code>&lt;div class="bg-info text-dark"> </code> <br>
+          <code class="e">&lt;span class="d-inline border p-2 m-1"></code>.d-inline<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-inline border p-2 m-1"></code>.d-inline<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-inline border p-2 m-1"></code>.d-inline<code>&lt;/span> </code> <br>
+          <code>&lt;/div></code> <br>
+        </div>
+
+        <div class="bg-info text-dark">
+          <span class="d-inline border p-2 m-1">.d-inline </span>
+          <span class="d-inline border p-2 m-1">.d-inline </span>
+          <span class="d-inline border p-2 m-1">.d-inline </span>
+        </div> <br>
+
+        <p>Para transformar um elemento em um elemento de bloco de linha precisamos especificar a classe <code>d-inline-block</code></p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Ver código
+          </a>
+        </p>
+        <div class="collapse pb-5" id="div3">
+          <code>&lt;div class="bg-info text-dark"> </code> <br>
+          <code class="e">&lt;span class="d-inline-block border p-2 m-1"></code>.d-inline-block<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-inline-block border p-2 m-1"></code>.d-inline-block<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-inline-block border p-2 m-1"></code>.d-inline-block<code>&lt;/span> </code> <br>
+          <code>&lt;/div></code> <br>
+        </div>
+
+        <div class="bg-info text-dark">
+          <span class="d-inline-block border p-2 m-1">.d-inline-block </span>
+          <span class="d-inline-block border p-2 m-1">.d-inline-block </span>
+          <span class="d-inline-block border p-2 m-1">.d-inline-block </span>
+        </div> <br>
+
+        <p class="lead">Para ocultar um elemento precisamos especificar a classe <code>d-none</code></p>
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Ver código
+          </a>
+        </p>
+        <div class="collapse pb-5" id="div3">
+          <code>&lt;div class="bg-info text-dark"> </code> <br>
+          <code class="e">&lt;span class="d-none border p-2 m-1"></code>.d-none<code>&lt;/span></code> <br>
+          <code>&lt;/div></code> <br>
+        </div>
+
+        <div class="bg-info text-dark">
+          <span class="d-none border p-2 m-1">.d-none </span>
+        </div> <br>
+
+        <h2>Display Responsivos</h2>
+
+        <p class="lead">Podemos usar os valores sm, md, lg e xl em combinação com as classes vitas acima, para dependendo do tamanho da janela de navegação dos elementos se comportem de forma esperada. Reduza o tamanho da janela de navegação para ver o efeito. </p>
+
+        <div class="collapse pb-5" id="div3">
+          <code>&lt;div class="bg-info text-dark"> </code> <br>
+          <code class="e">&lt;span class="d-md-inline-block d-sm-none border p-2 m-1"></code>.d-md-inline-block d-sm-none<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-md-inline-block d-block border p-2 m-1"></code>.d-md-inline-block d-block<code>&lt;/span></code> <br>
+          <code class="e">&lt;span class="d-xl-inline-block d-block border p-2 m-1"></code>.d-md-inline-block d-block<code>&lt;/span> </code> <br>
+          <code>&lt;/div></code> <br>
+        </div>
+
+        <div class="bg-info text-dark">
+          <span class="d-md-inline-block d-none border p-2 m-1">.d-md-inline-block d-none </span>
+          <span class="d-md-inline-block d-block border p-2 m-1">.d-md-inline-block d-block </span>
+          <span class="d-xl-inline-block d-block border p-2 m-1">.d-xl-inline-block d-block </span>
+        </div> <br>
+
+
+      </div>
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>

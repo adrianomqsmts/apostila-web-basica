@@ -31,43 +31,43 @@
 
                 <h1>contêiner</h1>
 
-                <p class="lead">A classe .container é usada para preencher os conteúdos dentro delas,
-                    podendo ser de duas formas práticas:</p>
-                <ul>
+                <p class="lead">Os contêineres são usada para preencher os conteúdos dentro delas, podendo ser de duas formas práticas:</p>
+                <ul class="lead">
                     <li>
                         A classe .container fornece um contêiner responsivo de largura fixa, enquanto
                     </li>
                     <li>
-                        A classe .container-fluid fornece um contêiner de largura total,
-                        que abrange toda a largura da janela de visualização
+                        A classe .container-fluid fornece um contêiner de largura total, que abrange toda a largura da janela de visualização
                     </li>
                 </ul>
+                <div class="row">
+                    <div class="col-6" style="height: 100px; border: solid;">
+                        <div class="container bg-info" style="height: 100%;">.container</div>
+                    </div>
+                    <div class="col-6 p-0 m-0" style="height: 100px; border: solid;">
+                        <div class=" bg-info" style="height: 100%; width: 100%;">.container-fluid</div>
+                    </div>
+                </div>
 
-                <p class="lead">Abaixo demonstra como a largura (max-width) do elemento que contiver a
-                    classe .container se comportará. </p>
+                <p class="lead">Abaixo demonstra como a largura (max-width) do elemento que contiver a classe .container se comportará. </p>
 
-                <table class="table text-light ">
+                <table class="table text-light table-sm ">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>
-                                Extra small<br>
+                            <th>Classe </th>
+                            <th>Muito pequeno <br>
                                 &lt;576px
                             </th>
-                            <th>
-                                Small<br>
+                            <th>Pequeno <br>
                                 ≥576px
                             </th>
-                            <th>
-                                Medium<br>
-                                ≥768px
+                            <th>Médio <br>
+                                ≥768 px
                             </th>
-                            <th>
-                                Large<br>
-                                ≥992px
+                            <th>ampla <br>
+                                ≥992 px
                             </th>
-                            <th>
-                                Extra large<br>
+                            <th>Extra grande <br>
                                 ≥1200px
                             </th>
                         </tr>
@@ -84,12 +84,17 @@
                     </tbody>
                 </table>
 
-                <p class="lead">Por padrão, os contêineres têm 15px de preenchimento esquerdo e direito, sem preenchimento superior ou
-                    inferior.</p>
-                <p class="lead">Abaixo podemos ver como a largura (max-width) de um elemento responsivo se comporta
-                    de acordo com os valores de sm, md, lg e xl. </p>
+                <p class="lead">Por padrão, os contêineres têm 15px de preenchimento esquerdo e direito, sem preenchimento superior ou inferior.</p>
 
-                <table class="table text-light">
+                <br>
+                <hr style="border: 1px solid pink;">
+                <br>
+
+                <h2>Containers Responsivos</h2>
+
+                <p class="lead">Abaixo podemos ver como a largura (max-width) de um elemento responsivo se comporta de acordo com os valores de sm, md, lg e xl. </p>
+
+                <table class="table text-light table-sm">
                     <thead>
                         <tr>
                             <th>Classe </th>
@@ -145,6 +150,35 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <p class="lead">Muitas classes em bootstrap possuem variações com as palavras <code>sm</code>, <code>md</code>, <code>lg</code> e <code>xl</code>, que são usadas para especificar em qual tamanho mínimo de tela o elemento deve se comportar ou não com aquela classe. </p>
+
+                <p class="lead">Como exemplo, iremos avançar um pouco e usaremos a classe <code>.d-none</code> e suas variações <code>.d-sm-none .d-md-none .d-lg-none .d-xl-none</code> para ocultar itens. Por exemplo, a classe <code>.d-sm-none</code> oculta o item para telas maiores que 576px enquanto a classe <code>.d-xl-none</code> oculta o item para telas maiores que 1140px </p>
+
+                <p class="text-center">
+                    <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+                        Ver código
+                    </a>
+                </p>
+                <div class="collapse" id="div1">
+                    <code>&lt;div class="container border p-0"></code> <br>
+                    <code>&lt;div class="d-sm-none m-sm-0 border"></code>.d-sm-none<code>&lt;/div></code><br>
+                    <code>&lt;div class="d-md-none mt-3 border"></code>.d-md<code>&lt;/div></code><br>
+                    <code>&lt;div class="d-lg-none mt-3 border"></code>.d-lg<code>&lt;/div></code><br>
+                    <code>&lt;div class="d-xl-none mt-3 border"></code>.d-xl<code>&lt;/div></code><br>
+                    <code>&lt;/div></code>
+                </div>
+
+                <div class="container border p-0">
+                    <div class="d-sm-none m-sm-0 border">.d-sm-none</div>
+                    <div class="d-md-none mt-3 border">.d-md-none</div>
+                    <div class="d-lg-none mt-3 border">.d-lg-none</div>
+                    <div class="d-xl-none mt-3 border">.d-xl-none</div>
+                </div>
+
+            <p class="lead">REDUZA O TAMANHO DA JANELA E VEJA OS ITENS SURGIREM</p>
+
+
 
 
             </div>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Padding e Margin com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+    <section class="mt-5 mb-0 pt-5">
+      <div class="container">
+
+        <h1>Espaçamentos com Bootstrap 4</h1>
+
+        <h2>Padding</h2>
+
+        <p>Para inserir um espaçamento interno em um elemento html precisamos especificar a classe <code>p-1</code> que vai até o valor <code>p-5</code> além do valor <code>.p-auto</code>. Para remover espaçamento interno usamos a classe <code>p-0</code> ou suas variações <code>p-*-0</code></p>
+
+        <p class="text-center pb-5">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse pb-5" id="div3">
+          <code>&lt;span class="border p-1"></code>.p-1<code>&lt;/span></code> <br>
+          <code>&lt;span class="border p-2"></code>.p-2<code>&lt;/span></code> <br>
+          <code>&lt;span class="border p-3"></code>.p-3<code>&lt;/span></code> <br>
+          <code>&lt;span class="border p-4"></code>.p-4<code>&lt;/span></code> <br>
+          <code>&lt;span class="border p-5"></code>.p-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="border p-auto"></code>.p-auto<code>&lt;/span></code> <br>
+        </div>
+
+        <span class="border p-1">.p-1</span>
+        <span class="border p-2">.p-2</span>
+        <span class="border p-3">.p-3</span>
+        <span class="border p-4">.p-4</span>
+        <span class="border p-5">.p-5</span>
+        <span class="border p-auto">.p-auto</span>
+
+        <p class="lead pt-5">Podemos ainda permitir um espaçamento interno automático com a classe <code>p-auto</code> ou responsivo com as classes <code>p-sm-*</code>,<code>p-md-*</code>,<code>p-lg-*</code> e <code>p-xl-*</code>. Experimente reduzir o tamanho da tela</p>
+
+        <p class="text-center pb-5">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse pb-5" id="div4">
+          <code>&lt;span class="d-inline-block border p-1 p-sm-5"></code>.p-1 p-sm-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border p-2 p-sm-3 p-md-5 p-lg-1"></code>.p-2 p-sm-3 p-md-5 p-lg-1<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border p-xl-5"></code>.p-xl-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border p-4 p-sm-2"></code>.p-4 p-sm-2<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border p-sm-2"></code>.p-sm-2<code>&lt;/span></code> <br>
+        </div>
+
+        <div class="d-inline-block border p-1 p-sm-5">.p-1 p-sm-5</div>
+        <div class="d-inline-block border p-2 p-sm-3 p-md-5 p-lg-1">.p-2 p-sm-3 p-md-5 p-lg-1</div>
+        <div class="d-inline-block border p-xl-5">.p-xl-5</div>
+        <div class="d-inline-block border p-4 p-sm-2">.p-4 p-sm-2</div>
+        <div class="d-inline-block border p-sm-2">.p-sm-2</div>
+
+        <p class="lead pt-5">Podemos também especificar em qual direção queremos aplicar o espaçamento. Podendo ser um espaçamento interno na parte superior com <code>pt-*-*</code>, inferior com <code>pb-*-*</code>, na direita com <code>pr-*-*</code> ou então na esquerda com <code>pl-*-*</code>.</p>
+
+        <p class="text-center pb-5">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse pb-5" id="div5">
+          <code>&lt;span class="d-inline-block border pt-5"></code>.pt-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border pb-5"></code>.pb-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border pl-5"></code>.pl-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border pr-5"></code>.pr-5<code>&lt;/span></code> <br>
+          <code>&lt;span class="d-inline-block border pt-sm-5 pb-md-5 pl-lg-5 pr-xl-5"></code>.pt-sm-5 pb-md-5 pl-lg-5 pr-xl-5<code>&lt;/span></code> <br>
+        </div>
+
+        <div class="d-inline-block border pt-5">.pt-5</div>
+        <div class="d-inline-block border pb-5">.pb-5</div>
+        <div class="d-inline-block border pl-5">.pl-5</div>
+        <div class="d-inline-block border pr-5">.pr-5</div> <br> <br>
+        <div class="d-inline-block border pt-sm-5 pb-md-5 pl-lg-5 pr-xl-5
+pt-sm-5 pb-md-5 pl-lg-5 pr-xl-5">.pt-sm-5 pb-md-5 pl-lg-5 pr-xl-5
+          pt-sm-5 pb-md-5 pl-lg-5 pr-xl-5</div>
+
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Margins</h2>
+
+        <p class="lead">Todas as variações que fizemos usando o padding podemos usar usando o margin com as classes <code>m-*-*</code> para criar um espaçamento externo ao elemento. Para remover espaçamento externo usamos a classe <code>m-*-0</code></p>
+
+        <div class="border d-inline-block">
+          <span class="border d-inline-block m-1">.m-1</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block m-2">.m-2</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block m-3">.m-3</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block m-4">.m-4</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block m-5">.m-5</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block m-auto">.m-auto</span>
+        </div>
+        <br>
+
+        <div class="border d-inline-block">
+          <span class="border d-inline-block mt-5">.mt-5</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block mb-5">.mb-5</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block ml-5">.ml-5</span>
+        </div>
+        <div class="border d-inline-block">
+          <span class="border d-inline-block mr-5">.mr-5</span>
+        </div>
+        <br> <br>
+
+        <div class="border d-inline-block">
+          <div class="d-inline-block border mt-sm-5 mb-md-5 ml-lg-5 mr-xl-5
+mt-sm-5 mb-md-5 ml-lg-5 mr-xl-5">.mt-sm-5 mb-md-5 ml-lg-5 mr-xl-5
+            mt-sm-5 mb-md-5 ml-lg-5 mr-xl-5</div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>

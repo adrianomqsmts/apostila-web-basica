@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Bordas com Bootstrap 4</title>
+
+    <script src="../main.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+  </head>
+
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuBT();
+    </script>
+
+    <section class="mt-5 mb-0 pt-5">
+      <div class="container">
+
+        <h1>Bordas com Bootstrap 4</h1>
+
+        <p class="lead">Para definir uma borda padrão com os valores 1px solid white precisamos apenas inserir no elemento html a classe <code>.border</code>. Para facilitar a visualização, foi omitido dos trechos de código as classes <code>.d-inline-block p-5 e m-1</code> do elemento <code>&lt;span></code> abaixo que os permitem ficar quadrados e um ao lado do outro, para ver como funciona essas classes acesse <a href="display.html">display</a>
+         e <a href="espacamento.html">espaçamentos</a>. </p>
+
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse" id="div1">
+          <code>&lt;span class="border">&lt;/span></code>
+        </div>
+
+        <span class="d-inline-block p-5 m-1 border"></span>
+
+
+        <p>Podemos definir Em quam parte do elemento a borda fique ausente através das classes <code>.border-bottom-0</code>, <code>.border-top-0</code>, <code>.border-left-0</code> e <code>.border-right-0</code>, da mesma forma que podemos definir qual lado queremos definir um borda através das classes <code>.border-bottom</code>, <code>.border-top</code>, <code>.border-left</code> e <code>.border-right</code>.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse" id="div2">
+          <code>&lt;span class="border border-bottom-0"></code>.border-bottom-0<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-top-0"></code>.border-top-0<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-left-0"></code>.border-left-0<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-right-0"></code>.borde-right-0<code>&lt;/span></code> <br>
+
+          <code>&lt;span class="border-bottom"></code>.border-bottom<code>&lt;/span></code> <br>
+          <code>&lt;span class="border-top"></code>.border-top<code>&lt;/span></code> <br>
+          <code>&lt;span class="border-right"></code>.border-right<code>&lt;/span></code> <br>
+          <code>&lt;span class="border-left"></code>.border-left<code>&lt;/span></code> <br>
+
+        </div>
+
+        <span class="d-md-inline-block d-block p-5 m-3 border border-bottom-0">.border-bottom-0</span>
+        <span class="d-md-inline-block d-block p-5 m-3 border border-top-0">.border-top-0</span>
+        <span class="d-md-inline-block d-block p-5 m-3 border border-left-0">.border-left-0</span>
+        <span class="d-md-inline-block d-block p-5 m-3 border border-right-0">.border-right-0</span>
+
+        <br> <br> <br>
+
+        <span class="d-md-inline-block d-block p-5 m-3 border-bottom">.border-bottom</span>
+        <span class="d-md-inline-block d-block p-5 m-3 border-top">.border-top</span>
+        <span class="d-md-inline-block d-block p-5 m-3 border-right">.border-right</span>
+        <span class="d-md-inline-block d-block p-5 m-3 border-left">.border-left</span>
+
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Bordas coloridas</h2>
+
+        <p class="lead">Podemos colorir as bordas acrescentando as classes <code>.border-primary</code>, <code>.border-secondary</code>, <code>.border-success</code>, <code>.border-danger</code>, <code>.border-warning</code>, <code>.border-info</code>, <code>.border-light</code>, <code>.border-dark</code> ou <code>.border-white</code>. Lembrando que deve-se declarar sempre a classe <code>.border</code> ou as suas variações vistas acima.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+            Ver código
+          </a>
+        </p>
+
+        <div class="collapse" id="div3">
+          <code>&lt;span class="border border-primary"></code>.border-primary<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-secondary"></code>.border-secondary<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-success"></code>.border-success<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-danger"></code>.border-danger<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-warning"></code>.border-warning<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-info"></code>.border-info<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-light"></code>.border-light<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-dark"></code>.border-dark<code>&lt;/span></code> <br>
+          <code>&lt;span class="border border-white"></code>.border-white<code>&lt;/span></code> <br>
+        </div>
+
+        <span class="d-md-inline-block d-block p-5 m-1 border border-primary">.border-primary</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-secondary">.border-secondary</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-success">.border-success</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-danger">.border-danger</span> <br>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-warning">.border-warning</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-info">.border-info</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-light">.border-light</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-dark">.border-dark</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border border-white">.border-white</span>
+
+        <br>
+        <hr style="border: 1px solid pink;">
+        <br>
+
+        <h2>Bordas Arredondadas</h2>
+
+        <p class="lead">Podemos inserir arredondamento das bordas com as classes <code>rounded</code> e também podemos especificar onde arredondar através das variações <code>.rounded-bottom</code>, <code>.rounded-top</code>, <code>.rounded-left</code> e <code>.rounded-right</code>. Além disso podemos arredondar o elemento html como um circulo através da classe <code>.rounded-circle</code>.</p>
+
+        <p class="lead">Podemos ainda especificar em qual tamanho da janela de visualização teremos ou não arredondamento através dos tamanhos das telas com os valores sm, md e lg. Experimente reduzir o tamanho da janela do navegador.</p>
+
+        <p class="text-center">
+          <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+            Ver código
+          </a>
+        </p>
+        <div class="collapse" id="div4">
+          <code>&lt;span class="border rounded"></code>.rounder<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounded-bottom"></code>.rounded-bottom<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounded-left"></code>.rounded-left<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounder-right"></code>.rounder-right<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounded-circle"></code>.rounded-circle<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounded-sm"></code>.rounded-sm<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounded-md"></code> rounded-md<code>&lt;/span></code> <br>
+          <code>&lt;span class="border rounded-lg"></code>.rounded-lg<code>&lt;/span></code> <br>
+        </div>
+
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded">.rounded</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded-bottom">.rounded-bottom</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded-left">.rounded-left</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounder-right">.rounder-right</span> <br>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded-circle">.rounded-circle</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded-sm">.rounded-sm</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded-md">.rounded-md</span>
+        <span class="d-md-inline-block d-block p-5 m-1 border rounded-lgk">.rounded-lg</span>
+
+      </div>
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>
