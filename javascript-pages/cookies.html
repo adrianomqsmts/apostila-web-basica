@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Cookies em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Cookies em JavaScript</h1>
+
+      <p class="lead">Quando um servidor web envia uma página para um navegador, e posteriormente a conexão é encerrada, então o servidor esquecerá tudo sobre o usuário. Muitas vezes podemos querer guardar informações so usuário, mesmo que ele saia da página, para permitir uma maior possibilidade de interação. </p>
+
+      <p class="lead">Cookies são dados armazenados em pequenos arquivos de texto em seu computador (possuem um tamanho máximo de 4KB). Podendo armazenar o nome do usuário para que na próximo interação com o site, a página então se lembrará do done do seu usuário. Os dados de um cookie é armazena em um par <code>"variável = valor; variável2 = valor2; ...; "</code>, e para criá-lo ou acessá-lo basta usar o comando. Importante ressaltar que os cookies do seu navegador precisam estar ativados.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id=<span class="t">"cookie"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Fulano de Tal"</span></span>;<br>
+        <span class="e">document.getElementById(<span class="t">"cookie"</span>).innerHTML = document.cookie</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="cookie"></div>
+      <script>
+        document.cookie = "usuario=Fulano de Tal"
+        document.getElementById("cookie").innerHTML = document.cookie;
+      </script> <br> <br>
+
+      <p class="lead">Por padrão, o tempo de vida de um cookie é a sessão atual do navegador, o que significa que ele é perdido quando o usuário sai do navegador. Para que um cookie persista além da sessão atual do navegador, você precisará especificar seu tempo de vida (em segundos) com um atributo <code>max-age</code>. Este atributo determina por quanto tempo um cookie pode permanecer no sistema do usuário antes de ser excluído, por exemplo, o cookie seguinte viverá por 30 dias. </p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Fulano de Tal; max-age =" + (30*24*60*60)</span></span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <p class="lead">O atributo <code>expires</code> leva uma data exata (no formato GMT / UTC) quando o cookie deve expirar, em vez de um deslocamento em segundos. </p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Fulano de Tal; expires=Sun, 25 Dec 2021 13:00:00 UTC"</span></span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <p class="lead"> Por padrão, um cookie está disponível para todas as páginas da web no mesmo diretório ou qualquer subdiretório desse diretório. No entanto, se você especificar um <code>path</code> o cookie estará disponível para todas as páginas da web no caminho especificado e para todas as páginas da web em todos os subdiretórios desse caminho. </p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Fulano de Tal; expires=Sun, 25 Dec 2021 13:00:00 UTC; path=/"</span></span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <p class="lead"> Você pode usar o atributo <code>domain</code> se quiser que um cookie esteja disponível para os subdomínios. Por padrão, os cookies estão disponíveis apenas para as páginas do domínio em que foram configurados. </p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Fulano de Tal; domain = exemplo.com"</span></span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <p class="lead"> Se o atributo <code>secure</code> for especificado, o cookie será transmitido apenas por uma conexão segura como HTTPS. </p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Fulano de Tal; secure"</span></span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>Alterando o valor de um cookie</h2>
+
+      <p class="lead">Para alterar um cookie basta reescrevé-los com os novos dados.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id=<span class="t">"alterando"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=Ciclano da Silva"</span></span>;<br>
+        <span class="e">document.getElementById(<span class="t">"alterando"</span>).innerHTML = document.cookie</span>;<br>
+        &lt;/script> <br>
+      </div> <br> <br>
+
+      <div id="alterando"></div>
+      <script>
+        document.cookie = "usuario=Ciclano da Silva;"
+        document.getElementById("alterando").innerHTML = document.cookie;
+      </script>
+
+      <hr class="space">
+
+      <h2>Apagando um cookie</h2>
+
+      <p class="lead">Você não precisa especificar um valor de cookie ao excluí-lo. Basta definir o parâmetro expires para uma data passada. Você deve definir o caminho do cookie para garantir que exclua o cookie correto. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id=<span class="t">"deletando"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.cookie = <span class="t">"usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;"</span></span>;<br>
+        <span class="e">document.getElementById(<span class="t">"deletando"</span>).innerHTML = document.cookie</span>;<br>
+        &lt;/script> <br>
+      </div> <br> <br>
+
+      <div id="deletando"></div>
+      <script>
+        document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;"
+        document.getElementById("deletando").innerHTML = document.cookie;
+      </script>
+
+      <hr class="space">
+
+      <h2>Função criadora de cookies</h2>
+
+      <p class="lead">Esta função pode ser acessada em <a href="https://www.w3schools.com/js/js_cookies.asp">JavaScript Cookies</a>. Basicamente a função recebe os valores de entrada como o nome da chave o seu valor e o tempo de duração de um cookie. Se você entrar com um novo par chave-valor, o cookie será acrescido, quanto entrar com a mesma chave, mas com valor diferente, o cookie será atualizado. A função <code>encodeURIComponent()</code> codifica o valor para tartar valores de ponto e vírgula, vírgula e espaço em branco, impedindo que cause erros.</p>
+
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e"><span class="f">function </span>setCookie(chave, valor, dias) {</span><br>
+        <span class="e2">var d = new Date();</span><br>
+        <span class="e2">s.setTime(d.getTime() + (dias*24*60*60*1000));</span><br>
+        <span class="e2">valor = encodeURIComponent(valor)</span><br>
+        <span class="e2">var expiries = <span class="t">"expiries="</span> + d.toUTCString();</span> <br>
+        <span class="e2"> document.cookie = chave + <span class="t">"="</span> + valor + <span class="t">";"</span> + expires + <span class="t">";path=/"</span>;</span> <br>
+        <span class="e">}</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>Função pegadora de cookies</h2>
+
+      <p class="lead">Muitas vezes iremos querer pegar um algum valor específico guardado dentro do cookie. Para isso iremos criar uma função que irá receber como parâmetro a chave da qual queremos ter o seu valor retornado. é um pouco mais trabalhoso, pois a função <code> document.cookie</code> retorna uma string única com todos os pares chave-valor</p>
+      <p class="lead">A função resumidamente, quebra toda a string do cookie a separando pelos caracteres de ponto-e-vírgula <code>;</code>, assim a função <code>split(";")</code> irá retornar um array de string, onde cada posição terá um par <code>chave=valor</code>. Novamente precisamos quebrar essa string pelo caractere de igual <code>=</code> e então teremos novamente um novo array com duas posições, a primeira com a chave e a segunda posição com o valor da chave. Em seguida basta encontrar a chave cujo a sintaxe seja a mesma do parâmetro e retorna o seu valor decodificado. Caso não encontre nada, retorna valor nulo.</p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e"><span class="f">function </span>getCookie(chave) {</span><br>
+        <span class="e2">var chavesValores = document.cookie.split(<span class="t">";"</span>);</span><br>
+        <span class="e2">for(var i = 0; i &lt; chavesValores.length; i++){</span><br>
+        <span class="e3">var parChaveValor = chavesValores[i].split(<span class="t">"="</span>);</span><br>
+        <span class="e3">if(chave == parChaveValor[0].trim()){</span> <br>
+        <span class="e4">return decodeURIComponent(parChaveValor[1]);</span> <br>
+        <span class="e3">}</span> <br>
+        <span class="e2">}</span> <br>
+        <span class="e2">return null;</span> <br>
+        <span class="e">}</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>Verificando a existência de um cookie</h2>
+
+      <p class="lead">Para verificar a existência de um cookie é muito simples, basta buscar um valor com a função <code>getCookie</code>, se ela retornar nulo, então não existe um cookie e podemos criar um novo, enquanto se um valor for retornado, existe um valor.</p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e"><span class="f">function </span>getCookie(chave) {</span><br>
+        <span class="e2">var valor = getCookie(<span class="t">"usuario"</span>);</span><br>
+        <span class="e2">if(valor != "" && valor != null){</span><br>
+        <span class="e3">alert( <span class="t">"Bem-vindo " </span> + valor);</span><br>
+        <span class="e2">else{</span> <br>
+        <span class="e3">alert( <span class="t">"Nenhum cookie encontrado </span>);</span> <br>
+        <span class="e2">}</span> <br>
+        <span class="e">}</span> <br>
+        &lt;/script> <br>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

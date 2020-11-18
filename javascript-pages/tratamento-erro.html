@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Tratamento de erros em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Tratamento de erros em JavaScript</h1>
+
+      <p class="lead">Erros sempre acontecem quando menos esperamos... Na verdade devemos sempre esperar por um erro. Quando esperamos por um erro, podemos tratá-lo de forma correta e impedir que a nossa aplicação trave ou retorne valores totalmente inconsistentes. Por isso muitas linguagem, inclusive o JS, possuem tratamento de erros.</p>
+
+      <ul class="lead">
+        <li><b><code>try</code></b> - Declaração usada para tentar executar um trecho de código e capturar o seu erro</li>
+        <li><b><code>catch</code></b> - Declaração usada para tratar o erro</li>
+        <li><b><code>throw</code></b> - Declaração usada para criar erros</li>
+        <li><b><code>finally</code></b> - Declaração usada executar um código depois de tentá-lo pegar, e que sempre será executado independentemente de haver ou não erros.</li>
+      </ul>
+
+      <div class="code-js">
+        <span class="es">try {</span> <br>
+        <span class="e co">//Bloco de código que será executado e se houver erro irá capturá-lo</span> <br>
+        <span class="es">} catch( err ) {</span> <br>
+        <span class="e co">//Bloco de código que recebe como parâmetro uma variável com a descrição do erro e tentará tratá-lo.</span> <br>
+        <span class="es">} finally {</span> <br>
+        <span class="e co">//Bloco de código que sempre será executado independentemente se o erro será capturado e/ou tratado.</span> <br>
+        <span class="es">}</span> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>throw - criando erros</h2>
+
+      <p class="lead">A palavra reservada <code>throw</code> é usada para criar erros dentro da lógica do nosso negócio. Por exemplo, não existe erro ao arredondar um valor menor que 50, mas no nosso projeto arredondar valores menores que 50 deve ser lançado um erro. Com isso podemos criar uma chamada <code>throw "Descrição do erro"</code> que a declaração <code>try</code> irá capturar esse erro e transmiti-lo para a declaração <code>catch</code> que irá tratar esse erro, podendo ser desde uma simples mensagem a até um código complexo para converter o valor para um valor válido. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="throw">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 40.89;</span> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e es">try {</span> <br>
+        <span class="e2">if (a &lt; 50){ </span> <br>
+        <span class="e3 es">throw <span class="t"> "erro, valor inferior a 50."</span>;</span><br>
+        <span class="e2">} else { </span> <br>
+        <span class="e3">var b = a.round()</span> <br>
+        <span class="e3">texto = <span class="t"> "O valor arredondado é: " + b</span>;</span> <br>
+        <span class="e2">} </span> <br>
+        <span class="e es">} catch( err ) {</span> <br>
+        <span class="e2">saida = err;</span> <br>
+        <span class="e es">} </span> <br>
+        <span class="e">document.getElementById(<span class="t">"throw"</span>).innerHTML = saida;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="throw"></div>
+      <script>
+        var a = 40.89
+        var texto = ""
+        try {
+          if (a < 50) {
+            throw "erro, valor inferior a 50.";
+          } else {
+            var b = a.round()
+            texto = "O valor arredondado é: " + b;
+          }
+        } catch (err) {
+          saida = err;
+        }
+        document.getElementById("throw").innerHTML = saida;
+      </script>
+
+      <hr class="space">
+
+      <h2>Tratando erros padrões</h2>
+
+      <p class="lead">Existem erros que são padrões e não precisamos forçar um erro para eles. Um erro é um objeto e portanto possui duas propriedades a primeira <code>erro.name</code> que contém o nome do erro e <code>erro.message</code> que retorna uma descrição do erro.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Nome do erro</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RangeError</td>
+            <td>Ocorre quando um número fora do intervalo ocorre, como por exemplo definir um número maior que podemos</td>
+          </tr>
+          <tr>
+            <td>ReferenceError</td>
+            <td>Ocorre quando usamos uma variável, no corpo de uma expressão, que não foi declarada anteriormente</td>
+          </tr>
+          <tr>
+            <td>SyntaxError</td>
+            <td>Ocorre quando temos um erro de sintaxe no código</td>
+          </tr>
+          <tr>
+            <td>TypeError</td>
+            <td>Ocorre quando esperamos um tipo de variável e recebemos outro.</td>
+          </tr>
+          <tr>
+            <td>URIError</td>
+            <td>Ocorre quando usamos caracteres inválidos dentro de uma função URI</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="range">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var numero = 1;</span> <br>
+        <span class="e es">try {</span> <br>
+        <span class="e2">numero.toPrecision(500);</span> <br>
+        <span class="e es">} catch( err ) {</span> <br>
+        <span class="e2">document.getElementById(<span class="t">"range"</span>).innerHTML = err.name + " - " + err.message;<br></span>
+        <span class="e es">} </span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="range"></div>
+      <script>
+        var numero = 1;
+        try {
+          numero.toPrecision(500);
+        } catch (err) {
+          document.getElementById("range").innerHTML = err.name + " - " + err.message;
+        }
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="reference">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var numero = 1;</span> <br>
+        <span class="e es">try {</span> <br>
+        <span class="e2">var soma = y + numero;</span> <br>
+        <span class="e es">} catch( err ) {</span> <br>
+        <span class="e2">document.getElementById(<span class="t">"reference"</span>).innerHTML = err.name + " - " + err.message;<br></span>
+        <span class="e es">} </span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="reference"></div>
+      <script>
+        var numero = 1;
+        try {
+          var soma = y + numero;
+        } catch (err) {
+          document.getElementById("reference").innerHTML = err.name + " - " + err.message;
+        }
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="type">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var numero = 1;</span> <br>
+        <span class="e es">try {</span> <br>
+        <span class="e2">numero.toUpperCase();</span> <br>
+        <span class="e es">} catch( err ) {</span> <br>
+        <span class="e2">document.getElementById(<span class="t">"type"</span>).innerHTML = err.name + " - " + err.message;<br></span>
+        <span class="e es">} </span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="type"></div>
+      <script>
+        var numero = 1;
+        try {
+          numero.toUpperCase();
+        } catch (err) {
+          document.getElementById("type").innerHTML = err.name + " - " + err.message;
+        }
+      </script> <br> <br>
+
+      <hr class="space">
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

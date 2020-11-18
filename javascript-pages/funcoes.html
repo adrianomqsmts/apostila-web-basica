@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Funções em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Funções em JavaScript</h1>
+
+      <p class="lead">Uma função é um trecho de comandos em bloco que faz uma determinada tarefa que pode ser realizada em diferentes pontos de um código e quantas vezes quisermos. As vantagens de se utilizar funções é a clareza do código, pois podemos separar o código em diversas partes facilitando a manutenção do mesmo e a possibilidade de reutilização mais simples (sem ter copiar e colar varias linhas de códigos). </p>
+
+      <p class="lead">A sintaxe básica de uma função é: <code>function nome(parametro1, paramentro2,...) { código; }</code>. Onde <code>function</code> é a palavra chave para criar uma função com o nome especificado seguido sempre de parenteses que podem ou não conter parâmetros. Os parâmetros são variáveis que irão receber um valor e serem usada dentro do bloco de código da função.</p> <br>
+
+      <div class="code-js">
+        <span class="f">function</span> soma(a, b) { <br>
+        <span class="e"> <span class="f"> return</span> a + b;</span> <br>
+        }
+      </div> <br>
+
+      <p class="lead">Agora você pode ter notado um pouco melhor a vantagem de se usar variáveis, pois assim, podemos passar como parâmetro para função quaisquer valores e ela realizará a soma, e então através da palavra reservada <code>return</code> irá retorno exatamente no lugar onde está a função o resultada da operação de soma entre as variáveis a e b. </p>
+
+      <p class="lead">Podemos chamar uma função usando o seu nome e entre parenteses os valores das variáveis</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id=<span class="t">"funcao1"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="f e">function </span> soma(a, b) { <br>
+        <span class="e2"> <span class="f"> return</span> a + b;</span> <br>
+        <span class="e">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"funcao1"</span>).innerHTML = soma(10,20)</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="funcao1"></div>
+      <script>
+        function soma(a, b) {
+          return a + b;
+        }
+        document.getElementById("funcao1").innerHTML = soma(10, 20);
+      </script>
+
+      <hr class="space">
+
+      <h2>Escopos</h2>
+
+      <p class="lead">Escopos são blocos de códigos que podem ou não conter outros blocos de códigos dentro deles, gerando níveis diferentes, consequentemente escopos diferentes, onde os escopos irão determinar a acessibilidade das variáveis. Dentro do conceito de escopos temos: </p>
+
+      <h3>Variáveis locais</h3>
+
+      <p class="lead">Quando declaramos uma variável dentro de uma função, chamados ela de variável local (escopo de função), ou seja, a variável está acessível somente dentro da função. Como as variáveis local somente são acessadas dentro de uma função então podemos usar o mesmo nome de variável em outro lugar e elas serão independentes uma da outra, mesmo que tenham o mesmo nome.</p>
+      <p class="lead">Uma variável dentro de uma função é criada durante a execução da função e excluída ao final da execução de cada função. O mesmo conceito de aplica a qualquer bloco de código como estruturas condicionais e de repetição.</p>
+
+      <h3>Variáveis Globais </h3>
+
+      <p class="lead">O conceito de variável glocal refere-se a variáveis criadas em escopos de níveis anteriores, ou no caso, criadas anteriormente a criação de uma função. Essas variáveis podem ser acessadas por todos os blocos de níveis inferiores à ela que estejam dentro do seu bloco local de declaração.</p>
+
+      <p class="lead">Veja no exemplo abaixo que temos a variável <code>d</code> que pode ser acessada pela função, a variável local e global <code>c</code>, mas somente o valor dentro da função será usado, enquanto o valor fora da função será conservado.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="funcao2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"><span class="f">var</span> d = <span class="n">10</span>;</span> <br>
+        <span class="e"><span class="f">var</span> c = <span class="n">5</span>; </span> <br>
+        <span class="e"><span class="f">function</span> soma(a, b) </span>{ <br>
+        <span class="e2"> <span class="f">var</span> c = <span class="n">10</span>;</span> <br>
+        <span class="e2"> <span class="f">return</span> a + b + c + d;</span> <br>
+        <span class="e">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"funcao2"</span>).innerHTML = <span class="t">"Resultado da soma: "</span> + soma(<span class="n">10</span>,<span class="n">20</span> )</span> + <span class="t">"&lt;br> valor da variável C: "</span> + c;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="funcao2"></div>
+      <script>
+        var d = 10;
+        var c = 5;
+        function soma(a, b) {
+          var c = 10;
+          return a + b + c + d;
+        }
+        document.getElementById("funcao2").innerHTML = "Resultado da soma: " + soma(10, 20) + " <br> valor da variável C: " + c;
+      </script>
+      <br> <br> <br>
+
+      <h3>Variáveis Let</h3>
+
+      <p class="lead">As variáveis <code>let</code> possuem um comportamento de escopo mais interessante. Um novo escopo é delimitado pode <code>{}</code> mas existem casos em que o conceito de escopo não é definido, mas queremos que a variável se comporte como se estivesse dentro de um escopo.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div20">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div20">
+        &lt;div id="escopo">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var c = 5; </span> <br>
+        <span class="e"></span>{ <br>
+        <span class="e2"> var c = 10;</span> <br>
+        <span class="e">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"escopo"</span>).innerHTML = <span class="t">"&lt;br> valor da variável C: "</span> + c;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="escopo"></div>
+      <script>
+        var c = 5;
+        {
+          var c = 10;
+        }
+        document.getElementById("escopo").innerHTML = "<br> valor da variável C: " + c;
+      </script>
+      <br> <br> <br>
+
+      <p class="lead">Para conservar o escopo precisamos criar uma variável <code>let</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div21">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div21">
+        &lt;div id="let">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var c = 5; </span> <br>
+        <span class="e"></span>{ <br>
+        <span class="e2">let c = 10;</span> <br>
+        <span class="e">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"let"</span>).innerHTML = <span class="t">"&lt;br> valor da variável C: "</span> + c;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="let"></div>
+      <script>
+        var c = 5;
+        {
+          let c = 10;
+        }
+        document.getElementById("let").innerHTML = "<br> valor da variável C: " + c;
+      </script>
+      <br> <br> <br>
+
+      <p class="lead">Dentro de uma função o comportamento entre <code>var</code> e <code>let</code> como você pode observar são semelhantes. Entretanto em estruturas de repetição e condicionais ou simples blocos de códigos, precismos usar a palavra reservada <code>let</code> para conservar o escopo.</p>
+
+      <p class="lead">Quer ler mais detalhadamente sobre o que é uma função, o que são os parâmetros, etc? Acesse: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Fun%C3%A7%C3%B5es">Funções em JS</a></p>
+
+
+      <hr class="space">
+
+      <h2>Arrow function : Função seta</h2>
+
+      <p class="lead">Arrow function é uma forma mais recente de se escrever funções de forma mais curtas, onde podemos omitir diversos detalhes da sintaxe de uma função regular.</p>
+
+      <div class="code-js">
+        <span class="es">function soma(a,b){</span> <br>
+        <span class="es e">return</span> a + b; <br>
+        <span class="es">}</span>
+      </div> <br>
+
+      <p class="lead">É o mesmo que:</p>
+
+      <div class="code-js">
+        soma <span class="es">=> (a,b){</span> <br>
+        <span class="es e">return</span> a + b; <br>
+        <span class="es">}</span>
+      </div> <br>
+
+      <p class="lead">Em funções setas, se houverem apenas uma declaração de retorno então poderemos omitir a palavra reservada <code>return</code> e os parênteses.</p>
+
+      <div class="code-js">
+        soma <span class="es">= (a,b) => </span> a + b;
+      </div> <br>
+
+      <p class="lead">Em funções setas que não possuem nenhum parâmetro:</p>
+
+      <div class="code-js">
+        texto <span class="es">= () => </span> "Olá mundo!";
+      </div> <br>
+
+      <p class="lead">Em funções setas que possuem um único parâmetro, e somente neste caso, podemos ou não omitir os parênteses dos parâmetros:</p>
+
+      <div class="code-js">
+        texto <span class="es">= valor => </span> "Olá mundo! " + valor;
+      </div> <br>
+      <div class="code-js">
+        texto <span class="es">= valor => </span> "Olá mundo! " + valor;
+      </div> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="arrow">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var valor = <span class="t"> "Boooom dia! Ou será boa tarde?! Ou Boa noooooite!? OH MDS!"</span>;</span> <br>
+        <span class="e"></span> texto <span class="es">= valor => </span> <span class="t">"Olá mundo! "</span> + valor; <br>
+        <span class="e">document.getElementById(<span class="t">"arrow"</span>).innerHTML = texto(valor);</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="arrow"></div>
+      <script>
+        var valor = "Boooom dia! Ou será boa tarde?! Ou Boa noooooite!? OH MDS!";
+        texto = valor => "Olá mundo! " + valor;
+        document.getElementById("arrow").innerHTML = texto(valor);
+      </script>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

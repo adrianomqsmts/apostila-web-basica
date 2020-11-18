@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Laços de repetição em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+      <!-- for while e do while -->
+
+      <h1>Laços de repetição em JavaScript</h1>
+
+      <p class="lead">Um estrutura de repetição basicamente é usada para repetir um mesmo trecho de código um número finito de vezes, tendo como objetivo reduzir o número de linhas escritas com o mesmo trecho de código. </p>
+
+      <p class="lead"><strong>SEMPRE ESPECIFIQUE A CONDIÇÃO DE PARADA!!!</strong> Caso esqueça ou erre a lógica das condições o laço de repetição nunca irá parar e poderá travar o sistema. </p>
+
+      <h2>Estrutura de repetição FOR</h2>
+
+      <p class="lead">O <code>for(condição1; condição2; condição3)</code> é usado quando queremos repetir uma <strong>QUANTIDADE CONHECIDA</strong> de vezes um determinado trecho de código. </p>
+
+      <ul class="lead">
+        <li><b>Condição 1</b> - É executada uma única vez, geralmente é usada para inicializar o valor de um contador com o valor 0; CONHECIDA COMO CONDIÇÃO INICIAL</li>
+        <li><b>Condição 2</b> - É uma condição que sempre será executada após o final de cada interação e normalmente define um valor limite de quantas vezes queremos que a estrutura seja executada. CONHECIDA COMO CONDIÇÃO DE PARADA</li>
+        <li><b>Condição 3</b> - É executada sempre ao final da execução do bloco de código, geralmente é usada para incrementar o valor do contador; CONHECIDA COMO CONDIÇÃO DE INCRIMENTO</li>
+      </ul>
+
+      <p class="lead">As condições podem ser omitidas e a estrutura pode assumir diversos formatos que normalmente podem levar a uma má legibilidade dos códigos e não são muito tradicionais, e por estes motivos não iremos abordar essas possibilidades. Um caso mais comum é usar um segunda condição de parada dentro do código com um if e um break.</p>
+
+      <div class="code-js">
+        <span class="es">for (var i = 0; i &lt; 5; i++){</span><br>
+        <span class="e co">// Trecho de código que irá ser executado 5 vezes, pois o valor de i será incrementado uma unidade a cada execução (como também poderia incrementado de 5 em 5, 5 em 5 e não necessariamente 1 em 1), e tem a condição de parada para i menor que 5. Lembrando que i começa em 0.</span><br>
+        <span class="es">}</span><br>
+      </div>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="for1">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e es">for (var i = 0; i &lt; 5; i++) {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"for1"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="for1"></div>
+      <script>
+        var texto = "";
+        for (var i = 0; i < 5; i++) {
+          texto += "O contador i agora é : " + i + "<br>";;
+        }
+        document.getElementById("for1").innerHTML = texto;
+      </script> <br> <br>
+
+      <p class="lead">A condição 1 é opcional, pois podemos declarar o seu valor anteriormente, a condição de parada pode ser substituída por uma estrutura <code>IF break</code> para interromper a estrutura FOR (dentro do FOR) e a condição de incremento pode ser omitida e mais uma vez pode ser feita dentro da estrutura FOR. Como dito anteriormente essas outras possibilidades devem ser evitadas.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="for2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e">var i = 0;</span> <br>
+        <span class="e es">for (; ;) {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>";</span></span>; <br>
+        <span class="e2"></span>i++</span>; <br>
+        <span class="e2 es">if(i >= 5) {</span> <br>
+        <span class="e3"> break;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"for2"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="for2"></div>
+      <script>
+        var texto = "";
+        var i = 0;
+        for (; ;) {
+          texto += "O contador i agora é : " + i + "<br>";;
+          i++;
+          if (i >= 5) {
+            break;
+          }
+        }
+        document.getElementById("for2").innerHTML = texto;
+      </script>
+
+      <hr class="space">
+
+      <h2>Estrutura de Repetição FOR-IN</h2>
+
+      <p class="lead">A estrutura <code>for(variável in objeto)</code> segue a mesma lógica de repetição quem um for tradicional, entretanto <strong>é usado para percorrer todos as propriedades objeto</strong> retornando um <strong>valor inteiro da posição da propriedade</strong> e <strong>NÃO</strong> o valor da propriedade.</p>
+
+      <div class="code-js">
+        <span class="es">for (i in objeto){</span><br>
+        <span class="e co">// Trecho de código que irá ser executado na mesma quantidade de propriedades que tem dentro do objeto especificado. Onde i é um valor inteiro para acessar o vetor de propriedades de um objeto.</span><br>
+        <span class="es">}</span><br>
+      </div>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="for-in">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="es">var pessoa = {</span><br>
+        <span class="e"></span>nome: <span class="t">"Fulano Ciclano de Tal"</span>, <br>
+        <span class="e"></span>idade: 47, <br>
+        <span class="e"></span>altura: 1.68, <br>
+        <span class="es">}</span><br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e es">for (i in pessoa) {</span><br>
+        <span class="e2"></span>texto += <span class="t">"valor: "</span> + pessoa[i] + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"for-in"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="for-in"></div>
+      <script>
+        var pessoa = {
+          nome: "Fulano Ciclano de Tal",
+          idade: 47,
+          altura: 1.68,
+        }
+        var texto = "";
+        for (i in pessoa) {
+          texto += "valor: " + pessoa[i] + "<br>";
+        }
+        document.getElementById("for-in").innerHTML = texto;
+      </script>
+
+      <hr class="space">
+
+      <h2>Estrutura de repetição FOR-OF</h2>
+
+      <p class="lead">A estrutura de repetição <code>for(variável of objeto )</code> é usada para <strong>PERCORRER OS VALORES</strong> de um objeto, ou seja, o contador conterá o valor de cada propriedade do objeto. Também pode ser usado para percorrer os valores de um array ou os caracteres de uma string.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="for-of1">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["Cereja", "Abacate", "Morango", "Manga", "Goiaba", "Amora"];</span> <br>
+        <span class="e">var texto = "Frutas: ";</span> <br>
+        <span class="e es">for (i of array) {</span><br>
+        <span class="e2"></span>texto += i + <span class="t">" "</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"for-of1"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="for-of1"></div>
+      <script>
+        var array = ["Cereja", "Abacate", "Morango", "Manga", "Goiaba", "Amora"];
+        var texto = "Frutas: ";
+        for (i of array) {
+          texto += i + " ";
+        }
+        document.getElementById("for-of1").innerHTML = texto;
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="for-of2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var palavra = "Letras";</span> <br>
+        <span class="e">var texto = " - ";</span> <br>
+        <span class="e es">for (i of palavra) {</span><br>
+        <span class="e2"></span>texto += i + <span class="t">" - "</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"for-of2"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="for-of2"></div>
+      <script>
+        var palavra = "Letras";
+        var texto = " - ";
+        for (i of palavra) {
+          texto += i + " - ";
+        }
+        document.getElementById("for-of2").innerHTML = texto;
+      </script>
+
+      <hr class="space">
+
+      <h2>Estrutura de repetição WHILE</h2>
+
+      <p class="lead">A estrutura de repetição <code>while(condição)</code> é semelhante à estrutura <code>for</code> sem a condição 1 e condição 3. Ou seja, devemos em muitos casos iniciar um valor anteriormente e criar uma condição de incremento dentro do corpo da estrutura. Os principais usos de uma estrutura <code>while</code> estão relacionados quando não sabemos quantas vezes iremos executar o bloco de código. Seu uso mais comum contém a palavra reservada <code>break</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="while1">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e">var i = 0;</span> <br>
+        <span class="e es">while (i &lt;= 5) {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e2"></span>i++</span>; <br>
+        <span class="e es">}</span><br>
+        <span class="e">document.getElementById(<span class="t">"while1"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="while1"></div>
+      <script>
+        var texto = "";
+        var i = 0;
+        while (i <= 5) {
+          texto += "O contador i agora é : " + i + "<br>";;
+          i++;
+        }
+        document.getElementById("while1").innerHTML = texto;
+      </script>
+
+      <hr class="space">
+
+      <h2>Estrutura de repetição DO WHILE</h2>
+
+      <p class="lead">A estrutura de repetição <code>do{ }while(condição)</code> é semelhante à estrutura <code>while</code>. A única diferença que a condição é verificada ao final da execução do código e não no início. Ou seja, o <code>do while</code> executará sempre um única vez independentemente se a condição for verdadeira ou não. Enquanto o <code>while</code> sempre fará a verificação da condição antes de executar o código. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="dowhile">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e">var i = 0;</span> <br>
+        <span class="e es">do {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e2"></span>i++</span>; <br>
+        <span class="e es">} while (i &lt;= 5) </span><br>
+        <span class="e">document.getElementById(<span class="t">"dowhile"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="dowhile"></div>
+      <script>
+        var texto = "";
+        var i = 0;
+        do {
+          texto += "O contador i agora é : " + i + "<br>";
+          i++;
+        } while (i <= 5)
+        document.getElementById("dowhile").innerHTML = texto;
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+        &lt;div id="dowhile1">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e">var i = 7;</span> <br>
+        <span class="e es">do {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e2"></span>i++</span>; <br>
+        <span class="e es">} while (i &lt;= 5) </span><br>
+        <span class="e">document.getElementById(<span class="t">"dowhile1"</span>).innerHTML = texto;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="dowhile1"></div>
+      <script>
+        var texto = "";
+        var i = 7;
+        do {
+          texto += "O contador i agora é : " + i + "<br>";
+          i++;
+        } while (i <= 5)
+        document.getElementById("dowhile1").innerHTML = texto;
+      </script>
+
+      <hr class="space">
+
+      <h2>Conservando o Escopo</h2>
+
+      <p class="lead">Caso queiramos que uma variável usada dentro do escopo de ums estrutura de repetição seja visível somente dentro do bloco, então devemos usar a palavra reservada <code>let</code> ao invés da palavra reservada <code>var</code></p>
+
+      <p class="lead">Exemplo com <code>VAR</code></p>
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+        &lt;div id="var">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e">var i = 100;</span> <br>
+        <span class="e es">for (var i = 0; i &lt; 5; i++) {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"var"</span>).innerHTML = texto + "&lt;br>" + "valor do contator i ao final é : " + i;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="var"></div>
+      <script>
+        var texto = "";
+        var i = 100;
+        for (var i = 0; i < 5; i++) {
+          texto += "O contador i agora é : " + i + "<br>";;
+        }
+        document.getElementById("var").innerHTML = texto + "<br>" + "valor do contator i ao final é : " + i;
+      </script> <br> <br>
+
+
+      <p class="lead">Exemplo com <code>LET</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="let">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var texto = "";</span> <br>
+        <span class="e">var i = 100;</span> <br>
+        <span class="e es">for (let i = 0; i &lt; 5; i++) {</span><br>
+        <span class="e2"></span>texto += <span class="t">"O contador i agora é : "</span> + i + <span class="t">"&lt;br>"</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">document.getElementById(<span class="t">"let"</span>).innerHTML = texto + "&lt;br>" + "valor do contator i ao final é : " + i;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="let"></div>
+      <script>
+        var texto = "";
+        var i = 100;
+        for (let i = 0; i < 5; i++) {
+          texto += "O contador i agora é : " + i + "<br>";;
+        }
+        document.getElementById("let").innerHTML = texto + "<br>" + "valor do contator i ao final é : " + i;
+      </script> <br> <br>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

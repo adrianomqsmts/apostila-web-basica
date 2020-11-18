@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Arrays em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Arrays em JavaScript</h1>
+
+      <p class="lead">Arrays são usados para guardar em um vetor que começa com a posição 0, diferentes tipo de variáveis "novoElemento" ou objetos. Para declarar uma array basta colocar entre <code>[]</code> cada um dos elementos que irão fazer parte do array.</p>
+
+      <div class="code-js">
+        var array[ "Oi", "novoElemento", true];
+      </div> <br>
+
+      <p class="lead">Para acessar o primeiro elemento do array, basta digitar <code>array[0]</code>, enquanto que para acessar o segundo basta digitar <code>array[0]</code>, e assim sucessivamente.</p>
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="array1">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e">document.getElementById(<span class="t">"array1"</span>).innerHTML = array[0];</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="array1"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        document.getElementById("array1").innerHTML = array[0];
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>split() - Transformando string em array</h2>
+
+      <p class="lead">O método <code>string.split("separador")</code> quebra a string em várias string menores e a transforma em um array de N posições, onde cada posição terá uma string. Um exemplo simples seria a string <code>abc-def-erg</code> com o método <code>string.split("-")</code> que iria se tornar um array do tipo <code>[abc,def,erg]</code>, onde a primeira posição <code>array[0]</code> estaria o elemento <code>abc</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div100">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div100">
+        &lt;div id="split">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var texto = <span class="t">"Meu nome é Fulano"</span>;</span> <br>
+        <span class="e"> var array = texto.split(<span>" "</span>);</span> <br>
+        <span class="e">document.getElementById(<span class="t">"split"</span>).innerHTML = <span class="t">"O primeiro elemento do array : "</span> + array[0] + <span class="t">"&lt;br> O segundo elemento do array : "</span> + array[1];</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="split"></div>
+      <script>
+        var texto = "Meu nome e Fulano";
+        var array = texto.split(" ");
+        document.getElementById("split").innerHTML = "O primeiro elemento do array : " + array[0] + "<br> O segundo elemento do array : " + array[1];
+      </script>
+
+      <hr class="space">
+
+      <h2>length : tamanho do array</h2>
+
+      <p class="lead">Podemos saber o tamanho do array através da propriedade <code>array.length</code> que irá retornar a quantidade de elementos dentro do array.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="length">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e"> var tamanho = <span class="f"> array.length;</span></span> <br>
+        <span class="e">document.getElementById(<span class="t">"length"</span>).innerHTML = tamanho</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="length"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        document.getElementById("length").innerHTML = array.length;
+      </script><br> <br>
+
+      <p class="lead">Muitas vezes podemos querer acessar o último elemento de um array, para isso usamos a propriedade length e subtraímos 1, pois a posição inicial do vetor é 0. Por exemplo, um array com 10 elemento, o último elemento está na posição 9. <code>array[array.length - 1]</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="length2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e"> var ultimoElemento = <span class="f"> array[array.length - 1];</span></span> <br>
+        <span class="e">document.getElementById(<span class="t">"length2"</span>).innerHTML = ultimoElemento</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="length2"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        document.getElementById("length2").innerHTML = array[array.length - 1];
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>push() : Inserindo um elemento na última posição de um array</h2>
+
+      <p class="lead">O método <code>array.push(novoElemento)</code> insere ao final do array um novo elemento.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="push">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f"> array.push("novoElemento");</span> <br>
+        <span class="e">document.getElementById(<span class="t">"push"</span>).innerHTML = array</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="push"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        array.push("novoElemento");
+        document.getElementById("push").innerHTML = array;
+      </script><br> <br>
+
+      <p class="lead">O método <code>array.push("novoElemento")</code> retorna um valor in"novoElemento"o com o novo tamanho da string que pode ser armazenado em uma variável</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div41">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div41">
+        &lt;div id="push2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var novoTamanho = array.push("novoElemento");</span> <br>
+        <span class="e">document.getElementById(<span class="t">"push2"</span>).innerHTML = novoTamanho</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="push2"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var novoTamanho = array.push("novoElemento");
+        document.getElementById("push2").innerHTML = novoTamanho;
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>pop() : Removendo o último elemento em um array</h2>
+
+      <p class="lead">O método <code>array.pop()</code> remove o último elemento do array e retorna o valor do último elemento, que pode ser armazenado em uma variável.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div42">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div42">
+        &lt;div id="pop">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var elementoRemovido = array.pop();</span> <br>
+        <span class="e">document.getElementById(<span class="t">"pop"</span>).innerHTML ="O elemento removido foi: " + elementoRemovido + " - Ficando : " + array;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="pop"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var elementoRemovido = array.pop();
+        document.getElementById("pop").innerHTML = "O elemento removido foi: " + elementoRemovido + " - Ficando : " + array;
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>toString() : Convertendo o array em uma string</h2>
+
+      <p class="lead">O método <code>array.toString()</code> converte todos os elementos dentro de um array em uma string separada pelo caractere de vírgula <code>,</code> . Por padrão digitar array ou array.toString() tem o mesmo resultado</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="toString">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", 'elemento2', "elemento3"];</span> <br>
+        <span class="e">document.getElementById(<span class="t">"toString"</span>).innerHTML = <span class="f">array.toString()</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="toString"></div>
+      <script>
+        var array = ["elemento1", 'elemento2', "elemento3"];
+        document.getElementById("toString").innerHTML = array.toString();
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>join() : Convertendo o array em uma String</h2>
+
+      <p class="lead">O método <code>array.join("separador")</code> faz a mesma coisa que o método <code>toString()</code>, com a diferença que você pode especificar como quer separar cada elemento dentro do array na nova string.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="join">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", 'elemento2', "elemento3"];</span> <br>
+        <span class="e">document.getElementById(<span class="t">"join"</span>).innerHTML = <span class="f">array.join(" - ")</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="join"></div>
+      <script>
+        var array = ["elemento1", 'elemento2', "elemento3"];
+        document.getElementById("join").innerHTML = array.join(" - ");
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>shift() : Removendo o primeiro elemento de um array</h2>
+
+      <p class="lead">O método <code>array.shift()</code> remove o primeiro elemento de um array e ainda desloca todos os demais elementos para que o segundo elemento assuma a primeira posição, e assim sucessivamente. O método retorna o valor do primeiro elemento que pode ser armazenado em uma variável. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="shift">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var elementoRemovido = array.shift();</span> <br>
+        <span class="e">document.getElementById(<span class="t">"shift"</span>).innerHTML ="O elemento removido foi: " + elementoRemovido + " - Ficando : " + array;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="shift"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var elementoRemovido = array.shift();
+        document.getElementById("shift").innerHTML = "O elemento removido foi: " + elementoRemovido + " - Ficando : " + array;
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>unshift() : Inserindo um elemento na primeira posição de um array</h2>
+
+      <p class="lead">O método <code>array.unshift("novoElemento")</code> insere o novo elemento na posição inicial do array, e descola o antigo primeiro elemento para a segunda posição e assim sucessivamente. O método retorna o novo tamanho do array que pode ser armazenado em uma variável.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+        &lt;div id="unshift">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var novoTamanho = array.unshift("novoElemento");</span> <br>
+        <span class="e">document.getElementById(<span class="t">"unshift"</span>).innerHTML = "Novo tamanho : " + novoTamanho + " ficando: " + array.join(" - ")</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="unshift"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var novoTamanho = array.unshift("novoElemento");
+        document.getElementById("unshift").innerHTML = "Novo tamanho : " + novoTamanho + " ficando: " + array.join(" - ");
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>Alterando qualquer elemento de um array</h2>
+
+      <p class="lead">Para poder alterar um elemento de uma matriz basta usar a notação <code>array[posição] = novoElemento</code> que iremos alterar o elemento da posição especificada pelo valor atribuído. </p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+        &lt;div id="alterando">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [ "elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">array[1] = "novoElemento"</span> <br>
+        <span class="e">document.getElementById(<span class="t">"alterando"</span>).innerHTML = array.join(" - ")</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="alterando"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        array[1] = "novoElemento"
+        document.getElementById("alterando").innerHTML = array.join(" - ");
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>splice() : Removendo e adicionando elementos em qualquer posição de um array</h2>
+
+      <p class="lead">O método <code>array.splice(posiçãoInserir, quantidadeRemover, novoElemento1, novoElemento2...)</code> é usado para fazer várias operações ao mesmo tempo, como inserir, remover e até alterar elementos de um array. Para isso o método precisa de pelo menos dois parâmetros, o primeiro especifica em qual posição deseja inserir os elementos, o segundo parâmetro especifica quanto elementos você quer remover a partir daquela posição, seguido por nenhum ou vários elementos que deseja inserir. A função retorna os valores de todos os itens removidos em um array.</p>
+
+      <h3>Removendo elementos de qualquer posição</h3>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="spliceRemove">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var elementosRemovidos = array.splice(1,2);</span> <br>
+        <span class="e">document.getElementById(<span class="t">"spliceRemove"</span>).innerHTML ="O elemento removido foi: " + elementosRemovidos + " - Ficando : " + array;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="spliceRemove"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var elementosRemovidos = array.splice(1, 2);
+        document.getElementById("spliceRemove").innerHTML = "O elemento removido foi: " + elementosRemovidos + " - Ficando : " + array;
+      </script><br> <br>
+
+      <h3>Alterando um elemento de qualquer posição</h3>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div11">
+        &lt;div id="spliceAlterar">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var elementosRemovidos = array.splice(1,1, "NovoElemento");</span> <br>
+        <span class="e">document.getElementById(<span class="t">"spliceAlterar"</span>).innerHTML ="O elemento removido foi: " + elementosRemovidos + " - Ficando : " + array.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="spliceAlterar"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var elementosRemovidos = array.splice(1, 1, "NovoElemento");
+        document.getElementById("spliceAlterar").innerHTML = "O elemento removido foi: " + elementosRemovidos + " - Ficando : " + array.join(" - ");
+      </script><br> <br>
+
+      <h3>Inserindo elementos em qualquer posição</h3>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div12">
+        &lt;div id="spliceInserir">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var elementosRemovidos = array.splice(1,0, "NovoElemento1", "NovoElemento2", "NovoElemento3");</span> <br>
+        <span class="e">document.getElementById(<span class="t">"spliceInserir"</span>).innerHTML = array.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="spliceInserir"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var elementosRemovidos = array.splice(1, 0, "NovoElemento", "NovoElemento2", "NovoElemento3");
+        document.getElementById("spliceInserir").innerHTML = array.join(" - ");
+      </script><br> <br>
+
+
+      <h3>Inserindo, alterando e removendo elementos em qualquer posição</h3>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div13">
+        &lt;div id="splice">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e f">var elementosRemovidos = array.splice(1, 2, "NovoElemento1", "NovoElemento2", "NovoElemento3");</span> <br>
+        <span class="e">document.getElementById(<span class="t">"splice"</span>).innerHTML ="O elemento removido foi: " + elementosRemovidos + " - Ficando : " + array.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="splice"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var elementosRemovidos = array.splice(1, 2, "NovoElemento", "NovoElemento2", "NovoElemento3");
+        document.getElementById("splice").innerHTML = "O elemento removido foi: " + elementosRemovidos + " - Ficando : " + array.join(" - ");
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>concat() : Unindo dois ou mais arrays</h2>
+
+      <p class="lead">O método <code>array.concat(array1, array2, ...)</code> é usado para concatenar dois ou mais arrays (Também pode receber uma string), inserindo o array do parâmetros ao final do array. Lembrando que o método gera um novo array com os valores concatenados e não altera o array original. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div14">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div14">
+        &lt;div id="concat">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3"];</span> <br>
+        <span class="e"> var array2 = ["elemento4", "elemento5"];</span> <br>
+        <span class="e"> var array3 = ["elemento6"];</span> <br>
+        <span class="e f">var novoArray = array.concat(array2, array3);</span> <br>
+        <span class="e">document.getElementById(<span class="t">"concat"</span>).innerHTML = novoArray.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="concat"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var array2 = ["elemento4", "elemento5"];
+        var array3 = ["elemento6"];
+        var novoArray = array.concat(array2, array3);
+        document.getElementById("concat").innerHTML = novoArray.join(" - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>slice(): Cortando um array</h2>
+
+      <p class="lead">O método <code>array.slice(posiçãoInicial, posiçãoFinal)</code> corta o array na posição especificada retornando um novo array com os elementos dentro do intervalo (Posição Final não inclusa). Caso a posição Final estava ocultada, então a string é cortada até o final.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div15">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div15">
+        &lt;div id="slice">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["elemento1", "elemento2", "elemento3", "elemento4"];</span> <br>
+        <span class="e f">var novoArray = array.slice(1, 3);</span> <br>
+        <span class="e">document.getElementById(<span class="t">"slice"</span>).innerHTML = novoArray.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="slice"></div>
+      <script>
+        var array = ["elemento1", "elemento2", "elemento3"];
+        var novoArray = array.slice(1, 3);
+        document.getElementById("slice").innerHTML = novoArray.join(" - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>sort(): Ordenando alfabeticamente os valores de um array</h2>
+
+      <p class="lead">O método <code>array.sort()</code> é usado para ordenar alfabeticamente os elementos dentro de um array (não funciona com números).</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div16">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div16">
+        &lt;div id="sort">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["Cereja", "Abacate", "Morango", "Manga", "Goiaba", "Amora"];</span> <br>
+        <span class="e f">var novoArray = array.sort();</span> <br>
+        <span class="e">document.getElementById(<span class="t">"sort"</span>).innerHTML = novoArray.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="sort"></div>
+      <script>
+        var array = ["Cereja", "Abacate", "Morango", "Manga", "Goiaba", "Amora"];
+        var novoArray = array.sort();
+        document.getElementById("sort").innerHTML = novoArray.join(" - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>reverse() : Revertendo a ordem dos elementos</h2>
+
+      <p class="lead">O método <code>array.reverse()</code>inverte a ordem em que os elementos estão dentro do array, ou seja, o primeiro elemento vai para a última posição, o segundo elemento vai para a penúltima posição, e assim sucessivamente.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div17">
+        &lt;div id="reverse">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = ["Cereja", "Abacate", "Morango", "Manga", "Goiaba", "Amora"];</span> <br>
+        <span class="e f">var novoArray = array.reverse();</span> <br>
+        <span class="e">document.getElementById(<span class="t">"reverse"</span>).innerHTML = novoArray.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="reverse"></div>
+      <script>
+        var array = ["Cereja", "Abacate", "Morango", "Manga", "Goiaba", "Amora"];
+        var novoArray = array.reverse();
+        document.getElementById("reverse").innerHTML = novoArray.join(" - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>Ordenando valores numéricos de um array</h2>
+
+      <p class="lead">Para ordenar os elementos numéricos de um array, precisamos do auxílio de uma função como parâmetro dentro do método <code>sort(function)</code>. Essa função é praticamente padrão, onde basicamente retorna a diferença entres os elementos, dizendo qual elemento é maior ou menor. Para saber mais acesse :<a target="_blank" href="https://www.w3schools.com/jsref_sort.asp">Referência do método sort()</a></p>
+
+      <code>function(a, b){return a-b}</code> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div17">
+        &lt;div id="sortNum">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [100, 50, 60, 10, 80, 0, 1, 101 ];</span> <br>
+        <span class="e f">var novoArray = array.sort(function(a, b){return a-b});</span> <br>
+        <span class="e">document.getElementById(<span class="t">"sortNum"</span>).innerHTML = novoArray.join(" - ");</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="sortNum"></div>
+      <script>
+        var array = [100, 50, 60, 10, 80, 0, 1, 101];
+        var novoArray = array.sort(function (a, b) { return a - b });
+        document.getElementById("sortNum").innerHTML = novoArray.join(" - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>Maior e menor valor em um array</h2>
+
+      <p class="lead">Depois de ordenar um array o menor valor estará na primeira posição de um array <code>array[0]</code>, enquanto o maior valor estará na última posição de um elemento <code>array[array.length - 1]</code>. Outra forma de encontrar o maior ou menor valor de um array é usando a biblioteca <a href="math.html">MATH</a> através dos métodos <code>Math.max</code> e <code>Math.min</code></p>
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

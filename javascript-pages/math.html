@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Math em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Math em JavaScript</h1>
+
+      <p class="lead">O objeto <code>Math</code> é usado para realizar os cáculos mais comuns do mundo da matemática como constantes, arredondamentos, seno, cosseno, etc.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th style="width:20%">Método</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Math.abs(x)</td>
+            <td>Retorna o valor absoluto de x</td>
+          </tr>
+          <tr>
+            <td>Math.acos(x)</td>
+            <td>Retorna o arco cosseno de x, em radiano</td>
+          </tr>
+          <tr>
+            <td>Math.acosh(x)</td>
+            <td>Retorna o arco cosseno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td>Math.asin(x)</td>
+            <td>Retorna o arco seno x, em radiano</td>
+          </tr>
+          <tr>
+            <td>Math.asinh(x)</td>
+            <td>Retorna arco seno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td>Math.atan(x)</td>
+            <td>Retorna o arco tangente de x que é um valor entre -PI/2 e PI/2 em radiano</td>
+          </tr>
+          <tr>
+            <td>Math.atan2(y, x)</td>
+            <td>Retorna o arco tangente do quociente entre os valores de y e x</td>
+          </tr>
+          <tr>
+            <td>Math.atanh(x)</td>
+            <td>Retorna o arco tangente hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td>Math.cbrt(x)</td>
+            <td>Retorna a raiz cúbica de x</td>
+          </tr>
+          <tr>
+            <td>Math.ceil(x)</td>
+            <td>Retorna o valor de x arredondado para cima (mesmo que seja 1.1 irá virar 2). </td>
+          </tr>
+          <tr>
+            <td>Math.cos(x)</td>
+            <td>Retorna o cosseno de x (x em radiano)</td>
+          </tr>
+          <tr>
+            <td>Math.cosh(x)</td>
+            <td>Retorna o cosseno hiperbólico de x</td>
+          </tr>
+          <tr>
+            <td>Math.exp(x)</td>
+            <td>Retorna o valor de E elevado a x (E<sup>x</sup> )</td>
+          </tr>
+          <tr>
+            <td>Math.floor(x)</td>
+            <td>Retorna o valor arredondado para baixo do valor de x (mesmo que seja 1.9 será 1)</td>
+          </tr>
+          <tr>
+            <td>Math.log(x)</td>
+            <td>Retorna o logaritmo natural de x</td>
+          </tr>
+          <tr>
+            <td>Math.max(x, y, z, ..., n)</td>
+            <td>Retorna o maior valor entre os valores especificados</td>
+          </tr>
+          <tr>
+            <td>Math.min(x, y, z, ..., n)</td>
+            <td>Retorna o menor valor entre os valores especificados</td>
+          </tr>
+          <tr>
+            <td>Math.pow(x, y)</td>
+            <td>Retorna o valor de x elevado a y (x<sup>y</sup> )</td>
+          </tr>
+          <tr>
+            <td>Math.random()</td>
+            <td>Retorna um valor aleatório entre 1 e 0</td>
+          </tr>
+          <tr>
+            <td>Math.round(x)</td>
+            <td>Retorna um valor arredondado mais próximo de x (1.5+ será 2, enquanto 1.49- será 1)</td>
+          </tr>
+          <tr>
+            <td>Math.sin(x)</td>
+            <td>Retorna o seno de x (x em radiano)</td>
+          </tr>
+          <tr>
+            <td>Math.sinh(x)</td>
+            <td>Retorna o hiperbólico seno de x</td>
+          </tr>
+          <tr>
+            <td>Math.sqrt(x)</td>
+            <td>Retorna a raiz quadrada de x</td>
+          </tr>
+          <tr>
+            <td>Math.tan(x)</td>
+            <td>Retorna o tangente do angulo x</td>
+          </tr>
+          <tr>
+            <td>Math.tanh(x)</td>
+            <td>Retorna a tangente hiperbólica de x</td>
+          </tr>
+          <tr>
+            <td>Math.trunc(x)</td>
+            <td>Retorna a parte inteira de um número decimal. (1.89237176 vira 1)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="math">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var a = 36;<br>
+        <span class="e">document.getElementById(<span class="t">"math"</span>).innerHTML =
+          <span class="t e">"Raiz quadra de 36 : "</span> + <span class="es">Math.sqrt(a)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="t e">"36 elevado a 2: "</span> + <span class="es">Math.pow( a, 2 )</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="t e">"o valor absoluto de -10: "</span> + <span class="es">Math.abs(-10)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"Um valor aleatório ente 1 e 0: "</span> + <span class="es">Math.random()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"O valor arredondado de 1.782: "</span> + <span class="es">Math.round(1.782)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"O valor truncado de 1.782: " </span> + <span class="es">Math.trunc(1.782)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"O maior valor entre 1, 10, 9, 7 e 11 : " </span> + <span class="es">Math.max(1, 10, 9, 7, 11)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"O menor valor entre 1, 10, 9, 7 e 11 : " </span> + <span class="es">Math.min(1, 10, 9, 7, 11)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"O valor truncado de 1.782: " </span> + <span class="es">Math.trunc(1.782)</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"A raiz cúbica de 36 : "</span> + <span class="es">Math.cbrt(a)</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="math"></div>
+      <script>
+        var a = 36;
+        document.getElementById("math").innerHTML = "Raiz quadra de 36 : " + Math.sqrt(a) + "<br>" +
+          "36 elevado a 2: " + Math.pow(a, 2) + "<br>" +
+          "o valor absoluto de -10: " + Math.abs(-10) + "<br>" +
+          "Um valor aleatório ente 1 e 0: " + Math.random() + "<br>" +
+          "O valor arredondado de 1.782: " + Math.round(1.782) + "<br>" +
+          "O valor truncado de 1.782: " + Math.trunc(1.782) + "<br>" +
+          "O maior valor entre 1, 10, -9, 7 e 11 : " + Math.max(1, 10, -9, 7, 11) + "<br>" +
+          "O menor valor entre 1, 10, -9, 7 e 11 : " + Math.min(1, 10, -9, 7, 11) + "<br>" +
+          "O valor truncado de 1.782: " + Math.trunc(1.782) + "<br>" +
+          "A raiz cúbica de 36 : " + Math.cbrt(a);
+      </script>
+
+      <hr class="space">
+
+      <h2>Valores aleatórios</h2>
+
+      <p class="lead">Para retornar valores aleatórios, por exemplo, entre 1 e 100, podemos multiplicar o valor do método <code>Math.random() * 100</code>, arredondar ou truncar esse valor e somar 1. Se quisermos um valor entre 1 e 50, basta multiplicar por 50, enquanto para um valor entre 1 e 10 multiplicamos por 10... </p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="random">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.getElementById(<span class="t">"random"</span>).innerHTML =
+          <span class="t e">"Valor aleatório entre 1 e 100: "</span> + <span class="es">(Math.floor(Math.random() * 100) + 1)</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="random"></div>
+      <script>
+        document.getElementById("random").innerHTML = "Valor aleatório entre 1 e 100 : " + (Math.floor(Math.random() * 100) + 1);
+      </script>
+
+      <hr class="space">
+
+      <h2>Valores máximo e mínimos de um array</h2>
+
+      <p class="lead">Podemos usar os métodos <code>Math.max.apply(null,array)</code> e <code>Math.min.apply(null,array)</code> para encontrar os valores máximos e mínimos de um array. Esse método converte o array de <code>[1,2,3,4..]</code> para <code>1,2,3,4..</code> aplicando em seguida o método padrão de máximo e mínimo que precisa de apenas números separados por vírgulas como parâmetros. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div17">
+        &lt;div id="max-min">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var array = [100, 50, 60, 10, 80, 0, 1, 101 ];</span> <br>
+        <span class="e f">var max = <span class="es">Math.max(array)</span>;</span> <br>
+        <span class="e f">var min = <span class="es">Math.min(array)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"max-min"</span>).innerHTML =
+          <span class="t e">"O array é: "</span> + <span class="es">array.toString()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="t e">"O menor valor é: "</span> + min + <span class="t">"&lt;br>"</span> + <br>
+          <span class="t e">"O maior valor é: "</span> + max; <br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="max-min"></div>
+      <script>
+        var array = [100, 50, 60, 10, 80, 0, 1, 101];
+        var max = Math.max.apply(null, array);
+        var min = Math.min.apply(null, array);
+        document.getElementById("max-min").innerHTML = "O array é: " + array.toString() + "<br>" +
+          "O menor valor é: " + min + "<br>" +
+          "O maior valor é: " + max;
+      </script>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

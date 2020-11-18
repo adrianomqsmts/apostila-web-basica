@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Eventos com JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Eventos com JavaScript</h1>
+
+      <p class="lead">Eventos são basicamente uma interação com algum elemento HTML como clicar sobre um elemento, carregamento da página ou alteração sobre um campo de entrada. E podemos usar o JS para fazer uma reação com a interação.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Evento </th>
+            <th>Descrição </th>
+          </tr>
+
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>onchange</td>
+            <td>Um elemento HTML foi alterado/carregado</td>
+          </tr>
+          <tr>
+            <td>onclick</td>
+            <td>Um clique de um usuário sobre um elemento</td>
+          </tr>
+          <tr>
+            <td>onmouseover </td>
+            <td>O usuário move o mouse sobre um elemento HTML </td>
+          </tr>
+          <tr>
+            <td>onmouseout </td>
+            <td>O usuário move o mouse para longe de um elemento HTML</td>
+          </tr>
+          <tr>
+            <td>onkeydown </td>
+            <td>O usuário pressiona uma tecla do teclado </td>
+          </tr>
+          <tr>
+            <td>onload</td>
+            <td>O navegador terminou de carregar a página </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Esses eventos são atributos de elementos HTML e através deles podemos chamar um função ou código JS para realizar uma reação.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;button onclick="window.alert('ALERRRRRTA!!!!')">Clique!&lt;/button> <br>
+      </div>
+
+      <button onclick="window.alert('ALERRRRRTA!!!!')">Clique!</button>
+
+      <hr class="space">
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+
+        &lt;div id="funcao2" onmouseover="exibirData()" class="p-5 d-inline-block bg-warning">Passe o Mouse!&lt;/div> <br>
+        &lt;script> <br>
+        <span class="f e">function exibirData() </span>{ <br>
+        <span class="e2">document.getElementById("funcao2").innerHTML = Date();</span> <br>
+        <span class="e">}</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="funcao2" onmouseover="exibirData()" class="p-2 d-inline-block bg-warning">Passe o Mouse!</div>
+      <script>
+        function exibirData() {
+          document.getElementById("funcao2").innerHTML = Date();
+        }
+      </script>
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

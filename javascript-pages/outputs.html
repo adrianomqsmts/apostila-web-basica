@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Outputs com JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Outputs com JavaScript?</h1>
+
+      <p class="lead">Existem 4 principais formas de exibir algum conteúdo utilizando JS.</p>
+      <ul>
+        <li>A função <code>document.write()</code> que escreve no HTML e deve ser usada somente para teste;</li>
+        <li>A função <code>window.alert()</code> que abre um caixa de mensagem para exibir o conteúdo;</li>
+        <li>A função <code>console.log()</code> que exibe o conteúdo na saída do console do navegador e </li>
+        <li>E a funcionalidade <code>innerHTML</code> que deve ser usada para inserir um conteúdo em um elemento HTML</li>
+      </ul>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+      <div class="collapse code-js pb-2" id="div1">
+        &lt;script> <br>
+        <span class="e"> document.write(<span class="t">'Oi! Eu sou um texto, inserido usando o &lt;strong>documente.write&lt;/strong>'</span>);</span> <br>
+        &lt;/script>
+      </div>
+
+      <script>
+        document.write('Oi! Eu sou um texto, inserido usando o <strong>documente.write</strong>');
+      </script>
+
+      <br> <br>
+      <p class="lead">Abra o console e veja a mensagem... Lembre-se do comando <code>CTRL + SHIFT + I</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+      <div class="collapse code-js pb-2" id="div2">
+        &lt;script> <br>
+        <span class="e"> console.log(<span class="t">"Oi! Está me vendo no console?"</span>);</span> <br>
+        &lt;/script>
+      </div>
+
+      <script>
+        console.log("Oi! Está me vendo no console?");
+      </script> <br> <br>
+
+      <p class="lead">Podemos usar o <code>innerHTML</code> para escrever em um elemento HTML. Primeiramente iremos abstrair alguns detalhes, mas para usar a função precisamos primeiro pegar um elemento para escrever nele. Importante LEMBRAR-SE que sempre que usar o <code>innerHTML</code> em um elemento, deve-se usá-lo após a criação do elemento! </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="teste">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.getElementById(<span class="t">"teste"</span>).innerHTML = <span class="t">"Olhe! Eu escrevi um conteúdo dentro do elemento!!!"</span>);</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="teste"></div>
+
+      <script>
+        document.getElementById("teste").innerHTML = "Olhe! Eu escrevi um conteúdo dentro do elemento!!!"
+      </script> <br> <br>
+
+      <p class="lead">Por fim, podemos ainda abrir uma pequena janela de alerta para exibir uma mensagem.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;script> <br>
+        <span class="e">window.alert(<span class="t">"Oi! Estou abrindo uma janelinha!!!"</span>);</span> <br>
+        &lt;/script>
+      </div>
+
+      <script>
+        window.alert("Oi! Estou abrindo uma janelinha!!!");
+      </script>
+
+      <br> <br>
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

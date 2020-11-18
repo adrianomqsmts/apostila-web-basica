@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Armazenamento em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Armazenamento em JavaScript - localStorage</h1>
+
+      <p class="lead">Assim como os cookies a forma de armazenamento local <code>localStorage</code> permite que sejam guardados dados em pares chave-valor do usuário, onde os dados são persistidos sem uma data de validade, ou seja, somente são apagados caso o usuário limpe os dados;cache do navegador. Um característica é a de que o <code>localStorage</code> reduz a quantidade de tráfego da rede, pois os dados não são enviados de volta ao servidor.</p>
+
+      <hr class="space">
+
+      <h2>Acessando o localStorage</h2>
+
+      <p class="lead">Para acessar o <code>localStorage</code> do seu navegador basta digitar o tecla de atalho <kbd>ctrl + shift + i</kbd>, procurar a aba <code>armazenamento</code> e em seguida a opção com <code>Local Storage</code> como na imagem abaixo. Em alguns navegadores pode estar dentro da aba <code>aplicativo</code> ao invés de <code>armazenamento</code></p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/localStorage.png" class="figure-img img-fluid rounded" alt="Localidade do local storage do navegador">
+          <figcaption class="figure-caption text-xs-right">Local Storage do Firefox</figcaption>
+        </figure>
+      </div>
+
+      <hr class="space">
+
+      <h2>Os principais métodos</h2>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th class="w-25">métodos/propriedades</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>key(n)</code></td>
+            <td>Retorna o nome da chave na n-ésima posição do armazenamento local</td>
+          </tr>
+          <tr>
+            <td><code>length</code></td>
+            <td>Retorna o número de itens armazenados localmente</td>
+          </tr>
+          <tr>
+            <td><code>getItem(chave)</code></td>
+            <td>Retorna o valor da chave especificada</td>
+          </tr>
+          <tr>
+            <td><code>setItem(chave, valor)</code></td>
+            <td>Adiciona um novo par de chave-valor dentro do armazenamento local, ou atualiza caso a chave já exista.</td>
+          </tr>
+          <tr>
+            <td><code>removeItem(chave)</code></td>
+            <td>remove a chave especificada</td>
+          </tr>
+          <tr>
+            <td><code>clear()</code></td>
+            <td>Esvazia todas as chaves do armazenamento</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>setItem() - armazenar</h2>
+
+      <p class="lead">O método <code>localStorage.setItem("chave", "valor");</code> armazena localmente um item de dados que leva como parâmetros a chave e seu respectivo valor. Abra o seu local storage e veja os valores preenchidos. Abra o seu armazenamento local e veja os dados</p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">localStorage.setItem(<span class="t">"Nome"</span>, <span class="t">"Fulano de Tal"</span>);</span><br>
+        <span class="e">localStorage.setItem(<span class="t">"idade"</span>, <span class="t">"67"</span>);</span><br>
+        <span class="e">localStorage.setItem(<span class="t">"sexo"</span>, <span class="t">"M"</span>);</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="setLocal"></div>
+      <script>
+        localStorage.setItem("Nome", "Fulano de Tal");
+        localStorage.setItem("idade", "67");
+        localStorage.setItem("sexo", "M");
+      </script>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/localStorage-2.png" class="figure-img img-fluid rounded" alt="Localidade do local storage do navegador">
+          <figcaption class="figure-caption text-xs-right">Local Storage com os dados inseridos no navegador Microsoft Edge</figcaption>
+        </figure>
+      </div>
+
+      <hr class="space">
+
+      <h3>getItem() - pegar</h3>
+
+      <p class="lead">O método <code>localStorage.getItem("chave");</code> retorna o valor, armazenado localmente, da chave especificada </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id=<span class="t">"get"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var nome = localStorage.getItem(<span class="t">"Nome"</span>);</span><br>
+        <span class="e">document.getElementById(<span class="t">"get"</span>).innerHTML = nome</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="get"></div>
+      <script>
+        var nome = localStorage.getItem("Nome");
+        document.getElementById("get").innerHTML = nome;
+      </script>
+
+      <hr class="space">
+
+      <h3>length - quantidade</h3>
+
+      <p class="lead">O atributo<code>localStorage.length;</code> retorna a quantidade de dados armazenados localmente.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id=<span class="t">"length"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var quantidade = localStorage.length;</span><br>
+        <span class="e">document.getElementById(<span class="t">"length"</span>).innerHTML = quantidade</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="length"></div>
+      <script>
+        var quantidade = localStorage.length;
+        document.getElementById("length").innerHTML = quantidade;
+      </script>
+
+      <hr class="space">
+
+      <h3>key - verificando</h3>
+
+      <p class="lead">O método<code>localStorage.key(n);</code> retorna o nome da chave que está na posição especificada.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id=<span class="t">"key"</span>>&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var nomeChave = localStorage.key(1);</span><br>
+        <span class="e">document.getElementById(<span class="t">"key"</span>).innerHTML = nomeChave</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="key"></div>
+      <script>
+        var nomeChave = localStorage.key(1);
+        document.getElementById("key").innerHTML = nomeChave;
+      </script>
+
+      <hr class="space">
+
+      <h3>removeItem() - remover</h3>
+
+      <p class="lead">O método <code>localStorage.removeItem("chave");</code>remove o par chave-valor, armazenado localmente, pelo nome da chave especificada. Abra novamente o seu armazenamento local e confira a exclusão.</p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">localStorage.removeItem(<span class="t">"Nome"</span>);</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <script>
+        localStorage.removeItem("Nome");
+      </script>
+
+      <hr class="space">
+
+      <h3>clear() - remover tudo</h3>
+
+      <p class="lead">O método <code>localStorage.clear();</code>remove todos os dados!</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        <span class=""></span> &lt;button onclick="apagar()">Limpar Armazenamento Local &lt;/button> <br>
+        &lt;script> <br>
+        <span class="e f">function</span> apagar() { <br>
+        <span class="e2">localStorage.clear() ;</span> <br>
+        <span class="e">}</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <button onclick="apagar()">Limpar Armazenamento Local</button>
+      <script>
+        function apagar() {
+          localStorage.clear();
+        }
+      </script>
+
+
+      <hr class="space">
+
+      <h2>sessionStorage</h2>
+
+      <p class="lead">O objeto <code>sessionStorage</code> é idêntico ao objeto <code>localStorage</code>, com a única diferença é que os dados ficam armazenados apenas durante o uso, ou seja, os dados são excluídos assim que o navegador é interrompido. </p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/sessionStorage.png" class="figure-img img-fluid rounded" alt="Localidade do armazenamento local temporário do navegador">
+          <figcaption class="figure-caption text-xs-right">Localidade do armazenamento local temporário do navegador Firefox</figcaption>
+        </figure>
+      </div>
+
+      <hr class="space">
+
+      <h2>setItem() - armazenar</h2>
+
+      <p class="lead">O método <code>localStorage.setItem("chave", "valor");</code> armazena localmente um item de dados que leva como parâmetros a chave e seu respectivo valor. Abra o seu local storage e veja os valores preenchidos. Abra o seu armazenamento local e veja os dados</p>
+
+      <div class="code-js pb-3">
+        &lt;script> <br>
+        <span class="e">sessionStorage.setItem(<span class="t">"Nome"</span>, <span class="t">"Fulano de Tal"</span>);</span><br>
+        <span class="e">sessionStorage.setItem(<span class="t">"idade"</span>, <span class="t">"67"</span>);</span><br>
+        <span class="e">sessionStorage.setItem(<span class="t">"sexo"</span>, <span class="t">"M"</span>);</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="setLocal"></div>
+      <script>
+        sessionStorage.setItem("Nome", "Beltrano da Silva");
+        sessionStorage.setItem("idade", "33");
+        sessionStorage.setItem("sexo", "F");
+      </script>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/sessionStorage-2.png" class="figure-img img-fluid rounded" alt="Localidade do armazenamento local temporário do navegador">
+          <figcaption class="figure-caption text-xs-right">Localidade do armazenamento local temporário do navegador Microsoft Edge</figcaption>
+        </figure>
+      </div>
+
+      <hr class="space">
+
+      <h2>localStorage X Cookies</h2>
+
+      <p class="lead">A principal diferença entre o cookie e o localStorage é que os <mark><code>cookies</code> são principalmente para leitura no lado do servidor</mark> (mesmo que possam haver scripts no lado do cliente), enquanto o <mark><code>localStorage</code> só pode ser lido pelo lado do cliente.</mark>. A segunda diferença está no tamanho do armazenamento, enquanto o <code>localStorage</code> oferece 5MB de armazenamento o <code>cookie</code> oferece apenas 4KB.</p>
+
+      <hr class="space">
+
+      <h2></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

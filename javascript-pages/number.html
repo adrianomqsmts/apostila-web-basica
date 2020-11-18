@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Numbers com JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Números com JavaScript</h1>
+
+      <p class="lead">Os números podem ser representados de algumas formas como decimal ou inteiro, como também pode ser escrito na notação científica.</p>
+
+      <div class="code-js">
+        &lt;script> <br>
+        <span class="e">var inteiro = 10;</span> <br>
+        <span class="e">var decimal = 0.10;</span><br>
+        <span class="e">var cientifico = 10e2; <span class="co">// É o mesmo que 10 elevado a 2 </span></span><br>
+        <span class="e">var cientifico = 10e-2; <span class="co">// É o mesmo que 10 elevado a -2 </span></span><br>
+        &lt;/script> <br>
+      </div> <br>
+
+      <p class="lead">Em JS todos os números são armazenados como pontos flutuantes de 64 bits, sendo assim, o maior número sen notação científica pode ser representado na linguagem é 10000000000000000. Enquanto o número máximo de casas decimais são 17 (0.00000000000000001) O que podem gerar pequeno erros que podem propagar em contas com valores muito pequenos e deve sempre tomar o devido cuidado (Para entender mais sobre esses erros deve-se pesquisar sobre números binários e erros). </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="erros">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var soma = 0.1 + 0.2</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"erros"</span>).innerHTML = <span class="t">"A soma entre o número 0.1 e 0.2 é "</span> +soma</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="erros"></div>
+      <script>
+        var soma = 0.1 + 0.2;
+        document.getElementById("erros").innerHTML = "A soma entre o número 0.1 e 0.2 é " + soma;
+      </script> <br> <br>
+
+      <p class="lead">Existem algumas formas de tratar esses tipos de erros, a mais simples é transformar os valores decimais em inteiros e então reverter com noções básicas de matemática.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="erro2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var soma = (0.1*10 + 0.2*10)/10</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"erro2"</span>).innerHTML = <span class="t">"A soma entre o número 0.1 e 0.2 é "</span> +soma</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="erro2"></div>
+      <script>
+        var soma = (0.1 * 10 + 0.2 * 10) / 10;
+        document.getElementById("erro2").innerHTML = "A soma entre o número 0.1 e 0.2 é " + soma;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>String x Numbers</h2>
+
+
+      <p class="lead">Ao somarmos uma string e um número, o número será considerado uma string e então haverá uma concatenação.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="erro3">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = "10" </span>;<br>
+        <span class="e">var b = 10 </span>;<br>
+        <span class="e">var soma = a + b </span>;<br>
+        <span class="e">document.getElementById(<span class="t">"erro3"</span>).innerHTML = <span class="t">"Resultado: "</span> +soma</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="erro3"></div>
+      <script>
+        var a = "10";
+        var b = 10;
+        var soma = a + b;
+        document.getElementById("erro3").innerHTML = "Resultado: " + soma;
+      </script> <br> <br>
+
+      <p class="lead">Outro erro comum é tentar somar junto com uma string que descreve a soma:</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="erro4">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 10 </span>;<br>
+        <span class="e">var b = 10 </span>;<br>
+        <span class="e">document.getElementById(<span class="t">"erro4"</span>).innerHTML = <span class="t">"Resultado: "</span> + a + b</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="erro4"></div>
+      <script>
+        var a = 10;
+        var b = 10;
+        document.getElementById("erro4").innerHTML = "Resultado: " + a + b;
+      </script> <br> <br>
+
+      <p class="lead">Entretanto, ao fazermos uma operação que não seja de soma (que pode ser confundida com concatenação) com duas string com números o JS tentará converter a string para números</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="multString">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = "10" </span>;<br>
+        <span class="e">var b = "10" </span>;<br>
+        <span class="e">var mult = a * b </span>;<br>
+        <span class="e">document.getElementById(<span class="t">"multString"</span>).innerHTML = <span class="t">"Resultado: "</span> + mult</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="multString"></div>
+      <script>
+        var a = "10";
+        var b = "10";
+        var mult = a * b;
+        document.getElementById("multString").innerHTML = "Resultado: " + mult;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>NaN - Não é um número</h2>
+
+      <p class="lead">A palavra reservada <code>NaN</code> é usada para descrever um valor que não é um número válido. Geralmente ocorre quando tentamos usar uma operação (diferente de soma) entre uma string não numérica e um número</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="mult2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = "Obrigado" </span>;<br>
+        <span class="e">var b = 10 </span>;<br>
+        <span class="e">var mult = a * b </span>;<br>
+        <span class="e">document.getElementById(<span class="t">"mult2"</span>).innerHTML = <span class="t">"Resultado: "</span> + mult</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="mult2"></div>
+      <script>
+        var a = "Obrigado";
+        var b = 10;
+        var mult = a * b;
+        document.getElementById("mult2").innerHTML = "Resultado: " + mult;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>Infinity : Infinito</h2>
+
+      <p class="lead">O valor <code>Infinity</code> é retornado pelo KS sempre que uma operação ultrapassar o valor máximo que a Linguagem suportam ou então quanto ocorre alguma divisão por zero.</p>
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="infinito">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 10/0</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"infinito"</span>).innerHTML = <span class="t">"Resultado: "</span> + a</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="infinito"></div>
+      <script>
+        var a = 10 / 0;
+        document.getElementById("infinito").innerHTML = "Resultado: " + a;
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+        &lt;div id="infinito2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 10 * 10e154</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"infinito2"</span>).innerHTML = <span class="t">"Resultado: "</span> + a</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="infinito2"></div>
+      <script>
+        var a = 10e154 * 10e154;
+        document.getElementById("infinito2").innerHTML = "Resultado: " + a;
+      </script> <br> <br>
+
+      <hr class="lead">
+
+      <h2>toString() : Números Hexadecimais e binários</h2>
+
+      <p class="lead">Podemos escrever o número hexadecimal com a notação <code>0x</code> na frente do valor hexadecimal. Outra forma é usar o método <code>numero.toString(base)</code>, onde a base é da base numérica em que o número será convertido, podendo ser entre 2 a 32, onde a base 2 (binário), base 10 (decimal) e 16 (hexadecimal). </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+        &lt;div id="binario">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 9</span>;<br>
+        <span class="e">var binario = a.toString(2)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"binario"</span>).innerHTML = <span class="t">"Binário de 9 é: "</span> + binario</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="binario"></div>
+      <script>
+        var a = 9;
+        var binario = a.toString(2);
+        document.getElementById("binario").innerHTML = "Binário de 9 é: " + binario;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>toExponential(): Notação Científica</h2>
+
+      <p class="lead">O método <code>numero.toExponential(casasDecimais)</code> coloca o número na notação cientifica, arredondando o valor para o número de casas decimais especificado.</p>
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="casasDecimais">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 9.156</span>;<br>
+        <span class="e">var casasDecimais = a.toExponential(2)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"casasDecimais"</span>).innerHTML = <span class="t">"Notação cientifíca de 9.156 com duas casas decimais é : "</span> + casasDecimais</span>;<br>
+        &lt;/script> <br>
+      </div>
+      <div id="casasDecimais"></div>
+      <script>
+        var a = 9.156;
+        var casasDecimais = a.toExponential(2);
+        document.getElementById("casasDecimais").innerHTML = "Notação cientifíca de 9.156 com duas casas decimais é : " + casasDecimais;
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div11">
+        &lt;div id="casasDecimais2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 9.156</span>;<br>
+        <span class="e">var casasDecimais2 = a.toExponential(5)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"casasDecimais2"</span>).innerHTML = <span class="t">"Notação cientifíca de 9.156 com 5 casas decimais é : "</span> + casasDecimais2</span>;<br>
+        &lt;/script> <br>
+      </div>
+      <div id="casasDecimais2"></div>
+      <script>
+        var a = 9.156;
+        var casasDecimais2 = a.toExponential(5);
+        document.getElementById("casasDecimais2").innerHTML = "Notação cientifíca de 9.156 com 5 casas decimais é : " + casasDecimais2;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>toFixed() : Arredondamento</h2>
+
+      <p class="lead">O método <code>numero.toFixed(casaDecimais)</code> retorna uma string com o valor com o número de casas decimais arredondado a última casa decimal. <code>toFixed(0)</code> arredonda o número inteiro. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div12">
+        &lt;div id="toFixed">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 9.156</span>;<br>
+        <span class="e">var arredondamento = a.toFixed(2)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"toFixed"</span>).innerHTML = <span class="t">"O número 9.156 com duas casas decimais é : "</span> + arredondamento</span>;<br>
+        &lt;/script> <br>
+      </div>
+      <div id="toFixed"></div>
+      <script>
+        var a = 9.156;
+        var arredondamento = a.toFixed(2);
+        document.getElementById("toFixed").innerHTML = "O número 9.156 com duas casas decimais é : " + arredondamento;
+      </script> <br> <br>
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div121">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div121">
+        &lt;div id="toFixed2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 9.156</span>;<br>
+        <span class="e">var arredondamento = a.toFixed(0)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"toFixed2"</span>).innerHTML = <span class="t">"O número 9.156 arredondado: "</span> + arredondamento</span>;<br>
+        &lt;/script> <br>
+      </div>
+      <div id="toFixed2"></div>
+      <script>
+        var a = 9.156;
+        var arredondamento = a.toFixed(0);
+        document.getElementById("toFixed2").innerHTML = "O número 9.156 arredondado : " + arredondamento;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>toPrecision() : Cortando números</h2>
+
+      <p class="lead">O método <code>numero.toPrecision(quantidadeNumeros)</code> faz a mesma coisa que o método <code>toFixed()</code>. Entretanto ele considera o tamanho total, incluindo os números inteiros e não somente as casas decimais</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div13">
+        &lt;div id="toPrecision">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 90.156</span>;<br>
+        <span class="e">var arredondamento = a.toPrecision(3)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"toPrecision"</span>).innerHTML = <span class="t">"O número 90.156 com tamanho 3 é: "</span> + arredondamento</span>;<br>
+        &lt;/script> <br>
+      </div>
+      <div id="toPrecision"></div>
+      <script>
+        var a = 90.156;
+        var arredondamento = a.toPrecision(3);
+        document.getElementById("toPrecision").innerHTML = "O número 90.156 com tamanho 3 é: " + arredondamento;
+      </script> <br> <br>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

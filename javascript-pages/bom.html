@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>BOM (Browser Object Model) em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>BOM (Browser Object Model) em JavaScript</h1>
+
+      <p class="lead">o BOM permite que o JS converse com o navegador, e por existirem diferentes tipos de navegadores, não existem um padrão definido como o DOM, entretanto os mais modernos implementam quase que da mesma forma as principais métodos e propriedades.</p>
+
+      <h2>windows : Objeto da janela de navegação!</h2>
+
+      <p class="lead">O objeto <code>window</code> é compatível com todos os navegadores. Representa a janela de um navegador. Todas as variáveis e métodos globais JS são membros de um objeto <code>window</code> assim como oo BOM pode ser acessado pelo <code>window.document</code>.</p>
+
+      <hr class="space">
+
+      <h2>Janela de Visualização</h2>
+
+      <p class="lead">Podemos mover, fechar, abrir, alterar uma janela de navegação, apensar de que estes métodos não são muito usuais e portanto não serão detalhados.</p>
+
+      <ul class="lead">
+        <li><b>window.open()</b> -<a target="_blank" href="https://www.w3schools.com/met_win_open.asp">Abrir uma nova janela de visualização do navegador</a></li>
+        <li><b>window.moveTo()</b> -<a target="_blank" href="https://www.w3schools.com/met_win_moveto.asp">Mover a posição de uma janela do navegador.</a></li>
+        <li><b>window.close()</b> -<a target="_blank" href="https://www.w3schools.com/met_win_close.asp">Mover a posição de uma janela do navegador.</a></li>
+        <li><b>resizeTo()</b> -<a target="_blank" href="https://www.w3schools.com/jsref/met_win_resizeto.asp">alterar o tamanho de uma janela do navegador.</a></li>
+      </ul>
+
+      <hr class="space">
+
+      <h2>screen : Informações sobre a janela</h2>
+
+      <p class="lead">O objeto <code>screen</code>contém informações sobre a tela do usuário, como a largura <code>screen.width</code>, a altura <code>screen.height</code>, a largura total <code>screen.availWidth</code>, a altura total <code>screen.availHeight</code>, a quantidade de bits por cores <code>screen.colorDepth</code>, ou a profundidade de pixels de cada tela <code>screen.pixelDepth</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+
+        &lt;div id="medidas">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"medidas"</span> );</span><br>
+        <span class="e">var altura = screen.height;</span><br>
+        <span class="e">var largura = screen.width;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"Altura da tela do usuário "</span> + altura + <span class="t">" - Largura da tela do usuário: "</span> + largura;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="medidas"></div>
+      <script>
+        var div = document.getElementById("medidas");
+        var altura = screen.height;
+        var largura = screen.width;
+        div.innerHTML = "Altura da tela do usuário " + altura + " - Largura da tela do usuário: " + largura;
+      </script> <br> <br>
+
+      <p class="lead"> Diferença entre <code>screen.width</code> e <code>screen.availWidth</code> é que um considera a barras de tarefas como o parte da tela e outro não. </p>
+
+      <hr class="space">
+
+      <h2>Location - Obtendo o endereço da página atual</h2>
+
+      <p class="lead">A propriedade <code>location</code> é usada para obter o endereço atual de uma página WEB (URL) e também redirecionar o navegador para uma nova página.</p>
+
+      <ul class="lead">
+        <li><b>window.location.href</b> - retorna o href (URL) da página atual</li>
+        <li><b>window.location.hostname</b> - retorna o nome de domínio do host</li>
+        <li><b> window.location.pathname</b> - retorna o caminho e o nome do arquivo da página atual</li>
+        <li><b>window.location.protocol</b> - retorna o protocolo da web usado (http: ou https:)</li>
+        <li><b>window.location.port</b> - retorna o número da porta do host (da página atual)</li>
+        <li><b> window.location.assign("endereço")</b> - carrega um novo documento.</li>
+      </ul>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+
+        &lt;div id="location">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"location"</span> );</span><br>
+        <span class="e">var endereco = location.href;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O endereço atual é: "</span> + endereco ;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="location"></div>
+      <script>
+        var div = document.getElementById("location");
+        var endereco = location.href;
+        div.innerHTML = "O endereço atual é: " + endereco;
+      </script>
+
+      <hr class="space">
+
+      <h2>history - voltar e avançar</h2>
+
+      <p class="lead">O método <code>history.back()</code> é usado para voltar para a página anterior que o usuário acessou, enquanto o método <code>history.forward()</code> avança a página para uma página que o usuário tinha acessado, mas voltou. Funciona exatamente como os botões avançar e voltar de um navegador, por isso não remos detalhar seu uso. </p>
+
+      <hr class="space">
+
+      <h2>Navigator - Informações de navegação</h2>
+
+      <h3>navigator.cookieEnabled</h3>
+
+      <p class="lead">A propriedade <code>navigator.cookieEnabled</code>retorna verdadeiro se a os cookies estiverem habilitados, caso contrário retorna falso.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+
+        &lt;div id="boscoito">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"boscoito"</span> );</span><br>
+        <span class="e">var habilitado = navigator.cookieEnabled;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"Os cookies estão habilitados? "</span> + habilitado ;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="boscoito"></div>
+      <script>
+        var div = document.getElementById("boscoito");
+        var habilitado = navigator.cookieEnabled;
+        div.innerHTML = "Os cookies estão habilitados? " + habilitado;
+      </script> <br> <br>
+
+      <h3>navigator.appName</h3>
+
+      <p class="lead">A propriedade <code>navigator.appName</code> retorna o nome do navegador, entretanto "Netscape" é o nome do aplicativo para IE11, Chrome, Firefox e Safari.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+
+        &lt;div id="nome">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"nome"</span> );</span><br>
+        <span class="e">var nome = navigator.appName;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O nome do navegador é: "</span> + nome;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="nome"></div>
+      <script>
+        var div = document.getElementById("nome");
+        var nome = navigator.appName;
+        div.innerHTML = "O nome do navegador é: " + nome;
+      </script> <br> <br>
+
+      <h3>navigator.appCodeName</h3>
+
+      <p class="lead">A propriedade <code>navigator.appCodeName</code> retorna código do aplicativo do navegador, entretanto "Mozilla" é o nome do aplicativo para IE, Chrome, Firefox, Safari e Opera.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+
+        &lt;div id="codigo">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"codigo"</span> );</span><br>
+        <span class="e">var codigo = navigator.appCodeName;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O codigo do navegador é: "</span> + codigo;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="codigo"></div>
+      <script>
+        var div = document.getElementById("codigo");
+        var codigo = navigator.appCodeName;
+        div.innerHTML = "O codigo do navegador é: " + codigo;
+      </script> <br> <br>
+
+      <h3>navigator.product</h3>
+
+      <p class="lead">A propriedade <code>navigator.product</code> retorna o nome do produto do mecanismo do navegador, entretanto "Gecko" é o nome do produto da maioria dos navegadores.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+
+        &lt;div id="produto">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"produto"</span> );</span><br>
+        <span class="e">var produto = navigator.product;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O produto do navegador é: "</span> + produto;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="produto"></div>
+      <script>
+        var div = document.getElementById("produto");
+        var produto = navigator.product;
+        div.innerHTML = "O produto do navegador é: " + produto;
+      </script> <br> <br>
+
+      <h3>navigator.appVersion</h3>
+
+      <p class="lead">A propriedade <code>navigator.appVersion</code> retorna versão do navegador.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+
+        &lt;div id="versao">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"versao"</span> );</span><br>
+        <span class="e">var versao = navigator.appVersion;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"A versao do navegador é: "</span> + versao;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="versao"></div>
+      <script>
+        var div = document.getElementById("versao");
+        var versao = navigator.appVersion;
+        div.innerHTML = "A versao do navegador é: " + versao;
+      </script> <br> <br>
+
+      <h3>navigator.userAgent</h3>
+
+      <p class="lead">A propriedade <code>navigator.userAgent</code> retorna uma descrição dos dados do navegador.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+
+        &lt;div id="descricao">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"descricao"</span> );</span><br>
+        <span class="e">var descricao = navigator.userAgent;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"A descricao do navegador é: "</span> + descricao;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="descricao"></div>
+      <script>
+        var div = document.getElementById("descricao");
+        var descricao = navigator.userAgent;
+        div.innerHTML = "A descricao do navegador é: " + descricao;
+      </script> <br> <br>
+
+      <p class="lead">Muitas destas informações acima são enganosas e não devem ser usadas para ver as versões dos navegadores! O próprio usuário pode alterar as informações do navegador e muitos nomes são usados tanto por um navegador quanto por outro.</p>
+
+      <h3>navigator.platform</h3>
+
+      <p class="lead">A propriedade <code>navigator.platform</code> retorna o sistema operacional do navegador.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div11">
+
+        &lt;div id="sistema">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"sistema"</span> );</span><br>
+        <span class="e">var sistema = navigator.platform;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O sistema do navegador é: "</span> + sistema;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="sistema"></div>
+      <script>
+        var div = document.getElementById("sistema");
+        var sistema = navigator.platform;
+        div.innerHTML = "O sistema do navegador é: " + sistema;
+      </script> <br> <br>
+
+      <h3>navigator.language</h3>
+
+      <p class="lead">A propriedade <code>navigator.language</code> retorna o idioma do navegador.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div12">
+        &lt;div id="idioma">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"idioma"</span> );</span><br>
+        <span class="e">var idioma = navigator.language;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O idioma do navegador é: "</span> + idioma;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="idioma"></div>
+      <script>
+        var div = document.getElementById("idioma");
+        var idioma = navigator.language;
+        div.innerHTML = "O idioma do navegador é: " + idioma;
+      </script> <br> <br>
+
+      <h3>navigator.onLine</h3>
+
+      <p class="lead">A propriedade <code>navigator.onLine</code> retorna se o navegador está conectado a internet.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div13">
+        &lt;div id="conectado">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"conectado"</span> );</span><br>
+        <span class="e">var conectado = navigator.onLine;</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O navegador está conectado? "</span> + conectado;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="conectado"></div>
+      <script>
+        var div = document.getElementById("conectado");
+        var conectado = navigator.onLine;
+        div.innerHTML = "O navegador está conectado? " + conectado;
+      </script> <br> <br>
+
+      <h3>navigator.javaEnabled()</h3>
+
+      <p class="lead">O método <code>navigator.javaEnabled()</code> retorna se o navegador tem o Java habilitado.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div14">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div14">
+        &lt;div id="java">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"java"</span> );</span><br>
+        <span class="e">var java = navigator.javaEnabled();</span><br>
+        <span class="e">div.innerHTML = <span class="t">"O navegador está com java habilitado? "</span> + java;<br>
+          &lt;/script> <br>
+      </div>
+
+      <div id="java"></div>
+      <script>
+        var div = document.getElementById("java");
+        var java = navigator.javaEnabled();
+        div.innerHTML = "O navegador está com java habilitado? " + java;
+      </script>
+
+      <hr class="space">
+
+      <h2>Caixas pop-up</h2>
+
+      <p class="lead">Caixas pop-up são pequenas janelas que mostram um determinado conteúdo em destaque e de forma independente.</p>
+
+      <h3>alert : Caixas de alerta</h3>
+
+      <p class="lead">O método <code>alert("mensagem")</code> é usado para alertar o usuário sobre uma ação e é necessário que o usuário clique em "OK" para prosseguir.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div15">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div15">
+        &lt;button onclick="alert('ALERRRRRTA!!!!')">Clique!&lt;/button> <br>
+      </div>
+
+      <button onclick="alert('ALERRRRRTA!!!!')">Clique!</button>
+
+      <h3>confirm : Caixas de confirmação</h3>
+
+      <p class="lead">O método <code>confirm("mensagem")</code> é usado para enviar uma mensagem ao usuário em que ele tenha que aceitar ao pressionar "OK" ou cancelar pressionando "Cancelar". O método então retorna verdadeiro se "OK" ou falso se "Cancelar"</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div16">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div16">
+        &lt;button id="confirmar" onclick="resposta()">Clique!&lt;/button> <br>
+        &lt;script> <br>
+        <span class="e">var button = document.getElementById( <span class="t">"confirmar"</span> );</span><br>
+        <span class="e"><span class="f">function resposta()</span>{</span><br>
+        <span class="e2">var resp = confirm("Vamos continuar?");</span><br>
+        <span class="e2">if (resp){</span><br>
+        <span class="e3">button.innerHTML = <span class="t">"Você clicou em 'OK'"</span>;</span> <br>
+        <span class="e2">} else {</span><br>
+        <span class="e3">button.innerHTML = <span class="t">"Você clicou em 'CANCELAR'"</span>;</span> <br>
+        <span class="e2">}</span><br>
+        <span class="e">}</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <button id="confirmar" onclick="resposta()">Clique!</button>
+      <script>
+        var button = document.getElementById("confirmar");
+        function resposta() {
+          var resp = confirm("Vamos continuar?");
+          if (resp) {
+            button.innerHTML = "Você clicou em 'OK'";
+          } else {
+            button.innerHTML = "Você clicou em 'CANCELAR'";
+          }
+        }
+      </script> <br> <br>
+
+
+      <h3>prompt: Caixas de confirmação e entrada de dados</h3>
+
+      <p class="lead">O método <code>confirm("mensagem", "valorPadrão")</code> é usado para enviar uma mensagem ao usuário em que ele tenha que digitar algum valor, e caso aceite ao pressionar "OK" o valor digitado será retornado pelo método. Caso pressione "Cancelar" o método então irá retornar o valor <code>null</code>. Por isso precisamos tratar o caso o valor seja nulo ou vazio "".</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div17">
+        &lt;button id="pegarValor" onclick="pegarValor()">Clique!&lt;/button> <br>
+        &lt;script> <br>
+        <span class="e">var button = document.getElementById( <span class="t">"pegarValor"</span> );</span><br>
+        <span class="e"><span class="f">function pegarValor()</span>{</span><br>
+        <span class="e2">var valor = prompt("Digite o seu nome", "Fulano");</span><br>
+        <span class="e2">if (valor == null || valor == ""){</span><br>
+        <span class="e3">button.innerHTML = <span class="t">"Você não digitou um nome!"</span>;</span> <br>
+        <span class="e2">} else {</span><br>
+        <span class="e3">button.innerHTML = <span class="t">"O seu nome é: "</span> + valor;</span> <br>
+        <span class="e2">}</span><br>
+        <span class="e">}</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <button id="pegarValor" onclick="pegarValor()">Clique!</button>
+      <script>
+        var button = document.getElementById("pegarValor");
+        function pegarValor() {
+          var valor = prompt("Digite o seu nome", "Fulano");
+          if (valor == null || valor == "") {
+            button.innerHTML = "Você não digitou um nome!";
+          } else {
+            button.innerHTML = "O seu nome é: " + valor;
+          }
+        }
+      </script>
+
+      <hr class="space">
+
+      <h2>Eventos de Tempo</h2>
+
+      <p class="lead">O objeto <code>window</code> nos permite controlar o tempo que demora uma função ser executada, podendo colocar um atraso para que a função realmente seja executada. Lembre-se que 1 segundo equivale a 1000 milissegundos.</p>
+
+      <h3>setTimeout() - Executa a função depois de um intervalo de tempo </h3>
+
+      <p class="lead">O método <code>setTimeout(função,  milissegundos)</code> chamará a execução da função especificada depois de tantos milissegundos especificados em seu parâmetro. Lembre-se que deve passar apenas o nome da função, e caso a função tenha parâmetro chame desta forma <code>function(){ função(a, b, c); }</code>, no local co parâmetro da função.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div18">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div18">
+        &lt;button id="tempo-1" onclick="retornoTime = setTimeout(pegarValor,2000)">Clique!&lt;/button> <br>
+        &lt;script> <br>
+        <span class="e">var button = document.getElementById( <span class="t">"tempo-1"</span> );</span><br>
+        <span class="e"><span class="f">function pegarValor()</span>{</span><br>
+        <span class="e2">var valor = prompt("Digite o seu nome", "Fulano");</span><br>
+        <span class="e2">if (valor == null || valor == ""){</span><br>
+        <span class="e3">button.innerHTML = <span class="t">"Você não digitou um nome!"</span>;</span> <br>
+        <span class="e2">} else {</span><br>
+        <span class="e3">button.innerHTML = <span class="t">"O seu nome é: "</span> + valor;</span> <br>
+        <span class="e2">}</span><br>
+        <span class="e">}</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <button id="tempo-1" onclick="retornoTime = setTimeout(pegarValor2,2000)">Clique!</button>
+      <script>
+        var tempo = document.getElementById("tempo-1");
+        function pegarValor2() {
+          var valor = prompt("Digite o seu nome", "Fulano");
+          if (valor == null || valor == "") {
+            tempo.innerHTML = "Você não digitou um nome!";
+          } else {
+           tempo.innerHTML = "O seu nome é: " + valor;
+          }
+        }
+      </script> <br> <br>
+
+      <h3>setInterval() - Executa a função continuamente com um intervalo de tempo </h3>
+
+      <p class="lead">O método <code>setInterval(função,  milissegundos)</code> chamará a execução da função especificada depois de tantos milissegundos especificados em seu parâmetro, depois repetirá chamando a função novamente e novamente após o intervalo de tempo especificado. Lembre-se que deve passar apenas o nome da função, e caso a função tenha parâmetro chame desta forma <code>function(){ função(a, b, c); }</code>, no local co parâmetro da função.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div19">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div19">
+        &lt;div id="relogio">Clique!&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById( <span class="t">"relogio"</span> );</span><br>
+        <span class="e">var retornoInterval = setInterval(hora, 1000);</span>
+        <span class="e"><span class="f">function hora()</span>{</span><br>
+        <span class="e2">var hora = new Date();</span><br>
+        <span class="e2">hora = hora.toLocaleTimeString();</span><br>
+        <span class="e2">div.innerHTML = hora;</span> <br>
+        <span class="e">}</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="relogio"></div>
+      <script>
+        var retornoInterval = setInterval(hora, 1000);
+        var div = document.getElementById("relogio");
+        function hora() {
+          var hora = new Date();
+          hora = hora.toLocaleTimeString();
+          div.innerHTML = hora;
+        }
+      </script> <br> <br>
+
+      <h3>clearTimeout() e clearInterval() - interrompendo a espera</h3>
+
+      <p class="lead">O método <code>setTimeout()</code> retornam um objeto, e podemos usar este retorno para parar a espera com o método <code>clearTimeout(retorno)</code>. Enquanto para parar a espera de um <code>setInterval(retorno)</code> usamos o método <code>clearInterval()</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div20">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div20">
+        &lt;button onclick="clearInterval(retornoInterval)">Parar o Relógio de cima!&lt;/button> <br>
+      </div>
+
+      <button onclick="clearInterval(retornoInterval)">Parar o Relógio de cima!</button> <br> <br>
+      <br>
+
+      <hr class="space">
+      <p class="lead">O BOM tbm possui cookies, mas iremos abordá-los dentro de formas de armazenamentos.</p>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

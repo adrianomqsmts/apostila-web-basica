@@ -14,7 +14,6 @@ body {
     background-color: #e671ad;
 }
 
-
 .bg-babyblue {
     background-color: #4ac2ed;
 }
@@ -60,11 +59,13 @@ code {
 .lead {
     text-align: justify;
 }
-ul.lead::first-letter{
-     padding-left: 0;
+
+ul.lead::first-letter {
+    padding-left: 0;
 }
-ol.lead::first-letter{
-     padding-left: 0;
+
+ol.lead::first-letter {
+    padding-left: 0;
 }
 
 .lead::first-letter {
@@ -79,6 +80,16 @@ ol.lead::first-letter{
 .table-none caption {
     position: initial;
     text-decoration: none;
+}
+
+h3 a.text-yellow:hover {
+    color: white;
+}
+
+hr.space {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 1px solid #e671ad;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -107,18 +118,47 @@ ul li b {
     font-size: 1.2em;
 }
 
+.code-js {
+    color: white;
+    font-size: 1.1em;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.co {
+    color: dimgray;
+}
+
+.f {
+    color: deepskyblue;
+}
+
+.n {
+    color: yellowgreen;
+}
+
+.t {
+    color: limegreen;
+}
+
 .s {
     color: gold;
 }
 
-.p{
+.p {
     color: springgreen;
 }
 
-.v{
-    color: red ;
+.v {
+    color: red;
 }
 
-.c{
+.c {
     color: cyan;
+}
+
+.es {
+    color: darkorange;
 }

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Classes em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Classes em JavaScript</h1>
+
+      <p class="lead">Uma classes é um modelo para objetos... Ou seja, é uma forma de podermos criar vários objetos com as mesmas funções e propriedades sem termos que criar todo o corpo do objeto múltiplas vezes. Para criarmos uma classe devemos usar a palavra reservada <code>class</code> e devemos começar o nome de uma classe sempre com a primeira letra maiúscula para diferenciá-las de variáveis normais.</p>
+
+      <p class="lead">Um objeto criado em <a href="objetos.html">objetos</a> difere um pouco de sua sintaxe de uma classe pois não precisa ser instanciado, ou dito de outra forma, construído. Para isso, uma classe sempre deve ter um método chamado <code>constructor() { ... }</code> no seu corpo onde irá inicializar as principais propriedades do objeto.</p>
+
+      <p class="lead">A palavra reservada <code>this</code> cria ou usar uma propriedade dentro da classe com o nome especificado após o ponto.</p>
+
+      <div class="code-js">
+        <span class="es">class Pessoa {</span> <br>
+        <span class="e es">constructor(nome, idade) {</span> <br>
+        <span class="e2">this.nome = nome;</span> <br>
+        <span class="e2">this.idade = idade;</span> <br>
+        <span class="e es">}</span> <br>
+        <span class="es">}</span> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>Construindo objetos</h2>
+
+      <p class="lead">Parar criar então um objeto usando um modelo, basta usar a palavra reservada <code>new</code> seguida pelo nome do modelo e seus parâmetros (que são os usados no construtor).</p>
+
+      <div class="code-js">
+        var pessoa1 = <span class="es">new Pessoa("Fulano de Tal", 60);</span> <br>
+        var pessoa2 = <span class="es">new Pessoa("Ciclano Beltrano", 25);</span> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>Constructor</h2>
+
+      <p class="lead">O método <code>constructor(){ ... }</code> deve sempre ter exatamente este nome, será sempre executado na criação de um novo objeto com seus parâmetros especificados que serão usados para inicializar os valores das propriedades do objeto. Por padrão, caso o método esteja omitido, o JS irá criar um método construtor sem código e sem parâmetros (construtor vazio). </p>
+
+      <hr class="space">
+
+      <h2>Criando métodos</h2>
+
+      <p class="lead">Para criar métodos em uma classe, basta seguir os mesmo métodos de criação de métodos de um objeto e usá-los da após a construção de um objeto da mesma forma.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="classe">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e es">class Pessoa {</span> <br>
+        <span class="e2 es">constructor(nome, idade) {</span> <br>
+        <span class="e3">this.nome = nome;</span> <br>
+        <span class="e3">this.idade = idade;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e2 f">falarNome()</span> {<br>
+        <span class="e3"></span> return <span class="t">"Meu nome é : "</span> + this.nome;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">}</span> <br>
+        <span class="e"> var pessoa = <span class="es">new Pessoa( <span class="t">"Fulano de Tal"</span> , 70);</span></span> <br>
+        <span class="e">document.getElementById(<span class="t">"classe"</span>).innerHTML = pessoa.falarNome();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="classe"></div>
+      <script>
+        class Pessoa {
+          constructor(nome, idade) {
+            this.nome = nome;
+            this.idade = idade;
+          }
+          falarNome() {
+            return "Meu nome é : " + this.nome;
+          }
+        }
+        var pessoa = new Pessoa("Fulano de Tal", 70);
+        document.getElementById("classe").innerHTML = pessoa.falarNome();
+      </script>
+
+      <hr class="space">
+
+      <h2>Extends - Herança entre classes</h2>
+
+      <p class="lead">Herança é um conceito de Orientação a Objetos, onde uma classe herda (<code>extends</code>) as propriedades e os métodos de uma classe pai. Em caso de heranças múltiplas, o filho do filho, também herdará as propriedades e métodos do pai e do avô.</p>
+      <p class="lead">O método <code>super()</code> é usado para acessar as propriedades e métodos da classe pái. Se o método <code>super()</code> for chamado dentro do método <code>constructor()</code>, ele invocará o método construtor da classe pai para poder inicializar as propriedades do pai.</p>
+      <p class="lead">Podemos também usar um outro conceito de Orientação a Objetos que é o <strong>polimorfismo</strong>, onde podemos sobrescrever os métodos da classe pai, criando um método de mesmo nome, porém com funcionalidades diferentes. </p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="heranca">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e es">class Animal {</span> <br>
+        <span class="e2 es">constructor(especie) {</span> <br>
+        <span class="e3">this.especie = especie;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e2 f">emiteSom()</span> {<br>
+        <span class="e3"></span> return <span class="t">"SOM"</span>;<br>
+        <span class="e2">}</span><br>
+        <span class="e2 f">viver()</span> {<br>
+        <span class="e3"></span> return <span class="t">"Este Animal está vivo"</span>;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">}</span> <br>
+        <br>
+        <span class="e es">class Cachorro extends Animal {</span> <br>
+        <span class="e2 es">constructor(nome, idade) {</span> <br>
+        <span class="e3 f">super("mamífero");</span> <br>
+        <span class="e3">this.nome = nome;</span> <br>
+        <span class="e3">this.idade = idade;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e2 f">emiteSom()</span> {<br>
+        <span class="e3"></span> return <span class="t">"LATIR!"</span>;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">}</span> <br>
+        <br>
+        <span class="e es">class Periquito extends Animal {</span> <br>
+        <span class="e2 es">constructor(nome, idade) {</span> <br>
+        <span class="e3 f">super("ave");</span> <br>
+        <span class="e3">this.nome = nome;</span> <br>
+        <span class="e3">this.idade = idade;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e2 f">emiteSom()</span> {<br>
+        <span class="e3"></span> return <span class="t">"PIAR?!"</span>;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">}</span> <br>
+
+        <span class="e"> var dog = <span class="es">new Cachorro( <span class="t">"Doguinho"</span> , 7);</span></span> <br>
+        <span class="e"> var bird = <span class="es">new Periquito( <span class="t">"Quiquito"</span> , 1);</span></span> <br>
+
+        <span class="e">document.getElementById(<span class="t">"heranca"</span>).innerHTML = <br>
+          <span class="t">"O periquito é uma "</span> + bird.especie + <br>
+          <span class="t">" e ele emite o som de : "</span> + bird.emiteSom() + <br>
+          <span class="t">" ----- Então: "</span> + bird.viver() + <br>
+          <span class="t">"&lt;br> O cachorro é um "</span> + dog.especie + <br>
+          <span class="t">" e ele emite o som de : "</span> + dog.emiteSom() + <br>
+          <span class="t">" ----- Então: "</span> + dog.viver();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="heranca"></div>
+      <script>
+        class Animal {
+          constructor(especie) {
+            this.especie = especie;
+          }
+          emiteSom() {
+            return "";
+          }
+          viver() {
+            return "Este Animal está vivo";
+          }
+        }
+
+        class Cachorro extends Animal {
+          constructor(nome, idade) {
+            super("mamífero");
+            this.nome = nome;
+            this.idade = idade;
+          }
+          emiteSom() {
+            return "LATIR!";
+          }
+        }
+
+        class Periquito extends Animal {
+          constructor(nome, idade) {
+            super("ave");
+            this.nome = nome;
+            this.idade = idade;
+          }
+          emiteSom() {
+            return "PIAR?!";
+          }
+        }
+        var dog = new Cachorro("Doguinho", 7);
+        var bird = new Periquito("Quiquito", 1);
+        document.getElementById("heranca").innerHTML =
+          "O periquito é uma " + bird.especie +
+          " e ele emite o som de : " + bird.emiteSom() +
+          " ----- Então: " + bird.viver() +
+          "<br> O cachorro é um " + dog.especie +
+          " e ele emite o som de : " + dog.emiteSom() +
+          " ----- Então: " + dog.viver();
+      </script><br> <br>
+
+      <p class="lead">Como você viu acima vários conceitos, onde mesmo que bird e dog não tenham em suas classes a propriedade <code>especie</code> e o método <code>viver()</code> eles herdaram estes da classe pai <code>Animal</code>. E mesmo que o <code>Animal</code> tivesse o método <code>emitirSom()</code> usamos o conceito de <strong>polimorfismo</strong> e sobrescrevemos o método para funcionar de acordo com cada espécie. Por dim temos o detalhe da funcionalidade <code>super()</code> que atribuí o nome da espécie para a classe herdada. </p>
+
+      <hr class="space">
+
+      <h2>Getters e Setters com classes</h2>
+
+      <p class="lead">Também podemos usar o conceito de <code>get</code> e <code>set</code> com as classes para "proteger" as propriedades de atribuições de valores inválidos, assim como tratar a exibição dos dados. Como visto em <a href="objetos.html">Objetos</a>. Como get e setters não podem ter o mesmo nome que as propriedades é um padrão começar os nomes das propriedades com um underline <code>_</code>.</p>
+
+      <p class="lead">Assim os métodos se comportarão como as propriedades, funcionando de forma totalmente transparente, sem notarmos que estamos usando métodos e não variáveis.</p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js" id="div4">
+        &lt;div id="get-set">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e es">class Pessoa {</span> <br>
+        <span class="e2 es">constructor(nome, idade) {</span> <br>
+        <span class="e3">this._nome = nome;</span> <br>
+        <span class="e3">this._idade = idade;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e2 f">falarNome()</span> {<br>
+        <span class="e3"></span> return <span class="t">"Meu nome é : "</span> + this._nome;<br>
+        <span class="e2">}</span><br>
+        <span class="e2 es">get nome()</span> {<br>
+        <span class="e3"></span> return "Meu nome é : " + this._nome;<br>
+        <span class="e2">}</span><br>
+        <span class="e2 es">set nome( nome )</span> {<br>
+        <span class="e3"></span> this._nome = nome.toUpperCase();<br>
+        <span class="e2">}</span><br>
+        <span class="e2 es">get idade()</span> {<br>
+        <span class="e3"></span> return "Meu idade é : " + this._idade;<br>
+        <span class="e2">}</span><br>
+        <span class="e2 es">set idade( idade )</span> {<br>
+        <span class="e3"></span> this._idade = idade;<br>
+        <span class="e2">}</span><br>
+        <span class="e2 es">get altura()</span> {<br>
+        <span class="e3"></span> return "Meu altura é : " + this._altura;<br>
+        <span class="e2">}</span><br>
+        <span class="e2 es">set altura( Nome )</span> {<br>
+        <span class="e3"></span> this._altura = altura;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">}</span><br>
+        <span>var pessoa = new Pessoa("Fulanoadasda", 47);</span><br>
+        <span>pessoa.nome = "Fulano de Tal Ciclano";</span><br>
+        <span class="e">document.getElementById(<span class="t">"get-set"</span>).innerHTML = pessoa.nome;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="get-set"></div>
+      <script>
+        class Pessoas {
+          constructor(nome, idade) {
+            this._nome = nome;
+            this._idade = idade;
+          }
+          falarNome() {
+            return "Meu nome é : " + this._nome;
+          }
+          get nome() {
+            return "Meu nome é : " + this._nome;
+          }
+          set nome(nome) {
+            this._nome = nome.toUpperCase();
+          }
+          get idade() {
+            return "Meu idade é : " + this._idade;
+          }
+          set idade(idade) {
+            this._idade = idade;
+          }
+          get altura() {
+            return "Meu altura é : " + this._altura;
+          }
+          set altura(Nome) {
+            this._altura = altura;
+          }
+        }
+        var pessoa = new Pessoas("Fulanoadasda", 47);
+        pessoa.nome = "Fulano de Tal Ciclano";
+        document.getElementById("get-set").innerHTML = pessoa.nome;
+      </script>
+
+      <hr class="space">
+
+      <h2>Métodos estáticos</h2>
+
+      <p class="lead">Os métodos estáticos são criados com a palavra reservada <code>static</code> e só podem ser usados ór uma classe, ou seja, se você construir um objeto e tentar usar o método o mesmo retornará erros. única forma de usar um método estático é usando o método dentro da própria classe ou chamando a classe.</p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="estatico">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e es">class Pessoa {</span> <br>
+        <span class="e2 es">constructor(nome, idade) {</span> <br>
+        <span class="e3">this.nome = nome;</span> <br>
+        <span class="e3">this.idade = idade;</span> <br>
+        <span class="e2 es">}</span> <br>
+        <span class="e2 f">static falarNome()</span> {<br>
+        <span class="e3"></span> return <span class="t">"Meu nome é estático"</span>;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"estatico"</span>).innerHTML = Pessoa.falarNome();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="estatico"></div>
+      <script>
+        class Pessoa2 {
+          constructor(nome, idade) {
+            this.nome = nome;
+            this.idade = idade;
+          }
+          static falarNome() {
+            return "Meu nome é estático";
+          }
+        }
+        document.getElementById("estatico").innerHTML = Pessoa2.falarNome();
+      </script> <br> <br> <br>
+
+      <p class="lead">Para saber mais sobre métodos estáticos acesse<a target="_blank" href="https://www.w3schools.com/js/js_class_static.asp">Classes e métodos estáticos</a></p>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

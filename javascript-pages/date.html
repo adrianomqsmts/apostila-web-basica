@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Datas em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Date em JavaScript</h1>
+
+      <p class="lead">O objeto <code>Date</code> é muito usado para trabalhar com datas e horários. Por ser um objeto pronto, ele já contém propriedades como ano, mês, dia, horas, minutos, segundos e milissegundo que podem ser acessadas após a criação do objeto. Exitem 4 formas de criar um objeto do tipo data.</p>
+      <ul>
+        <li><b>var data = new Date()</b> - Cria um objeto com a data no momento da criação do objeto.</li>
+        <li><b>var data = new Date(ano, mês, dia, horas, minutos, segundos, milissegundo)</b> - Cria um objeto com a data e horário especificado em valores inteiros.</li>
+        <li><b>var data = new Date(ano, mês...)</b> - Podemos especificar 5, 4, 3 e 2 valores, onde o primeiro será sempre a data, o segundo o mês, o terceiro o dia, o quarto a hora e assim sucessivamente. Se for especificado apenas um parâmetro, o objeto o interpretará como milissegundos.</li>
+        <li><b>var data = new Date("texto")</b> - Cria um objeto com a data informada em texto.</li>
+      </ul>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="data">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"data"</span>).innerHTML = data;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="data"></div>
+      <script>
+        var data = new Date();
+        document.getElementById("data").innerHTML = data;
+      </script> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="data2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data2 =<span class="es">new Date(1997, 09, 15, 12, 30, 59, 0)</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"data2"</span>).innerHTML = data2;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="data2"></div>
+      <script>
+        var data2 = new Date(1997, 09, 15, 12, 30, 59, 0);
+        document.getElementById("data2").innerHTML = data2;
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>String de Datas</h2>
+
+      <p class="lead">Podemos criar uma nova data especificando ums string como parâmetro, mas devemos seguir uma certa sintaxe. Usaremos o padrão ISO para a criar as datas sendo então: <code>(AAAA-MM-DDTHH:MM:SSZ)</code> onde AAAA [e o ano com 4 dígitos, MM é o mês em dois dígitos (01, 02, 03, etc), DD é o dia em dois dígitos, o caractere T separa a data e a hora, onde HH é a hora em dois dígitos, MM os minutos em dois dígitos e SS os segundos em dois dígitos, finalizado pelo caractere Z.</p>
+
+      <p class="lead">Podemos omitir a parte do horário, dia e até mesmo mês especificando apenas o ano "AAAA". </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="data3">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data3 =<span class="es">new Date("2019-07-25T12:30:00Z")</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"data3"</span>).innerHTML = data3;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="data3"></div>
+      <script>
+        var data3 = new Date("2019-07-25T12:30:00Z");
+        document.getElementById("data3").innerHTML = data3;
+      </script> <br>
+
+      <h3>Acertando o horário em relação ao UTC</h3>
+
+      <p class="lead">Para adicionar mais horas e minutos em um horário em relação ao UTC precisamos remover o caractere Z e adicionar <code>+HH:MM</code> para incrementar as horas ou <code>-HH:MM</code> para decrementar as horas. ficando algo como <code>(AAAA-MM-DDTHH:MM:SS+HH:MM)</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="data4">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data4 =<span class="es">new Date("2019-07-25T12:30:00+03:30")</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"data4"</span>).innerHTML = data4;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="data4"></div>
+      <script>
+        var data4 = new Date("2019-07-25T12:30:00+03:30");
+        document.getElementById("data4").innerHTML = data4;
+      </script>
+
+      <hr class="space">
+
+      <h2>toUTCString() : Convertendo datas para o formato UTC</h2>
+
+      <p class="lead">O método <code>data.toUTCString()</code> converte a data para o uma string no formato UTC.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="utc">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"utc"</span>).innerHTML = data.toUTCString();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="utc"></div>
+      <script>
+        var data = new Date();
+        document.getElementById("utc").innerHTML = data.toUTCString();
+      </script>
+
+      <hr class="space">
+
+      <h2>toDateString() : Data mais legível</h2>
+
+      <p class="leas">O método <code>data.toDateString()</code> converte a data padrão em uma string em um formato mais legível.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="Date">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"Date"</span>).innerHTML = data.toDateString();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="Date"></div>
+      <script>
+        var data = new Date();
+        document.getElementById("Date").innerHTML = data.toDateString();
+      </script>
+
+      <hr class="lead">
+
+      <h2>toISOString() : Converte a data para a sintaxe ISO</h2>
+
+      <p class="lead">O método <code>data.toISOString()</code> converte a data padrão para um formato dentro da sintaxe ISO retornando a conversão em uma nova string. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="ISO">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"ISO"</span>).innerHTML = data.toISOString();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="ISO"></div>
+      <script>
+        var data = new Date();
+        document.getElementById("ISO").innerHTML = data.toISOString();
+      </script>
+
+      <hr class="lead">
+
+      <h2>get() : Acessando as propriedades das datas</h2>
+
+      <p class="leas">Com o método <code>data.get...()</code> podemos pegar as propriedades de cada data individualmente como o ano, mês e hora. </p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Método</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>getFullYear()</td>
+            <td>Retorna o <strong>ano</strong> em quatro dígitos numéricos (yyyy)</td>
+          </tr>
+          <tr>
+            <td>getMonth()</td>
+            <td>Retorna o <strong>mês</strong> em um ou dois dígitos numéricos (0-11)</td>
+          </tr>
+          <tr>
+            <td>getDate()</td>
+            <td>Retorna o <strong>dia</strong> em um ou dois dígitos numéricos (1-31)</td>
+          </tr>
+          <tr>
+            <td>getHours()</td>
+            <td>Retorna a <strong>hora</strong> em um ou dois dígitos numéricos (0-23)</td>
+          </tr>
+          <tr>
+            <td>getMinutes()</td>
+            <td>Retorna o <strong>minuto</strong> em um ou dois dígitos numéricos (0-59)</td>
+          </tr>
+          <tr>
+            <td>getSeconds()</td>
+            <td>Retorna o <strong>segundo</strong> em um ou dois dígitos numéricos (0-59)</td>
+          </tr>
+          <tr>
+            <td>getMilliseconds()</td>
+            <td>Retorna o <strong>milissegundos</strong> em um, dois ou três dígitos numéricos (0-999)</td>
+          </tr>
+          <tr>
+            <td>getTime()</td>
+            <td>Retorna o tempo em milissegundos desde January 1, 1970</td>
+          </tr>
+          <tr>
+            <td>getDay()</td>
+            <td>Retorna a <strong>semana</strong> em um o dígito numérico (0-6)</td>
+          </tr>
+          <tr>
+            <td>getUTCFullYear()</td>
+            <td>Retorna o <strong>ano</strong> em quatro dígitos numéricos (yyyy)</td>
+          </tr>
+          <tr>
+            <td>getUTCMonth()</td>
+            <td>Retorna o <strong>mês</strong> em um ou dois dígitos numéricos (0-11)</td>
+          </tr>
+          <tr>
+            <td>getUTCDate()</td>
+            <td>Retorna o <strong>dia</strong> no formato UTC</td>
+          </tr>
+          <tr>
+            <td>getUTCHours()</td>
+            <td>Retorna a <strong>hora</strong> no formato UTC</td>
+          </tr>
+          <tr>
+            <td>getUTCMinutes()</td>
+            <td>Retorna o <strong>minuto</strong> no formato UTC</td>
+          </tr>
+          <tr>
+            <td>getUTCSeconds()</td>
+            <td>Retorna o <strong>segundo</strong> no formato UTC</td>
+          </tr>
+          <tr>
+            <td>getUTCMilliseconds()</td>
+            <td>Retorna o <strong>milissegundos</strong> no formato UTC</td>
+          </tr>
+          <tr>
+            <td>getUTCDay()</td>
+            <td>Retorna a <strong>semana</strong> no formato UTC</td>
+          </tr>
+          <tr>
+            <td>Date.now()</td>
+            <td>Retorna a data atual .</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div11">
+        &lt;div id="gets">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"gets"</span>).innerHTML =
+          <span class="t e">"Ano: "</span> + <span class="es">data.getFullYear()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="t e">"Mês: "</span> + <span class="es">data.getMonth()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="t e">"Dia: "</span> + <span class="es">data.getDate()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"Hora: "</span> + <span class="es">data.getHours()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"minutos: "</span> + <span class="es">data.getUTCMinutes()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"segundos: " </span> + <span class="es">data.getSeconds()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"Milissegundos:</span> " + <span class="es">data.getMilliseconds()</span> + <span class="t">"&lt;br> &lt;br>"</span> + <br>
+          <span class="e t">"Milissegundos desde 1 de Janeiro de 1970: "</span> + <span class="es">data.getTime()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"Dia da semana: "</span> + <span class="es">data.getDay()</span> + <span class="t">"&lt;br>"</span> + <br>
+          <span class="e t">"Data Atual: "</span> + <span class="es">Date.now()</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="gets"></div>
+      <script>
+        var data = new Date();
+        document.getElementById("gets").innerHTML = "Ano: " + data.getFullYear() + "<br>" +
+          "Mês: " + data.getMonth() + "<br>" +
+          "Dia: " + data.getDate() + "<br>" +
+          "Hora: " + data.getHours() + "<br>" +
+          "minutos: " + data.getUTCMinutes() + "<br>" +
+          "segundos: " + data.getSeconds() + "<br>" +
+          "Milissegundos: " + data.getMilliseconds() + "<br><br>" +
+          "Milissegundos desde 1 de Janeiro de 1970: " + data.getTime() + "<br>" +
+          "Dia da semana: " + data.getDay() + "<br>" +
+          "Data Atual: " + Date.now() + "<br>";
+      </script> <br> <br>
+
+      <p class="lead">Como o mês e o dia da semana estão em formato numérico precisamos criar um array com o nome de cada mês (janeiro, fevereiro, ...) ou cada dia da semana (domingo, segunda, ...) e usar o acesso de vetor na posição de mesmo valor numérico para acessar o valor em texto do array.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div12">
+        &lt;div id="semana">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e"></span>var semana = ["Domingo","Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-Feira", "Sábado"];<br>
+        <span class="e">document.getElementById(<span class="t">"semana"</span>).innerHTML = <span class="t e">"Dia da Semana: "</span> + <span class="es">semana[data.getDay()]</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="semana"></div>
+      <script>
+        var data = new Date();
+        var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-Feira", "Sábado"];
+        document.getElementById("semana").innerHTML = "Dia da Semana: " + semana[data.getDay()];
+      </script>
+
+      <hr class="space">
+
+      <h2>set() : Alterando os calores das datas</h2>
+
+      <p class="lead">Os métodos <code>data.set..(valor)</code> são usados para alterar os valores de cada propriedade de um objeto do tipo data antes já declarado de forma individual sem que tenhamos que criar um novo objeto. </p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Método</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>setDate()</td>
+            <td>Altera o <strong>dia</strong> com um valor numérico (1-31)</td>
+          </tr>
+          <tr>
+            <td>setFullYear()</td>
+            <td>Altera o <strong>ano</strong> (Pode opcionalmente alterar adicionando o mês e o dia yyyy-mm-dd)</td>
+          </tr>
+          <tr>
+            <td>setHours()</td>
+            <td>Altera a <strong>hora</strong> com um valor numérico (0-23)</td>
+          </tr>
+          <tr>
+            <td>setMilliseconds()</td>
+            <td>Altera os <strong>milissegundos</strong> com um valor numérico (0-999)</td>
+          </tr>
+          <tr>
+            <td>setMinutes()</td>
+            <td>Altera os <strong>minutos</strong> com um valor numérico (0-59)</td>
+          </tr>
+          <tr>
+            <td>setMonth()</td>
+            <td>Altera o <strong>mês</strong> com um valor numérico (0-11)</td>
+          </tr>
+          <tr>
+            <td>setSeconds()</td>
+            <td>Altera os <strong>segundos</strong> com um valor numérico (0-59)</td>
+          </tr>
+          <tr>
+            <td>setTime()</td>
+            <td>Altera o milissegundos desde 1º de janeiro de 1970, basicamente muda a data.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div13">
+        &lt;div id="set">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"></span>var data =<span class="es">new Date()</span>;<br>
+        <span class="e"></span><span class="es">data.setHours(18);</span>;<br>
+        <span class="e">document.getElementById(<span class="t">"set"</span>).innerHTML = <span class="t e">"Hora: "</span> + <span class="es">data.getHours()</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="set"></div>
+      <script>
+        var data = new Date();
+        data.setHours(18);
+        document.getElementById("set").innerHTML = "Hora: " + data.getHours();
+      </script>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

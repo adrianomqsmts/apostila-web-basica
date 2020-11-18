@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>RegExp (expressões regulares) em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>RegExp (expressões regulares) em JavaScript</h1>
+
+      <p class="lead">Expressões regulares são é um conceito um pouco avançado, mas que remete a uma sequência de caracteres que formam um padrão de pesquisa. Basicamente podemos formar expressões para encontrar em pesquisas palavras que começem de terminem com uma terminada letra, que tenham pelo menos 5 letras idênticas e diversas outras possibilidades. </p>
+
+      <h2>Modificadores</h2>
+
+      <p class="lead">Primeiro iremos usar uma substituição padrão com o método <code>texto.replace()</code> da <code>string</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="replace0">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace("banana", "QUEIJO")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace0"</span>).innerHTML = <span class="t">"A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace0"></div>
+      <script>
+        var txt = "Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana";
+        document.getElementById("replace0").innerHTML = "A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : <br>" + txt.replace("banana", "QUEIJO");
+      </script> <br> <br>
+
+      <h3>Modificador /texto/g</h3>
+
+      <p class="lead">O modificador <code>/texto/g</code> é usado para verificar uma correspondência global, ou seja, ele não na para primeira vez que encontra a palavra idêntica, ele continua executando o método para todas as palavras, entretanto considera diferenças entre letras maiúsculas e minúsculas. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="replace2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/banana/g, "QUEIJO")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace2"</span>).innerHTML = <span class="t">"A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace2"></div>
+      <script>
+        var txt = "Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana";
+        document.getElementById("replace2").innerHTML = "A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : <br>" + txt.replace(/banana/g, "QUEIJO");
+      </script> <br> <br>
+
+      <h3>Modificador /texto/i</h3>
+
+      <p class="lead">O modificador <code>/texto/i</code> faz a busca desconsiderando a diferença entre letras maiúsculas e minúsculas. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="replace3">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/banana/i, "QUEIJO")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace3"</span>).innerHTML = <span class="t">"A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace3"></div>
+      <script>
+        var txt = "Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana";
+        document.getElementById("replace3").innerHTML = "A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : <br>" + txt.replace(/banana/i, "QUEIJO");
+      </script> <br> <br>
+
+      <h3>Modificador /texto/m</h3>
+
+      <p class="lead">O modificador <code>/texto/m</code> executa a verificação em múltiplas linhas. Ou seja, ele não para ao encontrar uma quebra de linha <code>\n</code> no meio do texto igual aos modificadores anteriores. Para saber mais sobre acesse<a target="_blank" href="https://www.w3schools.com/jsref_regexp_m.asp">Modificador m</a></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="replace4">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Ameixa Banana\n amora goiaba banana melancia melão BANANA maçã banana"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/banana/m, "QUEIJO")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace4"</span>).innerHTML = <span class="t">"A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace4"></div>
+      <script>
+        var txt = "Ameixa Banana <br> amora goiaba banana melancia melão BANANA maçã banana";
+        document.getElementById("replace4").innerHTML = "A frase original é \"Ameixa Banana<br> amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : <br>" + txt.replace(/banana/m, "QUEIJO");
+      </script> <br> <br>
+
+      <h3>Tudo de uma vez!</h3>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="replace5">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Ameixa Banana\n amora goiaba banana melancia melão BANANA maçã banana"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/banana/igm, "QUEIJO")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace5"</span>).innerHTML = <span class="t">"A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace5"></div>
+      <script>
+        var txt = "Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana";
+        document.getElementById("replace5").innerHTML = "A frase original é \"Ameixa Banana amora goiaba banana melancia melão BANANA maçã banana\" e foi alterada para : <br>" + txt.replace(/banana/igm, "QUEIJO");
+      </script>
+
+      <hr class="space">
+
+      <h2>Colchetes []</h2>
+
+      <p class="lead">Em RegEx os colchetes são usados para encontrar um grupo de caracteres em específico. por exemplo, <code>a[abc]d</code> pode ser a palavra aad, abd ou acd.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Expressão</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[abc]</td>
+            <td>Pode ser qualquer dos caracteres que estão dentro dos colchetes.</td>
+          </tr>
+          <tr>
+            <td>[^abc]</td>
+            <td>Pode ser qualquer dos caracteres que <strong>NÃO</strong> estejam dentro dos colchetes.</td>
+          </tr>
+          <tr>
+            <td>[0-9]</td>
+            <td>Pode ser qualquer dos caracteres dentro do intervalo <code>-</code> definido, pode ser [a-d], ou [a-z] ou ainda [a-zA-Z].</td>
+          </tr>
+          <tr>
+            <td>[^0-9]</td>
+            <td>Pode ser qualquer dos caracteres que não estejam dentro do intervalo <code>-</code> definido</td>
+          </tr>
+          <tr>
+            <td>[a|b]</td>
+            <td>Poder ser o caractere a ou b.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="replace6">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"190 10 170 1270 1765 90 0 140"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/1[0-9]0/igm, "SUB")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace6"</span>).innerHTML = <span class="t">"\"190 10 170 1270 1765 90 0 140\" &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace6"></div>
+      <script>
+        var txt = "190 10 170 1270 1765 90 0 140";
+        document.getElementById("replace6").innerHTML = "\"190 10 170 1270 1765 90 0 140\" <br>" + txt.replace(/1[0-9]0/igm, "- SUB - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>Metacaracteres \</h2>
+
+      <p class="lead">Metacaracteres são caracteres que possuem um maior significado que caracteres simples. Normalmente um metacaractere vem precedido do caractere de contra-barra <code>\</code>. Para ver outros metacaracteres e mais exemplos acesse<a target="_blank" href="https://www.w3schools.com/jsref_obj_regexp.asp">expressões Regulares</a></p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Metacaractere</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>.</td>
+            <td>Pode ser qualquer caractere exceto de quebra de linha ou fim de linha.</td>
+          </tr>
+          <tr>
+            <td>\w</td>
+            <td>Encontra um caractere de letra</td>
+          </tr>
+          <tr>
+            <td>\W</td>
+            <td>Encontra um caractere que não seja uma letra</td>
+          </tr>
+          <tr>
+            <td>\d</td>
+            <td>Encontra um caractere que seja um digito</td>
+          </tr>
+          <tr>
+            <td>\D</td>
+            <td>Encontra um caractere que não seja um digito</td>
+          </tr>
+          <tr>
+            <td>\s</td>
+            <td>Encontra um caractere que seja um espaço em branco</td>
+          </tr>
+          <tr>
+            <td>\S</td>
+            <td>Encontra um caractere que não seja um espaço em branco</td>
+          </tr>
+          <tr>
+            <td>\b</td>
+            <td>Encontra um caractere que seja o início ou final de uma palavra</td>
+          </tr>
+          <tr>
+            <td>\B</td>
+            <td>Encontra um caractere que não seja o início ou final de uma palavra</td>
+          </tr>
+          <tr>
+            <td>\0</td>
+            <td>Encontra um caractere que seja nulo</td>
+          </tr>
+          <tr>
+            <td>\n</td>
+            <td>Encontra um caractere que seja uma quebra de linha</td>
+          </tr>
+          <tr>
+            <td>\t</td>
+            <td>Encontra uma tabulação horizontal</td>
+          </tr>
+          <tr>
+            <td>\v</td>
+            <td>Encontra uma tabulação vertical</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Exemplo explicado... vamos procurar uma palavra que começa com <code>"te"</code> que tenha venha seguido de dois quaisquer caracteres <code>".."</code> e tenha uma letra no final <code>"\w"</code>, onde não importa a letras maiúsculas e que sejam todas as palavras, por isso chegamos em: <code>/te..\w/igm</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="replace7">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"texto 73x70 tebcd tebc0"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/te..\w/igm, "SUB")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace7"</span>).innerHTML = <span class="t">"\"texto 73x70 te370\" &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace7"></div>
+      <script>
+        var txt = "texto 73x70 te370";
+        document.getElementById("replace7").innerHTML = "\"texto 73x70 te370\" <br>" + txt.replace(/te..\w/igm, "- SUB - ");
+      </script>
+
+      <hr class="space">
+
+      <h2>Quantificadores * ^ ? + $ !</h2>
+
+      <p class="lead">Os caracteres <code>* ^ ? + $ !</code> são usados para quantificar nossas expressões regalares ou mesmo palavras. Por exemplo, queremos todas as palavras que começem com a e terminem com z, ao invés de escrever infinitamente a..........z podemos usar o quantificador <code>*</code> ficando <code>a.*z</code>.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Quantificador</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>n+</td>
+            <td>Corresponde a uma ou mais vezes o valor de n</td>
+          </tr>
+          <tr>
+            <td>n*</td>
+            <td>Corresponde a nenhuma ou mais vezes o valor de n</td>
+          </tr>
+          <tr>
+            <td>n?</td>
+            <td>Corresponde a nenhuma ou apenas uma vez o valor de n</td>
+          </tr>
+          <tr>
+            <td>n{x}</td>
+            <td>Corresponde a exatamente x ocorrências do valor de n</td>
+          </tr>
+          <tr>
+            <td>n{x,y}</td>
+            <td>Corresponde a um intervalo de pelo menos x até y ocorrências do valor de n</td>
+          </tr>
+          <tr>
+            <td>n{x, }</td>
+            <td>Corresponde a pelo menos x ou mais ocorrências do valor de n</td>
+          </tr>
+          <tr>
+            <td>n$</td>
+            <td>Corresponde a qualquer valor que contenha o valor de n no final</td>
+          </tr>
+          <tr>
+            <td>^n</td>
+            <td>Corresponde a qualquer valor que não contenha o valor de n</td>
+          </tr>
+          <tr>
+            <td>?=n</td>
+            <td>Corresponde a qualquer string seguida pelo valor de n</td>
+          </tr>
+          <tr>
+            <td>?!n</td>
+            <td>Corresponde a qualquer string que não esteja seguida pelo valor de n</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Podemos usar parênteses para agrupar expressões para aplicar os quantificadores assim como os modificadores de colchetes.Vamos selecionar todas as palavras que começam por a e tenham pelo menos 3 b's. Observe um possível erro. <code>/ab{3,}/igm</code> </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+        &lt;div id="replace8">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"abbbc abbc abc acb abbbb bbbbb"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/a(b){3,}/igm, "SUB")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace8"</span>).innerHTML = <span class="t">"\"abbbc abbc abc acb abbbb bbbbb\" &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace8"></div>
+      <script>
+        var txt = "abbbc abbc abc acb abbbb bbbbb";
+        document.getElementById("replace8").innerHTML = "\"abbbc abbc abc acb abbbb bbbbb\" <br>" + txt.replace(/a(b){3,}/igm, "SUB");
+      </script> <br> <br>
+
+      <p class="lead">Vamos selecionar todas as palavras que começam por a e terminam com c. Observe o erro! Selecionamos toda a string pois especificamos qualquer caractere entre a e c, podendo ser espaços. <code>a(.)*c</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+        &lt;div id="replace9">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"abbbc abbc abc abbbbbbbb ac acccccb"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/a(.)*c/igm, "SUB")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace9"</span>).innerHTML = <span class="t">"\"abbbc abbc abc abbbbbbbb ac acccccb\" &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace9"></div>
+      <script>
+        var txt = "abbbc abbc abc abbbbbbbb ac acccccb";
+        document.getElementById("replace9").innerHTML = "\"abbbc abbc abc abbbbbbbb ac acccccb\" <br>" + txt.replace(/a(.)*c/igm, "SUB");
+      </script> <br> <br>
+
+      <p class="lead"> Para corrigir isso precisamos especificar que entre a e c podem haver quaisquer caracteres exceto espaço em branco! Com isso devemos voltar em colchetes especificar qualquer caractere <code>[.]</code> exceto o espaço em branco <code>[^\w]</code> ficando : <code>/a[.^\w]*c/igm</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="replace10">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"abbbc abbc abc abbbbbbbb ac acccccb"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace(/a[.^\w]*c/igm, " - SUB - ")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace10"</span>).innerHTML = <span class="t">"\"abbbc abbc abc abbbbbbbb ac acccccb\" &lt;br>" </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace10"></div>
+      <script>
+        var txt = "abbbc abbc abc abbbbbbbb ac acccccb";
+        document.getElementById("replace10").innerHTML = "\"abbbc abbc abc abbbbbbbb ac acccccb\" <br>" + txt.replace(/a[.^\w]*c/igm, " - SUB - ");
+      </script>
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

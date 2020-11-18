@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>DOM (Document Object Model) em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>DOM (Document Object Model) em JavaScript</h1>
+
+      <p class="lead">O DOM é usado para acessar e alterar todos os elementos de um documento HTML, como alterar os elementos, atributos, estilos, remover elementos, adicionar elementos, reagir a eventos e criar novos eventos, tudo isso com JS.</p>
+
+      <p class="lead">DOM é um padrão de acesso aos documentos criada pelo W3C (World Wide Web Consortium), enquanto o HTML DOM é um modelo de objeto e de interface de programação HTML de como obter, alterar, adicionar ou excluir elementos em HTML.</p>
+
+      <hr class="space">
+
+      <h2>Encontrando Elementos HTML</h2>
+
+      <p class="lead">Existem diversas formas de encontrar um elemento HTML dentro de um documento, sendo os mais clássicos por identificador e por classes.</p>
+
+      <ul class="lead">
+        <li><b>document.getElementById("identificador");</b> - É usado para capturar o elemento HTML pelo identificador.</li>
+        <li><b>document.getElementsByTagName("p");</b> - É usado para capturar todos os elementos HTML que são da tag especificada. Para ver detalhes sobre os elementos retornados acesse:<a target="_blank" href="https://www.w3schools.com/js/js_htmldom_collections.asp">HTMLCollection</a></li>
+        <li><b>document.getElementsByClassName("classe");</b> - É usado para capturar todos os elementos HTML que possuem a classe especificada.</li>
+        <li><b>document.querySelectorAll("p.classe");</b> - É usado para capturar todos os elementos HTML que a classe especificada e que sejam do elemento especificado, igualmente como funcionam os seletores de CSS <a href="../css-pages/seletores-simples.html">Seletores I</a>.</li>
+        <li><b>document.forms["id"];</b> - É usado para capturar todos os elementos HTML do formulário especificado.</li>
+        <li><b>document.body</b> - Captura todos os elementos dentro do corpo do documento.</li>
+        <li><b>document.documentElement</b> - Captura todos os elementos html dentro do documento.</li>
+        <li><b>document.embeds</b> - Captura todos os elementos <code>&lt;embed></code> no documento.</li>
+        <li><b>document.forms</b> - Captura todos os elementos <code>&lt;form></code> no documento.</li>
+        <li><b>document.head</b> - Captura todos os elementos dentro do elemento <code>&lt;head></code> do documento.</li>
+        <li><b>document.images</b> - Captura todos os elementos <code>&lt;img></code> no documento.</li>
+        <li><b>document.links</b> - Captura todos os elementos <code>&lt;a></code> no documento.</li>
+        <li><b>document.scripts</b> - Captura todos os elementos <code>&lt;scripts></code> do documento.</li>
+        <li><b>document.title</b> - Captura todos os elementos <code>&lt;title></code> do documento.</li>
+      </ul> <br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="identificador">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.getElementById(<span class="t">"identificador"</span>).innerHTML = <span class="t">" Alterando o valor pelo identificador";</span></span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="identificador"></div>
+      <script>
+        document.getElementById("identificador").innerHTML = " Alterando o valor pelo identificador";
+      </script><br> <br>
+
+      <p class="lead">No caso de seleção de vários elementos HTML, teremos um vetor e devemos trabalhar sobre ele.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div class="classe">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var x = document.getElementsByClassName(<span class="t">"classe"</span>);</span><br>
+        <span class="e">x[0].innerHTML = <span class="t">" Alterando o valor pela classe";</span></span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div class="classe"></div>
+      <script>
+        var x = document.getElementsByClassName("classe");
+        x[0].innerHTML = " Alterando o valor pela classe"; 
+      </script><br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;strong>&lt;/strong> <br>
+        &lt;script> <br>
+        <span class="e">var x = document.getElementsByClassName(<span class="t">"strong"</span>);</span><br>
+        <span class="e">x[0].innerHTML = <span class="t">" Alterando o valor pela tagName";</span></span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <strong></strong>
+      <script>
+        var x = document.getElementsByTagName("strong");
+        x[0].innerHTML = " Alterando o valor pela tagName"; 
+      </script><br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div class="class">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var x = document.querySelectorAll(<span class="t">"div.class"</span>);</span><br>
+        <span class="e">x[0].innerHTML = <span class="t">" Alterando o valor pelo Seletor CSS";</span></span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div class="class"></div>
+      <script>
+        var x = document.querySelectorAll("div.class");
+        x[0].innerHTML = " Alterando o valor pelo Seletor CSS"; 
+      </script><br> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="title">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.getElementById(<span class="t">"title"</span>).innerHTML = <span class="t">"O título desta página é: " + document.title;</span></span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="title"></div>
+      <script>
+        document.getElementById("title").innerHTML = "O título desta página é: " + document.title; 
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>Alterando o HTML</h2>
+
+      <p class="lead">Como já vimos até aqui, podemos usar a propriedade <code>innerHTML</code> para alterar o conteúdo dos elementos HTML, inclusive adicionando novos elementos dentro deles. </p>
+
+      <h3>Aletrando o atributo de um HTML</h3>
+
+      <p class="lead">Para alterar um atributo de um elemento HTML precisamos especificar o nome do atributo e seu novo valor <code>.atributo = </code>. Entre os alguns exemplos de atributos que podemos mudar são: class, src, id, href, etc... </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="cor">Elemento&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById(<span class="t">"cor"</span>);</span> <br>
+        <span class="e">div.className = <span class="t">"bg-warning"</span>;</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="cor">Elemento</div>
+      <script>
+        var div = document.getElementById("cor");
+        div.className = "bg-warning"; 
+      </script>
+
+      <hr class="space">
+
+      <h2>DOM CSS - alterando o estilo dos elementos HTML</h2>
+
+      <p class="lead">Para alterar todo o estilo de um elemento HTML usamos a propriedade <code>.style = "color: red, ..."</code> ou alteramos individualmente cada propriedade de estilo como em <code>.style.color = "red"</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="css">Elemento&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById(<span class="t">"css"</span>);</span> <br>
+        <span class="e">div.style = <span class="t">"background-color: orange; color : black;"</span>;</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="css">Elemento</div>
+      <script>
+        var div = document.getElementById("css");
+        div.style = "background-color: orange; color : black;"; 
+      </script> <br>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+        &lt;div id="css2">Elemento&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById(<span class="t">"css2"</span>);</span> <br>
+        <span class="e">div.style.color = <span class="t">"black"</span>;</span> <br>
+        <span class="e">div.style.backgroundColor = <span class="t">"white"</span>;</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="css2">Elemento</div>
+      <script>
+        var div = document.getElementById("css2");
+        div.style.color = "black";
+        div.style.backgroundColor = "white"; 
+      </script>
+
+      <hr class="space">
+
+      <h2>Eventos</h2>
+
+      <p class="lead">Eventos são basicamente uma interação com algum elemento HTML como clicar sobre um elemento, carregamento da página ou alteração sobre um campo de entrada. E podemos usar o JS para fazer uma reação com a interação. A propriedade <code>.this</code> e usada para especificar o elemento atual.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Evento </th>
+            <th>Descrição </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>onchange</td>
+            <td>Um elemento HTML foi alterado/carregado</td>
+          </tr>
+          <tr>
+            <td>onclick</td>
+            <td>Um clique de um usuário sobre um elemento</td>
+          </tr>
+          <tr>
+            <td>onmouseover </td>
+            <td>O usuário move o mouse sobre um elemento HTML </td>
+          </tr>
+          <tr>
+            <td>onmouseout </td>
+            <td>O usuário move o mouse para longe de um elemento HTML</td>
+          </tr>
+          <tr>
+            <td>onkeydown </td>
+            <td>O usuário pressiona uma tecla do teclado </td>
+          </tr>
+          <tr>
+            <td>onload</td>
+            <td>O navegador terminou de carregar a página </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Esses eventos são atributos de elementos HTML e através deles podemos chamar um função ou código JS para realizar uma reação.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+        &lt;button onclick="window.alert('ALERRRRRTA!!!!')">Clique!&lt;/button> <br>
+      </div>
+
+      <button onclick="window.alert('ALERRRRRTA!!!!')">Clique!</button>
+
+      <hr class="space">
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+
+        &lt;div id="funcao2" onmouseover="exibirData()" onmouseout="this.innerHTML = `Passe o Mouse!`" class="p-5 d-inline-block bg-warning">Passe o Mouse!&lt;/div> <br>
+        &lt;script> <br>
+        <span class="f e">function exibirData() </span>{ <br>
+        <span class="e2">document.getElementById("funcao2").innerHTML = Date();</span> <br>
+        <span class="e">}</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="funcao2" onmouseover="exibirData()" onmouseout="this.innerHTML = `Passe o Mouse!`" class="p-2 d-inline-block bg-warning">Passe o Mouse!</div>
+      <script>
+        function exibirData() {
+          document.getElementById("funcao2").innerHTML = Date();
+        }
+      </script>
+
+      <hr class="space">
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div11">
+
+        &lt;input id="campo" type="text" onfocus="mudarCor(this);"> <br>
+        &lt;script> <br>
+        <span class="f e">function mudarCor(elemento) </span>{ <br>
+        <span class="e2">elemento.style.color = "white";</span> <br>
+        <span class="e2">elemento.style.backgroundColor = "blue";</span> <br>
+        <span class="e">}</span> <br>
+        &lt;/script> <br>
+      </div>
+
+
+      <input type="text" id="campo" onfocus="mudarCor(this);">
+
+      <script>
+        function mudarCor(elemento) {
+          elemento.style.color = "white";
+          elemento.style.background = "blue";
+        }
+      </script>
+
+      <hr class="space">
+
+      <h2>Adicionando eventos com JS</h2>
+
+      <p class="lead">Podemos também adicionar um elemento via JS através do método <code>addEventListener("nomeEvento", nomeFunção)</code>. Com isso você pode adicionar mais de um evento do mesmo tipo, como dois eventos de clicar, sem sobrescrever o anterior, além de ajudar a limpar mais o código HTML deixando-o menos poluído. E para remover um evento basta usar o método <code>removeEventListener("nomeEvento", nomeFunção)</code>.</p>
+      <p class="lead">Observe que para usar o nome de evento não precisa usar o prefixo "on", ficando apenas <code>"click"</code> ao invés de <code>"onclick"</code>. E na chamada de uma função devemos apenas passar o seu nome (sem os parênteses), em caso de funções com parâmetros devemos usar chamar <code>function() { minhafuncao(parametro1, parametro2);}</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div12">
+        &lt;div id="addEvento">CLIQUE AQUI!&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e f">function alerta()</span> { <br>
+        <span class="e2"> alert(<span class="t">"Hello World!"</span>);</span><br>
+        <span class="e"></span>}<br>
+        <span class="e f"> function colorir(cor)</span> { <br>
+        <span class="e2">var e = document.getElementById(<span class="t">"addEvento"</span>)</span>; <br>
+        <span class="e2">e.style.background = <span class="t">cor</span></span>; <br>
+        <span class="e"></span>}<br>
+        <span class="e">var elemento = document.getElementById(<span class="t">"addEvento"</span>)</span>; <br>
+        <span class="e">elemento.addEventListener(<span class="t">"click"</span>, <span class="f">alerta</span> ); </span> <br>
+        <span class="e">elemento.addEventListener(<span class="t">"click"</span>, <span class="f">function(){ colorir( <span class="t">"blue"</span> ); }</span> ); </span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="addEvento">CLIQUE AQUI!</div>
+      <script>
+        function alerta() {
+          alert("Hello World!");
+        }
+        function colorir(cor) {
+          var e = document.getElementById("addEvento");
+          e.style.background = cor;
+        }
+        var elemento = document.getElementById("addEvento");
+        elemento.addEventListener("click", alerta);
+        elemento.addEventListener("click", function () { colorir("blue"); });
+      </script>
+
+      <hr class="space">
+
+      <h3>Ordem dos eventos</h3>
+
+      <p class="lead">Para alterar a ordem em que ocorrem os eventos em elementos aninhados com eventos, devemos usar o terceiro parâmetro da função <code>addEventListener("NomeEvento", nomeFunção, true/false);</code>, onde se o valor do terceiro parâmetro for <code>true</code> então o elemento mais externo irá ativar o seu evento e somente então o mais interno ativará o evento. Por padrão o terceiro parâmetro é <code>false</code>, assim o evento interno será acionado primeiro e somente os eventos dos elementos mais externos poderão ser acionados.</p>
+
+      <hr class="space">
+
+      <h2>Navegando na árvore da família de Elementos</h2>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/arvoreDOM.png" class="figure-img img-fluid rounded" alt="Árvore DOM, mostrando os níveis dos elementos HTML">
+          <figcaption class="figure-caption text-xs-right">árvore DOM de um documento HTML.</figcaption>
+        </figure>
+      </div>
+
+      <p class="lead">Pela imagem podemos ter um noção do parentesco entre os elementos HTML onde o elemento <code>&lt;html></code> não possui pais, mas possui dois filhos, o elemento <code>&lt;head></code>e o elemento <code><code>&lt;body></code></code>, e ambos são elementos irmãos. O elemento <code>&lt;body></code> tem o pai <code>&lt;html></code> e tem os filhos <code>&lt;p></code> e <code>&lt;div></code>, e assim sucessivamente.</p>
+
+      <p class="lead">Para acessarmos os elementos HTML pelo parêntescos devemos usar as propriedades:</p>
+
+      <ul class="lead">
+        <li><b>parentNode</b> - Acessa o pai de um elemento HTML</li>
+        <li><b>childNodes[numero]</b> - Acessa o filho da posição especificada de um elemento HTML</li>
+        <li><b>firstChild</b> - Acessa o primeiro filho de um elemento HTML</li>
+        <li><b>lastChild</b> - Acessa o último filho de um elemento HTML</li>
+        <li><b>nextSibling</b> - Acessa o próximo irmão de um elemento HTML</li>
+        <li><b>previousSibling</b> - Acessa o irmão anterior de um elemento HTML</li>
+      </ul>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div13">
+        &lt;div id="pai"> <br>
+        <span class="e">&lt;span>Elemento Span&lt;/span></span> <br>
+        &lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var filho = document.getElementById(<span class="t">"pai"</span>).firstChild;</span> <br>
+        <span class="e">filho.style.color = <span class="t">"black"</span>;</span> <br>
+        <span class="e">filho.style.backgroundColor = <span class="t">"white"</span>;</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="pai"><span>Elemento Span</span></div>
+      <script>
+        var filho = document.getElementById("pai").firstChild;
+        filho.style.color = "black";
+        filho.style.backgroundColor = "white"; 
+      </script>
+
+      <h3>nodeName: Nome de um nó</h3>
+
+      <p class="lead">A propriedade <code>nodeName</code> é usada para pegar o nome do elemento HTML como div, p, span, a, etc. Um <code>nodeName</code> não pode ser alterado, e pode usado para ver o nome de um atributo também. Para ver detalhes sobre os nós acesse<a target="_blank" href="https://www.w3schools.com/js/js_htmldom_nodelist.asp">Node Lists</a></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div14">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div14">
+        &lt;div id="nodeName">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById(<span class="t">"nodeName"</span>);</span> <br>
+        <span class="e">var tag = document.getElementById(<span class="t">"nodeName"</span>).nodeName;</span> <br>
+        <span class="e">div.innerHTML = tag;</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="nodeName"></div>
+      <script>
+        var div = document.getElementById("nodeName");
+        var tag = document.getElementById("nodeName").nodeName;
+        div.innerHTML = tag;
+      </script> <br> <br> <br>
+
+      <h3>nodeValue : O valor de um nó</h3>
+
+      <p class="lead">A propriedade <code>nodeValue</code> retorna o valor de um elemento HTML. Olhando na imagem acima, você irá notar que alguns elemento tem atributos e classes e eles são <strong>FILHOS</strong> de um elemento HTML. Ou seja, para acessar o valor de um conteúdo de um elemento HTML devemos acessar o seu filho! (Sim, é o mesmo que usar o innerHTML). Se for usado para retornar o valor de um elemento HTML o valor será null, enquanto de um texto será o próprio texto e o atributo será o valor do atributo.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div15">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div15">
+        &lt;div id="nodeValue">Texto é um filho do elemento! &lt;/div> <br>
+        &lt;div id="outraDiv">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById(<span class="t">"nodeValue"</span>);</span> <br>
+        <span class="e">var outraDiv = document.getElementById(<span class="t">"outraDiv"</span>);</span> <br>
+        <span class="e">var txt = document.getElementById(<span class="t">"nodeValue"</span>).firstChild.nodeValue;</span> <br>
+        <span class="e">outraDiv.innerHTML = txt;</span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="nodeValue">Texto é um filho do elemento! </div>
+      <div id="outraDiv"></div>
+      <script>
+        var div = document.getElementById("nodeValue");
+        var outraDiv = document.getElementById("outraDiv");
+        var txt = document.getElementById("nodeValue").firstChild.nodeValue;
+        outraDiv.innerHTML = txt;
+      </script> <br> <br> <br>
+
+      <h3>nodeType : Tipo do nó</h3>
+
+      <p class="lead">A propriedade <code>noType</code> retorna o tipo do nó que estamos trabalhando, podendo ser <code>ELEMENT_NODE</code> ( 1- ELEMENTO html), <CODE>TEXT_NODE</CODE> (3 - texto), <code>COMMENT_NODE</code> (4 - comentário), etc. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div16">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div16">
+        &lt;div id="nodeType">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var div = document.getElementById(<span class="t">"nodeType"</span>);</span> <br>
+        <span class="e">var tipo = div.nodeType</span>;<br>
+        <span class="e">div.innerHTML = tipo</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="nodeType"></div>
+      <script>
+        var div = document.getElementById("nodeType");
+        var tipo = div.nodeType;
+        div.innerHTML = tipo;
+      </script>
+
+      <hr class="space">
+
+      <h2>Criando elementos HTML</h2>
+
+      <p class="lead">Para criar um elemento HTML primeiro precisamos criar um nó através do método <code>noElemento = document.createElement("elementoHTML");</code>, depois podemos criar o conteúdo para o nó através do método <code>noTexto = document.createTextNode("texto");</code>. Próximo passo unir o nó do elemento como pai do nó texto (filho) através do método <code>noElemento.appendChild(noTexto);</code>.</p>
+
+      <p class="lead">Por fim precismos anexar o nó elemento criado dentro do nosso documento, dentro de outro elemento. para isso devemos apenas chamar novamente o método <code>pai.appendChild(noElemento);</code> para anexar o novo nó em algum elemento existente.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div17">
+        &lt;div id="novoElemento">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var noElemento = document.createElement(<span class="t">"span"</span>);</span> <br>
+        <span class="e">var noTexto = document.createTextNode(<span class="t">"Span criado"</span>);</span> <br>
+        <span class="e f">noElemento.appendChild(noTexto)</span>;<br>
+        <span class="e">var pai = document.getElementById(<span class="t">"novoElemento"</span>);</span> <br>
+        <span class="e f">pai.appendChild(noElemento)</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="novoElemento"></div>
+      <script>
+        var noElemento = document.createElement("span");
+        var noTexto = document.createTextNode("Span criado");
+        noElemento.appendChild(noTexto);
+        var pai = document.getElementById("novoElemento");
+        pai.appendChild(noElemento);        
+      </script>
+
+      <p class="lead">Ainda podemos criar atributos <code> (document.createAttribute)</code> para um nó, criar comentários <code>(document.createComment)</code>, criar eventos <code>(document.createEvent)</code>, dentre outras coisas. </p>
+
+      <h3 insertBefore>Inserindo em qualquer posição</h3>
+
+      <p class="lead">O método <code>appendChild</code> insere o novo nó sempre oa final do elemento pai, para inserir no inicio precisamos usar o método <code>pai.insertBefore(nóElemento, elementoIrmão)</code>. Com ese método o novo nó será inserido na posição atual do elemento irmão.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div18">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div18">
+        &lt;div id="posicao"><br>
+        <span class="e">&lt;span id="i1">irmão 1&lt;/span></span> <br>
+        <span class="e">&lt;span id="i2">irmão 2&lt;/span></span> <br>
+        <span class="e">&lt;span id="i3">irmão 3&lt;/span></span> <br>
+        &lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var noElemento = document.createElement(<span class="t">"span"</span>);</span> <br>
+        <span class="e">var noTexto = document.createTextNode(<span class="t">"NOVO IRMAO "</span>);</span> <br>
+        <span class="e f">noElemento.appendChild(noTexto)</span>;<br>
+        <span class="e">var pai = document.getElementById(<span class="t">"posicao"</span>);</span> <br>
+        <span class="e">var irmao = document.getElementById(<span class="t">"i2"</span>);</span> <br>
+        <span class="e f">pai.insertBefore(noElemento, irmao)</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="posicao">
+        <span id="i1">irmão 1</span>
+        <span id="i2">irmão 2</span>
+        <span id="i3">irmão 3</span>
+      </div>
+      <script>
+        var noElemento = document.createElement("span");
+        var noTexto = document.createTextNode("NOVO IRMAO ");
+        noElemento.appendChild(noTexto);
+        var pai = document.getElementById("posicao");
+        var irmao = document.getElementById("i2");
+        pai.insertBefore(noElemento, irmao);
+      </script>
+
+      <hr class="space">
+
+      <h2>Removendo um elemento HTML</h2>
+
+      <p class="lead">Para remover um elemento HTML basta usar o método <code>elemento.remove()</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div19">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div19">
+        &lt;div id="remover">EU FUI REMOVIDO! &lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var remover = document.getElementById(<span class="t">"remover"</span>);</span> <br>
+        <span class="e f">remover.remove()</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="remover"> EU FUI REMOVIDO!</div>
+      <script>
+        var remover = document.getElementById("remover");
+        remover.remove();
+      </script>
+
+      <hr class="space">
+
+      <h2>Substituindo um elemento HTML</h2>
+
+      <p class="lead">Para substituir um elemento HTML basta usar o método <code>pai.replaceChild(noElemento, irmãoRemover)</code>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div18">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div18">
+        &lt;div id="substituir"><br>
+        <span class="e">&lt;span id="i-1">irmão 1&lt;/span></span> <br>
+        <span class="e">&lt;span id="i-2">irmão 2&lt;/span></span> <br>
+        <span class="e">&lt;span id="i-3">irmão 3&lt;/span></span> <br>
+        &lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var noElemento = document.createElement(<span class="t">"span"</span>);</span> <br>
+        <span class="e">var noTexto = document.createTextNode(<span class="t">"NOVO IRMAO "</span>);</span> <br>
+        <span class="e f">noElemento.appendChild(noTexto)</span>;<br>
+        <span class="e">var pai = document.getElementById(<span class="t">"substituir"</span>);</span> <br>
+        <span class="e">var irmao = document.getElementById(<span class="t">"i-2"</span>);</span> <br>
+        <span class="e f">pai.replaceChild(noElemento, irmao)</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="substituir">
+        <span id="i-1">irmão 1</span>
+        <span id="i-2">irmão 2</span>
+        <span id="i-3">irmão 3</span>
+      </div>
+      <script>
+        var noElemento = document.createElement("span");
+        var noTexto = document.createTextNode("NOVO IRMAO ");
+        noElemento.appendChild(noTexto);
+        var pai = document.getElementById("substituir");
+        var irmao = document.getElementById("i-2");
+        pai.replaceChild(noElemento, irmao);
+      </script>
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

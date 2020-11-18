@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Strings em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Strings em JavaScript</h1>
+
+      <p class="lead">String nada mais é quem xero ou mais caracteres escritos entre aspas (simples, dupla ou crazes) que basicamente é usada para armazenar e manipular textos.</p>
+      <p class="lead">O primeiro problema que pode surgir é quando queremos inserir um texto e o mesmo já contém aspas duplas ou simples o que pode gerar um erro de onde começa ou termina de fato o valor da string. Para isso usamos um caractere especial chamado de escape que é uma barra invertida. Abaixo podemos ver uma maneira correta de escrever textos. </p>
+
+      <div class="code-js">
+        var texto1 = "Eu sou uma string sem aspas simples '' "; <br>
+        var texto2 = 'Eu sou uma string sem aspas duplas "" '; <br>
+        var texto3 = "Então eu tenho aspas duplas \"\" "; <br>
+        var texto4 = 'Então eu tenho aspas simples \'\' '; <br>
+      </div> <br>
+
+      <p class="lead">O caractere de escape ainda pode ser usado de outras formas, veja abaixo:</p>
+
+      <ul class="lead">
+        <li><b>\'</b>: Insere uma aspa simples</li>
+        <li><b>\"</b>: Insere uma aspa dupla</li>
+        <li><b>\b</b>: Espaço em branco</li>
+        <li><b>\n</b>: Quebra de linha</li>
+        <li><b>\t</b>: Tabulação horizontal</li>
+        <li><b>\v</b>: Tabulação vertical</li>
+        <li><b>\</b>: Usado para quebrar linhas longas de código sem perder a continuídade</li>
+      </ul>
+
+      <hr class="space">
+
+      <h2>String é um vetor de caracteres</h2>
+
+      <p class="leads">Uma String é cista como um vetor de caracteres, como pode ser vista na imagem abaixo. Onde o primeiro caractere do vetor é a posição 0, o segundo a posição 1 e assim sucessivamente. </p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/strings.jpg" class="figure-img img-fluid rounded" alt="Imagem que mostra um vetor de caracteres que começa com a posição 0">
+          <figcaption class="figure-caption text-xs-right">Vetor de caracteres</figcaption>
+        </figure>
+      </div>
+
+      <hr class="space">
+
+
+      <h2>Tamanho de uma String</h2>
+
+      <p>Para saber a quantidade de caracteres em uma string devemos usar a propriedade <code>texto.length</code>. Assim o método irá retornar um valor numérico com a quantidade de caracteres da variável String.</p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+
+        &lt;div id="length">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"ABCDEFGH"</span>;</span> <br>
+        <span class="e">var tamanho = <span class="f">txt.length</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"length"</span>).innerHTML = <span class="t"> "Quantidade de letras em \"ABCDEFGH \" é : "</span> + tamanho </span>; <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="length"></div>
+      <script>
+        var txt = "ABCDEFGH";
+        var tamanho = txt.length;
+        document.getElementById("length").innerHTML = "Quantidade de letras em \"ABCDEFGH \" é : " + tamanho;
+      </script>
+
+      <hr class="space">
+
+      <h2>Pesquisar uma palavra em uma String</h2>
+
+      <h3>indexOf()</h3>
+
+      <p class="lead">Podemos pesquisar uma palavra em uma determinada string de três formas diferentes, a primeira usa o método <code>texto.indexOf()</code> que retorna a primeira posição da primeira letra da primeira em que há a igualdade entre as palavras.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="indexOf">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var index = <span class="f"> txt.indexOf('farinha');</span> </span> <br>
+        <span class="e">document.getElementById(<span class="t">"indexOf"</span>).innerHTML = <span class="t"> "A posição da primeira ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\" é : " </span> + index; </span> <br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="indexOf"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("indexOf").innerHTML = "A posição da primeira ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\" é : " + txt.indexOf('farinha');
+      </script>
+      <br> <br> <br>
+
+      <h3>lastIndexOf()</h3>
+
+      <p class="lead">A segunda forma de fazer pesquisa em uma string é através do método <code>texto.lastIndexOf()</code> que retorna a primeira posição da primeira letra da última palavra em que há a igualdade entre as palavras.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="lastIndexOf">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var index = <span class="f"> txt.lastIndexOf('farinha');</span> </span> <br>
+        <span class="e">document.getElementById(<span class="t">"lastIndexOf"</span>).innerHTML = <span class="t"> "A posição da última ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\" é : " </span> + index</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="lastIndexOf"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("lastIndexOf").innerHTML = "A posição da última ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\" é : " + txt.lastIndexOf('farinha');
+      </script>
+
+      <br> <br> <br>
+
+      <h3>search()</h3>
+
+      <p class="lead">A terceira forma de fazer pesquisa em uma string é através do método <code>texto.search()</code> que retorna a primeira posição da primeira letra da primeira palavra em que há a igualdade entre as palavras.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="search">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var index = <span class="f"> txt.search('farinha')</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"search"</span>).innerHTML = <span class="t"> "A posição da primeira ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\" é : " </span> + index </span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="search"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("search").innerHTML = "A posição da primeira ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\" é : " + txt.search('farinha');
+      </script> <br> <br> <br>
+
+      <h3>Diferenças</h3>
+
+      <p class="lead">E qual a diferença entre <code>indexOF()</code> e <code>search()</code>? A diferença é que as funções <code>indexOF() lastIndexOf()</code> possuem um segundo parâmetro que pode se especificado para iniciar a buscas a partir de uma determinada posição. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="indexOf2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var index = <span class="f"> txt.indexOf('farinha',20)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"indexOf2"</span>).innerHTML = <span class="t"> "A posição da primeira ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\", a partir da posição 20 é : " </span> + index</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="indexOf2"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("indexOf2").innerHTML = "A posição da primeira ocorrência da palavra farinha no texto \"banana ovo farinha beijinho farinha\", a partir da posição 20 é : " + txt.indexOf('farinha', 20);
+      </script>
+
+      <hr class="space">
+
+      <h2>Extrair texto de uma string</h2>
+
+      <p class="lead">Quando queremos apenas uma parte de uma string e não a String por completo, estamos falando de substrings.</p>
+
+      <h3>slice()</h3>
+
+      <p class="lead">O método <code>slice(posInicial, PosFinal)</code> extraí parte de uma string retornado uma nova string com a parte extraída. o método requer dois parâmetros, a posição inicial e a posição final (não incluso) que queremos cortar a string.</p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="slice">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.slice(6,10)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"slice"</span>).innerHTML = <span class="t">"O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="slice"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("slice").innerHTML = "O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " + txt.slice(6, 10);
+      </script> <br> <br> <br>
+
+      <p class="lead"> Podemos também omitir a posição final para cortar até o último caractere do texto.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="slice2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.slice(6)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"slice2"</span>).innerHTML = <span class="t">"O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="slice2"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("slice2").innerHTML = "O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " + txt.slice(6);
+      </script> <br> <br> <br>
+
+      <p class="lead">Ainda podemos usar valores negativos para pegar a partir do final da string, como pode ser vista na imagem de vetores de string no início.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div8">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div8">
+        &lt;div id="slice3">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f">txt.slice(-28, -25)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"slice3"</span>).innerHTML = <span class="t">"O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="slice3"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("slice3").innerHTML = "O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " + txt.slice(-28, -25);
+      </script> <br> <br> <br>
+
+      <h2>substring()</h2>
+
+      <p class="lead">O método <code>substring(posInicial, Posfinal)</code> é semelhante o método <code>slice()</code>, entretanto não recebe parâmetros negativos!</p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div9">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div9">
+        &lt;div id="substring">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.substring(6,10)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"substring"</span>).innerHTML = <span class="t">"O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="substring"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("substring").innerHTML = "O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " + txt.substring(6, 10);
+      </script> <br> <br> <br>
+
+      <h2>substr()</h2>
+
+      <p class="lead">O método <code>substr(posInicial, tamanho)</code> tem como parâmetro a posição inicial que queremos cortar e o tamanho da string que deve ser extraída do texto. </p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="substr">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.substr(6,3)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"substr"</span>).innerHTML = <span class="t">"O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="substr"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("substr").innerHTML = "O texto extraído da frase \"banana ovo farinha beijinho farinha\" é : " + txt.substr(6, 4);
+      </script>
+
+      <hr class="space">
+
+      <h2>replace() : Substituição de palavras</h2>
+
+      <p class="lead">O método <code>txt.replace("antigo", "novo")</code> recebe dois parâmetros do tipo string, onde o primeiro parâmetro é a palavra que você quer substituir e o segundo é por qual palavra você quer substituir. Entretanto o método não substitui a nova palavra no texto original, mas sim retorno uma nova string com a nova palavra.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div11">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div11">
+        &lt;div id="replace">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"banana ovo farinha beijinho farinha"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.replace("farinha", "queijo")</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"replace"</span>).innerHTML = <span class="t">"A frase original é \"banana ovo farinha beijinho farinha\" e foi alterada para : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="replace"></div>
+      <script>
+        var txt = "banana ovo farinha beijinho farinha";
+        document.getElementById("replace").innerHTML = "A frase original é \"banana ovo farinha beijinho farinha\" e foi alterada para : " + txt.replace("farinha", "queijo");
+      </script> <br> <br>
+
+      <p class="lead">O método é case sensitive, ou seja, diferencia letras maiúsculas e minúsculas e altera somente a primeira ocorrência da palavra. Entretanto com <a href="expressao-regular.html">expressões regulares</a> podemos alterar mais palavras ao mesmo tempo.</p>
+
+      <hr class="space">
+
+      <h2>toUpperCase() e toLowerCase() : String maiúsculas ou minúsculas</h2>
+
+      <p class="leas">Para deixar uma string em letras maiúsculas devemos usar o método <code>texto.toUpperCase()</code>, enquanto o método <code>texto.toLowerCase()</code> é usado para deixar a string com letras minúsculas. Lembrando que o método não altera o valor da string original, apenas retorna uma nova string que deve ser armazenada ou sobrescrever a variável da string anterior.</p>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div12">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div12">
+        &lt;div id="toUpperCase">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Banana Ovo Queijo"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.toUpperCase()</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"toUpperCase"</span>).innerHTML = <span class="t">"A frase original é \"Banana Ovo Queijo\" e foi alterada para : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="toUpperCase"></div>
+      <script>
+        var txt = "Banana Ovo Queijo";
+        document.getElementById("toUpperCase").innerHTML = "A frase original é \"Banana Ovo Queijo\" e foi alterada para : " + txt.toUpperCase();
+      </script> <br> <br>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div13">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div13">
+        &lt;div id="toLowerCase">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Banana Ovo Queijo"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.toLowerCase()</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"toLowerCase"</span>).innerHTML = <span class="t">"A frase original é \"Banana Ovo Queijo\" e foi alterada para : " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="toLowerCase"></div>
+      <script>
+        var txt = "Banana Ovo Queijo";
+        document.getElementById("toLowerCase").innerHTML = "A frase original é \"Banana Ovo Queijo\" e foi alterada para : " + txt.toLowerCase();
+      </script> <br> <br>
+
+      <hr class="space">
+
+      <h2>concat() : Unindo duas ou mais string.</h2>
+
+      <p class="lead">O método <code>texto.concat("texto2","texto3",...)</code> é usado para unir dois ou mais textos.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div14">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div14">
+        &lt;div id="concat">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Banana Ovo Queijo"</span>;</span> <br>
+        <span class="e">var txt2 = <span class="t">"Feijão Goiaba"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.concat(" unindo com ", txt2 )</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"concat"</span>).innerHTML = <span class="t">"A frase original é '" + txt + "' e foi unida com a frase '" + txt2 + "': " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="concat"></div>
+      <script>
+        var txt = "Banana Ovo Queijo";
+        var txt2 = "Feijão Goiaba";
+        var novoTxt = txt.concat(" unindo com ", txt2);
+        document.getElementById("concat").innerHTML = "A frase original é '" + txt + "' e foi unida com a frase '" + txt + "': " + novoTxt
+      </script> <br> <br>
+
+      <p class="lead">A forma mais simples de unir duas string é através do operador de soma <code>texto1 + texto2</code> que irá somar uma string na outra.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div142">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div142">
+        &lt;div id="concat">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Banana Ovo Queijo"</span>;</span> <br>
+        <span class="e">var txt2 = <span class="t">"Feijão Goiaba"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt + "unindo com " + txt2</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"concat"</span>).innerHTML = <span class="t">"A frase original é '" + txt + "' e foi unida com a frase '" + txt2 + "': " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="concat"></div>
+      <script>
+        var txt = "Banana Ovo Queijo";
+        var txt2 = "Feijão Goiaba";
+        var novoTxt = txt + "unindo com " + txt2
+        document.getElementById("concat").innerHTML = "A frase original é '" + txt + "' e foi unida com a frase '" + txt + "': " + novoTxt
+      </script> <br> <br>
+      <hr class="space">
+
+      <h2>trim() : Limpando textos</h2>
+
+      <p class="leas">O método <code>texto.trim()</code> é usado inicialmente para remover espaços em branco que estão sobrando em um texto. Também pode ser usada um <a href="expressao-regular.html">expressão regular</a> para limpar outros caracteres.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div15">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div15">
+        &lt;div id="trim">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Banana
+            <pre class="d-inline">      </pre>Ovo
+            <pre class="d-inline">      </pre>Queijo
+            <pre class="d-inline">      </pre>!"</span>;</span> <br>
+        <span class="e">var novoTxt = <span class="f"> txt.trim()</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"trim"</span>).innerHTML = <span class="t">"A frase original foi limpa para: " </span> + novoTxt</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="trim"></div>
+      <script>
+        var txt = "Banana Ovo Queijo !";
+        var novoTxt = txt.trim();
+        document.getElementById("trim").innerHTML = "A frase original foi limpa para: " + novoTxt
+      </script><br> <br>
+
+      <hr class="space">
+
+      <h2>Acessando os caracteres de uma String</h2>
+
+      <p class="lead">Existem três formas parecidas de se acessar um determinado caractere de string. </p>
+
+      <h3>charAt() : Acessando um caractere de uma string</h3>
+
+      <p class="lead">O método <code>texto.charAt(posição)</code> retorna o caractere da posição especificada</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div16">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div16">
+        &lt;div id="charAt">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Obrigado!"</span>;</span> <br>
+        <span class="e">var caractere = <span class="f"> txt.charAt(3)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"charAt"</span>).innerHTML = <span class="t">"A letra da posição 3 da frase '" + txt + "' é : " </span> + caractere</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="charAt"></div>
+      <script>
+        var txt = "Obrigado!";
+        var caractere = txt.charAt(3);
+        document.getElementById("charAt").innerHTML = "A letra da posição 3 da frase '" + txt + "' é : " + caractere;
+      </script><br> <br>
+
+      <h3>charCodeAt(): Valor Unicode de um Caractere</h3>
+
+      <p class="lead">O método <code>texto.charCodeAt(posição)</code> retorna o valor da tabela unicode do caractere da posição especificada. ver mais sobre a <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Tabela Unicode</a>.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div17">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div17">
+        &lt;div id="charCodeAt">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Obrigado!"</span>;</span> <br>
+        <span class="e">var caractere = <span class="f"> txt.charCodeAt(3)</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"charCodeAt"</span>).innerHTML = <span class="t">"O valor da letra da posição 3 da frase '" + txt + "' é : " </span> + caractere</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="charCodeAt"></div>
+      <script>
+        var txt = "Obrigado!";
+        var caractere = txt.charCodeAt(3);
+        document.getElementById("charCodeAt").innerHTML = "O valor da letra da posição 3 da frase '" + txt + "' é : " + caractere;
+      </script><br> <br>
+
+      <h3>propriedade [] : Propriedade de acesso </h3>
+
+      <p class="lead">Podemos usar a propriedade do ECMAScript 5 para acessar um string como um vetor. Basicamente devemos usar a sintaxe <code>texto[posição]</code> para retornar o caractere. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div18">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div18">
+        &lt;div id="propriedadeAcesso">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var txt = <span class="t">"Obrigado!"</span>;</span> <br>
+        <span class="e">var caractere = <span class="f"> txt[3]</span>;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"propriedadeAcesso"</span>).innerHTML = <span class="t">"O valor da letra da posição 3 da frase '" + txt + "' é : " </span> + caractere</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="propriedadeAcesso"></div>
+      <script>
+        var txt = "Obrigado!";
+        var caractere = txt[3];
+        document.getElementById("propriedadeAcesso").innerHTML = "O valor da letra da posição 3 da frase '" + txt + "' é : " + caractere;
+      </script><br> <br>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

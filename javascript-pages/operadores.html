@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Operadores em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <!-- Sintaxe  comparisons -->
+
+      <h1>Operadores em JavaScript</h1>
+
+      <p class="lead">Podemos começar com os operadores matemáticos básicos que são multiplicação <code>*</code>, divisão <code>/</code>, subtração <code>-</code> e soma <code>+</code>. Veremos mais à frente que o operador de soma (+) pode assumir outras funcionalidades.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="conta1">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">document.getElementById(<span class="t">"conta1"</span>).innerHTML = 10 + 10;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="conta1"></div>
+
+      <script>
+        document.getElementById("conta1").innerHTML = 10 + 10;
+      </script>
+
+      <p class="lead">A forma mais comum de formar uma operação matemática é se utilizando de variáveis (pois normalmente é de onde vem os valores que o usuário digita).</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="conta2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var a = 10;</span> <br>
+        <span class="e"> var b = 20;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"conta2"</span>).innerHTML = a - b;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="conta2"></div>
+
+      <script>
+        var a = 10;
+        var b = 20;
+        document.getElementById("conta2").innerHTML = a - b;
+      </script>
+
+      <p class="lead">Abra o console e veja o resultado do código abaixo.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;script> <br>
+        <span class="e"> var a = 5;</span> <br>
+        <span class="e"> var b = 2;</span> <br>
+        <span class="e">console.log(a * b);</span><br>
+        <span class="e">console.log(a / b);</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <script>
+        var a = 5;
+        var b = 2;
+        console.log(a * b);
+        console.log(a / b);
+      </script>
+
+      <hr class="space">
+
+      <h2>Operadores matemáticos II</h2>
+
+      <p class="lead">Temos ainda outros operadores matemáticos um pouco mais complexo, porém comuns na comunidade da programação. </p>
+
+      <table class="table table-sm table-responsive-sm text-white">
+        <thead class="text-center">
+          <tr>
+            <th class="w-25">Operador</th>
+            <th>Descrição</th>
+            <th>Exemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>+</td>
+            <td>Adição</td>
+            <td>a + b</td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>Subtração</td>
+            <td>a - b</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>Multiplicação</td>
+            <td>a * b</td>
+          </tr>
+          <tr>
+            <td>**</td>
+            <td>Exponenciação</td>
+            <td>a ** b</td>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>Divisão</td>
+            <td>a / b</td>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>Módulo (Resto de uma divisão inteira)</td>
+            <td>a % b</td>
+          </tr>
+          <tr>
+            <td>++</td>
+            <td>Incrementar 1 do valor da variável</td>
+            <td>a++</td>
+          </tr>
+          <tr>
+            <td>--</td>
+            <td>Decrementar 1 do valor da variável</td>
+            <td>a--</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Abra o Console e veja os resultados para os operadores II</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;script> <br>
+        <span class="e"> <span class="f">var</span> a = 5;</span> <br>
+        <span class="e"> <span class="f">var</span> b = 2;</span> <br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Operadores II - a = 5 e b = 2"</span>);</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Soma: "</span> + a + b);</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Subtração: " </span>+ (a - b));</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Multiplicação: " </span> + (a * b));</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Divisão: "</span> + (a / b));</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Módulo: "</span> + (a % b));</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Exponenciação: "</span> + (a ** b));</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Incremento: "</span> + (a++));</span><br>
+        <span class="e"><span class="f">console.log</span>(<span class="t">"Decremento: "</span> + (a--));</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <script>
+        var a = 5;
+        var b = 2;
+        console.log("Operadores II");
+        console.log("Soma: " + (a + b));
+        console.log("Subtração: " + (a - b));
+        console.log("Multiplicação: " + (a * b));
+        console.log("Divisão: " + (a / b));
+        console.log("Módulo: " + (a % b));
+        console.log("Exponenciação: " + (a ** b));
+        console.log("Incremento: " + (a++));
+        console.log("Decremento: " + (a--));
+      </script>
+
+      <p class="lead">Notou algo de estranho no incremento e decremento? Então, isso acontece pois primeiro é verificado o valor de <code>a</code> e depois o valor e incrementado, por isso no decremento ocorre o valor 6. Se tentássemos exibir novamente a variável <code>a</code>, iria nos retornar o valor 5, pois depois de exibir o valor 6 foi realizado o decremento.</p>
+
+      <hr class="space">
+
+      <h2>Operadores Curtos</h2>
+
+      <p class="lead">Podemos encurtar nossas expressões matemáticas com os operadores abaixo, mas lembre-se de alguns pontos importantes... O primeiro é que a variável contraída deve inicialmente sempre tem um valor inicial, geralmente 0. E normalmente a expressão encurtada tem a seguinte ocorrências: <code>a = a + b</code>, ou seja, a variável que irá receber o valor, deve estar contida no corpo da expressão.</p>
+
+      <table class="table table-sm table-responsive-sm text-white">
+        <thead class="text-center">
+          <tr>
+            <th class="w-25">Operador</th>
+            <th>Forma Original</th>
+            <th>Forma contraída</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>+=</td>
+            <td>x = x + y</td>
+            <td>x += y</td>
+          </tr>
+          <tr>
+            <td>-=</td>
+            <td>x = x - y</td>
+            <td>x -= y</td>
+          </tr>
+          <tr>
+            <td>*=</td>
+            <td>x = x * y</td>
+            <td>x *= y</td>
+          </tr>
+          <tr>
+            <td>/=</td>
+            <td>x = x / y</td>
+            <td>x /= y</td>
+          </tr>
+          <tr>
+            <td>%=</td>
+            <td>x = x % y</td>
+            <td>x %= y</td>
+          </tr>
+          <tr>
+            <td>**=</td>
+            <td>x = x ** y</td>
+            <td>x **= y</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div6">
+        &lt;div id="conta6">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> var a = 10;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"conta6"</span>).innerHTML = (a += 5);</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="conta6"></div>
+
+      <script>
+        var a = 10;
+        document.getElementById("conta6").innerHTML = (a += 5);
+      </script>
+
+      <hr class="space">
+
+      <h2>Operadores de Comparação</h2>
+
+      <p class="lead">Os operadores de Comparações são usados para comprar o valor e/ou o tipo da variável retornando um valor verdadeiro ou falso.</p>
+
+      <table class="table table-sm table-responsive-sm text-white">
+        <thead class="text-center">
+          <tr>
+            <th class="w-50">Operador</th>
+            <th>Descrição/th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>==</td>
+            <td>Igual à </td>
+          </tr>
+          <tr>
+            <td>===</td>
+            <td>Igual à e de mesmo tipo</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>Não é igual</td>
+          </tr>
+          <tr>
+            <td>!==</td>
+            <td>Não é igual e não é do mesmo tipo</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>Maior que</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>Menor que</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>Maior e igual à</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>Menor ou igual à</td>
+          </tr>
+          <tr>
+            <td>?</td>
+            <td>Operador Ternário</td>
+          </tr>
+          <tr>
+            <td>&&</td>
+            <td>Operador Lógico AND (e)</td>
+          </tr>
+          <tr>
+            <td>||</td>
+            <td>Operador Lógico OR (ou)</td>
+          </tr>
+          <tr>
+            <td>!</td>
+            <td>Operador Lógico NOT (negação)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Estes operador ficam mais claros quando se formula uma frase. Por exemplo: A variável <code>a</code> é igual à variável <code>b</code> e menor que a variável <code>c</code>? Dependo dos valores de <code>a</code>, <code>b</code> ou <code>c</code> essa pergunta pode retornar verdadeiro ou falso (true or false). </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div7">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div7">
+        &lt;div id="conta7">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"><span class="f">var</span> a = 10;</span> <br>
+        <span class="e"><span class="f">var</span> b = 10;</span> <br>
+        <span class="e"><span class="f">var</span> c = <span class="t">"10"</span> ;</span> <br>
+        <span class="e"><span class="f">var</span> d = 10;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"conta7"</span>).innerHTML = <br>
+          <span class="e2 t">"a igual á b? "</span> + (a == b) + <br>
+          <span class="e2 t">"&lt;br> a igual á c? "</span> + (a == c) + <br>
+          <span class="e2 t">"&lt;br> a igual á b e do mesmo tipo? "</span> + (a === b) + <br>
+          <span class="e2 t">"&lt;br> a igual á c e do mesmo tipo? "</span> + (a === c) + <br>
+          <span class="e2 t">"&lt;br> a igual á b e menor que d? "</span> + (a == c && a &lt; d) + <span class="t">"&lt;br>"</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="conta7"></div>
+
+      <script>
+        var a = 10;
+        var b = 10;
+        var c = "10"
+        var d = 5
+        document.getElementById("conta7").innerHTML = "a igual á b? " + (a == b) + "<br>" + "a igual á c? " + (a == c) + "<br>" + "a igual á b e do mesmo tipo? " + (a === b) + "<br>" + "a igual á c e do mesmo tipo? " + (a === c) + "<br>" + "a igual á b e menor que d? " + (a == c && a < d) + "<br>";
+      </script> <br>
+
+      <p class="lead">Estas são apenas algumas das possibilidades de trabalhar com lógica em JS, mais à frente veremos seus uso cada vez mais contextual. <strong>Lembrando que uma lógica sempre irá retornar verdadeiro (true) ou falso (false)</strong></p>
+
+      <hr class="space">
+
+      <h2>Ordem das expressões</h2>
+
+      <p class="lead">Podemos alterar a ordem em que as expressões são calculadas, para isso deve se lembrar de matemática básica e o uso de parênteses para alterar a ordem. Em matemática, temos a seguinte ordem para calcular: </p>
+      <ol class="lead list-unstyled">
+        <li>1º Parêntesis;</li>
+        <li>2º Expoentes;</li>
+        <li>3º Multiplicações e Divisões; (da esquerda para a direita)</li>
+        <li>4º Somas e Subtrações. (da esquerda para a direita)</li>
+      </ol>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div10">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div10">
+        &lt;div id="ordem">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"> <span class="f">var</span> soma1 = 1 + 10 * 10 ;</span> <br>
+        <span class="e"> <span class="f">var</span> soma2 = (1 + 10) * 10;</span> <br>
+        <span class="e">document.getElementById(<span class="t">"ordem"</span>).innerHTML = <span class="t"> "Resultado da soma1 é: "</span> + soma1 + <span class="t">"&lt;br> o resultado da soma2 é: "</span> + soma2;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="ordem"></div>
+      <script>
+        var soma1 = 1 + 10 * 10;
+        var soma2 = (1 + 10) * 10;
+        document.getElementById("ordem").innerHTML = "Resultado da soma1 é: " + soma1 + "<br> o resultado da soma2 é: " + soma2;
+      </script> <br>
+
+      <p class="lead">Assim como em lógica também existem ordem de precedência e podemos alterá-la usando parênteses. Para saber a precedência completa em JS acesse: <a target="_blank" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">Precedência de operadores JS.</a></p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

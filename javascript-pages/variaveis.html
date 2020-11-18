@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Variáveis em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <!-- Booleans Data types e Conversion -->
+
+      <h1>Variáveis JavaScript</h1>
+
+      <p class="lead">Caso não saiba, variáveis são como com container para guardar diferentes tipos de dados, como textos, caracteres, números, etc. O conceito mais básico para declarar uma variável é a palavra-chave <code>var</code>. Veja abaixo um exemplo simples.</p>
+
+      <div class="code-js">
+        var x = 10; <br>
+        var y = 20; <br>
+        var z = x + y; <br>
+      </div> <br>
+
+      <p class="lead">Outra forma de declarar um variável é usando a palavra-chave <code>const</code> que são variáveis que não podem ter seus valores alterados ou que são contantes como o valor do PI. Existem por fim a palavra-chave <code>let</code> que declara variáveis de escopo restrito, e você pode ver mais sobre o seu uso em <a href="funcoes.html">funções</a></p>
+
+      <hr class="space">
+
+      <h2>Regras de declaração de variáveis</h2>
+
+      <p class="lead">Existem algumas regras na criação do nome de uma variável (identificador).</p>
+      <ul class="lead">
+        <li>Um nome de variável deve sempre começar por uma letra. (Eles podem começar por _ e $, mas somente casos específicos)</li>
+        <li>Não utilize símbolos especiais tais como:(! @ # - % ^ & * : ; " ', . / ? + = ~`) na criação de do nome de uma variável.</li>
+        <li>Procure escrever os nomes das variáveis sempre em minúsculo uma vez que Javascript é sensível a letras maiúsculas e minúsculas, (ou seja Abc é diferente de abc)</li>
+        <li>Procure dar nomes as variáveis que lembrem o seu conteúdo como nome, idade, sexo, altura, etc.</li>
+        <li>Palavras reservadas (como palavras-chave JavaScript e var) não podem ser usadas como nomes</li>
+        <li>Variáveis de nome duplo a separação é recomendada por letra maiúscula como em primeiroNome e segundoNomeGrande. Esta técnica é conhecida como <em>camelCase</em></li>
+      </ul>
+
+      <hr class="space">
+
+      <h2>Operador de atribuição</h2>
+
+      <p class="lead">Parar atribuirmos um valor à uma variável devemos usar o caractere <code>=</code> que irá ligar o nome da variável ao valor atribuído. Procure ao final de cada declaração colocar o sinal de <code>;</code> para delimitar os comandos (mesmo que o ; ao final em JS não seja necessário).</p>
+
+      <div class="code-js">
+        <span class="f">var</span> x = 10; <br>
+        <span class="f">var</span> y = <span class="t">"Meu nome"</span>; <br>
+        <span class="f">var</span> z = 10.6; <br>
+      </div> <br>
+
+      <hr class="space">
+
+      <h2>Tipos de Dados em JS</h2>
+
+      <p class="lead">Não é preciso especificar o tipo de variável, pois ao criarmos uma variável e atribuir um conteúdo do tipo texto, e em seguida, na linha de baixo, usarmos a mesma variável para atribuir um conteúdo numérico, o próprio navegador interpreta a instrução e converte o tipo normalmente sem nenhum problema. Mas isso não é simples assim, pois em determinados momentos precisaremos forçar a conversão do tipo de dados como vermos mais tarde.</p>
+
+      <div class="code-js">
+        <span class="f">var</span> x = 10; <span class="co">//x agora é numérico</span> <br>
+        <span class="f">var</span> x = <span class="t">"Meu nome"</span>; <span class="co">//x agora é uma string</span> <br>
+      </div> <br>
+
+      <p class="lead">Os principais tipos de dados em JS é o tipo string (texto), number (número), object (objetos), booleans (condicional true/false (verdadeiro ou falso)), arrays (matrizes), undefined (indefinido) e null (nulo). No decorrer das páginas da apostila veremos os principais detalhes sobre cada um destes tipos de dados.</p>
+
+      <p class="lead">A principal diferença entre uma tipo de dado undefined e null, é que a variável undefined nunca teve um valor atribuído para ela, enquanto a variável null era um variável que continha um valor e agora não possui mais, e está vazia. </p>
+
+      <div class="code-js">
+        <span class="f">var</span> x; <span class="co">// x agora está undefined</span><br>
+        <span class="f">var</span> x = 10; <span class="co">// x agora é do tipo numérico</span><br>
+        <span class="f">var</span> x = null; <span class="co">// x agora está sem valor</span><br><br>
+      </div> <br>
+
+      <p class="lead">Uma boa prática é usar a função <code>typeof nomeVariável</code> para ver o tipo da variável.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="typeof-test">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e"><span class="f">var</span> nome = <span class="t">"Nome"</span>;</span> <br>
+        <span class="e"><span class="f">var</span> idade = 10;</span><br>
+        <span class="e"><span class="f">var</span> sexo;</span><br>
+        <span class="e"><span class="f">var</span> altura = null;</span><br>
+        <span class="e">document.getElementById(<span class="t">"typeof-test"</span>).innerHTML = <br>
+         <span class="e2"></span> typeof(nome) + <span class="t">" &lt;br>"</span> + <br>
+         <span class="e2"></span> typeof(idade) + <span class="t">" &lt;br>"</span> + <br>
+         <span class="e2"></span> typeof(sexo) + <span class="t">" &lt;br>"</span> + <br>
+         <span class="e2"></span> typeof(altura) + <span class="t">" &lt;br>"</span>;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="typeof-test"></div>
+
+      <script>
+        var nome = "Nome";
+        var idade = 10;
+        var sexo;
+        var altura = null;
+        document.getElementById("typeof-test").innerHTML =
+          typeof (nome) + " <br>" +
+          typeof (idade) + " <br>" +
+          typeof (sexo) + " <br>" +
+          typeof (altura) + " <br>";
+      </script> <br> <br>
+
+      <p class="lead">Como podemos ver acima, o tipo de dado vazio é considerado um objeto. E isso não está errado, é apenas um definição feita pela linguagem, pois os dados primitivos são apenas string, number, boolean, undefined, object e function. </p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

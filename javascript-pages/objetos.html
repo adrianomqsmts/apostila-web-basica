@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Objetos em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Objetos em JavaScript</h1>
+
+      <p class="lead">De forma bem sucinta, um objeto em linguagem de programação é um forma de representar as características de algo real em uma formato computacional. Um exemplo de OBJETO do mundo real, seria um CARRO, onde o carto tem PROPRIEDADES como cor, marca, preço. Além disso, um carro tem certas funcionalidades (MÉTODOS) como frear, acelerar, ligar ou desligar. </p>
+
+      <ul class="lead">
+        <li><b>this</b> - This é usado para dizer que aquela variável pertence ao objeto criado e não uma outra variável de mesmo nome, que pode ser usada como parâmetro de uma função ou variável global. </li>
+        <li><b>new</b> - New é usado para criar um novo objeto. </li>
+      </ul>
+
+      <p class="lead">Um objeto em JS nada mais é que um variável com funções e múltiplas outras variáveis dentro dela. Vamos criar um objeto computacional do objeto real pessoa. Como observações, cada variável dentro de um objeto deve ser separada por <em>VÍRGULAS</em> sem o uso da palavra reservada <code>var</code>. </p>
+
+      <div class="code-js">
+        <span class="es">var pessoa = {</span><br>
+        <span class="e"></span>nome: <span class="t">"Fulano Ciclano de Tal"</span>, <br>
+        <span class="e"></span>idade: 47, <br>
+        <span class="e"></span>altura: 1.68, <br>
+        <span class="e">falarNome : function()</span> {<br>
+        <span class="e2"></span> return "Meu nome é : " + this.nome;<br>
+        <span class="e">}</span><br>
+        <span class="es">};</span><br>
+      </div>
+
+
+      <p class="lead"> Para acessar uma variável dentro de um objeto devemos usar a sintaxe <code>objeto.variável</code> se for um método deve ser usado <code>objeto.função()</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="objeto">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="es">var pessoa = {</span><br>
+        <span class="e"></span>nome: <span class="t">"Fulano Ciclano de Tal"</span>, <br>
+        <span class="e"></span>idade: 47, <br>
+        <span class="e"></span>altura: 1.68, <br>
+        <span class="e">falarNome : function()</span> {<br>
+        <span class="e2"></span> return "Meu nome é : " + this.nome;<br>
+        <span class="e">}</span><br>
+        <span class="es">};</span><br>
+        <span class="e">document.getElementById(<span class="t">"objeto"</span>).innerHTML = pessoa.falarNome();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="objeto"></div>
+      <script>
+        var pessoa = {
+          nome: "Fulano Ciclano de Tal",
+          idade: 47,
+          altura: 1.68,
+          falarNome: function () {
+            return "Meu nome é : " + this.nome;
+          }
+        };
+        document.getElementById("objeto").innerHTML = pessoa.falarNome();
+      </script>
+
+      <hr class="space">
+
+      <h2>Exibindo o objeto</h2>
+
+      <p class="lead">Podemos exibir o corpo de um objeto devemos usar o método <code>Object.values(objeto)</code> para retornar um array com todos os valores dentro de um objeto. </p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="exibindo">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="es">var pessoa = {</span><br>
+        <span class="e"></span>nome: <span class="t">"Fulano Ciclano de Tal"</span>, <br>
+        <span class="e"></span>idade: 47, <br>
+        <span class="e"></span>altura: 1.68, <br>
+        <span class="e">falarNome : function()</span> {<br>
+        <span class="e2"></span> return "Meu nome é : " + this.nome;<br>
+        <span class="e">}</span><br>
+        <span class="es">};</span><br>
+        <span class="e">document.getElementById(<span class="t">"exibindo"</span>).innerHTML = pessoa.values();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="exibindo"></div>
+      <script>
+        var pessoa = {
+          nome: "Fulano Ciclano de Tal",
+          idade: 47,
+          altura: 1.68,
+          falarNome: function () {
+            return "Meu nome é : " + this.nome;
+          }
+        };
+        document.getElementById("exibindo").innerHTML = Object.values(pessoa);
+      </script>
+
+      <hr class="space">
+
+      <h2>Getters e Setters</h2>
+
+      <p class="lead">As palavras reservadas <code>get</code> e <code>set</code> são usada para "proteger" o acesso das propriedades dentro de um objeto, onde para pegar o valor de uma propriedade devemos usar os métodos <code>get</code>, enquanto que para alterar os valores das propriedades de um objeto devemos usar os métodos <code>set</code>.</p>
+
+      <p class="lead">Os métodos <code>set get</code> não podem ter o mesmo nome que as propriedades, existe um padrão de uso que iremos falar em <a href="classes.html">Classes</a>, mas, por enquanto, não iremos detalhar. E mesmo que esses métodos sejam um método não é necessário usar <code>()</code> para invocar estes métodos.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js" id="div3">
+        &lt;div id="get-set">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="es">var pessoa = {</span><br>
+        <span class="e"></span>nome: <span class="t">"Fulano Ciclano de Tal"</span>, <br>
+        <span class="e"></span>idade: 47, <br>
+        <span class="e"></span>altura: 1.68, <br>
+        <span class="e es">get getNome()</span> {<br>
+        <span class="e2"></span> return "Meu nome é : " + this.nome;<br>
+        <span class="e">}</span><br>
+        <span class="e es">set setNome( nome )</span> {<br>
+        <span class="e2"></span> this.nome = nome.toUpperCase();<br>
+        <span class="e">}</span><br>
+        <span class="e es">get getIdade()</span> {<br>
+        <span class="e2"></span> return "Meu idade é : " + this.idade;<br>
+        <span class="e">}</span><br>
+        <span class="e es">set setIdade( idade )</span> {<br>
+        <span class="e2"></span> this.idade = idade;<br>
+        <span class="e">}</span><br>
+        <span class="e es">get getAltura()</span> {<br>
+        <span class="e2"></span> return "Meu altura é : " + this.altura;<br>
+        <span class="e">}</span><br>
+        <span class="e es">set setAltura( Nome )</span> {<br>
+        <span class="e2"></span> this.altura = altura;<br>
+        <span class="e">}</span><br>
+        <span class="es">};</span><br>
+        <span class="es">pessoa.setNome = "Fulano de Tal Ciclano"</span><br>
+        <span class="e">document.getElementById(<span class="t">"get-set"</span>).innerHTML = pessoa.getNome;</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="get-set"></div>
+
+      <script>
+        var pessoa = {
+          nome: "Fulano Ciclano de Tal",
+          idade: 47,
+          altura: 1.68,
+          get getNome() {
+            return "Meu nome é : " + this.nome;
+          },
+          set setNome(nome) {
+            this.nome = nome.toUpperCase();
+          },
+          get getIdade() {
+            return "Minha idade é : " + this.idade;
+          },
+          set setIdade(idade) {
+            this.idade = idade;
+          },
+          get getAltura() {
+            return "Minha altura é : " + this.altura;
+          },
+          set setAltura(Nome) {
+            this.altura = altura;
+          }
+        };
+        pessoa.setNome = "Fulano de Tal Ciclano";
+        document.getElementById("get-set").innerHTML = pessoa.getNome;
+      </script> <br> <br>
+
+      <p class="lead">Assim podemos colocar dentro da função <code>set</code> nome uma função para proteger o dado que entra e polir o dado que sai pelos métodos <code>get</code>. Claro que as propriedades originais ainda poderão ser acessadas pois o JS não possui modificadores de acessos, mas fica como um contrato em quem for usar e quer disponibilizar que não irá acessar as demais propriedades.</p>
+
+      <hr class="space">
+
+      <h2>Objetos como Funções</h2>
+
+      <p class="lead">Funções construtores são nomeadas com a primeira letra em maiúsculo. A diferença é que as funções construtores não são objetos, mas podem criar um ou mais objetos, e não podem conter métodos dentro delas de imediato. Para construir um objeto precisamos usar a palavra reservada <code>new</code> seguida pelo nome da função e seus parâmetros.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="functions">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e es">function Pessoa (nome, idade, altura) {</span><br>
+        <span class="e2"></span>this.nome = nome; <br>
+        <span class="e2"></span>this.idade = idade; <br>
+        <span class="e2"></span>this.altura = altura;<br>
+        <span class="e2"></span> this.falarNome = function () {<br>
+        <span class="e3"></span> return "Meu nome é : " + this.nome;<br>
+        <span class="e2">}</span><br>
+        <span class="e es">};</span><br>
+        <span class="e">var alguem = new Pesssoa("fulano", 37, 1.75);</span><br>
+        <span class="e">document.getElementById(<span class="t">"functions"</span>).innerHTML = alguem.falarNome();</span><br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="functions"></div>
+      <script>
+        function Pessoa(nome, idade, altura) {
+          this.nome = nome;
+          this.idade = idade;
+          this.altura = altura;
+          this.falarNome = function () {
+            return "Meu nome é : " + this.nome;
+          }
+        };
+        var alguem = new Pessoa("fulano", 37, 1.75);
+        document.getElementById("functions").innerHTML = alguem.falarNome();
+      </script> <br> <br> <br>
+
+      <p class="lead">Eu recomendaria não usar funções construtoras mas sim focar em orientação a Objetos com <a href="classes.html">CLASSES</a>, mas caso queria saber mais sobre funções construtoras acesse:<a target="_blank" href="https://www.w3schools.com/js/js_object_prototypes.asp">Funções Construtoras</a></p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

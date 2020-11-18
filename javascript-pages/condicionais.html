@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Estruturas condicionais em JavaScript</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Estruturas condicionais em JavaScript</h1>
+
+      <p class="lead">Estruturas condicionais são usadas quando queremos que diferentes ações ocorram em determinados contextos que apresentam diferentes condições.</p>
+
+      <h2>Estrutura IF - IF ELSE - ELSE</h2>
+
+      <ul>
+        <li><b>if</b> - Usado para executar um determinado trecho de código com base em uma condição se for verdadeira. </li>
+        <li><b>if else</b> - Usado para executar um determinado trecho de código se a condição if ou if else imediatamente acima não for verdadeira e a condição atual for verdadeira.</li>
+        <li><b>else</b>- Usado para executar um determinado trecho de código se todas as condições acima não forem verdadeira.</li>
+      </ul>
+
+      <p class="lead">EXEMPLOS:</p>
+
+      <div class="code-js">
+        if(a==b){ <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for igual a b</span> <br>
+        } <br>
+      </div> <br> <br>
+
+      <div class="code-js">
+        if(a==b){ <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for igual a b</span> <br>
+        }else { <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for diferente de b</span> <br>
+        } <br>
+      </div><br> <br>
+
+      <div class="code-js">
+        if(a==b){ <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for igual a b</span> <br>
+        }else if(a > b) { <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for diferente de b e a maior que b</span> <br>
+        } else { <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for diferente de b e menor que b</span> <br>
+        } <br>
+      </div><br> <br>
+
+      <div class="code-js">
+        if(a==b){ <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for igual a b</span> <br>
+        }else if(a > b) { <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for diferente de b e maior que b</span> <br>
+        } else if(a == 10) { <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for diferente de b, menor que b e igual a 10</span> <br>
+        }else { <br>
+        <span class="co e">//O código entre as chaves vai executar somente se a for diferente de b, menor que b e diferente de 10</span> <br>
+        } <br>
+      </div> <br> <br>
+
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div1">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div1">
+        &lt;div id="if-else">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 10</span>; <br>
+        <span class="e es">if(a >= 20) {</span> <br>
+        <span class="e2">var saida = <span class="t">"a é maior ou igual a 20"</span>;</span> <br>
+        <span class="e es">}else if(a >= 15) {</span> <br>
+        <span class="e2">var saida = <span class="t">"a é maior ou igual a 15"</span>;</span> <br>
+        <span class="e es">}else if(a >= 10) {</span> <br>
+        <span class="e2">var saida = <span class="t">"a é maior ou igual a 10"</span>;</span> <br>
+        <span class="e es">}else{</span> <br>
+        <span class="e2">var saida = <span class="t">"a é menor que 10"</span>;</span> <br>
+        <span class="e es">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"if-else"</span>).innerHTML = saida</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="if-else"></div>
+      <script>
+        var a = 10;
+        if (a >= 20) {
+          var saida = "a é maior ou igual a 20";
+        } else if (a >= 15) {
+          var saida = "a é maior ou igual a 15";
+        } else if (a >= 10) {
+          var saida = "a é maior ou igual a 10";
+        } else {
+          var saida = "a é menor que 10";
+        }
+        document.getElementById("if-else").innerHTML = saida;
+      </script>
+
+      <hr class="space">
+
+      <h2>Estrutura Switch-case</h2>
+
+      <p class="lead">O switch é um estrutura condicional de múltiplos casos, bem semelhante a estrutura IF-ELSE. A estrutura recebe como entrada uma única variável e realiza a comparação igual e de mesmo tipo em cada caso (===), ou seja 10 é diferente de "10".</p>
+
+      <ul>
+        <li><b>switch(variável)</b> - O switch precisa de um parâmetro único que será usado para realizar a comparação de mesmo valor e tipo em cada caso; </li>
+        <li><b>case valor:</b> - Cada caso deve ter um valor que será comparado com a variável especificada no switch.</li>
+        <li><b>break;</b> - É usado para interromper a estrutura, ou seja, quando o break [e executado, as pr[oximas comparações não são executadas.</li>
+        <li><b>default</b> - Caso especial, colocado como último caso, em que sempre será executado quando nenhum outro caso for executado.</li>
+      </ul>
+
+      <p class="lead">Importante observar o uso do <code>break</code>, pois caso omitido todos os cados abaixo serão executados independentemente se forem verdadeiros ou não. Entretanto podem ocorrer casos em que queremos que mais de um caso seja executado ao mesmo tempo, nesses casos em específicos podemos omitir o uso do <code>break</code></p>
+
+      <div class="code-js">
+        switch(a){ <br>
+        <span class="e">case 10:</span> <br>
+        <span class="e2 co">// a é o número 10</span> <br>
+        <span class="e2">break</span> <span class="co">//break impede que o caso "10", 5 e default sejam executados</span> <br>
+        <span class="e">case "10":</span> <br>
+        <span class="e2 co">// a é a string "10"</span> <br>
+        <span class="e2">break</span> <span class="co">//break impede que o caso 5 e default sejam executados</span> <br>
+        <span class="e">case 5:</span> <br>
+        <span class="e2 co">// a é o número 5</span> <br>
+        <span class="e2">break</span> <span class="co">//break impede que o caso default seja executados</span> <br>
+        <span class="e">default:</span> <br>
+        <span class="e2 co">// a é qualquer coisa exceto, 5, 10 e "10"</span> <br>
+        } <br>
+      </div>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div2">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div2">
+        &lt;div id="switch">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 5</span>; <br>
+        <span class="e es">switch(a){</span> <br>
+        <span class="e2 es">case 10:</span> <br>
+        <span class="e3">var saida = <span class="t"> "a é o número 10"</span>;</span> <br>
+        <span class="e3">break</span>;<br>
+        <span class="e2 es">case "10":</span> <br>
+        <span class="e3">var saida = <span class="t"> "a é a string \"10\""</span>;</span> <br>
+        <span class="e3">break</span>;<br>
+        <span class="e2 es">case 5:</span> <br>
+        <span class="e3">var saida = <span class="t"> "a é o número 5"</span>;</span> <br>
+        <span class="e3">break</span>;<br>
+        <span class="e2 es">default:</span> <br>
+        <span class="e3">var saida = <span class="t"> "a é qualquer coisa exceto, 5, 10 e \"10\""</span>;</span> <br>
+        <span class="e">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"switch"</span>).innerHTML = saida</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="switch"></div>
+      <script>
+        var a = 5;
+        switch (a) {
+          case 10:
+            var saida = "a é o número 10";
+            break;
+          case "10":
+            var saida = "a é a string \"10\"";
+            break;
+          case 5:
+            var saida = "a é o número 5";
+            break;
+          default:
+            var saida = "a é qualquer coisa exceto, 5, 10 e \"10\"";
+        }
+        document.getElementById("switch").innerHTML = saida;
+      </script> <br> <br>
+
+      <p class="lead">Exemplo do que o corre caso seja omitido do break.</p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div3">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div3">
+        &lt;div id="switch2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 2</span>; <br>
+        <span class="e">var saida = ""</span>; <br>
+        <span class="e es">switch (a){</span> <br>
+        <span class="e2 es">case 1:</span> <br>
+        <span class="e3">saida = saida + <span class="t"> "caso 1 "</span></span>; <br>
+        <span class="e2 es">case 2:</span> <br>
+        <span class="e3">saida = saida + <span class="t"> "caso 2 "</span></span>; <br>
+        <span class="e2 es">case 3:</span> <br>
+        <span class="e3">saida = saida + <span class="t"> "caso 3 "</span></span>; <br>
+        <span class="e2 es">default:</span> <br>
+        <span class="e3">saida = saida + <span class="t"> "default"</span></span>; <br>
+        <span class="e">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"switch2"</span>).innerHTML = saida</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="switch2"></div>
+      <script>
+        var a = 2;
+        var saida = "";
+        switch (a) {
+          case 1:
+            saida = saida + "caso 1 ";
+          case 2:
+            saida = saida + "caso 2 ";
+          case 3:
+            saida = saida + "caso 3 ";
+          default:
+            saida = saida + "default";
+        }
+        document.getElementById("switch2").innerHTML = saida;
+      </script>
+
+      <hr class="lead">
+
+      <h2>Conservando o Escopo</h2>
+
+      <p class="lead">Caso queiramos que uma variável criada dentro de uma estrutura de repetição esteja acessível somente dentro da estrutura devemos usar a palavra reservada <code>let</code> ao invés da palavra reservada <code>var</code>.</p>
+
+      <p class="lead">Exemplo com <code>VAR</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div4">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div4">
+        &lt;div id="escopo">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 100</span>; <br>
+        <span class="e es">if(a >= 20) {</span> <br>
+        <span class="e2">var a = 20;</span> <br>
+        <span class="e es">}else{</span> <br>
+        <span class="e2">var a = 0;</span> <br>
+        <span class="e es">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"escopo"</span>).innerHTML = a</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="escopo"></div>
+      <script>
+        var a = 100;
+        if (a >= 20) {
+          var a = 20;
+        } else {
+          var a = 0;
+        }
+        document.getElementById("escopo").innerHTML = a;
+      </script> <br> <br> <br>
+
+      <p class="lead">Exemplo com <code>LET</code></p>
+
+      <p class="text-center lead">
+        <a class="btn btn-outline-light" data-toggle="collapse" href="#div5">
+          Mostrar Código
+        </a>
+      </p>
+
+      <div class="collapse code-js pb-3" id="div5">
+        &lt;div id="escopo2">&lt;/div> <br>
+        &lt;script> <br>
+        <span class="e">var a = 100</span>; <br>
+        <span class="e es">if(a >= 20) {</span> <br>
+        <span class="e2">let a = 20;</span> <br>
+        <span class="e es">}else{</span> <br>
+        <span class="e2">let a = 0;</span> <br>
+        <span class="e es">}</span> <br>
+        <span class="e">document.getElementById(<span class="t">"escopo2"</span>).innerHTML = a</span>;<br>
+        &lt;/script> <br>
+      </div>
+
+      <div id="escopo2"></div>
+      <script>
+        var a = 100;
+        if (a >= 20) {
+          let a = 20;
+        } else {
+          let a = 0;
+        }
+        document.getElementById("escopo2").innerHTML = a;
+      </script>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>
