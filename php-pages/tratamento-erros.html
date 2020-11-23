@@ -31,7 +31,7 @@
 
       <h1>Tratamento de erros com PHP</h1>
 
-      
+
       <p class="lead">Erros sempre acontecem quando menos esperamos... Na verdade devemos sempre esperar por um erro. Quando esperamos por um erro, podemos tratá-lo de forma correta e impedir que a nossa aplicação trave ou retorne valores totalmente inconsistentes.</p>
 
       <ul class="lead">
@@ -40,6 +40,17 @@
         <li><strong><code>throw</code></strong> - Declaração usada para criar erros</li>
         <li><strong><code>finally</code></strong> - Declaração usada executar um código depois de tentá-lo pegar, e que sempre será executado independentemente de haver ou não erros.</li>
       </ul>
+
+      <hr class="space">
+
+      <h2>Criando uma exceção</h2>
+
+      <p class="lead">Uma exceção é um objeto que esclareça um erro ou comportamento inesperado de um script PHP. E para criamos a nossa própria exceção usamos a palavra reservada <code>throw</code>.</p>
+
+      <div style="color: #d4d4d4;background-color: #1e1e1e;font-family: 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback';font-weight: normal;font-size: 14px;line-height: 19px;"><span style="color: #569cd6;">&lt;?php</span><br><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">divide</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">$dividendo</span><span style="color: #d4d4d4;">,</span><span style="color: #9cdcfe;">&nbsp;$divisor</span><span style="color: #d4d4d4;">) {</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #c586c0;">if</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">$divisor</span><span style="color: #d4d4d4;">&nbsp;==&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">) {</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #c586c0;">throw</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">Exception</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">&quot;Erro! Aconteceu uma divis&atilde;o por zero!&quot;</span><span style="color: #d4d4d4;">);</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #c586c0;">return</span><span style="color: #d4d4d4;">;</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp; }</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #c586c0;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">$dividendo</span><span style="color: #d4d4d4;">&nbsp;/&nbsp;</span><span style="color: #9cdcfe;">$divisor</span><span style="color: #d4d4d4;">;</span><br><span style="color: #d4d4d4;">&nbsp; }</span><br><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #dcdcaa;">echo</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">divide</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">);</span><br><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+
+
+
 
 
     </section>
