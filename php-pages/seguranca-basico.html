@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Filtros com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Filtros com PHP</h1>
+
+      <p class="lead">Filtros tem como principais objetivos determinar se os dados estão na forma adequada (VALIDADE) e/ou remover qualquer caractere ilegal (SANITIZE), afim de proteger a integridade da aplicação. Basicamente, devemos usar sempre para ter a certeza de que estamos usando dados corretos e seguros como entrada na nossa aplicação.</p>
+
+      <hr class="space">
+
+      <h2>filter_var() - Validando e limpando dados</h2>
+
+      <p class="lead">A função <code>filter_var($string, FILTRO)</code> recebe dois parâmetros, o primeiro a string que queremos tratar e o segundo o tipo de filtro que iremos aplicar sobre a string. Por fim, a função irá retornar uma nova string limpa e pronta para o uso dentro da aplicação.</p>
+
+      <hr class="space">
+
+      <h3>FILTER_SANITIZE_STRING</h3>
+
+      <p class="lead">O filtro <code>FILTER_SANITIZE_STRING</code> é usado para remover todas as tag HTML dentro de uma string, evitando assim, que dados externos alterem a estrutura das páginas HTML.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$string&nbsp;=&nbsp;</span><span style="color: #ce9178;">"&lt;h1&gt;Hello&nbsp;World!&lt;/h1&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$NovaString&nbsp;=&nbsp;filter_var($string,&nbsp;FILTER_SANITIZE_STRING);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$NovaString;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;Hello&nbsp;World!</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span style="color: #d4d4d4;">&nbsp;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>FILTER_VALIDATE_INT</h3>
+
+      <p class="lead">O filtro <code>FILTER_VALIDATE_INT</code> verifica se se uma variável é um número inteiro ou não. Entretanto o valor zero <code>0</code> não é considerado um valor inteiro, e para isso, precisamos tratar este caso especial. A função então retorna o dado filtrado, ou <code>FALSE</code> se o filtro falhar.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$int&nbsp;=&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(filter_var($int,&nbsp;FILTER_VALIDATE_INT)&nbsp;===&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">&nbsp;||&nbsp;!filter_var($int,&nbsp;FILTER_VALIDATE_INT)&nbsp;===&nbsp;</span><span style="color: #569cd6;">false</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(</span><span style="color: #ce9178;">"O&nbsp;inteiro&nbsp;&eacute;&nbsp;v&aacute;lido!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(</span><span style="color: #ce9178;">"O&nbsp;inteiro&nbsp;&eacute;&nbsp;inv&aacute;lido!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span style="color: #d4d4d4;">&nbsp;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>FILTER_VALIDATE_EMAIL</h3>
+
+      <p class="lead">O filtro <code>FILTER_VALIDATE_EMAIL</code> é usado para verificar o formato de um e-mail. Abaixo, primeiro usamos a função para remover caracteres ilegais em um email, e em seguida chamamos novamente o filtro para verificar se ele está no formato correto.</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$email&nbsp;=&nbsp;</span><span style="color: #ce9178;">"email"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$email&nbsp;=&nbsp;filter_var($email,&nbsp;FILTER_SANITIZE_EMAIL);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!filter_var($email,&nbsp;FILTER_VALIDATE_EMAIL)&nbsp;===&nbsp;</span><span style="color: #569cd6;">false</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(</span><span style="color: #ce9178;">"O&nbsp;email&nbsp;est&aacute;&nbsp;no&nbsp;formato&nbsp;v&aacute;lido!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;(</span><span style="color: #ce9178;">"O&nbsp;email&nbsp;est&aacute;&nbsp;no&nbsp;formato&nbsp;inv&aacute;lido!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <p class="lead">Para ter a lista completa de Filtros acesse <a href="https://www.w3schools.com/php/php_ref_filter.asp">PHP Filter Functions</a>. Podemos ainda verificar se o dado está dentro do limite de valores corretos, verificar URL, IP, dentre outros valores. </p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Include e require em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Include e require em PHP</h1>
+
+      <p class="lead">Muitas vezes iremos querer que trechos de códigos ou marcações HTML externas sejam incluídas dentro do de outro arquivo, sem ter que simplesmente ter que ficar copiando e colando o conteúdo, afim de abstrair certos conteúdos, deixando as páginas mais limpas para o seu real conteúdo.</p>
+
+      <p class="lead">As funções abaixo são muito úteis para economizar tempo de codificação, aumento da legibilidade e modulabilidade do código, e a segurança, onde podemos incluir trechos de códigos externos que não podem ser acessados em domínios públicos, impedindo que eles sejam vistos diretamente pelo endereço URL.</p>
+
+      <p class="lead">Um exemplo de uso bem comum, é a inclusão de menus, que ao invés de ter todo o código do menu, em todas as páginas, bastamos criar a barra de menu em um arquivo separado, e em seguida incluir esse arquivos nas demais páginas. </p>
+
+      <hr class="space">
+
+      <h2>Include</h2>
+
+      <p class="lead">A instrução <code>include</code> é usada para incluir textos/códigos/marcações de um arquivo externo, dentro do arquivo atual que está utilizando a função. Ou seja, onde a instrução é chamada, é feita a colagem de todo o conteúdo copiado do arquivo externo. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">include</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"menu.php"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Require</h2>
+
+      <p class="lead">A instrução <code>require</code> funciona exatamente da mesma forma que a instrução <code>include</code>, mas diferem no tipo de erro. Enquanto a instrução <code>include</code> retorna apenas um aviso (E_WARNING) não parando a aplicação, a instrução <code>require</code> produzirá um erro (E_COMPILE_ERROR) e irá interromper a aplicação!</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">require</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"menu.php"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>include_once e require_once</h2>
+
+      <p class="lead">As instruções <code>include_onde</code> e <code>require_once</code> funciona como as funções acima, entretanto, elas incluem apenas uma vez o arquivo especificado, ou seja, se um mesmo arquivo for novamente incluindo, com estas instruções ele será ignorado, aparecendo apenas na primeira chamada.</p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

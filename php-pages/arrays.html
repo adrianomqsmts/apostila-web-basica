@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Arrays em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Arrays em PHP</h1>
+
+      <p class="lead">De forma simplista, um array é um vetor que armazena vários valores em uma única variável.</p>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$lista = [</span><span style="color: #ce9178;">"carro"</span><span>, </span><span style="color: #ce9178;">"moto"</span><span>, </span><span style="color: #ce9178;">"casa"</span><span>]; </span><span style="color: #6a9955;">//Cria um array de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span>$numeros = array(</span><span style="color: #b5cea8;">1</span><span>,</span><span style="color: #b5cea8;">2</span><span>,</span><span style="color: #b5cea8;">3</span><span>);</span><span style="color: #6a9955;">//Cria um array de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+      <h2>Acessando e alterando um valor de um array</h2>
+
+      <p class="lead">Para acessar um valor de um array basta passar um index com a posição do vetor que deseja acessar, onde o index 0 é a primeira posição, o index 1 é a segunda, e assim sucessivamente.</p>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$lista = [</span><span style="color: #ce9178;">"carro"</span><span>, </span><span style="color: #ce9178;">"casa"</span><span>, </span><span style="color: #ce9178;">"moto"</span><span>]; </span><span style="color: #6a9955;">//Cria um array de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span>echo $lista[</span><span style="color: #b5cea8;">0</span><span>] </span><span>.</span><span> </span><span style="color: #ce9178;">"&lt;br&gt;"</span><span>; </span><span style="color: #6a9955;">//Exibe o valor carro</span></div>
+        <div><span>$lista[</span><span style="color: #b5cea8;">0</span><span>] = </span><span style="color: #ce9178;">"barco"</span><span>; </span><span style="color: #6a9955;">//Sobrescreve o valor carro com o valor barco</span></div>
+        <div><span>echo $lista[</span><span style="color: #b5cea8;">0</span><span>]; </span><span style="color: #6a9955;">//Exibe o valor barco</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Alterando o index de um array</h2>
+
+      <p class="lead">Podemos mudar o index (normalmente números) de um array para isto, basta usar a sintaxe <code>["index" => elemento, "index2" => elemento2, ...]</code>. Após alteramos poderemos usar <code>lista["index"]</code> ao invés de <code>lista[0]</code>, lembrando que se usarmos agora <code>lista[0]</code>, haverá um erro.</p>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$lista = [</span><span style="color: #ce9178;">"c"</span><span> =&gt; </span><span style="color: #ce9178;">"carro"</span><span>, </span><span style="color: #ce9178;">"m"</span><span> =&gt; </span><span style="color: #ce9178;">"moto"</span><span>, </span><span style="color: #ce9178;">"ca"</span><span> =&gt; </span><span style="color: #ce9178;">"casa"</span><span>]; </span><span style="color: #6a9955;">//Cria um array de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span>$numeros = array(</span><span style="color: #ce9178;">"n1"</span><span> =&gt; </span><span style="color: #b5cea8;">1</span><span>, </span><span style="color: #ce9178;">"n2"</span><span> =&gt; </span><span style="color: #b5cea8;">2</span><span>, </span><span style="color: #ce9178;">"n3"</span><span> =&gt; </span><span style="color: #b5cea8;">3</span><span>); </span><span style="color: #6a9955;">//Cria um array de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span>echo $lista[</span><span style="color: #ce9178;">"c"</span><span>]; </span><span style="color: #6a9955;">//Exibe o valor carro</span></div>
+        <div><span>echo $numeros[</span><span style="color: #ce9178;">"n2"</span><span>]; </span><span style="color: #6a9955;">//Exibe o valor 2</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Inserindo novos elementos em um array</h2>
+
+      <p class="lead">Existem diferentes formas de introduzir um novo elemento em um array, a primeira é usando colchetes vazios <code>$lista[] = novoElemento</code>, a segunda é especificando a posição do novo elemento como <code>$lista[ultimaPosicao+1] = novoElemento</code> e a terceira é utilizando a função <code>array_push($lista, novoElemento)</code>.</p>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$lista = [</span><span style="color: #ce9178;">"carro"</span><span>, </span><span style="color: #ce9178;">"casa"</span><span>, </span><span style="color: #ce9178;">"moto"</span><span>]; </span><span style="color: #6a9955;">//Uma lista de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span>$lista[</span><span style="color: #b5cea8;">4</span><span>] = </span><span style="color: #ce9178;">"bicicleta"</span><span>; </span><span style="color: #6a9955;">//Insere um elemento na quarta posi&ccedil;&atilde;o</span></div>
+        <div><span>$lista[] = </span><span style="color: #ce9178;">"barco"</span><span>; </span><span style="color: #6a9955;">//&Eacute; o mesmo que $lista[5], e insere um elemento na quinta posi&ccedil;&atilde;o</span></div>
+        <div><span>array_push($lista, </span><span style="color: #ce9178;">"skate"</span><span>); </span><span style="color: #6a9955;">//insere um elemento na sexta posi&ccedil;&atilde;o</span></div>
+        <div><span>echo var_dump($lista); </span><br> <span style="color: #6a9955;">//Exibe a lista array(6) { [0]=&gt; string(5) "carro" [1]=&gt; string(4) "casa" [2]=&gt; string(4) "moto" [4]=&gt; string(9) "bicicleta" [5]=&gt; string(5) "barco" [6]=&gt; string(5) "skate" }</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Array de arrays ou simplesmente matrizes</h2>
+
+      <p class="lead">Arrays multidimensionais são uma matriz, ou um vetor de vetores. Para criar uma matriz, basta inserir como cada elemento de um array, um outro array. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$lista&nbsp;=&nbsp;[[</span><span style="color: #ce9178;">"arroz"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"feijao"</span><span style="color: #d4d4d4;">],&nbsp;[</span><span style="color: #ce9178;">"carro"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"moto"</span><span style="color: #d4d4d4;">],&nbsp;[</span><span style="color: #ce9178;">"cart&atilde;o"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"dinheiro"</span><span style="color: #d4d4d4;">]];&nbsp;</span><span style="color: #6a9955;">//Cria&nbsp;um&nbsp;array&nbsp;de&nbsp;3&nbsp;posi&ccedil;&otilde;es</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$numeros&nbsp;=&nbsp;array(array(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">),&nbsp;array(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">),&nbsp;array(</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">30</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">40</span><span style="color: #d4d4d4;">));&nbsp;</span><span style="color: #6a9955;">//Cria&nbsp;um&nbsp;array&nbsp;de&nbsp;3&nbsp;posi&ccedil;&otilde;es</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$lista[</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">][</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$numeros[</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">][</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">];&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;Arroz&nbsp;40</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>Principais funções com array</h2>
+      <br>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$lista = [</span><span style="color: #ce9178;">"carro"</span><span>, </span><span style="color: #ce9178;">"casa"</span><span>, </span><span style="color: #ce9178;">"moto"</span><span>]; </span><span style="color: #6a9955;">//Uma lista de 3 posi&ccedil;&otilde;es</span></div>
+        <div><span>$lista2 = [</span><span style="color: #ce9178;">"bicicleta"</span><span>, </span><span style="color: #ce9178;">"skate"</span><span>, </span><span style="color: #ce9178;">"barco"</span><span>]; </span><span style="color: #6a9955;">//Uma lista de 3 posi&ccedil;&otilde;es</span></div>
+        <br />
+        <div><span>$lista3 = array_merge($lista, $lista2); </span><span style="color: #6a9955;">//Retorna um lista com 6 posi&ccedil;&otilde;es</span></div>
+        <br />
+        <div><span style="color: #6a9955;">//Retorna uma string do array e a exibe: carro - casa - moto - bicicleta - skate - barco</span></div>
+        <div><span>echo </span><span>implode</span><span>(</span><span style="color: #ce9178;">" - "</span><span>, $lista3) </span><span>.</span><span> </span><span style="color: #ce9178;">"&lt;br&gt;"</span><span>;</span></div>
+        <br />
+        <div><span>echo array_pop($lista3) </span><span>.</span><span> </span><span style="color: #ce9178;">"&lt;br&gt;"</span><span>; </span><span style="color: #6a9955;">//Tira o barco da lista e o exibe</span></div>
+        <br />
+        <div><span>array_unshift($lista3, </span><span style="color: #ce9178;">"avi&atilde;o"</span><span>); </span><span style="color: #6a9955;">//Insere o elemento avi&atilde;o no in&iacute;cio da lista3</span></div>
+        <br />
+        <div><span>echo array_shift($lista3); </span><span style="color: #6a9955;">//Remove o elemento avi&atilde;o da lista3 e o exibe</span></div>
+        <br />
+        <div><span>echo array_search(</span><span style="color: #ce9178;">"Avi&atilde;o"</span><span>, $lista3); </span><span style="color: #6a9955;">//Pesquisa por avi&atilde;o e retorna nul.</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br> <br>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white bg-dark">
+        <thead class="text-center">
+          <th class="w-50">Função : Retorno</th>
+          <th>Descrição</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>array_intersect(array1, array2, ...) : array</td>
+            <td>Calcula a interseção entre arrays considerando os valores dos elementos (tem variações como array_intersect_key)</td>
+          </tr>
+          <tr>
+            <td>array_merge(array1, array2, ...) : array</td>
+            <td>Combina um ou mais arrays (tem variações como array_merge_recursive)</td>
+          </tr>
+          <tr>
+            <td>array_key_exists(chave, key): bool</td>
+            <td>Checa se uma chave ou índice existe em um array</td>
+          </tr>
+          <tr>
+            <td>array_keys(array, valor): array</td>
+            <td>Retorna todas as chaves ou uma parte das chaves de um array (valor opcional)( tem variações como array_keys_first)</td>
+          </tr>
+          <tr>
+            <td>array_push(array, novoElemento1, novoElemento2,...) : int</td>
+            <td>Adiciona um ou mais elementos no final de um array</td>
+          </tr>
+          <tr>
+            <td>array_pop(array) : tipoElemento</td>
+            <td> Extrai um elemento do final do array e o retorna</td>
+          </tr>
+          <tr>
+            <td>array_unshift(array, novoElemento1, novoElemento2,...) : int</td>
+            <td>Adiciona um ou mais elementos no início de um array</td>
+          </tr>
+          <tr>
+            <td>array_shift(array) : tipoElemento</td>
+            <td>Retira o primeiro elemento de um array e o retorna</td>
+          </tr>
+          <tr>
+            <td>array_rand(array, quantidade) : array ou tipoElemento</td>
+            <td>Escolhe um ou mais elementos aleatórios de um array e os retorna as chaves</td>
+          </tr>
+          <tr>
+            <td>array_search(valor, array) : tipoChave</td>
+            <td>Procura por um valor em um array e retorna sua chave correspondente caso seja encontrado, caso contrário retorna NULL.</td>
+          </tr>
+          <tr>
+            <td>array_unique(array) : array</td>
+            <td>Remove os valores duplicados de um array e retorna um novo array</td>
+          </tr>
+          <tr>
+            <td>array_values(array) : array</td>
+            <td>Retorna todos os valores de um array</td>
+          </tr>
+          <tr>
+            <td>sort(array, tipoOrdenação) : boll</td>
+            <td>Ordena um array, onde o tipo é opcional, podendo ser SORT_REGULAR, SORT_NUMERIC, SORT_STRING, etc</td>
+          </tr>
+          <tr>
+            <td>is_array(array) : bool</td>
+            <td>Verifica se a variável é um array</td>
+          </tr>
+          <tr>
+            <td>explode("delimitador", string) : array</td>
+            <td>Divide uma string em strings de acordo com o delimitador.</td>
+          </tr>
+          <tr>
+            <td>implode("delimitador", array) : string</td>
+            <td>Une todos os elemento de um array em uma string, separados pelo delimitador.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Para ter acesso a lista completa de funções acesse : <a href="https://www.php.net/manual/pt_BR/ref.array.php">Funções para Array</a></p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

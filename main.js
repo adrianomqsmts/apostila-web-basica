@@ -143,6 +143,70 @@ js = (txt) => {
 }
 
 
+php = (txt) => {
+    return `                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">PHP7</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <ul class="overflow-auto m-0 p-0" style="height: 300px">
+                                <a target="_parent" href="`+ txt + `introducao.html" class="dropdown-item">Introdução</a>
+                                
+                                <a target="_parent" href="`+ txt + `comentarios.html" class="dropdown-item">Comentários</a>
+                                <a target="_parent" href="`+ txt + `variaveis.html" class="dropdown-item">Variáveis</a>                                
+                                <a target="_parent" href="`+ txt + `exibir-valor.html" class="dropdown-item">Exibir Valores</a>
+                                <a target="_parent" href="`+ txt + `operadores.html" class="dropdown-item">Operadores</a>
+                                <a target="_parent" href="`+ txt + `string.html" class="dropdown-item">Strings</a>
+                                <a target="_parent" href="`+ txt + `numbers.html" class="dropdown-item">Numbers</a>
+                                <a target="_parent" href="`+ txt + `arrays.html" class="dropdown-item">Arrays</a>
+                                <a target="_parent" href="`+ txt + `datas.html" class="dropdown-item">Datas</a>
+                                <a target="_parent" href="`+ txt + `funcoes.html" class="dropdown-item">Funções</a>
+                                <a target="_parent" href="`+ txt + `escopos.html" class="dropdown-item">Escopos</a>
+                                <a target="_parent" href="`+ txt + `estrutura-condicionais.html" class="dropdown-item">Estruturas Condicionais</a>
+                                <a target="_parent" href="`+ txt + `estrutura-repeticao.html" class="dropdown-item">Estruturas de Repetição</a>
+                                <a target="_parent" href="`+ txt + `formularios.html" class="dropdown-item">Formulários GET-POST</a>
+                                <a target="_parent" href="`+ txt + `include.html" class="dropdown-item">include e require</a>
+                                <a target="_parent" href="`+ txt + `manipulacao-arquivos.html" class="dropdown-item">Manipulação de arquivos</a>
+                                <a target="_parent" href="`+ txt + `upload.html" class="dropdown-item">Upload de arquivos</a>
+                                <a target="_parent" href="`+ txt + `cookies.html" class="dropdown-item">Cookies</a>
+                                <a target="_parent" href="`+ txt + `sessoes.html" class="dropdown-item">Sessões</a>
+                                <a target="_parent" href="`+ txt + `seguranca-basico.html" class="dropdown-item">Segurança Básica</a>
+                                <a target="_parent" href="`+ txt + `tratamento-erros.html" class="dropdown-item">Tratamento de Erros</a>
+                                <a target="_parent" href="`+ txt + `objetos.html" class="dropdown-item">Orientação a Objetos</a>
+                                <a target="_parent" href="`+ txt + `classes.html" class="dropdown-item">Banco de Dados</a>
+                                
+                            </ul>
+                        </div>`;
+}
+
+
+function criarMenuPHP() {
+    var navbar = ` <nav class="navbar navbar-expand-lg navbar-dark text-white bg-darkviolet fixed-top">
+            <a class="navbar-brand" href="../index.html">PumP</a>
+            <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                       `+ html("../html-pages") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                    `+ css("../css-pages/") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                        `+ bt("../bootstrap-pages/") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                        `+ js("../javascript-pages/") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                        `+ php("") + `
+                    </li>
+                </ul>
+            </div>
+        </nav>
+`;
+    var idMenu = document.getElementById("menu");
+    idMenu.innerHTML = navbar;
+}
 
 function criarMenu() {
     var navbar = ` <nav class="navbar navbar-expand-lg navbar-dark text-white bg-darkviolet fixed-top">
@@ -163,6 +227,9 @@ function criarMenu() {
                     </li>
                     <li class="nav-item dropdown">
                         `+ js("../javascript-pages/") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                        `+ php("../php-pages/") + `
                     </li>
                 </ul>
             </div>
@@ -191,6 +258,9 @@ function criarMenuCSS() {
                     </li>
                     <li class="nav-item dropdown">
                         `+ js("../javascript-pages/") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                        `+ php("../php-pages/") + `
                     </li>
                 </ul>
             </div>
@@ -222,6 +292,9 @@ function criarMenuBT() {
                     <li class="nav-item dropdown">
                         `+ js("../javascript-pages/") + `
                     </li>
+                    <li class="nav-item dropdown">
+                        `+ php("../php-pages/") + `
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -250,6 +323,9 @@ function criarMenuJS() {
                     <li class="nav-item dropdown">
                         `+ js("") + `
                     </li>
+                    <li class="nav-item dropdown">
+                        `+ php("../php-pages/") + `
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -277,6 +353,9 @@ function criarMenuPrincipal() {
                     </li>
                     <li class="nav-item dropdown">
                         `+ js("javascript-pages/") + `
+                    </li>
+                    <li class="nav-item dropdown">
+                        `+ php("php-pages/") + `
                     </li>
                 </ul>
             </div>

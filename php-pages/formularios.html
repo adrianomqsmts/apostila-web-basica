@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Formulários com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Formulários com PHP</h1>
+
+      <p class="lead">Existem 3 variáveis super globais que podem ser usadas para tratar os dados enviados pelos formulários.</p>
+
+      <hr class="space">
+
+      <h2>Variável super global $_GET</h2>
+
+      <p class="lead">PHP <code>$_GET</code> é uma variável super global do PHP que é usada para coletar dados do formulário após o envio de um formulário HTML com o atributo <code>method="get"</code>. Como vimos, um formulário com o método GET envias os dados anexados na URL, então a variável super global <code>$_GET</code> também pode coletar dados enviados na URL de forma geral.</p>
+
+      <p class="lead">O index da variável super global <code>$_GET</code> contém o mesmo nome que o atributo <code>name="nome"</code> especificado dentro da tag inicial do elemento HTML.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">form</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">action</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"pagina.php"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">method</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"get"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome:&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"text"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"nome"</span><span style="color: #808080;">&gt;&lt;</span><span style="color: #569cd6;">br</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;E-mail:&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"text"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"email"</span><span style="color: #808080;">&gt;&lt;</span><span style="color: #569cd6;">br</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">form</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">&lt;!--P&aacute;gina.php--&gt;</span></div>
+        <div><span style="color: #d4d4d4;">Bem-vindo&nbsp;</span><span style="color: #569cd6;">&lt;?php</span><span style="color: #d4d4d4;">&nbsp;echo&nbsp;$_GET[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">];&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">br</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">O&nbsp;seu&nbsp;e-mail&nbsp;&eacute;:&nbsp;</span><span style="color: #569cd6;">&lt;?php</span><span style="color: #d4d4d4;">&nbsp;echo&nbsp;$_GET[</span><span style="color: #ce9178;">"email"</span><span style="color: #d4d4d4;">];&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Variável super global $_POST</h2>
+
+      <p class="lead">PHP <code>$_POST</code> é uma variável super global do PHP que é usada para coletar dados do formulário após o envio de um formulário HTML com <code>method="post"</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">form</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">method</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"post"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">action</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"pagina.php"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;Nome:&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"text"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"nome"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">form</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #6a9955;">&lt;!--&nbsp;pagina.php&nbsp;--&gt;</span></div>
+        <div><span style="color: #569cd6;">&lt;?php</span><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$name&nbsp;=&nbsp;$_POST[</span><span style="color: #ce9178;">'nome'</span><span style="color: #d4d4d4;">];</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(empty($name))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;nome&nbsp;est&aacute;&nbsp;vazio!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$name;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Variável super global $_REQUEST</h2>
+
+      <p class="lead">PHP <code>$_REQUEST</code> é uma variável super global do PHP que é usada para coletar dados do formulário após o envio de um formulário HTML independentemente se foi enviado pelo método POST ou GET.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">form</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">method</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"get"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">action</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"pagina.php"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;Nome:&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"text"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"nome"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">form</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #6a9955;">&lt;!--&nbsp;pagina.php&nbsp;--&gt;</span></div>
+        <div><span style="color: #569cd6;">&lt;?php</span><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$name&nbsp;=&nbsp;$_REQUEST[</span><span style="color: #ce9178;">'nome'</span><span style="color: #d4d4d4;">];</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(empty($name))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;nome&nbsp;est&aacute;&nbsp;vazio!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$name;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>GET x POST</h2>
+
+      <p class="lead">Ambos GET e POST criam um array e este array contém pares de chave/valor, onde cada index serão os nomes dos controles do formulário e os valores são os dados de entrada do usuário. </p>
+      <p class="lead">Entretanto, a variável super global <code>$_GET</code> é um array de variáveis ​​passadas para o script atual por meio dos parâmetros de URL, enquanto o <code>$_POST</code> é um array de variáveis ​​passadas para o script atual por meio do método HTTP POST.</p>
+      <p class="lead">Assim, devemos usar o método GET apenas para enviar dados não confidenciais, pois os seus dados visíveis para todos (todos nomes e valores de variáveis ​​são exibidos no URL). Enquanto o método são invisíveis para outras pessoas (todos os nomes/valores são incorporados no corpo da solicitação HTTP) e tem não limites na quantidade de informações a enviar. </p>
+
+      <hr class="space">
+
+      <h2>Verificando os dados</h2>
+
+      <p class="lead">Os navegadores possuem uma ferramente que nos permitem visualizar o corpo dos dados, para isto basta pressionar as teclas <kbd>ctrl + shift + i</kbd>, acessar a aba de rede ou network, clicar no link da página, e em seguida procurar pela que representa o cabeçalho dos dados. Assim conseguiremos ver as variáveis e os dados atribuídos após o envio do formulário. </p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/postExemplo.png" class="figure-img img-fluid rounded" alt="Visualizando os cabeçalhos dos dados enviados pelo formulário no navegador Firefox">
+          <figcaption class="figure-caption text-xs-right">Acessando o cabeçalhos de dados pelo Firefox</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="../imagens/post-2.png" class="figure-img img-fluid rounded" alt="Visualizando os cabeçalhos dos dados enviados pelo formulário no navegador Edge">
+          <figcaption class="figure-caption text-xs-right">Acessando o cabeçalhos de dados pelo Edge</figcaption>
+        </figure>
+      </div>
+
+      <hr class="space">
+
+      <h2>Segurança na entrada de dados</h2>
+
+      <p class="lead">é importante tratar a segurança da entrada d dados, pois podem gerar erros ou até mesmo ataques mal-intencionados. Para isto, temos um grupo de funções para "limpar" os dados e evitar que eles introduzam códigos entro dos nóssos próprios códigos. Para isto acesse a sessão de <a href="seguranca-basico.html">filtros</a></p>
+
+      <hr class="space">
+
+      <h2>header : Desviando o caminho</h2>
+
+      <p class="lead">Pode ter notado que a atributo <code>action</code> de um formulários nos envia para um outra página. Esta outra página irá conter apenas o código para tratar os dados do formulários e então reportar uma resposta. Digamos que o usuário entrou com dados inválidos, precismos voltar para a página do formulário e destacar o campo em que houve o erro, ou então caso os dados estejam corretos, iremos redirecionar o usuário para um terceira página. </p>
+
+      <p class="lead">Para isso temos a função <code>header("location: outraPagina.php")</code> que irá abrir a página especificada. Mas tem um detalhe! a função header tem que ser sempre usada antes de qualquer output de dados enviado, pois ela manipula o cabeçalho da requisição HTTP enviada. Como vimos os cabeçalhos tem dados e isso pode gerar erros!</p>
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

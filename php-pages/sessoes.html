@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Sessões com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Sessões com PHP</h1>
+
+      <p class="lead">Uma sessão é uma maneira de armazenar informações (em variáveis) a serem usadas em várias páginas. Ao contrário de um cookie, as informações não são armazenadas no computador do usuário e por padrão, as variáveis ​​de sessão duram até que o usuário feche o navegador. </p>
+
+      <p class="lead">A maioria das sessões define uma chave de usuário para o navegador do usuário. Isto permite que, quando a sessão é aberta em outra página, ele verifique a chave e caso haja uma correspondência, a sessão é atribuída ao navegador, se não, ele inicia uma nova sessão. </p>
+
+      <hr class="space">
+
+      <h2>session_start() - Iniciar uma sessão</h2>
+
+      <p class="lead">Uma sessão é iniciada com a função <code>session_start()</code> e deve ser a primeira coisa em seu documento, antes de qualquer tag HTML!. E para manipular valores de sessões devemos usar a variável super global <code>$_SESSION</code>, que funciona como um array que irá armazenar em um vetor os valores da sessão. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Iniciando&nbsp;a&nbsp;sess&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;session_start();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">DOCTYPE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;vari&aacute;veis&nbsp;de&nbsp;sess&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_SESSION[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">]&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;de&nbsp;Tal"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_SESSION[</span><span style="color: #ce9178;">"idade"</span><span style="color: #d4d4d4;">]&nbsp;=&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div>
+      </div> <br>
+
+      <p class="lead"><strong>SEMPRE</strong> que for trabalhar com sessão deve usar a função <code>session_start()</code> no inicio do documento! SEMPRE!</p>
+
+      <hr class="space">
+
+      <h2>session_unset() - limpando os valores</h2>
+
+      <p class="lead">Podemos usar a função <code>session_unset()</code> para limpar todos os valores armazenados dentro da variável super global <code>$_SESSION</code>, mas ainda continuar com a sessão aberta. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;session_start();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">DOCTYPE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_SESSION[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">]&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;de&nbsp;Tal"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_SESSION[</span><span style="color: #ce9178;">"idade"</span><span style="color: #d4d4d4;">]&nbsp;=&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Limpando&nbsp;dos&nbsp;valores&nbsp;das&nbsp;vari&aacute;veis</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_unset();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>session_destroy() - interromper a sessão</h2>
+
+      <p class="lead">Podemos usar a função <code>session_destroy()</code> para interromper uma sessão, destruindo todas as variáveis e os indíces da variável super global <code>$_SESSION</code>. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;session_start();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;!</span><span style="color: #569cd6;">DOCTYPE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">html</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_SESSION[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">]&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;de&nbsp;Tal"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_SESSION[</span><span style="color: #ce9178;">"idade"</span><span style="color: #d4d4d4;">]&nbsp;=&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Interrompe&nbsp;a&nbsp;sess&atilde;o&nbsp;e&nbsp;apaga&nbsp;tudo</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session_destroy();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">body</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">html</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <p class="lead">Para ver outras funções de sessões como mudar o ID, abordar ou codificar, acesse <a href="https://www.php.net/manual/pt_BR/ref.session.php">Funções para Sessão</a>.</p>
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

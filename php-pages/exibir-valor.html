@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Exibir valores no documento com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Exibir valores no documento com PHP</h1>
+
+      <p class="lead">Para escrever algum valor ou texto dentro de um documento, precisamos usar a função <code>echo();</code> ou a função <code>print()</code>. Note que não precismos usar os parênteses, mas nos exemplos poderíamos utilizar. O caractere <code>.</code> (ponto) é usado para concatenar (mesclar) textos ou variáveis.</p>
+
+      <div style="background-color: #1e1e1e; ">
+        <div><span >&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;h1&gt;Ol&aacute;&nbsp;mundo!&lt;/h1&gt;"</span><span >;</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Eu&nbsp;sou&nbsp;um&nbsp;"</span><span >,&nbsp;</span><span style="color: #ce9178;">"texto&nbsp;"</span><span >,&nbsp;</span><span style="color: #ce9178;">"feito&nbsp;"</span><span >,&nbsp;</span><span style="color: #ce9178;">"com&nbsp;m&uacute;ltiplos&nbsp;par&acirc;metros."</span><span >;</span></div>
+        <br />
+        <div><span >&nbsp;&nbsp;$txt1&nbsp;=&nbsp;</span><span style="color: #ce9178;">"vari&aacute;vel&nbsp;de&nbsp;texto"</span><span >;</span></div>
+        <div><span >&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">5</span><span >;</span></div>
+        <div><span >&nbsp;&nbsp;$y&nbsp;=&nbsp;</span><span style="color: #b5cea8;">4</span><span >;</span></div>
+        <br />
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;h2&gt;"</span><span >&nbsp;</span><span >.</span><span >&nbsp;$txt1&nbsp;</span><span >.</span><span >&nbsp;</span><span style="color: #ce9178;">"&lt;/h2&gt;"</span><span >;</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;h2&gt;&nbsp;$txt1&nbsp;&lt;/h2&gt;"</span><span >;&nbsp;</span><span style="color: #6a9955;">//&eacute;&nbsp;o&nbsp;mesmo&nbsp;que&nbsp;o&nbsp;de&nbsp;cima.</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;$x&nbsp;+&nbsp;$y;</span></div>
+        <div><span >&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span >&nbsp;</span></div>
+      </div>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

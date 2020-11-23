@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Principais operadores em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Principais operadores em PHP</h1>
+
+      <p class="lead">Nos exemplos abaixo tomaremos as variáveis <code>$a=5</code> e <code>$b=10</code>.</p>
+
+      <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td colspan="10" class="w-100 text-center">
+              <strong>>Operadores Aritm&eacute;ticos</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              <strong>>Operador</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Nome</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Exemplo</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Resultado</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              +
+            </td>
+            <td class="w-25">
+              Soma
+            </td>
+            <td colspan="4" class="w-25">
+              $a + $b
+            </td>
+            <td colspan="4" class="w-25">
+              15
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              -
+            </td>
+            <td class="w-25">
+              Subtra&ccedil;&atilde;o
+            </td>
+            <td colspan="4" class="w-25">
+              $a - $b
+            </td>
+            <td colspan="4" class="w-25">
+              5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              *
+            </td>
+            <td class="w-25">
+              Multiplica&ccedil;&atilde;o
+            </td>
+            <td colspan="4" class="w-25">
+              $a * $b
+            </td>
+            <td colspan="4" class="w-25">
+              50
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              /
+            </td>
+            <td class="w-25">
+              Divis&atilde;o
+            </td>
+            <td colspan="4" class="w-25">
+              $a / $b
+            </td>
+            <td colspan="4" class="w-25">
+              2
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              %
+            </td>
+            <td class="w-25">
+              M&oacute;dulo
+            </td>
+            <td colspan="2" width="12%">
+              $a % $b
+            </td>
+            <td colspan="2" width="13%">
+              $b % $a
+            </td>
+            <td colspan="2" width="13%">
+              0
+            </td>
+            <td colspan="2" width="13%">
+              5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              **
+            </td>
+            <td class="w-25">
+              Exponencia&ccedil;&atilde;o
+            </td>
+            <td colspan="4" class="w-25">
+              $a ** $b
+            </td>
+            <td colspan="4" class="w-25">
+              5<sup>10 </sup> = 9.765.625
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td colspan="10" class="w-100 text-center" height="13">
+              <strong>>Operadores<span lang="pt-BR"> de Atribui&ccedil;&atilde;o</span></strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              <strong>>Operador</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Nome</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Exemplo</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Resultado</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              =
+            </td>
+            <td class="w-25">
+              Atribui&ccedil;&atilde;o
+            </td>
+            <td colspan="4" class="w-25">
+              $a = 5
+            </td>
+            <td colspan="4" class="w-25">
+              $a tem valor 5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              +=
+            </td>
+            <td class="w-25">
+              Somar e atribuir
+            </td>
+            <td colspan="4" class="w-25">
+              $a+=5
+            </td>
+            <td colspan="4" class="w-25">
+              $a = $a + 5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              -<span lang="pt-BR">=</span>
+            </td>
+            <td class="w-25">
+              Subtrair e atribuir
+            </td>
+            <td colspan="4" class="w-25">
+              $a-=5
+            </td>
+            <td colspan="4" class="w-25">
+              $a = $a - 5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              *<span>=</span>
+            </td>
+            <td class="w-25">
+              Multiplicar e atribuir
+            </td>
+            <td colspan="4" class="w-25">
+              $a/*=5
+            </td>
+            <td colspan="4" class="w-25">
+              $a = $a / 5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              /=
+            </td>
+            <td class="w-25">
+              Dividir e atribuir
+            </td>
+            <td colspan="4" class="w-25">
+              $a/=5
+            </td>
+            <td colspan="4" class="w-25">
+              $a = $a / 5
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              %<span>=</span>
+            </td>
+            <td class="w-25">
+              &ldquo;Modular&rdquo; e atribuir
+            </td>
+            <td colspan="4" class="w-25">
+              $a%=5
+            </td>
+            <td colspan="4" class="w-25">
+              $a = $a % 5
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td colspan="10" class="w-100 text-center">
+              <strong>>Operadores de Compara&ccedil;&atilde;o</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              <strong>>Operador</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Nome</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Exemplo</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Resultado</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              ==
+            </td>
+            <td class="w-25">
+              Igualdade
+            </td>
+            <td colspan="4" class="w-25">
+              5 == &ldquo;<span>5</span>&rdquo;
+            </td>
+            <td colspan="4" class="w-25">
+              verdadeiro
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              ===
+            </td>
+            <td class="w-25">
+              Id&ecirc;ntico
+            </td>
+            <td colspan="4" class="w-25">
+              5 === &ldquo;5&rdquo;
+            </td>
+            <td colspan="4" class="w-25">
+              falso
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              !=
+            </td>
+            <td class="w-25">
+              Diferente
+            </td>
+            <td colspan="4" class="w-25">
+              $a != $b
+            </td>
+            <td colspan="4" class="w-25">
+              verdadeiro
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &lt;&gt;
+            </td>
+            <td class="w-25">
+              Diferente
+            </td>
+            <td colspan="4" class="w-25">
+              $a &lt;&gt; $b
+            </td>
+            <td colspan="4" class="w-25">
+              verdadeiro
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              !==
+            </td>
+            <td class="w-25">
+              N&atilde;o Id&ecirc;ntico
+            </td>
+            <td colspan="4" class="w-25">
+              $a !== $b
+            </td>
+            <td colspan="4" class="w-25">
+              verdadeiro
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &gt;
+            </td>
+            <td class="w-25">
+              Maior
+            </td>
+            <td colspan="4" class="w-25">
+              $a &gt; $b
+            </td>
+            <td colspan="4" class="w-25">
+              falso
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &lt;
+            </td>
+            <td class="w-25">
+              Menor
+            </td>
+            <td colspan="4" class="w-25">
+              $a &lt; $b
+            </td>
+            <td colspan="4" class="w-25">
+              verdadeiro
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &gt;=
+            </td>
+            <td class="w-25">
+              Maior ou igual
+            </td>
+            <td colspan="4" class="w-25">
+              $a &gt;= $b
+            </td>
+            <td colspan="4" class="w-25">
+              falso
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &lt;=
+            </td>
+            <td class="w-25">
+              Menor ou igual
+            </td>
+            <td colspan="4" class="w-25">
+              $a &lt;= $b
+            </td>
+            <td colspan="4" class="w-25">
+              verdadeiro
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &lt;=&gt;
+            </td>
+            <td class="w-25">
+              Menor, igual ou maior
+            </td>
+            <td width="8%">
+              1&lt;=&gt;6
+            </td>
+            <td colspan="2" width="8%">
+              6&lt;=&gt;6
+            </td>
+            <td width="8%">
+              9&lt;=&gt;6
+            </td>
+            <td width="8%">
+              -1
+            </td>
+            <td colspan="2" width="8%">
+              0
+            </td>
+            <td width="8%">
+              1
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td colspan="10" class="w-100 text-center">
+              <strong>>Operadores<span lang="pt-BR"> de </span><span lang="pt-BR">Incremento e Decremento</span></strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              <strong>>Operador</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Nome</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Exemplo</strong>
+            </td>
+            <td colspan="4" class="w-25">
+              <strong>>Resultado</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              ++$a
+            </td>
+            <td class="w-25">
+              Soma 1 antes
+            </td>
+            <td colspan="4" class="w-25">
+              ++$a + $a
+            </td>
+            <td colspan="4" class="w-25">
+              12
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              $a++
+            </td>
+            <td class="w-25">
+              Soma 1 depois
+            </td>
+            <td colspan="4" class="w-25">
+              $a++ + $a
+            </td>
+            <td colspan="4" class="w-25">
+              11
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              --$a
+            </td>
+            <td class="w-25">
+              Subtra&iacute; 1 antes
+            </td>
+            <td colspan="4" class="w-25">
+              --$a + $a
+            </td>
+            <td colspan="4" class="w-25">
+              8
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              $a--
+            </td>
+            <td class="w-25">
+              Subtra&iacute; 1 depois
+            </td>
+            <td colspan="4" class="w-25">
+              $a-- + $a
+            </td>
+            <td colspan="4" class="w-25">
+              9
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td colspan="10" class="text-center">
+              <strong>>Operadores <span lang="pt-BR">L&oacute;gicos $a = true, $b = false, $c = true, $d = false</span></strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              <strong>>Operador</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Nome</strong>
+            </td>
+            <td colspan="8" class="w-50 text-center">
+              <strong>>Exemplo/Resultado</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              and
+            </td>
+            <td class="w-25">
+              E
+            </td>
+            <td>
+              $a and $b
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $c and $d
+            </td>
+            <td>
+              F
+            </td>
+            <td>
+              $b and $c
+            </td>
+            <td>
+              F
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              or
+            </td>
+            <td class="w-25">
+              Ou
+            </td>
+            <td>
+              $a or $b
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $d or $c
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $b or $d
+            </td>
+            <td>
+              F
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              xor
+            </td>
+            <td class="w-25">
+              Ou exclusivo
+            </td>
+            <td>
+              $a xor $b
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $b xor $d
+            </td>
+            <td>
+              F
+            </td>
+            <td>
+              $a xor $c
+            </td>
+            <td>
+              F
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              &amp;&amp;
+            </td>
+            <td class="w-25">
+              E
+            </td>
+            <td>
+              $a &amp;&amp; $b
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $c &amp;&amp; $d
+            </td>
+            <td>
+              F
+            </td>
+            <td>
+              $b &amp;&amp; $c
+            </td>
+            <td>
+              F
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              ||
+            </td>
+            <td class="w-25">
+              Ou
+            </td>
+            <td>
+              $a<span> || </span>$b
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $d <span>||</span> $c
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              $b <span>||</span> $d
+            </td>
+            <td>
+              F
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              !
+            </td>
+            <td class="w-25">
+              Nega&ccedil;&atilde;o
+            </td>
+            <td>
+              !<span>$a</span>
+            </td>
+            <td>
+              F
+            </td>
+            <td>
+              !<span>$b</span>
+            </td>
+            <td>
+              V
+            </td>
+            <td>
+              !<span>$c</span>
+            </td>
+            <td>
+              F
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="space">
+
+      <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+        <tbody>
+          <tr>
+            <td colspan="4" class="text-center">
+              <strong>>Operadores de Concatena&ccedil;&atilde;o $t1 = &ldquo;<span>oi</span>&rdquo;, <span>$t2 = &ldquo;mundo&rdquo;</span></strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="w-25">
+              <strong>>Operador</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Nome</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Exemplo</strong>
+            </td>
+            <td class="w-25">
+              <strong>>Resultado</strong>
+            </td>
+          </tr>
+          <tr>
+            <td width="152">
+              .
+            </td>
+            <td width="148">
+              Soma 1 antes
+            </td>
+            <td width="178">
+              $t1 . $t2
+            </td>
+            <td width="131">
+              &ldquo;<span>oimundo</span>&rdquo;
+            </td>
+          </tr>
+          <tr>
+            <td width="152">
+              .=
+            </td>
+            <td width="148">
+              Soma 1 depois
+            </td>
+            <td width="178">
+              $t1.=$t2
+            </td>
+            <td width="131">
+              $t1 = $t1 . $t2
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <tr>
+        <hr class="space">
+
+        <table class="table table-sm table-responsive-sm text-white table-bordered table-dark">
+          <tbody>
+            <tr>
+              <td colspan="4" class="text-center">
+                <strong>>Operador Tern&aacute;rio</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-25">
+                <strong>>Operador</strong>
+              </td>
+              <td class="w-25">
+                <strong>>Nome</strong>
+              </td>
+              <td class="w-25">
+                <strong>>Exemplo</strong>
+              </td>
+              <td class="w-25">
+                <strong>>Resultado</strong>
+              </td>
+            </tr>
+            <tr>
+              <td width="152">
+                ?:
+              </td>
+              <td width="148">
+                If-else
+              </td>
+              <td width="178">
+                $x = <em>expr1</em> ? <em>expr2</em> : <em>expr3</em>
+              </td>
+              <td width="131">
+                expr2 se expr1 for V <br>
+                expr3 se expr1 for F
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 0cm; line-height: 100%;">&nbsp;
+          &nbsp;
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

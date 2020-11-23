@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Manipulação de arquivos com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Manipulação de arquivos com PHP</h1>
+
+      <p class="lead">Muitas vezes podemos querer abrir aquivos para visualizar seus conteúdos e até mesmo editá-los para diversas finalidades, como simular um banco de dados, onde os arquivos são guardados em arquivos, ou um aplicação robusta em que trabalha sobre edição de arquivos.</p>
+
+      <h2>Modos de leitura e escrita</h2>
+
+      <p class="lead">As vezes queremos apenas abrir um arquivos sem editá-lo, ou abrir e editar todo o seu conteúdo, e para isso precismos especificar o modo como iremos abrir o arquivo, especificando alguns dos seguintes parâmetros.</p>
+
+      <ul>
+        <li><strong>r</strong> - Abre um arquivo apenas para leitura, onde o ponteiro do arquivo é posicionado no ínicio.</li>
+        <li><strong>w</strong> - Abre um arquivo apenas para a escrita, onde o ponteiro do arquivo é posicionado no ínicio, ou seja, todo o conteúdo escrito, será escrito sobre o conteúdo do arquivo original, e caso o arquivo não exita, é criado um novo arquivo.</li>
+        <li><strong>a</strong> - Abre um arquivo apenas para a escrita, onde o ponteiro do arquivo é posicionado no final, ou seja, todo o conteúdo escrito é posicionado no final do arquivo, preservando o conteúdo original. caso o arquivo não exita, é criado um novo arquivo.</li>
+        <li><strong>x</strong> - Cria um novo arquivo feito somente para a escrita, retornando um erro caso o arquivo já exista.</li>
+        <li><strong>r+</strong> - Abre um arquivo apenas para leitura e a escrita, onde o ponteiro do arquivo é posicionado no ínicio.</li>
+        <li><strong>w+</strong> - Abre um arquivo apenas para leitura e a escrita, onde o ponteiro do arquivo é posicionado no ínicio, ou seja, todo o conteúdo escrito, será escrito sobre o conteúdo do arquivo original, e caso o arquivo não exita, é criado um novo arquivo.</li>
+        <li><strong>a+</strong> - Abre um arquivo apenas para leitura e a escrita, onde o ponteiro do arquivo é posicionado no final, ou seja, todo o conteúdo escrito é posicionado no final do arquivo, preservando o conteúdo original. caso o arquivo não exita, é criado um novo arquivo.</li>
+        <li><strong>x+</strong> - Cria um novo arquivo feito somente para a leitura e a escrita, retornando um erro caso o arquivo já exista.</li>
+      </ul>
+
+      <hr class="space">
+
+      <h2>fopen() - Abrindo um arquivo</h2>
+
+      <p class="lead">O método <code>fopen("caminho/arquivo.extensão", "modoLeitura")</code> recebe dois parâmetros, o primeiro parâmetro do método contém o nome do arquivo, e a sua extensão, e o segundo parâmetro especifica em qual modo o arquivo deve ser aberto.</p>
+      <p class="lead">Muitas vezes podemos querer usar um método para tratar algum erro na abertura de um arquivo, para isto usamos o método <code>die("mensagem")</code> para tratar o erro na abertura de um arquivo, seja por não existir ou por já existir. Por fim, é recomendado assim que abrir o arquivo, já inserir o método <code>fclose($arquivo)</code> ao final do código, que é usada para fechar o arquivo de maneira correta, impedindo que hajam erros ou inconsistência dos dados.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$arquivo&nbsp;=&nbsp;fopen(</span><span style="color: #ce9178;">"arquivo.txt"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"r"</span><span style="color: #d4d4d4;">)&nbsp;or&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"N&atilde;o&nbsp;foi&nbsp;poss&iacute;vel&nbsp;abrir&nbsp;o&nbsp;arquivo"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fclose($arquivo);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>fread() - Lendo o conteúdo de um arquivo</h2>
+
+      <p class="lead">A função <code>fread($arquivo, tamanho)</code>lê a partir de um arquivo aberto. O primeiro parâmetro de da função contém o a variável do arquivo aberto a ser lido e o segundo parâmetro especifica o número máximo de bytes a serem lidos, para isto usamos a função <code>filesize("caminho/arquivo.extensão")</code> que retorna o tamanho em bytes de um arquivo.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$arquivo&nbsp;=&nbsp;fopen(</span><span style="color: #ce9178;">"arquivo.txt"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"r"</span><span style="color: #d4d4d4;">)&nbsp;or&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"N&atilde;o&nbsp;foi&nbsp;poss&iacute;vel&nbsp;abrir&nbsp;o&nbsp;arquivo"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;fread($arquivo,&nbsp;filesize(</span><span style="color: #ce9178;">"arquivo.txt"</span><span style="color: #d4d4d4;">));</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fclose($arquivo);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>fgets() - Lendo linhas de um arquivo</h2>
+
+      <p class="lead">A função <code>fgets($arquivo)</code> é usada para ler uma única linha de um arquivo. Após uma chamada da função, o ponteiro do arquivo será movido para a próxima linha, e assim sucessivamente. Como auxílio usamos a função <code>feof($arquivo)</code> para verificar se o "fim do arquivo" (EOF) foi atingido.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$arquivo&nbsp;=&nbsp;fopen(</span><span style="color: #ce9178;">"arquivo.txt"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"r"</span><span style="color: #d4d4d4;">)&nbsp;or&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"N&atilde;o&nbsp;foi&nbsp;poss&iacute;vel&nbsp;abrir&nbsp;o&nbsp;arquivo"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Exibe&nbsp;linha&nbsp;por&nbsp;linha&nbsp;do&nbsp;arquivo,&nbsp;at&eacute;&nbsp;o&nbsp;final&nbsp;do&nbsp;arquivo&nbsp;EOF</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;(!feof($arquivo))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;fgets($arquivo)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fclose($arquivo);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>fgetc() - Lendo caracteres de um arquivo</h2>
+
+      <p class="lead">A função <code>fgetc($arquivo)</code> é usada para ler um único caractere de um arquivo. Após uma chamada da função, o ponteiro do arquivo será movido para o próximo caractere, e assim sucessivamente. Como auxílio usamos a função <code>feof($arquivo)</code> para verificar se o "fim do arquivo" (EOF) foi atingido.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$arquivo&nbsp;=&nbsp;fopen(</span><span style="color: #ce9178;">"arquivo.txt"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"r"</span><span style="color: #d4d4d4;">)&nbsp;or&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"N&atilde;o&nbsp;foi&nbsp;poss&iacute;vel&nbsp;abrir&nbsp;o&nbsp;arquivo"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Exibe&nbsp;caractere&nbsp;por&nbsp;caractere&nbsp;(incluindo&nbsp;espa&ccedil;os&nbsp;e&nbsp;quebra&nbsp;de&nbsp;linhas)&nbsp;do&nbsp;arquivo,&nbsp;at&eacute;&nbsp;o&nbsp;final&nbsp;do&nbsp;arquivo&nbsp;EOF</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;(!feof($arquivo))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;fgetc($arquivo)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fclose($arquivo);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>fwrite() - Escrevendo em um arquivo</h2>
+
+      <p class="lead">A função <code>fwrite($arquivo, "texto")</code> é usada para escrever um conteúdo dentro de um arquivo existente ou novo. Cuidado, que dependendo do modo como foi aberto o arquivo, o conteúdo original pode ser sobreposto ou simplesmente <strong>APAGADO</strong>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$arquivo&nbsp;=&nbsp;fopen(</span><span style="color: #ce9178;">"arquivo.txt"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"a+"</span><span style="color: #d4d4d4;">)&nbsp;or&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"N&atilde;o&nbsp;foi&nbsp;poss&iacute;vel&nbsp;abrir&nbsp;o&nbsp;arquivo"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$txt&nbsp;=&nbsp;</span><span style="color: #ce9178;">"FULANO&nbsp;de&nbsp;tal&nbsp;\n"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fwrite($arquivo,&nbsp;$txt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Como&nbsp;o&nbsp;ponteiro&nbsp;do&nbsp;arquivo&nbsp;foi&nbsp;aberto&nbsp;ao&nbsp;final,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;precismos&nbsp;voltar&nbsp;o&nbsp;ponteiro&nbsp;para&nbsp;o&nbsp;inicio&nbsp;para&nbsp;exibir&nbsp;o&nbsp;arquivo</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;rewind($arquivo);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;(!feof($arquivo))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;fgets($arquivo)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;&lt;br&gt;&nbsp;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fclose($arquivo);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Principais funções para a manipulação de arquivos</h2>
+
+      <table class="table table-sm table-responsive-sm table-dark text-white">
+        <thead class="text-center">
+          <tr>
+            <th>Função : retorno</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>file_exists("caminho/arquivo.extensão") : bool</td>
+            <td>Verifica se um arquivo ou diretório existe</td>
+          </tr>
+          <tr>
+            <td>rewind($arquivo) : bool</td>
+            <td>Reinicializa a posição do ponteiro de arquivos para o início</td>
+          </tr>
+          <tr>
+            <td>copy($arquivo, $arquivoCopia) : bool</td>
+            <td>Copia o conteúdo de um arquivo em outro arquivo</td>
+          </tr>
+          <tr>
+            <td>unlink($arquivo) : bool</td>
+            <td>Apaga um arquivo (desde que não esteja em uso)</td>
+          </tr>
+          <tr>
+            <td>disk_free_space("caminho") or diskfreespace("caminho")</td>
+            <td>Retorna o espaço disponível no sistema de arquivos ou partição de disco</td>
+          </tr>
+          <tr>
+            <td>fgetss($arquivo)</td>
+            <td>Lê uma linha de um ponteiro de arquivo e retira as tags HTML</td>
+          </tr>
+          <tr>
+            <td>file_get_contents($arquivo) : string</td>
+            <td>Lê todo o conteúdo de um arquivo para uma string</td>
+          </tr>
+          <tr>
+            <td>fileatime("caminho/arquivo.extensão") : int</td>
+            <td>Obtém o último horário de acesso do arquivo</td>
+          </tr>
+          <tr>
+            <td>filesize("caminho/arquivo.extensão") : int</td>
+            <td>Obtém o tamanho do arquivo</td>
+          </tr>
+          <tr>
+            <td>readfile("caminho/arquivo.extensão") : int</td>
+            <td>Lê e exibe o conteúdo de um arquivo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <p class="lead">Existem outros métodos, como criação e exclusão de diretórios, alteração de permissão de arquivos, mover arquivos entre diretórios, dentre outras funções. Para saber mais acesse <a href="https://www.php.net/manual/pt_BR/ref.filesystem.php">Funções para Sistema de arquivo</a>.</p>
+
+      <p class="lead">Uma atenção especial para as funções <a href="https://www.php.net/manual/pt_BR/function.sprintf.php">sprintf</a>, <a href="https://www.php.net/manual/pt_BR/function.sscanf.php">sscanf</a> e <a href="https://www.php.net/manual/pt_BR/function.fscanf.php">fscanf</a> que são também, muito usados para ler e escrever em arquivos, onde trabalhamos com tipos de dados.</p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>
