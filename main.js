@@ -168,10 +168,9 @@ php = (txt) => {
                                 <a target="_parent" href="`+ txt + `cookies.html" class="dropdown-item">Cookies</a>
                                 <a target="_parent" href="`+ txt + `sessoes.html" class="dropdown-item">Sessões</a>
                                 <a target="_parent" href="`+ txt + `seguranca-basico.html" class="dropdown-item">Segurança Básica</a>
+                                <a target="_parent" href="`+ txt + `orientacao-objetos.html" class="dropdown-item">Orientação a Objetos</a>
+                                <a target="_parent" href="`+ txt + `banco-dados.html" class="dropdown-item">Banco de Dados</a>                                
                                 <a target="_parent" href="`+ txt + `tratamento-erros.html" class="dropdown-item">Tratamento de Erros</a>
-                                <a target="_parent" href="`+ txt + `objetos.html" class="dropdown-item">Orientação a Objetos</a>
-                                <a target="_parent" href="`+ txt + `classes.html" class="dropdown-item">Banco de Dados</a>
-                                
                             </ul>
                         </div>`;
 }
