@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Tipos de dados em MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Tipos de dados em MySQL</h1>
+
+      <p class="lead">Em SQL precisamos informar o tipo de dado para cada coluna de uma tabela, podendo até formatar este dado. Abaixo temos ums lista completa com todos os dados aceitos e uma breve descrição de como funcionam.</p>
+
+      <hr class="space">
+
+      <h2>Dados do tipo String</h2> <br>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white table-dark table-hover">
+        <thead class="text-center">
+          <tr>
+            <th class="w-25">Tipo de Dado</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>CHAR(tamanho)</td>
+          <td>Usado para <em>strings de tamanho fixo </em>(como cpf, telefone, etc). O tamanho especificado pode variar entre 0 até 255 caracteres, e caso não seja especificado, o tamanho padrão é 1</td>
+          </tr>
+          <tr>
+            <td>VARCHAR(tamanho)</td>
+            <td>Usado para <em>string de tamanho variáveis</em>. O tamanho especificado pode variar entre 0 até 65535 caracteres</td>
+          </tr>
+          <tr>
+            <td>BINARY(size)</td>
+            <td>Igual ao CHAR(), mas é usado para armazenar string binárias.</td>
+          </tr>
+          <tr>
+            <td>VARBINARY(size)</td>
+            <td>Igual ao VARCHAR(), mas é usado para armazenar string binárias.</td>
+          </tr>
+          <tr>
+            <td>TINYBLOB</td>
+            <td>Usado para BLOBs (Binary Large OBjects). Tamanho máximo de 255 bytes</td>
+          </tr>
+          <tr>
+            <td>TINYTEXT</td>
+            <td>Contém uma string com comprimento máximo de 255 caracteres</td>
+          </tr>
+          <tr>
+            <td>TEXT(size)</td>
+            <td>Contém uma string com comprimento máximo de 65.535 bytes</td>
+          </tr>
+          <tr>
+            <td>BLOB(size)</td>
+            <td>Para BLOBs (Binary Large OBjects). Armazena até 65.535 bytes de dados</td>
+          </tr>
+          <tr>
+            <td>MEDIUMTEXT</td>
+            <td>Contém uma string com comprimento máximo de 16.777.215 caracteres</td>
+          </tr>
+          <tr>
+            <td>MEDIUMBLOB</td>
+            <td>Para BLOBs (Binary Large OBjects). Armazena até 16,777,215 bytes de dados</td>
+          </tr>
+          <tr>
+            <td>LONGTEXT</td>
+            <td>Contém uma string com comprimento máximo de 4.294.967.295 caracteres</td>
+          </tr>
+          <tr>
+            <td>LONGBLOB</td>
+            <td>Para BLOBs (Binary Large OBjects). Armazena até 4,294,967,295 bytes de dados</td>
+          </tr>
+          <tr>
+            <td>ENUM(val1, val2, val3, ...)</td>
+            <td>Um tipo string que somente poderá ter o valor especificado dentro do parâmetro. Um enum() suporta até 65535 valores em uma lista. Caso hja a inserção de um valor não especificado na lista, então o valor inserido será em branco.</td>
+          </tr>
+          <tr>
+            <td>SET(val1, val2, val3, ...)</td>
+            <td>Um objeto string que pode ter 0 ou mais valores, escolhidos em uma lista de valores possíveis. que podem ter até 64 valores.</td>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>Tipo de dados numéricos</h2> <br>
+
+      <p class="lead"><code>UNSIGNED</code> é usado para especificar valores inteiros somente</p>
+
+
+      <table class="table table-sm table-responsive-sm table-striped text-white table-dark table-hover">
+        <thead class="text-center">
+          <tr>
+            <th class="w-25">Tipo de Dado</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td> BIT()</td>
+          <td>Usado para armazenar valores de bit. Onde o tamanho do valor armazenado varia de 1 até 64, sendo 1 o valor padrão.</td>
+          </tr>
+          <tr>
+            <td>TINYINT</td>
+            <td>Usado para armazenar um valor de inteiro muito pequeno. Os valores suportados variam de -128 até 127. Valores positivos variam de 0 até 255 (128 + 127 = 255)</td>
+          </tr>
+          <tr>
+            <td>BOOL ou BOOLEAN</td>
+            <td>Usado para armazenar valores booleanos, onde 0 é falso (false), enquanto qualquer outro valor é verdadeiro (true). </td>
+          </tr>
+          <tr>
+            <td>SMALLINT</td>
+            <td>Usado para armazenar um valor de inteiro pequeno. Os valores suportados variam de -32768 até 32767. Valores positivos variam de 0 até 65535</td>
+          </tr>
+          <tr>
+            <td>MEDIUMINT</td>
+            <td>Usado para armazenar um valor de inteiro quase pequeno. Os valores suportados variam de -8388608 até 8388607. Valores positivos variam de 0 até 16777215</td>
+          </tr>
+          <tr>
+            <td>INT ou INTEGER</td>
+            <td>Usado para armazenar um valor de inteiro. Os valores suportados variam de -2147483648 até 2147483647. Valores positivos variam de 0 até 4294967295</td>
+          </tr>
+
+          <tr>
+            <td>BIGINT</td>
+            <td>Usado para armazenar um valor de inteiro grande. Os valores suportados variam de -9223372036854775808 até 9223372036854775807. Valores positivos variam de 0 até 4294967295 18446744073709551615</td>
+          </tr>
+          <tr>
+            <td>FLOAT(<em>p</em>) ou FLOAT</td>
+            <td>Usado para armazenar valores decimais. O valor de <code>p</code> determina se o valor exibido deve ser ponto flutuante (0 a 23) ou precisão dupla DOBLE (24 a 53)</td>
+          </tr>
+          <tr>
+            <td>DOUBLE</td>
+            <td>Usado para armazenar valores decimais com precisão dupla.</td>
+          </tr>
+          <tr>
+            <td>DECIMAL(<em>tamanho</em>, <em>d</em>) ou DEC(<em>tamanho</em>, <em>d</em>) <br> ou NUMERIC(<em>tamanho</em>, <em>d</em>)</td>
+            <td>Usado para armazenar valores decimais, especificando quantidade de números aceitos, e o parâmetro <code>d</code> especifica quantas casas decimais deve ter o valor.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>Tipo de dados para Datas</h2> <br>
+
+      <table class="table table-sm table-responsive-sm table-striped text-white table-dark table-hover">
+        <thead class="text-center">
+          <tr>
+            <th class="w-25">Tipo de Dado</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DATE</td>
+            <td>Usado para armazenar uma data no formato YYYY-MM-DD.</td>
+          </tr>
+          <tr>
+            <td>DATETIME</td>
+            <td>Usado para armazenar uma data e hora no formato YYYY-MM-DD hh:mm:ss. Para inserir a data atual pode usar DEFAULT CURRENT_TIMESTAMP ou ON UPDATE CURRENT_TIMESTAMP</td>
+          </tr>
+          <tr>
+            <td>TIMESTAMP</td>
+            <td> Usado para inserir uma data e hora UNIX no formato YYYY-MM-DD hh:mm:ss. Para inserir a data atual pode usar DEFAULT CURRENT_TIMESTAMP ou ON UPDATE CURRENT_TIMESTAMP </td>
+          </tr>
+          <tr>
+            <td>TIME</td>
+            <td>Usado para inserir um hora no formato hh:mm:ss. Os calores suportados são '-838:59:59' até '838:59:59'</td>
+          </tr>
+          <tr>
+            <td>YEAR</td>
+            <td>Usado para inserir o ano no formato de 4 dígitos. Os valores suportados são de 1901 até 2155, além do ano 0000.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

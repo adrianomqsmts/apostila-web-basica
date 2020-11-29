@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Funções do sistema em MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Funções do sistema em MySQL</h1>
+
+      <p class="lead">Comas funções do sistema, podemos ver o atual usuário logado no Banco de dados, o banco de dados atual, a versão do sistema SGBD, dentre outras.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;V&ecirc;&nbsp;as&nbsp;regras&nbsp;do&nbsp;usu&aacute;rio</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;CURRENT_ROLE();</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>CURRENT_ROLE();</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NONE</td>
+            </tr>
+        </table>
+      </div> <br>
+
+      <div><span style="color: #6a9955;">--&nbsp;V&ecirc;&nbsp;o&nbsp;nome&nbsp;do&nbsp;usu&aacute;rio&nbsp;atual</span></div>
+      <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;CURRENT_USER();</span></div> <br>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>CURRENT_USER();</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>root@localhost</td>
+          </tr>
+      </table>
+      </div> <br>
+
+      <div><span style="color: #6a9955;">--&nbsp;V&ecirc;&nbsp;o&nbsp;banco&nbsp;de&nbsp;dados&nbsp;ativo</span></div>
+      <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">DATABASE</span><span style="color: #d4d4d4;">();</span></div> <br>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>DATABASE();</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>apostila</td>
+          </tr>
+      </table>
+      </div> <br>
+
+      <div><span style="color: #6a9955;">--&nbsp;V&ecirc;&nbsp;a&nbsp;vers&atilde;o&nbsp;do&nbsp;SGBD</span></div>
+      <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">VERSION</span><span style="color: #d4d4d4;">();</span></div> <br>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>VERSION();</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8.0.17</td>
+          </tr>
+      </table>
+      </div> <br>
+
+      <div><span style="color: #6a9955;">--&nbsp;V&ecirc;&nbsp;o&nbsp;&uacute;ltimo&nbsp;valor&nbsp;do&nbsp;AUTO_INCREMENTE&nbsp;inserido</span></div>
+      <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;LAST_INSERT_ID();</span></div> <br>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>LAST_INSERT_ID();</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+          </tr>
+      </table>
+      </div> <br>
+
+      <div><span style="color: #6a9955;">--&nbsp;V&ecirc;&nbsp;o&nbsp;ID&nbsp;da&nbsp;conex&atilde;o&nbsp;atual</span></div>
+      <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;CONNECTION_ID();</span></div> <br>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>CONNECTION_ID();</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>31</td>
+          </tr>
+      </table>
+      </div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Lista completa de funções do sistema</h2>
+
+      <p class="lead">Para ver a lista completa de funções do sistema acesse <a href="https://dev.mysql.com/doc/refman/8.0/en/information-functions.html">Information Functions</a> e para ver mais sobre quaisquer outras funções em MySQL acesse <a href="https://dev.mysql.com/doc/refman/8.0/en/functions.html">Functions and Operators</a></p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

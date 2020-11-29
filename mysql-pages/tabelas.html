@@ -1,0 +1,199 @@
+<!--CREATE TABLE, DROP TABLE, ALTER TABLE E CONSTRAINTS, AUTO INCREMENT-->
+
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Criando Tabelas com o MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Criando Tabelas com o MySQL</h1>
+
+      <p class="lead">A sintaxe básica para a criação de uma tabela precisa do comando <code>CREATE TABLE</code> seguido pelo nome da tabela. Entre parênteses devemos colocar o nome da coluna seguido pelo tipo de dado, e, a cada coluna nova, devemos usar a vírgula para separá-las, com exceção da última coluna. Por fim, devemos após o parênteses final inserir um ponto-e-vírgula para finalizar o comando de criação da tabela.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INTEGER</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;descricao&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <div class="text-center">
+        <h2>RESTRIÇÕES DE DADOS</h2>
+      </div>
+
+      <hr class="space">
+
+      <h3>NOT NULL - Colunas não nulas</h3>
+
+      <p class="lead">A restrição <code>NOT NULL</code> define uma coluna que <strong>NÃO</strong> pode ter valores nulos, ou seja, ao inserir um dado na tabela, a coluna com a restrição <code>NOT NULL</code> deve sempre ter um dado. EX: Preço e Email </p>
+
+      <hr class="space">
+
+      <h3>UNIQUE - Coluna com dados únicos</h3>
+
+      <p class="lead">A restrição <code>UNIQUE</code> indica que a coluna não pode ter dados repetidos, ou seja, a cada dado inserido na tabela, naquela coluna, não pode, haver mais de dois dados com os mesmos valores. Ex: CPF, RG e Email.</p>
+
+      <hr class="space">
+
+      <h3>PRIMARY KEY - Chaves primárias</h3>
+
+      <p class="lead">A restrição <code>PRIMARY KEY </code> indica que a coluna deve ser não nula e única, usada para encontrar um dado de forma rápida e garantida, onde cada tabela deve ter uma única chave primária. Ex: id_produto, CPF e RG.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;cursos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_curso&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_curso&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">)&nbsp;unique,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;duracao_curso&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;area&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;OU</span></div>
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;cursos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_curso&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_curso&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">)&nbsp;unique,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;duracao_curso&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;area&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">PRIMARY</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">KEY</span><span style="color: #d4d4d4;">&nbsp;(id_curso)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>Chaves primárias duplas</h3>
+
+      <p class="lead"> Uma chave primárias dupla so pode ser construída usando a instrução <code>constraint</code>, e normalmente é usada quando temos duas colunas, que juntas, não podem repetir. Temos um exemplo de cidade e estado, onde uma podem haver cidades de mesmo nome, mas não no mesmo estado. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;cidades(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;estado&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;populacao&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;pk_CE&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;(cidade,&nbsp;estado)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>FOREIGN KEY - Chaves estrangeiras</h3>
+
+      <p class="lead">A restrição <code>FOREIGN KEY (coluna) REFERENCES tabela (coluna)</code> define uma ligação entre o dado da coluna e a chave primária de outra tabela. Muito usado em pesquisas para ligar o dado de uma tabela, com informações de outras tabelas. Ex: id_produto INT PRIMARY KEY em uma tabela que descreve o produto, em um id_produto int que indica os dados da venda que contém aquele produto. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pedidos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_pedido&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;quantidade&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(id_produto)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>AUTO_INCREMENT - Valores automáticos</h3>
+
+      <p class="lead">A instrução <code>AUTO_INCREMENT</code> permite que a cada dado inserido será somado um valor especificado ao valor com base no último valor inserido. Por padrão é incrementado uma unidade a cada inserção de dado em caso não especificado. No exemplo abaixo, mesmo que o ID seja obrigatório, não precisamos especificar este dado na hora de preencher a tabela, pois o dado automaticamente será incrementado. </p>
+
+      <p class="lead">No exemplo abaixo, o primeira dado seriai inserido com id 1, depois o próximo 2, e assim sucessivamente. Se ocorrer de inserirmos um id manualmente, por exemplo o valor 1000, o próximo dado inserido. após esta inserção terá o valor de 1001. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div><br>
+
+      <hr class="space">
+
+
+      <h3>DEFAULT - Valor padrão</h3>
+
+      <p class="lead">A restrição <code>DEFAULT</code> define um valor paradão para um coluna, caso o valor esteja ausente na hora em que haver a inserção de dados na tabela. Ex: Data, cidades</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;Conta(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;agencia&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;saldo&nbsp;</span><span style="color: #569cd6;">FLOAT</span><span style="color: #d4d4d4;">&nbsp;default&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;limite&nbsp;</span><span style="color: #569cd6;">FLOAT</span><span style="color: #d4d4d4;">&nbsp;default&nbsp;</span><span style="color: #b5cea8;">500</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cartao&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">)&nbsp;default&nbsp;</span><span style="color: #ce9178;">'n&atilde;o'</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>CHECK - Restrição condicional</h3>
+
+      <p class="lead">A restrição <code>CHECK</code> é usada para verificar se um dado atende a uma determinada condição antes de ser inserido na tabela. Ex Idade menor que 18 anos.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pessoas&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">varchar</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">255</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;idade&nbsp;</span><span style="color: #569cd6;">int</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">CHECK</span><span style="color: #d4d4d4;">&nbsp;(idade&gt;=</span><span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);&nbsp;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>DROP TABLE - Apagando uma tabela</h2>
+
+      <p class="lead">Para apagar uma tabela usamos a instrução <code>ALTER TABLE nomeTable</code>. Entretanto há diversas considerações a se fazer antes de se apagar uma tabela, a principal é se não existem chaves estrangeiras que se relacionam com a tabela deletada. Caso hajam, podem haver erros </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pessoas;</span></div>
+      </div>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

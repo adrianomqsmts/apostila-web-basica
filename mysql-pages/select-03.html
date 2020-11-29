@@ -1,0 +1,678 @@
+<!--LIKE - WILDCARDS-->
+
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Selecionando múltiplas tabelas MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Selecionando múltiplas tabelas MySQL</h1>
+
+      <p class="lead">Para relacionarmos duas tabelas e seus dados sejam correlacionados de forma correta, sem duplicação de dados, precismos trabalhar com as <em>chaves primárias</em> e as <em>chaves estrangeiras</em>. Basicamente devemos usar a instrução <code>SELECT</code> e usar a cláusura <code>WHERE</code> com a condição de igualdade entre a chave primária de uma tabela com a chave estrangeira de outra tabela.</p>
+
+      <p class="lead">O que pode correr é de uma coluna na tabela A ter o mesmo nome que uma coluna na tabela B, e para referenciar que aquela coluna pertence a uma tabela específica devemos usar a sintaxe <code>nomeTable.coluna</code>, uma forma mais sucinta é dar um apelido para a nome da tabela na consulta com a instrução <code> nomeTable AS n</code> resultando em um sintaxe mais curta como <code>n.coluna</code>. Este exemplo pode ser notado nos exemplos abaixo.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">--&nbsp;Chave&nbsp;prim&aacute;ria&nbsp;do&nbsp;produto</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pedidos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">--&nbsp;Chave&nbsp;prim&aacute;ria&nbsp;do&nbsp;pedido</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_pedido&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;quantidade&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">--&nbsp;Criando&nbsp;uma&nbsp;chave&nbsp;estrageira&nbsp;do&nbsp;produto&nbsp;no&nbsp;pedido</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(id_produto)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div> <br>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;Produtos&nbsp;(id_produto,&nbsp;nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Celular&nbsp;SA100'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Carteira&nbsp;de&nbsp;Couro'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">145</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'HD&nbsp;Externo'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">240</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Pen-Drive'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">150</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;Pedidos&nbsp;(id_pedido,&nbsp;id_produto,&nbsp;quantidade)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1010</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1020</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1030</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2020</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3030</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">);</span></div>
+        <br /><br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Celular SA100</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>HD Externo</td>
+              <td>240</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Pen-Drive</td>
+              <td>150</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;pedidos;&nbsp;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_pedido</th>
+              <th>id_produto</th>
+              <th>quantidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1010</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>1020</td>
+              <td>2</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1030</td>
+              <td>4</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3030</td>
+              <td>3</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <hr class="space">
+
+        <div><span style="color: #6a9955;">--&nbsp;Selecionando&nbsp;duas&nbsp;tabelas&nbsp;apelidadas&nbsp;e&nbsp;lingando&nbsp;os&nbsp;dados&nbsp;entre&nbsp;elas&nbsp;atrav&eacute;s&nbsp;das&nbsp;chaves&nbsp;id_produto</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;ped.id_pedido,&nbsp;pro.id_produto,&nbsp;pro.nome,&nbsp;pro.preco,&nbsp;ped.quantidade&nbsp;</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;pro,&nbsp;pedidos&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;ped&nbsp;</span></div>
+        <div><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;pro.id_produto&nbsp;=&nbsp;ped.id_produto;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_pedido</th>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+              <th>quantidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1010</td>
+              <td>1</td>
+              <td>Celular SA100</td>
+              <td>123</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>1020</td>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3030</td>
+              <td>3</td>
+              <td>HD Externo</td>
+              <td>240</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1030</td>
+              <td>4</td>
+              <td>Pen-Drive</td>
+              <td>150</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>JOIN - Selecionando múltiplas tabelas</h2>
+
+      <p class="lead">A cláusula <code>JOIN</code> é um sintaxe alternativa para a cláusula <code>WHERE</code>, onde ele irá juntar duas tabelas, de forma correta, sem espelhamento de dados dada uma condição. A sua sintaxe base é <code>SELECT coluna1, coluna2,... FROM tabelaA JOIN tabelaB ON condição;</code>. A condição mais comum é a igualdade dentre a chave primária da tabela A com a chave estrangeira da tabela B.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <span style="color: #6a9955;">--&nbsp;Selecionando&nbsp;duas&nbsp;tabelas&nbsp;apelidadas&nbsp;e&nbsp;lingando&nbsp;os&nbsp;dados&nbsp;entre&nbsp;elas&nbsp;atrav&eacute;s&nbsp;das&nbsp;chaves&nbsp;id_produto</span>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;ped.id_pedido,&nbsp;pro.id_produto,&nbsp;pro.nome,&nbsp;ped.quantidade,&nbsp;(pro.preco*ped.quantidade)&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;total</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;pro&nbsp;</span><span style="color: #569cd6;">JOIN</span><span style="color: #d4d4d4;">&nbsp;pedidos&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;ped&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;ped.id_produto&nbsp;=&nbsp;pro.id_produto;</span> </div> <br> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_pedido</th>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>quantidade</th>
+              <th>total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1010</td>
+              <td>1</td>
+              <td>Celular SA100</td>
+              <td>2</td>
+              <td>246</td>
+            </tr>
+            <tr>
+              <td>1020</td>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>1</td>
+              <td>145</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>3</td>
+              <td>435</td>
+            </tr>
+            <tr>
+              <td>3030</td>
+              <td>3</td>
+              <td>HD Externo</td>
+              <td>1</td>
+              <td>240</td>
+            </tr>
+            <tr>
+              <td>1030</td>
+              <td>4</td>
+              <td>Pen-Drive</td>
+              <td>1</td>
+              <td>150</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>INNER JOIN</h2>
+
+      <p class="lead">A cláusula <code>INNER JOIN</code> é parecido com a cláusula <code>JOIN ON</code> anterior, entretanto ela irá forçar com que o resultado seja igual na condição <code>ON</code>. A instrução completa retornará a intersecção entre as duas tabelas de acordo com a condição. A sua sintaxe é <code>SELECT coluna1, coluna2,... FROM tabelaA INNER JOIN tabelaB ON condição;</code>. </p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/inner-join.png" class="figure-img img-fluid rounded w-50" alt="A imagem mostra dois círculos que representam a tabela a e b, e uma parte de ambas contém o mesmo conteúdo">
+          <figcaption class="figure-caption text-xs-right">Exemplo da interseção entre as tabelas A e B</figcaption>
+        </figure>
+      </div> <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;clientes(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;rua_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;bairro_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fone_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carros(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;placa_car&nbsp;</span><span style="color: #569cd6;">VARCHAR6</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">))&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cliente_car&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;marca_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;modelo_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cor_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;add&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(cliente_car)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;(cod_cli);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Luciene'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;A'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3535-3535'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'F&aacute;bio'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Rua&nbsp;B'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">&nbsp;,&nbsp;</span><span style="color: #b5cea8;">231</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3232-3232'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Carlos'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;C'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">323</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3511-3511'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Silvio'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;xyz'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">888</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3333-3333'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'abc111'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'&nbsp;volksvagen'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Fox&nbsp;city'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'cinza'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'def111'</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ford'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'eco&nbsp;sport'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'cinza'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'ghi222'</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ford'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ka'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'branca'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;carros;</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>placa_car</th>
+              <th>cliente_car</th>
+              <th>marca_car</th>
+              <th>modelo_car</th>
+              <th>cor_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>abc111</td>
+              <td>1</td>
+              <td> volksvagen</td>
+              <td>Fox city</td>
+              <td>cinza</td>
+            </tr>
+            <tr>
+              <td>def111</td>
+              <td>2</td>
+              <td>ford</td>
+              <td>eco sport</td>
+              <td>cinza</td>
+            </tr>
+            <tr>
+              <td>ghi222</td>
+              <td>3</td>
+              <td>ford</td>
+              <td>ka</td>
+              <td>branca</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes;</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_cli</th>
+              <th>nome_cli</th>
+              <th>rua_cli</th>
+              <th>bairro_cli</th>
+              <th>num_cli</th>
+              <th>fone_cli</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>1</td>
+              <td>Luciene</td>
+              <td>Rua A</td>
+              <td>1</td>
+              <td>123</td>
+              <td>3535-3535</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Fábio</td>
+              <td>Rua B</td>
+              <td>2</td>
+              <td>231</td>
+              <td>3232-3232</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Carlos</td>
+              <td>Rua C</td>
+              <td>3</td>
+              <td>323</td>
+              <td>3511-3511</td>
+            </tr>
+            <tr>
+              <td>123</td>
+              <td>Silvio</td>
+              <td>Rua xyz</td>
+              <td>4</td>
+              <td>888</td>
+              <td>3333-3333</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="space">
+
+        <div><span style="color: #6a9955;">--&nbsp;CONSULTA&nbsp;INNER&nbsp;JOIN&nbsp;--</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">INNER&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;clientes.cod_cli&nbsp;=&nbsp;carros.cliente_car;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_cli</th>
+              <th>cliente_car</th>
+              <th>placa_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>CROSS JOIN</h2>
+
+      <p class="lead">A cláusula <code>CROSS JOIN</code> é usada para espelhar os dados, ou seja, o primeiro dado da tabela irá ser combinado com todos os dados da segunda tabela, então o segundo dado da primeira tabela também será combinado com todos os dados da segunda tabela, e assim sucessivamente. A sintaxe base é <code>SELECT coluna1, coluna2,... FROM tabelaA CROSS JOIN tabelaB</code>. Se usada com a condição <code>ON</code> o resultado será igual a cláusula <code>INNER JOIN</code>. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">CROSS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">JOIN</span><span style="color: #d4d4d4;">&nbsp;carros;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_cli</th>
+              <th>cliente_car</th>
+              <th>placa_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Luciene</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Luciene</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+            <tr>
+              <td>Silvio</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Silvio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Silvio</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>RIGHT (outer) JOIN</h2>
+
+      <p class="lead">A cláusula <code>RIGHT JOIN</code> é usada para mostrar tudo da tabela da direita em relação a tabela da esquerda. Basicamente, ele irá mostrar todos os dados da tabela da direita combinados com os dados da tabela da esquerda. Onde não houver a combinação, então os dados das colunas provenientes da tabela da esquerda serão nulos.. A sintaxe base é <code>SELECT coluna1, coluna2,... FROM tabelaA RIGHT OUTER JOIN tabelaB ON condição</code> (o OUTER é opcional).</p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/right-join.png" class="figure-img img-fluid rounded w-50" alt="A imagem mostra dois círculos que representam a tabela a e b, e uma parte de ambas contém o mesmo conteúdo, além do conteúdo da tabela B">
+          <figcaption class="figure-caption text-xs-right">Exemplo da interseção entre as tabelas A e B, com a inclusão da tabela B</figcaption>
+        </figure>
+      </div> <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Iremos&nbsp;selecionar&nbsp;todos&nbsp;os&nbsp;carros&nbsp;que&nbsp;possuem ou não clientes</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">RIGHT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_cli</th>
+              <th>cliente_car</th>
+              <th>placa_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>LEFT (outer) JOIN</h2>
+
+      <p class="lead">A cláusula <code>LEFT JOIN</code> é igual a consulta acima, entretanto, ela dá prioridade para a tabela da esquerda. Basicamente, ele irá mostrar todos os dados da tabela da esquerda combinados com os dados da tabela da direita. Onde não houver a combinação, então os dados das colunas provenientes da tabela da direita serão nulos. <code>SELECT coluna1, coluna2,... FROM tabelaA LEFT OUTER JOIN tabelaB ON condição</code> (o OUTER é opcional).</p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/left-join.png" class="figure-img img-fluid rounded w-50" alt="A imagem mostra dois círculos que representam a tabela a e b, e uma parte de ambas contém o mesmo conteúdo, além do conteúdo da tabela B">
+          <figcaption class="figure-caption text-xs-right">Exemplo da interseção entre as tabelas A e B, com a inclusão da tabela B</figcaption>
+        </figure>
+      </div> <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Iremos&nbsp;selecionar&nbsp;todos&nbsp;os&nbsp;clientes&nbsp;que&nbsp;possuem&nbsp;ou&nbsp;n&atilde;o&nbsp;carros</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">LEFT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_cli</th>
+              <th>cliente_car</th>
+              <th>placa_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+            <tr>
+              <td>Silvio</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>FULL JOIN</h2>
+
+      <p class="lead">A cláusula <code>FULL JOIN</code> é usada para selecionar tanto os dados da tabela da direita quanto a tabela da esquerda. Entretanto, o MySQL não tem suporte para a cláusula. Para simular o <code>FULL JOIN</code> precisamos fazer a união <code>UNION</code> entre a consulta com a cláusula <code>LEFT JOIN</code> e a cláusula <code>RIGHT JOIN</code>. </p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/full-join.png" class="figure-img img-fluid rounded w-50" alt="A imagem mostra dois círculos que representam a tabela a e b totalmente preenchidos">
+          <figcaption class="figure-caption text-xs-right">Exemplo da interseção entre as tabelas A e B e com todas as possibilidades preenchidas</figcaption>
+        </figure>
+      </div>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px">
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">LEFT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car</span></div>
+        <div><span style="color: #569cd6;">UNION</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">RIGHT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>              
+              <th>cliente_car</th>
+              <th>placa_car</th>
+              <th>nome_cli</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>             
+              <td>1</td>
+              <td>abc111</td>
+               <td>Luciene</td>
+            </tr>
+            <tr>              
+              <td>2</td>
+              <td>def111</td>
+              <td>Fábio</td>
+            </tr>
+            <tr>              
+              <td>3</td>
+              <td>ghi222</td>
+              <td>Carlos</td>
+            </tr>
+            <tr>              
+              <td>NULL</td>
+              <td>NULL</td>
+              <td>Silvio</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      </div>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

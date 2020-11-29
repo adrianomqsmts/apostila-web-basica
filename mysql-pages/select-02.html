@@ -1,0 +1,743 @@
+<!--TOP, MIN, MAX, COUNT, AVG, SUM-->
+
+
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Selecionando com funções matemáticas MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Selecionando com funções matemáticas MySQL</h1>
+
+      <p class="lead">Existem diversas funções matemáticas prontas no MySQL para manipularmos os dados na hora de selecionarmos em uma tabela resultante. Usaremos os dados abaixo como exemplos.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto,&nbsp;nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Teclado'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #ce9178;">'Mouse'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Monitor'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">99</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+      </div> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>id_produto</th>
+            <th>nome</th>
+            <th>preco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Teclado</td>
+            <td>10.5</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mouse</td>
+            <td>9.9</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Monitor</td>
+            <td>99.9</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>COUNT - Contando os dados</h2>
+
+      <p class="leas">A função <code>SELECT COUNT(coluna1), COUNT(colunA2), ... FROM tabela</code> é usada para contar a quantidade de linhas preenchidas naquela coluna. Pode ser usado para ver quais colunas contém mais dados ausentes. </p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;count(preco),&nbsp;count(nome)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>count(preco)</th>
+            <th>count(nome)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;count(*)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>count(*)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>AVG - Calculando a média</h2>
+
+      <p class="lead">A função <code>SELECT AVG(coluna1), AVG(colunA2), ... FROM tabela</code> é usada para calcular a média dos dados da coluna especificada.</p>
+
+      <span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;AVG(preco)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>avg(preco)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>40.1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>MAX e MIX - Selecionando os valores máximos e mínimos</h2>
+
+      <p class="lead">A função <code>SELECT MAX(coluna1), MIN(coluna2), MIN(coluna3), MAX(coluna4) ... FROM tabela</code> seleciona o valor máximo ou mínimo da coluna especificada.</p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;MAX(preco),&nbsp;MIN(preco)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>max(preco)</th>
+            <th>min(preco)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>99.9</td>
+            <td>9.9</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>SUM - Somando os valores de uma coluna</h2>
+
+      <p class="lead">A instrução <code>SELECT SUM(coluna1), SUM(coluna2),... FROM tabela</code> é usada para somar os todos os dados de uma coluna.</p>
+
+      <P><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;SUM(preco)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></P>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>sum(preco)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>120.30000000000001</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>GROUP BY - Agrupando Resultado</h2>
+
+      <p class="lead">A instrução <code>SELECT cont(*), coluna,... FROM tabela GROUP BY coluna</code> irá agrupar os resultados pela coluna especificada, ou seja, todos os dados que tiverem o mesmo valor irão ser agrupados em uma única linha, e os demais valores somados.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;Fornecedores(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;codfor&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cep&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;estado&nbsp;</span><span style="color: #569cd6;">char</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cnpj&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;(codfor,&nbsp;ragsoc,&nbsp;endereco,&nbsp;cidade,&nbsp;cep,&nbsp;estado,&nbsp;cnpj)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Google&nbsp;INC."</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Paulista&nbsp;1542"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00845-00"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"54564556454564"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Apple&nbsp;Computer"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Pinheiros&nbsp;10542"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"09045-00"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"55564556454586"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Microsoft"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Pinheiros&nbsp;1054"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"19045-500"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"95645562615645"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Sum&nbsp;Computer"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Tiete&nbsp;5454"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"52045"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"95645562615648"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"MYSQL&nbsp;Lab"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Tiradentes&nbsp;888"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Belo&nbsp;Horizonte"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"20045-000"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"MG"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"04645422461564"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"David&nbsp;INC"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Copacabana&nbsp;1452"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Rio&nbsp;de&nbsp;Janeiro"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"54000-800"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"RJ"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"27845422461564"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Presidencia&nbsp;for&nbsp;Systems"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Planalto&nbsp;02"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Bras&iacute;lia"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"02800-850"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"DF"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"12845422461564"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Nerd&nbsp;Computer&nbsp;Lab"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Five&nbsp;Street&nbsp;42"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Betim"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">&nbsp;,</span><span style="color: #ce9178;">"MG"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"24565425461587"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Team&nbsp;Corp."</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;James&nbsp;T.154"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"New&nbsp;York"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00154-536"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"NY"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00560025400587"</span><span style="color: #d4d4d4;">);</span></div>
+        <br>
+
+        <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;estado,&nbsp;count(*)&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Quantidade de fornecedores'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">GROUP&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;estado;</span></p>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>estado</th>
+              <th>Quantidade de fornecedores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SP</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>MG</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>RJ</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>DF</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>NY</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;cidade,&nbsp;estado,&nbsp;count(*)&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Quantidade&nbsp;de&nbsp;fornecedores'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Quantidade de fornecedores&nbsp;</span><span style="color: #569cd6;">GROUP&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;cidade;</span></p>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <tr>
+            <td>cidade</td>
+            <td>estado</td>
+            <td>Quantidade de fornecedores</td>
+          </tr>
+          <tbody>
+            <tr>
+              <td>São Paulo</td>
+              <td>SP</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Belo Horizonte</td>
+              <td>MG</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Rio de Janeiro</td>
+              <td>RJ</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Brasília</td>
+              <td>DF</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Betim</td>
+              <td>MG</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>New York</td>
+              <td>NY</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;estado,&nbsp;count(*)&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Quantidade&nbsp;de&nbsp;fornecedores'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">GROUP&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;ESTADO&nbsp;</span><span style="color: #569cd6;">ORDER&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;count(*);</span></p>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>estado</th>
+              <th>Quantidade de fornecedores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RJ</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>DF</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>NY</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>MG</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>SP</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>HAVING - Cláusula WHERE para o GRUPO BY </h2>
+
+      <p class="lead">A cláusula <code>HAVING</code> funciona como um condição <code>WHERE</code> para o <code>GROUP BY</code>, uma vez que a cláusula <code>WHERE</code> não pode ter as condições de operações, por assim dizer. A sintaxe base é <code>SELECT cont(*), coluna,... FROM tabela GROUP BY coluna HAVING condição;</code>. OBS: Tanto o <code>WHERE</code> quanto o <code>HAVING</code> podem ser usados em conjunto</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;estado,&nbsp;count(*)&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Quantidade&nbsp;de&nbsp;fornecedores'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;(ESTADO&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'M%'</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">OR</span><span style="color: #d4d4d4;">&nbsp;&nbsp;(ESTADO&nbsp;</span><span style="color: #569cd6;">Like</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'S%'</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">GROUP&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">HAVING</span><span style="color: #d4d4d4;">&nbsp;count(*)&nbsp;&gt;=&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>estado</th>
+              <th>Quantidade de fornecedores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SP</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>MG</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;estado,&nbsp;count(*)&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Quantidade&nbsp;de&nbsp;fornecedores'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">GROUP&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">HAVING</span><span style="color: #d4d4d4;">&nbsp;count(*)&nbsp;&gt;=&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">;</span></div> br
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>estado</th>
+              <th>Quantidade de fornecedores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SP</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>MG</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>RJ</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>DF</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>NY</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>Operadores Matemáticos</h2>
+
+      <p class="lead">Também podemos somar, subtrair, dividir e multiplicar duas colunas em MySQL usando os operadores matemáticos básicos como <code>+ - / *</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;valores&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;a&nbsp;</span><span style="color: #569cd6;">float</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;b&nbsp;</span><span style="color: #569cd6;">float</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;valores&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">),&nbsp;(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">),&nbsp;(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">);</span></div> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;(a+b)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;valores;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>(a+b)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3.5</td>
+            </tr>
+            <tr>
+              <td>13.5</td>
+            </tr>
+            <tr>
+              <td>17.500000476837158</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;(a-b)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;valores;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>(a-b)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-1.0999999046325684</td>
+            </tr>
+            <tr>
+              <td>-2.5</td>
+            </tr>
+            <tr>
+              <td>2.700000286102295</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;(a*b)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;valores;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>(a/b)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0.5217391619835555</td>
+            </tr>
+            <tr>
+              <td>0.6875</td>
+            </tr>
+            <tr>
+              <td>1.3648648988251442</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;(a/b)&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;valores;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>(a*b)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2.760000052452085</td>
+            </tr>
+            <tr>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td>74.74000378608707</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>Demais funções matemáticas</h2>
+
+      <p class="lead">Antes gostaria de ressaltar que é possível usar estas operações entre colunas de outras tabelas, bastando ajustar corretamente a lincagem de chaves primárias e estrangeiras como pode ser visto em <a href="select-03.html">SELECT - JOIN</a>.</p>
+
+      <h3>Operadores aritméticos</h3>
+
+      <table class="table table-sm table-responsive-sm table-bordered  table-dark">
+        <thead class="text-center">
+          <tr>
+            <th>Operador</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>% , MOD</td>
+            <td>
+              Resto da divisão
+            </td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>
+              Multiplicação
+            </td>
+          </tr>
+          <tr>
+            <td>+</td>
+            <td>
+              Adição
+            </td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>
+              Subtração
+            </td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>
+              Mudar o sinal do argumento(-a)
+            </td>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>
+              Divisão
+            </td>
+          </tr>
+          <tr>
+            <td>DIV</td>
+            <td>
+              Divisão inteira
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <h3>Funções matemáticas</h3>
+
+
+      <table class="table table-sm table-responsive-sm table-bordered  table-dark">
+        <thead class="text-center">
+          <tr>
+            <th>Função</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ABS(<em>valor</em>)</td>
+            <td>
+              Retorna o valor absoluto
+            </td>
+          </tr>
+          <tr>
+            <td>ACOS(<em>valor</em>)</td>
+            <td>
+              Retorna o arco cosseno
+            </td>
+          </tr>
+          <tr>
+            <td>ASIN(<em>valor</em>)</td>
+            <td>
+              Retorna o arco seno
+            </td>
+          </tr>
+          <tr>
+            <td>ATAN(<em>valor</em>)</td>
+            <td>
+              Retorna o arco tangente
+            </td>
+          </tr>
+          <tr>
+            <td>>ATAN2(<em>colunaA</em>,<em>colunaB</em>)</code>, ATAN(<em>colunaA</em>,<em>colunaB</em>)</td>
+            <td>
+              Retorna o arco tangente entre dois parâmetros
+            </td>
+          </tr>
+          <tr>
+            <td>CEIL<em>valor</em>() ou CEILING(<em>valor</em>)</td>
+            <td>
+              Retorna o valor arredondado para cima
+            </td>
+          </tr>
+          <tr>
+            <td>ROUND(<em>valor</em>)</td>
+            <td>
+              Arredonda o valor especificado.
+            </td>
+          </tr>
+          <tr>
+            <td>FLOOR(<em>valor</em>)</td>
+            <td>
+              Arredonda o valor para um inteiro abaixo
+            </td>
+          </tr>
+          <tr>
+            <td>CONV(<em>valor</em>, baseAtual, baseConversão)</td>
+            <td>
+              Converte o número em diferentes bases numéricas
+            </td>
+          </tr>
+          <tr>
+            <td>COS(<em>valor</em>)</td>
+            <td>
+              Retorna o cosseno do parâmetro
+            </td>
+          </tr>
+          <tr>
+            <td>COT(<em>valor</em>)</td>
+            <td>
+              Retorna a cotangente do parâmetro
+            </td>
+          </tr>
+          <tr>
+            <td>CRC32(<em>valor</em>)</td>
+            <td>
+              Calcula um valor de verificação de redundância cíclica e retorna um valor sem sinal de 32 bits. O resultado é NULL se o argumento for NULL.
+            </td>
+          </tr>
+          <tr>
+            <td>>DEGREES(<em>valor</em>)</td>
+            <td>
+              Converter radianos em graus
+            </td>
+          </tr>
+          <tr>
+            <td>EXP(<em>valor</em>)</td>
+            <td>
+              Retorna o argumento elevado a numéro natural <code>e</code>
+            </td>
+          </tr>
+          <tr>
+            <td>LN(<em>valor</em>)</td>
+            <td>
+              Retorna o logarítmo natural do elemento
+            </td>
+          </tr>
+          <tr>
+            <td>LOG(<em>valor</em>)</td>
+            <td>
+              Retorna o logaritmo natural do primeiro argumento
+            </td>
+          </tr>
+          <tr>
+            <td>>LOG10(<em>valor</em>)</td>
+            <td>
+              Retorna o logaritmo de base 10 do argumento
+            </td>
+          </tr>
+          <tr>
+            <td>LOG2(<em>valor</em>)</td>
+            <td>
+              Retorna o logaritmo de base 2 do argumento
+            </td>
+          </tr>
+          <tr>
+            <td>PI()</td>
+            <td>
+              Retorna o valor de PI()
+            </td>
+          </tr>
+          <tr>
+            <td>POW(<em>a</em>, <em>b</em>) ou POWER(<em>a</em>, <em>b</em>)</td>
+            <td>
+              Retorna o lavor de a elevado a b
+            </td>
+          </tr>
+          <tr>
+            <td>RADIANS(<em>valor</em>)</td>
+            <td>
+              Retorna o valor em radianos
+            </td>
+          </tr>
+          <tr>
+            <td>RAND()</td>
+            <td>
+              Retorna um valor decimal aleatório ente 0 e 1
+            </td>
+          </tr>
+          <tr>
+            <td>SIGN(<em>valor</em>)</td>
+            <td>
+              Devolve o sinal do argumento (negativo ou positivo)
+            </td>
+          </tr>
+          <tr>
+            <td>SIN(<em>valor</em>)</td>
+            <td>
+              Retorna o seno do argumento
+            </td>
+          </tr>
+          <tr>
+            <td>SQRT(<em>valor</em>)</td>
+            <td>
+              Retorna a raiz quadrada do argumento
+            </td>
+          </tr>
+          <tr>
+            <td>TAN(<em>valor</em>)</td>
+            <td>
+              Retorna a tangente do valor especificado
+            </td>
+          </tr>
+          <tr>
+            <td>TRUNCATE(<em>valor</em>, <em>casasDecimais</em>)</td>
+            <td>
+              Truncar para o número para a quantidade de casas especificadas
+            </td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+
+      <p class="lead">OBS: <strong> Estas funções também pode ser usada na hora de inserir, atualizar e não somente selecionar os dados de um banco de dados.</strong> </p>
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

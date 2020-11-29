@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Inserindo dados com MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Inserindo dados com MySQL</h1>
+
+      <p class="lead">Para inserir dados em uma tabela precisamos usar a instrução <code>INSERT INTO</code>. Um detalhe importante é de que dados inseridos do tipo textos devem estar entre aspas simples <code>' '</code>, enquanto datas devem seguir os padrões já especificados em <a href="tipos-dados.html">Tipos de Dados</a>. Mas relembrando <code>'aaaa-mm-dd'</code> para <code>DATE</code>, <code>1999-06-24 07:32:00'</code> para <code>DATETIME</code> e <code>'07:32:01'</code> para <code>TIME</code>.</p>
+
+      <p class="lead">Existem "três" formas distintas de inserir dados em uma tabela, a primeira usamos a instrução completa <code>INSERT INTO nomeTable (nomeColuna1, nomeColuna2, ...) VALUES (dadoColuna1, dadoColuna2,...)</code>, onde devemos especificar o nome da tabela e todas as colunas que queremos inserir os dados, seguido pelos dados que serão inseridos. Os dados devem estar na mesma ordem que os nomes das colunas especificadas.</p>
+
+      <p class="lead">A segunda forma é omitindo o nome das colunas, mas neste caso devemos, nos valores, inserir os dados na mesma ordem das colunas na hora em que a tabela foi criada, e por fim a terceira forma é igual a primeira, mas omitindo algumas colunas e valores que não queremos inserir na tabela. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto,&nbsp;nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Teclado'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #ce9178;">'Mouse'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Monitor'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">99</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+      </div> <br>
+
+      <p class="lead">Tabela Resultante</p>
+
+      <table class="table-sm table-striped text-white bg-dark table-bordered">
+        <thead>
+          <tr>
+            <th>id_produto</th>
+            <th>nome</th>
+            <th>preco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Teclado</td>
+            <td>10.5</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Mouse</td>
+            <td>9.9</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Monitor</td>
+            <td>99.9</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>Exemplo 1: Inserindo vários dados de uma vez </h2>
+
+      <p class="lead">Para inserir vários dados de uma vez, com uma única instrução, basta separar cada dupla de parênteses por vírgula, com exceção do último que deve ser finalizado com ponto-e-vírgula para finalizar a instrução.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;Fornecedores(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;codfor&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cep&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;estado&nbsp;</span><span style="color: #569cd6;">char</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cnpj&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;(codfor,&nbsp;ragsoc,&nbsp;endereco,&nbsp;cidade,&nbsp;cep,&nbsp;estado,&nbsp;cnpj)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Google&nbsp;INC."</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Paulista&nbsp;1542"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00845-00"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"54564556454564"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Aplle&nbsp;Computer"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Pinheiros&nbsp;10542"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"09045-00"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"55564556454586"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Microsoft"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Pinheiros&nbsp;1054"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"19045-500"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"95645562615645"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Sum&nbsp;Computer"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Tiete&nbsp;5454"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"52045"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"95645562615648"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"MYSQL&nbsp;Lab"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Tiradentes&nbsp;888"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Belo&nbsp;Horizonte"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"20045-000"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"MG"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"04645422461564"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"David&nbsp;INC"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Copacabana&nbsp;1452"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Rio&nbsp;de&nbsp;Janeiro"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"54000-800"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"RJ"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"27845422461564"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Presidencia&nbsp;for&nbsp;Systems"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Planalto&nbsp;02"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Bras&iacute;lia"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"02800-850"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"DF"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"12845422461564"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Nerd&nbsp;Computer&nbsp;Lab"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Five&nbsp;Street&nbsp;42"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Betim"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">&nbsp;,</span><span style="color: #ce9178;">"MG"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"24565425461587"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Team&nbsp;Corp."</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;James&nbsp;T.154"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"New&nbsp;York"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00154-536"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"NY"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00560025400587"</span><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <p class="lead">Tabela resultante</p>
+
+      <table class="table-sm table-striped text-white bg-dark table-bordered">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>Betim</td>
+            <td>NULL</td>
+            <td>MG</td>
+            <td>24565425461587</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>Exemplo 2 : Valores Default</h2>
+
+      <p class="lead">Se existem colunas com valores DEFAULT e for de nosso interessem que o valor padrão seja atribuído àquele dado, então basta omití-lo durante a inserção do dado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;Conta(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;agencia&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;saldo&nbsp;</span><span style="color: #569cd6;">FLOAT</span><span style="color: #d4d4d4;">&nbsp;default&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;limite&nbsp;</span><span style="color: #569cd6;">FLOAT</span><span style="color: #d4d4d4;">&nbsp;default&nbsp;</span><span style="color: #b5cea8;">500</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cartao&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">)&nbsp;default&nbsp;</span><span style="color: #ce9178;">'n&atilde;o'</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;Conta&nbsp;(agencia)&nbsp;</span><span style="color: #569cd6;">VALUES</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">987</span><span style="color: #d4d4d4;">);</span></div>
+      </div> <br>
+
+      <p class="lead">Table resultante</p>
+      <table class="table-sm table-striped text-white bg-dark table-bordered">
+        <thead>
+          <tr>
+            <th>numero</th>
+            <th>agencia</th>
+            <th>saldo</th>
+            <th>limite</th>
+            <th>cartao</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>987</td>
+            <td>0</td>
+            <td>500</td>
+            <td>não</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

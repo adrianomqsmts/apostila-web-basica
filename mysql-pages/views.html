@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Vies com MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Vies com MySQL</h1>
+
+      <p class="lead">Você pode ter notado até aqui que é complicado ter que ficar escrevendo várias vezes uma instrução <code>SELECT</code>. Para isso temos a instrução <code>CREATE VIEW</code> que é usada para capturar a tabela resultante de um consulta. Desta forma ganhamos em simplicidade, pois ao invés de ter que escrever toda a consulta complexa, podemos consultar a view. Além disto ganhamos em performance, pois o resultado da consulta já está armazenado e o SGBD não precisará fazer toda a condição da consulta para gerar o resultado novamente</p>
+
+      <p class="lead">A sintaxe base é <code>CREATE VIEW nome_view (coluna1, coluna2, ...) AS SELECT coluna1, coluna2, ... FROM tabela WHERE condição</code>. O Comando <code>SHOW TABLES;</code> é usado para ver as tabelas criadas no banco, e como a view armazena as tabelas, através da instrução poderemos ver se criamos com sucesso ou não a view.</p>
+
+      <p class="lead">A principal desvantagem é quando o banco de dados é atualizado com novos dados, a view pode dicar desatualizada, tendo de criar uma outra view novamente, e se formos ter que ficar criando toda vez uma nova view, o seu uso não faz sentido.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;clientes(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;rua_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;bairro_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fone_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carros(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;placa_car&nbsp;</span><span style="color: #569cd6;">VARCHAR6</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">))&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cliente_car&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;marca_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;modelo_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cor_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;add&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(cliente_car)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;(cod_cli);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Luciene'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;A'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3535-3535'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'F&aacute;bio'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Rua&nbsp;B'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">&nbsp;,&nbsp;</span><span style="color: #b5cea8;">231</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3232-3232'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Carlos'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;C'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">323</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3511-3511'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Silvio'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;xyz'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">888</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3333-3333'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'abc111'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'&nbsp;volksvagen'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Fox&nbsp;city'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'cinza'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'def111'</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ford'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'eco&nbsp;sport'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'cinza'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'ghi222'</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ford'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ka'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'branca'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Consulta</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">RIGHT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_cli</th>
+              <th>cliente_car</th>
+              <th>placa_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr class="space">
+
+        <div><span style="color: #6a9955;">--&nbsp;Craindo&nbsp;uma&nbsp;VIEW</span></div>
+        <div><span style="color: #569cd6;">CREATE &nbsp;VIEW&nbsp;</span> view_carro_clinte&nbsp;(nome_do_cliente,&nbsp;codigo_do_cliente,&nbsp;placa_do_carro)</div>
+        <div><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">RIGHT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Consultr&nbsp;uma&nbsp;VIEW</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;view_carro_clinte;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_do_cliente</th>
+              <th>codigo_do_cliente</th>
+              <th>placa_do_carro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>CREATE OR REPLACE VIEW - Atualizando uma VIEW</h2>
+
+      <p class="lead">Para atualizar uma view usamos o comando <code>CREATE OR REPLACE VIEW</code> com a sintaxe base <code>CREATE OR REPLACE VIEW nome_view AS SELECT coluna1, coluna2, ... FROM tabela WHERE condição;</code>.</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">OR REPLACE VIEW&nbsp;</span> view_carro_clinte&nbsp;(nome_do_cliente,&nbsp;codigo_do_cliente,&nbsp;placa_do_carro)</div>
+        <div><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;clientes.nome_cli,&nbsp;carros.cliente_car,&nbsp;carros.placa_car</span></div>
+        <div><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">LEFT&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;view_carro_clinte;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome_cli</th>
+              <th>cliente_car</th>
+              <th>placa_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luciene</td>
+              <td>1</td>
+              <td>abc111</td>
+            </tr>
+            <tr>
+              <td>Fábio</td>
+              <td>2</td>
+              <td>def111</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>3</td>
+              <td>ghi222</td>
+            </tr>
+            <tr>
+              <td>Silvio</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>DROP VIEW - Removendo uma view</h2>
+
+      <p class="lead">O comando <code>DROP VIEW nome_view;</code> é usado para remover uma view do sistema. Para conferir de uma view foi apagada, pode usar o comando <code>SHOW TABLES;</code> para ver se ainda existe uma tabela da view criada.</p>
+
+      <br>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;"> <br>
+        <div><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;VIEW&nbsp;view_carro_clinte;</span></div> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>CREATE PROCEDURE - Criando procedimentos</h2>
+
+      <p class="lead">A instrução <code>CREATE PROCEDURE</code> é semelhante a instrução <code>CREATE VIEW</code>, entretanto a instrução <code>CREATE PROCEDURE</code> não cria uma nova tabela para armazenar as informações, ela apena armazena o comando SQL e o executa novamente. Ou seja, ele não melhora o desempenho, pois a view cria uma tabala com o resultado e toda vez que formos consultar o resultado já está pronto, enquanto em um procedimento todo o trabalho de uma consulta é executado novamente de forma interna. </p>
+
+      <p class="lead">Para saber mais sobre procedimento acesse <a href="https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html">CREATE PROCEDURE</a> ou <a href="https://www.w3schools.com/sql/sql_stored_procedures.asp">Stored Procedure</a>.</p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

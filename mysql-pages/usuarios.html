@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Usuário do SGBD MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Usuário do SGBD MySQL</h1>
+
+      <p class="lead">O MySQL nos permite criar usuários para um banco de dados e dar terminadas permissões para o usuário, como apenas ler o conteúdo de uma tabela, apenas inserir dados em outra determinada tabela, e por assim em diante. Este conteúdo visa a segurança e integridade dos dados evitando acesso indevido. </p>
+      <hr class="space">
+
+      <h2>CREATE USER - Criando usuários</h2>
+
+      <p class="lead">A instrução <code>CREATE USER</code> é usada para criar um usuário e não é necessário estar com um banco de dados ativo. A sintaxe base é <code>CREATE USER 'usuário@localhost' IDENTIFIED BY 'senha';</code>. Em seguida é importante atualizar o sistema para que ele reconheça os novos usuários através do comando <code>FLUSH PRIVILEGES;</code>. Outro detalhe é que o nome do usuário leva em conta minúsculo e maiúsculo.</p>
+
+      <p class="lead">Para verificar os usuários cadastrados no SGBD, primeiro precisamos ativar o banco de dados do MySQL com a instrução <code>USE MYSQL;</code>, e então usamos a instrução <code>SELECT * FROM user;</code>. E para ver as permissões usuário logado usamos a instrução <code>SHOW GRANTS;</code>. Por padrão um novo usuário não tem nenhuma permissão.</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;"><span style="color: #6a9955;">--&nbsp;Criano&nbsp;um&nbsp;usu&aacute;rio&nbsp;Gerente</span>
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;USER&nbsp;</span><span style="color: #ce9178;">'GERENTE'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">&nbsp;IDENTIFIED&nbsp;</span><span style="color: #569cd6;">BY</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'123'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;Criando&nbsp;um&nbsp;usupario&nbsp;Empregado</span></div>
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;USER&nbsp;</span><span style="color: #ce9178;">'EMPREGADO'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">&nbsp;IDENTIFIED&nbsp;</span><span style="color: #569cd6;">BY</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'321'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;Ataualizando&nbsp;o&nbsp;sistema&nbsp;para&nbsp;reconhecer&nbsp;os&nbsp;novos&nbsp;usu&aacute;rios</span></div>
+        <div><span style="color: #d4d4d4;">FLUSH&nbsp;PRIVILEGES;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Acessando&nbsp;o&nbsp;banco&nbsp;de&nbsp;dados&nbsp;interno&nbsp;do&nbsp;MySQL</span></div>
+        <div><span style="color: #569cd6;">USE</span><span style="color: #d4d4d4;">&nbsp;MYSQL;</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;Vendo&nbsp;a&nbsp;tabela&nbsp;de&nbsp;usu&aacute;rios&nbsp;cadastrado&nbsp;no&nbsp;MySQL</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;user;</span></div>
+
+        <table class="table table-responsive table-dark table-striped table-bordered w-100">
+          <tr>
+            <th>Host</th>
+            <th>User</th>
+            <th>Select_priv</th>
+            <th>Insert_priv</th>
+            <th>Update_priv</th>
+            <th>Delete_priv</th>
+            <th>Create_priv</th>
+            <th>Drop_priv</th>
+            <th>Reload_priv</th>
+            <th>Shutdown_priv</th>
+            <th>Process_priv</th>
+            <th>File_priv</th>
+            <th>Grant_priv</th>
+            <th>References_priv</th>
+            <th>Index_priv</th>
+            <th>Alter_priv</th>
+            <th>Show_db_priv</th>
+            <th>Super_priv</th>
+            <th>Create_tmp_table_priv</th>
+            <th>Lock_tables_priv</th>
+            <th>Execute_priv</th>
+            <th>Repl_slave_priv</th>
+            <th>Repl_client_priv</th>
+            <th>Create_view_priv</th>
+            <th>Show_view_priv</th>
+            <th>Create_routine_priv</th>
+            <th>Alter_routine_priv</th>
+            <th>Create_user_priv</th>
+            <th>Event_priv</th>
+            <th>Trigger_priv</th>
+            <th>Create_tablespace_priv</th>
+            <th>ssl_type</th>
+            <th>ssl_cipher</th>
+            <th>x509_issuer</th>
+            <th>x509_subject</th>
+            <th>max_questions</th>
+            <th>max_updates</th>
+            <th>max_connections</th>
+            <th>max_user_connections</th>
+            <th>plugin</th>
+            <th>authentication_string</th>
+            <th>password_expired</th>
+            <th>password_last_changed</th>
+            <th>password_lifetime</th>
+            <th>account_locked</th>
+            <th>Create_role_priv</th>
+            <th>Drop_role_priv</th>
+            <th>Password_reuse_history</th>
+            <th>Password_reuse_time</th>
+            <th>Password_require_current</th>
+            <th>User_attributes</th>
+          </tr>
+
+          <tr>
+            <td>localhost</td>
+            <td>EMPREGADO</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>caching_sha2_password</td>
+            <td>ansdkahsdkahkdhakdh ahdkadakda dkhaskdakjd ask</td>
+            <td>N</td>
+            <td>2020-11-28 14:14:37</td>
+            <td>NULL</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+          </tr>
+
+          <tr>
+            <td>localhost</td>
+            <td>GERENTE</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>caching_sha2_password</td>
+            <td>ashdiahd askdh adjas dijadb ao dbojabdhab dja</td>
+            <td>N</td>
+            <td>2020-11-28 14:14:36</td>
+            <td>NULL</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+          </tr>
+
+          <tr>
+            <td>localhost</td>
+            <td>mysql.infoschema</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>caching_sha2_password</td>
+            <td>THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED</td>
+            <td>N</td>
+            <td>2019-08-03 21:33:11</td>
+            <td>NULL</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+          </tr>
+
+          <tr>
+            <td>localhost</td>
+            <td>mysql.session</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>caching_sha2_password</td>
+            <td>THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED</td>
+            <td>N</td>
+            <td>2019-08-03 21:33:11</td>
+            <td>NULL</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+          </tr>
+
+          <tr>
+            <td>localhost</td>
+            <td>mysql.sys</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>caching_sha2_password</td>
+            <td>THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED</td>
+            <td>N</td>
+            <td>2019-08-03 21:33:11</td>
+            <td>NULL</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+          </tr>
+
+          <tr>
+            <td>localhost</td>
+            <td>root</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>caching_sha2_password</td>
+            <td>asnd oadabdiagsodpahdpoahdladn askdn a dpash do</td>
+            <td>N</td>
+            <td>2019-08-03 21:33:19</td>
+            <td>NULL</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+            <td>NULL</td>
+          </tr>
+        </table> <br>
+        <div><span style="color: #6a9955;">--&nbsp;O&nbsp;comando&nbsp;abaixo&nbsp;verifica&nbsp;os&nbsp;privil&eacute;gios&nbsp;do&nbsp;usu&aacute;rio&nbsp;logado</span></div>
+        <div><span style="color: #d4d4d4;">SHOW&nbsp;GRANTS;</span></div> <br>
+        <table class="table table-responsive table-dark table-striped table-bordered w-100">
+          <tr>
+            <th>Grants for root@localhost</th>
+          </tr>
+
+          <tr>
+            <td>GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO `root`@`localhost` WITH GRANT OPTION</td>
+          </tr>
+          <tr>
+            <td>GRANT APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTION_ADMIN,CLONE_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATION_ADMIN,INNODB_REDO_LOG_ARCHIVE,PERSIST_RO_VARIABLES_ADMIN,REPLICATION_SLAVE_ADMIN,RESOURCE_GROUP_ADMIN,RESOURCE_GROUP_USER,ROLE_ADMIN,SERVICE_CONNECTION_ADMIN,SESSION_VARIABLES_ADMIN,SET_USER_ID,SYSTEM_USER,SYSTEM_VARIABLES_ADMIN,TABLE_ENCRYPTION_ADMIN,XA_RECOVER_ADMIN ON *.* TO `root`@`localhost` WITH GRANT OPTION</td>
+          </tr>
+          <tr>
+            <td>GRANT PROXY ON ''@'' TO 'root'@'localhost' WITH GRANT OPTION</td>
+          </tr>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>GRANT - Dando permissões</h2>
+
+      <p class="lead">A instrução <code>GRANT</code> é usada para dar permissões para os usuários previamente criamos no sistema. A sintaxe base é <code>GRANT lista_de_privilégios ON nome_banco_de_dados.tabela TO 'usuário@localhost'</code>. A lista de privilégios pode ver <code>(select, update, insert ou delete)</code> enquanto o nome da tabela do banco de dados pode ser <code>*</code> (asteríscos) para dar as permissão listadas para todas as tabelas daquele banco de dados para o usuário.</p> <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #6a9955;">--&nbsp;Dando&nbsp;acesso&nbsp;total&nbsp;para&nbsp;o&nbsp;gerente</span></div>
+        <div><span style="color: #569cd6;">GRANT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">delete</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">update</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">insert</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">select</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;empresa.*&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'GERENTE'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">flush&nbsp;privileges;</span></div>
+      </div> <br>
+
+      <p class="lead">Para dar acesso mais específico, como atualizar apenas uma coluna de uma tabela , podemos especificar a tabela, na lista de privilégios, entre parênteses, devemos colocar as colunas que o usuário tem permissão.</p> <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Se&nbsp;estivermos&nbsp;com&nbsp;o&nbsp;banco&nbsp;de&nbsp;dados&nbsp;ativo,&nbsp;n&atilde;o&nbsp;precisamos&nbsp;escrever&nbsp;o&nbsp;seu&nbsp;nome</span></div>
+        <div><span style="color: #569cd6;">USE</span><span style="color: #d4d4d4;">&nbsp;empresa;</span></div> <br> <br>
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;funcionarios(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_func&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;email&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;salario&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div> <br> <br>
+        <div><span style="color: #6a9955;">--&nbsp;O&nbsp;empregado&nbsp;vai&nbsp;poder&nbsp;apenas&nbsp;atualizar&nbsp;o&nbsp;email&nbsp;na&nbsp;tabela&nbsp;funcion&aacute;rio&nbsp;e&nbsp;ver&nbsp;os&nbsp;dados&nbsp;da&nbsp;tabela</span></div>
+        <div><span style="color: #569cd6;">GRANT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">update</span><span style="color: #d4d4d4;">(email),&nbsp;</span><span style="color: #569cd6;">select</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;funcionarios&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'EMPREGADO'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">flush&nbsp;privileges;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>REVOKE - Removendo permissões</h2>
+
+      <p class="lead">A instrução <code>REVOKE</code> é usada para remover permissões de um usuário. A sua sintaxe base é <code>REVOKE lista_de_privilégios ON nome_banco_de_dados.tabela TO 'usuário@localhost'</code>, onde os seus detalhes de implementação são iguais ao <code>GRANT</code>, podendo remover permissões em apenas um coluna de uma tabela se assim desejar. </p> <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Removendo&nbsp;as&nbsp;permiss&ccedil;&otilde;es&nbsp;de&nbsp;criar&nbsp;e&nbsp;inserir&nbsp;do&nbsp;gerente&nbsp;de&nbsp;todas&nbsp;as&nbsp;tabelas&nbsp;do&nbsp;bacno&nbsp;de&nbsp;dados&nbsp;empresa</span></div>
+        <div><span style="color: #569cd6;">REVOKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">insert</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">create</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;empresa.*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'GERENTE'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">Flush&nbsp;privileges;</span></div>
+      </div> <br> <br> <br>
+
+      <p class="lead"><strong>IMPORTANTE!</strong> Para que o <code>REVOKE</code> e o <code>GRANT</code> sejam de fato implementados os usuários precisam sair e entrar com seus suários do banco de dados. </p>
+
+      <hr class="space">
+
+      <h2>DROP USER - Removendo usuários</h2>
+
+      <p class="lead">O comando <code>DROP USER</code> é usado para remover o usuário de um banco de dados. A sua sintaxe base é <code>DROP USER 'usuário'@'localhost';</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;USER&nbsp;</span><span style="color: #ce9178;">'EMPREGADO'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">;</span></div>
+        <div>&nbsp;</div>
+        <div><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;USER&nbsp;</span><span style="color: #ce9178;">'GERENTE'</span><span style="color: #d4d4d4;">@</span><span style="color: #ce9178;">'LOCALHOST'</span><span style="color: #d4d4d4;">;</span></div>
+      </div>
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

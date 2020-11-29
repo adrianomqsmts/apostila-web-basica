@@ -1,0 +1,1330 @@
+<!--SELECT , SELECT DISTINCT, WHERE, AND, OR, NOT, IS NULL, IS NOT NULL, ALIAS-->
+
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Selecionando dados com MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Selecionando dados com MySQL</h1>
+
+      <p class="lead">A instrução <code>SELECT nomeColuna1, nomeColuna2, ... FROM nomeTabela;</code> é usada para selecionar colunas específicas e exibir todos os dados dentro da tabela. Para exibir todas as colunas usamos o comando <code>SELECT * FROM nomeTabela;</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto,&nbsp;nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Teclado'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #ce9178;">'Mouse'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Monitor'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">99</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--Buscando&nbsp;todas&nbsp;as&nbsp;colunas&nbsp;da&nbsp;tabela</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--Buscando&nbsp;somente&nbsp;as&nbsp;colunas&nbsp;nome&nbsp;e&nbsp;o&nbsp;pre&ccedil;o&nbsp;da&nbsp;tabela&nbsp;produtos</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome,&nbsp;preco&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div>
+      </div> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>id_produto</th>
+            <th>nome</th>
+            <th>preco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Teclado</td>
+            <td>10.5</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mouse</td>
+            <td>9.9</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Monitor</td>
+            <td>99.9</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome,&nbsp;preco&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>nome</th>
+            <th>preco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Teclado</td>
+            <td>10.5</td>
+          </tr>
+          <tr>
+            <td>Mouse</td>
+            <td>9.9</td>
+          </tr>
+          <tr>
+            <td>Monitor</td>
+            <td>99.9</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>WHERE - Filtrando os dados</h2>
+
+      <p class="lead">A cláusula <code>WHERE</code> é usada em conjunto com a instrução <code>SELECT</code> para filtrar a consulta através de um determinada condição booleana como preço mais que 10 unidades monetárias ou mostrar somente os dados onde a pessoa tem mais de 18 anos.</p>
+
+      <p class="lead">Os principais operadores lógicos são: </p>
+
+      <ul>
+        <li><strong> WHERE coluna = valor</strong> - ds dados sejam <em>iguais</em> ao parâmetro especificado</li>
+        <li><strong> WHERE coluna &lt;> valor</strong> - ds dados sejam <em>diferentes</em> ao parâmetro especificado</li>
+        <li><strong> WHERE coluna >= valor</strong> - ds dados sejam <em>maiores ou iguais</em> ao parâmetro especificado</li>
+        <li><strong> WHERE coluna &lt;= valor</strong> - ds dados sejam <em>menores ou iguais</em> ao parâmetro especificado</li>
+        <li><strong> WHERE coluna > valor</strong> - ds dados sejam <em>maiores</em> ao parâmetro especificado</li>
+        <li><strong> WHERE coluna &lt; valor</strong> - ds dados sejam <em>menores</em> ao parâmetro especificado</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;Fornecedores(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;codfor&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cep&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;estado&nbsp;</span><span style="color: #569cd6;">char</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cnpj&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;(codfor,&nbsp;ragsoc,&nbsp;endereco,&nbsp;cidade,&nbsp;cep,&nbsp;estado,&nbsp;cnpj)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Google&nbsp;INC."</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Paulista&nbsp;1542"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00845-00"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"54564556454564"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Apple&nbsp;Computer"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Pinheiros&nbsp;10542"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"09045-00"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"55564556454586"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Microsoft"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Pinheiros&nbsp;1054"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"19045-500"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"95645562615645"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Sum&nbsp;Computer"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Marginal&nbsp;Tiete&nbsp;5454"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"S&atilde;o&nbsp;Paulo"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"52045"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"SP"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"95645562615648"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"MYSQL&nbsp;Lab"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Tiradentes&nbsp;888"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Belo&nbsp;Horizonte"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"20045-000"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"MG"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"04645422461564"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"David&nbsp;INC"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Copacabana&nbsp;1452"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Rio&nbsp;de&nbsp;Janeiro"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"54000-800"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"RJ"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"27845422461564"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Presidencia&nbsp;for&nbsp;Systems"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;Planalto&nbsp;02"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Bras&iacute;lia"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"02800-850"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"DF"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"12845422461564"</span><span style="color: #d4d4d4;">),&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Nerd&nbsp;Computer&nbsp;Lab"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Five&nbsp;Street&nbsp;42"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Betim"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">&nbsp;,</span><span style="color: #ce9178;">"MG"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"24565425461587"</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Team&nbsp;Corp."</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Av.&nbsp;James&nbsp;T.154"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"New&nbsp;York"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00154-536"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"NY"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"00560025400587"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Mostrando&nbsp;dodos&nbsp;as&nbsp;linhas&nbsp;cujo&nbsp;os&nbsp;fornecedores&nbsp;s&atilde;o&nbsp;do&nbsp;estado&nbsp;de&nbsp;S&atilde;o&nbsp;Paulo</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor,&nbsp;ragsoc,&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;=&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Mostrando&nbsp;todos&nbsp;as&nbsp;linhas&nbsp;cujos&nbsp;os&nbsp;fornecedores&nbsp;n&atilde;o&nbsp;s&atilde;o&nbsp;do&nbsp;estado&nbsp;de&nbsp;S&atilde;o&nbsp;Paulo</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor,&nbsp;ragsoc,&nbsp;endereco,&nbsp;estado&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;&lt;&gt;&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Mostrando&nbsp;todos&nbsp;os&nbsp;fornecedores&nbsp;que&nbsp;possuem&nbsp;um&nbsp;c&oacute;digo&nbsp;maior&nbsp;que&nbsp;5</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor,&nbsp;ragsoc,&nbsp;endereco,&nbsp;estado&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;codfor&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">;</span></div>
+      </div> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor,&nbsp;ragsoc,&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;=&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Apple Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor,&nbsp;ragsoc,&nbsp;endereco,&nbsp;estado&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;&lt;&gt;&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>MG</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>RJ</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>DF</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>MG</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>NY</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor,&nbsp;ragsoc,&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;=&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>RJ</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>DF</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>MG</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>NY</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <hr class="space">
+
+      <h2>AS - Apelidando as colunas</h2>
+
+      <p class="lead">Podemos exibir as colunas com nomes mais significativos dando apelidos para elas ao usar a instrução <code>SELECT coluna AS apelido, coluna2 AS apelido2, ... FROM tabela;</code></p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;codfor&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'C&oacute;digo&nbsp;do&nbsp;Fornecedor'</span><span style="color: #d4d4d4;">,&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Raz&atilde;o&nbsp;Social'</span><span style="color: #d4d4d4;">,&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Endere&ccedil;o'</span><span style="color: #d4d4d4;">,&nbsp;cidade,&nbsp;CEP,&nbsp;estado&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'UF'</span><span style="color: #d4d4d4;">,&nbsp;CNPJ&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Código do Fornecedor</th>
+            <th>Razão Social</th>
+            <th>Endereço</th>
+            <th>cidade</th>
+            <th>CEP</th>
+            <th>UF</th>
+            <th>CNPJ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Apple Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>Betim</td>
+            <td>NULL</td>
+            <td>MG</td>
+            <td>24565425461587</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>DISTINCT - Selecionando os dados distintos</h2>
+
+      <p class="lead">A instrução <code>SELECT DISTINCT</code> é usada para selecionar os dados de uma coluna sem repetição.</p>
+
+      <p><span style="color: #569cd6;">SELECT&nbsp;DISTINCT</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Estados&nbsp;Cadastrados'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Estados Cadastrados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SP</td>
+          </tr>
+          <tr>
+            <td>MG</td>
+          </tr>
+          <tr>
+            <td>RJ</td>
+          </tr>
+          <tr>
+            <td>DF</td>
+          </tr>
+          <tr>
+            <td>NY</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>ORDER BY - Ordenando os resultados</h2>
+
+      <p class="lead">A instrução <code>SELECT coluna1, coluna2, .. FROM tabela ORDER BY coluna (DESC) </code> é usada para ordenar as linhas da tabela. Se for especificada a condição <code>DESC</code> os dados serão ordenados de forma decrescente de acordo com a cola especificada, e caso a condição seja omitida, então os dados serão ordenados de forma crescente.</p>
+
+      <p><span style="color: #569cd6;">SELECT&nbsp;DISTINCT</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Estados&nbsp;Cadastrados'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">ORDER&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;estado;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Estados Cadastrados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DF</td>
+          </tr>
+          <tr>
+            <td>MG</td>
+          </tr>
+          <tr>
+            <td>NY</td>
+          </tr>
+          <tr>
+            <td>RJ</td>
+          </tr>
+          <tr>
+            <td>SP</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT&nbsp;DISTINCT</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'Estados&nbsp;Cadastrados'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">ORDER&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">DESC</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Estados Cadastrados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SP</td>
+          </tr>
+          <tr>
+            <td>RJ</td>
+          </tr>
+          <tr>
+            <td>NY</td>
+          </tr>
+          <tr>
+            <td>MG</td>
+          </tr>
+          <tr>
+            <td>DF</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p class="lead">Se tentarmos ordenar por mais de uma coluna ao mesmo tempo, primeiro haverá a ordenação da primeira colunas em relação a segunda coluna especificada.</p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;</span><span style="color: #569cd6;">AS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'UF'</span><span style="color: #d4d4d4;">,&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">ORDER&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;estado,&nbsp;cidade;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>UF</th>
+            <th>cidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DF</td>
+            <td>Brasília</td>
+          </tr>
+          <tr>
+            <td>MG</td>
+            <td>Belo Horizonte</td>
+          </tr>
+          <tr>
+            <td>MG</td>
+            <td>Betim</td>
+          </tr>
+          <tr>
+            <td>NY</td>
+            <td>New York</td>
+          </tr>
+          <tr>
+            <td>RJ</td>
+            <td>Rio de Janeiro</td>
+          </tr>
+          <tr>
+            <td>SP</td>
+            <td>São Paulo</td>
+          </tr>
+          <tr>
+            <td>SP</td>
+            <td>São Paulo</td>
+          </tr>
+          <tr>
+            <td>SP</td>
+            <td>São Paulo</td>
+          </tr>
+          <tr>
+            <td>SP</td>
+            <td>São Paulo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>NULL e NOT NULL - Resultados nulos e não nulos</h2>
+
+      <p class="lead">A instrução <code>SELECT coluna1, coluna2, ... FROM tabela WHERE coluna IS (NULL ou NOT NULL)</code> é usada para selecionar os dados da tabela cujo os dados são ou não são nulos.</p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;CEP&nbsp;</span><span style="color: #569cd6;">IS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>Betim</td>
+            <td>NULL</td>
+            <td>MG</td>
+            <td>24565425461587</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;CEP&nbsp;</span><span style="color: #569cd6;">IS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>BETWEEN - Intervalo de valores</h2>
+
+      <p class="lead">A instrução <code>SELECT coluna1, coluna2, ... FROM tabela WHERE coluna BETWEEN valor1 AND valor2</code> é usada para selecionar dados que estejam entre o intervalo especificado daquela coluna.</p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;codfor&nbsp;</span><span style="color: #569cd6;">BETWEEN</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">and</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">;</span></p>
+
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>IN - Selecionando dados específicos</h2>
+
+      <p class="lead">A instrução <code>SELECT coluna1, coluna2, ... FROM tabela WHERE coluna IN (valor1, valor2, ...)</code> é usada para selecionar todos os dados que contém algum dos valores especificados na coluna especificada. (aceita valores do tipo texto)</p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;codfor&nbsp;</span><span style="color: #569cd6;">IN</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">);</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>AND, OR E NOT- Múltiplas condições</h2>
+
+      <p class="lead">A instrução <code>SELECT coluna1, coluna2, ... FROM tabela WHERE condição1 (AND ou OR) condição2 (AND ou OR) condição3 ... </code> é usada para que possamos colocar mais de uma condição dentro da nossa consulta, podendo ter dados ainda mais refinados. Enquanto a condição <code>NOT</code> é usada para não selecionar o dado especificado.</p>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;=&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">OR</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;=&nbsp;</span><span style="color: #ce9178;">'NY'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;cep&nbsp;</span><span style="color: #569cd6;">IS</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">AND</span><span style="color: #d4d4d4;">&nbsp;codfor&nbsp;&gt;=&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">&nbsp;;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;=&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">AND</span><span style="color: #d4d4d4;">&nbsp;estado&nbsp;&lt;&gt;&nbsp;</span><span style="color: #ce9178;">'NY'</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">AND</span><span style="color: #d4d4d4;">&nbsp;(codfor&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">AND</span><span style="color: #d4d4d4;">&nbsp;codfor&nbsp;&lt;&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">);</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <hr class="space">
+
+      <h2>LIKE - Selecionando de acordo com os textos</h2>
+
+      <p class="lead">A instrução <code>SELECT coluna1, coluna2, ... FROM tabela WHERE coluna LIKE "condição" </code> é usada para pesquisar e selecionar colunas com textos que tenha a condição especificada.</p>
+
+      <ul>
+        <li><strong>%</strong> - Representa zero, um ou mais caracteres quaisquer</li>
+        <li><strong>_</strong> - Representa um único caractere qualquer</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Seleciona&nbsp;todas&nbsp;as&nbsp;cidades&nbsp;que&nbsp;come&ccedil;am&nbsp;com&nbsp;b</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'b%'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Seleciona&nbsp;todas&nbsp;as&nbsp;cidades&nbsp;que&nbsp;terminam&nbsp;Com&nbsp;O</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%O'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Seleciona&nbsp;todas&nbsp;as&nbsp;cidades&nbsp;que&nbsp;tem&nbsp;o&nbsp;caractere&nbsp;a</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">where</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%a%'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Seleciona&nbsp;todas&nbsp;as&nbsp;raz&otilde;es&nbsp;sociais&nbsp;que&nbsp;tem&nbsp;a&nbsp;segunda&nbsp;letra&nbsp;e</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'_e%'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Seleciona&nbsp;todas&nbsp;as&nbsp;raz&otilde;es&nbsp;sociais&nbsp;que&nbsp;tem&nbsp;como&nbsp;antepen&uacute;ltima&nbsp;letra&nbsp;o&nbsp;caractere&nbsp;n</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%n__'</span><span style="color: #d4d4d4;">&nbsp;;</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Seleciona&nbsp;todos&nbsp;os&nbsp;CNPJs&nbsp;que&nbsp;come&ccedil;am&nbsp;com&nbsp;o&nbsp;n&uacute;mero&nbsp;5</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">where</span><span style="color: #d4d4d4;">&nbsp;cnpj&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'5%'</span><span style="color: #d4d4d4;">;</span></div>
+      </div> <br> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'b%'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>MYSQL Lab</td>
+            <td>Av. Tiradentes 888</td>
+            <td>Belo Horizonte</td>
+            <td>20045-000</td>
+            <td>MG</td>
+            <td>04645422461564</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>Betim</td>
+            <td>NULL</td>
+            <td>MG</td>
+            <td>24565425461587</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%O'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">where</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%a%'</span><span style="color: #d4d4d4;">;</span></p>
+
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Microsoft</td>
+            <td>Marginal Pinheiros 1054</td>
+            <td>São Paulo</td>
+            <td>19045-500</td>
+            <td>SP</td>
+            <td>95645562615645</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Sum Computer</td>
+            <td>Marginal Tiete 5454</td>
+            <td>São Paulo</td>
+            <td>52045</td>
+            <td>SP</td>
+            <td>95645562615648</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>David INC</td>
+            <td>Copacabana 1452</td>
+            <td>Rio de Janeiro</td>
+            <td>54000-800</td>
+            <td>RJ</td>
+            <td>27845422461564</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Presidencia for Systems</td>
+            <td>Av. Planalto 02</td>
+            <td>Brasília</td>
+            <td>02800-850</td>
+            <td>DF</td>
+            <td>12845422461564</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'_e%'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8</td>
+            <td>Nerd Computer Lab</td>
+            <td>Five Street 42</td>
+            <td>Betim</td>
+            <td>NULL</td>
+            <td>MG</td>
+            <td>24565425461587</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Team Corp.</td>
+            <td>Av. James T.154</td>
+            <td>New York</td>
+            <td>00154-536</td>
+            <td>NY</td>
+            <td>00560025400587</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;ragsoc&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%n__'</span><span style="color: #d4d4d4;">&nbsp;;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+        </tbody>
+      </table> <br>
+
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;fornecedores&nbsp;</span><span style="color: #569cd6;">where</span><span style="color: #d4d4d4;">&nbsp;cnpj&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'5%'</span><span style="color: #d4d4d4;">;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>LIMIT - Limitando o número de linhas da consulta</h2>
+
+      <p class="lead">O operador <code>LIMIT</code> é usado quando queremos limitar o números de linhas retornadas um uma consulta. Por exemplo, se quisermos que uma consulta retorne apenas uma linhas ao invés de várias, usamos a consulta <code>LIMIT 1</code>, e se quisermos que sejam retornadas até 10 linhas, usamos <code>LIMITE 10</code>. A sintaxe base é <code>SELECT coluna1, coluna2, ... FROM tabela (WHERE condição) LIMITE quantidade</code>. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;"> <br>
+      <p><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;Fornecedores&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;cidade&nbsp;</span><span style="color: #569cd6;">LIKE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'%O'</span><span style="color: #d4d4d4;"><span style="color: #569cd6;">LIMIT</span> <span style="color: #ce9178;">2</span>;</span></p>
+
+      <table class="table-sm table-responsive-sm table-dark table-striped table-bordered w-100">
+        <thead>
+          <tr>
+            <th>codfor</th>
+            <th>ragsoc</th>
+            <th>endereco</th>
+            <th>cidade</th>
+            <th>cep</th>
+            <th>estado</th>
+            <th>cnpj</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Google INC.</td>
+            <td>Av. Paulista 1542</td>
+            <td>São Paulo</td>
+            <td>00845-00</td>
+            <td>SP</td>
+            <td>54564556454564</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Aplle Computer</td>
+            <td>Marginal Pinheiros 10542</td>
+            <td>São Paulo</td>
+            <td>09045-00</td>
+            <td>SP</td>
+            <td>55564556454586</td>
+          </tr>
+        </tbody>
+      </table> <br>
+      </div>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

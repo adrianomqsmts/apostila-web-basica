@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Criando índices com MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Criando índices com MySQL</h1>
+
+      <p class="lead">Em banco de dados completos, ficar realizando constantes pesquisar podem acarretar em uma perda de desempenho, se toda a vez o sistema tive que buscar dos dados e ficar comparando as colunas. E em uma forma de otimizar, principalmente as pesquisas, surgiu a instrução <code>CREATE INDEX</code> para agilizar a pesquisa, evitando que o MySQL faça pesquisas olhando em todas as colunas. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;pos_time&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nm_time&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;est_time&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;qtde_vit&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;qtde_emp&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;qtde_der&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;gols_feitos&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;gols_sofridos&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;qtde_pontos&nbsp;</span><span style="color: #569cd6;">INT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Atl&eacute;tico'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'MG'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">11</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">32</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">14</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">35</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Corinthians'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">33</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Fluminense'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'RJ'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">15</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">30</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Sport'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'PE'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">26</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">15</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">29</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Atl&eacute;tico'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'PR'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">28</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Palmeiras'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">26</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">28</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'S&atilde;o&nbsp;Paulo'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">22</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">27</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Gr&ecirc;mio'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'RS'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">16</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">27</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Chapecoense'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SC'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">14</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">23</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Internacional'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'RS'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">16</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">21</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">11</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Flamengo'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'RJ'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">16</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">21</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Figueirense'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SC'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">15</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">19</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Ponte&nbsp;Preta'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">19</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">14</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Cruzeiro'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'MG'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">15</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Santos'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SP'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">21</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">24</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">16</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Ava&iacute;'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SC'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">16</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">24</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">17</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Goi&aacute;s'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'GO'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">16</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">14</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">18</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Joinville'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'SC'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">19</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">19</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Vasco'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'RJ'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">29</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Coritiba'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'PR'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">19</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+
+      <hr class="space">
+
+
+      <h2>CREATE INDEX - Criando índices</h2>
+
+      <p class="lead"> O comando <code>CREATE INDEX</code> é usado para criar index que otimizam as pesquisas em um banco de dados. A sua sintaxe base é <code>CREATE INDEX nome_index ON tabela (coluna1, coluna2,..);</code>. Em seguida para usar um índice em uma pesquisa, basta usar a instrução <code>USE INDEX nome_index</code>. A segunda forma de criar um índice é usando a instrução <code>ALTER TABLE tabela ADD INDEX nome_index (coluna1, coluna2, ...);</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE INDEX</span><span style="color: #d4d4d4;">&nbsp;times_index&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;(nm_time);</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;OU</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;<span style="color: #569cd6;">ADD INDEX</span>&nbsp;golsf_index&nbsp;(gols_feitos);</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--&nbsp;Usando&nbsp;o&nbsp;index&nbsp;para&nbsp;pesquisas</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nm_time,&nbsp;est_time,&nbsp;qtde_vit,&nbsp;gols_feitos,&nbsp;qtde_pontos&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;</span><span style="color: #569cd6;">USE INDEX</span><span style="color: #d4d4d4;">&nbsp;(brasil_index)&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;nm_time&nbsp;=&nbsp;</span><span style="color: #ce9178;">'GOI&Aacute;S'</span><span style="color: #d4d4d4;">;</span></div> <br>
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nm_time</th>
+              <th>est_time</th>
+              <th>qtde_vit</th>
+              <th>gols_feitos</th>
+              <th>qtde_pontos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Goiás</td>
+              <td>GO</td>
+              <td>3</td>
+              <td>13</td>
+              <td>14</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div> <br>
+
+      <p class="lead"> Podemos também usar múltiplas colunas em um index</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;INDEX&nbsp;index_triplo&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;(qtde_vit,&nbsp;qtde_emp,&nbsp;qtde_der);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nm_time,&nbsp;est_time,&nbsp;qtde_vit,&nbsp;gols_feitos,&nbsp;qtde_pontos&nbsp;</span><span style="color: #569cd6;">from</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;</span><span style="color: #569cd6;">USE</span><span style="color: #d4d4d4;">&nbsp;INDEX&nbsp;(index_triplo)&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;NM_TIME&nbsp;=&nbsp;</span><span style="color: #ce9178;">'ATL&Eacute;TICO'</span><span style="color: #d4d4d4;">;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nm_time</th>
+              <th>est_time</th>
+              <th>qtde_vit</th>
+              <th>gols_feitos</th>
+              <th>qtde_pontos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Atlético</td>
+              <td>MG</td>
+              <td>11</td>
+              <td>32</td>
+              <td>35</td>
+            </tr>
+            <tr>
+              <td>Atlético</td>
+              <td>PR</td>
+              <td>9</td>
+              <td>20</td>
+              <td>28</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>DROP INDEX - Removendo os índice</h2>
+
+      <p class="lead">A instrução <code>ALTER TABLE tabela DROP nome_index</code> é usado para remover o índice de uma tabela.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;</span><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;INDEX&nbsp;INDEX_TRIPLO;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;tabela_do_brasileirao&nbsp;</span><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;INDEX&nbsp;GOLS_INDEX;</span></div>
+      </div>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

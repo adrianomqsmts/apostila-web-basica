@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Apagando dados com MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Apagando dados com MySQL</h1>
+
+      <p class="lead">Com a instrução <code>DELETE</code> podemos apagar os dados de uma tabela que já foram previamente inseridos. A sintaxe base é <code>DELETE FROM tabela WHERE condição</code>. A cláusula <code>WHERE</code> é essencial, pois ao omití-la iremos pagar todos os dados. Usando uma condição, poderemos apagar somente os dados que a atenderem e não todos (a menos que deseje). A condição mais comum é deletar os dados pelo valor de sua chave primária, pois é único.</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto,&nbsp;nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Teclado'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #ce9178;">'Mouse'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">values</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Monitor'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">99</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #6a9955;">--Buscando&nbsp;todas&nbsp;as&nbsp;colunas&nbsp;da&nbsp;tabela</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Teclado</td>
+              <td>10.5</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mouse</td>
+              <td>9.9</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Monitor</td>
+              <td>99.9</td>
+            </tr>
+          </tbody>
+        </table> <br>
+        <div><span style="color: #6a9955;">--&nbsp;Apagando&nbsp;o&nbsp;produto&nbsp;com&nbsp;ID&nbsp;3</span></div>
+        <div><span style="color: #569cd6;">DELETE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;=&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Teclado</td>
+              <td>10.5</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mouse</td>
+              <td>9.9</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #6a9955;">--&nbsp;Apagando&nbsp;todos&nbsp;os&nbsp;produtos&nbsp;com&nbsp;id&nbsp;igual&nbsp;o&nbsp;menor&nbsp;que&nbsp;2</span></div>
+        <div><span style="color: #569cd6;">DELETE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div> <br>
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NULL</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>ON DELETE RESTRICT - Mantendo a consistência dos dados</h2>
+
+      <p class="lead">A restrição <code>ON DELETE RESTRICT</code> já é inserida por padrão em chaves estrangeiras, e impede que a chave primária, que seja estrangeira em outra tabela, seja apagada. Basicamente não podemos apagar a chave primária, a menos que atualizemos ou apaguemos todos as chaves estrangeiras ligadas à ela. </p>
+
+      <hr class="space">
+
+      <h2>ON DELETE CASCADE -Mantendo a consistência dos dados</h2>
+
+      <p class="lead">A restrição <code>ON DELETE CASCADE</code> é usada quando queremos que, ao deletar uma chave primária, todas as chaves estrangeiras ligadas àquela chave, também sejam deletadas automáticamente.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pais(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_pais&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_pais&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;usuario(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_usuario&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_user&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_pais&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">CONSTRAINT</span><span style="color: #d4d4d4;">&nbsp;FK_USUARIO_PAIS5&nbsp;</span><span style="color: #569cd6;">FOREIGN&nbsp;KEY</span><span style="color: #d4d4d4;">&nbsp;(COD_PAIS)&nbsp;</span><span style="color: #569cd6;">REFERENCES</span><span style="color: #d4d4d4;">&nbsp;PAIS5&nbsp;(COD_PAIS)&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">DELETE CASCADE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;pais&nbsp;(cod_pais,&nbsp;nome_pais)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Brasil'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Paraguai'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Chile'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;usuario&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Pablo'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Jo&atilde;o'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Maria'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;PAIS;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_pais</th>
+              <th>nome_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Brasil</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Paraguai</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Chile</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;USUARIO;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_usuario</th>
+              <th>nome_user</th>
+              <th>cod_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Pablo</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>João</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Maria</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+        <div><span style="color: #6a9955;">--&nbsp;Apagando&nbsp;o&nbsp;pa&iacute;s&nbsp;com&nbsp;c&oacute;digo&nbsp;2</span></div>
+        <div><span style="color: #569cd6;">DELETE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;PAIS&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;COD_PAIS&nbsp;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">;</span></div> <br>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;PAIS;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_pais</th>
+              <th>nome_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Brasil</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Chile</td>
+            </tr>
+          </tbody>
+        </table> <br>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;USUARIO;</span></div> <br>
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered"> <br>
+          <thead>
+            <tr>
+              <th>cod_usuario</th>
+              <th>nome_user</th>
+              <th>cod_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>João</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Maria</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>ON DELETE SET NULL - -Mantendo a consistência dos dados</h2>
+
+      <p class="lead">A restrição <code>ON DELETE SET NULL</code> é usada quando queremos evitar que, ao apagarmos a chave primária, as linhas de dados das chaves estrangeiras também sejam removidas como ocorre na restrição <code>ON DELETE CASCADE</code>. Ao usarmos a restrição, ao removermos a chave primária, todas as chaves estrangeiras terão os seus valores alterados para <code>NULL</code>, desde que, a coluna permita valores nulos, ou seja, ela não contenha a restrição <code>NOT NULL</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pais(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_pais&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_pais&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;usuario(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_usuario&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_user&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_pais&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">CONSTRAINT</span><span style="color: #d4d4d4;">&nbsp;FK_USUARIO_PAIS5&nbsp;</span><span style="color: #569cd6;">FOREIGN&nbsp;KEY</span><span style="color: #d4d4d4;">&nbsp;(COD_PAIS)&nbsp;</span><span style="color: #569cd6;">REFERENCES</span><span style="color: #d4d4d4;">&nbsp;PAIS5&nbsp;(COD_PAIS)&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">DELETE SET NULL</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;pais&nbsp;(cod_pais,&nbsp;nome_pais)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Brasil'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Paraguai'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Chile'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;usuario&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Pablo'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Jo&atilde;o'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Maria'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;PAIS;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_pais</th>
+              <th>nome_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Brasil</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Paraguai</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Chile</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;USUARIO;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_usuario</th>
+              <th>nome_user</th>
+              <th>cod_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Pablo</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>João</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Maria</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+        <div><span style="color: #6a9955;">--&nbsp;Apagando&nbsp;o&nbsp;pa&iacute;s&nbsp;com&nbsp;c&oacute;digo&nbsp;2</span></div>
+        <div><span style="color: #569cd6;">DELETE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;PAIS&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;COD_PAIS&nbsp;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">;</span></div> <br>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;PAIS;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_pais</th>
+              <th>nome_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Brasil</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Chile</td>
+            </tr>
+          </tbody>
+        </table> <br>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;USUARIO;</span></div> <br>
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>cod_usuario</th>
+              <th>nome_user</th>
+              <th>cod_pais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Pablo</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>João</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Maria</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

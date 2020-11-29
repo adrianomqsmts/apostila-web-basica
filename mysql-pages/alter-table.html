@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Alterando tabelas com MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Alterando tabelas com MySQL</h1>
+
+      <p class="lead">A instrução <code>ALTER TABLE</code> é usada para alterar a estrutura de uma tabela, desde as restrições de uma coluna, até remoção de colunas.</p>
+
+      <hr class="space">
+
+      <h3>RENAME TO - Renomeando uma tabela</h3>
+
+      <p class="lead">A instrução <code>ALTER TABLE nomeTable RENAME (AS ou TO) novoNome;</code> é usado para alterar o nome de uma table já existente para um novo nome especificado na instrução.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;RENAME&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;equipamentos;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>CHANGE COLUMN - Renomeando e alterando uma coluna</h3>
+
+      <p class="lead">A instrução <code>ALTER TABLE nomeTable CHANGE COLUMN nomeColuna novaColuna tipoDados restrições;</code> pode ser usada para simplesmente alterar o nome de uma coluna, alterar o nome e os tipos de dados, ou alterar nome, tipo de dados e as restrições daquela coluna, dentre outras possibilidades.</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;RENAME&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;equipamentos;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_produto&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;nome&nbsp;modelo&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_equipamento&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;UNIQUE&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>ADD COLUMN - Adicionando uma nova coluna</h3>
+
+      <p class="lead"> A instrução <code>ALTER TABLE nomeTable ADD COLUMN novColuna tipoDados restrições;</code> é usda para adicionar uma novo coluna em uma tabela com os tipos de dados e as restrições já atribuídos.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;RENAME&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;equipamentos;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_produto&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;nome&nbsp;modelo&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_equipamento&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;UNIQUE&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;descricao&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">;</span></div>
+      </div> <br>
+
+      <p class="lead">Podemos criar ainda mais de uma coluna ao mesmo tempo com a sintaxe abaixo</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;RENAME&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;equipamentos;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_produto&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;nome&nbsp;modelo&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_equipamento&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;UNIQUE&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;descricao&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;marca&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_serie&nbsp;</span><span style="color: #569cd6;">INT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+
+      <hr class="space">
+
+      <h3>MODIFY COLUMN - Modificando uma coluna</h3>
+
+      <p class="lead">A instrução <code>ALTER TABLE NomeTable MODIFY COLUMN nomeColuna tipoDados restrições</code> é usada para modificar o tipo de dados e/ou restrições de uma coluna, sem ter que alterar o seu nome como na instrução <code>CHANGE COLUMN </code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;RENAME&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;equipamentos;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_produto&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;nome&nbsp;modelo&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_equipamento&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;UNIQUE&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;descricao&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;marca&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_serie&nbsp;</span><span style="color: #569cd6;">INT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;</span><span style="color: #569cd6;">MODIFY</span><span style="color: #d4d4d4;">&nbsp;COLUMN&nbsp;preco&nbsp;</span><span style="color: #569cd6;">DECIMAL</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>DROP COLUMN - Apagando uma coluna</h3>
+
+      <p class="lead">A instrução <code>ALTER TABLE nomeTable DROP COLUMN nomeColuna</code> irá remover a coluna especificada. Lembrando que colunas com chaves primárias não podem ser removidas, a menos que a chave primária seja removida antes.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;RENAME&nbsp;</span><span style="color: #569cd6;">TO</span><span style="color: #d4d4d4;">&nbsp;equipamentos;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_produto&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;nome&nbsp;modelo&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;CHANGE&nbsp;COLUMN&nbsp;id_equipamento&nbsp;id_equipamento&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;UNIQUE&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;descricao&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;ADD&nbsp;COLUMN&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;marca&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_serie&nbsp;</span><span style="color: #569cd6;">INT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;</span><span style="color: #569cd6;">MODIFY</span><span style="color: #d4d4d4;">&nbsp;COLUMN&nbsp;preco&nbsp;</span><span style="color: #569cd6;">DECIMAL</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;equipamentos&nbsp;</span><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;COLUMN&nbsp;descricao;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>Tabla final</h3>
+
+      <table class="table table-sm table-responsive-sm table-striped text-center text-white bg-dark">
+        <tr>
+          <th>id_equipamento</th>
+          <th>modelo</th>
+          <th>preco</th>
+          <th>marca</th>
+          <th>num_serie</th>
+        </tr>
+      </table>
+
+      <hr class="space">
+
+      <h3>ALTER TABLE - Chaves Primárias e Chaves Estrangeiras</h3>
+
+      <p class="lead">Para trabalharmos com chaves primárias e estrangeiras precisaremos de alguns cuidados que iremos listar abaixo. Mas o mais importante é o uso da instrução <code>constraint</code> para criar um nome para as chaves, pois são muito úteis na hora de remover as chaves ou alterá-las.</p>
+
+      <hr class="space">
+
+      <h4>ALTER TABLE - Adicionando uma chave primária </h4>
+
+      <p class="lead">O comando <code>ALTER TABLE nome_tabela ADD [constraint[nome_constraint]] primary key (nome_coluna1, nome_coluna2...)</code> é usado para inserir uma chave primária à uma coluna já existente, onde o parâmetro <code>[constraint[nome_constraint]] </code> é opcional, mas recomendado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;bancos&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">TEXT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;pk_banco&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;(numero);</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;OU&nbsp;</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;(numero);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h4>ALTER TABLE - Adicionando uma chave estrangeira</h4>
+
+      <p class="lead">A instrução<code>ALTER TABLE nome_tabela ADD [constraint[nome_constraint]] foreign key (colunaAtual) references outraTable (colunaOutraTabela)</code> é usada para adicionar uma chave estrangeira à uma coluna já existente, onde o parâmetro <code>[constraint[nome_constraint]]</code> é opcional, mas recomendado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;bancos&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">TEXT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;pk_banco&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;(numero);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;transacao(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_transacao&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;valor&nbsp;</span><span style="color: #569cd6;">NUMERIC</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;tipo&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_banco&nbsp;</span><span style="color: #569cd6;">INT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;EX:</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;transacao&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;fk_transacao_banco&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(num_banco)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;(numero);</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h4>ALTER TABLE - Adicionando restrição UNIQUE</h4>
+
+      <p class="lead">Seguindo a mesma lógica dos comandos acima, podemos usar a instrução <code>ALTER TABLE nomeTable ADD [constraint[nome_constraint]] UNIQUE nomeColuna</code> para definir uma coluna já existente com única, lembrando que isto pode ser feito também por <CODE>MODIFY</CODE> ou <code>RENAME TO</code>. Entretanto sem a possibilidade de adicionar o <code>[constraint[nome_constraint]]</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;bancos&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">not</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;endereco&nbsp;</span><span style="color: #569cd6;">TEXT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;pk_banco&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;(numero);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;uniq_nome&nbsp;UNIQUE&nbsp;(nome);</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;OU&nbsp;--</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ADD&nbsp;UNIQUE&nbsp;(nome)</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h4>ALTER TABLE - Removendo chaves estrangeiras</h4>
+
+      <p class="lead">Para remover chaves estrangeiras precisamos primeiro ter o nome da chave estrangeira <code>[nome_constraint]</code>, caso não tenhamos, precisamos encontrá-la dentro do nosso SGBD, usando um comando complexo, e após encontrar o nome, basta usar a instrução <code>ALTER TABLE nomeTable DROP foreign key [nome_constraint]</code> para remover a chave estrangeira (e não a coluna) que estava ligada a outra tabela.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;transacao(</span>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_transacao&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;valor&nbsp;</span><span style="color: #569cd6;">NUMERIC</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;tipo&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_banco&nbsp;</span><span style="color: #569cd6;">INT</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;transacao&nbsp;ADD&nbsp;</span><span style="color: #569cd6;">constraint</span><span style="color: #d4d4d4;">&nbsp;fk_transacao_banco&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(num_banco)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;(numero);</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;Comando&nbsp;para&nbsp;encontrar&nbsp;o&nbsp;nome&nbsp;da&nbsp;constraint&nbsp;da&nbsp;chave&nbsp;estrangeira</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;information_schema.table_constraints&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;constraint_schema&nbsp;=&nbsp;</span><span style="color: #ce9178;">'apostila'</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">AND</span><span style="color: #d4d4d4;">&nbsp;table_name&nbsp;=&nbsp;</span><span style="color: #ce9178;">'transacao'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #6a9955;">--&nbsp;Comando&nbsp;para&nbsp;remover&nbsp;a&nbsp;chave&nbsp;estrangeira</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;transacao&nbsp;</span><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;fk_transacao_banco;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>ALTER TABLE - Adicionando e removendo o DEFAULT</h3>
+
+      <p class="lead">Para adicionar o DEFAULT em uma coluna já existente precisamos executar a instrução <code>ALTER TABLE nomeTabela ALTER COLUMN nomeColuna SET DEFAULT valorPadrão</code> e para remover valores DEFAULT precisamos executar a instrução <code>ALTER TABLE nomeTabela ALTER COLUMN nomeColuna DROP DEFAULT</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--Adionando&nbsp;valores&nbsp;padr&otilde;es</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ALTER&nbsp;COLUMN&nbsp;nome&nbsp;</span><span style="color: #569cd6;">SET</span><span style="color: #d4d4d4;">&nbsp;DEFAULT&nbsp;</span><span style="color: #ce9178;">'banco&nbsp;s/a'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #6a9955;">--Removendo&nbsp;valores&nbsp;pad&otilde;res</span></div>
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;banco&nbsp;ALTER&nbsp;COLUMN&nbsp;nome&nbsp;</span><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;DEFAULT;</span></div>
+      </div>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

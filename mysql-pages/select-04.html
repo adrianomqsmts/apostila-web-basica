@@ -1,0 +1,491 @@
+<!--LIKE - WILDCARDS-->
+
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Trabalhando com múltiplas consultas MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Trabalhando com múltiplas consultas MySQL</h1>
+
+      <p class="lead">O MySQL nos permite trabalhar com múltiplas consultas em uma única consulta através dos operadores <code>UNION</code>, <code>ANY</code>, <code>ALL</code>, <code>EXISTS</code></p>
+
+      <hr class="space">
+
+      <h2>UNION - Unindo duas consultas</h2>
+
+      <p class="lead">O operador <code>UNION</code> é usado para juntar o resultado de uma consulta com outro consulta, gerando um tabela com os dados de ambas as consulta, sem repetição. Ou seja, se existem uma linha idêntica na tabela a e na b, o resultado será unificado em uma única linha. A sintaxe base é <code>(SELECT coluna1, coluna2,... FROM tabelaA WHERE condição) UNION (SELECT coluna1, coluna2,... FROM tabelaA WHERE condição) (order by)</code>, onde a cláusula <code>WHERE</code> e o <code>ORDER BY</code> são opcionais. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;a(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;b(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;numero&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;a&nbsp;</span><span style="color: #569cd6;">VALUES</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Fulano"</span><span style="color: #d4d4d4;">),&nbsp;(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Sicrano"</span><span style="color: #d4d4d4;">),&nbsp;(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Beltrano"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;b&nbsp;</span><span style="color: #569cd6;">VALUES</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Fulano"</span><span style="color: #d4d4d4;">),&nbsp;(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Ze"</span><span style="color: #d4d4d4;">),&nbsp;(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Beltrano"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;a;</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>numero</th>
+              <th>nome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Fulano</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Sicrano</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Beltrano</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;b;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>numero</th>
+              <th>nome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>Fulano</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Ze</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Beltrano</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;numero&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;a)&nbsp;</span><span style="color: #569cd6;">UNION</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;numero&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;b);</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>numero</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;a)&nbsp;</span><span style="color: #569cd6;">UNION</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;b)&nbsp;</span><span style="color: #569cd6;">ORDER&nbsp;BY</span><span style="color: #d4d4d4;">&nbsp;nome;</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beltrano</td>
+            </tr>
+            <tr>
+              <td>Fulano</td>
+            </tr>
+            <tr>
+              <td>Sicrano</td>
+            </tr>
+            <tr>
+              <td>Ze</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>UNION ALL</h2>
+
+      <p class="lead">O operador <code>UNION ALL</code> é semelhante ao <code>UNION</code>, entretanto ele não "esconde" as linhas de dados repetidas, ele mostra todas as linhas de dados de ambas as consultas, independentemente se possuem os mesmo dados ou não. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;"> <br>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;a&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;numero&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">UNION&nbsp;ALL</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;nome&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;b);</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>nome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fulano</td>
+            </tr>
+            <tr>
+              <td>Ciclano</td>
+            </tr>
+            <tr>
+              <td>Fulano</td>
+            </tr>
+            <tr>
+              <td>Ze</td>
+            </tr>
+            <tr>
+              <td>Beltrano</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>EXISTS - Verificando consultas</h2>
+
+      <p class="lead">O operador <code>EXISTS</code> [e usado para verificar se uma consulta retorna algum dado ou não, podendo ser usada em conjunto com a condição <code>WHERE</code> para selecionar dados, se e somente se, existirem dados em uma outra tabela. A sua sintaxe base é <code>SELECT coluna1, coluna2,... FROM tabela WHERE EXISTES (SELECT coluna1, coluna2, ... FROM tabela WHERE condição)</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;produtos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">--&nbsp;Chave&nbsp;prim&aacute;ria&nbsp;do&nbsp;produto</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">&nbsp;auto_increment,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">TEXT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;preco&nbsp;DOUBLE</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;pedidos(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">--&nbsp;Chave&nbsp;prim&aacute;ria&nbsp;do&nbsp;pedido</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_pedido&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;quantidade&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">--&nbsp;Criando&nbsp;uma&nbsp;chave&nbsp;estrageira&nbsp;do&nbsp;produto&nbsp;no&nbsp;pedido</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(id_produto)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;(id_produto)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;Produtos&nbsp;(id_produto,&nbsp;nome,&nbsp;preco)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Celular&nbsp;SA100'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Carteira&nbsp;de&nbsp;Couro'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">145</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'HD&nbsp;Externo'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">240</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Pen-Drive'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">150</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">00</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;Pedidos&nbsp;(id_pedido,&nbsp;id_produto,&nbsp;quantidade)&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1010</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1020</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1030</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2020</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3030</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Celular SA100</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>HD Externo</td>
+              <td>240</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Pen-Drive</td>
+              <td>150</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;pedidos;&nbsp;</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_pedido</th>
+              <th>id_produto</th>
+              <th>quantidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1010</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>1020</td>
+              <td>2</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>1030</td>
+              <td>4</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3030</td>
+              <td>3</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="space">
+
+        <div><span style="color: #6a9955;">--&nbsp;Ir&aacute;&nbsp;&nbsp;selecionar&nbsp;os&nbsp;dados&nbsp;de&nbsp;todos&nbsp;os&nbsp;produtros&nbsp;se&nbsp;existir&nbsp;&nbsp;um&nbsp;produto&nbsp;com&nbsp;pre&ccedil;o&nbsp;menor&nbsp;que&nbsp;100</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">EXISTS</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;preco&nbsp;&lt;&nbsp;</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NULL</td>
+              <td>NULL</td>
+              <td>NULL</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #6a9955;">--&nbsp;Ir&aacute;&nbsp;selecionar&nbsp;todos&nbsp;os&nbsp;produtos&nbsp;se&nbsp;n&atilde;o&nbsp;existir&nbsp;nenhum&nbsp;produto&nbsp;com&nbsp;pre&otilde;&nbsp;inferior&nbsp;a&nbsp;100</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">EXISTS</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;preco&nbsp;&lt;&nbsp;</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">);</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Celular SA100</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>HD Externo</td>
+              <td>240</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Pen-Drive</td>
+              <td>150</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>ANY - Selecionando se existir entre alguns dados</h2>
+
+      <p class="lead">O operador <code>ANY</code> é usado junto com a cláusula <code>WHERE</code> e um operador lógico. O operador em conjunto com uma sub-consulta, retornará uma coluna de dados, e dada a condição estabelecida na cláusula <code>WHERE</code>, se a condição for satisfeita, então a linha de dados será selecionada, caso contrário a linha de dados que não satisfazer a condição proposta não será selecionada. A estrutura base é <code>SELECT coluna1, coluna2,... FROM table WHERE condição ANY (SELECT coluna FROM tabela WHERE condição)</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Resultado&nbsp;da&nbsp;sub-consulta</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;pedidos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #6a9955;">--&nbsp;Ir&aacute;&nbsp;selecionar&nbsp;os&nbsp;produtros&nbsp;que&nbsp;tiverem&nbsp;algum&nbsp;ID&nbsp;igual&nbsp;ao&nbsp;resultado&nbsp;da&nbsp;sub-consulta&nbsp;</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;=&nbsp;ANY&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;pedidos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">);</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Celular SA100</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+      <hr class="space">
+
+      <h2>ALL - Seleciona se existir em todos os dados</h2>
+
+      <p class="lead">O operador <code>ALL</code> é igual ao operador <code>ANY</code>, com a diferença que a linha de dados só será exibida, se, e somente se, a condição for verdadeira para todas as linhas de dados para a sub-consulta e não somente algumas.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Resultado&nbsp;da&nbsp;sub-consulta</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;pedidos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+        <div><span style="color: #6a9955;">--&nbsp;Ir&aacute;&nbsp;selecionar&nbsp;todos&nbsp;os&nbsp;produtos&nbsp;cujo&nbsp;o&nbsp;ID&nbsp;&eacute;&nbsp;igual&nbsp;a&nbsp;todos&nbsp;os&nbsp;ID&nbsp;da&nbsp;subconsulta</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;produtos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;=&nbsp;ALL&nbsp;(</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;pedidos&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #d4d4d4;">&nbsp;id_produto&nbsp;=&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">);</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>id_produto</th>
+              <th>nome</th>
+              <th>preco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2</td>
+              <td>Carteira de Couro</td>
+              <td>145</td>
+            </tr>
+          </tbody>
+        </table> <br>
+      </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>
