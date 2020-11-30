@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" class="h-100">
 
     <head>
         <!-- Required meta tags -->
@@ -14,14 +14,14 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="main.js"></script>
         <style>
-            .afe {
+            /* .afe {
                 height: 100vh;
                 background-image: url(imagens/code00.jpg);
                 background-repeat: no-repeat;
                 background-size: 100% 130vh;
             }
 
-            /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+         
             @media screen and (max-width: 600px) {
                 .afe {
                     background-size: 120vh 150vh;
@@ -31,13 +31,13 @@
                 .display-2 {
                     font-size: 400%;
                 }
-            }
+            } */
 
         </style>
 
     </head>
 
-    <body class="bg-darkblue text-white">
+    <body class="bg-darkblue text-white h-100">
 
         <div id="menu"> </div>
 
@@ -45,14 +45,15 @@
             criarMenuPrincipal();
         </script>
 
-        <section class="container-md">
-            <div class="pt-5 afe d-flex align-items-center text-center flex-wrap text-break">
-                <h1 class="display-2 pt-3 pb-5 mt-5 w-100 bg-darkviolet transparency">Apostila de Programação WEB</h1>
+        <section class="container-md h-100">
+            <div class="d-flex justify-content-center align-content-center flex-wrap h-100 img-fluid text-wrap text-break text-center" style="background-image: url(imagens/code00.jpg); background-repeat: no-repeat; background-size: cover;">
+                <h1 class="display-3 p-0 pt-4 pb-5 m-0 bg-darkviolet w-100 transparency">Apostila de Programação WEB</h1>
                 <small class="transparency"><span>Photo by <a href="https://unsplash.com/@m4r1vs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Marius Niveri</a> on <a href="https://unsplash.com/s/photos/code?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></small>
             </div>
+  
 
-            <div class="card-deck mt-3 m-md-2 bg-transparent">
-                <div class="card bg-transparent m-md-0  border-white">
+            <div class="card-columns bg-transparent">
+                <div class="card bg-transparent border-white">
                     <img class="card-img-top" src="imagens/code01.jpg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">HTML5</h4>
@@ -103,11 +104,40 @@
                     </div>
                 </div>
 
-            </div>
+                <div class="card bg-transparent border-white">
+                    <img class="card-img-top" src="imagens/code05.jpg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">PHP 7</h4>
+                        <p class="card-text">Apostila de PHP desde a programação básica, até a interação com formulários enviados pelos usuários, acesso a banco de dados e páginas síncronas e assíncronas com o AJAX.
+                        </p>
+                        <a href="php-pages/introducao.html" class="card-link btn btn-outline-light btn-block bg-darkviolet m-auto">Acessar</a>
 
+                    </div>
+                    <div class="card-footer text-muted small">
+                        <span>Photo by <a href="https://unsplash.com/@mackjohns01?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mack Johns</a> on <a href="https://unsplash.com/s/photos/data?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                    </div>
+                </div>
+
+                <div class="card bg-transparent border-white">
+                    <img class="card-img-top" src="imagens/code06.jpg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">MySQL</h4>
+                        <p class="card-text">Apostila de MySQL com todas as principais consultas, e uma visita ao CRUD completo. Veremos comandos básicos e até complexos, desde uma simples consulta, até a modelagem de um banco de dados.
+                        </p>
+                        <a href="mysql-pages/introducao.html" class="card-link btn btn-outline-light btn-block bg-darkviolet m-auto">Acessar</a>
+
+                    </div>
+                    <div class="card-footer text-muted small">
+                        <span>Photo by <a href="https://unsplash.com/@benjaminlehman?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">benjamin lehman</a> on <a href="https://unsplash.com/s/photos/databases?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="rodape"></div>
         </section>
 
-        <div id="rodape"></div>
+
+
         <script>
             rodape();
         </script>

@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Banco de dados com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Banco de dados com PHP</h1>
+
+      <p class="lead">Usaremos o sistema de banco de dados MySQL, que tem como estrutura o armazenamento de dados em tabelas com colunas e linhas. Existem duas principais formas de conectar a páginas PHP a um banco de dados, a primeira é o MySQLi e a segunda forma é o PDO. Ambos possuem vantagem e desvantagem e existem diversas discussões sobre qual a melhor para a sua aplicação e cabe você a decidir isto. </p>
+
+      <p class="lead">Por tanto, iremos abordar as três formas neste pequeno tutorial. Sim, não escrevi errado, pois o MySQLi pode ser orientado a objetos ou estrutural, então existem "três formas de fazer a mesma coisa".</p>
+
+      <hr class="space">
+
+      <h2>Conectando ao Banco de dados</h2>
+
+      <p class="lead">O primeira passos quando se trabalha com banco de dados é iniciar a conexão com o banco de dados.</p>
+
+      <h3>mysqli() - Conectando com MySQLi orientado a objetos</h3>
+
+      <p class="lead">O objeto <code>mysqli($servidor, $usuario, $senha, $nome_banco)</code> é usado para criar um objeto de conexão com o banco de dados.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;mysqli($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;n&atilde;o&nbsp;ao&nbsp;criar&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($conn-&gt;connect_error)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$conn-&gt;connect_error);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;que&nbsp;a&nbsp;conex&atilde;o&nbsp;foi&nbsp;um&nbsp;sucesso</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Conex&atilde;o&nbsp;estabelecida&nbsp;com&nbsp;sucesso."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <h3>mysqli_connect() - Conectando com o MySQLi procedural</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;mysqli_connect($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;seja,&nbsp;conn&nbsp;&eacute;&nbsp;false</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!$conn)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;mysqli_connect_error());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;que&nbsp;a&nbsp;conex&atilde;o&nbsp;foi&nbsp;um&nbsp;sucesso</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Conex&atilde;o&nbsp;estabelecida&nbsp;com&nbsp;sucesso."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div><br>
+
+      <h3>PDO() - Conectando com o PDO</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Iremos&nbsp;tentar&nbsp;fazer&nbsp;a&nbsp;conex&atilde;o.&nbsp;Em&nbsp;caso&nbsp;de&nbsp;erro,&nbsp;iremos&nbsp;captur&aacute;-lo.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">try</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o&nbsp;-&nbsp;devemos&nbsp;dizer&nbsp;tamb&eacute;m&nbsp;o&nbsp;nome&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados&nbsp;que&nbsp;iremos&nbsp;conectar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;PDO(</span><span style="color: #ce9178;">"mysql:host=$servername;dbname=$dbname"</span><span style="color: #d4d4d4;">,&nbsp;$username,&nbsp;$password);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$conn-&gt;setAttribute(PDO::ATTR_ERRMODE,&nbsp;PDO::ERRMODE_EXCEPTION);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Conex&atilde;o&nbsp;estabelecida&nbsp;com&nbsp;sucesso."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">catch</span><span style="color: #d4d4d4;">&nbsp;(PDOException&nbsp;$e)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$e-&gt;getMessage();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Fechando a conexão com o banco de dados</h2>
+
+      <p class="lead">A conexão geralmente é fechada automáticamente após a execução do script, e caso queira fechar antes, ou garantir que a conexão seja fechada para evitar quaisquer problemas futuros, use os comandos abaixo. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//MySQLi&nbsp;OO</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn-&gt;close();&nbsp;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//MySQLi&nbsp;Procedural</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_close($conn);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//PDO</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;&nbsp;</span></div>
+      </div>
+
+      <hr class="space">
+      <h2>Instruções preparadas</h2>
+
+      <p class="lead">Instruções preparadas (Prepared Statements) é uma forma de tornamos nossas consultas mais seguras, eficientes e modulares, pois nos permitem escrever instruções SQL com parâmetros variáveis e não uma consulta estática. </p>
+
+      <p class="lead">Assim que uma instrução preparada é criada, ela já é enviada para o banco de dados com certos parâmetros pendentes, e desta forma o próprio banco analisa e otimiza a consulta sem executá-la, esperando apenas os parâmetros restantes para executá-la. Este processo gera um ganho em desempenho, pois a consulta já está otimizada e já no banco de dados, além de reduzir o tamanho da banda, pois somente um parte da consulta é enviada a cada nova instrução SQL.</p>
+
+      <p class="lead">Por fim, as instruções preparadas são úteis contra SQL injection, pois o modelo SQL já está dentro do banco de dados, assim, caso haja um modelo de instrução diferente do original, a injeção SQL não poderá ocorrer. Para ler um artigo completo sobre SQL Injection e como tratá-lo, acesse <a href="https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection">PHP MySQLi Prepared Statements Tutorial to Prevent SQL Injection</a>.</p>
+
+      <p class="lead">Os nossos exemplo abaixo, já estão com instruções preparadas aplicadas.</p>
+
+      <hr class="space">
+
+      <h2>INSERT - Inserindo dados no Banco de Dados</h2>
+
+      <p class="lead">Para inserir dados bastamos criar uma string contendo o comando SQL e executar o comando. O mesmo processo pode ser usado para criar tabelas e até mesmo um nome para banco de dados, caso preferir. Após a execução precisamos fechar a instrução preparada para evitar quaisquer problemas futuros. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;testes&nbsp;(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cpf&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">14</span><span style="color: #d4d4d4;">)&nbsp;&nbsp;</span><span style="color: #569cd6;">PRIMARY</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">KEY</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;idade&nbsp;</span><span style="color: #569cd6;">SMALLINT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;sexo&nbsp;</span><span style="color: #569cd6;">CHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #569cd6;">NOT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">NULL</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <h3>prepare() e bind_param() - Inserindo dados com MySQLi Orientado a Objetos </h3>
+
+      <p class="lead">O método <code>bind_param()</code> irá ligar as variáveis esperadas ao tipo de dados do primeiro parâmetro da função que pode ser: </p>
+
+      <ul>
+        <li><strong>i</strong> - integer</li>
+        <li><strong>d</strong> - double</li>
+        <li><strong>s</strong> - string</li>
+        <li><strong>b</strong> - BLOB</li>
+      </ul>
+
+      <p class="lead">Assim, <code>bond_param("sdi", $var1, $var2, $var3)</code> estará esperando que a primeira variável seja do tipo <code>string</code>, que a segunda seja do tipo <code>double</code>, e que a terceira variável seja do tipo <code>integer</code>, minimizando assim, as chaves de SQL Injection.</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;mysqli($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;n&atilde;o&nbsp;ao&nbsp;criar&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($conn-&gt;connect_error)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$conn-&gt;connect_error);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Cria&nbsp;uma&nbsp;instru&ccedil;&atilde;o&nbsp;preparada&nbsp;que&nbsp;espera&nbsp;4&nbsp;par&acirc;metros&nbsp;(?)</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare(</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">INSERT</span><span style="color: #ce9178;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #ce9178;">&nbsp;testes&nbsp;(cpf,&nbsp;nome,&nbsp;idade,&nbsp;sexo)&nbsp;</span><span style="color: #569cd6;">VALUES</span><span style="color: #ce9178;">&nbsp;(?,&nbsp;?,&nbsp;?,&nbsp;?)</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bind_param(</span><span style="color: #ce9178;">"ssis"</span><span style="color: #d4d4d4;">,$cpf,&nbsp;$nome,&nbsp;$idade,&nbsp;$sexo);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Atribuindo&nbsp;os&nbsp;par&acirc;metros&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">"123.123.123-09"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;de&nbsp;Tal"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">89</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$sexo&nbsp;=&nbsp;</span><span style="color: #ce9178;">"M"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Executando&nbsp;a&nbsp;Instru&ccedil;&atilde;o&nbsp;SQL</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Os&nbsp;dados&nbsp;Foram&nbsp;inseridos&nbsp;com&nbsp;sucesso!"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;close();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn-&gt;close();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <h3>mysqli_prepare() e mysqli_stmt_bind_param() - Inserindo dados com MySQLi procedural</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;mysqli_connect($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;seja,&nbsp;conn&nbsp;&eacute;&nbsp;false</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!$conn)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;mysqli_connect_error());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">INSERT</span><span style="color: #ce9178;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #ce9178;">&nbsp;testes&nbsp;(cpf,&nbsp;nome,&nbsp;idade,&nbsp;sexo)&nbsp;</span><span style="color: #569cd6;">VALUES</span><span style="color: #ce9178;">&nbsp;(?,&nbsp;?,&nbsp;?,&nbsp;?)</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;uma&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;mysqli_prepare($conn,&nbsp;$sql);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_bind_param($stmt,</span><span style="color: #ce9178;">"ssis"</span><span style="color: #d4d4d4;">,$cpf,&nbsp;$nome,&nbsp;$idade,&nbsp;$sexo);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Atribuindo&nbsp;os&nbsp;par&acirc;metros&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">"397.563.987-10"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Sicrano&nbsp;da&nbsp;Silva"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">27</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sexo&nbsp;=&nbsp;</span><span style="color: #ce9178;">"M"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Executando&nbsp;a&nbsp;Instru&ccedil;&atilde;o&nbsp;SQL</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_execute($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Os&nbsp;dados&nbsp;Foram&nbsp;inseridos&nbsp;com&nbsp;sucesso!"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_close($stmt);&nbsp;&nbsp;&nbsp;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_close($conn);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+      <h3>prepare() e bindParam() - Inserindo dados com PDO</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Iremos&nbsp;tentar&nbsp;fazer&nbsp;a&nbsp;conex&atilde;o.&nbsp;Em&nbsp;caso&nbsp;de&nbsp;erro,&nbsp;iremos&nbsp;captur&aacute;-lo.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">try</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o&nbsp;-&nbsp;devemos&nbsp;dizer&nbsp;tamb&eacute;m&nbsp;o&nbsp;nome&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados&nbsp;que&nbsp;iremos&nbsp;conectar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;PDO(</span><span style="color: #ce9178;">"mysql:host=$servername;dbname=$dbname"</span><span style="color: #d4d4d4;">,&nbsp;$username,&nbsp;$password);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn-&gt;setAttribute(PDO::ATTR_ERRMODE,&nbsp;PDO::ERRMODE_EXCEPTION);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Cria&nbsp;uma&nbsp;instru&ccedil;&atilde;o&nbsp;preparada&nbsp;que&nbsp;espera&nbsp;4&nbsp;par&acirc;metros&nbsp;(?)</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare(</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">INSERT</span><span style="color: #ce9178;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #ce9178;">&nbsp;testes&nbsp;(cpf,&nbsp;nome,&nbsp;idade,&nbsp;sexo)&nbsp;</span><span style="color: #569cd6;">VALUES</span><span style="color: #ce9178;">&nbsp;(:cpf,&nbsp;:nome,&nbsp;:idade,&nbsp;:sexo)</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':cpf'</span><span style="color: #d4d4d4;">,$cpf);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':nome'</span><span style="color: #d4d4d4;">,$nome);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':idade'</span><span style="color: #d4d4d4;">,$idade);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':sexo'</span><span style="color: #d4d4d4;">,$sexo);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Atribuindo&nbsp;os&nbsp;par&acirc;metros&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">"999.999.999-99"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Sophia&nbsp;Beltrano"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$sexo&nbsp;=&nbsp;</span><span style="color: #ce9178;">"F"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Executando&nbsp;a&nbsp;Instru&ccedil;&atilde;o&nbsp;SQL</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Os&nbsp;dados&nbsp;Foram&nbsp;inseridos&nbsp;com&nbsp;sucesso!"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">catch</span><span style="color: #d4d4d4;">&nbsp;(PDOException&nbsp;$e)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$e-&gt;getMessage();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;&nbsp;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>SELECT - Buscando dados no banco de dados</h2>
+
+      <p class="lead">Para buscar dados bastamos criar uma string contendo o comando SQL e executar o comando.</p>
+
+      <table class="table table-sm table-responsive-sm table-striped table-dark">
+        <thead>
+          <tr>
+            <th>cpf</th>
+            <th>nome</th>
+            <th>idade</th>
+            <th>sexo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123.123.123-09</td>
+            <td>Fulano de Tal</td>
+            <td>89</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td>397.563.987-10</td>
+            <td>Sicrano da Silva</td>
+            <td>27</td>
+            <td>M</td>
+          </tr>
+          <tr>
+            <td>999.999.999-99</td>
+            <td>Sophia Beltrano</td>
+            <td>45</td>
+            <td>F</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3> get_result() e fetch_assoc() - Selecionado dados com o MySQL orientado a objetos</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;mysqli($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;n&atilde;o&nbsp;ao&nbsp;criar&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($conn-&gt;connect_error)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$conn-&gt;connect_error);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">SELECT</span><span style="color: #ce9178;">&nbsp;cpf,&nbsp;nome,&nbsp;idade,&nbsp;sexo&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;idade&nbsp;</span><span style="color: #d4d4d4;">&gt;=</span><span style="color: #ce9178;">&nbsp;?</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare($sql);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;bind_param(</span><span style="color: #ce9178;">"i"</span><span style="color: #d4d4d4;">,&nbsp;$idade);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Executando&nbsp;o&nbsp;c&oacute;gido&nbsp;SQL&nbsp;e&nbsp;armazenando&nbsp;o&nbsp;resultado&nbsp;da&nbsp;consulta&nbsp;no&nbsp;objeto&nbsp;$result</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$result&nbsp;=&nbsp;$stmt-&gt;get_result();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;$result&nbsp;tem&nbsp;uma&nbsp;propriedade&nbsp;que&nbsp;diz&nbsp;o&nbsp;n&uacute;mero&nbsp;de&nbsp;linhas&nbsp;retornada&nbsp;na&nbsp;consulta</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($result-&gt;num_rows&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Estamos&nbsp;executando&nbsp;o&nbsp;m&eacute;todo&nbsp;do&nbsp;fetch_assoc()&nbsp;objeto</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;$result&nbsp;que&nbsp;retorna&nbsp;um&nbsp;array&nbsp;com&nbsp;os&nbsp;dados&nbsp;de&nbsp;uma&nbsp;linha</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;O&nbsp;index&nbsp;do&nbsp;array&nbsp;cont&eacute;m&nbsp;o&nbsp;nome&nbsp;da&nbsp;coluna,&nbsp;em&nbsp;seguida&nbsp;fetch_assoc()</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;aponta&nbsp;para&nbsp;a&nbsp;pr&oacute;xima&nbsp;linha&nbsp;at&eacute;&nbsp;que&nbsp;row&nbsp;seja&nbsp;FALSE</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;($row&nbsp;=&nbsp;$result-&gt;fetch_assoc())&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"CPF:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"cpf"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;-&nbsp;Nome:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">".&nbsp;&lt;br/&gt;&nbsp;Idade&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"idade"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;Sexo&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"sexo"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span style="color: #d4d4d4;">&nbsp;;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;resultado&nbsp;foi&nbsp;retornado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;close();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn-&gt;close();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <p>CPF: 123.123.123-09 - Nome: Fulano de Tal. <br>
+        Idade - 89 Sexo - M</p>
+
+      <h3> mysqli_stmt_get_result() e mysqli_fetch_assoc() - Selecionando dados com MySQLi procedural</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;mysqli_connect($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;seja,&nbsp;conn&nbsp;&eacute;&nbsp;false</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!$conn)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;mysqli_connect_error());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">SELECT</span><span style="color: #ce9178;">&nbsp;cpf,&nbsp;nome,&nbsp;idade,&nbsp;sexo&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;idade&nbsp;</span><span style="color: #d4d4d4;">&gt;=</span><span style="color: #ce9178;">&nbsp;?</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;mysqli_prepare($conn,&nbsp;$sql);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_bind_param($stmt,</span><span style="color: #ce9178;">"i"</span><span style="color: #d4d4d4;">,$idade);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Executando&nbsp;o&nbsp;c&oacute;gido&nbsp;SQL&nbsp;e&nbsp;armazenando&nbsp;o&nbsp;resultado&nbsp;da&nbsp;consulta&nbsp;no&nbsp;objeto&nbsp;$result</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_execute($stmt);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$result&nbsp;=&nbsp;mysqli_stmt_get_result($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;A&nbsp;fun&ccedil;&atilde;o&nbsp;verifica&nbsp;mysqli_num_rows()&nbsp;retorna&nbsp;quantas&nbsp;linhas&nbsp;existem&nbsp;em&nbsp;um&nbsp;array</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(mysqli_num_rows($result)&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Estamos&nbsp;executando&nbsp;a&nbsp;fun&ccedil;&atilde;o&nbsp;mysqli_fetch_assoc()</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;que&nbsp;retorna&nbsp;um&nbsp;array&nbsp;com&nbsp;os&nbsp;dados&nbsp;de&nbsp;uma&nbsp;linha</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;O&nbsp;index&nbsp;do&nbsp;array&nbsp;cont&eacute;m&nbsp;o&nbsp;nome&nbsp;da&nbsp;coluna,&nbsp;em&nbsp;seguida&nbsp;mysqli_fetch_assoc()</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;aponta&nbsp;para&nbsp;a&nbsp;pr&oacute;xima&nbsp;linha&nbsp;at&eacute;&nbsp;que&nbsp;row&nbsp;seja&nbsp;FALSE</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;($row&nbsp;=&nbsp;mysqli_fetch_assoc($result))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"CPF:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"cpf"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;-&nbsp;Nome:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">".&nbsp;&lt;br/&gt;&nbsp;Idade&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"idade"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;Sexo&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"sexo"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;resultado&nbsp;foi&nbsp;retornado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_close($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_close($conn);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <p>CPF: 123.123.123-09 - Nome: Fulano de Tal. <br>
+        Idade - 89 Sexo - M</p>
+
+      <h3>fetchAll() - Selecionando dados com PDO</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Iremos&nbsp;tentar&nbsp;fazer&nbsp;a&nbsp;conex&atilde;o.&nbsp;Em&nbsp;caso&nbsp;de&nbsp;erro,&nbsp;iremos&nbsp;captur&aacute;-lo.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">try</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o&nbsp;-&nbsp;devemos&nbsp;dizer&nbsp;tamb&eacute;m&nbsp;o&nbsp;nome&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados&nbsp;que&nbsp;iremos&nbsp;conectar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;PDO(</span><span style="color: #ce9178;">"mysql:host=$servername;dbname=$dbname"</span><span style="color: #d4d4d4;">,&nbsp;$username,&nbsp;$password);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn-&gt;setAttribute(PDO::ATTR_ERRMODE,&nbsp;PDO::ERRMODE_EXCEPTION);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare(</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">SELECT</span><span style="color: #ce9178;">&nbsp;cpf,&nbsp;nome,&nbsp;idade,&nbsp;sexo&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;idade&nbsp;</span><span style="color: #d4d4d4;">&gt;</span><span style="color: #ce9178;">&nbsp;:idade</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':idade'</span><span style="color: #d4d4d4;">,&nbsp;$idade);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">50</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;defina&nbsp;a&nbsp;matriz&nbsp;resultante&nbsp;como&nbsp;associativa</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$result&nbsp;=&nbsp;$stmt-&gt;fetchAll();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;O&nbsp;m&eacute;todo&nbsp;fetchAll()&nbsp;retorna&nbsp;um&nbsp;array&nbsp;com&nbsp;todos&nbsp;os&nbsp;dados,&nbsp;caso&nbsp;n&atilde;o&nbsp;haja&nbsp;dados&nbsp;retorna&nbsp;FALSE</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($result)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Como&nbsp;$result&nbsp;&eacute;&nbsp;um&nbsp;array&nbsp;multidimensional&nbsp;podemos&nbsp;iterar&nbsp;entre&nbsp;cada&nbsp;linha</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;usando&nbsp;um&nbsp;foreach</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">foreach</span><span style="color: #d4d4d4;">&nbsp;($result&nbsp;as&nbsp;$row)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"CPF:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"cpf"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;-&nbsp;Nome:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"nome"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">".&nbsp;&lt;br/&gt;&nbsp;Idade&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"idade"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;Sexo&nbsp;-&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$row[</span><span style="color: #ce9178;">"sexo"</span><span style="color: #d4d4d4;">]&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;Resultado&nbsp;Retornado."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">catch</span><span style="color: #d4d4d4;">&nbsp;(PDOException&nbsp;$e)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$e-&gt;getMessage();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>DELETE - Removendo dados de uma tabela</h2>
+
+      <p class="lead">Para remover dados basta continuar seguindo o padrão até aqui.</p>
+
+      <h3>Removendo dados com o MySQLi Orientada a objetos</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;mysqli($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;n&atilde;o&nbsp;ao&nbsp;criar&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($conn-&gt;connect_error)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$conn-&gt;connect_error);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">DELETE</span><span style="color: #ce9178;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;cpf&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;?</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare($sql);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;bind_param(</span><span style="color: #ce9178;">"s"</span><span style="color: #d4d4d4;">,&nbsp;$cpf);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">'123.123.123-09'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Executando&nbsp;o&nbsp;c&oacute;gido&nbsp;SQL&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;$stmt&nbsp;tem&nbsp;uma&nbsp;propriedade&nbsp;que&nbsp;diz&nbsp;o&nbsp;n&uacute;mero&nbsp;de&nbsp;linhas&nbsp;afetadas&nbsp;pela&nbsp;instru&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($stmt-&gt;affected_rows&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dado(s)&nbsp;removido(s)&nbsp;com&nbsp;sucesso"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;dado&nbsp;foi&nbsp;apagado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;close();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn-&gt;close();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <h3> Removendo dados com MySQLi procedural</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;mysqli_connect($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;seja,&nbsp;conn&nbsp;&eacute;&nbsp;false</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!$conn)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;mysqli_connect_error());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">DELETE</span><span style="color: #ce9178;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;cpf&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;?</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;mysqli_prepare($conn,&nbsp;$sql);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_bind_param($stmt,</span><span style="color: #ce9178;">"s"</span><span style="color: #d4d4d4;">,$cpf);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">'123.123.123-09'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Executando&nbsp;o&nbsp;c&oacute;gido&nbsp;SQL</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_execute($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;A&nbsp;fun&ccedil;&atilde;o&nbsp;mysqli_affected_rows($conn)&nbsp;retorna&nbsp;quantas&nbsp;linhas&nbsp;foram&nbsp;afetadas&nbsp;durante&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;o&nbsp;uso&nbsp;da&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(mysqli_affected_rows($conn)&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dado(s)&nbsp;removido(s)&nbsp;com&nbsp;sucesso"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;dado&nbsp;foi&nbsp;apagado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_close($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_close($conn);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <h3>Removendo dados com PDO</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Iremos&nbsp;tentar&nbsp;fazer&nbsp;a&nbsp;conex&atilde;o.&nbsp;Em&nbsp;caso&nbsp;de&nbsp;erro,&nbsp;iremos&nbsp;captur&aacute;-lo.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">try</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o&nbsp;-&nbsp;devemos&nbsp;dizer&nbsp;tamb&eacute;m&nbsp;o&nbsp;nome&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados&nbsp;que&nbsp;iremos&nbsp;conectar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;PDO(</span><span style="color: #ce9178;">"mysql:host=$servername;dbname=$dbname"</span><span style="color: #d4d4d4;">,&nbsp;$username,&nbsp;$password);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn-&gt;setAttribute(PDO::ATTR_ERRMODE,&nbsp;PDO::ERRMODE_EXCEPTION);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare(</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">DELETE</span><span style="color: #ce9178;">&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;cpf&nbsp;</span><span style="color: #d4d4d4;">&gt;</span><span style="color: #ce9178;">&nbsp;:cpf</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':cpf'</span><span style="color: #d4d4d4;">,&nbsp;$cpf);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">'123.123.123-09'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;O&nbsp;m&eacute;todo&nbsp;rowCount()&nbsp;retorna&nbsp;quantas&nbsp;linhas&nbsp;foram&nbsp;afetadas&nbsp;durante&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;o&nbsp;uso&nbsp;da&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($stmt-&gt;rowCount()&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dado(s)&nbsp;removido(s)&nbsp;com&nbsp;sucesso"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;dado&nbsp;foi&nbsp;apagado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">catch</span><span style="color: #d4d4d4;">&nbsp;(PDOException&nbsp;$e)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$e-&gt;getMessage();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>UPDATE - Atualizando dados do banco</h2>
+
+      <h3>Atualizando o banco de dados com MySQLi orientado a objetos</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;mysqli($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;n&atilde;o&nbsp;ao&nbsp;criar&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($conn-&gt;connect_error)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$conn-&gt;connect_error);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">UPDATE</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">SET</span><span style="color: #ce9178;">&nbsp;idade&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;?&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;cpf&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;?</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare($sql);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;bind_param(</span><span style="color: #ce9178;">"is"</span><span style="color: #d4d4d4;">,&nbsp;$idade,&nbsp;$cpf);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">25</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">'123.123.123-09'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Executando&nbsp;o&nbsp;c&oacute;gido&nbsp;SQL&nbsp;e&nbsp;armazenando&nbsp;o&nbsp;resultado&nbsp;da&nbsp;consulta&nbsp;no&nbsp;objeto&nbsp;$result</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;$stmt&nbsp;tem&nbsp;uma&nbsp;propriedade&nbsp;que&nbsp;diz&nbsp;o&nbsp;n&uacute;mero&nbsp;de&nbsp;linhas&nbsp;afetadas&nbsp;pela&nbsp;instru&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($stmt-&gt;affected_rows&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dado(s)&nbsp;Atualizados(s)&nbsp;com&nbsp;sucesso"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;dado&nbsp;foi&nbsp;atualizado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt-&gt;close();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn-&gt;close();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <h3>Atualizando dados com o MySQLi procedural</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;mysqli_connect($servername,&nbsp;$username,&nbsp;$password,&nbsp;$dbname);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Verificando&nbsp;se&nbsp;ocorreu&nbsp;erro,&nbsp;ou&nbsp;seja,&nbsp;conn&nbsp;&eacute;&nbsp;false</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!$conn)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">die</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;mysqli_connect_error());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$sql&nbsp;=&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">UPDATE</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">SET</span><span style="color: #ce9178;">&nbsp;idade&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;?&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;cpf&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;?</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$stmt&nbsp;=&nbsp;mysqli_prepare($conn,&nbsp;$sql);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Ligando&nbsp;as&nbsp;vari&aacute;veis&nbsp;aos&nbsp;par&acirc;metros&nbsp;esperados</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;mysqli_stmt_bind_param($stmt,</span><span style="color: #ce9178;">"is"</span><span style="color: #d4d4d4;">,&nbsp;$idade,&nbsp;$cpf);</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">'123.123.123-09'</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Executando&nbsp;o&nbsp;c&oacute;gido&nbsp;SQL</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_execute($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;A&nbsp;fun&ccedil;&atilde;o&nbsp;mysqli_affected_rows($conn)&nbsp;retorna&nbsp;quantas&nbsp;linhas&nbsp;foram&nbsp;afetadas&nbsp;durante&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;o&nbsp;uso&nbsp;da&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(mysqli_affected_rows($conn)&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dado(s)&nbsp;atualizado(s)&nbsp;com&nbsp;sucesso"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;dado&nbsp;foi&nbsp;atualizado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;instru&ccedil;&atilde;o&nbsp;preparada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_stmt_close($stmt);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mysqli_close($conn);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+      <h3>Atualizando dados com PDO</h3>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$servername&nbsp;=&nbsp;</span><span style="color: #ce9178;">"localhost"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$username&nbsp;=&nbsp;</span><span style="color: #ce9178;">"root"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$password&nbsp;=&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$dbname&nbsp;=&nbsp;</span><span style="color: #ce9178;">"nome_banco"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Iremos&nbsp;tentar&nbsp;fazer&nbsp;a&nbsp;conex&atilde;o.&nbsp;Em&nbsp;caso&nbsp;de&nbsp;erro,&nbsp;iremos&nbsp;captur&aacute;-lo.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">try</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Criando&nbsp;a&nbsp;conex&atilde;o&nbsp;-&nbsp;devemos&nbsp;dizer&nbsp;tamb&eacute;m&nbsp;o&nbsp;nome&nbsp;do&nbsp;banco&nbsp;de&nbsp;dados&nbsp;que&nbsp;iremos&nbsp;conectar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;PDO(</span><span style="color: #ce9178;">"mysql:host=$servername;dbname=$dbname"</span><span style="color: #d4d4d4;">,&nbsp;$username,&nbsp;$password);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$conn-&gt;setAttribute(PDO::ATTR_ERRMODE,&nbsp;PDO::ERRMODE_EXCEPTION);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;$conn-&gt;prepare(</span><span style="color: #ce9178;">"</span><span style="color: #569cd6;">UPDATE</span><span style="color: #ce9178;">&nbsp;testes&nbsp;</span><span style="color: #569cd6;">SET</span><span style="color: #ce9178;">&nbsp;idade&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;:idade&nbsp;</span><span style="color: #569cd6;">WHERE</span><span style="color: #ce9178;">&nbsp;cpf&nbsp;</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">&nbsp;:cpf</span><span style="color: #ce9178;">"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':idade'</span><span style="color: #d4d4d4;">,&nbsp;$idade);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;bindParam(</span><span style="color: #ce9178;">':cpf'</span><span style="color: #d4d4d4;">,&nbsp;$cpf);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$idade&nbsp;=&nbsp;</span><span style="color: #b5cea8;">33</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$cpf&nbsp;=&nbsp;</span><span style="color: #ce9178;">'123.123.123-09'</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt-&gt;execute();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;O&nbsp;m&eacute;todo&nbsp;rowCount()&nbsp;retorna&nbsp;quantas&nbsp;linhas&nbsp;foram&nbsp;afetadas&nbsp;durante&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;o&nbsp;uso&nbsp;da&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($stmt-&gt;rowCount()&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dado(s)&nbsp;atualizado(s)&nbsp;com&nbsp;sucesso"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;dado&nbsp;foi&nbsp;atualizado"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br /><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">catch</span><span style="color: #d4d4d4;">&nbsp;(PDOException&nbsp;$e)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibindo&nbsp;o&nbsp;que&nbsp;provocou&nbsp;o&nbsp;erro&nbsp;e&nbsp;interrompendo&nbsp;a&nbsp;aplica&ccedil;&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Falha&nbsp;na&nbsp;conex&atilde;o:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$e-&gt;getMessage();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Fechando&nbsp;a&nbsp;conex&atilde;o</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$conn&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+
+      <h2>Material para consulta</h2>
+
+      <p class="lead">Ainda está com dúvidas, ou quer outras formas de implementação com mais detalhes, outros métodos e funções, e implementação de código sem instruções preparadas, acessem </p>
+
+      <ul>
+        <li><a href="https://www.wdb24.com/php-mysqli-object-oriented-prepared-statements-beginners/">PHP MYSQLi Object Oriented Prepared Statements for beginners</a></li>
+        <li><a href="https://www.wdb24.com/php-mysqli-procedural-prepared-statements-beginners/">PHP MYSQLi Procedural Prepared Statements for beginners</a></li>
+        <li><a href="https://www.php.net/manual/pt_BR/ref.pdo-mysql.php">Funções do MySQL (PDO_MYSQL)</a> </li>
+        <li><a href="https://www.w3schools.com/php/php_mysql_intro.asp">PHP MySQL Database</a></li>
+        <li><a href="https://www.wdb24.com/?s=mysql">mysql with PHP</a></li>
+      </ul>
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-2.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

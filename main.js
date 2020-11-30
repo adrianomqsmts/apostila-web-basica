@@ -137,7 +137,8 @@ js = (txt) => {
                                 <a href="`+ txt + `bom.html" class="dropdown-item">Browser BOM</a>
                                 <a href="`+ txt + `cookies.html" class="dropdown-item">Cookies</a>
                                 <a href="`+ txt + `armazenamento.html" class="dropdown-item">Armazenamento</a>
-                                <a href="`+ txt + `consideracoes-finais.html" class="dropdown-item">Considerações Finais</a>      
+                                <a href="`+ txt + `consideracoes-finais.html" class="dropdown-item">Considerações Finais</a>    
+                                <a href="`+ txt + `ajax.html" class="dropdown-item">AJAX</a>  
                             </ul>
                         </div>`;
 }
@@ -169,8 +170,8 @@ php = (txt) => {
                                 <a href="`+ txt + `sessoes.html" class="dropdown-item">Sessões</a>
                                 <a href="`+ txt + `seguranca-basico.html" class="dropdown-item">Segurança Básica</a>
                                 <a href="`+ txt + `orientacao-objetos.html" class="dropdown-item">Orientação a Objetos</a>
-                                <a href="`+ txt + `banco-dados.html" class="dropdown-item">Banco de Dados</a>                                
                                 <a href="`+ txt + `tratamento-erros.html" class="dropdown-item">Tratamento de Erros</a>
+                                <a href="`+ txt + `banco-dados.html" class="dropdown-item">Banco de Dados</a>                              
                             </ul>
                         </div>`;
 }
