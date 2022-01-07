@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Cookies com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Cookies com PHP</h1>
+
+      <p class="lead">Cookies são pequenos arquivos que o servidor trabalha no computador do usuário. Assim, sempre o um computador solicitar um página, ele envia junto o cookie, permitindo o servidor trabalhar com estes dados, reconhecendo o usuário, por exemplo.</p>
+
+      <hr class="space">
+
+      <h2>setcookie() - Criando cookies</h2>
+
+      <p class="lead">A função <code>setcookie(nome, valor, validade, caminho, domínio, segurança, httpApenas)</code> é usada para criar um cookie, onde somente o valor nome é obrigatório, enquanto os demais parâmetros são opcionais. A função <code>setcookie()</code> aparecer <strong>ANTES</strong> da tag <code> &lt;html></code>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"usuario"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$valor&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;de&nbsp;Tal"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//time&nbsp;retorna&nbsp;a&nbsp;hora&nbsp;atual&nbsp;e&nbsp;somaremos&nbsp;mais&nbsp;7&nbsp;dias&nbsp;at&eacute;&nbsp;o&nbsp;cookie&nbsp;expirar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$validade&nbsp;=&nbsp;time()&nbsp;+&nbsp;(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">24</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;setcookie($nome,&nbsp;$valor,&nbsp;$validade,&nbsp;</span><span style="color: #ce9178;">"/"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br>
+
+      <p>Caso queira saber mais sobre eles acesse <a href="https://www.php.net/manual/pt_BR/function.setcookie.php">setcookie</a>. </p>
+      <hr class="space">
+
+      <h2>Variável super global $_COOKIE</h2>
+
+      <p class="lead">A variável super global <code>$_COOKIE[$nome]</code> contém o valor do nome especificado dentro de um cookie. Normalmente usamos a função <code>isset()</code> para ver se o valor do cookie existe, antes de trabalharmos com ele.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(!isset($_COOKIE[</span><span style="color: #ce9178;">"usuario"</span><span style="color: #d4d4d4;">]))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Nenhum&nbsp;valor&nbsp;de&nbsp;usu&aacute;rio&nbsp;definido!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Bem&nbsp;vindo "</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$_COOKIE[</span><span style="color: #ce9178;">"usuario"</span><span style="color: #d4d4d4;">];</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Alterando o valor de um cookie</h2>
+
+      <p class="lead">Para alterar o valor de um cookie, basta usar novamente a função <code>setcookie(nome, valor, validade, caminho, domínio, segurança, httpApenas)</code>, com o mesmo nome do valor que deseja alterar</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"usuario"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$valor&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Sicrano&nbsp;de&nbsp;Tal"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//time&nbsp;retorna&nbsp;a&nbsp;hora&nbsp;atual&nbsp;e&nbsp;somaremos&nbsp;mais&nbsp;7&nbsp;dias&nbsp;at&eacute;&nbsp;o&nbsp;cookie&nbsp;expirar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$validade&nbsp;=&nbsp;time()&nbsp;+&nbsp;(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">24</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;setcookie($nome,&nbsp;$valor,&nbsp;$validade,&nbsp;</span><span style="color: #ce9178;">"/"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Apagando um cookie</h2>
+
+      <p class="lead">Para deletar um cookie, basta atribuir uma data de validade passada! Assim o cookie irá expirar e apagar.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//time&nbsp;retorna&nbsp;a&nbsp;hora&nbsp;atual&nbsp;e&nbsp;subtrairemos&nbsp;7&nbsp;dias&nbsp;para&nbsp;o&nbsp;cookie&nbsp;expirar</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$validade&nbsp;=&nbsp;time()&nbsp;-&nbsp;(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">24</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;setcookie(</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">,&nbsp;$validade,&nbsp;</span><span style="color: #ce9178;">"/"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

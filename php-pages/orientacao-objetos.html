@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Orientação a Objetos com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Orientação a Objetos com PHP</h1>
+
+      <p class="lead">De forma bem sucinta, um objeto em linguagem de programação é um forma de representar as características de algo real em uma formato computacional. Um exemplo de OBJETO do mundo real, seria um CARRO, onde o carto tem PROPRIEDADES como cor, marca, preço. Além disso, um carro tem certas funcionalidades (MÉTODOS) como frear, acelerar, ligar ou desligar. </p>
+
+      <ul class="lead">
+        <li><strong>this</strong> - <code>This</code> é usado para dizer que aquela variável pertence ao objeto criado e não uma outra variável de mesmo nome, que pode ser usada como parâmetro de uma função ou variável global. </li>
+        <li><strong>new</strong> - <code>New</code> é usado para criar/instanciar um novo objeto. </li>
+      </ul>
+
+      <hr class="space">
+
+      <h2>Classes</h2>
+
+      <p class="lead">Uma classe é um modelo para objetos... Ou seja, é uma forma de podermos criar vários objetos com as mesmas funções e propriedades sem termos que criar todo o corpo do objeto múltiplas vezes. Para criarmos uma classe devemos usar a palavra reservada <code>class</code> e devemos começar o nome de uma classe sempre com a primeira letra maiúscula para diferenciá-las de variáveis normais. Uma classe tem portanto as variáveis e funções que definem o contexto do objeto.</p>
+
+      <p class="lead">Todas as variáveis deve ter um tipo de encapsulamento, entretanto, no momento elas serão públicas, e as definimos com a palavra reservada <code>public</code>. Enquanto o método <code>__construct</code> pode ser omitido, mas é muito usado para inicializar variáveis importantes de uma classe. O método é sempre chamado na criação de um objeto, e muitas vezes usamos a palavra reservada <code>$this</code> seguida por uma "seta" <code>-></code> para especificar a variável da classe e contextualizá-la. Por padrão, caso o método esteja omitido, o PHP criará um método construtor sem código e sem parâmetros (construtor vazio).</p>
+
+      <p class="lead">Por fim, o método <code>__destruct</code> é sempre executado quando destruímos uma variável, por exemplo, com a função <code>unset($objeto)</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Produto{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$validade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$marca;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($preco,&nbsp;$validade,&nbsp;$marca)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;=&nbsp;$preco;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;validade&nbsp;=&nbsp;$validade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;=&nbsp;$marca;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;desconto($desconto){&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;*=&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">+$desconto);&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__destruct()&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Este&nbsp;objeto&nbsp;foi&nbsp;destru&iacute;do"</span><span style="color: #d4d4d4;">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Objeto</h2>
+
+      <p class="lead">Para instanciar um objeto, precisamos criar uma variável, usar o operador se atribuição <code>=</code> seguido pela palavra reservada <code>new</code> e o nome da classe <code>Classe(parâmetros)</code> com os parâmetros usados dentro do método construtor. Para acessarmos um atributo ou um método de um objeto, devemos usar o nome do objeto, seguido pelo o operador <code>-></code> e o nome da propriedades ou método.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Produto(</span><span style="color: #b5cea8;">10.00</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"11/10/2030"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;S/A"</span><span style="color: #d4d4d4;">&nbsp;);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu-&gt;desconto(</span><span style="color: #b5cea8;">0.10</span><span style="color: #d4d4d4;">);&nbsp;</span><span style="color: #6a9955;">//Aplica&nbsp;10%&nbsp;de&nbsp;desconto&nbsp;do&nbsp;pre&ccedil;o&nbsp;do&nbsp;produto</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;preco;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;9&nbsp;pois&nbsp;10&nbsp;*&nbsp;(0.9)&nbsp;=&nbsp;9.</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Encapsulamento/Modificadores de acesso</h2>
+
+      <p class="lead">Os modificadores de acesso definem quem tem acesso a uma determinada propriedade ou a um determinado métido. Existem três modificadores de acesso: </p>
+
+      <ul>
+        <li><strong>public</strong> - A propriedade ou método pode ser acessado de qualquer lugar. Este é o padrão</li>
+        <li><strong>protected</strong> - A propriedade ou método pode ser acessado dentro do classe e por classes derivadas dessa classe </li>
+        <li><strong>private</strong> - A propriedade ou método pode só poderá ser acessado dentro da classe</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Produto{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">protected</span><span style="color: #d4d4d4;">&nbsp;$validade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">private</span><span style="color: #d4d4d4;">&nbsp;$marca;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($preco,&nbsp;$validade,&nbsp;$marca)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;=&nbsp;$preco;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;validade&nbsp;=&nbsp;$validade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;=&nbsp;$marca;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">private</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;desconto($desconto){&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;*=&nbsp;(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">-$desconto);&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Produto(</span><span style="color: #b5cea8;">10.00</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"11/10/2030"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;S/A"</span><span style="color: #d4d4d4;">&nbsp;);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu-&gt;desconto(</span><span style="color: #b5cea8;">0.10</span><span style="color: #d4d4d4;">);&nbsp;</span><span style="color: #6a9955;">//&nbsp;Ocorre&nbsp;um&nbsp;erro,&nbsp;pois&nbsp;desconto&nbsp;s&oacute;&nbsp;pode&nbsp;ser&nbsp;usado&nbsp;pela&nbsp;classe</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu-&gt;validade;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Ocorre&nbsp;um&nbsp;erro,&nbsp;pois&nbsp;a&nbsp;validade&nbsp;so&nbsp;pode&nbsp;ser&nbsp;usada&nbsp;pela&nbsp;classe&nbsp;ou&nbsp;classes&nbsp;herdadas</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu-&gt;preco;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Pode&nbsp;ser&nbsp;usado</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Get e Set</h2>
+
+      <p class="lead">Get e Set são usados para proteger o acesso direto à uma propriedade de uma classe, como colocar valores negativos em uma idade, ou formatar como deve ser exibido uma determinada propriedade. Assim, ao combinarmos os modificadores de acesso e o conceito de get e set, manteremos uma consistência e uma segurança maior sobre nossos dados.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Produto&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">private</span><span style="color: #d4d4d4;">&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">private</span><span style="color: #d4d4d4;">&nbsp;$marca;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($preco,&nbsp;$marca)&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;=&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;=&nbsp;$marca;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;getPreco()&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"R$"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;getMarca()&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;+&nbsp;</span><span style="color: #ce9178;">"S/A"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;setPreco($preco)&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">($preco&nbsp;&lt;=</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Valor&nbsp;inv&aacute;lido"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;=&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;setMarca($marca)&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;=&nbsp;$marca;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br>
+
+
+      <p class="lead">Os método SET podem ser chamados dentro do construtor para impedir que na criação do objeto também haja algum valor inválido.</p>
+
+      <p class="lead">Outra forma de declarar GET e SET é usando um padrão de método chamado <code>__GET(propriedade)</code> e <code>__SET(propriedade, valor)</code> que irá atribuir um valor a uma determinada propriedade ou retornar um valor dada uma propriedade. Esta convenção só é útil quando todos os métodos SET e GET possuem o mesmo corpo de código, variando apenas o nome das propriedades e valores. Assim, ao invés de usarmos <code>$this->propriedade</code>, iremos usar <code>$this->$propriedade</code>, pois agora a propriedade pode variar e não é fixa. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Produto&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">private</span><span style="color: #d4d4d4;">&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">private</span><span style="color: #d4d4d4;">&nbsp;$marca;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($preco,&nbsp;$marca)&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;=&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;=&nbsp;$marca;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__get($propriedade)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;$propriedade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__set($propriedade,&nbsp;$valor)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;$propriedade&nbsp;=&nbsp;$valor;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Produto(</span><span style="color: #b5cea8;">10.99</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;S/A"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;__get(</span><span style="color: #ce9178;">"preco"</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Retorna&nbsp;10.99</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu-&gt;__set(</span><span style="color: #ce9178;">"marca"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Sicrano&nbsp;S/A"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;__get(</span><span style="color: #ce9178;">"marca"</span><span style="color: #d4d4d4;">);&nbsp;</span><span style="color: #6a9955;">//&nbsp;Retorna&nbsp;Sicrano&nbsp;S/A</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Extends - Herança entre classes</h2>
+
+      <p class="lead">Herança é um conceito de Orientação a Objetos, onde uma classe herda (<code>extends</code>) as propriedades e os métodos de uma classe pai. Em php não existe heranças múltiplas e este problema pode ser resolvido usando <code>traits</code> que veremos mais a frente.</p>
+
+      <p class="lead">Caso o método <code>__construct</code> não seja definido no filho, ele irá herdar o construtor do pai!</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Empresa{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">protected</span><span style="color: #d4d4d4;">&nbsp;$nome;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($nome)&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;nome&nbsp;=&nbsp;$nome;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">protected</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;getMarca(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;nome;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;exibirSlogan(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Somos&nbsp;tudo!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Produto&nbsp;</span><span style="color: #569cd6;">extends</span><span style="color: #d4d4d4;">&nbsp;Empresa{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$preco;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">protected</span><span style="color: #d4d4d4;">&nbsp;$validade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$marca;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($preco,&nbsp;$validade,&nbsp;$marca)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;preco&nbsp;=&nbsp;$preco;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;validade&nbsp;=&nbsp;$validade;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Herdou&nbsp;o&nbsp;nome&nbsp;e&nbsp;o&nbsp;m&eacute;todo&nbsp;da&nbsp;classe&nbsp;empresa</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;nome&nbsp;=&nbsp;$marca;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;marca&nbsp;=&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;getMarca();&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$chapeu&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Produto(</span><span style="color: #b5cea8;">10.00</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"11/10/2030"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Fulano&nbsp;S/A"</span><span style="color: #d4d4d4;">&nbsp;);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;marca;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;o&nbsp;nome&nbsp;da&nbsp;marca</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;ERRO&nbsp;apesar&nbsp;de&nbsp;herdar&nbsp;a&nbsp;propriedade&nbsp;nome,&nbsp;a&nbsp;propriedade&nbsp;&eacute;&nbsp;protected,&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Ou&nbsp;seja,&nbsp;s&oacute;&nbsp;pode&nbsp;ser&nbsp;usada&nbsp;pela&nbsp;classe&nbsp;empresa&nbsp;e&nbsp;produto.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;nome;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;exibirSlogan();&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;o&nbsp;slogan&nbsp;herdado</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;ERRO&nbsp;apesar&nbsp;de&nbsp;herdar&nbsp;o&nbsp;m&eacute;todo&nbsp;marca,&nbsp;o&nbsp;m&eacute;todo&nbsp;&eacute;&nbsp;protected,&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Ou&nbsp;seja,&nbsp;s&oacute;&nbsp;pode&nbsp;ser&nbsp;usada&nbsp;pela&nbsp;classe&nbsp;empresa&nbsp;e&nbsp;produto.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$chapeu-&gt;marca();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Sobreposição de métodos</h2>
+
+      <p class="lead">A sobreposição de métodos, ocorre quando <code>sobrescrevemos</code> um método herdado. Basicamente herdamos um método da classe pai, mas criamos no corpo do filho um função com o mesmo nome da classe pai, mas com um corpo de código diferente. Isso irá sobrescrever a função do pai com o mesmo método.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;falar(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Cachorro&nbsp;</span><span style="color: #569cd6;">extends</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;falar(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"au&nbsp;au&nbsp;au!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Gato&nbsp;</span><span style="color: #569cd6;">extends</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;falar(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"miau!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Final - impedindo a herança ou a sobrescrita</h2>
+
+      <p class="lead">A palavra reservada <code>final</code> é usada em propriedades, métodos e até classes para impedir a herança ou a sobrecarga. Basicamente uma classe final não pode ser herdada, enquanto métodos finais não podem ser sobrescrito.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">final</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Ave{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">final</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;voar(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Estou&nbsp;voando!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #6a9955;">//&nbsp;Erro,&nbsp;a&nbsp;classe&nbsp;animal&nbsp;n&atilde;o&nbsp;pode&nbsp;ser&nbsp;herdada</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Cachorro&nbsp;</span><span style="color: #569cd6;">extends</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Papagaio&nbsp;</span><span style="color: #569cd6;">extends</span><span style="color: #d4d4d4;">&nbsp;Ave{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Erro&nbsp;o&nbsp;m&eacute;todo&nbsp;voar&nbsp;n&atilde;o&nbsp;pode&nbsp;ser&nbsp;sobrescrito</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;voar(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Vou&nbsp;voar&nbsp;e&nbsp;falar"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Classes e métodos abstratos</h2>
+
+      <p class="lead">Classes e métodos abstratos são classes e métodos sem um corpo definido, ou seja, sem códigos. Por definição, um classe abstrata deve conter pelo menos um método abstrato e um método abstrato deve conter apenas a declaração do seu nome, sem código em seu corpo. Para criá-los devemos usar a palavra reservada <code>abstract</code>.</p>
+
+      <p class="lead">O objetivo de uma classe abstrata ou método abstrato é "obrigar" que as classes filhos (que herdem de seus pais) implementem estes métodos e definam o corpo dos métodos. Então, ao herdar um classe abstrata, o método da classe filha deve ser definido com o mesmo nome e o mesmo (ou menos restrito) modificador de acesso do que o método da classe pai.</p>
+
+      <p class="lead">Por definição métodos abstratos são sempre <code>protected</code>, portanto o método sobrescrito da classe filha deve ser <code>protected</code> ou <code>public</code> e deve ter pelo menos os mesmo parâmetros que a classe pai (mesma quantidade e tipo), ou então mais parâmetros opcionais, ou seja, que já tenham algum valor pré-definido. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">abstract</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Animal&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$nome;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct($nome)&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">$this</span><span style="color: #d4d4d4;">-&gt;nome&nbsp;=&nbsp;$nome;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">abstract</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;emitirSom():&nbsp;</span><span style="color: #569cd6;">string</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">abstract</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;dormir($horas):&nbsp;</span><span style="color: #569cd6;">int</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">abstract</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">protected</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;comer($comida);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Cachorro&nbsp;</span><span style="color: #569cd6;">extends</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;emitirSom():&nbsp;</span><span style="color: #569cd6;">string</span><span style="color: #d4d4d4;">&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Au&nbsp;au&nbsp;au"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;dormir($horas):&nbsp;</span><span style="color: #569cd6;">int</span><span style="color: #d4d4d4;">&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;$horas;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;comer($comida,&nbsp;$prato&nbsp;=&nbsp;</span><span style="color: #ce9178;">"ch&atilde;o"</span><span style="color: #d4d4d4;">)&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Comendo&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$comida&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;no&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$prato;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$animal&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Cachorro(</span><span style="color: #ce9178;">"doguinho"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$animal-&gt;comer(</span><span style="color: #ce9178;">"ra&ccedil;&atilde;o"</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">"prato"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$animal-&gt;comer(</span><span style="color: #ce9178;">"carne"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$animal-&gt;dormir(</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$animal-&gt;emitirSom()&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Interfaces</h2>
+
+      <p class="lead">Uma interface tem quase a mesma lógica de uso que uma classe abstrata, entretanto, uma interface não é uma classe, não pode conter propriedades, seus métodos só podem ser públicos e abstratos e uma classe pode implementar múltiplas interfaces. Para criar uma interface devemos usar a palavra reservada <code>interface</code> e para "herdar" uma interface, usamos a palavra reservada <code>implements</code>. Uma interface pode ser vista também como um contrato, onde a classe deve cumprir e ter todos os seus métodos implementados.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">interface</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;emitirSom():&nbsp;</span><span style="color: #569cd6;">string</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Cachorro&nbsp;</span><span style="color: #569cd6;">implements</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;emitirSom():&nbsp;</span><span style="color: #569cd6;">string</span><span style="color: #d4d4d4;">&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Au&nbsp;au&nbsp;au"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$animal&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Cachorro();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$animal-&gt;emitirSom();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Traits - Burlando a herança única</h2>
+
+      <p class="lead"><code>Traits</code> são usados para declarar múltiplos métodos que podem ser usados em várias classes. Os métodos dentro de um bloco <code>trait</code> podem ser abstratos e até mesmo conter modificadores de acessos. Para usar um <code>trait</code> dentro de uma classe devemos usar a palavra reservada <code>use</code> seguida pelo nome do <code>trait</code> dentro do corpo da classe.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">trait</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;viver(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Estou&nbsp;VIVO!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">abstract</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;comer($comida)&nbsp;:&nbsp;</span><span style="color: #569cd6;">string</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Cachorro&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">use</span><span style="color: #d4d4d4;">&nbsp;Animal;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;comer($comida)&nbsp;:&nbsp;</span><span style="color: #569cd6;">string</span><span style="color: #d4d4d4;">{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Estou&nbsp;comendo"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;$comida;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$animal&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;Cachorro();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$animal-&gt;viver();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;$animal-&gt;comer(</span><span style="color: #ce9178;">"Pizza"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Métodos e propriedades estáticas</h2>
+
+      <p class="lead">Os métodos e propriedades estáticas podem ser chamados mesmo sem instanciar um objeto antes! Para definí-los como estáticos, devemos usar a palavra reservada <code>static</code>. Para usar um método ou propriedade estática dentro da classe, ao invés de usarmos a palavra reservada <code>$this-></code>, iremos usar a palavra reservada <code>self</code> com o operador de dois pontos duplos <code>::</code>. E para acessar o valor deles, fora da classe devemos usar o nome da classe, seguido por pelo operador de dois pontos duplos <code>::</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">static</span><span style="color: #d4d4d4;">&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"sem&nbsp;nome"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;__construct()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">self</span><span style="color: #d4d4d4;">::viver();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">static</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;viver(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Estou&nbsp;VIVO!"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">echo&nbsp;Animal::$nome&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">Animal::viver();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Constantes dentro de classes</h2>
+
+      <p class="lead">Sabemos que as constantes não podem ter seus valores alterados após serem declarados. Uma constante de um classe é definida com a palavra reservada <code>const</code> (É recomendado que constantes tenham letras maiúsculas). Para usar uma constante dentro da classe, ao invés de usarmos a palavra reservada <code>$this-></code>, iremos usar a palavra reservada <code>self</code> com o operador de dois pontos duplos <code>::</code>. E para acessar o valor de uma constante de um classe, fora da classe, devemos usar o nome da classe, seguido por pelo operador de dois pontos duplos <code>::</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Animal{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">const</span><span style="color: #d4d4d4;">&nbsp;NOME&nbsp;=&nbsp;</span><span style="color: #ce9178;">"sem&nbsp;nome"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">const</span><span style="color: #d4d4d4;">&nbsp;MSG&nbsp;=&nbsp;&nbsp;</span><span style="color: #ce9178;">"Estou&nbsp;VIVO!"</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;viver(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #569cd6;">self</span><span style="color: #d4d4d4;">::MSG;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;Animal::NOME&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;Animal::viver();</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Namespaces</h2>
+
+      <p class="lead">Namespaces são usados para resolver dois problemas, o primeiro é permitir uma melhor organização permitindo agrupar classes que trabalham juntas para realizar uma tarefa e o segundo é permitir que o mesmo nome seja usados para mais de uma classe.</p>
+
+      <p class="lead">Para criar um Namespace precisamos usar a palavra reservada <code>namespace</code> seguida pelo nome que queremos dar para o espaço. Para usar um <code>namespace</code> dentro de outro <code>namespace</code> precismos usar a palavra reservada <code>use</code>, e caso queiramos dar um apelido para o nome do espaço usado, podemos usar a palavra reservada <code>as</code> no momento em que formos usar um <code>namespace</code>, como em <code>use espaco1 as E1</code>.</p>
+
+      <p class="lead">Namespaces são úteis quando usamos bibliotecas de terceiros que muita vezes podem ter classes com nomes padrões que podem conflitar com o nosso cógido. Por isso criamos espaços diferentes para as bibliotecas e o nosso cógido. Desta forma, para usar uma classe de outro espaço, basta usar palavra reservada <code>use</code> para invocar outro espaço para dentro do nosso espaço atual, então para usar a classe externa usamos a sintaxe <code>nomeEspaço\classeExterna</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">namespace</span><span style="color: #d4d4d4;">&nbsp;espaco1;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Pessoa{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">static</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Fulano"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">namespace</span><span style="color: #d4d4d4;">&nbsp;espaco2;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">use</span><span style="color: #d4d4d4;">&nbsp;espaco1;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;Pessoa{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">static</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;">&nbsp;$nome&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Sicrano"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;Pessoa::$nome;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;Fulano</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;espaco1\Pessoa::$nome;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;Sicrano</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

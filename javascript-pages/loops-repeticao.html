@@ -41,9 +41,9 @@
       <p class="lead">O <code>for(condição1; condição2; condição3)</code> é usado quando queremos repetir uma <strong>QUANTIDADE CONHECIDA</strong> de vezes um determinado trecho de código. </p>
 
       <ul class="lead">
-        <li><b>Condição 1</b> - É executada uma única vez, geralmente é usada para inicializar o valor de um contador com o valor 0; CONHECIDA COMO CONDIÇÃO INICIAL</li>
-        <li><b>Condição 2</b> - É uma condição que sempre será executada após o final de cada interação e normalmente define um valor limite de quantas vezes queremos que a estrutura seja executada. CONHECIDA COMO CONDIÇÃO DE PARADA</li>
-        <li><b>Condição 3</b> - É executada sempre ao final da execução do bloco de código, geralmente é usada para incrementar o valor do contador; CONHECIDA COMO CONDIÇÃO DE INCRIMENTO</li>
+        <li><strong>Condição 1</strong> - É executada uma única vez, geralmente é usada para inicializar o valor de um contador com o valor 0; CONHECIDA COMO CONDIÇÃO INICIAL</li>
+        <li><strong>Condição 2</strong> - É uma condição que sempre será executada no inicio cada interação e normalmente define um valor limite de quantas vezes queremos que a estrutura seja executada. CONHECIDA COMO CONDIÇÃO DE PARADA</li>
+        <li><strong>Condição 3</strong> - É executada sempre ao final da execução do bloco de código, geralmente é usada para incrementar o valor do contador; CONHECIDA COMO CONDIÇÃO DE INCRIMENTO</li>
       </ul>
 
       <p class="lead">As condições podem ser omitidas e a estrutura pode assumir diversos formatos que normalmente podem levar a uma má legibilidade dos códigos e não são muito tradicionais, e por estes motivos não iremos abordar essas possibilidades. Um caso mais comum é usar um segunda condição de parada dentro do código com um if e um break.</p>
@@ -140,7 +140,7 @@
         &lt;div id="for-in">&lt;/div> <br>
         &lt;script> <br>
         <span class="es">var pessoa = {</span><br>
-        <span class="e"></span>nome: <span class="t">"Fulano Ciclano de Tal"</span>, <br>
+        <span class="e"></span>nome: <span class="t">"Fulano Sicrano de Tal"</span>, <br>
         <span class="e"></span>idade: 47, <br>
         <span class="e"></span>altura: 1.68, <br>
         <span class="es">}</span><br>
@@ -155,7 +155,7 @@
       <div id="for-in"></div>
       <script>
         var pessoa = {
-          nome: "Fulano Ciclano de Tal",
+          nome: "Fulano Sicrano de Tal",
           idade: 47,
           altura: 1.68,
         }
@@ -232,7 +232,7 @@
 
       <h2>Estrutura de repetição WHILE</h2>
 
-      <p class="lead">A estrutura de repetição <code>while(condição)</code> é semelhante à estrutura <code>for</code> sem a condição 1 e condição 3. Ou seja, devemos em muitos casos iniciar um valor anteriormente e criar uma condição de incremento dentro do corpo da estrutura. Os principais usos de uma estrutura <code>while</code> estão relacionados quando não sabemos quantas vezes iremos executar o bloco de código. Seu uso mais comum contém a palavra reservada <code>break</code>.</p>
+      <p class="lead">A estrutura de repetição <code>while(condição){ CÓDIGO }</code> é semelhante à estrutura <code>for</code> sem a condição 1 e condição 3. Ou seja, devemos em muitos casos iniciar um valor anteriormente e criar uma condição de incremento dentro do corpo da estrutura. Os principais usos de uma estrutura <code>while</code> estão relacionados quando não sabemos quantas vezes iremos executar o bloco de código. Seu uso mais comum contém a palavra reservada <code>break</code>.</p>
 
       <p class="text-center lead">
         <a class="btn btn-outline-light" data-toggle="collapse" href="#div6">

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Funções em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Funções em PHP</h1>
+
+      <p class="lead">Uma função é um trecho de comandos em bloco que faz uma determinada tarefa que pode ser realizada em diferentes pontos de um código e quantas vezes quisermos. As vantagens de se utilizar funções é a clareza do código, pois podemos separar o código em diversas partes facilitando a manutenção do mesmo e a possibilidade de reutilização mais simples (sem ter copiar e colar varias linhas de códigos). </p>
+
+      <p class="lead">A sintaxe básica de uma função é: <code>function nome(parametro1, paramentro2,...) { código; }</code>. Onde <code>function</code> é a palavra chave para criar uma função com o nome especificado seguido sempre de parenteses que podem ou não conter parâmetros. Os parâmetros são variáveis que irão receber um valor e serem usada dentro do bloco de código da função.</p>
+
+      <p class="lead">Caso haja um retorno na função podemos especificar o tipo do retorno em uma função usando <code>: tipo</code>. E para definir valores padrão para uma variável, caso a mesma seja ausente, padrão precisamos usar apenas <code>(parâmetro = valor, parâmetro2, ...)</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span><span style="color: #d4d4d4;">&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;sum(</span><span style="color: #569cd6;">int</span><span style="color: #d4d4d4;">&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">int</span><span style="color: #d4d4d4;">&nbsp;$y&nbsp;=&nbsp;</span><span style="color: #b5cea8;">20</span><span style="color: #d4d4d4;">)&nbsp;:&nbsp;</span><span style="color: #569cd6;">int</span><span style="color: #d4d4d4;">{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$z&nbsp;=&nbsp;$x&nbsp;+&nbsp;$y;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;$z;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"5&nbsp;+&nbsp;10&nbsp;=&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;sum(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;15</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"7&nbsp;+&nbsp;13&nbsp;=&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;sum(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;20</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"soma&nbsp;=&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;sum();&nbsp;</span><span style="color: #6a9955;">//retorna&nbsp;30</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br>
+
+      <p class="lead">Não precismos especificar o tipo do parâmetro, nem o retorno de uma função, pois em PHP já existe a conversão do tipo. Além disto, em PHP os valores dos parâmetros são por valor, ou seja, uma cópia do valor original, e para serem por referência, ou seja, o valor original será alterado, usamos antes do $ o caractere &.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span><span style="color: #d4d4d4;">&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;sum($x,&nbsp;$y){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$z&nbsp;=&nbsp;$x&nbsp;+&nbsp;$y;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;$z;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"5&nbsp;+&nbsp;10&nbsp;=&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;sum(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;15</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"7&nbsp;+&nbsp;13&nbsp;=&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;sum(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">13</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;20</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//echo&nbsp;"soma&nbsp;=&nbsp;"&nbsp;.&nbsp;sum();&nbsp;-&gt;&nbsp;erro,&nbsp;precisa&nbsp;de&nbsp;par&acirc;metros</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

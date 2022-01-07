@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Selecionando e inserindo MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Selecionando e inserindo MySQL</h1>
+
+      <p class="lead">A instrução <code>SELECT INTO</code> em MySQL é usada para guardar os calores retornadados, de uma única linha, em variáveis que podem ser usadas posteriormente para cálculos ou até mesmo inserir dados em outra tabela.<code>SELECT coluna1, coluna2, ... INTO @VariávelColuna1, @VariávelColuna2, ... (IN outro_banco_de_dados) FROM tabela WHERE condição</code>, onde o trecho de instrução <code> (IN outro_banco_de_dados)</code> é opcional e é usado quando a tabela é de outro banco de dados. Lembrando, que a consulta deve ser retornada uma única instrução. Caso necessite, pode usar o operador <code>LIMIT 1</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;clientes(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;rua_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;bairro_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;num_cli&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fone_cli&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carros(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;placa_car&nbsp;</span><span style="color: #569cd6;">VARCHAR6</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">))&nbsp;</span><span style="color: #569cd6;">primary</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">key</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cliente_car&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;marca_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;modelo_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cor_car&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">ALTER</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;add&nbsp;</span><span style="color: #569cd6;">foreign&nbsp;key</span><span style="color: #d4d4d4;">&nbsp;(cliente_car)&nbsp;</span><span style="color: #569cd6;">references</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;(cod_cli);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Luciene'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;A'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3535-3535'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'F&aacute;bio'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'Rua&nbsp;B'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">&nbsp;,&nbsp;</span><span style="color: #b5cea8;">231</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3232-3232'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Carlos'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;C'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">323</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3511-3511'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">123</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Silvio'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Rua&nbsp;xyz'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">888</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'3333-3333'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'abc111'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'&nbsp;volksvagen'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'Fox&nbsp;city'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'cinza'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'def111'</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ford'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'eco&nbsp;sport'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'cinza'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'ghi222'</span><span style="color: #d4d4d4;">,</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ford'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'ka'</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">'branca'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;carros;</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>placa_car</th>
+              <th>cliente_car</th>
+              <th>marca_car</th>
+              <th>modelo_car</th>
+              <th>cor_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>abc111</td>
+              <td>1</td>
+              <td> volksvagen</td>
+              <td>Fox city</td>
+              <td>cinza</td>
+            </tr>
+            <tr>
+              <td>def111</td>
+              <td>2</td>
+              <td>ford</td>
+              <td>eco sport</td>
+              <td>cinza</td>
+            </tr>
+            <tr>
+              <td>ghi222</td>
+              <td>3</td>
+              <td>ford</td>
+              <td>ka</td>
+              <td>branca</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;placa_car,&nbsp;nome_cli&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;@placa_car,&nbsp;@nome_cli&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">INNER&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;clientes.cod_cli&nbsp;=&nbsp;carros.cliente_car&nbsp;</span><span style="color: #569cd6;">LIMIT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;@placa_car,&nbsp;@nome_cli;</span>
+        </div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>placa_car</th>
+              <th>cliente_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>abc111</td>
+              <td>Luciene</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+      </div>
+
+      <hr class="space">
+
+      <h2>INSERT INTO SELECT</h2>
+
+      <p class="lead">A instrução <code>INSERT INTO SELECT</code> é usada para inserir dados de outra tabela em uma tabela já existente. A sintaxe base é <code>INSERT INTO tabelaA (coluna1, coluna2,...) SELECT (coluna1, coluna2,...) FROM tabelaB WHERE condição;</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;carro_cliente(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;placa&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;fone&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">9</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;cod&nbsp;</span><span style="color: #569cd6;">INT</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;nome&nbsp;</span><span style="color: #569cd6;">VARCHAR</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">45</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div> <br> <br>
+        <div><span style="color: #6a9955;">--&nbsp;Inserindo&nbsp;o&nbsp;resultado&nbsp;da&nbsp;consulta&nbsp;em&nbsp;uma&nbsp;tabela</span></div>
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;carro_cliente&nbsp;(placa,&nbsp;fone,&nbsp;cod,&nbsp;nome)&nbsp;</span><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;placa_car,&nbsp;fone_cli,&nbsp;cod_cli,&nbsp;nome_cli&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;clientes&nbsp;</span><span style="color: #569cd6;">INNER&nbsp;JOIN</span><span style="color: #d4d4d4;">&nbsp;carros&nbsp;</span><span style="color: #569cd6;">ON</span><span style="color: #d4d4d4;">&nbsp;cod_cli&nbsp;=&nbsp;cliente_car;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;carro_cliente;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>placa_car</th>
+              <th>cliente_car</th>
+              <th>marca_car</th>
+              <th>modelo_car</th>
+              <th>cor_car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>abc111</td>
+              <td>1</td>
+              <td> volksvagen</td>
+              <td>Fox city</td>
+              <td>cinza</td>
+            </tr>
+            <tr>
+              <td>def111</td>
+              <td>2</td>
+              <td>ford</td>
+              <td>eco sport</td>
+              <td>cinza</td>
+            </tr>
+            <tr>
+              <td>ghi222</td>
+              <td>3</td>
+              <td>ford</td>
+              <td>ka</td>
+              <td>branca</td>
+            </tr>
+          </tbody>
+        </table> <br>
+
+
+
+      </div>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Funções de Datas em MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Funções de Datas em MySQL</h1>
+
+      <p class="lead">Existem diversas funções prontas para nos ajudam a trabalhar com datas e horas dentro de um banco de dados, como recuperar a hora atual, dia da semana, o ano, e várias outras possibilidades.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">--&nbsp;Data&nbsp;atual</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;current_date();</span></div> <br>
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>current_date()</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2020-11-26</td>
+            </tr>
+        </table> <br>
+        <div><span style="color: #6a9955;">--&nbsp;Hora&nbsp;Atual</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;current_time();</span></div><br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>current_time()</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>22:29:23</td>
+            </tr>
+        </table> <br>
+
+        <div><span style="color: #6a9955;">--&nbsp;Data&nbsp;e&nbsp;hora&nbsp;atual&nbsp;(outras&nbsp;fun&ccedil;&otilde;es&nbsp;now())</span></div>
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;current_timestamp();</span></div>
+        <br />
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>current_timestamp()</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2020-11-26 22:29:49</td>
+            </tr>
+        </table> <br>
+
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">TABLE</span><span style="color: #d4d4d4;">&nbsp;compras(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;valor&nbsp;DOUBLE,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;dia&nbsp;</span><span style="color: #569cd6;">DATETIME</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">INSERT</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">INTO</span><span style="color: #d4d4d4;">&nbsp;compras&nbsp;</span><span style="color: #569cd6;">VALUES</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">159</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">99</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">now</span><span style="color: #d4d4d4;">()),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">767</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">99</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'2017-11-26&nbsp;22:40:39'</span><span style="color: #d4d4d4;">),</span></div>
+        <div><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">11</span><span style="color: #d4d4d4;">.</span><span style="color: #b5cea8;">90</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'1999-05-01&nbsp;17:30:00'</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #569cd6;">SELECT</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #569cd6;">FROM</span><span style="color: #d4d4d4;">&nbsp;compras;</span></div> <br>
+
+        <table class="table-sm table-responsive-sm table-dark table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>valor</th>
+              <th>dia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>159.99</td>
+              <td>2020-11-26 22:41:31</td>
+            </tr>
+            <tr>
+              <td>767.99</td>
+              <td>2017-11-26 22:40:39</td>
+            </tr>
+            <tr>
+              <td>11.9</td>
+              <td>1999-05-01 17:30:00</td>
+            </tr>
+        </table>
+      </div>
+
+      <hr class="space">
+
+      <h2>Lista de Funções</h2>
+
+      <p class="lead">Para ver a lista completa com exemplos de funções como extrair o dia da semana, estação do ano, o mês as horas, além de funções que convertem horas em segundos, dias em minutos. Existem funções que calculam a diferença entre duas datas e até funções que retornam a data atual somada a uma outra data. A lista complete de funções pode ser acessada em <a href="https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html">Date and Time Functions</a>. (Documentação oficial em EN)</p>
+
+      
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

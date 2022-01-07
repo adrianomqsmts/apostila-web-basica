@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>AJAX</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJS();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>AJAX</h1>
+
+      <p class="lead">O JAX (Asynchronous JavaScript And XML) não é uma linguagem de programação, mas sim uma técnica de acessar o o servidor web de uma determinada página web. A Base do AJAX consiste no objeto interno do navegador chamado <code>XMLHttpRequest</code> que é responsável para solicitar os dados do servidor. </p>
+
+      <p class="lead">A principal vantagem do AJAX é que ele nos permite trabalhar com páginas assíncronas, ou seja, a troca de mensagem com o servidor ocorre por trás sem o o usuário saiba dessa interação, e a página WEB fica parecendo uma aplicação desktop, pois com esta técnica poderemos atualizar trechos de uma página sem termos que recarregar toda a página.</p>
+
+      <p class="lead">O clico de vida do ajax consiste em: </p>
+
+      <ol class="lead">
+        <li>Ocorre um evento em uma página web</li>
+        <li>Um objeto XMLHttpRequest é criado por JavaScript </li>
+        <li>O objeto XMLHttpRequest envia uma solicitação a um servidor web </li>
+        <li>O servidor processa o pedido</li>
+        <li>O servidor envia uma resposta de volta à página da web </li>
+        <li>A resposta é lida pelo JavaScript </li>
+      </ol>
+
+      <hr class="space">
+
+      <h2>Objeto XMLHttpRequest</h2>
+
+      <p class="lead">É a espinha dorsal que nos permite comunicar com o servidor sem travar a nossa aplicação a espera de uma resposta, tudo de uma forma transparênte para o usuário. A sintaxe de instanciação para o objeto é: </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;ajax&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;XMLHttpRequest();</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h3>Principais métodos do objeto XMLHttpRequest</h3>
+
+      <table class="table table-sm table-responsive-sm table-dark">
+        <thead>
+          <tr>
+            <th>Método</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>abort()</td>
+            <td>Cancela a requisição atual</td>
+          </tr>
+          <tr>
+            <td>getAllResponseHeaders()</td>
+            <td>Retorna o cabeçalho de informações</td>
+          </tr>
+          <tr>
+            <td>getResponseHeader()</td>
+            <td>Retorna um cabeçalho específico de informação</td>
+          </tr>
+          <tr>
+            <td>open(método, url, sincronismo, usuário, senha)</td>
+            <td>Especifica uma requisição, o método pode ser GET ou POST, um valor booleano <code>true</code> indica que queremos assíncrona e os parâmetros usuário e senha é opcional.</td>
+          </tr>
+          <tr>
+            <td>send() ou send("texto")</td>
+            <td>Envia a requisição para o servidor via GET, enquanto com parâmetro a requisição é enviada via POST</td>
+          </tr>
+          <tr>
+            <td>setRequestHeader()</td>
+            <td>Adiciona um par rótulo/valor ao cabeçalho a ser enviado </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h3>Principais propriedades do objeto XMLHttpRequest</h3>
+
+
+      <table class="table table-sm table-responsive-sm table-dark">
+        <thead>
+          <tr>
+            <th>Propriedade</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>onreadystatechange</td>
+            <td>Define uma função a ser chamada quando a propriedade readyState muda</td>
+          </tr>
+          <tr>
+            <td>readyState</td>
+            <td>Contém o status do XMLHttpRequest. <br> 0: pedido não inicializado <br> 1: ligação ao servidor estabelecida <br> 2: pedido recebido <br> 3: pedido a processar <br>4: pedido concluído e resposta pronta </td>
+          </tr>
+          <tr>
+            <td>responseText</td>
+            <td>Retorna os dados de resposta como uma string</td>
+          </tr>
+          <tr>
+            <td>responseXML</td>
+            <td>Retorna os dados de resposta como dados XML </td>
+          </tr>
+          <tr>
+            <td>status</td>
+            <td>Retorna o número de status de uma solicitação <br> 200: "OK" <br> 403: "Proibido" <br> 404: "Não encontrado" <br> Para obter uma lista completa, vá para <a href="https://www.w3schools.com/tags/ref_httpmessages.asp">Referência de mensagens Http</a> </td>
+          </tr>
+          <tr>
+            <td>statusText</td>
+            <td>Retorna o texto de status</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="space">
+
+      <h2>Criando uma requisição</h2>
+
+      <p class="lead">Neste ponto deve saber a diferença entre o método GET e POST. Mas sempre é bom relembrar os alguns conceitos. O método GET é mais rápido que o POST e pode ser usado na maioria dos casos, além de sem mais simples, enquanto o método POST deve ser usado quando queremos queremos atualizar um arquivo ou o banco de ados, quando queremos enviar uma grande quantidade de dados para o servidor, e por fim, quando queremos enviar dados de entrada de um usuário, pois o POST é mais robusto e seguro.</p>
+
+      <p class="lead">Assim, após decidir o método da requisição, precisamos definir qual arquivo queremos solicitar o seu conteúdo dentro do servidor e o usar como parâmetro dentro do método <code>xhttp.open();</code> e enviar a solicitação com o método <code>xhttp.send();</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;ajax&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;XMLHttpRequest();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ajax.open(</span><span style="color: #ce9178;">"GET"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"conteudo.html"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">true</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ajax.send();</span></div>
+      </div> <br>
+
+      <hr class="space">
+
+      <h2>A propriedade onreadystatechange</h2>
+
+      <p class="lead">Assim, podemos ficar escutando a resposta do servidor, e em qual estado (<code>readyState</code>) e em qual status <code>status</code> ele está em relação a requisição, se está sendo processada, ou se simplesmente já enviou uma resposta sem problemas.</p>
+
+      <p class="lead">Para into iremos criar uma função que irá ficar observando as repostas do servidor e iremos poder trabalhar sobre a resposta. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;ajax&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;XMLHttpRequest();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ajax.onreadystatechange&nbsp;=&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.readyState&nbsp;==&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">&nbsp;&amp;&amp;&nbsp;</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.status&nbsp;==&nbsp;</span><span style="color: #b5cea8;">200</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//O&nbsp;servido&nbsp;enviou&nbsp;a&nbsp;resposta&nbsp;e&nbsp;tudo&nbsp;ocorreu&nbsp;bem</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;};</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ajax.open(</span><span style="color: #ce9178;">"GET"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"conteudo.html"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">true</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;ajax.send();</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>responseText - obter os dados de resposta como uma string </h2>
+
+      <p class="lead">Podemos pegar a resposta do que o servidor nos enviou no formato de uma string através da propriedade <code>responseText</code> e exibir seu conteúdo em alguma parte do código.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">p</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">id</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"resposta"</span><span style="color: #808080;">&gt;&lt;/</span><span style="color: #569cd6;">p</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;ajax&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;XMLHttpRequest();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;ajax.onreadystatechange&nbsp;=&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.readyState&nbsp;==&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">&nbsp;&amp;&amp;&nbsp;</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.status&nbsp;==&nbsp;</span><span style="color: #b5cea8;">200</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(</span><span style="color: #ce9178;">"resposta"</span><span style="color: #d4d4d4;">).innerHTML&nbsp;=&nbsp;</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.responseText;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;ajax.open(</span><span style="color: #ce9178;">"GET"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"conteudo.html"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">true</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;ajax.send();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>Finalizando um exemplo</h2>
+
+      <p class="lead">Agora podemos encapsular toda a requisição e reposta dentro de uma função que será acionado quando clicarmos em um botão de forma que irá disparar um evento e gerar o ciclo de vida da resposta. Por fim, iremos colocar um loop dentro do arquivo </p> <br>
+
+      <p class="lead">Arquivo conteudo.php</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">for</span><span style="color: #d4d4d4;">($i&nbsp;=&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">;&nbsp;$i&nbsp;&lt;&nbsp;</span><span style="color: #b5cea8;">1000000</span><span style="color: #d4d4d4;">;&nbsp;$i++){</span></div>
+        <div><span style="color: #6a9955;">//LOOP&nbsp;para&nbsp;demorar&nbsp;que&nbsp;o&nbsp;servidor&nbsp;envie&nbsp;a&nbsp;resposta</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+        <br />
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span><span style="color: #d4d4d4;">Ol&aacute;&nbsp;Mundo!!!</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">div</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+      <div>&nbsp;</div>
+
+      <p class="lead">Aquivo principal</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;"><br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">button</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">onclick</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"</span><span style="color: #ce9178;">requisicao()</span><span style="color: #ce9178;">"</span><span style="color: #808080;">&gt;</span><span style="color: #d4d4d4;">Solicitar&nbsp;Dados</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">button</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">p</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">id</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"resposta"</span><span style="color: #808080;">&gt;&lt;/</span><span style="color: #569cd6;">p</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;requisicao()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;ajax&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span style="color: #d4d4d4;">&nbsp;XMLHttpRequest();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajax.onreadystatechange&nbsp;=&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.readyState&nbsp;==&nbsp;</span><span style="color: #b5cea8;">4</span><span style="color: #d4d4d4;">&nbsp;&amp;&amp;&nbsp;</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.status&nbsp;==&nbsp;</span><span style="color: #b5cea8;">200</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(</span><span style="color: #ce9178;">"resposta"</span><span style="color: #d4d4d4;">).innerHTML&nbsp;=&nbsp;</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">.responseText;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajax.open(</span><span style="color: #ce9178;">"GET"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"conteudo.php"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">true</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajax.send();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Exemplos de AJAX</h2>
+
+      <p class="lead">O w3schools oferece diversos exemplos explicados de leitura de diferentes arquivos como php, XML, asp, leitura de Banco de Dados com PHP, dentre outros. Para vê-los acesse <a href="https://www.w3schools.com/js/js_ajax_examples.asp">AJAX Examples</a>. Bons estudos. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

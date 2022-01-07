@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Datas em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Datas em PHP</h1>
+
+      <p class="lead">Em PHP a principal função para se trabalhar com datas é a função <code>date()</code>, que é responsável para formatar datas e horas.</p>
+
+      <ul class="lead">
+        <li>d - Representa o dia do mês (01 a 31)</li>
+        <li>m - Representa um mês (01 a 12) </li>
+        <li>Y - representa um ano (em quatro dígitos)</li>
+        <li>l - Representa o dia da semana</li>
+        <li>H - formato de 24 horas de uma hora (00 a 23) </li>
+        <li>h - formato de 12 horas de uma hora com zeros à esquerda (01 a 12) </li>
+        <li>i - Minutos com zeros à esquerda (00 a 59)</li>
+        <li>s - segundos com zeros à esquerda (00 a 59) </li>
+        <li>a - Ante meridiem minúsculo e Post meridiem (am ou pm) </li>
+      </ul>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Data&nbsp;de&nbsp;hoje&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"Y/m/d"</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;algo&nbsp;como:&nbsp;Data&nbsp;de&nbsp;hoje&nbsp;2020/11/20</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Data&nbsp;de&nbsp;hoje&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"Y-m-d"</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;algo&nbsp;como:&nbsp;Data&nbsp;de&nbsp;hoje&nbsp;2020-11-20</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dia&nbsp;da&nbsp;semana&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"l"</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;algo&nbsp;como:&nbsp;Dia&nbsp;da&nbsp;semana&nbsp;Friday</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Dia&nbsp;de&nbsp;hoje&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"d"</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;algo&nbsp;como:&nbsp;Dia&nbsp;de&nbsp;hoje&nbsp;20</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"HORA&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"h:i:sa"</span><span style="color: #d4d4d4;">)&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span style="color: #d4d4d4;">;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;algo&nbsp;como:&nbsp;HORA&nbsp;07:43:10pm</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Trabalhando com fuso horários</h2>
+
+      <p class="lead">Para determinar o TIMEZONE do relógio deve usar a função <code>  date_default_timezone_set("America/Sao_Paulo");</code>, pois o horário exibido é o do servidor e pode gerar erros. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;date_default_timezone_set(</span><span style="color: #ce9178;">"America/Sao_Paulo"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"HORA&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"H:i:s"</span><span style="color: #d4d4d4;">);&nbsp;</span><span style="color: #6a9955;">//&nbsp;Exibe&nbsp;HORA&nbsp;15:48:21</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Criando datas</h2>
+
+      <p class="lead">Para criar uma data personalizada podemos usar duas diferentes funções, a primeira é usando a função <code>mktime(hora, minutos, segundos, dia, mês, ano)</code>. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$d&nbsp;=&nbsp;mktime(</span><span style="color: #b5cea8;">11</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">14</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">54</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">8</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">12</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2014</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"A&nbsp;data&nbsp;criada&nbsp;&eacute;&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"Y-m-d&nbsp;h:i:sa"</span><span style="color: #d4d4d4;">,&nbsp;$d);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Resultado&nbsp;2014-08-12&nbsp;11:14:54am</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <br>
+
+      <p class="lead">A segunda forma é usando a função <code>strtotime()</code> que pode receber diversos formatos como parâmetros, como <code>tomorrow</code> que irá exibir o dia de amanhã, <code>next Saturday</code> que irá exibir o próximo sábado ou até mesmo <code>+3 Months</code> que irá pegar a data atual e somar 3 meses.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$d&nbsp;=&nbsp;strtotime(</span><span style="color: #ce9178;">"10:30pm&nbsp;April&nbsp;15&nbsp;2014"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"A&nbsp;data&nbsp;crida&nbsp;&eacute;&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;date(</span><span style="color: #ce9178;">"Y-m-d&nbsp;h:i:sa"</span><span style="color: #d4d4d4;">,&nbsp;$d);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;A&nbsp;data&nbsp;crida&nbsp;&eacute;&nbsp;2014-04-15&nbsp;10:30:00pm</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>time() - horas</h2>
+
+      <p class="lead">A função <code>time()</code> retorna a hora atual no formato timestamp Unix. A hora estará em em segundos. Para trabalhar com horas futuras, devemos pegar o valor de time e multiplicar pelos segundos que faltam para a data futura. Por exemplo, caso queiramos somar 7 dias na data atual, devemos pegar 60 segundos * 60 minutos * 24 horas * 7 dias, que teremos em segundos os 7 dias.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$proximaSemana&nbsp;=&nbsp;time()&nbsp;+&nbsp;(</span><span style="color: #b5cea8;">7</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">24</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">&nbsp;*&nbsp;</span><span style="color: #b5cea8;">60</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;date(</span><span style="color: #ce9178;">'Y-m-d'</span><span style="color: #d4d4d4;">,&nbsp;$proximaSemana);</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

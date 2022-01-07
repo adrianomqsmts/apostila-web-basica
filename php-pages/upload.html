@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Upload de arquivos com PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Upload de arquivos com PHP</h1>
+
+      <p class="lead">O PHP nos permite realizar uploads de arquivos de texto e binários, além poder usar funções de autenticação e manipulação de arquivos do PHP, onde podemos controlar quais arquivos são inseridos e por quem. </p>
+
+      <hr class="space">
+
+      <h2>Formulário de Upload</h2>
+
+      <p class="lead">Para permitir que haja a possibilidade de upload de arquivos deve-se verificar o arquivo <code>php.ini</code> e ver se a opção <code>file_uploads = on</code> está com o valor <code>on</code>. Normalmente está ativado. Segundo, precisamos definir um formulário com o método de envio POST <code>method="post"</code>, com o campo de entrada do tipo <code>file</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">&lt;!--&nbsp;O&nbsp;tipo&nbsp;de&nbsp;encoding&nbsp;de&nbsp;dados,&nbsp;enctype,&nbsp;DEVE&nbsp;ser&nbsp;especificado&nbsp;abaixo&nbsp;--&gt;</span></div>
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">form</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">action</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">method</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"post"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">enctype</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"multipart/form-data"</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">&lt;!--&nbsp;MAX_FILE_SIZE&nbsp;deve&nbsp;preceder&nbsp;o&nbsp;campo&nbsp;input&nbsp;file&nbsp;e&nbsp;determina&nbsp;o&nbsp;tamanho&nbsp;m&aacute;ximo&nbsp;no&nbsp;lado&nbsp;do&nbsp;cliente</span></div>
+        <div><span style="color: #6a9955;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;impedindo&nbsp;que&nbsp;ele&nbsp;so&nbsp;saiba&nbsp;que&nbsp;o&nbsp;arquivo&nbsp;era&nbsp;grande,&nbsp;ap&oacute;s&nbsp;o&nbsp;envio.&nbsp;--&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"hidden"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"MAX_FILE_SIZE"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">value</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"30000"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">/&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">label</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">for</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #808080;">&gt;</span><span style="color: #d4d4d4;">Escolha&nbsp;um&nbsp;arquivo</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">&lt;!--&nbsp;O&nbsp;Nome&nbsp;do&nbsp;elemento&nbsp;input&nbsp;determina&nbsp;o&nbsp;nome&nbsp;da&nbsp;array&nbsp;multidimensional&nbsp;$_FILES&nbsp;--&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"file"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">id</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">value</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"Enviar&nbsp;Arquivo"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">form</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Variável super global $_FILES</h2>
+
+      <p class="lead">A variável super global $_FILES conterá toda a informação do arquivo enviado em um array multidimensional onde o primeiro index conterá o nome do campo de entrada do tipo <code>file</code> e o segundo parâmetro conterá as características do arquivo.</p>
+
+      <ul>
+        <li><strong>$_FILES["nameFile"]["name"]</strong> - O nome original do arquivo na máquina do cliente. </li>
+        <li><strong>$_FILES["nameFile"]["type"]</strong> - O tipo do arquivo, se o navegador fornecer essa informação.</li>
+        <li><strong>$_FILES["nameFile"]["size"]</strong> - O tamanho, em bytes, do arquivo enviado. </li>
+        <li><strong>$_FILES["nameFile"]["tmp_name"]</strong> - O nome temporário com o qual o arquivo enviado foi armazenado no servidor. </li>
+        <li><strong>$_FILES["nameFile"]["error"]</strong> - O código de erro associado a esse upload de arquivo. </li>
+      </ul>
+
+      <p class="lead">Os arquivos serão guardados por padrão no diretório temporário do servidor, a menos que outro local seja especificado através da diretiva <code>upload_tmp_dir</code> no arquivo <code>php.ini</code>. Abaixo temos o código completo de upload e nas próximas sessões um breve descrição de cada parte do código.F</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #6a9955;">&lt;!--&nbsp;O&nbsp;tipo&nbsp;de&nbsp;encoding&nbsp;de&nbsp;dados,&nbsp;enctype,&nbsp;DEVE&nbsp;ser&nbsp;especificado&nbsp;abaixo&nbsp;--&gt;</span></div>
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">form</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">action</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">""</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">method</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"post"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">enctype</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"multipart/form-data"</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">&lt;!--&nbsp;MAX_FILE_SIZE&nbsp;deve&nbsp;preceder&nbsp;o&nbsp;campo&nbsp;input&nbsp;file&nbsp;e&nbsp;determina&nbsp;o&nbsp;tamanho&nbsp;m&aacute;ximo&nbsp;no&nbsp;lado&nbsp;do&nbsp;cliente</span></div>
+        <div><span style="color: #6a9955;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;impedindo&nbsp;que&nbsp;ele&nbsp;so&nbsp;saiba&nbsp;que&nbsp;o&nbsp;arquivo&nbsp;era&nbsp;grande,&nbsp;ap&oacute;s&nbsp;o&nbsp;envio.&nbsp;--&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"hidden"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"MAX_FILE_SIZE"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">value</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"30000"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #808080;">/&gt;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">label</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">for</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #808080;">&gt;</span><span style="color: #d4d4d4;">Escolha&nbsp;um&nbsp;arquivo</span><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">label</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">&lt;!--&nbsp;O&nbsp;Nome&nbsp;do&nbsp;elemento&nbsp;input&nbsp;determina&nbsp;o&nbsp;nome&nbsp;da&nbsp;array&nbsp;multidimensional&nbsp;$_FILES&nbsp;--&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"file"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">id</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">input</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">type</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">value</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"Enviar&nbsp;Arquivo"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">name</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">"submit"</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">form</span><span style="color: #808080;">&gt;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(array_key_exists(</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">,&nbsp;$_FILES))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$caminhoArquivo&nbsp;=&nbsp;</span><span style="color: #ce9178;">"arquivos/"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;basename($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"name"</span><span style="color: #d4d4d4;">]);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$tipoArquivo&nbsp;=&nbsp;</span><span style="color: #d4d4d4;">strtolower</span><span style="color: #d4d4d4;">(pathinfo($caminhoArquivo,&nbsp;PATHINFO_EXTENSION));</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Verificando&nbsp;se&nbsp;o&nbsp;arquivo&nbsp;j&aacute;&nbsp;existe</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(file_exists($caminhoArquivo))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;arquivo&nbsp;j&aacute;&nbsp;foi&nbsp;inserido."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Verificando&nbsp;o&nbsp;tamanho&nbsp;do&nbsp;arquivo&nbsp;no&nbsp;lado&nbsp;do&nbsp;servidor</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"size"</span><span style="color: #d4d4d4;">]&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">5242880</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;arquivo&nbsp;tem&nbsp;mais&nbsp;de&nbsp;5MB."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Verificando&nbsp;o&nbsp;tipo&nbsp;do&nbsp;arquivo</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($tipoArquivo&nbsp;==&nbsp;</span><span style="color: #ce9178;">"jpg"</span><span style="color: #d4d4d4;">&nbsp;||&nbsp;$tipoArquivo&nbsp;==&nbsp;</span><span style="color: #ce9178;">"png"</span><span style="color: #d4d4d4;">&nbsp;||&nbsp;$tipoArquivo&nbsp;!=&nbsp;</span><span style="color: #ce9178;">"jpeg"</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Movendo&nbsp;o&nbsp;arquivo&nbsp;do&nbsp;diret&oacute;rio&nbsp;tempor&aacute;rio&nbsp;para&nbsp;o&nbsp;diret&oacute;rio&nbsp;de&nbsp;upload&nbsp;e&nbsp;verificando&nbsp;se&nbsp;a&nbsp;fun&ccedil;&atilde;o&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//retorna&nbsp;erro&nbsp;ou&nbsp;n&atilde;o.</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(move_uploaded_file($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"tmp_name"</span><span style="color: #d4d4d4;">],&nbsp;$target_file))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;arquivo&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">htmlspecialchars</span><span style="color: #d4d4d4;">(basename($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"name"</span><span style="color: #d4d4d4;">]))&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;&nbsp;foi&nbsp;carregado&nbsp;com&nbsp;sucesso."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Houve&nbsp;um&nbsp;erro&nbsp;ao&nbsp;enviar&nbsp;o&nbsp;arquivo."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Somente&nbsp;&eacute;&nbsp;permitido&nbsp;arquivos&nbsp;.jpg,&nbsp;.jpeg&nbsp;e&nbsp;.png"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Encontrando o arquivo</h2>
+
+      <p class="lead">Em seguida precisamos trabalhar em uma página com a extensão <code>.php</code> com os dados enviados pelo formulário. O script para o upload de arquivos é um pouco complexo, e iremos iniciar definindo o diretório do arquivo e o nome do arquivo. Para isto usaremos o auxílio da variável super global <code>$_FILES</code> que irá conter o arquivo enviado e a função <code>basename("caminho/arquivo.extensão")</code> que retornará uma string com o nome do arquivo. A terceira função que usaremos é a função <code>pathinfo("caminho/arquivo.extensão", PATHINFO_EXTENSION)</code> que nos retornará o tipo do arquivo em letras minúsculas graças a função <code>strtolower(string)</code>. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(array_key_exists(</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">,&nbsp;$_FILES))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$caminhoArquivo&nbsp;=&nbsp;</span><span style="color: #ce9178;">"arquivos/"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;basename($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"name"</span><span style="color: #d4d4d4;">]);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$tipoArquivo&nbsp;=&nbsp;</span><span style="color: #d4d4d4;">strtolower</span><span style="color: #d4d4d4;">(pathinfo($caminhoArquivo,&nbsp;PATHINFO_EXTENSION));</span></div>
+        <span style="color: #d4d4d4;">} </span>
+      </div>
+      <hr class="space">
+
+      <h2>Verificando se o arquivo já existe</h2>
+
+      <p class="lead">Em seguida, bastamos verificar se o arquivo já existe ou não, podendo sobrescrevé-lo caso queria, ou enviar uma mensagem para o usuário para enviar outro arquivo. Para isso usaremos a função <code>file_exists($caminhoArquivo)</code> que irá retornar um valor booleano se exite ou não o arquivo. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(file_exists($caminhoArquivo))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;arquivo&nbsp;j&aacute;&nbsp;foi&nbsp;inserido."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Limitando o tamanho do arquivo</h2>
+
+      <p class="lead">Podemos querer que o arquivo tenha um tamanho máximo para impedir que ele consuma toda a banda da aplicação, por exemplo. Para isso, precisamos apenas usar a variável super global <code>$_FILES["arquivo"]["size"]</code> que contém o tamanho (em bytes) do arquivo enviado. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"size"</span><span style="color: #d4d4d4;">]&nbsp;&gt;&nbsp;</span><span style="color: #b5cea8;">5242880</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;arquivo&nbsp;tem&nbsp;mais&nbsp;de&nbsp;5MB."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></div>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>Limitando o tipo do arquivo</h2>
+
+      <p class="lead">Para limitar do tipo do arquivo, basta usar lógica computacional para verificar quais tipos podem ser aceitos ou não.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Verificando&nbsp;o&nbsp;tipo&nbsp;do&nbsp;arquivo</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;($tipoArquivo&nbsp;==&nbsp;</span><span style="color: #ce9178;">"jpg"</span><span style="color: #d4d4d4;">&nbsp;||&nbsp;$tipoArquivo&nbsp;==&nbsp;</span><span style="color: #ce9178;">"png"</span><span style="color: #d4d4d4;">&nbsp;||&nbsp;$tipoArquivo&nbsp;!=&nbsp;</span><span style="color: #ce9178;">"jpeg"</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Somente&nbsp;&eacute;&nbsp;permitido&nbsp;arquivos&nbsp;.jpg,&nbsp;.jpeg&nbsp;e&nbsp;.png"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Enviando o arquivo para o servidor</h2>
+
+      <p class="lead">O arquivo está em uma pasta temporária, como mencionado anteriormente. Então precisamos usar a função <code>move_uploaded_file("caminho/arquivo.extensão", "destino")</code> para mover os arquivos entre as pastas. A função irá retorna um valor booleano <code>true</code> se o a troca foi realizada, e <code>false</code> caso hja algum erro. LEMBRE-SE de verificar se a pasta de destino existe e as permissões das pastas</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(move_uploaded_file($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"tmp_name"</span><span style="color: #d4d4d4;">],&nbsp;$caminhoArquivo))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;arquivo&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #d4d4d4;">htmlspecialchars</span><span style="color: #d4d4d4;">(basename($_FILES[</span><span style="color: #ce9178;">"arquivo"</span><span style="color: #d4d4d4;">][</span><span style="color: #ce9178;">"name"</span><span style="color: #d4d4d4;">]))&nbsp;</span><span style="color: #d4d4d4;">.</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"&nbsp;&nbsp;foi&nbsp;carregado&nbsp;com&nbsp;sucesso."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">else</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Houve&nbsp;um&nbsp;erro&nbsp;ao&nbsp;enviar&nbsp;o&nbsp;arquivo."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+      </div>
+
+
+      <br>
+
+      <p class="lead">Para ver com mais detalhes da implementação do código acima, acesse <a href="https://www.php.net/manual/pt_BR/features.file-upload.post-method.php">Upload de arquivos com o método POST</a></p>
+
+
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

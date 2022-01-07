@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Escopos em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Escopos em PHP</h1>
+
+      <p class="lead">De forma resumida um escopo define onde uma variável pode ver vista/acessada. Em PHP um variável pode ser global, local ou estática. </p>
+
+      <p class="lead">Basicamente, uma variável definida <strong>>fora de uma função</strong> tem um <strong>>escopo global</strong>, enquanto uma variável declarada <strong>>dentro de uma função</strong> tem um <strong>>escopo local</strong> e somente poderá ser acessada dentro de uma função! As duas formas abaixo estão erradas e podem gerar erros!</p>
+
+      <div style="background-color: #1e1e1e; ">
+        <div><span>&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">5</span><span>;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Escopo&nbsp;Global</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span>&nbsp;funcGlobal()&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//Usar&nbsp;a&nbsp;vari&aacute;vel&nbsp;X&nbsp;dentro&nbsp;de&nbsp;uma&nbsp;fun&ccedil;&atilde;o&nbsp;vai&nbsp;gerar&nbsp;um&nbsp;erro.</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;p&gt;O&nbsp;valor&nbsp;de&nbsp;X&nbsp;fora&nbsp;da&nbsp;fun&ccedil;&atilde;o&nbsp;&eacute;:&nbsp;$x&lt;/p&gt;"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;funcGlobal();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;p&gt;O&nbsp;valor&nbsp;da&nbsp;vari&aacute;vel&nbsp;x&nbsp;fora&nbsp;da&nbsp;fun&ccedil;&atilde;o&nbsp;&eacute;:&nbsp;$x&lt;/p&gt;"</span><span>;</span></div>
+        <br>
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span>&nbsp;funcLocal()&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;$y&nbsp;=&nbsp;</span><span style="color: #b5cea8;">5</span><span>;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Escopo&nbsp;Local</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;p&gt;O&nbsp;valor&nbsp;de&nbsp;y&nbsp;dentro&nbsp;da&nbsp;fun&ccedil;&atilde;o&nbsp;&eacute;:&nbsp;$y&lt;/p&gt;"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <div><span>&nbsp;&nbsp;funcLocal();</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Usar&nbsp;a&nbsp;vari&aacute;vel&nbsp;Y&nbsp;fora&nbsp;da&nbsp;fun&ccedil;&atilde;o&nbsp;vai&nbsp;gerar&nbsp;erro.</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;p&gt;O&nbsp;valor&nbsp;da&nbsp;vari&aacute;vel&nbsp;y&nbsp;fora&nbsp;da&nbsp;fun&ccedil;&atilde;o&nbsp;&eacute;:&nbsp;$y&lt;/p&gt;"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span>&nbsp;</span></div>
+      </div>
+
+      <hr class="space">
+      <h2>Palavra reservada Global</h2>
+
+      <p class="lead">Para usar uma variável global dentro de uma função precisamos usar a palavra reservada <code>global</code>, que é usada para acessar uma variável global de dentro de uma função. </p>
+
+      <div style="background-color: #1e1e1e; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">5</span><span>;</span></div>
+        <div><span>$y&nbsp;=&nbsp;</span><span style="color: #b5cea8;">10</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;</span><span style="color: #569cd6;">function</span><span>&nbsp;soma()&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">global</span><span>&nbsp;$x,&nbsp;$y;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;$y&nbsp;=&nbsp;$x&nbsp;+&nbsp;$y;</span></div>
+        <div><span>&nbsp;}</span></div>
+        <br />
+        <div><span>&nbsp;soma();</span></div>
+        <div><span>&nbsp;echo&nbsp;$y;&nbsp;</span><span style="color: #6a9955;">//&nbsp;saida&nbsp;&eacute;&nbsp;15</span></div>
+        <div><span>&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <br>
+
+      <p class="lead">PHP também armazena todas as variáveis globais em um array chamado <code>$GLOBALS[index]</code>. O index contém o nome da variável, e poderemos então, através do index acessar o valor armazenado de uma variável.</p>
+
+      <div style="background-color: #1e1e1e;">
+        <div><span>&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">5</span><span>;</span></div>
+        <div><span>$y&nbsp;=&nbsp;</span><span style="color: #b5cea8;">10</span><span>;</span></div>
+        <br />
+        <div><span style="color: #569cd6;">function</span><span>&nbsp;soma()&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;$GLOBALS[</span><span style="color: #ce9178;">'y'</span><span>]&nbsp;=&nbsp;$GLOBALS[</span><span style="color: #ce9178;">'x'</span><span>]&nbsp;+&nbsp;$GLOBALS[</span><span style="color: #ce9178;">'y'</span><span>];</span></div>
+        <div><span>}</span></div>
+        <br />
+        <div><span>soma();</span></div>
+        <div><span>echo&nbsp;$y;&nbsp;</span><span style="color: #6a9955;">//&nbsp;sa&iacute;da&nbsp;15</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span>&nbsp;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Palavra reservada static</h2>
+
+      <p class="lead">Normalmente, quando uma função é concluída / executada, todas as suas variáveis locais são excluídas. No entanto, às vezes queremos que uma <strong>>variável local NÃO seja excluída</strong>. Para evitar esta exclusão precisamos usar a palavra reservada <code>static</code>. Desta forma, quando a função for chamada novamente, o valor da variável local ainda estará armazenado. </p>
+
+      <div style="background-color: #1e1e1e; ">
+        <div><span>&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span>&nbsp;contador()&nbsp;&nbsp;{</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">static</span><span>&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">0</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;$x++;</span></div>
+        <div><span>&nbsp;&nbsp;}</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;contador();&nbsp;&nbsp;</span><span style="color: #6a9955;">//Escreve&nbsp;0</span></div>
+        <div><span>&nbsp;&nbsp;contador();&nbsp;</span><span style="color: #6a9955;">//Escreve&nbsp;1</span></div>
+        <div><span>&nbsp;&nbsp;contador();&nbsp;</span><span style="color: #6a9955;">//Escreve&nbsp;2</span></div>
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span><span>&nbsp;</span></div>
+      </div>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Introdução ao MySQL</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuSQL();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Introdução ao MySQL</h1>
+
+      <p class="lead">O SQL (Structured Query Language - Linguagem de consulta estruturada) é uma linguagem de acesso e manipulação de banco de dados, como consulta aos dados armazenados, inserção, atualização e exclusão destes dados (CRUD).</p>
+
+      <p class="lead">Apesar de existir um padrão para o SQL, ainda existem variações entre as empresas quanto a sintaxe, e neste tutorial focaremos nos bancos de dados MySQL. Um banco de dados pode ser visto como uma coleção de uma ou mais tabelas, onde cada dado ou registro é representado por uma linha dentro da tabela.</p>
+
+      <table class="table table-sm table-responsive-sm table-bordered text-white">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Salário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fulano</td>
+            <td>57</td>
+            <td>2976,90</td>
+          </tr>
+          <tr>
+            <td>Sicrano</td>
+            <td>23</td>
+            <td>1676,90</td>
+          </tr>
+          <tr>
+            <td>Beltrano</td>
+            <td>35</td>
+            <td>2376,90</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+      <p class="lead">Diferente de muitas linguagem o SQL não difere letras maiúsculas e letras minúsculas, ou seja, <code>Abc</code> é igual a <code>abc</code>, entretanto existem alguns padrões de boas práticas a serem seguidos. Por fim, é importante ressaltar que cada comando deve-se, por recomendação, terminar com ponto e vírgulas <code>;</code>, mesmo que não seja obrigatório.</p>
+
+
+      <hr class="lead">
+
+      <h2>Criando um banco de dados</h2>
+
+      <p class="lead">Após instalar o seu SGBD (Sistema de gerenciamento de banco de dados), abra um arquivo <code>.sql</code> e digite a instrução <code>CREATE DATABASE</code> para criar um banco de dados, seguido pelo nome que deseja dar ao banco.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">DATABASE</span><span style="color: #d4d4d4;">&nbsp;nomeBanco;</span></div>
+      </div> <br>
+
+      <p class="lead">Ou então use a instrução <code>CREATE SCHEMA</code></p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">CREATE</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">SCHEMA</span><span style="color: #d4d4d4;">&nbsp;nomeBanco;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Visualizando os bancos de dados</h2>
+
+      <p class="lead">Para visualizar todos os bancos de dados criados use a instrução <code>SHOW DATABASES</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">SHOW</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">DATABASES</span><span style="color: #d4d4d4;">;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Apagando um banco de dados</h2>
+
+      <p class="lead">Para apagar um banco de dados e todos os seus dados, basta usar o comando <code>DROP DATABASE</code>, seguido pelo nome do banco de dados que deseja apagar.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">DROP</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">DATABASE</span><span style="color: #d4d4d4;">&nbsp;nomeBanco;</span></div>
+      </div>
+      <br>
+
+      <p class="lead">Lembrando que que em alguns casos é necessário executar a instrução.</p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Variáveis em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Variáveis em PHP</h1>
+
+      <p class="lead">Variáveis ​​são "contêineres" para armazenar informações. No PHP, uma variável começa com o caractere especial de cifrão <code>$</code>, seguido pelo nome da variável que desejamos dar para a variável. O nome deve seguir as seguintes regras: </p>
+
+      <ul class="lead">
+        <li>
+          Uma variável começa com o caractere especial de cifrão <code>$</code>
+        </li>
+        <li>
+          Um nome de variável deve começar com uma letra ou com um underline <code>_</code>. Um nome de variável não pode começar com um número, mas pode conter caracteres alfanuméricos no seu corpo (A-z, 0-9 e _)
+        </li>
+        <li>
+          Os nomes das variáveis diferenciam maiúsculas de minúsculas ($abc e $Abc são duas variáveis diferentes)
+        </li>
+      </ul>
+
+      <hr class="space">
+
+      <h2>Tipos de variáveis</h2>
+
+      <div style="background-color: #1e1e1e;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <br />
+        <div><span>$texto&nbsp;=&nbsp;</span><span style="color: #ce9178;">"texto"</span><span>;&nbsp;</span><span style="color: #6a9955;">//String</span></div>
+        <div><span>$inteiro&nbsp;=&nbsp;</span><span style="color: #b5cea8;">10</span><span>;&nbsp;</span><span style="color: #6a9955;">//Integer</span></div>
+        <div><span>$flutuante&nbsp;=&nbsp;</span><span style="color: #b5cea8;">15.753</span><span>;&nbsp;</span><span style="color: #6a9955;">//Float</span></div>
+        <div><span>$booleano&nbsp;=&nbsp;</span><span style="color: #569cd6;">false</span><span>;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Boolean</span></div>
+        <div><span>$lista&nbsp;=&nbsp;[</span><span style="color: #ce9178;">"carro"</span><span>,&nbsp;</span><span style="color: #ce9178;">"moto"</span><span>,&nbsp;</span><span style="color: #ce9178;">"bicicleta"</span><span>];&nbsp;</span><span style="color: #6a9955;">//Array&nbsp;pode&nbsp;ser&nbsp;$lista&nbsp;=&nbsp;array("c","m","b");</span></div>
+        <div><span>$objeto&nbsp;=&nbsp;</span><span style="color: #569cd6;">new</span><span>&nbsp;string(</span><span style="color: #ce9178;">"objeto&nbsp;de&nbsp;string"</span><span>);&nbsp;</span><span style="color: #6a9955;">//Object</span></div>
+        <div><span>$nulo&nbsp;=&nbsp;</span><span style="color: #569cd6;">null</span><span>;&nbsp;</span><span style="color: #6a9955;">//Null</span></div>
+        <div><span>$naoNumero&nbsp;=&nbsp;NAN;&nbsp;</span><span style="color: #6a9955;">//NaN&nbsp;n&atilde;o&nbsp;&eacute;&nbsp;um&nbsp;n&uacute;mero</span></div>
+        <br />
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <p class="lead">Podemos ver o tipo de dado de um variável com a ajuda da função <code>var_dump(variável)</code>. Esta função irá retorna o tipo da variável. </p>
+
+      <hr class="space">
+
+      <h2>Constantes</h2>
+
+      <p class="lead">Constantes são como variáveis que não podem ter seus valores alterados e são sempre globais. A função que cria uma contante é <code>define()</code> que possui três parâmetros, o primeiro, o nome da constante, o segundo, o valor, e um terceiro (opcional) especifica se o nome da constante deve ser indiferente a maiúsculas. O padrão é falso. Por convenção nomes de constantes são sempre em letra maiúsculas. </p>
+
+      <p class="lead">O valor também pode ser uma lista do tipo array.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;define(</span><span style="color: #ce9178;">"CONSTANTE"</span><span style="color: #d4d4d4;">,&nbsp;&nbsp;782624516);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;CONSTANTE;&nbsp;</span><span style="color: #6a9955;">//&nbsp;exibe&nbsp;782624516</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>isset() - Verificando se existe uma variável</h2>
+
+      <p class="lead">A função <code>isset($variável)</code> verifica se uma variável existe ou não. Retornado <code>true</code> se existe, e <code>false</code> caso contrário. É muito usada para ver se dados dos formulários foram enviados, se um array, dado o index, está definido, ou se existe um determinado cookie atribuído.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(isset($var))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Essa&nbsp;vari&aacute;vel&nbsp;existe."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br>
+
+      <p class="lead">Para destruir uma variável, usamos a função <code> unset($variável)</code></p>
+
+      <hr class="space">
+
+      <h2>empty() - Verificando se a variável está vazia</h2>
+
+      <p class="lead">A função <code>empty($variável)</code> verifica se uma variável está vazia. Uma variável é considerada vazia se não existir ou seu valor é igual <code>false</code>. A função <code>empty()</code> não gera um aviso se a variável não existir. Retorna <code>false</code> se a variável existir e não estiver vazia e não conter um valor zerado. Caso contrário retornará <code>true</code>. Exemplos <code>""</code>, <code>0</code>, <code>0.0</code>, <code>NULL</code>, <code>false</code>, <code>array()</code>, <code>[]</code> e <code>$var</code> (declarada, mas sem valor).</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #569cd6;">if</span><span style="color: #d4d4d4;">&nbsp;(empty($var))&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"Essa&nbsp;vari&aacute;vel&nbsp;est&aacute;&nbsp;vazia,&nbsp;cont&eacute;m&nbsp;valor&nbsp;0&nbsp;ou&nbsp;n&atilde;o&nbsp;est&aacute;&nbsp;atribu&iacute;da&nbsp;um&nbsp;valor."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>is_* verificando o tipo da variável</h2>
+
+      <p class="lead">Através das funções abaixo, poderemos saber qual o tipo da variável. Retornam <code>true</code> se o tipo for o da função, e <code>false</code> caso contrário.</p>
+
+      <ul>
+        <li><strong>is_bool($variável) </strong> - Verifica se a variável é um boleano</li>
+        <li><strong>is_numeric($variável) </strong> - Informa se a variável é um número ou uma string numérica</li>
+        <li><strong>is_float($variável) </strong> - Informa se a variável é do tipo float</li>
+        <li><strong>is_int($variável) </strong>- Informa se a variável é do tipo inteiro</li>
+        <li><strong>is_string($variável)</strong> - Informa se a variável é do tipo string</li>
+        <li><strong>is_object($variável) </strong> - Informa se a variável é um objeto</li>
+        <li><strong>is_array($variável) </strong> - Verifica se a variável é um array</li>
+      </ul>
+
+
+      <hr class="space">
+
+      <h2>vardump() - Informações da variável</h2>
+
+      <p class="lead">A função <code>vardump($variável)</code> mostra informações sobre a variável, mostrando toda a estrutura da variável, mostrando também o seu tipo e o seu valor. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$array&nbsp;=&nbsp;[</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">2</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #b5cea8;">3</span><span style="color: #d4d4d4;">];</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;echo&nbsp;var_dump($array);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;array(3)&nbsp;{&nbsp;[0]=&gt;&nbsp;int(1)&nbsp;[1]=&gt;&nbsp;int(2)&nbsp;[2]=&gt;&nbsp;int(3)&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;mostrando&nbsp;o&nbsp;tamanho&nbsp;do&nbsp;array,&nbsp;o&nbsp;index&nbsp;de&nbsp;cada&nbsp;elemento&nbsp;e&nbsp;o&nbsp;seu&nbsp;respectivo&nbsp;valor&nbsp;e&nbsp;tipo</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;como&nbsp;$array[2]&nbsp;=&nbsp;3</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <br>
+
+      <p class="lead">Para ver mais funções que trabalham sobre as variáveis acesse <a href="https://www.php.net/manual/pt_BR/ref.var.php">Funções para Manipulação de variáveis</a>.</p>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

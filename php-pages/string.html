@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Strings em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Strings em PHP</h1>
+
+      <p class="lead">Uma String pode ser vista como um vetor de caracteres (imagem abaixo). Onde o primeiro caractere do vetor é a posição 0, o segundo a posição 1 e assim sucessivamente. </p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/strings.jpg" class="figure-img img-fluid rounded" alt="Imagem que mostra um vetor de caracteres que começa com a posição 0">
+          <figcaption class="figure-caption text-xs-right">Vetor de caracteres</figcaption>
+        </figure>
+      </div>
+
+      <br>
+
+      <p class="lead">Existem diversas funções que podem ser usadas para manipular strings, abaixo temos as principais destacadas com uma breve descrição.</p>
+
+      <div style="background-color: #1e1e1e; ">
+        <div><span >&nbsp;&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <br />
+        <div><span >&nbsp;&nbsp;$texto&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Um&nbsp;pequeno&nbsp;texto"</span><span >;</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span >strlen</span><span >($texto)&nbsp;</span><span >.</span><span >&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span >;&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;16</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span >strpos</span><span >($texto,&nbsp;</span><span style="color: #ce9178;">"pequeno"</span><span >)&nbsp;</span><span >.</span><span >&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span >;&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;3&nbsp;</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span >strcmp</span><span >(</span><span style="color: #ce9178;">"oi"</span><span >,&nbsp;</span><span style="color: #ce9178;">"Oi"</span><span >)&nbsp;</span><span >.</span><span >&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span >;&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;false&nbsp;=&nbsp;1</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span >explode</span><span >(</span><span style="color: #ce9178;">"&nbsp;"</span><span >,&nbsp;$texto)&nbsp;</span><span >.</span><span >&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span >;&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;["um",&nbsp;"pequeno",&nbsp;"texto"]</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;</span><span >strtoupper</span><span >(</span><span style="color: #ce9178;">"Abacaxi"</span><span >);&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;ABACAXI</span></div>
+        <div><span >&nbsp;&nbsp;</span><span >parse_str</span><span >(</span><span style="color: #ce9178;">"nome=Fulano"</span><span >);</span></div>
+        <div><span >&nbsp;&nbsp;echo&nbsp;$nome;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Escreve&nbsp;Fulano,&nbsp;mesmo&nbsp;sem&nbsp;criar&nbsp;a&nbsp;vari&aacute;vel&nbsp;$nome</span></div>
+        <br />
+        <div><span >&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+            <table class="table table-sm table-striped table-responsive-sm text-white lead">
+        <thead class="text-center">
+          <tr>
+            <th class="w-50">Função</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>strlen(string)</code></td>
+            <td>Retorna o comprimento de uma string</td>
+          </tr>
+          <tr>
+            <td><code>str_word_count(string)</code></td>
+            <td>Retorna o número de palavras em uma string</td>
+          </tr>
+          <tr>
+            <td><code>strpos(string, palavraPesquisada)</code></td>
+            <td>Retorna a posição da primeira correspondência da palavra pesquisada, se não encontrar retorna <code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>str_replace(nova, antiga, string)</code></td>
+            <td>Substitui a palavra ou cadeia de caracteres antiga, pela nova palavra ou cadeia de caracteres em uma string</td>
+          </tr>
+          <tr>
+            <td><code>implode(separador, array)</code></td>
+            <td>Retorna uma string com as palavras separadas pelo separador. É o mesmo que a função <code>join(separador , string)</code></td>
+          </tr>
+          <tr>
+            <td><code>explode(separador, string)</code></td>
+            <td>Retorna um array com as palavras separadas pelo separador de uma string. É o mesmo que a função <code>join(separador , string)</code></td>
+          </tr>
+          <tr>
+            <td><code>parse_str("nome=Fulano&idade=47")</code></td>
+            <td>Analisa uma string de consulta em variáveis. Basicamente criará uma variável <code>$nome = Fulano</code> e <code>$idade = 47</code></td>
+          </tr>
+          <tr>
+            <td><code>strcmp(string1, string2)</code></td>
+            <td>Retorna se ambas as string contém o mesmo valor, diferenciando maiúsculas de minúsculas. É o mesmo que a função <code>strncmp</code>(string, string, quantidadeLetrasParaComprar), entretanto ela limita o número de caracteres a serem comprador, e não a string completa</td>
+          </tr>
+          <tr>
+            <td><code>strcasecmp(string, string)</code></td>
+            <td>Retorna se ambas as string contém o mesmo valor, mas não diferenciando maiúsculas de minúsculas</td>
+          </tr>
+          <tr>
+            <td><code>substr(string, inicio, final)</code></td>
+            <td>Retorna uma parte de uma string que é delimitada pelos valores especificados.</td>
+          </tr>
+          <tr>
+            <td><code>lcfirst(string)</code></td>
+            <td>Converte o primeiro caractere de uma string em minúsculas</td>
+          </tr>
+          <tr>
+            <td><code>ucwords(string)</code></td>
+            <td>Converte o primeiro caractere de cada palavra em uma string em maiúsculas</td>
+          </tr>
+          <tr>
+            <td><code>strtoupper(string)</code></td>
+            <td>converte uma string em letras maiúsculas</td>
+          </tr>
+          <tr>
+            <td><code>strtolower(string)</code></td>
+            <td>converte uma string em letras minúsculas</td>
+          </tr>
+        </tbody>
+      </table>
+
+<br> <br>
+      <p class="lead">Referência completa em <a href="https://www.w3schools.com/php/php_ref_string.asp">Referência de String PHP</a>.</p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

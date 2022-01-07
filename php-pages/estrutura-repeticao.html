@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Estruturas de Repetição em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Estruturas de Repetição em PHP</h1>
+
+      <p class="lead">Um estrutura de repetição basicamente é usada para repetir um mesmo trecho de código um número finito de vezes, tendo como objetivo reduzir o número de linhas escritas com o mesmo trecho de código. </p>
+
+      <p class="lead"><strong>SEMPRE ESPECIFIQUE A CONDIÇÃO DE PARADA!!!</strong> Caso esqueça ou erre a lógica das condições o laço de repetição nunca irá parar e poderá travar o sistema. </p>
+
+      <h2>Estrutura de repetição FOR</h2>
+
+      <p class="lead">O <code>for(condição1; condição2; condição3)</code> é usado quando queremos repetir uma <strong>QUANTIDADE CONHECIDA</strong> de vezes um determinado trecho de código. </p>
+
+      <ul>
+        <li><strong>Condição 1</strong> - É executada uma única vez, geralmente é usada para inicializar o valor de um contador com o valor 0; CONHECIDA COMO CONDIÇÃO INICIAL</li>
+        <li><strong>Condição 2</strong> - É uma condição que sempre será executada no inicio de cada interação e normalmente define um valor limite de quantas vezes queremos que a estrutura seja executada. CONHECIDA COMO CONDIÇÃO DE PARADA</li>
+        <li><strong>Condição 3</strong> - É executada sempre ao final da execução do bloco de código, geralmente é usada para incrementar o valor do contador; CONHECIDA COMO CONDIÇÃO DE INCRIMENTO</li>
+      </ul>
+
+      <p class="lead">As condições podem ser omitidas e a estrutura pode assumir diversos formatos que normalmente podem levar a uma má legibilidade dos códigos e não são muito tradicionais, e por estes motivos não iremos abordar essas possibilidades. Um caso mais comum é usar um segunda condição de parada dentro do código com um if e um break, o mesmo vale para a terceira condição.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">for</span><span style="color: #d4d4d4;">&nbsp;($x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">;&nbsp;$x&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">;&nbsp;$x&nbsp;+=&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;n&uacute;mero&nbsp;&eacute;:&nbsp;$x&nbsp;&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/saidaFor-While.png" class="figure-img img-fluid rounded" alt="Saída do código For, mostrando os números incrementando de 10 em 10 a cada interação.">
+          <figcaption class="figure-caption text-xs-right">Saída do código For</figcaption>
+        </figure>
+      </div>
+      <hr class="space">
+
+      <h2>Estrutura de Repetição FOREACH</h2>
+
+      <p class="lead">A estrutura de repetição <code>foreache</code> funciona apenas em arrays e é usado para percorrer cada par de chave/valor em um array. Para cada iteração de repetição, o valor do o elemento do array atual é atribuído a variável especificada e o ponteiro do array é movido até atingir o último elemento da matriz. Existem funções para trabalhar com os ponteiros de um array (prev, next, pos, reset) para saber sobre acesse <a href="https://www.php.net/manual/pt_BR/function.prev.php">Ref ponteiros array</a>. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$cores&nbsp;=&nbsp;array(</span><span style="color: #ce9178;">"Vermelho"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Verde"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Azul"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"Amarelo"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">foreach</span><span style="color: #d4d4d4;">&nbsp;($cores&nbsp;as&nbsp;$elemento)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"$elemento&nbsp;&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*Saida&nbsp;Vermelho&nbsp;&lt;br&gt;&nbsp;Verde&nbsp;&lt;br&gt;&nbsp;Azul&nbsp;&lt;br&gt;&nbsp;Amarelo*/</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div> <br>
+
+      <p class="lead">Para percorremos as chaves de um array, podemos alterar um pouco a sintaxe apontado para <code>$index => $elemento</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$Cores&nbsp;=&nbsp;array(</span><span style="color: #ce9178;">"l2"</span><span style="color: #d4d4d4;">&nbsp;=&gt;&nbsp;</span><span style="color: #ce9178;">"Vermelho"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"l1"</span><span style="color: #d4d4d4;">&nbsp;=&gt;&nbsp;&nbsp;</span><span style="color: #ce9178;">"Verde"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"l3"</span><span style="color: #d4d4d4;">&nbsp;=&gt;&nbsp;</span><span style="color: #ce9178;">"Azul"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"aaa"</span><span style="color: #d4d4d4;">&nbsp;=&gt;&nbsp;&nbsp;</span><span style="color: #ce9178;">"Amarelo"</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">foreach</span><span style="color: #d4d4d4;">&nbsp;($Cores&nbsp;as&nbsp;$chave&nbsp;=&gt;&nbsp;$elemento&nbsp;)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"$chave&nbsp;=&nbsp;$elemento&nbsp;&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*Saida&nbsp;l2&nbsp;=&nbsp;Vermelho&nbsp;&lt;br&gt;&nbsp;l1&nbsp;=&nbsp;Verde&nbsp;&lt;br&gt;&nbsp;l3&nbsp;=&nbsp;Azul&nbsp;&lt;br&gt;&nbsp;aaa&nbsp;=&nbsp;Amarelo*/</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Estrutura de Repetição WHILE</h2>
+
+      <p class="lead">A estrutura de repetição <code>while(condição){ CÓDIGO }</code> é semelhante à estrutura <code>for</code> sem a condição 1 e condição 3. Ou seja, devemos em muitos casos iniciar um valor anteriormente e criar uma condição de incremento dentro do corpo da estrutura. Os principais usos de uma estrutura <code>while</code> estão relacionados quando <strong>não sabemos quantas vezes iremos executar o bloco de código</strong>. Seu uso mais comum contém a palavra reservada <code>break</code>.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <span style="color: #569cd6;">&lt;?php</span>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">0</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;($x&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">100</span><span style="color: #d4d4d4;">)&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;n&uacute;mero&nbsp;&eacute;:&nbsp;$x&nbsp;&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$x&nbsp;+=&nbsp;</span><span style="color: #b5cea8;">10</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div><br>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/saidaFor-While.png" class="figure-img img-fluid rounded" alt="Saída do código while, mostrando os números incrementando de 10 em 10 a cada interação.">
+          <figcaption class="figure-caption text-xs-right">Saída do código while</figcaption>
+        </figure>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>Estrutura de repetição DO WHILE</h2>
+
+      <p class="lead">A estrutura de repetição <code>do{ }while(condição)</code> é semelhante à estrutura <code>while</code>. A única diferença que a condição é verificada ao final da execução do código e não no início. Ou seja, o <code>do while</code> executará sempre um única vez independentemente se a condição for verdadeira ou não. Enquanto o <code>while</code> sempre fará a verificação da condição antes de executar o código. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">6</span><span style="color: #d4d4d4;">;</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">do</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"O&nbsp;n&uacute;mero&nbsp;&eacute;:&nbsp;$x&nbsp;&lt;br&gt;"</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$x++;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}&nbsp;</span><span style="color: #569cd6;">while</span><span style="color: #d4d4d4;">&nbsp;($x&nbsp;&lt;=&nbsp;</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">//Exibe&nbsp;apenas&nbsp;:&nbsp;O&nbsp;n&uacute;mero&nbsp;&eacute;&nbsp;6</span></div>
+        <div><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Continue VS Break</h2>
+
+      <p class="lead">O <code>break</code> interrompe todo o fluxo da estrutura <strong>saindo dela</strong>, enquanto o <code>continue</code> apenas interrompe o fluxo da iteração atual, mas <strong>não saí do fluxo da estrutura</strong>. </p>
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

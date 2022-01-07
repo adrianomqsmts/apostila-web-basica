@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Números em PHP</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuPHP();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Números em PHP</h1>
+
+      <p class="lead">Um <strong>>tipo de dados inteiro</strong> (integer) é um número não decimal entre -2147483648 e 2147483647. Um valor maior (ou menor) do que este, será armazenado como flutuante, porque excede o limite de um número inteiro. </p>
+
+      <p class="lead">O <strong>>tipo de dados flutuante</strong> (float) pode geralmente armazenar um valor de até 1,7976931348623E + 308 (dependente da plataforma) e têm uma precisão máxima de 14 dígitos.</p>
+
+      <p class="lead">Um valor numérico maior que o valor de um dado flutuante máximo é considerado <code>infinito</code>, enquanto <code>NaN </code> significa Não é um número. NaN é usado para operações matemáticas impossíveis. Para saber qual o tipo do número devemos usar as funções abaixo.</p>
+
+      <ul class="lead">
+        <li><code>is_int()</code>, <code>is_integer()</code>, <code>is_integer()</code> para saber se é um dado inteiro</li>
+        <li><code>is_float()</code>, <code>is_double()</code> para saber se um dado é flutuante</li>
+        <li><code>is_finite()</code>, <code>is_infinite()</code>, <code> var_dump()</code> verifica se um número é infinito</li>
+        <li><code>is_nan()</code>, <code>var_dump()</code> verifica se o tipo de dado é NaN</li>
+        <li><code>is_numeric()</code> Descobre se o dado é numérico ou não.</li>
+      </ul>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <div><span>&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #b5cea8;">5985</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;var_dump(is_numeric($x));&nbsp;</span><span style="color: #6a9955;">//&nbsp;Retorna&nbsp;bool(true)</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #ce9178;">"5985"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;var_dump(is_numeric($x));&nbsp;</span><span style="color: #6a9955;">//&nbsp;Retorna&nbsp;bool(true)</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #ce9178;">"59.85"</span><span>&nbsp;+&nbsp;</span><span style="color: #b5cea8;">100</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;var_dump(is_numeric($x));&nbsp;</span><span style="color: #6a9955;">//&nbsp;Retorna&nbsp;bool(true)</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;echo&nbsp;</span><span style="color: #ce9178;">"&lt;br&gt;"</span><span>;</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;$x&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Hello"</span><span>;</span></div>
+        <div><span>&nbsp;&nbsp;var_dump(is_numeric($x));&nbsp;</span><span style="color: #6a9955;">//&nbsp;Retorna&nbsp;bool(false)</span></div>
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Funções Matemáticas</h2>
+
+      <div style="background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span>&nbsp;</span><span style="color: #569cd6;">&lt;?php</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;echo&nbsp;(pi()&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;3.1415926535898</span></div>
+        <div><span>&nbsp;&nbsp;$lista&nbsp;=&nbsp;[</span><span style="color: #b5cea8;">0</span><span>,&nbsp;</span><span style="color: #b5cea8;">150</span><span>,&nbsp;</span><span style="color: #b5cea8;">30</span><span>,&nbsp;</span><span style="color: #b5cea8;">20</span><span>,&nbsp;-</span><span style="color: #b5cea8;">8</span><span>,&nbsp;-</span><span style="color: #b5cea8;">200</span><span>];</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(min($lista)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;-200</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(max($lista)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;</span><span style="color: #6a9955;">//Retorna&nbsp;150</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(abs(-</span><span style="color: #b5cea8;">6</span><span>)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;6</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(sqrt(</span><span style="color: #b5cea8;">64</span><span>)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;8</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(round(</span><span style="color: #b5cea8;">0.60</span><span>)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;1</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(round(</span><span style="color: #b5cea8;">0.49</span><span>)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;0</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(ceil(</span><span style="color: #b5cea8;">0.1</span><span>)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;1</span></div>
+        <div><span>&nbsp;&nbsp;echo&nbsp;(floor(</span><span style="color: #b5cea8;">0.9</span><span>)&nbsp;</span><span>.</span><span>&nbsp;</span><span style="color: #ce9178;">"&lt;br/&gt;"</span><span>);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;retorna&nbsp;0</span></div>
+        <br />
+        <div><span>&nbsp;&nbsp;</span><span style="color: #569cd6;">?</span><span style="color: #569cd6;">&gt;</span></div>
+      </div>
+
+
+      <table class="table table-sm table-responsive-sm table-striped text-white lead">
+        <thead>
+          <tr>
+            <th>Função</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>pi()</td>
+            <td>Retorna o valor de PI</td>
+          </tr>
+          <tr>
+            <td>min(0, 150, 30, 20, -8, -200) <br> min(array)</td>
+            <td>Retorna o menor valor dentre os valores especificados</td>
+          </tr>
+          <tr>
+            <td>max(0, 150, 30, 20, -8, -200) <br> max(array)</td>
+            <td>Retorna o maior valor dentre os valores especificados</td>
+          </tr>
+          <tr>
+            <td>abs(number)</td>
+            <td>Retorna o valor absoluto (positivo) de um número</td>
+          </tr>
+          <tr>
+            <td>sqrt(number)</td>
+            <td>Retorna a raiz quadrada de um número</td>
+          </tr>
+          <tr>
+            <td>round(number)</td>
+            <td>Arredonda um número de ponto flutuante para o número inteiro mais próximo</td>
+          </tr>
+          <tr>
+            <td>ceil(number)</td>
+            <td>Arredonda um número para cima para o inteiro mais próximo</td>
+          </tr>
+          <tr>
+            <td>floor(number)</td>
+            <td>Arredonda um número para baixo para o inteiro mais próximo</td>
+          </tr>
+          <tr>
+            <td>rand() <br> rand(min, max)</td>
+            <td>Gera um número aleatório (com ou sem um intervalo especificado). </td>
+          </tr>
+          <tr>
+            <td>exp(number)</td>
+            <td>Calcula o expoente de e </td>
+          </tr>
+          <tr>
+            <td>pow(x,y)</td>
+            <td>Retorna x elevado à potência de y</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br> <br>
+
+      <p class="lead">Para ver a referência completa das funções matemáticas acesse <a href="PHP Math Functions">PHP Math Functions</a></p>
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>
