@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Percorrer Elementos com Jquery</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Percorrer Elementos</h1>
+
+      <p class="lead">Pela imagem podemos ter um noção do parentesco entre os elementos HTML onde o elemento <code>&lt;html></code> não possui pais, mas possui dois filhos, o elemento <code>&lt;head></code>e o elemento <code><code>&lt;body></code></code>, e ambos são elementos irmãos. O elemento <code>&lt;body></code> tem o pai <code>&lt;html></code> e tem os filhos <code>&lt;p></code> e <code>&lt;div></code>, e assim sucessivamente.</p>
+
+      <div class="text-center">
+        <figure class="figure">
+          <img src="../imagens/arvoreDOM.png" class="figure-img img-fluid rounded" alt="Árvore DOM, mostrando os níveis dos elementos HTML">
+          <figcaption class="figure-caption text-xs-right">árvore DOM de um documento HTML.</figcaption>
+        </figure>
+      </div>
+
+      <hr class="lead">
+
+      <h2>Percorrer Ancestrais</h2>
+
+      <ul>
+        <li><code>parent()</code> - O método retorna o elemento pai direto do elemento selecionado. Este método atravessa apenas um único nível na árvore DOM.</li>
+        <li>
+          <code>parents()</code> - O método retorna todos os elementos ancestrais do elemento selecionado, até o elemento raiz do documento
+          <ul>
+            <li>Você também pode usar um parâmetro opcional para filtrar a pesquisa de ancestrais.</li>
+          </ul>
+        </li>
+        <li><code>parentsUntil()</code> - O método retorna todos os elementos ancestrais entre dois argumentos fornecidos</li>
+      </ul>
+
+      <p class="lead">O exemplo a seguir retorna o elemento pai direto de cada elemento SPAN</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"span"</span><span style="color: #d4d4d4;">).parent();</span></div>
+      </div> <br> <br>
+
+      <p class="lead">O exemplo a seguir retorna todos os ancestrais de todos os elementos SPAN</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"span"</span><span style="color: #d4d4d4;">).parents();</span></div>
+      </div> <br> <br>
+
+      <p class="lead">O exemplo a seguir retorna todos os ancestrais de todos os elementos SPAN que são elementos UL</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"span"</span><span style="color: #d4d4d4;">).parents(<span style="color: #ce9178;">"ul"</span>);</span></div>
+      </div> <br> <br>
+
+      <p class="lead">O exemplo a seguir retorna todos os elementos ancestrais entre um e SPAN um elemento DIV</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"span"</span><span style="color: #d4d4d4;">).parentsUntil(<span style="color: #ce9178;">"div"</span>);</span></div>
+      </div> <br> <br>
+
+      <hr class="space">
+
+      <h2>Percorrer Descendentes</h2>
+
+      <ul>
+        <li>
+          <code>children()</code> - O método retorna todos os filhos diretos do elemento selecionado. Este método percorre apenas um único nível abaixo da árvore DOM.
+          <ul>
+            <li>Você também pode usar um parâmetro opcional para filtrar a pesquisa de filhos.</li>
+          </ul>
+        </li>
+        <li>
+          <code>find()</code> - O método retorna elementos descendentes do elemento selecionado, até o último descendente.
+          <ul>
+            <li>Você também pode usar um parâmetro opcional para filtrar a pesquisa de filhos.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p class="lead">O exemplo a seguir retorna todos os elementos que são filhos diretos de cada elemento DIV</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"div"</span><span style="color: #d4d4d4;">).children();</span></div>
+      </div> <br> <br>
+
+      <p class="lead">O exemplo a seguir retorna todos os elementos P com o nome de classe "primeiro", que são filhos diretos de DIV</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"div"</span><span style="color: #d4d4d4;">).children(<span style="color: #ce9178;">"p.first"</span>);</span></div>
+      </div> <br> <br>
+
+      <p class="lead">O exemplo a seguir retorna todos os elementos SPAN que são descendentes de DIV </p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"div"</span><span style="color: #d4d4d4;">).find(<span style="color: #ce9178;">"span"</span>);</span></div>
+      </div> <br> <br>
+
+      <p class="lead">O exemplo a seguir retorna todos os descendentes de DIV</p>
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"div"</span><span style="color: #d4d4d4;">).find(<span style="color: #ce9178;">"*"</span>);</span></div>
+      </div> <br> <br>
+
+      <hr class="space">
+
+      <h2>Percorrer os Irmãos</h2>
+
+      <p class="lead">Existem muitos métodos jQuery úteis para percorrer lateralmente na árvore DOM. Você também pode usar um parâmetro opcional para filtrar a pesquisa por irmãos</p>
+
+      <ul>
+        <li><code>siblings()</code> - O método retorna todos os elementos irmãos do elemento selecionado</li>
+        <li><code>next()</code> - O método retorna o próximo elemento irmão do elemento selecionado</li>
+        <li><code>nextAll()</code> - O método retorna todos os próximos elementos irmãos do elemento selecionado.</li>
+        <li><code>nextUntil()</code> - O método retorna todos os próximos elementos irmãos entre dois argumentos fornecidos</li>
+      </ul>
+
+      <p class="lead">Os métodos <code>prev()</code>, <code>prevAll()</code> e <code>prevUntil()</code> funcionam exatamente como os métodos acima, mas com funcionalidade reversa: eles retornam elementos irmãos anteriores (retrocedem ao longo dos elementos irmãos na árvore DOM, em vez de avançar).</p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

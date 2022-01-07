@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Filtro de Elementos com Jquery</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Filtro de Elementos</h1>
+
+      <ul>
+        <li><code> first()</code> - O método retorna o primeiro elemento dos elementos especificados</li>
+        <li><code> last()</code> - O método retorna o último elemento dos elementos especificados.</li>
+        <li><code>eq()</code> - O método retorna um elemento com um número de índice específico dos elementos selecionados. Os números do índice começam em 0, então o primeiro elemento terá o número do índice 0 e não 1.</li>
+        <li><code>filter()</code> - O método permite que você especifique um critério. Os elementos que não correspondem aos critérios são removidos da seleção e aqueles que correspondem serão retornados.</li>
+        <li><code>not()</code> - O método retorna todos os elementos que não correspondem aos critérios.</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #d4d4d4;">$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*&nbsp;O&nbsp;exemplo&nbsp;a&nbsp;seguir&nbsp;seleciona&nbsp;o&nbsp;primeiro&nbsp;&lt;div&gt;&nbsp;elemento&nbsp;*/</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"div"</span><span style="color: #d4d4d4;">).first();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*&nbsp;O&nbsp;exemplo&nbsp;a&nbsp;seguir&nbsp;seleciona&nbsp;o&nbsp;&uacute;ltimo&nbsp;&lt;div&gt;&nbsp;elemento:*/</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"div"</span><span style="color: #d4d4d4;">).last();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*O&nbsp;exemplo&nbsp;a&nbsp;seguir&nbsp;seleciona&nbsp;o&nbsp;segundo&nbsp;&lt;p&gt;elemento&nbsp;(n&uacute;mero&nbsp;do&nbsp;&iacute;ndice&nbsp;1):*/</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).eq(</span><span style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*O&nbsp;exemplo&nbsp;a&nbsp;seguir&nbsp;retorna&nbsp;todos&nbsp;os&nbsp;&lt;p&gt;elementos&nbsp;com&nbsp;o&nbsp;nome&nbsp;de&nbsp;classe&nbsp;"intro":*/</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).filter(</span><span style="color: #ce9178;">".intro"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #6a9955;">/*&nbsp;O&nbsp;exemplo&nbsp;a&nbsp;seguir&nbsp;retorna&nbsp;todos&nbsp;os&nbsp;&lt;p&gt;elementos&nbsp;que&nbsp;n&atilde;o&nbsp;t&ecirc;m&nbsp;o&nbsp;nome&nbsp;de&nbsp;classe&nbsp;"intro":*/</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).not(</span><span style="color: #ce9178;">".intro"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Seletores do Jquery</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Seletores</h1>
+
+      <p class="lead">Os seletores jQuery são usados ​​para "encontrar" (ou selecionar) elementos HTML com base em seu nome, id, classes, tipos, atributos, valores de atributos e muito mais. É baseado nos seletores CSS existentes e, além disso, possui alguns seletores personalizados próprios. Todos os seletores em jQuery começam com o cifrão e parênteses: $ ().</p>
+
+      <hr class="space">
+
+      <h2>Seletores de elementos</h2>
+
+      <p class="lead">Se especificar o nome do elemento, então todos os elementos dentro do documento HTML serão selecionados. No exemplo abaixo, iremos selecionar todos os elementos botões, e dado o evento click, iremos selecionar todos os elementos &lt;p> e escondê-los</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Seletores de Identificadores</h2>
+
+      <p class="lead">Se especificar o nome do identificador precedido pelo caractere de hashtag (#), então todos os elementos com aquele Identificador dentro do documento HTML serão selecionados. No exemplo abaixo, iremos selecionar todos os elementos botões, e dado o evento click, iremos selecionar todos os elementos com o identificador de #test e escondê-los</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #d4d4d4;">$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Seletores de Classes</h2>
+
+      <p class="lead">Se especificar o nome da classe precedido pelo caractere de hashtag (.), então todos os elementos com aquele Identificador dentro do documento HTML serão selecionados. No exemplo abaixo, iremos selecionar todos os elementos botões, e dado o evento click, iremos selecionar todos os elementos com o nome da classe de .test e escondê-los</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+      <hr class="space">
+
+      <h2>Seletor THIS</h2>
+
+      <p class="lead">O seletor <code>this</code> é usado para selecionar o elemento atual/último elemento selecionado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).on({</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mouseenter:&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"lightgray"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mouseleave:&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"lightblue"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;click:&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"yellow"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">});&nbsp;</span></div>
+      </div> <br>
+
+      <button id="asd">Olá, Mundo!</button>
+
+      <script>
+        $("#asd").on({
+          mouseenter: function () {
+            $("#asd").css("background-color", "red");
+          },
+          mouseleave: function () {
+            $("#asd").css("background-color", "green");
+          },
+          click: function () {
+            $("#asd").css("background-color", "yellow");
+          }
+        });
+      </script>
+
+
+      <hr class="space">
+
+      <h2>Outros Seletores</h2>
+
+      <p class="lead">Todos os seletores padrões do CSS podem ser usados para selecionar os elementos, para acessar a lista completa acesse <a href="../css-pages/seletores-atributos.html">Seletores de Atributos</a>, <a href="../css-pages/seletores-combinados.html">Seletores Combinados</a>, <a href="../css-pages/seletores-pseudo-classes.html">Seletores de Pseudo-classe</a>, <a href="../css-pages/seletores-pseudo-elementos.html">Seletores de Pseudo-Elementos</a>, e <a href="../css-pages/seletores-simples.html">Seletores Simples</a> </p>
+
+      <p class="lead">Exemplo o seletor <strong>$("ul li:first")</strong> seleciona o primeiro item da lista</ul>
+      </p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

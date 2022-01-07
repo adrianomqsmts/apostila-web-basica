@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Manipulação do HTML com Jquery</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Manipular o HTML</h1>
+
+      <p class="lead">O jQuery vem com vários métodos relacionados ao DOM que facilitam o acesso e a manipulação de elementos e atributos. </p>
+
+      <hr class="space">
+
+      <h2>Obter Conteúdo</h2>
+
+      <ul>
+        <li>O método <code>text()</code>define ou retorna o conteúdo de texto dos elementos selecionados</li>
+        <li>O método <code>html()</code> define ou retorna o conteúdo dos elementos selecionados (incluindo marcação HTML)</li>
+        <li>O método <code>val()</code> define ou retorna o valor dos campos do formulário</li>
+        <li> O método <code>attr()</code> define ou retorna os valores dos atributos dos elementos selecionados.</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#btn1"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;alert(</span><span style="color: #ce9178;">"Text:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;$(</span><span style="color: #ce9178;">"#test"</span><span style="color: #d4d4d4;">).text());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#btn2"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;alert(</span><span style="color: #ce9178;">"HTML:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;$(</span><span style="color: #ce9178;">"#test"</span><span style="color: #d4d4d4;">).html());</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+
+      <script>
+        $(document).ready(function () {
+          $("#btn1").click(function () {
+            alert("Text: " + $("#test").text());
+          });
+          $("#btn2").click(function () {
+            alert("HTML: " + $("#test").html());
+          });
+        });
+      </script>
+      </head>
+
+
+      <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+      <button id="btn1">Ver o texto</button>
+      <button id="btn2">Ver o HTML</button>
+
+      <hr class="space">
+
+      <h2>Alterar Conteúdo</h2>
+
+      <p class="lead">Os métodos abaixo também possuem uma função de retorno, que recebe dois parâmetros. O primeiro informa o índice do elemento atual (tem uma lista de elementos selecionados), e o segundo parâmetro informa o valor original que estava no elemento.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#btn1"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#test1"</span><span style="color: #d4d4d4;">).text(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(i,&nbsp;origText){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">return</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Old&nbsp;text:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;origText&nbsp;+&nbsp;</span><span style="color: #ce9178;">"&nbsp;New&nbsp;text:&nbsp;Hello&nbsp;world!&nbsp;(index:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;i&nbsp;+&nbsp;</span><span style="color: #ce9178;">")"</span><span style="color: #d4d4d4;">;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <ul>
+        <li>O método <code>text()</code>define ou retorna o conteúdo de texto dos elementos selecionados</li>
+        <li>O método <code>html()</code> define ou retorna o conteúdo dos elementos selecionados (incluindo marcação HTML)</li>
+        <li>O método <code>val()</code> define ou retorna o valor dos campos do formulário</li>
+        <li> O método <code>attr()</code> define ou retorna os valores dos atributos dos elementos selecionados.</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btn3"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#test3"</span><span style="color: #d4d4d4;">).text(</span><span style="color: #ce9178;">"Hello&nbsp;world!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btn4"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#test4"</span><span style="color: #d4d4d4;">).html(</span><span style="color: #ce9178;">"&lt;b&gt;Hello&nbsp;world!&lt;/b&gt;"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btn5"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#test5"</span><span style="color: #d4d4d4;">).val(</span><span style="color: #ce9178;">"Dolly&nbsp;Duck"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+      <br>
+
+      <p id="test3">This is a paragraph.</p>
+      <p id="test4">This is another paragraph.</p>
+      <p>Input field: <input type="text" id="test5" value="Mickey Mouse"></p>
+
+      <button id="btn3">Alterar Texto</button>
+      <button id="btn4">Alterar HTML</button>
+      <button id="btn5">Alterar Input</button>
+
+      <script>
+        $("#btn3").click(function () {
+          $("#test3").text("Hello world!");
+        });
+        $("#btn4").click(function () {
+          $("#test4").html("<b>Hello world!</b>");
+        });
+        $("#btn5").click(function () {
+          $("#test5").val("Dolly Duck");
+        });
+      </script>
+
+      <hr class="space">
+
+      <h2>Adicionar Conteúdo</h2>
+
+      <p class="lead">Veremos quatro métodos jQuery que são usados ​​para adicionar novo conteúdo:</p>
+
+      <ul>
+        <li><code>append()</code> - Insere conteúdo no final dos elementos selecionados</li>
+        <li><code>prepend()</code> - Insere conteúdo no início dos elementos selecionados</li>
+        <li><code>after()</code> - Insere conteúdo após os elementos selecionados</li>
+        <li><code>before()</code> - Insere conteúdo antes dos elementos selecionados</li>
+      </ul>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#divex"</span><span style="color: #d4d4d4;">).append(</span><span style="color: #ce9178;">"append"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#divex"</span><span style="color: #d4d4d4;">).prepend(</span><span style="color: #ce9178;">"prepend"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#divex"</span><span style="color: #d4d4d4;">).after(</span><span style="color: #ce9178;">"after"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#divex"</span><span style="color: #d4d4d4;">).before(</span><span style="color: #ce9178;">"before"</span><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <div id="divex">TEXTO ORIGINAL</div>
+
+      <script>
+        $("#divex").append("append");
+        $("#divex").prepend("prepend");
+        $("#divex").after("after");
+        $("#divex").before("before");
+      </script>
+
+      <hr class="space">
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+
+        <div><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;txt1&nbsp;=&nbsp;</span><span style="color: #ce9178;">"&lt;p&gt;Text.&lt;/p&gt;"</span><span style="color: #d4d4d4;">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Create&nbsp;element&nbsp;with&nbsp;HTML&nbsp;</span></div>
+        <div><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;txt2&nbsp;=&nbsp;$(</span><span style="color: #ce9178;">"&lt;p&gt;&lt;/p&gt;"</span><span style="color: #d4d4d4;">).text(</span><span style="color: #ce9178;">"Text."</span><span style="color: #d4d4d4;">);&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Create&nbsp;with&nbsp;jQuery</span></div>
+        <div><span style="color: #569cd6;">var</span><span style="color: #d4d4d4;">&nbsp;txt3&nbsp;=&nbsp;document.createElement(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">);&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Create&nbsp;with&nbsp;DOM</span></div>
+        <div><span style="color: #d4d4d4;">txt3.innerHTML&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Text."</span><span style="color: #d4d4d4;">;</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#divex2"</span><span style="color: #d4d4d4;">).append(txt1,&nbsp;txt2,&nbsp;txt3);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;Append&nbsp;the&nbsp;new&nbsp;elements</span></div>
+      </div>
+
+
+      <div id="divex2">TEXTO ORIGINAL</div>
+
+      <script>
+        var txt1 = "<p>Text.</p>";               // Create element with HTML 
+        var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
+        var txt3 = document.createElement("p");  // Create with DOM
+        txt3.innerHTML = "Text.";
+        $("#divex2").append(txt1, txt2, txt3);      // Append the new elements
+      </script>
+
+      <hr class="space">
+
+      <h2>Remover Conteúdo</h2>
+
+      <p class="lead">Para remover elementos e conteúdo, existem principalmente dois métodos jQuery:</p>
+
+      <ul>
+        <li>
+          <code>remove()</code>- Remove o elemento selecionado (e seus elementos filho)
+          <ul>
+            <li>O método também aceita um parâmetro, que permite filtrar os elementos a serem removidos.</li>
+          </ul>
+
+        </li>
+        <li>
+          <code>empty()</code>- Remove os elementos filhos do elemento selecionado
+        </li>
+      </ul>
+
+      <p class="lead">Este exemplo remove todos os  P elementos com class="test"e class="demo"</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#div1"</span><span style="color: #d4d4d4;">).empty();</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#div1"</span><span style="color: #d4d4d4;">).remove();</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).remove(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).remove(</span><span style="color: #ce9178;">".test,&nbsp;.demo"</span><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

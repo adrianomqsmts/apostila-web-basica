@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Eventos do Jquery</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Eventos</h1>
+
+      <p class="lead">Um evento representa o momento preciso em que algo acontece. O termo "dispara / dispara" é freqüentemente usado com eventos. Exemplo: "O evento de pressionamento de tecla é disparado no momento em que você pressiona uma tecla"</p>
+
+      <hr class="space">
+
+      <h2>Sintaxe</h2>
+
+      <p class="lead">A maioria dos eventos DOM tem um equivalente em JQuery. Para construir um evento, basta chamar o método após a seleção do elemento. Após chamar o evento, devemos definir uma função que irá ocorrer após o disparo do evento.</p>
+
+      <p class="lead">$(elemento).evento(function(){...});</p>
+
+
+      <hr class="space">
+
+      <h2>Lista de Eventos</h2>
+
+      <p class="lead">Uma lista completo, com exemplos e descrição dos eventos em JQuery estão disponíveis em <a href="https://www.w3schools.com/jquery/jquery_ref_events.asp">w3schools jQuery Event Methods</a></p>
+
+      <br>
+
+      <h3>ready()</h3>
+
+      <p class="leas">O evento ready nos permite executar uma função quando o documento está totalmente carregado. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(document).ready(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <br>
+
+      <h3>click()</h3>
+
+      <p class="lead">O método executa a função quando o usuário clicar sobre o elemento selecionado</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+      </div>
+
+      <br>
+
+      <h3>dbclick()</h3>
+
+      <p class="lead">O método executa a função quando o usuário der dois cliques sobre o elemento selecionado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).dbclick(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+      </div>
+
+      <br>
+
+      <h3>mouseenter()</h3>
+
+      <p class="lead">O método executa a função quando o ponteiro do mouse entrar sobre o elemento selecionado</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).mouseenter(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+      </div>
+
+      <br>
+
+      <h3>mouseleave()</h3>
+
+      <p class="lead">O método executa a função quando o ponteiro do mouse sair da área sobre o elemento selecionado</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).mouseleave(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+      </div>
+
+      <br>
+
+      <h3>mousedown()</h3>
+
+      <p class="lead">O método executa a função quando com o botão esquerdo, direito ou central do mouse estiver pressionado sobre o elemento selecionado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).mousedown(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+      </div>
+
+      <br>
+
+      <h3>mouseup()</h3>
+
+      <p class="lead">O método executa a função quando com o botão esquerdo, direito ou central do mouse estiver sendo despresssionado sobre o elemento selecionado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).mouseup(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">".test"</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+      </div>
+
+      <br>
+
+      <h3>hover()</h3>
+
+      <p class="lead">O método executa duas funções, a primeira quando o mouse passa sobre o elemento selecionado, e a segunda quando o mouse saí da área do elemento selecionado.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#p1"</span><span style="color: #d4d4d4;">).hover(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;alert(</span><span style="color: #ce9178;">"You&nbsp;entered&nbsp;p1!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;alert(</span><span style="color: #ce9178;">"Bye!&nbsp;You&nbsp;now&nbsp;leave&nbsp;p1!"</span><span style="color: #d4d4d4;">);&nbsp;&nbsp;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <br>
+
+      <h3>focus()</h3>
+
+      <p class="lead">O método executa a função quando um campo de formulário recebe o foco</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"input"</span><span style="color: #d4d4d4;">).focus(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"#cccccc"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <br>
+
+      <h3>blur()</h3>
+
+      <p class="lead">O método executa a função quando um campo de formulário deixa de estar focado</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"input"</span><span style="color: #d4d4d4;">).blur(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"#fffff"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <br>
+
+      <h3>on()</h3>
+
+      <p class="lead">O método anexa um ou mais eventos para os elementos selecionados, caso algum destes eventos ocorram a função será executada.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).on(</span><span style="color: #ce9178;">"click"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).hide();</span></div>
+        <div><span style="color: #d4d4d4;">});&nbsp;</span></div>
+      </div>
+
+      <p class="lead">Múltiplos eventos</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).on({</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mouseenter:&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"lightgray"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;mouseleave:&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"lightblue"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;click:&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #569cd6;">this</span><span style="color: #d4d4d4;">).css(</span><span style="color: #ce9178;">"background-color"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">"yellow"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">});&nbsp;</span></div>
+      </div>
+
+      <br>
+
+      <h3>Exemplo</h3>
+
+      <button id="asd">Olá, Mundo!</button>
+
+      <script>
+        $("#asd").on({
+          mouseenter: function () {
+            $("#asd").css("background-color", "red");
+          },
+          mouseleave: function () {
+            $("#asd").css("background-color", "green");
+          },
+          click: function () {
+            $("#asd").css("background-color", "yellow");
+          }
+        });
+      </script>
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

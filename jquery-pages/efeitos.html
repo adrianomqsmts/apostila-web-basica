@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Efeitos do Jquery</title>
+
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Efeitos</h1>
+
+      <p class="lead">Podemos aplicar vários efeitos nos elementos, dado um evento, com os métodos JQuery. Uma losta, com exemplo e descrição dos métodos podem ser acessadas em <a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp">w3schools jQuery Effect Methods</a></p>
+
+      <hr class="space">
+
+      <h2>Ocultar e Mostrar</h2>
+
+      <p class="lead">O método <code>hide()</code> oculta o elemento, o método <code>show()</code> desoculta um elemento, enquanto o método <code>toggle()</code> oculta elementos mostrados e mostra elementos ocultados. Os três métodos podem receber dois parâmetros opcionais, o primeiro especificando a velocidade em que o elemento será ocultado/mostrado, podendo ser "slow", "fast" ou um tempo específico em milissegundos. O segundo parâmetro recebe uma função de callback</p>
+      <br>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; " id='toggleEX'>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btToggle"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#toggleEX"</span><span style="color: #d4d4d4;">).toggle();</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <br>
+      <button id="btToggle">Ocultar/Mostrar Código</button>
+
+      <script>
+        $("#btToggle").click(function () {
+          $("#toggleEX").toggle();
+        });
+      </script>
+
+      <hr class="space">
+
+      <h2>Aparecimento e Desaparecimento</h2>
+
+      <p class="lead">O método <code>fadeIn()</code> faz um elemento oculto aparecer, o método <code>fadeOut()</code> faz um elemento visível desaparecer, enquanto o método <code>fadeToggle</code> faz um elemento oculto aparecer e um elemento visível desaparecer. Os três métodos podem receber dois parâmetros opcionais, o primeiro especificando a velocidade em que o elemento será ocultado/mostrado, podendo ser "slow", "fast" ou um tempo específico em milissegundos. O segundo parâmetro recebe uma função de callback. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; " id='divfade'>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btnfade"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#divfade"</span><span style="color: #d4d4d4;">).fadeToggle();</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <br>
+
+      <button id="btnfade">Ocultar/Mostrar Código</button>
+
+      <script>
+        $("#btnfade").click(function () {
+          $("#divfade").fadeToggle();
+        });
+      </script>
+
+      <hr class="space">
+
+      <h2>Slide</h2>
+
+      <p class="lead">O método <code>slideDown()</code> faz um elemento oculto aparecer, o método <code>SlideOut()</code> faz um elemento visível desaparecer, enquanto o método <code>slideToggle</code> faz um elemento oculto aparecer e um elemento visível desaparecer. Os três métodos podem receber dois parâmetros opcionais, o primeiro especificando a velocidade em que o elemento será ocultado/mostrado, podendo ser "slow", "fast" ou um tempo específico em milissegundos. O segundo parâmetro recebe uma função de callback. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; " id='divslide'>
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btnslide"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#divslide"</span><span style="color: #d4d4d4;">).slideToggle();</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <br>
+
+      <button id="btnslide">Mostrar/Ocultar Código</button>
+
+      <script>
+        $("#btnslide").click(
+          function () {
+            $("#divslide").slideToggle();
+          }
+        );
+      </script>
+
+      <hr class="space">
+
+      <h2>Animação</h2>
+
+      <p class="lead">O método <code>animate</code> permite criar animações customizáveis, onde recebe uma lista de parâmetros de atributos CSS entre chaves {}, além de especificar a velocidade da animação como "slow", "fast" ou um tempo específico em milissegundos, além de um terceiro parâmetro uma função de callback.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;" id="divanimate">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#btnanimate"</span><span style="color: #d4d4d4;">).click(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#divanimate"</span><span style="color: #d4d4d4;">).animate({</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;</span><span style="color: #ce9178;">'250px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;</span><span style="color: #ce9178;">'0.5'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fontSize:&nbsp;</span><span style="color: #ce9178;">'20px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;</span><span style="color: #ce9178;">'150px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;</span><span style="color: #ce9178;">'150px'</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;</span><span style="color: #b5cea8;">5000</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">);</span></div>
+      </div>
+
+      <br>
+
+      <button id="btnanimate">Animar o Código</button>
+      <script>
+        $("#btnanimate").click(
+          function () {
+            $("#divanimate").animate({
+              left: '250px',
+              opacity: '0.5',
+              fontSize: '20px',
+              height: '150px',
+              width: '150px'
+            }, 5000);
+          });
+      </script>
+
+      <p class="lead">Para usar valores relativos, onde o valor é então relativo ao valor atual do elemento). Isso é feito colocando <code>+=</code> ou <code>-=</code> na frente do valor.</p>
+      <p class="lead">Para Criar uma fila de animações, basta chamar o método animate várias vezes em seguida, e então elas irão executar em sequência.</p>
+
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#btnanimate"</span><span style="color: #d4d4d4;">).click(</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#divanimate"</span><span style="color: #d4d4d4;">).animate({</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;</span><span style="color: #ce9178;">'250px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;</span><span style="color: #ce9178;">'0.5'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fontSize:&nbsp;</span><span style="color: #ce9178;">'20px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;</span><span style="color: #ce9178;">'150px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;</span><span style="color: #ce9178;">'150px'</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;</span><span style="color: #b5cea8;">5000</span><span style="color: #d4d4d4;">);</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#divanimate"</span><span style="color: #d4d4d4;">).animate({</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left:&nbsp;</span><span style="color: #ce9178;">'500px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity:&nbsp;</span><span style="color: #ce9178;">'1'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fontSize:&nbsp;</span><span style="color: #ce9178;">'14px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:&nbsp;</span><span style="color: #ce9178;">'200px'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:&nbsp;</span><span style="color: #ce9178;">'200px'</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;</span><span style="color: #b5cea8;">5000</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></div>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>stop</h2>
+
+      <p class="lead">O método <code>stop()</code> é usado para interromper uma animação, slide, etc. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"#stop"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">&nbsp;()&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"#panel"</span><span style="color: #d4d4d4;">).stop();</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>Usando Callback</h2>
+
+      <p class="lead">Uma função de retorno de chamada é executada após o efeito atual estar 100% concluído.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; ">
+        <div><span style="color: #d4d4d4;">$(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).click(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;$(</span><span style="color: #ce9178;">"p"</span><span style="color: #d4d4d4;">).hide(</span><span style="color: #ce9178;">"slow"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;alert(</span><span style="color: #ce9178;">"The&nbsp;paragraph&nbsp;is&nbsp;now&nbsp;hidden"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+      <p><span class="jscolor" style="color: black;">&nbsp;</span></p>
+
+
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

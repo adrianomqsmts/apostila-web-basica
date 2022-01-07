@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="../imagens/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../main.js"></script>
+
+    <title>Ajax com Jquery</title>
+
+  </head>
+
+  <body class="bg-darkblue text-white">
+
+    <div id="menu"> </div>
+
+    <script>
+      criarMenuJQ();
+    </script>
+
+    <section class="container pt-5 mt-5">
+
+      <h1>Ajax</h1>
+
+
+      <p class="lead">O JAX (Asynchronous JavaScript And XML) não é uma linguagem de programação, mas sim uma técnica de
+        acessar o o servidor web de uma determinada página web. A Base do AJAX consiste no objeto interno do navegador
+        chamado <code>XMLHttpRequest</code> que é responsável para solicitar os dados do servidor. </p>
+
+      <p class="lead">A principal vantagem do AJAX é que ele nos permite trabalhar com páginas assíncronas, ou seja, a
+        troca de mensagem com o servidor ocorre por trás sem o o usuário saiba dessa interação, e a página WEB fica
+        parecendo uma aplicação desktop, pois com esta técnica poderemos atualizar trechos de uma página sem termos que
+        recarregar toda a página.</p>
+
+      <p class="lead">O clico de vida do ajax consiste em: </p>
+
+      <ol class="lead">
+        <li>Ocorre um evento em uma página web</li>
+        <li>Um objeto XMLHttpRequest é criado por JavaScript </li>
+        <li>O objeto XMLHttpRequest envia uma solicitação a um servidor web </li>
+        <li>O servidor processa o pedido</li>
+        <li>O servidor envia uma resposta de volta à página da web </li>
+        <li>A resposta é lida pelo JavaScript </li>
+      </ol>
+
+      <p class="lead">Escrever código AJAX regular pode ser um pouco complicado, porque navegadores diferentes têm
+        sintaxes diferentes para implementação de AJAX. Isso significa que você terá que escrever código extra para testar
+        diferentes navegadores. No entanto, a equipe jQuery cuidou disso para nós, para que possamos escrever a
+        funcionalidade AJAX com apenas uma única linha de código.</p>
+
+      <hr class="space">
+
+      <h2>load()</h2>
+
+      <p class="lead">O método <code>load()</code> jQuery é um método AJAX simples, mas poderoso. O método carrega dados
+        de um servidor e coloca os dados retornados no elemento selecionado.</p>
+      <p class="lead">Sinaxe: <code>$(selector).load(URL,data,callback);</code></p>
+
+      <ul class="lead">
+        <li>O parâmetro de URL necessário especifica a URL que deseja carregar.</li>
+        <li>O parâmetro de dados opcional especifica um conjunto de pares de chave/valor de consulta para enviar junto com a solicitação.</li>
+        <li>O parâmetro opcional de retorno de chamada é o nome de uma função a ser executada após a conclusão do método.</li>
+      </ul>
+
+      <p class="lead">O exemplo abaixo irá carregar todo o conteúdo HTML dentro do elemento com ID chamado div, após o click sobre o elemento com ID btn.</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">document</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">ready</span><span style="color: #d4d4d4;">(()&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#btn'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">on</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'click'</span><span style="color: #d4d4d4;">,&nbsp;()&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#div'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">load</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'exemplo-ajax.html'</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;})</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <P class="lead">Também é possível adicionar um seletor jQuery ao parâmetro URL. O exemplo a seguir carrega o conteúdo do elemento com id="p1", dentro do arquivo "exemplo-ajax.html", em um elemento específico:</P>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">document</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">ready</span><span style="color: #d4d4d4;">(()&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#btn'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">on</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'click'</span><span style="color: #d4d4d4;">,&nbsp;()&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#div'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">load</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'exemplo-ajax.html&nbsp;#p1'</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;})</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <p class="lead">O parâmetro opcional de retorno de chamada especifica uma função de retorno de chamada para ser executada quando o método estiver concluído. A função de retorno de chamada pode ter parâmetros diferentes:</p>
+
+      <ul class="lead">
+        <li> responseTxt - contém o conteúdo resultante se a chamada for bem sucedida</li>
+        <li>statusTxt - contém o status da chamada</li>
+        <li>xhr - contém o objeto XMLHttpRequest</li>
+      </ul>
+
+      <p class="lead">O exemplo a seguir exibe uma caixa de alerta após o método de carga() ser concluído. Se o método tiver sido bem sucedido, ele exibirá "Conteúdo externo carregado com sucesso!", e se falhar, ele exibirá uma mensagem de erro:</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">click</span><span style="color: #d4d4d4;">(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"#div1"</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">load</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"demo_test.txt"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">responseTxt</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">statusTxt</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">xhr</span><span style="color: #d4d4d4;">){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #c586c0;">if</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">statusTxt</span><span style="color: #d4d4d4;">&nbsp;==&nbsp;</span><span style="color: #ce9178;">"success"</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #dcdcaa;">alert</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"External&nbsp;content&nbsp;loaded&nbsp;successfully!"</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #c586c0;">if</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">statusTxt</span><span style="color: #d4d4d4;">&nbsp;==&nbsp;</span><span style="color: #ce9178;">"error"</span><span style="color: #d4d4d4;">)</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #dcdcaa;">alert</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Error:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #9cdcfe;">xhr</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">status</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #ce9178;">":&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #9cdcfe;">xhr</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">statusText</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <hr class="space">
+
+      <h2>get() e post()</h2>
+
+      <p class="lead">Os métodos jQuery get() e post() são usados para solicitar dados do servidor com uma solicitação HTTP GET ou POST.</p>
+
+      <ul class="lead">
+        <li>GET - Solicita dados de um recurso especificado
+          <ul class="lead">
+            <li>GET é basicamente usado para apenas obter (recuperar) alguns dados do servidor. Nota: O método GET pode retornar dados armazenados em cache.</li>
+          </ul>
+        </li>
+        <li>POST - Envia dados para serem processados em um recurso especificado
+          <ul class="lead">
+            <li>O POST também pode ser usado para obter alguns dados do servidor. No entanto, o método POST NUNCA armazena dados e é frequentemente usado para enviar dados junto com a solicitação.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p class="lead">O método GET tem sintaxe: <code>$.get(URL,callback);</code>. O parâmetro de URL necessário especifica a URL que deseja solicitar. O parâmetro opcional de retorno de chamada é o nome de uma função a ser executada se a solicitação for bem sucedida. Além disto o segundo parâmetro é uma função de retorno de chamada. O primeiro parâmetro de retorno de chamada contém o conteúdo da página solicitada e o segundo parâmetro de retorno de chamada mantém o status da solicitação. O exemplo a seguir usa o método para recuperar dados de um arquivo no servidor:</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">click</span><span style="color: #d4d4d4;">(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">get</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"demo_test.asp"</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">data</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">status</span><span style="color: #d4d4d4;">){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #dcdcaa;">alert</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Data:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #9cdcfe;">data</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #d7ba7d;">\n</span><span style="color: #ce9178;">Status:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #9cdcfe;">status</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+      <p class="lead"> O método POST solicita dados do servidor usando uma solicitação HTTP POST, e tem como sintaxe <code>$.post(URL,data,callback);</code>. O parâmetro de URL necessário especifica a URL que deseja solicitar. O parâmetro de dados opcional especifica alguns dados para enviar junto com a solicitação, o terceiro parâmetro é uma função de retorno de chamada. O primeiro parâmetro de retorno de chamada contém o conteúdo da página solicitada e o segundo parâmetro de retorno de chamada mantém o status da solicitação.. O parâmetro opcional de retorno de chamada é o nome de uma função a ser executada se a solicitação for bem sucedida. O exemplo a seguir usa o método para enviar alguns dados junto com a solicitação:</p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"button"</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">click</span><span style="color: #d4d4d4;">(</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">post</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"demo_test_post.asp"</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9cdcfe;">name:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Donald&nbsp;Duck"</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9cdcfe;">city:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">"Duckburg"</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #569cd6;">function</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">data</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">status</span><span style="color: #d4d4d4;">){</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #dcdcaa;">alert</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Data:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #9cdcfe;">data</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #ce9178;">"</span><span style="color: #d7ba7d;">\n</span><span style="color: #ce9178;">Status:&nbsp;"</span><span style="color: #d4d4d4;">&nbsp;+&nbsp;</span><span style="color: #9cdcfe;">status</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;});</span></div>
+        <div><span style="color: #d4d4d4;">});</span></div>
+      </div>
+
+
+      <hr class="space">
+
+      <h2>Ajax()</h2>
+
+      <p class="lead">Todos os métodos jQuery AJAX usam o método ajax(). Este método é usado principalmente para solicitações onde os outros métodos não podem ser usados. Alguns dos principais parâmetros são: </p>
+
+      <ul class="lead">
+        <li>type - Especifica o tipo de solicitação. (GET ou POST)</li>
+        <li>url - Especifica o URL para enviar a solicitação. O padrão é a página atual</li>
+        <li>data - Especifica os dados a serem enviados para o servidor</li>
+        <li>dataType - O tipo de dados esperado da resposta do servidor.</li>
+        <li>erro (xhr, status, erro) - Uma função a ser executada se a solicitação falhar.</li>
+        <li>timeout - O tempo limite local (em milissegundos) para a solicitação</li>
+      </ul>
+
+      <p class="lead">O exemplo abaixo envia uma solicitação para o arquivo "app.php" com o dado selecionado em um elemento SELECT que sofreu um evento de mudança (ou seja, o cliente selecionou outro valor do select). Em seguida, o arquivo PHP retorna a resposta (Response) em formato esperado de JSON, onde, em caso de sucesso alteramops os dados no HTML, caso contrário exibimos o erro no console do navegador. </p>
+
+      <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px;">
+        <div><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">document</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">ready</span><span style="color: #d4d4d4;">(()&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//ajax</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#select'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">on</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'change'</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">e</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #6a9955;">//&nbsp;parametros&nbsp;-&gt;&nbsp;m&eacute;todo,&nbsp;url,&nbsp;dados,&nbsp;sucesso&nbsp;e&nbsp;erro</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #569cd6;">let</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">valor</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">e</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">target</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">val</span><span style="color: #d4d4d4;">();</span></div>
+        <br />
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">ajax</span><span style="color: #d4d4d4;">({</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9cdcfe;">type:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'GET'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9cdcfe;">url:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'app.php'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9cdcfe;">data:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">`valor=</span><span style="color: #569cd6;">${</span><span style="color: #9cdcfe;">valor</span><span style="color: #569cd6;">}</span><span style="color: #ce9178;">`</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #9cdcfe;">dataType:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #ce9178;">'json'</span><span style="color: #d4d4d4;">,</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #dcdcaa;">success</span><span style="color: #9cdcfe;">:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">dados</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#totalVendas'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">html</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">dados</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">totalVendas</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #4fc1ff;">$</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">'#numeroVendas'</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">html</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">dados</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">numeroVendas</span><span style="color: #d4d4d4;">);</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #dcdcaa;">error</span><span style="color: #9cdcfe;">:</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">erro</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #569cd6;">=&gt;</span><span style="color: #d4d4d4;">&nbsp;{&nbsp;</span><span style="color: #9cdcfe;">console</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">log</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">erro</span><span style="color: #d4d4d4;">)&nbsp;}</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span style="color: #d4d4d4;"> &nbsp;&nbsp;&nbsp;})</span></div>
+        <div><span style="color: #d4d4d4;">&nbsp;&nbsp;})</span></div>
+        <div><span style="color: #808080;">&lt;/</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+      </div>
+
+      <p class="lead">FALTO SERIALIZE, PARA ENVIAR DADOS DOS FORMULÁRIO DE FORMA MAIS FÁCIL</p>
+
+
+
+    </section>
+
+    <div id="rodape"></div>
+    <script>
+      rodape();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>
